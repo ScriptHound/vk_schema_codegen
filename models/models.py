@@ -34,7 +34,7 @@ class ClassForm(ObjectModel):
         self.description.add_param(name, text)
 
     def __str__(self):
-        label = f'class {self.classname}:\n'
+        label = f'\n\nclass {self.classname}:\n'
         label += str(self.description)
 
         for name, value in self.params.items():

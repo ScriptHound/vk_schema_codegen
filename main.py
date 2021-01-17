@@ -2,7 +2,7 @@ from config import yaml_processing
 import json
 import re
 import logging
-from models.models import ClassForm
+from models.schema_objects import SchemaAllOfObject, SchemaObject, SchemaEnum
 logging.basicConfig(level=logging.INFO)
 
 CONFIG = yaml_processing.get_config('config/config.yaml')
@@ -37,15 +37,20 @@ def prepare_data(plain_data: str, classnames: str) -> None:
 def handle_classes(prepared_dict: dict) -> None:
     with open('codegen.py', 'a') as pyfile:
         for classname in prepared_dict.keys():
-            class_form: ClassForm = ClassForm(classname)
+            class_form = None
             try:
-                for name in prepared_dict[classname]['properties'].keys():
-                    text = prepared_dict[classname]['properties'][name]['description']
-                    class_form.add_param(name, None)
-                    class_form.add_description_row(name, text)
-                pyfile.write(str(class_form))
+                if prepared_dict[classname]['type'] == 'object':
+                    if prepared_dict[classname].get('allOf', None):
+                        class_form = SchemaAllOfObject(classname, prepared_dict)
+                    elif prepared_dict[classname].get('properties', None):
+                        class_form = SchemaObject(classname, prepared_dict)
+                elif prepared_dict[classname]['type'] == 'string':
+                    class_form = SchemaEnum(classname, prepared_dict)
+                else:
+                    continue
             except KeyError:
                 continue
+            pyfile.write(str(class_form))
 
 
 def parse_file(path: str) -> None:
