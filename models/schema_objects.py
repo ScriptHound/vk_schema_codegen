@@ -15,7 +15,7 @@ class SchemaObject(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
         self.class_form: ClassForm = ClassForm(classname)
         for name in prepared_dict[classname]['properties'].keys():
-            text = prepared_dict[classname]['properties'][name].get('description', 'No description')
+            text = prepared_dict[classname]['properties'][name].get('description', None)
             self.class_form.add_param(name, None)
             self.class_form.add_description_row(name, text)
 
@@ -27,7 +27,7 @@ class SchemaAllOfObject(AbstractSchemaObject):
             properties = element.get('properties', None)
             if properties:
                 for name in properties.keys():
-                    text = properties[name].get('description', 'No description')
+                    text = properties[name].get('description', None)
                     self.class_form.add_param(name, str(iter))
                     self.class_form.add_description_row(name, text)
 
@@ -46,12 +46,14 @@ class SchemaEnum(AbstractSchemaObject):
 class SchemaEnumInitialized(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
         self.class_form: ClassForm = ClassForm(classname)
+        counter = 0
         for i in prepared_dict[classname]['enum']:
             # minus one because numerical enum starts from 1
-            name = prepared_dict[classname]['enumNames'][i-1]
+            name = prepared_dict[classname]['enumNames'][counter]
             text = None
-            self.class_form.add_param(name, str(i))
+            self.class_form.add_param(name, i)
             self.class_form.add_description_row(name, text)
+            counter += 1
 
 
 class SchemaUndefined(AbstractSchemaObject):
@@ -65,11 +67,16 @@ def schema_object_fabric_method(classname, prepared_dict):
             return SchemaAllOfObject(classname, prepared_dict)
         elif prepared_dict[classname].get('properties', None):
             return SchemaObject(classname, prepared_dict)
+
     elif prepared_dict[classname].get('type', None) == 'string':
         # if enum is numerical
         if type(prepared_dict[classname]['enum'][0]) == int:
             return SchemaEnumInitialized(classname, prepared_dict)
         else:
             return SchemaEnum(classname, prepared_dict)
+
+    elif prepared_dict[classname].get('type', None) == 'integer':
+        return SchemaEnumInitialized(classname, prepared_dict)
+
     elif prepared_dict[classname].get('type', None) is None:
         return SchemaUndefined(classname, prepared_dict)

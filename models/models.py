@@ -19,7 +19,12 @@ class ObjectModel(abc.ABC):
 class Description(ObjectModel):
     def __str__(self):
         label: str = f'\t\"\"\"VK Object {self.classname}\n\n'
+        if all(isinstance(desc, type(None)) for _, desc in self.params.items()):
+            label += '\t\"\"\"\n'
+            return label
         for name, description in self.params.items():
+            if description is None:
+                description = ""
             label += f'\t{name} - {description}\n'
         label += '\t\"\"\"\n'
         return label

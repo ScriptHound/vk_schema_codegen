@@ -12,7 +12,7 @@ class AccountAccountCounters:
 	gifts - New gifts number
 	groups - New groups number
 	menu_discover_badge - 
-	menu_clips_badge - No description
+	menu_clips_badge - 
 	messages - New messages number
 	memories - New memories number
 	notes - New notes number
@@ -41,19 +41,19 @@ class AccountAccountCounters:
 class AccountInfo:
 	"""VK Object AccountInfo
 
-	wishlists_ae_promo_banner_show - No description
+	wishlists_ae_promo_banner_show - 
 	2fa_required - Two factor authentication is enabled
 	country - Country code
 	https_required - Information whether HTTPS-only is enabled
 	intro - Information whether user has been processed intro
-	show_vk_apps_intro - No description
+	show_vk_apps_intro - 
 	mini_apps_ads_slot_id - Ads slot id for MyTarget
-	qr_promotion - No description
-	link_redirects - No description
+	qr_promotion - 
+	link_redirects - 
 	lang - Language ID
 	no_wall_replies - Information whether wall comments should be hidden
 	own_posts_default - Information whether only owners posts should be shown
-	subscriptions - No description
+	subscriptions - 
 	"""
 	wishlists_ae_promo_banner_show = None
 	_2fa_required = None
@@ -76,7 +76,7 @@ class AccountNAmeRequest:
 	first_name - First name in request
 	id - Request ID needed to cancel the request
 	last_name - Last name in request
-	status - No description
+	status - 
 	lang - Text to display to user
 	link_href - href for link in lang field
 	link_label - label to display for link in lang field
@@ -93,14 +93,6 @@ class AccountNAmeRequest:
 class AccountNAmeRequestStAtus:
 	"""VK Object AccountNAmeRequestStAtus
 
-	success - None
-	processing - None
-	declined - None
-	was_accepted - None
-	was_declined - None
-	declined_with_link - None
-	response - None
-	response_with_link - None
 	"""
 	success = 0
 	processing = 1
@@ -146,7 +138,7 @@ class AccountPushConversAtions:
 	"""VK Object AccountPushConversAtions
 
 	count - Items count
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -167,25 +159,6 @@ class AccountPushConversAtionsItem:
 class AccountPushPArAms:
 	"""VK Object AccountPushPArAms
 
-	msg - No description
-	chat - No description
-	like - No description
-	repost - No description
-	comment - No description
-	mention - No description
-	reply - No description
-	new_post - No description
-	wall_post - No description
-	wall_publish - No description
-	friend - No description
-	friend_found - No description
-	friend_accepted - No description
-	group_invite - No description
-	group_accepted - No description
-	birthday - No description
-	event_soon - No description
-	app_request - No description
-	sdk_open - No description
 	"""
 	msg = None
 	chat = None
@@ -211,10 +184,6 @@ class AccountPushPArAms:
 class AccountPushPArAmsMode:
 	"""VK Object AccountPushPArAmsMode
 
-	on - None
-	off - None
-	no_sound - None
-	no_text - None
 	"""
 	on = 0
 	off = 1
@@ -225,8 +194,6 @@ class AccountPushPArAmsMode:
 class AccountPushPArAmsOnoff:
 	"""VK Object AccountPushPArAmsOnoff
 
-	on - None
-	off - None
 	"""
 	on = 0
 	off = 1
@@ -235,9 +202,6 @@ class AccountPushPArAmsOnoff:
 class AccountPushPArAmsSettings:
 	"""VK Object AccountPushPArAmsSettings
 
-	on - None
-	off - None
-	fr_of_fr - None
 	"""
 	on = 0
 	off = 1
@@ -249,8 +213,8 @@ class AccountPushSettings:
 
 	disabled - Information whether notifications are disabled
 	disabled_until - Time until that notifications are disabled in Unixtime
-	settings - No description
-	conversations - No description
+	settings - 
+	conversations - 
 	"""
 	disabled = None
 	disabled_until = None
@@ -271,8 +235,6 @@ class AccountUserSettings:
 class AccountUserSettingsInterest:
 	"""VK Object AccountUserSettingsInterest
 
-	title - No description
-	value - No description
 	"""
 	title = None
 	value = None
@@ -281,15 +243,6 @@ class AccountUserSettingsInterest:
 class AccountUserSettingsInterests:
 	"""VK Object AccountUserSettingsInterests
 
-	activities - No description
-	interests - No description
-	music - No description
-	tv - No description
-	movies - No description
-	books - No description
-	games - No description
-	quotes - No description
-	about - No description
 	"""
 	activities = None
 	interests = None
@@ -305,20 +258,6 @@ class AccountUserSettingsInterests:
 class AddressesFields:
 	"""VK Object AddressesFields
 
-	id - None
-	title - None
-	address - None
-	additional_address - None
-	country_id - None
-	city_id - None
-	metro_station_id - None
-	latitude - None
-	longitude - None
-	distance - None
-	work_info_status - None
-	timetable - None
-	phone - None
-	time_offset - None
 	"""
 	id = 0
 	title = 1
@@ -339,9 +278,6 @@ class AddressesFields:
 class AdsAccessRole:
 	"""VK Object AdsAccessRole
 
-	admin - None
-	manager - None
-	reports - None
 	"""
 	admin = 0
 	manager = 1
@@ -351,8 +287,6 @@ class AdsAccessRole:
 class AdsAccessRolePublic:
 	"""VK Object AdsAccessRolePublic
 
-	manager - None
-	reports - None
 	"""
 	manager = 0
 	reports = 1
@@ -362,7 +296,7 @@ class AdsAccesses:
 	"""VK Object AdsAccesses
 
 	client_id - Client ID
-	role - No description
+	role - 
 	"""
 	client_id = None
 	role = None
@@ -371,10 +305,10 @@ class AdsAccesses:
 class AdsAccount:
 	"""VK Object AdsAccount
 
-	access_role - No description
+	access_role - 
 	account_id - Account ID
 	account_status - Information whether account is active
-	account_type - No description
+	account_type - 
 	account_name - Account name
 	can_view_budget - Can user view account budget
 	"""
@@ -389,8 +323,6 @@ class AdsAccount:
 class AdsAccountType:
 	"""VK Object AdsAccountType
 
-	general - None
-	agency - None
 	"""
 	general = 0
 	agency = 1
@@ -402,11 +334,11 @@ class AdsAd:
 	ad_format - Ad format
 	ad_platform - Ad platform
 	all_limit - Total limit
-	approved - No description
+	approved - 
 	campaign_id - Campaign ID
 	category1_id - Category ID
 	category2_id - Additional category ID
-	cost_type - No description
+	cost_type - 
 	cpc - Cost of a click, kopecks
 	cpm - Cost of 1000 impressions, kopecks
 	cpa - Cost of an action, kopecks
@@ -419,7 +351,7 @@ class AdsAd:
 	impressions_limit - Impressions limit
 	impressions_limited - Information whether impressions are limited
 	name - Ad title
-	status - No description
+	status - 
 	video - Information whether the ad is a video
 	"""
 	ad_format = None
@@ -444,14 +376,34 @@ class AdsAd:
 	name = None
 	status = None
 	video = None
-NoneNone
+
+
+class AdsAdApproved:
+	"""VK Object AdsAdApproved
+
+	"""
+	not moderated = 0
+	pending moderation = 1
+	approved = 2
+	rejected = 3
+
+
+class AdsAdCostType:
+	"""VK Object AdsAdCostType
+
+	"""
+	per clicks = 0
+	per impressions = 1
+	per actions = 2
+	per impressions optimized = 3
+
 
 class AdsAdLAyout:
 	"""VK Object AdsAdLAyout
 
 	ad_format - Ad format
 	campaign_id - Campaign ID
-	cost_type - No description
+	cost_type - 
 	description - Ad description
 	id - Ad ID
 	image_src - Image URL
@@ -474,7 +426,16 @@ class AdsAdLAyout:
 	preview_link = None
 	title = None
 	video = None
-None
+
+
+class AdsAdStAtus:
+	"""VK Object AdsAdStAtus
+
+	"""
+	stopped = 0
+	started = 1
+	deleted = 2
+
 
 class AdsCAmpAign:
 	"""VK Object AdsCAmpAign
@@ -484,9 +445,9 @@ class AdsCAmpAign:
 	id - Campaign ID
 	name - Campaign title
 	start_time - Campaign start time, as Unixtime
-	status - No description
+	status - 
 	stop_time - Campaign stop time, as Unixtime
-	type - No description
+	type - 
 	"""
 	all_limit = None
 	day_limit = None
@@ -496,15 +457,20 @@ class AdsCAmpAign:
 	status = None
 	stop_time = None
 	type = None
-None
+
+
+class AdsCAmpAignStAtus:
+	"""VK Object AdsCAmpAignStAtus
+
+	"""
+	stopped = 0
+	started = 1
+	deleted = 2
+
 
 class AdsCAmpAignType:
 	"""VK Object AdsCAmpAignType
 
-	normal - None
-	vk_apps_managed - None
-	mobile_apps - None
-	promoted_posts - None
 	"""
 	normal = 0
 	vk_apps_managed = 1
@@ -517,7 +483,7 @@ class AdsCAtegory:
 
 	id - Category ID
 	name - Category name
-	subcategories - No description
+	subcategories - 
 	"""
 	id = None
 	name = None
@@ -561,7 +527,7 @@ class AdsCriteriA:
 	school_from - School graduation year from
 	school_to - School graduation year to
 	schools - Schools IDs
-	sex - No description
+	sex - 
 	stations - Stations IDs
 	statuses - Relationship statuses
 	streets - Streets IDs
@@ -602,14 +568,23 @@ class AdsCriteriA:
 	user_browsers = None
 	user_devices = None
 	user_os = None
-None
+
+
+class AdsCriteriASex:
+	"""VK Object AdsCriteriASex
+
+	"""
+	any = 0
+	male = 1
+	female = 2
+
 
 class AdsDemoStAts:
 	"""VK Object AdsDemoStAts
 
 	id - Object ID
-	stats - No description
-	type - No description
+	stats - 
+	type - 
 	"""
 	id = None
 	stats = None
@@ -619,13 +594,13 @@ class AdsDemoStAts:
 class AdsDemostAtsFormAt:
 	"""VK Object AdsDemostAtsFormAt
 
-	age - No description
-	cities - No description
+	age - 
+	cities - 
 	day - Day as YYYY-MM-DD
 	month - Month as YYYY-MM
 	overall - 1 if period=overall
-	sex - No description
-	sex_age - No description
+	sex - 
+	sex_age - 
 	"""
 	age = None
 	cities = None
@@ -670,7 +645,7 @@ class AdsLookAlikeRequest:
 	source_retargeting_group_id - Retargeting group id, which was used as lookalike seed
 	source_name - Lookalike request seed name (retargeting group name)
 	audience_count - Lookalike request seed audience size
-	save_audience_levels - No description
+	save_audience_levels - 
 	"""
 	id = None
 	create_time = None
@@ -709,10 +684,6 @@ class AdsMusiciAn:
 class AdsObjectType:
 	"""VK Object AdsObjectType
 
-	ad - None
-	campaign - None
-	client - None
-	office - None
 	"""
 	ad = 0
 	campaign = 1
@@ -768,7 +739,7 @@ class AdsRejectReAson:
 	"""VK Object AdsRejectReAson
 
 	comment - Comment text
-	rules - No description
+	rules - 
 	"""
 	comment = None
 	rules = None
@@ -777,7 +748,7 @@ class AdsRejectReAson:
 class AdsRules:
 	"""VK Object AdsRules
 
-	paragraphs - No description
+	paragraphs - 
 	title - Comment
 	"""
 	paragraphs = None
@@ -788,9 +759,9 @@ class AdsStAts:
 	"""VK Object AdsStAts
 
 	id - Object ID
-	stats - No description
-	type - No description
-	views_times - No description
+	stats - 
+	type - 
+	views_times - 
 	"""
 	id = None
 	stats = None
@@ -859,7 +830,7 @@ class AdsStAtsSex:
 
 	clicks_rate - Clicks rate
 	impressions_rate - Impressions rate
-	value - No description
+	value - 
 	"""
 	clicks_rate = None
 	impressions_rate = None
@@ -881,8 +852,6 @@ class AdsStAtsSexAge:
 class AdsStAtsSexVAlue:
 	"""VK Object AdsStAtsSexVAlue
 
-	f - None
-	m - None
 	"""
 	f = 0
 	m = 1
@@ -891,17 +860,6 @@ class AdsStAtsSexVAlue:
 class AdsStAtsViewsTimes:
 	"""VK Object AdsStAtsViewsTimes
 
-	views_ads_times_1 - No description
-	views_ads_times_2 - No description
-	views_ads_times_3 - No description
-	views_ads_times_4 - No description
-	views_ads_times_5 - No description
-	views_ads_times_6 - No description
-	views_ads_times_7 - No description
-	views_ads_times_8 - No description
-	views_ads_times_9 - No description
-	views_ads_times_10 - No description
-	views_ads_times_11_plus - No description
 	"""
 	views_ads_times_1 = None
 	views_ads_times_2 = None
@@ -991,7 +949,7 @@ class AdsTArgSuggestionsSchools:
 	id - School ID
 	name - School title
 	parent - City name
-	type - No description
+	type - 
 	"""
 	desc = None
 	id = None
@@ -1003,10 +961,6 @@ class AdsTArgSuggestionsSchools:
 class AdsTArgSuggestionsSchoolsType:
 	"""VK Object AdsTArgSuggestionsSchoolsType
 
-	school - None
-	university - None
-	faculty - None
-	chair - None
 	"""
 	school = 0
 	university = 1
@@ -1035,9 +989,6 @@ class AdsTArgetGroup:
 class AdsUpdAteOfficeUsersResult:
 	"""VK Object AdsUpdAteOfficeUsersResult
 
-	user_id - No description
-	is_success - No description
-	error - No description
 	"""
 	user_id = None
 	is_success = None
@@ -1047,11 +998,6 @@ class AdsUpdAteOfficeUsersResult:
 class AdsUserSpecificAtion:
 	"""VK Object AdsUserSpecificAtion
 
-	user_id - No description
-	role - No description
-	grant_access_to_all_clients - No description
-	client_ids - No description
-	view_budget - No description
 	"""
 	user_id = None
 	role = None
@@ -1063,10 +1009,6 @@ class AdsUserSpecificAtion:
 class AdsUserSpecificAtionCutted:
 	"""VK Object AdsUserSpecificAtionCutted
 
-	user_id - No description
-	role - No description
-	client_id - No description
-	view_budget - No description
 	"""
 	user_id = None
 	role = None
@@ -1077,7 +1019,7 @@ class AdsUserSpecificAtionCutted:
 class AdsUsers:
 	"""VK Object AdsUsers
 
-	accesses - No description
+	accesses - 
 	user_id - User ID
 	"""
 	accesses = None
@@ -1087,8 +1029,6 @@ class AdsUsers:
 class AdswebGetAdCAtegoriesResponseCAtegoriesCAtegory:
 	"""VK Object AdswebGetAdCAtegoriesResponseCAtegoriesCAtegory
 
-	id - No description
-	name - No description
 	"""
 	id = None
 	name = None
@@ -1097,9 +1037,6 @@ class AdswebGetAdCAtegoriesResponseCAtegoriesCAtegory:
 class AdswebGetAdUnitsResponseAdUnitsAdUnit:
 	"""VK Object AdswebGetAdUnitsResponseAdUnitsAdUnit
 
-	id - No description
-	site_id - No description
-	name - No description
 	"""
 	id = None
 	site_id = None
@@ -1109,8 +1046,6 @@ class AdswebGetAdUnitsResponseAdUnitsAdUnit:
 class AdswebGetFrAudHistoryResponseEntriesEntry:
 	"""VK Object AdswebGetFrAudHistoryResponseEntriesEntry
 
-	site_id - No description
-	day - No description
 	"""
 	site_id = None
 	day = None
@@ -1119,10 +1054,6 @@ class AdswebGetFrAudHistoryResponseEntriesEntry:
 class AdswebGetSitesResponseSitesSite:
 	"""VK Object AdswebGetSitesResponseSitesSite
 
-	id - No description
-	status_user - No description
-	status_moder - No description
-	domains - No description
 	"""
 	id = None
 	status_user = None
@@ -1133,18 +1064,6 @@ class AdswebGetSitesResponseSitesSite:
 class AdswebGetStAtisticsResponseItemsItem:
 	"""VK Object AdswebGetStAtisticsResponseItemsItem
 
-	site_id - No description
-	ad_unit_id - No description
-	overall_count - No description
-	months_count - No description
-	month_min - No description
-	month_max - No description
-	days_count - No description
-	day_min - No description
-	day_max - No description
-	hours_count - No description
-	hour_min - No description
-	hour_max - No description
 	"""
 	site_id = None
 	ad_unit_id = None
@@ -1164,7 +1083,7 @@ class AppWidgetsPhoto:
 	"""VK Object AppWidgetsPhoto
 
 	id - Image ID
-	images - No description
+	images - 
 	"""
 	id = None
 	images = None
@@ -1173,8 +1092,6 @@ class AppWidgetsPhoto:
 class AppWidgetsPhotos:
 	"""VK Object AppWidgetsPhotos
 
-	count - No description
-	items - No description
 	"""
 	count = None
 	items = None
@@ -1190,14 +1107,14 @@ class AppsApp:
 	is_new - Is new flag
 	push_enabled - Is push enabled
 	screen_orientation - Screen orientation
-	friends - No description
+	friends - 
 	catalog_position - Catalog position
 	description - Application description
 	genre - Genre name
 	genre_id - Genre ID
 	international - Information whether the application is multilanguage
 	is_in_catalog - Information whether application is in mobile catalog
-	leaderboard_type - No description
+	leaderboard_type - 
 	members_count - Members number
 	platform_id - Application ID in store
 	published_date - Date when the application has been published in Unixtime
@@ -1224,12 +1141,21 @@ class AppsApp:
 	published_date = <built-in function iter>
 	screen_name = <built-in function iter>
 	section = <built-in function iter>
-None
+
+
+class AppsAppLeAderboArdType:
+	"""VK Object AppsAppLeAderboArdType
+
+	"""
+	not supported = 0
+	levels = 1
+	points = 2
+
 
 class AppsAppMin:
 	"""VK Object AppsAppMin
 
-	type - No description
+	type - 
 	id - Application ID
 	title - Application title
 	author_owner_id - Application author's ID
@@ -1259,14 +1185,6 @@ class AppsAppMin:
 class AppsAppType:
 	"""VK Object AppsAppType
 
-	app - None
-	game - None
-	site - None
-	standalone - None
-	vk_app - None
-	community_app - None
-	html5_game - None
-	mini_app - None
 	"""
 	app = 0
 	game = 1
@@ -1328,7 +1246,15 @@ class AudioAudio:
 	album_id = None
 	genre_id = None
 	performer = None
-None
+
+
+class BaseBoolInt:
+	"""VK Object BaseBoolInt
+
+	"""
+	no = 0
+	yes = 1
+
 
 class BaseCity:
 	"""VK Object BaseCity
@@ -1346,7 +1272,7 @@ class BaseCommentsInfo:
 	can_post - Information whether current user can comment the post
 	count - Comments number
 	groups_can_post - Information whether groups can comment the post
-	donut - No description
+	donut - 
 	"""
 	can_post = None
 	count = None
@@ -1367,9 +1293,6 @@ class BaseCountry:
 class BaseCropPhoto:
 	"""VK Object BaseCropPhoto
 
-	photo - No description
-	crop - No description
-	rect - No description
 	"""
 	photo = None
 	crop = None
@@ -1411,7 +1334,7 @@ class BaseError:
 	error_subcode - Error subcode
 	error_msg - Error message
 	error_text - Localized error message
-	request_params - No description
+	request_params - 
 	"""
 	error_code = None
 	error_subcode = None
@@ -1423,8 +1346,8 @@ class BaseError:
 class BaseGeo:
 	"""VK Object BaseGeo
 
-	coordinates - No description
-	place - No description
+	coordinates - 
+	place - 
 	showmap - Information whether a map is showed
 	type - Place type
 	"""
@@ -1437,8 +1360,6 @@ class BaseGeo:
 class BaseGeoCoordinates:
 	"""VK Object BaseGeoCoordinates
 
-	latitude - No description
-	longitude - No description
 	"""
 	latitude = None
 	longitude = None
@@ -1457,7 +1378,7 @@ class BaseGradientPoint:
 class BaseImage:
 	"""VK Object BaseImage
 
-	id - No description
+	id - 
 	height - Image height
 	url - Image url
 	width - Image width
@@ -1495,20 +1416,20 @@ class BaseLikesInfo:
 class BaseLink:
 	"""VK Object BaseLink
 
-	application - No description
-	button - No description
+	application - 
+	button - 
 	caption - Link caption
 	description - Link description
 	id - Link ID
-	is_favorite - No description
-	photo - No description
+	is_favorite - 
+	photo - 
 	preview_page - String ID of the page with article preview
 	preview_url - URL of the page with article preview
-	product - No description
-	rating - No description
+	product - 
+	rating - 
 	title - Link title
 	url - Link URL
-	target_object - No description
+	target_object - 
 	is_external - Information whether the current link is external
 	video - Video from link
 	"""
@@ -1534,7 +1455,7 @@ class BaseLinkApplication:
 	"""VK Object BaseLinkApplication
 
 	app_id - Application Id
-	store - No description
+	store - 
 	"""
 	app_id = None
 	store = None
@@ -1560,7 +1481,7 @@ class BaseLinkButton:
 	curator_id - curator id
 	owner_id - Owner id
 	icon - Button icon name, e.g. 'phone' or 'gift'
-	style - No description
+	style - 
 	"""
 	action = None
 	title = None
@@ -1575,9 +1496,9 @@ class BaseLinkButton:
 class BaseLinkButtonAction:
 	"""VK Object BaseLinkButtonAction
 
-	type - No description
+	type - 
 	url - Action URL
-	consume_reason - No description
+	consume_reason - 
 	"""
 	type = None
 	url = None
@@ -1587,7 +1508,6 @@ class BaseLinkButtonAction:
 class BaseLinkButtonActionType:
 	"""VK Object BaseLinkButtonActionType
 
-	open_url - None
 	"""
 	open_url = 0
 
@@ -1595,8 +1515,6 @@ class BaseLinkButtonActionType:
 class BaseLinkButtonStyle:
 	"""VK Object BaseLinkButtonStyle
 
-	primary - None
-	secondary - None
 	"""
 	primary = 0
 	secondary = 1
@@ -1605,9 +1523,6 @@ class BaseLinkButtonStyle:
 class BaseLinkProduct:
 	"""VK Object BaseLinkProduct
 
-	price - No description
-	merchant - No description
-	orders_count - No description
 	"""
 	price = None
 	merchant = None
@@ -1617,11 +1532,6 @@ class BaseLinkProduct:
 class BaseLinkProductStatus:
 	"""VK Object BaseLinkProductStatus
 
-	active - None
-	blocked - None
-	sold - None
-	deleted - None
-	archived - None
 	"""
 	active = 0
 	blocked = 1
@@ -1704,7 +1614,14 @@ class BasePlace:
 	longitude = None
 	title = None
 	type = None
-None
+
+
+class BasePropertyExists:
+	"""VK Object BasePropertyExists
+
+	"""
+	Property exists = 1
+
 
 class BaseRepostsInfo:
 	"""VK Object BaseRepostsInfo
@@ -1728,15 +1645,24 @@ class BaseRequestParam:
 	"""
 	key = None
 	value = None
-None
+
+
+class BaseSex:
+	"""VK Object BaseSex
+
+	"""
+	unknown = 0
+	female = 1
+	male = 2
+
 
 class BaseSticker:
 	"""VK Object BaseSticker
 
 	sticker_id - Sticker ID
 	product_id - Pack ID
-	images - No description
-	images_with_background - No description
+	images - 
+	images_with_background - 
 	animation_url - URL of sticker animation script
 	animations - Array of sticker animation script objects
 	is_allowed - Information whether the sticker is allowed
@@ -1771,106 +1697,6 @@ class BaseUploadServer:
 class BaseUserGroupFields:
 	"""VK Object BaseUserGroupFields
 
-	about - None
-	action_button - None
-	activities - None
-	activity - None
-	addresses - None
-	admin_level - None
-	age_limits - None
-	author_id - None
-	ban_info - None
-	bdate - None
-	blacklisted - None
-	blacklisted_by_me - None
-	books - None
-	can_create_topic - None
-	can_message - None
-	can_post - None
-	can_see_all_posts - None
-	can_see_audio - None
-	can_send_friend_request - None
-	can_upload_video - None
-	can_write_private_message - None
-	career - None
-	city - None
-	common_count - None
-	connections - None
-	contacts - None
-	counters - None
-	country - None
-	cover - None
-	crop_photo - None
-	deactivated - None
-	description - None
-	domain - None
-	education - None
-	exports - None
-	finish_date - None
-	fixed_post - None
-	followers_count - None
-	friend_status - None
-	games - None
-	has_market_app - None
-	has_mobile - None
-	has_photo - None
-	home_town - None
-	id - None
-	interests - None
-	is_admin - None
-	is_closed - None
-	is_favorite - None
-	is_friend - None
-	is_hidden_from_feed - None
-	is_member - None
-	is_messages_blocked - None
-	can_send_notify - None
-	is_subscribed - None
-	last_seen - None
-	links - None
-	lists - None
-	maiden_name - None
-	main_album_id - None
-	main_section - None
-	market - None
-	member_status - None
-	members_count - None
-	military - None
-	movies - None
-	music - None
-	name - None
-	nickname - None
-	occupation - None
-	online - None
-	online_status - None
-	personal - None
-	phone - None
-	photo_100 - None
-	photo_200 - None
-	photo_200_orig - None
-	photo_400_orig - None
-	photo_50 - None
-	photo_id - None
-	photo_max - None
-	photo_max_orig - None
-	quotes - None
-	relation - None
-	relatives - None
-	schools - None
-	screen_name - None
-	sex - None
-	site - None
-	start_date - None
-	status - None
-	timezone - None
-	trending - None
-	tv - None
-	type - None
-	universities - None
-	verified - None
-	wall_comments - None
-	wiki_page - None
-	vk_admin_status - None
 	"""
 	about = 0
 	action_button = 1
@@ -1980,7 +1806,17 @@ class BaseUserId:
 	user_id - User ID
 	"""
 	user_id = None
-None
+
+
+class BoardDefaultOrder:
+	"""VK Object BoardDefaultOrder
+
+	"""
+	desc_updated = 1
+	desc_created = 2
+	asc_updated = -1
+	asc_created = -2
+
 
 class BoardTopic:
 	"""VK Object BoardTopic
@@ -2009,14 +1845,14 @@ class BoardTopic:
 class BoardTopicComment:
 	"""VK Object BoardTopicComment
 
-	attachments - No description
+	attachments - 
 	date - Date when the comment has been added in Unixtime
 	from_id - Author ID
 	id - Comment ID
 	real_offset - Real position of the comment
 	text - Comment text
 	can_edit - Information whether current user can edit the comment
-	likes - No description
+	likes - 
 	"""
 	attachments = None
 	date = None
@@ -2038,7 +1874,7 @@ class BoardTopicPoll:
 	question - Poll question
 	votes - Votes number
 	answer_id - Current user's answer ID
-	answers - No description
+	answers - 
 	"""
 	owner_id = None
 	poll_id = None
@@ -2053,9 +1889,6 @@ class BoardTopicPoll:
 class CallbaCkBoardPostDelete:
 	"""VK Object CallbaCkBoardPostDelete
 
-	topic_owner_id - No description
-	topic_id - No description
-	id - No description
 	"""
 	topic_owner_id = None
 	topic_id = None
@@ -2065,9 +1898,6 @@ class CallbaCkBoardPostDelete:
 class CallbaCkConfirmationMessage:
 	"""VK Object CallbaCkConfirmationMessage
 
-	type - No description
-	group_id - No description
-	secret - No description
 	"""
 	type = None
 	group_id = None
@@ -2077,8 +1907,6 @@ class CallbaCkConfirmationMessage:
 class CallbaCkDonutMoneyWithdraw:
 	"""VK Object CallbaCkDonutMoneyWithdraw
 
-	amount - No description
-	amount_without_fee - No description
 	"""
 	amount = None
 	amount_without_fee = None
@@ -2087,7 +1915,6 @@ class CallbaCkDonutMoneyWithdraw:
 class CallbaCkDonutMoneyWithdrawError:
 	"""VK Object CallbaCkDonutMoneyWithdrawError
 
-	reason - No description
 	"""
 	reason = None
 
@@ -2095,7 +1922,6 @@ class CallbaCkDonutMoneyWithdrawError:
 class CallbaCkDonutSubsCriptionCanCelled:
 	"""VK Object CallbaCkDonutSubsCriptionCanCelled
 
-	user_id - No description
 	"""
 	user_id = None
 
@@ -2103,9 +1929,6 @@ class CallbaCkDonutSubsCriptionCanCelled:
 class CallbaCkDonutSubsCriptionCreate:
 	"""VK Object CallbaCkDonutSubsCriptionCreate
 
-	user_id - No description
-	amount - No description
-	amount_without_fee - No description
 	"""
 	user_id = None
 	amount = None
@@ -2115,7 +1938,6 @@ class CallbaCkDonutSubsCriptionCreate:
 class CallbaCkDonutSubsCriptionExpired:
 	"""VK Object CallbaCkDonutSubsCriptionExpired
 
-	user_id - No description
 	"""
 	user_id = None
 
@@ -2123,11 +1945,6 @@ class CallbaCkDonutSubsCriptionExpired:
 class CallbaCkDonutSubsCriptionPriCeChanged:
 	"""VK Object CallbaCkDonutSubsCriptionPriCeChanged
 
-	user_id - No description
-	amount_old - No description
-	amount_new - No description
-	amount_diff - No description
-	amount_diff_without_fee - No description
 	"""
 	user_id = None
 	amount_old = None
@@ -2139,9 +1956,6 @@ class CallbaCkDonutSubsCriptionPriCeChanged:
 class CallbaCkDonutSubsCriptionProlonged:
 	"""VK Object CallbaCkDonutSubsCriptionProlonged
 
-	user_id - No description
-	amount - No description
-	amount_without_fee - No description
 	"""
 	user_id = None
 	amount = None
@@ -2151,8 +1965,6 @@ class CallbaCkDonutSubsCriptionProlonged:
 class CallbaCkGroupChangePhoto:
 	"""VK Object CallbaCkGroupChangePhoto
 
-	user_id - No description
-	photo - No description
 	"""
 	user_id = None
 	photo = None
@@ -2161,8 +1973,6 @@ class CallbaCkGroupChangePhoto:
 class CallbaCkGroupChangeSettings:
 	"""VK Object CallbaCkGroupChangeSettings
 
-	user_id - No description
-	self - No description
 	"""
 	user_id = None
 	self = None
@@ -2171,8 +1981,6 @@ class CallbaCkGroupChangeSettings:
 class CallbaCkGroupJoin:
 	"""VK Object CallbaCkGroupJoin
 
-	user_id - No description
-	join_type - No description
 	"""
 	user_id = None
 	join_type = None
@@ -2181,11 +1989,6 @@ class CallbaCkGroupJoin:
 class CallbaCkGroupJoinType:
 	"""VK Object CallbaCkGroupJoinType
 
-	join - None
-	unsure - None
-	accepted - None
-	approved - None
-	request - None
 	"""
 	join = 0
 	unsure = 1
@@ -2197,20 +2000,32 @@ class CallbaCkGroupJoinType:
 class CallbaCkGroupLeave:
 	"""VK Object CallbaCkGroupLeave
 
-	user_id - No description
-	self - No description
 	"""
 	user_id = None
 	self = None
-NoneNone
+
+
+class CallbaCkGroupMarket:
+	"""VK Object CallbaCkGroupMarket
+
+	"""
+	disabled = 0
+	open = 1
+
+
+class CallbaCkGroupOffiCerRole:
+	"""VK Object CallbaCkGroupOffiCerRole
+
+	"""
+	none = 0
+	moderator = 1
+	editor = 2
+	administrator = 3
+
 
 class CallbaCkGroupOffiCersEdit:
 	"""VK Object CallbaCkGroupOffiCersEdit
 
-	admin_id - No description
-	user_id - No description
-	level_old - No description
-	level_new - No description
 	"""
 	admin_id = None
 	user_id = None
@@ -2221,19 +2036,6 @@ class CallbaCkGroupOffiCersEdit:
 class CallbaCkGroupSettingsChanges:
 	"""VK Object CallbaCkGroupSettingsChanges
 
-	title - No description
-	description - No description
-	access - No description
-	screen_name - No description
-	public_category - No description
-	public_subcategory - No description
-	age_limits - No description
-	website - No description
-	enable_status_default - No description
-	enable_audio - No description
-	enable_video - No description
-	enable_photo - No description
-	enable_market - No description
 	"""
 	title = None
 	description = None
@@ -2253,12 +2055,6 @@ class CallbaCkGroupSettingsChanges:
 class CallbaCkLikeAddRemove:
 	"""VK Object CallbaCkLikeAddRemove
 
-	liker_id - No description
-	object_type - No description
-	object_owner_id - No description
-	object_id - No description
-	post_id - No description
-	thread_reply_id - No description
 	"""
 	liker_id = None
 	object_type = None
@@ -2271,12 +2067,6 @@ class CallbaCkLikeAddRemove:
 class CallbaCkMarketComment:
 	"""VK Object CallbaCkMarketComment
 
-	id - No description
-	from_id - No description
-	date - No description
-	text - No description
-	market_owner_od - No description
-	photo_id - No description
 	"""
 	id = None
 	from_id = None
@@ -2289,10 +2079,6 @@ class CallbaCkMarketComment:
 class CallbaCkMarketCommentDelete:
 	"""VK Object CallbaCkMarketCommentDelete
 
-	owner_id - No description
-	id - No description
-	user_id - No description
-	item_id - No description
 	"""
 	owner_id = None
 	id = None
@@ -2303,8 +2089,6 @@ class CallbaCkMarketCommentDelete:
 class CallbaCkMessageAllow:
 	"""VK Object CallbaCkMessageAllow
 
-	user_id - No description
-	key - No description
 	"""
 	user_id = None
 	key = None
@@ -2313,9 +2097,6 @@ class CallbaCkMessageAllow:
 class CallbaCkMessageBase:
 	"""VK Object CallbaCkMessageBase
 
-	type - No description
-	object - No description
-	group_id - No description
 	"""
 	type = None
 	object = None
@@ -2325,7 +2106,6 @@ class CallbaCkMessageBase:
 class CallbaCkMessageDeny:
 	"""VK Object CallbaCkMessageDeny
 
-	user_id - No description
 	"""
 	user_id = None
 
@@ -2333,49 +2113,6 @@ class CallbaCkMessageDeny:
 class CallbaCkMessageType:
 	"""VK Object CallbaCkMessageType
 
-	audio_new - None
-	board_post_new - None
-	board_post_edit - None
-	board_post_restore - None
-	board_post_delete - None
-	confirmation - None
-	group_leave - None
-	group_join - None
-	group_change_photo - None
-	group_change_settings - None
-	group_officers_edit - None
-	lead_forms_new - None
-	market_comment_new - None
-	market_comment_delete - None
-	market_comment_edit - None
-	market_comment_restore - None
-	message_allow - None
-	message_new - None
-	message_deny - None
-	message_read - None
-	message_reply - None
-	message_edit - None
-	message_typing_state - None
-	messages_edit - None
-	photo_new - None
-	photo_comment_new - None
-	photo_comment_delete - None
-	photo_comment_edit - None
-	photo_comment_restore - None
-	poll_vote_new - None
-	user_block - None
-	user_unblock - None
-	video_new - None
-	video_comment_new - None
-	video_comment_delete - None
-	video_comment_edit - None
-	video_comment_restore - None
-	wall_post_new - None
-	wall_reply_new - None
-	wall_reply_edit - None
-	wall_reply_delete - None
-	wall_reply_restore - None
-	wall_repost - None
 	"""
 	audio_new = 0
 	board_post_new = 1
@@ -2425,11 +2162,6 @@ class CallbaCkMessageType:
 class CallbaCkPhotoComment:
 	"""VK Object CallbaCkPhotoComment
 
-	id - No description
-	from_id - No description
-	date - No description
-	text - No description
-	photo_owner_od - No description
 	"""
 	id = None
 	from_id = None
@@ -2441,10 +2173,6 @@ class CallbaCkPhotoComment:
 class CallbaCkPhotoCommentDelete:
 	"""VK Object CallbaCkPhotoCommentDelete
 
-	id - No description
-	owner_id - No description
-	user_id - No description
-	photo_id - No description
 	"""
 	id = None
 	owner_id = None
@@ -2455,10 +2183,6 @@ class CallbaCkPhotoCommentDelete:
 class CallbaCkPollVoteNew:
 	"""VK Object CallbaCkPollVoteNew
 
-	owner_id - No description
-	poll_id - No description
-	option_id - No description
-	user_id - No description
 	"""
 	owner_id = None
 	poll_id = None
@@ -2469,11 +2193,6 @@ class CallbaCkPollVoteNew:
 class CallbaCkQrSCan:
 	"""VK Object CallbaCkQrSCan
 
-	user_id - No description
-	data - No description
-	type - No description
-	subtype - No description
-	reread - No description
 	"""
 	user_id = None
 	data = None
@@ -2485,11 +2204,6 @@ class CallbaCkQrSCan:
 class CallbaCkUserBloCk:
 	"""VK Object CallbaCkUserBloCk
 
-	admin_id - No description
-	user_id - No description
-	unblock_date - No description
-	reason - No description
-	comment - No description
 	"""
 	admin_id = None
 	user_id = None
@@ -2501,9 +2215,6 @@ class CallbaCkUserBloCk:
 class CallbaCkUserUnbloCk:
 	"""VK Object CallbaCkUserUnbloCk
 
-	admin_id - No description
-	user_id - No description
-	by_end_date - No description
 	"""
 	admin_id = None
 	user_id = None
@@ -2513,11 +2224,6 @@ class CallbaCkUserUnbloCk:
 class CallbaCkVideoComment:
 	"""VK Object CallbaCkVideoComment
 
-	id - No description
-	from_id - No description
-	date - No description
-	text - No description
-	video_owner_od - No description
 	"""
 	id = None
 	from_id = None
@@ -2529,10 +2235,6 @@ class CallbaCkVideoComment:
 class CallbaCkVideoCommentDelete:
 	"""VK Object CallbaCkVideoCommentDelete
 
-	id - No description
-	owner_id - No description
-	user_id - No description
-	video_id - No description
 	"""
 	id = None
 	owner_id = None
@@ -2543,10 +2245,6 @@ class CallbaCkVideoCommentDelete:
 class CallbaCkWallCommentDelete:
 	"""VK Object CallbaCkWallCommentDelete
 
-	owner_id - No description
-	id - No description
-	user_id - No description
-	post_id - No description
 	"""
 	owner_id = None
 	id = None
@@ -2560,7 +2258,7 @@ class CallsCall:
 	duration - Call duration
 	initiator_id - Caller initiator
 	receiver_id - Caller receiver
-	state - No description
+	state - 
 	time - Timestamp for call
 	video - Was this call initiated as video call
 	"""
@@ -2575,9 +2273,6 @@ class CallsCall:
 class CallsEndState:
 	"""VK Object CallsEndState
 
-	canceled_by_initiator - None
-	canceled_by_receiver - None
-	reached - None
 	"""
 	canceled_by_initiator = 0
 	canceled_by_receiver = 1
@@ -2587,7 +2282,7 @@ class CallsEndState:
 class CallsPartiCipants:
 	"""VK Object CallsPartiCipants
 
-	list - No description
+	list - 
 	count - Participants count
 	"""
 	list = None
@@ -2600,7 +2295,7 @@ class CommentThread:
 	can_post - Information whether current user can comment the post
 	count - Comments number
 	groups_can_post - Information whether groups can comment the post
-	items - No description
+	items - 
 	show_reply_button - Information whether recommended to display reply button
 	"""
 	can_post = None
@@ -2687,8 +2382,8 @@ class DocsDoc:
 	url - File URL
 	date - Date when file has been uploaded in Unixtime
 	type - Document type
-	preview - No description
-	is_licensed - No description
+	preview - 
+	is_licensed - 
 	access_key - Access key for the document
 	tags - Document tags
 	"""
@@ -2709,9 +2404,6 @@ class DocsDoc:
 class DocsDocAttachmentType:
 	"""VK Object DocsDocAttachmentType
 
-	doc - None
-	graffiti - None
-	audio_message - None
 	"""
 	doc = 0
 	graffiti = 1
@@ -2721,10 +2413,6 @@ class DocsDocAttachmentType:
 class DocsDocPreview:
 	"""VK Object DocsDocPreview
 
-	audio_msg - No description
-	graffiti - No description
-	photo - No description
-	video - No description
 	"""
 	audio_msg = None
 	graffiti = None
@@ -2738,7 +2426,7 @@ class DocsDocPreviewAuDioMsg:
 	duration - Audio message duration in seconds
 	link_mp3 - MP3 file URL
 	link_ogg - OGG file URL
-	waveform - No description
+	waveform - 
 	"""
 	duration = None
 	link_mp3 = None
@@ -2761,7 +2449,6 @@ class DocsDocPreviewGraffiti:
 class DocsDocPreviewPhoto:
 	"""VK Object DocsDocPreviewPhoto
 
-	sizes - No description
 	"""
 	sizes = None
 
@@ -2772,7 +2459,7 @@ class DocsDocPreviewPhotoSizes:
 	src - URL of the image
 	width - Width in px
 	height - Height in px
-	type - No description
+	type - 
 	"""
 	src = None
 	width = None
@@ -2809,10 +2496,6 @@ class DocsDocTypes:
 class DonutDonatorSubscriptionInfo:
 	"""VK Object DonutDonatorSubscriptionInfo
 
-	owner_id - No description
-	next_payment_date - No description
-	amount - No description
-	status - No description
 	"""
 	owner_id = None
 	next_payment_date = None
@@ -2846,13 +2529,13 @@ class FaveBookmark:
 	"""VK Object FaveBookmark
 
 	added_date - Timestamp, when this item was bookmarked
-	link - No description
-	post - No description
-	product - No description
+	link - 
+	post - 
+	product - 
 	seen - Has user seen this item
-	tags - No description
+	tags - 
 	type - Item type
-	video - No description
+	video - 
 	"""
 	added_date = None
 	link = None
@@ -2867,11 +2550,6 @@ class FaveBookmark:
 class FaveBookmarkType:
 	"""VK Object FaveBookmarkType
 
-	post - None
-	video - None
-	product - None
-	article - None
-	link - None
 	"""
 	post = 0
 	video = 1
@@ -2884,11 +2562,11 @@ class FavePage:
 	"""VK Object FavePage
 
 	description - Some info about user or group
-	group - No description
-	tags - No description
+	group - 
+	tags - 
 	type - Item type
 	updated_date - Timestamp, when this page was bookmarked
-	user - No description
+	user - 
 	"""
 	description = None
 	group = None
@@ -2901,9 +2579,6 @@ class FavePage:
 class FavePageType:
 	"""VK Object FavePageType
 
-	user - None
-	group - None
-	hints - None
 	"""
 	user = 0
 	group = 1
@@ -2931,14 +2606,24 @@ class FriendsFriendExtendedStatus:
 class FriendsFriendStatus:
 	"""VK Object FriendsFriendStatus
 
-	friend_status - No description
+	friend_status - 
 	sign - MD5 hash for the result validation
 	user_id - User ID
 	"""
 	friend_status = None
 	sign = None
 	user_id = None
-None
+
+
+class FriendsFriendStatusStatus:
+	"""VK Object FriendsFriendStatusStatus
+
+	"""
+	not a friend = 0
+	outcoming request = 1
+	incoming request = 2
+	is friend = 3
+
 
 class FriendsFriendsList:
 	"""VK Object FriendsFriendsList
@@ -2954,7 +2639,7 @@ class FriendsMutualFriend:
 	"""VK Object FriendsMutualFriend
 
 	common_count - Total mutual friends number
-	common_friends - No description
+	common_friends - 
 	id - User ID
 	"""
 	common_count = None
@@ -2966,7 +2651,7 @@ class FriendsRequests:
 	"""VK Object FriendsRequests
 
 	from - ID of the user by whom friend has been suggested
-	mutual - No description
+	mutual - 
 	user_id - User ID
 	"""
 	_from = None
@@ -2978,7 +2663,7 @@ class FriendsRequestsMutual:
 	"""VK Object FriendsRequestsMutual
 
 	count - Total mutual friends number
-	users - No description
+	users - 
 	"""
 	count = None
 	users = None
@@ -2989,7 +2674,7 @@ class FriendsRequestsXtrMessage:
 
 	from - ID of the user by whom friend has been suggested
 	message - Message sent with a request
-	mutual - No description
+	mutual - 
 	user_id - User ID
 	"""
 	_from = None
@@ -3001,7 +2686,6 @@ class FriendsRequestsXtrMessage:
 class FriendsUserXtrLists:
 	"""VK Object FriendsUserXtrLists
 
-	lists - No description
 	"""
 	lists = <built-in function iter>
 
@@ -3019,11 +2703,11 @@ class GiftsGift:
 
 	date - Date when gist has been sent in Unixtime
 	from_id - Gift sender ID
-	gift - No description
+	gift - 
 	gift_hash - Hash
 	id - Gift ID
 	message - Comment text
-	privacy - No description
+	privacy - 
 	"""
 	date = None
 	from_id = None
@@ -3032,7 +2716,16 @@ class GiftsGift:
 	id = None
 	message = None
 	privacy = None
-None
+
+
+class GiftsGiftPrivacy:
+	"""VK Object GiftsGiftPrivacy
+
+	"""
+	name and message for all = 0
+	name for all = 1
+	name and message for recipient only = 2
+
 
 class GiftsLayout:
 	"""VK Object GiftsLayout
@@ -3129,11 +2822,6 @@ class GroupsAddressTimetableDay:
 class GroupsAddressWorkInfoStatus:
 	"""VK Object GroupsAddressWorkInfoStatus
 
-	no_information - None
-	temporarily_closed - None
-	always_opened - None
-	timetable - None
-	forever_closed - None
 	"""
 	no_information = 0
 	temporarily_closed = 1
@@ -3158,10 +2846,10 @@ class GroupsBanInfo:
 	admin_id - Administrator ID
 	comment - Comment for a ban
 	comment_visible - Show comment for user
-	is_closed - No description
+	is_closed - 
 	date - Date when user has been added to blacklist in Unixtime
 	end_date - Date when user will be removed from blacklist in Unixtime
-	reason - No description
+	reason - 
 	"""
 	admin_id = None
 	comment = None
@@ -3170,7 +2858,18 @@ class GroupsBanInfo:
 	date = None
 	end_date = None
 	reason = None
-None
+
+
+class GroupsBanInfoReason:
+	"""VK Object GroupsBanInfoReason
+
+	"""
+	other = 0
+	spam = 1
+	verbal abuse = 2
+	strong language = 3
+	flood = 4
+
 
 class GroupsBannedItem:
 	"""VK Object GroupsBannedItem
@@ -3181,12 +2880,6 @@ class GroupsBannedItem:
 class GroupsCallbackServer:
 	"""VK Object GroupsCallbackServer
 
-	id - No description
-	title - No description
-	creator_id - No description
-	url - No description
-	secret_key - No description
-	status - No description
 	"""
 	id = None
 	title = None
@@ -3200,7 +2893,7 @@ class GroupsCallbackSettinGs:
 	"""VK Object GroupsCallbackSettinGs
 
 	api_version - API version used for the events
-	events - No description
+	events - 
 	"""
 	api_version = None
 	events = None
@@ -3248,7 +2941,7 @@ class GroupsCover:
 	"""VK Object GroupsCover
 
 	enabled - Information whether cover is enabled
-	images - No description
+	images - 
 	"""
 	enabled = None
 	images = None
@@ -3257,66 +2950,6 @@ class GroupsCover:
 class GroupsFields:
 	"""VK Object GroupsFields
 
-	market - None
-	member_status - None
-	is_favorite - None
-	is_subscribed - None
-	is_subscribed_podcasts - None
-	can_subscribe_podcasts - None
-	city - None
-	country - None
-	verified - None
-	description - None
-	wiki_page - None
-	members_count - None
-	requests_count - None
-	counters - None
-	cover - None
-	can_post - None
-	can_suggest - None
-	can_upload_story - None
-	can_upload_doc - None
-	can_upload_video - None
-	can_see_all_posts - None
-	can_create_topic - None
-	activity - None
-	fixed_post - None
-	has_photo - None
-	status - None
-	main_album_id - None
-	links - None
-	contacts - None
-	site - None
-	main_section - None
-	secondary_section - None
-	wall - None
-	trending - None
-	can_message - None
-	is_market_cart_enabled - None
-	is_messages_blocked - None
-	can_send_notify - None
-	has_group_channel - None
-	group_channel - None
-	online_status - None
-	start_date - None
-	finish_date - None
-	age_limits - None
-	ban_info - None
-	action_button - None
-	author_id - None
-	phone - None
-	has_market_app - None
-	addresses - None
-	live_covers - None
-	is_adult - None
-	can_subscribe_posts - None
-	warning_notification - None
-	msg_push_allowed - None
-	stories_archive_count - None
-	video_live_level - None
-	video_live_count - None
-	clips_count - None
-	is_business - None
 	"""
 	market = 0
 	member_status = 1
@@ -3383,14 +3016,6 @@ class GroupsFields:
 class GroupsFilter:
 	"""VK Object GroupsFilter
 
-	admin - None
-	editor - None
-	moder - None
-	advertiser - None
-	groups - None
-	publics - None
-	events - None
-	has_addresses - None
 	"""
 	admin = 0
 	editor = 1
@@ -3408,10 +3033,10 @@ class GroupsGroup:
 	id - Community ID
 	name - Community name
 	screen_name - Domain of the community page
-	is_closed - No description
-	type - No description
+	is_closed - 
+	type - 
 	is_admin - Information whether current user is administrator
-	admin_level - No description
+	admin_level - 
 	is_member - Information whether current user is member
 	is_advertiser - Information whether current user is advertiser
 	start_date - Start date in Unixtime format
@@ -3436,7 +3061,34 @@ class GroupsGroup:
 	photo_50 = None
 	photo_100 = None
 	photo_200 = None
-NoneNoneNone
+
+
+class GroupsGroupAccess:
+	"""VK Object GroupsGroupAccess
+
+	"""
+	open = 0
+	closed = 1
+	private = 2
+
+
+class GroupsGroupAdminLevel:
+	"""VK Object GroupsGroupAdminLevel
+
+	"""
+	moderator = 1
+	editor = 2
+	administrator = 3
+
+
+class GroupsGroupAGeLimits:
+	"""VK Object GroupsGroupAGeLimits
+
+	"""
+	unlimited = 1
+	_16 plus = 2
+	_18 plus = 3
+
 
 class GroupsGroupAttach:
 	"""VK Object GroupsGroupAttach
@@ -3452,14 +3104,23 @@ class GroupsGroupAttach:
 	status = None
 	size = None
 	is_favorite = None
-None
+
+
+class GroupsGroupAudio:
+	"""VK Object GroupsGroupAudio
+
+	"""
+	disabled = 0
+	open = 1
+	limited = 2
+
 
 class GroupsGroupBanInfo:
 	"""VK Object GroupsGroupBanInfo
 
 	comment - Ban comment
 	end_date - End date of ban in Unixtime
-	reason - No description
+	reason - 
 	"""
 	comment = None
 	end_date = None
@@ -3471,7 +3132,7 @@ class GroupsGroupCateGory:
 
 	id - Category ID
 	name - Category name
-	subcategories - No description
+	subcategories - 
 	"""
 	id = None
 	name = None
@@ -3484,8 +3145,8 @@ class GroupsGroupCateGoryFull:
 	id - Category ID
 	name - Category name
 	page_count - Pages number
-	page_previews - No description
-	subcategories - No description
+	page_previews - 
+	subcategories - 
 	"""
 	id = None
 	name = None
@@ -3497,24 +3158,31 @@ class GroupsGroupCateGoryFull:
 class GroupsGroupCateGoryType:
 	"""VK Object GroupsGroupCateGoryType
 
-	id - No description
-	name - No description
 	"""
 	id = None
 	name = None
-None
+
+
+class GroupsGroupDocs:
+	"""VK Object GroupsGroupDocs
+
+	"""
+	disabled = 0
+	open = 1
+	limited = 2
+
 
 class GroupsGroupFull:
 	"""VK Object GroupsGroupFull
 
-	market - No description
+	market - 
 	member_status - Current user's member status
 	is_adult - Information whether community is adult
 	is_hidden_from_feed - Information whether community is hidden from current user's newsfeed
 	is_favorite - Information whether community is in faves
 	is_subscribed - Information whether current user is subscribed
-	city - No description
-	country - No description
+	city - 
+	country - 
 	verified - Information whether community is verified
 	description - Community description
 	wiki_page - Community's main wiki page title
@@ -3523,10 +3191,10 @@ class GroupsGroupFull:
 	video_live_level - Community level live streams achievements
 	video_live_count - Number of community's live streams
 	clips_count - Number of community's clips
-	counters - No description
-	cover - No description
+	counters - 
+	cover - 
 	can_post - Information whether current user can post on community's wall
-	can_suggest - No description
+	can_suggest - 
 	can_upload_story - Information whether current user can upload story
 	can_upload_doc - Information whether current user can upload doc
 	can_upload_video - Information whether current user can upload video
@@ -3537,14 +3205,14 @@ class GroupsGroupFull:
 	has_photo - Information whether community has photo
 	crop_photo - Данные о точках, по которым вырезаны профильная и миниатюрная фотографии сообщества
 	status - Community status
-	status_audio - No description
+	status_audio - 
 	main_album_id - Community's main photo album ID
-	links - No description
-	contacts - No description
+	links - 
+	contacts - 
 	wall - Information about wall status in community
 	site - Community's website
-	main_section - No description
-	secondary_section - No description
+	main_section - 
+	secondary_section - 
 	trending - Information whether the community has a "fire" pictogram.
 	can_message - Information whether current user can send a message to community
 	is_messages_blocked - Information whether community can send a message to current user
@@ -3554,14 +3222,14 @@ class GroupsGroupFull:
 	age_limits - Information whether age limit
 	ban_info - User ban info
 	has_market_app - Information whether community has installed market app
-	using_vkpay_market_app - No description
-	has_group_channel - No description
+	using_vkpay_market_app - 
+	has_group_channel - 
 	addresses - Info about addresses in groups
 	is_subscribed_podcasts - Information whether current user is subscribed to podcasts
 	can_subscribe_podcasts - Owner in whitelist or not
 	can_subscribe_posts - Can subscribe to wall
 	live_covers - Live covers state
-	stories_archive_count - No description
+	stories_archive_count - 
 	"""
 	market = <built-in function iter>
 	member_status = <built-in function iter>
@@ -3618,7 +3286,49 @@ class GroupsGroupFull:
 	can_subscribe_posts = <built-in function iter>
 	live_covers = <built-in function iter>
 	stories_archive_count = <built-in function iter>
-NoneNoneNoneNone
+
+
+class GroupsGroupFullAGeLimits:
+	"""VK Object GroupsGroupFullAGeLimits
+
+	"""
+	no = 1
+	over 16 = 2
+	over 18 = 3
+
+
+class GroupsGroupFullMainSection:
+	"""VK Object GroupsGroupFullMainSection
+
+	"""
+	absent = 0
+	photos = 1
+	topics = 2
+	audio = 3
+	video = 4
+	market = 5
+
+
+class GroupsGroupFullMemberStatus:
+	"""VK Object GroupsGroupFullMemberStatus
+
+	"""
+	not a member = 0
+	member = 1
+	not sure = 2
+	declined = 3
+	has sent a request = 4
+	invited = 5
+
+
+class GroupsGroupIsClosed:
+	"""VK Object GroupsGroupIsClosed
+
+	"""
+	open = 0
+	closed = 1
+	private = 2
+
 
 class GroupsGroupLink:
 	"""VK Object GroupsGroupLink
@@ -3636,14 +3346,31 @@ class GroupsGroupLink:
 	id = None
 	image_processing = None
 	url = None
-NoneNone
+
+
+class GroupsGroupMarketCurrency:
+	"""VK Object GroupsGroupMarketCurrency
+
+	"""
+	russian rubles = 643
+	ukrainian hryvnia = 980
+	kazakh tenge = 398
+	euro = 978
+	us dollars = 840
+
+
+class GroupsGroupPhotos:
+	"""VK Object GroupsGroupPhotos
+
+	"""
+	disabled = 0
+	open = 1
+	limited = 2
+
 
 class GroupsGroupPublicCateGoryList:
 	"""VK Object GroupsGroupPublicCateGoryList
 
-	id - No description
-	name - No description
-	subcategories - No description
 	"""
 	id = None
 	name = None
@@ -3653,10 +3380,6 @@ class GroupsGroupPublicCateGoryList:
 class GroupsGroupRole:
 	"""VK Object GroupsGroupRole
 
-	moderator - None
-	editor - None
-	administrator - None
-	advertiser - None
 	"""
 	moderator = 0
 	editor = 1
@@ -3667,48 +3390,6 @@ class GroupsGroupRole:
 class GroupsGroupSubject:
 	"""VK Object GroupsGroupSubject
 
-	auto - None
-	activity holidays - None
-	business - None
-	pets - None
-	health - None
-	dating and communication - None
-	games - None
-	it - None
-	cinema - None
-	beauty and fashion - None
-	cooking - None
-	art and culture - None
-	literature - None
-	mobile services and internet - None
-	music - None
-	science and technology - None
-	real estate - None
-	news and media - None
-	security - None
-	education - None
-	home and renovations - None
-	politics - None
-	food - None
-	industry - None
-	travel - None
-	work - None
-	entertainment - None
-	religion - None
-	family - None
-	sports - None
-	insurance - None
-	television - None
-	goods and services - None
-	hobbies - None
-	finance - None
-	photo - None
-	esoterics - None
-	electronics and appliances - None
-	erotic - None
-	humor - None
-	society_humanities - None
-	design and graphics - None
 	"""
 	auto = 1
 	activity holidays = 2
@@ -3752,39 +3433,78 @@ class GroupsGroupSubject:
 	humor = 40
 	society_humanities = 41
 	design and graphics = 42
-None
+
+
+class GroupsGroupSuGGestedPrivacy:
+	"""VK Object GroupsGroupSuGGestedPrivacy
+
+	"""
+	none = 0
+	all = 1
+	subscribers = 2
+
 
 class GroupsGroupTaG:
 	"""VK Object GroupsGroupTaG
 
-	id - No description
-	name - No description
-	color - No description
-	uses - No description
 	"""
 	id = None
 	name = None
 	color = None
 	uses = None
-None
+
+
+class GroupsGroupTopics:
+	"""VK Object GroupsGroupTopics
+
+	"""
+	disabled = 0
+	open = 1
+	limited = 2
+
 
 class GroupsGroupType:
 	"""VK Object GroupsGroupType
 
-	group - None
-	page - None
-	event - None
 	"""
 	group = 0
 	page = 1
 	event = 2
-NoneNoneNone
+
+
+class GroupsGroupVideo:
+	"""VK Object GroupsGroupVideo
+
+	"""
+	disabled = 0
+	open = 1
+	limited = 2
+
+
+class GroupsGroupWall:
+	"""VK Object GroupsGroupWall
+
+	"""
+	disabled = 0
+	open = 1
+	limited = 2
+	closed = 3
+
+
+class GroupsGroupWiki:
+	"""VK Object GroupsGroupWiki
+
+	"""
+	disabled = 0
+	open = 1
+	limited = 2
+
 
 class GroupsGroupsArray:
 	"""VK Object GroupsGroupsArray
 
 	count - Communities number
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -3815,7 +3535,7 @@ class GroupsLiveCovers:
 
 	is_enabled - Information whether live covers is enabled
 	is_scalable - Information whether live covers photo scaling is enabled
-	story_ids - No description
+	story_ids - 
 	"""
 	is_enabled = None
 	is_scalable = None
@@ -3825,56 +3545,6 @@ class GroupsLiveCovers:
 class GroupsLonGPollEvents:
 	"""VK Object GroupsLonGPollEvents
 
-	audio_new - No description
-	board_post_delete - No description
-	board_post_edit - No description
-	board_post_new - No description
-	board_post_restore - No description
-	group_change_photo - No description
-	group_change_settings - No description
-	group_join - No description
-	group_leave - No description
-	group_officers_edit - No description
-	lead_forms_new - No description
-	market_comment_delete - No description
-	market_comment_edit - No description
-	market_comment_new - No description
-	market_comment_restore - No description
-	market_order_new - No description
-	market_order_edit - No description
-	message_allow - No description
-	message_deny - No description
-	message_new - No description
-	message_read - No description
-	message_reply - No description
-	message_typing_state - No description
-	message_edit - No description
-	photo_comment_delete - No description
-	photo_comment_edit - No description
-	photo_comment_new - No description
-	photo_comment_restore - No description
-	photo_new - No description
-	poll_vote_new - No description
-	user_block - No description
-	user_unblock - No description
-	video_comment_delete - No description
-	video_comment_edit - No description
-	video_comment_new - No description
-	video_comment_restore - No description
-	video_new - No description
-	wall_post_new - No description
-	wall_reply_delete - No description
-	wall_reply_edit - No description
-	wall_reply_new - No description
-	wall_reply_restore - No description
-	wall_repost - No description
-	donut_subscription_create - No description
-	donut_subscription_prolonged - No description
-	donut_subscription_cancelled - No description
-	donut_subscription_expired - No description
-	donut_subscription_price_changed - No description
-	donut_money_withdraw - No description
-	donut_money_withdraw_error - No description
 	"""
 	audio_new = None
 	board_post_delete = None
@@ -3944,7 +3614,7 @@ class GroupsLonGPollSettinGs:
 	"""VK Object GroupsLonGPollSettinGs
 
 	api_version - API version used for the events
-	events - No description
+	events - 
 	is_enabled - Shows whether Long Poll is enabled
 	"""
 	api_version = None
@@ -3956,7 +3626,7 @@ class GroupsMarketInfo:
 	"""VK Object GroupsMarketInfo
 
 	contact_id - Contact person ID
-	currency - No description
+	currency - 
 	currency_text - Currency name
 	enabled - Information whether the market is enabled
 	main_album_id - Main market album ID
@@ -3975,9 +3645,6 @@ class GroupsMarketInfo:
 class GroupsMarketState:
 	"""VK Object GroupsMarketState
 
-	none - None
-	basic - None
-	advanced - None
 	"""
 	none = 0
 	basic = 1
@@ -3988,8 +3655,8 @@ class GroupsMemberRole:
 	"""VK Object GroupsMemberRole
 
 	id - User ID
-	permissions - No description
-	role - No description
+	permissions - 
+	role - 
 	"""
 	id = None
 	permissions = None
@@ -3999,7 +3666,6 @@ class GroupsMemberRole:
 class GroupsMemberRolePermission:
 	"""VK Object GroupsMemberRolePermission
 
-	ads - None
 	"""
 	ads = 0
 
@@ -4007,10 +3673,6 @@ class GroupsMemberRolePermission:
 class GroupsMemberRoleStatus:
 	"""VK Object GroupsMemberRoleStatus
 
-	moderator - None
-	editor - None
-	administrator - None
-	creator - None
 	"""
 	moderator = 0
 	editor = 1
@@ -4050,7 +3712,7 @@ class GroupsOnlineStatus:
 	"""VK Object GroupsOnlineStatus
 
 	minutes - Estimated time of answer (for status = answer_mark)
-	status - No description
+	status - 
 	"""
 	minutes = None
 	status = None
@@ -4059,9 +3721,6 @@ class GroupsOnlineStatus:
 class GroupsOnlineStatusType:
 	"""VK Object GroupsOnlineStatusType
 
-	none - None
-	online - None
-	answer_mark - None
 	"""
 	none = 0
 	online = 1
@@ -4071,10 +3730,10 @@ class GroupsOnlineStatusType:
 class GroupsOwnerXtrBanInfo:
 	"""VK Object GroupsOwnerXtrBanInfo
 
-	ban_info - No description
+	ban_info - 
 	group - Information about group if type = group
 	profile - Information about group if type = profile
-	type - No description
+	type - 
 	"""
 	ban_info = None
 	group = None
@@ -4085,8 +3744,6 @@ class GroupsOwnerXtrBanInfo:
 class GroupsOwnerXtrBanInfoType:
 	"""VK Object GroupsOwnerXtrBanInfoType
 
-	group - None
-	profile - None
 	"""
 	group = 0
 	profile = 1
@@ -4109,10 +3766,6 @@ class GroupsProfileItem:
 class GroupsRoleOptions:
 	"""VK Object GroupsRoleOptions
 
-	moderator - None
-	editor - None
-	administrator - None
-	creator - None
 	"""
 	moderator = 0
 	editor = 1
@@ -4123,8 +3776,6 @@ class GroupsRoleOptions:
 class GroupsSettinGsTwitter:
 	"""VK Object GroupsSettinGsTwitter
 
-	status - No description
-	name - No description
 	"""
 	status = None
 	name = None
@@ -4143,8 +3794,6 @@ class GroupsSubjectItem:
 class GroupsTokenPermissionSettinG:
 	"""VK Object GroupsTokenPermissionSettinG
 
-	name - No description
-	setting - No description
 	"""
 	name = None
 	setting = None
@@ -4153,7 +3802,6 @@ class GroupsTokenPermissionSettinG:
 class GroupsUserXtrRole:
 	"""VK Object GroupsUserXtrRole
 
-	role - No description
 	"""
 	role = <built-in function iter>
 
@@ -4161,18 +3809,6 @@ class GroupsUserXtrRole:
 class LikesType:
 	"""VK Object LikesType
 
-	post - None
-	comment - None
-	photo - None
-	audio - None
-	video - None
-	note - None
-	market - None
-	photo_comment - None
-	video_comment - None
-	topic_comment - None
-	market_comment - None
-	sitepage - None
 	"""
 	post = 0
 	comment = 1
@@ -4216,7 +3852,7 @@ class MarketMarketAlbuM:
 	count - Items number
 	id - Market album ID
 	owner_id - Market album owner's ID
-	photo - No description
+	photo - 
 	title - Market album title
 	updated_time - Date when album has been updated last time in Unixtime
 	"""
@@ -4239,7 +3875,7 @@ class MarketMarketCategoryNested:
 
 	id - Category ID
 	name - Category name
-	parent - No description
+	parent - 
 	"""
 	id = None
 	name = None
@@ -4251,7 +3887,7 @@ class MarketMarketCategoryOld:
 
 	id - Category ID
 	name - Category name
-	section - No description
+	section - 
 	"""
 	id = None
 	name = None
@@ -4263,7 +3899,7 @@ class MarketMarketCategoryTree:
 
 	id - Category ID
 	name - Category name
-	children - No description
+	children - 
 	"""
 	id = None
 	name = None
@@ -4274,21 +3910,21 @@ class MarketMarketIteM:
 	"""VK Object MarketMarketIteM
 
 	access_key - Access key for the market item
-	availability - No description
+	availability - 
 	button_title - Title for button for url
-	category - No description
+	category - 
 	date - Date when the item has been created in Unixtime
 	description - Item description
-	external_id - No description
+	external_id - 
 	id - Item ID
-	is_favorite - No description
+	is_favorite - 
 	owner_id - Item owner's ID
-	price - No description
+	price - 
 	thumb_photo - URL of the preview image
 	title - Item title
 	url - URL to item
-	variants_grouping_id - No description
-	is_main_variant - No description
+	variants_grouping_id - 
+	is_main_variant - 
 	"""
 	access_key = None
 	availability = None
@@ -4306,17 +3942,26 @@ class MarketMarketIteM:
 	url = None
 	variants_grouping_id = None
 	is_main_variant = None
-None
+
+
+class MarketMarketIteMAvailability:
+	"""VK Object MarketMarketIteMAvailability
+
+	"""
+	available = 0
+	removed = 1
+	unavailable = 2
+
 
 class MarketMarketIteMFull:
 	"""VK Object MarketMarketIteMFull
 
-	albums_ids - No description
-	photos - No description
+	albums_ids - 
+	photos - 
 	can_comment - Information whether current use can comment the item
 	can_repost - Information whether current use can repost the item
-	likes - No description
-	reposts - No description
+	likes - 
+	reposts - 
 	views_count - Views number
 	wishlist_item_id - Object identifier in wishlist of viewer
 	cancel_info - Information for cancel and revert order
@@ -4337,20 +3982,20 @@ class MarketMarketIteMFull:
 class MarketOrder:
 	"""VK Object MarketOrder
 
-	id - No description
-	group_id - No description
-	user_id - No description
-	display_order_id - No description
-	date - No description
-	status - No description
-	items_count - No description
-	track_number - No description
-	track_link - No description
-	comment - No description
-	address - No description
-	merchant_comment - No description
-	weight - No description
-	total_price - No description
+	id - 
+	group_id - 
+	user_id - 
+	display_order_id - 
+	date - 
+	status - 
+	items_count - 
+	track_number - 
+	track_link - 
+	comment - 
+	address - 
+	merchant_comment - 
+	weight - 
+	total_price - 
 	preview_order_items - Several order items for preview
 	cancel_info - Information for cancel and revert order
 	"""
@@ -4375,14 +4020,6 @@ class MarketOrder:
 class MarketOrderIteM:
 	"""VK Object MarketOrderIteM
 
-	owner_id - No description
-	item_id - No description
-	price - No description
-	quantity - No description
-	item - No description
-	title - No description
-	photo - No description
-	variants - No description
 	"""
 	owner_id = None
 	item_id = None
@@ -4398,9 +4035,9 @@ class MarketPrice:
 	"""VK Object MarketPrice
 
 	amount - Amount
-	currency - No description
-	discount_rate - No description
-	old_amount - No description
+	currency - 
+	discount_rate - 
+	old_amount - 
 	text - Text
 	old_amount_text - Textual representation of old price
 	"""
@@ -4425,15 +4062,15 @@ class MarketSection:
 class MediaRestriction:
 	"""VK Object MediaRestriction
 
-	text - No description
-	title - No description
-	button - No description
+	text - 
+	title - 
+	button - 
 	always_shown - Need show restriction always or not
 	blur - Need blur current video or not
 	can_play - Can play video or not
 	can_preview - Can preview video or not
-	card_icon - No description
-	list_icon - No description
+	card_icon - 
+	list_icon - 
 	"""
 	text = None
 	title = None
@@ -4450,13 +4087,13 @@ class MessagesAudioMessage:
 	"""VK Object MessagesAudioMessage
 
 	access_key - Access key for audio message
-	transcript_error - No description
+	transcript_error - 
 	duration - Audio message duration in seconds
 	id - Audio message ID
 	link_mp3 - MP3 file URL
 	link_ogg - OGG file URL
 	owner_id - Audio message owner ID
-	waveform - No description
+	waveform - 
 	"""
 	access_key = None
 	transcript_error = None
@@ -4478,10 +4115,10 @@ class MessagesChat:
 	photo_100 - URL of the preview image with 100 px in width
 	photo_200 - URL of the preview image with 200 px in width
 	photo_50 - URL of the preview image with 50 px in width
-	push_settings - No description
+	push_settings - 
 	title - Chat title
 	type - Chat type
-	users - No description
+	users - 
 	is_default_photo - If provided photo is default
 	"""
 	admin_id = None
@@ -4508,10 +4145,10 @@ class MessagesChatFull:
 	photo_100 - URL of the preview image with 100 px in width
 	photo_200 - URL of the preview image with 200 px in width
 	photo_50 - URL of the preview image with 50 px in width
-	push_settings - No description
+	push_settings - 
 	title - Chat title
 	type - Chat type
-	users - No description
+	users - 
 	"""
 	admin_id = None
 	id = None
@@ -4529,13 +4166,6 @@ class MessagesChatFull:
 class MessagesChatPreview:
 	"""VK Object MessagesChatPreview
 
-	admin_id - No description
-	joined - No description
-	local_id - No description
-	members - No description
-	members_count - No description
-	title - No description
-	is_member - No description
 	"""
 	admin_id = None
 	joined = None
@@ -4575,22 +4205,22 @@ class MessagesChatRestrictions:
 class MessagesChatSettings:
 	"""VK Object MessagesChatSettings
 
-	members_count - No description
-	friends_count - No description
-	owner_id - No description
+	members_count - 
+	friends_count - 
+	owner_id - 
 	title - Chat title
-	pinned_message - No description
-	state - No description
-	photo - No description
+	pinned_message - 
+	state - 
+	photo - 
 	admin_ids - Ids of chat admins
-	active_ids - No description
-	is_group_channel - No description
-	acl - No description
-	permissions - No description
-	is_disappearing - No description
-	theme - No description
-	disappearing_chat_link - No description
-	is_service - No description
+	active_ids - 
+	is_group_channel - 
+	acl - 
+	permissions - 
+	is_disappearing - 
+	theme - 
+	disappearing_chat_link - 
+	is_service - 
 	"""
 	members_count = None
 	friends_count = None
@@ -4675,9 +4305,6 @@ class MessagesChatSettingsPhoto:
 class MessagesChatSettingsState:
 	"""VK Object MessagesChatSettingsState
 
-	in - None
-	kicked - None
-	left - None
 	"""
 	_in = 0
 	kicked = 1
@@ -4687,23 +4314,23 @@ class MessagesChatSettingsState:
 class MessagesConversation:
 	"""VK Object MessagesConversation
 
-	peer - No description
-	sort_id - No description
+	peer - 
+	sort_id - 
 	last_message_id - ID of the last message in conversation
 	in_read - Last message user have read
 	out_read - Last outcoming message have been read by the opponent
 	unread_count - Unread messages number
 	is_marked_unread - Is this conversation uread
-	out_read_by - No description
-	important - No description
-	unanswered - No description
-	special_service_type - No description
-	message_request_data - No description
+	out_read_by - 
+	important - 
+	unanswered - 
+	special_service_type - 
+	message_request_data - 
 	mentions - Ids of messages with mentions
-	current_keyboard - No description
-	push_settings - No description
-	can_write - No description
-	chat_settings - No description
+	current_keyboard - 
+	push_settings - 
+	can_write - 
+	chat_settings - 
 	"""
 	peer = None
 	sort_id = None
@@ -4727,8 +4354,6 @@ class MessagesConversation:
 class MessagesConversationCanWrite:
 	"""VK Object MessagesConversationCanWrite
 
-	allowed - No description
-	reason - No description
 	"""
 	allowed = None
 	reason = None
@@ -4738,13 +4363,13 @@ class MessagesConversationMeMber:
 	"""VK Object MessagesConversationMeMber
 
 	can_kick - Is it possible for user to kick this member
-	invited_by - No description
-	is_admin - No description
-	is_owner - No description
-	is_message_request - No description
-	join_date - No description
+	invited_by - 
+	is_admin - 
+	is_owner - 
+	is_message_request - 
+	join_date - 
 	request_date - Message request date
-	member_id - No description
+	member_id - 
 	"""
 	can_kick = None
 	invited_by = None
@@ -4759,9 +4384,6 @@ class MessagesConversationMeMber:
 class MessagesConversationPeer:
 	"""VK Object MessagesConversationPeer
 
-	id - No description
-	local_id - No description
-	type - No description
 	"""
 	id = None
 	local_id = None
@@ -4771,10 +4393,6 @@ class MessagesConversationPeer:
 class MessagesConversationPeerType:
 	"""VK Object MessagesConversationPeerType
 
-	chat - None
-	email - None
-	user - None
-	group - None
 	"""
 	chat = 0
 	email = 1
@@ -4795,8 +4413,6 @@ class MessagesConversationSortId:
 class MessagesConversationWithMessage:
 	"""VK Object MessagesConversationWithMessage
 
-	conversation - No description
-	last_message - No description
 	"""
 	conversation = None
 	last_message = None
@@ -4805,15 +4421,15 @@ class MessagesConversationWithMessage:
 class MessagesForeignMessage:
 	"""VK Object MessagesForeignMessage
 
-	attachments - No description
+	attachments - 
 	conversation_message_id - Conversation message ID
 	date - Date when the message was created
 	from_id - Message author's ID
-	fwd_messages - No description
-	geo - No description
+	fwd_messages - 
+	geo - 
 	id - Message ID
 	peer_id - Peer ID
-	reply_message - No description
+	reply_message - 
 	text - Message text
 	update_time - Date when the message has been updated in Unixtime
 	was_listened - Was the audio message inside already listened by you
@@ -4839,8 +4455,8 @@ class MessagesForward:
 
 	owner_id - Messages owner_id
 	peer_id - Messages peer_id
-	conversation_message_ids - No description
-	message_ids - No description
+	conversation_message_ids - 
+	message_ids - 
 	is_reply - If you need to reply to a message
 	"""
 	owner_id = None
@@ -4871,7 +4487,7 @@ class MessagesGraffiti:
 class MessagesHistoryAttachMent:
 	"""VK Object MessagesHistoryAttachMent
 
-	attachment - No description
+	attachment - 
 	message_id - Message ID
 	from_id - Message author's ID
 	forward_level - Forward level (optional)
@@ -4885,17 +4501,6 @@ class MessagesHistoryAttachMent:
 class MessagesHistoryMessageAttachMent:
 	"""VK Object MessagesHistoryMessageAttachMent
 
-	audio - No description
-	audio_message - No description
-	doc - No description
-	graffiti - No description
-	link - No description
-	market - No description
-	photo - No description
-	share - No description
-	type - No description
-	video - No description
-	wall - No description
 	"""
 	audio = None
 	audio_message = None
@@ -4913,16 +4518,6 @@ class MessagesHistoryMessageAttachMent:
 class MessagesHistoryMessageAttachMentType:
 	"""VK Object MessagesHistoryMessageAttachMentType
 
-	photo - None
-	video - None
-	audio - None
-	doc - None
-	link - None
-	market - None
-	wall - None
-	share - None
-	graffiti - None
-	audio_message - None
 	"""
 	photo = 0
 	video = 1
@@ -4940,9 +4535,9 @@ class MessagesKeyboard:
 	"""VK Object MessagesKeyboard
 
 	author_id - Community or bot, which set this keyboard
-	buttons - No description
+	buttons - 
 	one_time - Should this keyboard disappear on first use
-	inline - No description
+	inline - 
 	"""
 	author_id = None
 	buttons = None
@@ -4953,7 +4548,7 @@ class MessagesKeyboard:
 class MessagesKeyboardButton:
 	"""VK Object MessagesKeyboardButton
 
-	action - No description
+	action - 
 	color - Button color
 	"""
 	action = None
@@ -4994,7 +4589,7 @@ class MessagesLongpollMessages:
 	"""VK Object MessagesLongpollMessages
 
 	count - Total number
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -5017,28 +4612,28 @@ class MessagesLongpollParaMs:
 class MessagesMessage:
 	"""VK Object MessagesMessage
 
-	action - No description
+	action - 
 	admin_author_id - Only for messages from community. Contains user ID of community admin, who sent this message.
-	attachments - No description
+	attachments - 
 	conversation_message_id - Unique auto-incremented number for all messages with this peer
 	date - Date when the message has been sent in Unixtime
 	deleted - Is it an deleted message
 	from_id - Message author's ID
 	fwd_messages - Forwarded messages
-	geo - No description
+	geo - 
 	id - Message ID
 	important - Is it an important message
-	is_hidden - No description
+	is_hidden - 
 	is_cropped - this message is cropped for bot
-	keyboard - No description
+	keyboard - 
 	members_count - Members number
 	out - Information whether the message is outcoming
-	payload - No description
+	payload - 
 	peer_id - Peer ID
 	random_id - ID used for sending messages. It returned only for outgoing messages
-	ref - No description
-	ref_source - No description
-	reply_message - No description
+	ref - 
+	ref_source - 
+	reply_message - 
 	text - Message text
 	update_time - Date when the message has been updated in Unixtime
 	was_listened - Was the audio message inside already listened by you
@@ -5079,9 +4674,9 @@ class MessagesMessageAction:
 	email - Email address for chat_invite_user or chat_kick_user actions
 	member_id - User or email peer ID
 	message - Message body of related message
-	photo - No description
+	photo - 
 	text - New chat title for chat_create and chat_title_update actions
-	type - No description
+	type - 
 	"""
 	conversation_message_id = None
 	email = None
@@ -5107,15 +4702,6 @@ class MessagesMessageActionPhoto:
 class MessagesMessageActionStatus:
 	"""VK Object MessagesMessageActionStatus
 
-	chat_photo_update - None
-	chat_photo_remove - None
-	chat_create - None
-	chat_title_update - None
-	chat_invite_user - None
-	chat_kick_user - None
-	chat_pin_message - None
-	chat_unpin_message - None
-	chat_invite_user_by_link - None
 	"""
 	chat_photo_update = 0
 	chat_photo_remove = 1
@@ -5131,23 +4717,6 @@ class MessagesMessageActionStatus:
 class MessagesMessageAttachMent:
 	"""VK Object MessagesMessageAttachMent
 
-	audio - No description
-	audio_message - No description
-	call - No description
-	doc - No description
-	gift - No description
-	graffiti - No description
-	link - No description
-	market - No description
-	market_market_album - No description
-	photo - No description
-	sticker - No description
-	story - No description
-	type - No description
-	video - No description
-	wall - No description
-	wall_reply - No description
-	poll - No description
 	"""
 	audio = None
 	audio_message = None
@@ -5171,22 +4740,6 @@ class MessagesMessageAttachMent:
 class MessagesMessageAttachMentType:
 	"""VK Object MessagesMessageAttachMentType
 
-	photo - None
-	audio - None
-	video - None
-	doc - None
-	link - None
-	market - None
-	market_album - None
-	gift - None
-	sticker - None
-	wall - None
-	wall_reply - None
-	article - None
-	poll - None
-	call - None
-	graffiti - None
-	audio_message - None
 	"""
 	photo = 0
 	audio = 1
@@ -5221,8 +4774,6 @@ class MessagesMessageRequestData:
 class MessagesMessagesArray:
 	"""VK Object MessagesMessagesArray
 
-	count - No description
-	items - No description
 	"""
 	count = None
 	items = None
@@ -5231,8 +4782,6 @@ class MessagesMessagesArray:
 class MessagesOutReadBy:
 	"""VK Object MessagesOutReadBy
 
-	count - No description
-	member_ids - No description
 	"""
 	count = None
 	member_ids = None
@@ -5241,17 +4790,17 @@ class MessagesOutReadBy:
 class MessagesPinnedMessage:
 	"""VK Object MessagesPinnedMessage
 
-	attachments - No description
+	attachments - 
 	conversation_message_id - Unique auto-incremented number for all messages with this peer
 	date - Date when the message has been sent in Unixtime
 	from_id - Message author's ID
 	fwd_messages - Forwarded messages
-	geo - No description
+	geo - 
 	id - Message ID
 	peer_id - Peer ID
-	reply_message - No description
+	reply_message - 
 	text - Message text
-	keyboard - No description
+	keyboard - 
 	"""
 	attachments = None
 	conversation_message_id = None
@@ -5281,14 +4830,6 @@ class MessagesPushSettings:
 class MessagesTeMplateActionTypeNaMes:
 	"""VK Object MessagesTeMplateActionTypeNaMes
 
-	text - None
-	start - None
-	location - None
-	vkpay - None
-	open_app - None
-	open_photo - None
-	open_link - None
-	callback - None
 	"""
 	text = 0
 	start = 1
@@ -5311,11 +4852,6 @@ class MessagesUserXtrInvitedBy:
 class NewsfeedCommeNtsFilters:
 	"""VK Object NewsfeedCommeNtsFilters
 
-	post - None
-	photo - None
-	video - None
-	topic - None
-	note - None
 	"""
 	post = 0
 	photo = 1
@@ -5345,16 +4881,6 @@ class NewsfeedEveNtActivity:
 class NewsfeedFilters:
 	"""VK Object NewsfeedFilters
 
-	post - None
-	photo - None
-	photo_tag - None
-	wall_photo - None
-	friend - None
-	note - None
-	audio - None
-	video - None
-	audio_playlist - None
-	clip - None
 	"""
 	post = 0
 	photo = 1
@@ -5371,12 +4897,6 @@ class NewsfeedFilters:
 class NewsfeedIgNoreItemType:
 	"""VK Object NewsfeedIgNoreItemType
 
-	wall - None
-	tag - None
-	profilephoto - None
-	video - None
-	photo - None
-	audio - None
 	"""
 	wall = 0
 	tag = 1
@@ -5389,7 +4909,7 @@ class NewsfeedIgNoreItemType:
 class NewsfeedItemAudio:
 	"""VK Object NewsfeedItemAudio
 
-	audio - No description
+	audio - 
 	post_id - Post ID
 	"""
 	audio = <built-in function iter>
@@ -5400,7 +4920,7 @@ class NewsfeedItemAudioAudio:
 	"""VK Object NewsfeedItemAudioAudio
 
 	count - Audios number
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -5409,7 +4929,7 @@ class NewsfeedItemAudioAudio:
 class NewsfeedItemBase:
 	"""VK Object NewsfeedItemBase
 
-	type - No description
+	type - 
 	source_id - Item source ID
 	date - Date when item has been added in Unixtime
 	"""
@@ -5422,12 +4942,12 @@ class NewsfeedItemDigest:
 	"""VK Object NewsfeedItemDigest
 
 	feed_id - id of feed in digest
-	items - No description
-	main_post_ids - No description
+	items - 
+	main_post_ids - 
 	template - type of digest
-	header - No description
-	footer - No description
-	track_code - No description
+	header - 
+	footer - 
+	track_code - 
 	"""
 	feed_id = <built-in function iter>
 	items = <built-in function iter>
@@ -5441,8 +4961,6 @@ class NewsfeedItemDigest:
 class NewsfeedItemDigestButtoN:
 	"""VK Object NewsfeedItemDigestButtoN
 
-	title - No description
-	style - No description
 	"""
 	title = None
 	style = None
@@ -5451,9 +4969,9 @@ class NewsfeedItemDigestButtoN:
 class NewsfeedItemDigestFooter:
 	"""VK Object NewsfeedItemDigestFooter
 
-	style - No description
+	style - 
 	text - text for invite to enable smart feed
-	button - No description
+	button - 
 	"""
 	style = None
 	text = None
@@ -5463,12 +4981,6 @@ class NewsfeedItemDigestFooter:
 class NewsfeedItemDigestFullItem:
 	"""VK Object NewsfeedItemDigestFullItem
 
-	text - No description
-	source_name - No description
-	attachment_index - No description
-	attachment - No description
-	style - No description
-	post - No description
 	"""
 	text = None
 	source_name = None
@@ -5483,8 +4995,8 @@ class NewsfeedItemDigestHeader:
 
 	title - Title of the header
 	subtitle - Subtitle of the header, when title have two strings
-	style - No description
-	button - No description
+	style - 
+	button - 
 	"""
 	title = None
 	subtitle = None
@@ -5501,7 +5013,6 @@ class NewsfeedItemDigestItem:
 class NewsfeedItemFrieNd:
 	"""VK Object NewsfeedItemFrieNd
 
-	friends - No description
 	"""
 	friends = <built-in function iter>
 
@@ -5510,7 +5021,7 @@ class NewsfeedItemFrieNdFrieNds:
 	"""VK Object NewsfeedItemFrieNdFrieNds
 
 	count - Number of friends has been added
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -5521,8 +5032,8 @@ class NewsfeedItemHolidayRecommeNdatioNsBlockHeader:
 
 	title - Title of the header
 	subtitle - Subtitle of the header
-	image - No description
-	action - No description
+	image - 
+	action - 
 	"""
 	title = None
 	subtitle = None
@@ -5533,7 +5044,7 @@ class NewsfeedItemHolidayRecommeNdatioNsBlockHeader:
 class NewsfeedItemPhoto:
 	"""VK Object NewsfeedItemPhoto
 
-	photos - No description
+	photos - 
 	post_id - Post ID
 	"""
 	photos = <built-in function iter>
@@ -5544,7 +5055,7 @@ class NewsfeedItemPhotoPhotos:
 	"""VK Object NewsfeedItemPhotoPhotos
 
 	count - Photos number
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -5553,7 +5064,7 @@ class NewsfeedItemPhotoPhotos:
 class NewsfeedItemPhotoTag:
 	"""VK Object NewsfeedItemPhotoTag
 
-	photo_tags - No description
+	photo_tags - 
 	post_id - Post ID
 	"""
 	photo_tags = <built-in function iter>
@@ -5564,7 +5075,7 @@ class NewsfeedItemPhotoTagPhotoTags:
 	"""VK Object NewsfeedItemPhotoTagPhotoTags
 
 	count - Tags number
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -5573,11 +5084,6 @@ class NewsfeedItemPhotoTagPhotoTags:
 class NewsfeedItemPromoButtoN:
 	"""VK Object NewsfeedItemPromoButtoN
 
-	text - No description
-	title - No description
-	action - No description
-	images - No description
-	track_code - No description
 	"""
 	text = <built-in function iter>
 	title = <built-in function iter>
@@ -5589,9 +5095,6 @@ class NewsfeedItemPromoButtoN:
 class NewsfeedItemPromoButtoNActioN:
 	"""VK Object NewsfeedItemPromoButtoNActioN
 
-	url - No description
-	type - No description
-	target - No description
 	"""
 	url = None
 	type = None
@@ -5601,9 +5104,6 @@ class NewsfeedItemPromoButtoNActioN:
 class NewsfeedItemPromoButtoNImage:
 	"""VK Object NewsfeedItemPromoButtoNImage
 
-	width - No description
-	height - No description
-	url - No description
 	"""
 	width = None
 	height = None
@@ -5613,8 +5113,8 @@ class NewsfeedItemPromoButtoNImage:
 class NewsfeedItemTopic:
 	"""VK Object NewsfeedItemTopic
 
-	comments - No description
-	likes - No description
+	comments - 
+	likes - 
 	post_id - Topic post ID
 	text - Post text
 	"""
@@ -5627,7 +5127,6 @@ class NewsfeedItemTopic:
 class NewsfeedItemVideo:
 	"""VK Object NewsfeedItemVideo
 
-	video - No description
 	"""
 	video = <built-in function iter>
 
@@ -5636,7 +5135,7 @@ class NewsfeedItemVideoVideo:
 	"""VK Object NewsfeedItemVideoVideo
 
 	count - Tags number
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -5645,19 +5144,19 @@ class NewsfeedItemVideoVideo:
 class NewsfeedItemWallpost:
 	"""VK Object NewsfeedItemWallpost
 
-	activity - No description
-	attachments - No description
-	comments - No description
-	copy_history - No description
-	feedback - No description
-	geo - No description
+	activity - 
+	attachments - 
+	comments - 
+	copy_history - 
+	feedback - 
+	geo - 
 	is_favorite - Information whether the post in favorites list
-	likes - No description
+	likes - 
 	marked_as_ads - Information whether the post is marked as ads
 	post_id - Post ID
-	post_source - No description
-	post_type - No description
-	reposts - No description
+	post_source - 
+	post_type - 
+	reposts - 
 	signer_id - Post signer ID
 	text - Post text
 	views - Count of views
@@ -5685,11 +5184,6 @@ class NewsfeedItemWallpost:
 class NewsfeedItemWallpostFeedback:
 	"""VK Object NewsfeedItemWallpostFeedback
 
-	type - No description
-	question - No description
-	answers - No description
-	stars_count - No description
-	gratitude - No description
 	"""
 	type = None
 	question = None
@@ -5701,8 +5195,6 @@ class NewsfeedItemWallpostFeedback:
 class NewsfeedItemWallpostFeedbackANswer:
 	"""VK Object NewsfeedItemWallpostFeedbackANswer
 
-	title - No description
-	id - No description
 	"""
 	title = None
 	id = None
@@ -5711,8 +5203,6 @@ class NewsfeedItemWallpostFeedbackANswer:
 class NewsfeedItemWallpostFeedbackType:
 	"""VK Object NewsfeedItemWallpostFeedbackType
 
-	buttons - None
-	stars - None
 	"""
 	buttons = 0
 	stars = 1
@@ -5721,9 +5211,6 @@ class NewsfeedItemWallpostFeedbackType:
 class NewsfeedItemWallpostType:
 	"""VK Object NewsfeedItemWallpostType
 
-	post - None
-	copy - None
-	reply - None
 	"""
 	post = 0
 	copy = 1
@@ -5744,7 +5231,7 @@ class NewsfeedListFull:
 	"""VK Object NewsfeedListFull
 
 	no_reposts - Information whether reposts hiding is enabled
-	source_ids - No description
+	source_ids - 
 	"""
 	no_reposts = <built-in function iter>
 	source_ids = <built-in function iter>
@@ -5753,16 +5240,6 @@ None
 class NewsfeedNewsfeedItemType:
 	"""VK Object NewsfeedNewsfeedItemType
 
-	post - None
-	photo - None
-	photo_tag - None
-	wall_photo - None
-	friend - None
-	audio - None
-	video - None
-	topic - None
-	digest - None
-	stories - None
 	"""
 	post = 0
 	photo = 1
@@ -5779,8 +5256,8 @@ class NewsfeedNewsfeedItemType:
 class NewsfeedNewsfeedPhoto:
 	"""VK Object NewsfeedNewsfeedPhoto
 
-	likes - No description
-	comments - No description
+	likes - 
+	comments - 
 	can_repost - Information whether current user can repost the photo
 	"""
 	likes = <built-in function iter>
@@ -5791,7 +5268,7 @@ class NewsfeedNewsfeedPhoto:
 class NotesNote:
 	"""VK Object NotesNote
 
-	read_comments - No description
+	read_comments - 
 	can_comment - Information whether current user can comment the note
 	comments - Comments number
 	date - Date when the note has been created in Unixtime
@@ -5837,11 +5314,11 @@ class NotesNoteCommeNt:
 class NotificatioNsFeedback:
 	"""VK Object NotificatioNsFeedback
 
-	attachments - No description
+	attachments - 
 	from_id - Reply author's ID
-	geo - No description
+	geo - 
 	id - Item ID
-	likes - No description
+	likes - 
 	text - Reply text
 	to_id - Wall owner's ID
 	"""
@@ -5858,9 +5335,9 @@ class NotificatioNsNotificatioN:
 	"""VK Object NotificatioNsNotificatioN
 
 	date - Date when the event has been occurred
-	feedback - No description
-	parent - No description
-	reply - No description
+	feedback - 
+	parent - 
+	reply - 
 	type - Notification type
 	"""
 	date = None
@@ -5888,11 +5365,11 @@ class NotificatioNsNotificatioNsCommeNt:
 	date - Date when the comment has been added in Unixtime
 	id - Comment ID
 	owner_id - Author ID
-	photo - No description
-	post - No description
+	photo - 
+	post - 
 	text - Comment text
-	topic - No description
-	video - No description
+	topic - 
+	video - 
 	"""
 	date = None
 	id = None
@@ -5931,7 +5408,7 @@ class NotificatioNsSeNdMessageItem:
 
 	user_id - User ID
 	status - Notification status
-	error - No description
+	error - 
 	"""
 	user_id = None
 	status = None
@@ -5953,7 +5430,7 @@ class OauthErrOr:
 class OrdersAmOunt:
 	"""VK Object OrdersAmOunt
 
-	amounts - No description
+	amounts - 
 	currency - Currency name
 	"""
 	amounts = None
@@ -6033,12 +5510,21 @@ class OrdersSubscriptiOn:
 class OwnerState:
 	"""VK Object OwnerState
 
-	state - No description
+	state - 
 	description - wiki text to describe user state
 	"""
 	state = None
 	description = None
-None
+
+
+class PagesPrivacySettings:
+	"""VK Object PagesPrivacySettings
+
+	"""
+	community managers only = 0
+	community members only = 1
+	everyone = 2
+
 
 class PagesWikiPage:
 	"""VK Object PagesWikiPage
@@ -6121,17 +5607,17 @@ class PagesWikiPageHistory:
 class PhotosCommentXtrPid:
 	"""VK Object PhotosCommentXtrPid
 
-	attachments - No description
+	attachments - 
 	date - Date when the comment has been added in Unixtime
 	from_id - Author ID
 	id - Comment ID
-	likes - No description
+	likes - 
 	pid - Photo ID
 	reply_to_comment - Replied comment ID
 	reply_to_user - Replied user ID
 	text - Comment text
-	parents_stack - No description
-	thread - No description
+	parents_stack - 
+	thread - 
 	"""
 	attachments = None
 	date = None
@@ -6150,7 +5636,7 @@ class PhotosImage:
 	"""VK Object PhotosImage
 
 	height - Height of the photo in px.
-	type - No description
+	type - 
 	url - Photo URL.
 	width - Width of the photo in px.
 	"""
@@ -6163,17 +5649,6 @@ class PhotosImage:
 class PhotosImageTyPe:
 	"""VK Object PhotosImageTyPe
 
-	s - None
-	m - None
-	x - None
-	l - None
-	o - None
-	p - None
-	q - None
-	r - None
-	y - None
-	z - None
-	w - None
 	"""
 	s = 0
 	m = 1
@@ -6196,20 +5671,20 @@ class PhotosPhoto:
 	date - Date when uploaded
 	height - Original photo height
 	id - Photo ID
-	images - No description
+	images - 
 	lat - Latitude
 	long - Longitude
 	owner_id - Photo owner's ID
 	photo_256 - URL of image with 2560 px width
 	can_comment - Information whether current user can comment the photo
-	place - No description
+	place - 
 	post_id - Post ID
-	sizes - No description
+	sizes - 
 	text - Photo caption
 	user_id - ID of the user who have uploaded the photo
 	width - Original photo width
 	has_tags - Whether photo has attached tag links
-	restrictions - No description
+	restrictions - 
 	"""
 	access_key = None
 	album_id = None
@@ -6240,7 +5715,7 @@ class PhotosPhotoAlbum:
 	id - Photo album ID
 	owner_id - Album owner's ID
 	size - Photos number
-	thumb - No description
+	thumb - 
 	title - Photo album title
 	updated - Date when the album has been updated last time in Unixtime
 	"""
@@ -6264,7 +5739,7 @@ class PhotosPhotoAlbumFull:
 	id - Photo album ID
 	owner_id - Album owner's ID
 	size - Photos number
-	sizes - No description
+	sizes - 
 	thumb_id - Thumb photo ID
 	thumb_is_last - Information whether the album thumb is last photo
 	thumb_src - URL of the thumb image
@@ -6297,15 +5772,15 @@ class PhotosPhotoFull:
 	date - Date when uploaded
 	height - Original photo height
 	id - Photo ID
-	images - No description
+	images - 
 	lat - Latitude
-	likes - No description
-	reposts - No description
-	comments - No description
+	likes - 
+	reposts - 
+	comments - 
 	long - Longitude
 	owner_id - Photo owner's ID
 	post_id - Post ID
-	tags - No description
+	tags - 
 	text - Photo caption
 	user_id - ID of the user who have uploaded the photo
 	width - Original photo width
@@ -6335,14 +5810,14 @@ class PhotosPhotoFullXtrRealOffset:
 
 	access_key - Access key for the photo
 	album_id - Album ID
-	can_comment - No description
-	comments - No description
+	can_comment - 
+	comments - 
 	date - Date when uploaded
 	height - Original photo height
 	hidden - Returns if the photo is hidden above the wall
 	id - Photo ID
 	lat - Latitude
-	likes - No description
+	likes - 
 	long - Longitude
 	owner_id - Photo owner's ID
 	photo_1280 - URL of image with 1280 px width
@@ -6353,9 +5828,9 @@ class PhotosPhotoFullXtrRealOffset:
 	photo_807 - URL of image with 807 px width
 	post_id - Post ID
 	real_offset - Real position of the photo
-	reposts - No description
-	sizes - No description
-	tags - No description
+	reposts - 
+	sizes - 
+	tags - 
 	text - Photo caption
 	user_id - ID of the user who have uploaded the photo
 	width - Original photo width
@@ -6394,7 +5869,7 @@ class PhotosPhotoSizes:
 	height - Height in px
 	url - URL of the image
 	src - URL of the image
-	type - No description
+	type - 
 	width - Width in px
 	"""
 	height = None
@@ -6407,31 +5882,6 @@ class PhotosPhotoSizes:
 class PhotosPhotoSizesTyPe:
 	"""VK Object PhotosPhotoSizesTyPe
 
-	s - None
-	m - None
-	x - None
-	o - None
-	p - None
-	q - None
-	r - None
-	k - None
-	l - None
-	y - None
-	z - None
-	c - None
-	w - None
-	a - None
-	b - None
-	e - None
-	i - None
-	d - None
-	j - None
-	temp - None
-	h - None
-	g - None
-	n - None
-	f - None
-	max - None
 	"""
 	s = 0
 	m = 1
@@ -6524,7 +5974,7 @@ class PhotosPhotoXtrRealOffset:
 	photo_807 - URL of image with 807 px width
 	post_id - Post ID
 	real_offset - Real position of the photo
-	sizes - No description
+	sizes - 
 	text - Photo caption
 	user_id - ID of the user who have uploaded the photo
 	width - Original photo width
@@ -6571,7 +6021,7 @@ class PhotosPhotoXtrTagInfo:
 	photo_807 - URL of image with 807 px width
 	placer_id - ID of the tag creator
 	post_id - Post ID
-	sizes - No description
+	sizes - 
 	tag_created - Date when tag has been added in Unixtime
 	tag_id - Tag ID
 	text - Photo caption
@@ -6605,13 +6055,6 @@ class PhotosPhotoXtrTagInfo:
 class PhotosTagsSuggestionItem:
 	"""VK Object PhotosTagsSuggestionItem
 
-	title - No description
-	caption - No description
-	type - No description
-	buttons - No description
-	photo - No description
-	tags - No description
-	track_code - No description
 	"""
 	title = None
 	caption = None
@@ -6625,9 +6068,6 @@ class PhotosTagsSuggestionItem:
 class PhotosTagsSuggestionItemButton:
 	"""VK Object PhotosTagsSuggestionItemButton
 
-	title - No description
-	action - No description
-	style - No description
 	"""
 	title = None
 	action = None
@@ -6637,7 +6077,6 @@ class PhotosTagsSuggestionItemButton:
 class PodcastCover:
 	"""VK Object PodcastCover
 
-	sizes - No description
 	"""
 	sizes = None
 
@@ -6678,11 +6117,11 @@ class PollsBackground:
 	angle - Gradient angle with 0 on positive X axis
 	color - Hex color code without #
 	height - Original height of pattern tile
-	id - No description
-	name - No description
+	id - 
+	name - 
 	images - Pattern tiles
 	points - Gradient points
-	type - No description
+	type - 
 	width - Original with of pattern tile
 	"""
 	angle = None
@@ -6699,7 +6138,6 @@ class PollsBackground:
 class PollsFriend:
 	"""VK Object PollsFriend
 
-	id - No description
 	"""
 	id = None
 
@@ -6707,28 +6145,28 @@ class PollsFriend:
 class PollsPoll:
 	"""VK Object PollsPoll
 
-	anonymous - No description
-	friends - No description
+	anonymous - 
+	friends - 
 	multiple - Information whether the poll with multiple choices
 	answer_id - Current user's answer ID
-	end_date - No description
+	end_date - 
 	answer_ids - Current user's answer IDs
-	closed - No description
-	is_board - No description
-	can_edit - No description
-	can_vote - No description
-	can_report - No description
-	can_share - No description
-	photo - No description
-	answers - No description
+	closed - 
+	is_board - 
+	can_edit - 
+	can_vote - 
+	can_report - 
+	can_share - 
+	photo - 
+	answers - 
 	created - Date when poll has been created in Unixtime
 	id - Poll ID
 	owner_id - Poll owner's ID
 	author_id - Poll author's ID
 	question - Poll question
-	background - No description
+	background - 
 	votes - Votes number
-	disable_unvote - No description
+	disable_unvote - 
 	"""
 	anonymous = None
 	friends = None
@@ -6758,7 +6196,7 @@ class PollsVoters:
 	"""VK Object PollsVoters
 
 	answer_id - Answer ID
-	users - No description
+	users - 
 	"""
 	answer_id = None
 	users = None
@@ -6768,7 +6206,7 @@ class PollsVotersUsers:
 	"""VK Object PollsVotersUsers
 
 	count - Votes number
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -6780,7 +6218,7 @@ class PrettyCardsPrettyCard:
 	button - Button key
 	button_text - Button text in current language
 	card_id - Card ID (long int returned as string)
-	images - No description
+	images - 
 	link_url - Link URL
 	photo - Photo ID (format "<owner_id>_<media_id>")
 	price - Price if set (decimal number returned as string)
@@ -6801,13 +6239,13 @@ class PrettyCardsPrettyCard:
 class SearchHint:
 	"""VK Object SearchHint
 
-	app - No description
+	app - 
 	description - Object description
 	global - Information whether the object has been found globally
-	group - No description
-	profile - No description
-	section - No description
-	type - No description
+	group - 
+	profile - 
+	section - 
+	type - 
 	"""
 	app = None
 	description = None
@@ -6821,13 +6259,6 @@ class SearchHint:
 class SearchHintSection:
 	"""VK Object SearchHintSection
 
-	groups - None
-	events - None
-	publics - None
-	correspondents - None
-	people - None
-	friends - None
-	mutual_friends - None
 	"""
 	groups = 0
 	events = 1
@@ -6841,11 +6272,6 @@ class SearchHintSection:
 class SearchHintType:
 	"""VK Object SearchHintType
 
-	group - None
-	profile - None
-	vk_app - None
-	app - None
-	html5_game - None
 	"""
 	group = 0
 	profile = 1
@@ -6957,11 +6383,11 @@ class StatSCountry:
 class StatSPeriod:
 	"""VK Object StatSPeriod
 
-	activity - No description
+	activity - 
 	period_from - Unix timestamp
 	period_to - Unix timestamp
-	reach - No description
-	visitors - No description
+	reach - 
+	visitors - 
 	"""
 	activity = None
 	period_from = None
@@ -6973,14 +6399,14 @@ class StatSPeriod:
 class StatSReach:
 	"""VK Object StatSReach
 
-	age - No description
-	cities - No description
-	countries - No description
+	age - 
+	cities - 
+	countries - 
 	mobile_reach - Reach count from mobile devices
 	reach - Reach count
 	reach_subscribers - Subscribers reach count
-	sex - No description
-	sex_age - No description
+	sex - 
+	sex_age - 
 	"""
 	age = None
 	cities = None
@@ -6997,9 +6423,9 @@ class StatSSexAge:
 
 	count - Visitors number
 	value - Sex/age value
-	reach - No description
-	reach_subscribers - No description
-	count_subscribers - No description
+	reach - 
+	reach_subscribers - 
+	count_subscribers - 
 	"""
 	count = None
 	value = None
@@ -7011,12 +6437,12 @@ class StatSSexAge:
 class StatSViewS:
 	"""VK Object StatSViewS
 
-	age - No description
-	cities - No description
-	countries - No description
+	age - 
+	cities - 
+	countries - 
 	mobile_views - Number of views from mobile devices
-	sex - No description
-	sex_age - No description
+	sex - 
+	sex_age - 
 	views - Views number
 	visitors - Visitors number
 	"""
@@ -7033,20 +6459,20 @@ class StatSViewS:
 class StatSWallpoStStat:
 	"""VK Object StatSWallpoStStat
 
-	post_id - No description
+	post_id - 
 	hide - Hidings number
 	join_group - People have joined the group
 	links - Link clickthrough
 	reach_subscribers - Subscribers reach
-	reach_subscribers_count - No description
+	reach_subscribers_count - 
 	reach_total - Total reach
-	reach_total_count - No description
-	reach_viral - No description
-	reach_ads - No description
+	reach_total_count - 
+	reach_viral - 
+	reach_ads - 
 	report - Reports number
 	to_group - Clickthrough to community
 	unsubscribe - Unsubscribed members
-	sex_age - No description
+	sex_age - 
 	"""
 	post_id = None
 	hide = None
@@ -7068,7 +6494,7 @@ class StatuSStatuS:
 	"""VK Object StatuSStatuS
 
 	text - Status text
-	audio - No description
+	audio - 
 	"""
 	text = None
 	audio = None
@@ -7087,8 +6513,6 @@ class StickerSImageSet:
 class StorageValue:
 	"""VK Object StorageValue
 
-	key - No description
-	value - No description
 	"""
 	key = None
 	value = None
@@ -7104,7 +6528,7 @@ class StoreProduct:
 	promoted - Information whether the product is promoted (1 - yes, 0 - no)
 	purchase_date - Date (Unix time) when the product was purchased
 	title - Title of the product
-	stickers - No description
+	stickers - 
 	icon - Array of icon images or icon set object of the product (for stickers product type)
 	previews - Array of preview images of the product (for stickers product type)
 	has_animation - Information whether the product is an animated sticker pack (for stickers product type)
@@ -7127,10 +6551,6 @@ None
 class StoreStickerSKeyword:
 	"""VK Object StoreStickerSKeyword
 
-	words - No description
-	user_stickers - No description
-	promoted_stickers - No description
-	stickers - No description
 	"""
 	words = None
 	user_stickers = None
@@ -7157,8 +6577,6 @@ class StoreStickerSKeywordStickerS:
 class StorieSClickableArea:
 	"""VK Object StorieSClickableArea
 
-	x - No description
-	y - No description
 	"""
 	x = None
 	y = None
@@ -7167,35 +6585,35 @@ class StorieSClickableArea:
 class StorieSClickableSticker:
 	"""VK Object StorieSClickableSticker
 
-	clickable_area - No description
+	clickable_area - 
 	id - Clickable sticker ID
-	hashtag - No description
-	link_object - No description
-	mention - No description
-	tooltip_text - No description
-	owner_id - No description
-	story_id - No description
-	question - No description
-	question_button - No description
-	place_id - No description
-	market_item - No description
-	audio - No description
-	audio_start_time - No description
-	style - No description
-	type - No description
-	subtype - No description
-	post_owner_id - No description
-	post_id - No description
-	poll - No description
+	hashtag - 
+	link_object - 
+	mention - 
+	tooltip_text - 
+	owner_id - 
+	story_id - 
+	question - 
+	question_button - 
+	place_id - 
+	market_item - 
+	audio - 
+	audio_start_time - 
+	style - 
+	type - 
+	subtype - 
+	post_owner_id - 
+	post_id - 
+	poll - 
 	color - Color, hex format
 	sticker_id - Sticker ID
 	sticker_pack_id - Sticker pack ID
-	app - No description
+	app - 
 	app_context - Additional context for app sticker
 	has_new_interactions - Whether current user has unread interaction with this app
 	is_broadcast_notify_allowed - Whether current user allowed broadcast notify from this app
-	situational_theme_id - No description
-	situational_app_url - No description
+	situational_theme_id - 
+	situational_app_url - 
 	"""
 	clickable_area = None
 	id = None
@@ -7231,9 +6649,6 @@ class StorieSClickableSticker:
 class StorieSClickableStickerS:
 	"""VK Object StorieSClickableStickerS
 
-	clickable_stickers - No description
-	original_height - No description
-	original_width - No description
 	"""
 	clickable_stickers = None
 	original_height = None
@@ -7244,12 +6659,12 @@ class StorieSFeedItem:
 	"""VK Object StorieSFeedItem
 
 	type - Type of Feed Item
-	id - No description
+	id - 
 	stories - Author stories
 	grouped - Grouped stories of various authors (for types community_grouped_stories/app_grouped_stories type)
 	app - App, which stories has been grouped (for type app_grouped_stories)
 	promo_data - Additional data for promo stories (for type promo_stories)
-	birthday_user_id - No description
+	birthday_user_id - 
 	"""
 	type = None
 	id = None
@@ -7287,9 +6702,6 @@ class StorieSReplieS:
 class StorieSStatLine:
 	"""VK Object StorieSStatLine
 
-	name - No description
-	counter - No description
-	is_unavailable - No description
 	"""
 	name = None
 	counter = None
@@ -7311,25 +6723,25 @@ class StorieSStory:
 	id - Story ID.
 	is_deleted - Information whether the story is deleted (false - no, true - yes).
 	is_expired - Information whether the story is expired (false - no, true - yes).
-	link - No description
+	link - 
 	owner_id - Story owner's ID.
-	parent_story - No description
+	parent_story - 
 	parent_story_access_key - Access key for private object.
 	parent_story_id - Parent story ID.
 	parent_story_owner_id - Parent story owner's ID.
-	photo - No description
+	photo - 
 	replies - Replies counters to current story.
 	seen - Information whether current user has seen the story or not (0 - no, 1 - yes).
-	type - No description
-	clickable_stickers - No description
-	video - No description
+	type - 
+	clickable_stickers - 
+	video - 
 	views - Views number.
 	can_ask - Information whether story has question sticker and current user can send question to the author
 	can_ask_anonymous - Information whether story has question sticker and current user can send anonymous question to the author
-	narratives_count - No description
-	first_narrative_title - No description
-	birthday_wish_user_id - No description
-	can_use_in_narrative - No description
+	narratives_count - 
+	first_narrative_title - 
+	birthday_wish_user_id - 
+	can_use_in_narrative - 
 	"""
 	access_key = None
 	can_comment = None
@@ -7377,14 +6789,6 @@ class StorieSStoryLink:
 class StorieSStoryStatS:
 	"""VK Object StorieSStoryStatS
 
-	answer - No description
-	bans - No description
-	open_link - No description
-	replies - No description
-	shares - No description
-	subscribers - No description
-	views - No description
-	likes - No description
 	"""
 	answer = None
 	bans = None
@@ -7400,7 +6804,7 @@ class StorieSStoryStatSStat:
 	"""VK Object StorieSStoryStatSStat
 
 	count - Stat value
-	state - No description
+	state - 
 	"""
 	count = None
 	state = None
@@ -7409,9 +6813,6 @@ class StorieSStoryStatSStat:
 class StorieSStoryStatSState:
 	"""VK Object StorieSStoryStatSState
 
-	on - None
-	off - None
-	hidden - None
 	"""
 	on = 0
 	off = 1
@@ -7421,11 +6822,6 @@ class StorieSStoryStatSState:
 class StorieSStoryType:
 	"""VK Object StorieSStoryType
 
-	photo - None
-	video - None
-	live_active - None
-	live_finished - None
-	birthday_invite - None
 	"""
 	photo = 0
 	video = 1
@@ -7437,27 +6833,6 @@ class StorieSStoryType:
 class StorieSUploadLinkText:
 	"""VK Object StorieSUploadLinkText
 
-	to_store - None
-	vote - None
-	more - None
-	book - None
-	order - None
-	enroll - None
-	fill - None
-	signup - None
-	buy - None
-	ticket - None
-	write - None
-	open - None
-	learn_more - None
-	view - None
-	go_to - None
-	contact - None
-	watch - None
-	play - None
-	install - None
-	read - None
-	calendar - None
 	"""
 	to_store = 0
 	vote = 1
@@ -7487,7 +6862,7 @@ class StorieSViewerSItem:
 
 	is_liked - user has like for this object
 	user_id - user id
-	user - No description
+	user - 
 	"""
 	is_liked = None
 	user_id = None
@@ -7521,9 +6896,6 @@ class UsersCareer:
 class UsersExports:
 	"""VK Object UsersExports
 
-	facebook - No description
-	livejournal - No description
-	twitter - No description
 	"""
 	facebook = None
 	livejournal = None
@@ -7533,95 +6905,6 @@ class UsersExports:
 class UsersFields:
 	"""VK Object UsersFields
 
-	first_name_nom - None
-	first_name_gen - None
-	first_name_dat - None
-	first_name_acc - None
-	first_name_ins - None
-	first_name_abl - None
-	last_name_nom - None
-	last_name_gen - None
-	last_name_dat - None
-	last_name_acc - None
-	last_name_ins - None
-	last_name_abl - None
-	photo_id - None
-	verified - None
-	sex - None
-	bdate - None
-	city - None
-	country - None
-	home_town - None
-	has_photo - None
-	photo_50 - None
-	photo_100 - None
-	photo_200_orig - None
-	photo_200 - None
-	photo_400 - None
-	photo_400_orig - None
-	photo_max - None
-	photo_max_orig - None
-	photo_max_size - None
-	online - None
-	lists - None
-	domain - None
-	has_mobile - None
-	contacts - None
-	site - None
-	education - None
-	universities - None
-	schools - None
-	status - None
-	last_seen - None
-	followers_count - None
-	counters - None
-	common_count - None
-	occupation - None
-	nickname - None
-	relatives - None
-	relation - None
-	personal - None
-	connections - None
-	exports - None
-	wall_comments - None
-	activities - None
-	interests - None
-	music - None
-	movies - None
-	tv - None
-	books - None
-	games - None
-	about - None
-	quotes - None
-	can_post - None
-	can_see_all_posts - None
-	can_see_audio - None
-	can_write_private_message - None
-	can_send_friend_request - None
-	is_favorite - None
-	is_hidden_from_feed - None
-	timezone - None
-	screen_name - None
-	maiden_name - None
-	crop_photo - None
-	is_friend - None
-	friend_status - None
-	career - None
-	military - None
-	blacklisted - None
-	blacklisted_by_me - None
-	can_subscribe_posts - None
-	descriptions - None
-	trending - None
-	mutual - None
-	friendship_weeks - None
-	can_invite_to_chats - None
-	stories_archive_count - None
-	video_live_level - None
-	video_live_count - None
-	clips_count - None
-	service_description - None
-	is_dead - None
 	"""
 	first_name_nom = 0
 	first_name_gen = 1
@@ -7777,7 +7060,7 @@ class UsersPersonal:
 
 	alcohol - User's views on alcohol
 	inspired_by - User's inspired by
-	langs - No description
+	langs - 
 	life_main - User's personal priority in life
 	people_main - User's personal priority in people
 	political - User's political views
@@ -7823,7 +7106,7 @@ class UsersSchool:
 	year_from - Year the user started to study
 	year_graduated - Graduation year
 	year_to - Year the user finished to study
-	speciality - No description
+	speciality - 
 	"""
 	city = None
 	_class = None
@@ -7852,7 +7135,7 @@ class UsersUniversity:
 	graduation - Graduation year
 	id - University ID
 	name - University name
-	university_group_id - No description
+	university_group_id - 
 	"""
 	chair = None
 	chair_name = None
@@ -7875,14 +7158,14 @@ class UsersUser:
 	screen_name - Domain name of the user's page
 	photo_50 - URL of square photo of the user with 50 pixels in width
 	photo_100 - URL of square photo of the user with 100 pixels in width
-	online_info - No description
+	online_info - 
 	online - Information whether the user is online
 	online_mobile - Information whether the user is online in mobile site or application
 	online_app - Application ID
 	verified - Information whether the user is verified
 	trending - Information whether the user has a "fire" pictogram.
-	friend_status - No description
-	mutual - No description
+	friend_status - 
+	mutual - 
 	"""
 	sex = <built-in function iter>
 	screen_name = <built-in function iter>
@@ -7933,15 +7216,15 @@ class UsersUserCoUnters:
 	user_photos - Number of photos with user
 	user_videos - Number of videos with user
 	videos - Videos number
-	new_photo_tags - No description
-	new_recognition_tags - No description
-	mutual_friends - No description
-	posts - No description
-	articles - No description
-	wishes - No description
-	podcasts - No description
-	clips - No description
-	clips_followers - No description
+	new_photo_tags - 
+	new_recognition_tags - 
+	mutual_friends - 
+	posts - 
+	articles - 
+	wishes - 
+	podcasts - 
+	clips - 
+	clips_followers - 
 	"""
 	albums = None
 	audios = None
@@ -7988,10 +7271,10 @@ class UsersUserFUll:
 	contact_name - User contact name
 	domain - Domain name of the user's page
 	bdate - User's date of birth
-	city - No description
-	country - No description
+	city - 
+	country - 
 	timezone - User's timezone
-	owner_state - No description
+	owner_state - 
 	photo_200 - URL of square photo of the user with 200 pixels in width
 	photo_max - URL of square photo of the user with maximum width
 	photo_200_orig - URL of user's photo with 200 pixels in width
@@ -8005,53 +7288,53 @@ class UsersUserFUll:
 	can_post - Information whether current user can post on the user's wall
 	can_see_all_posts - Information whether current user can see other users' audio on the wall
 	can_see_audio - Information whether current user can see the user's audio
-	type - No description
-	email - No description
-	skype - No description
-	facebook - No description
-	facebook_name - No description
-	twitter - No description
-	livejournal - No description
-	instagram - No description
-	test - No description
-	video_live - No description
-	is_video_live_notifications_blocked - No description
-	is_service - No description
-	service_description - No description
-	photo_rec - No description
-	photo_medium - No description
-	photo_medium_rec - No description
-	photo - No description
-	photo_big - No description
-	photo_400 - No description
-	photo_max_size - No description
-	language - No description
-	stories_archive_count - No description
-	wall_default - No description
+	type - 
+	email - 
+	skype - 
+	facebook - 
+	facebook_name - 
+	twitter - 
+	livejournal - 
+	instagram - 
+	test - 
+	video_live - 
+	is_video_live_notifications_blocked - 
+	is_service - 
+	service_description - 
+	photo_rec - 
+	photo_medium - 
+	photo_medium_rec - 
+	photo - 
+	photo_big - 
+	photo_400 - 
+	photo_max_size - 
+	language - 
+	stories_archive_count - 
+	wall_default - 
 	can_call - Information whether current user can call
 	can_see_wishes - Information whether current user can see the user's wishes
 	can_see_gifts - Information whether current user can see the user's gifts
-	interests - No description
-	books - No description
-	tv - No description
-	quotes - No description
-	about - No description
-	games - No description
-	movies - No description
-	activities - No description
-	music - No description
+	interests - 
+	books - 
+	tv - 
+	quotes - 
+	about - 
+	games - 
+	movies - 
+	activities - 
+	music - 
 	can_write_private_message - Information whether current user can write private message
 	can_send_friend_request - Information whether current user can send a friend request
 	can_be_invited_group - Information whether current user can be invited to the community
 	mobile_phone - User's mobile phone number
 	home_phone - User's additional phone number
 	site - User's website
-	status_audio - No description
+	status_audio - 
 	status - User's status
 	activity - User's status
-	last_seen - No description
-	exports - No description
-	crop_photo - No description
+	last_seen - 
+	exports - 
+	crop_photo - 
 	followers_count - Number of user's followers
 	video_live_level - User level in live streams achievements
 	video_live_count - Number of user's live streams
@@ -8061,12 +7344,12 @@ class UsersUserFUll:
 	is_favorite - Information whether the requested user is in faves of current user
 	is_hidden_from_feed - Information whether the requested user is hidden from current user's newsfeed
 	common_count - Number of common friends with current user
-	occupation - No description
-	career - No description
-	military - No description
+	occupation - 
+	career - 
+	military - 
 	university - University ID
 	university_name - University name
-	university_group_id - No description
+	university_group_id - 
 	faculty - Faculty ID
 	faculty_name - Faculty name
 	graduation - Graduation year
@@ -8074,19 +7357,19 @@ class UsersUserFUll:
 	education_status - User's education status
 	home_town - User hometown
 	relation - User relationship status
-	relation_partner - No description
-	personal - No description
-	universities - No description
-	schools - No description
-	relatives - No description
+	relation_partner - 
+	personal - 
+	universities - 
+	schools - 
+	relatives - 
 	is_subscribed_podcasts - Information whether current user is subscribed to podcasts
 	can_subscribe_podcasts - Owner in whitelist or not
 	can_subscribe_posts - Can subscribe to wall
-	counters - No description
-	access_key - No description
-	can_upload_doc - No description
-	hash - No description
-	has_email - No description
+	counters - 
+	access_key - 
+	can_upload_doc - 
+	hash - 
+	has_email - 
 	"""
 	first_name_nom = <built-in function iter>
 	first_name_gen = <built-in function iter>
@@ -8214,8 +7497,8 @@ class UsersUserMin:
 	hidden - Returns if a profile is hidden.
 	id - User ID
 	last_name - User last name
-	can_access_closed - No description
-	is_closed - No description
+	can_access_closed - 
+	is_closed - 
 	"""
 	deactivated = None
 	first_name = None
@@ -8224,33 +7507,48 @@ class UsersUserMin:
 	last_name = None
 	can_access_closed = None
 	is_closed = None
-None
+
+
+class UsersUserRelation:
+	"""VK Object UsersUserRelation
+
+	"""
+	not specified = 0
+	single = 1
+	in a relationship = 2
+	engaged = 3
+	married = 4
+	complicated = 5
+	actively searching = 6
+	in love = 7
+	in a civil union = 8
+
 
 class UsersUserSettingsXtr:
 	"""VK Object UsersUserSettingsXtr
 
-	connections - No description
+	connections - 
 	bdate - User's date of birth
 	bdate_visibility - Information whether user's birthdate are hidden
-	city - No description
-	country - No description
+	city - 
+	country - 
 	first_name - User first name
 	home_town - User's hometown
 	last_name - User last name
 	maiden_name - User maiden name
-	name_request - No description
-	personal - No description
+	name_request - 
+	personal - 
 	phone - User phone number with some hidden digits
 	relation - User relationship status
-	relation_partner - No description
+	relation_partner - 
 	relation_pending - Information whether relation status is pending
-	relation_requests - No description
+	relation_requests - 
 	screen_name - Domain name of the user's page
 	sex - User sex
 	status - User status
-	status_audio - No description
-	interests - No description
-	languages - No description
+	status_audio - 
+	interests - 
+	languages - 
 	"""
 	connections = None
 	bdate = None
@@ -8279,7 +7577,6 @@ class UsersUserSettingsXtr:
 class UsersUserType:
 	"""VK Object UsersUserType
 
-	profile - None
 	"""
 	profile = 0
 
@@ -8293,7 +7590,6 @@ class UsersUserXtrCoUnters:
 class UsersUserXtrType:
 	"""VK Object UsersUserXtrType
 
-	type - No description
 	"""
 	type = <built-in function iter>
 
@@ -8302,7 +7598,7 @@ class UsersUsersArray:
 	"""VK Object UsersUsersArray
 
 	count - Users number
-	items - No description
+	items - 
 	"""
 	count = None
 	items = None
@@ -8313,7 +7609,7 @@ class UtilsDomainResolved:
 
 	object_id - Object ID
 	group_id - Group ID
-	type - No description
+	type - 
 	"""
 	object_id = None
 	group_id = None
@@ -8323,12 +7619,6 @@ class UtilsDomainResolved:
 class UtilsDomainResolvedType:
 	"""VK Object UtilsDomainResolvedType
 
-	user - None
-	group - None
-	application - None
-	page - None
-	vk_app - None
-	community_application - None
 	"""
 	user = 0
 	group = 1
@@ -8360,7 +7650,7 @@ class UtilsLinkChecked:
 	"""VK Object UtilsLinkChecked
 
 	link - Link URL
-	status - No description
+	status - 
 	"""
 	link = None
 	status = None
@@ -8369,9 +7659,6 @@ class UtilsLinkChecked:
 class UtilsLinkCheckedStatUs:
 	"""VK Object UtilsLinkCheckedStatUs
 
-	not_banned - None
-	banned - None
-	processing - None
 	"""
 	not_banned = 0
 	banned = 1
@@ -8382,7 +7669,7 @@ class UtilsLinkStats:
 	"""VK Object UtilsLinkStats
 
 	key - Link key (characters after vk.cc/)
-	stats - No description
+	stats - 
 	"""
 	key = None
 	stats = None
@@ -8392,7 +7679,7 @@ class UtilsLinkStatsExtended:
 	"""VK Object UtilsLinkStatsExtended
 
 	key - Link key (characters after vk.cc/)
-	stats - No description
+	stats - 
 	"""
 	key = None
 	stats = None
@@ -8445,9 +7732,9 @@ class UtilsStatsCoUntry:
 class UtilsStatsExtended:
 	"""VK Object UtilsStatsExtended
 
-	cities - No description
-	countries - No description
-	sex_age - No description
+	cities - 
+	countries - 
+	sex_age - 
 	timestamp - Start time
 	views - Total views number
 	"""
@@ -8473,8 +7760,6 @@ class UtilsStatsSexAge:
 class VideoLiVeInfo:
 	"""VK Object VideoLiVeInfo
 
-	enabled - No description
-	is_notifications_blocked - No description
 	"""
 	enabled = None
 	is_notifications_blocked = None
@@ -8495,8 +7780,6 @@ class VideoLiVeSettings:
 class VideoRestrictionButton:
 	"""VK Object VideoRestrictionButton
 
-	action - No description
-	title - No description
 	"""
 	action = None
 	title = None
@@ -8538,8 +7821,8 @@ class VideoVideo:
 	date - Date when video has been uploaded in Unixtime
 	description - Video description
 	duration - Video duration in seconds
-	image - No description
-	first_frame - No description
+	image - 
+	first_frame - 
 	width - Video width
 	height - Video height
 	id - Video ID
@@ -8550,12 +7833,12 @@ class VideoVideo:
 	player - Video embed URL
 	processing - Returns if the video is processing
 	converting - 1 if  video is being converted
-	restriction - No description
+	restriction - 
 	added - 1 if video is added to user's albums
 	is_subscribed - 1 if user is subscribed to author of the video
-	track_code - No description
+	track_code - 
 	repeat - Information whether the video is repeated
-	type - No description
+	type - 
 	views - Number of views
 	local_views - If video is external, number of views on vk
 	content_restricted - Restriction code
@@ -8568,8 +7851,8 @@ class VideoVideo:
 	live_notify - Whether current user is subscribed to the upcoming live stream notification (if not subscribed to the author)
 	spectators - Number of spectators of the stream
 	platform - External platform
-	likes - No description
-	reposts - No description
+	likes - 
+	reposts - 
 	"""
 	access_key = <built-in function iter>
 	adding_date = <built-in function iter>
@@ -8665,7 +7948,7 @@ class VideoVideoFiles:
 class VideoVideoFull:
 	"""VK Object VideoVideoFull
 
-	files - No description
+	files - 
 	live_settings - Settings for live stream
 	"""
 	files = <built-in function iter>
@@ -8675,7 +7958,6 @@ class VideoVideoFull:
 class VideoVideoImage:
 	"""VK Object VideoVideoImage
 
-	with_padding - No description
 	"""
 	with_padding = <built-in function iter>
 
@@ -8725,17 +8007,6 @@ class WallCarouselBase:
 class WallCommentAttachment:
 	"""VK Object WallCommentAttachment
 
-	audio - No description
-	doc - No description
-	link - No description
-	market - No description
-	market_market_album - No description
-	note - No description
-	page - No description
-	photo - No description
-	sticker - No description
-	type - No description
-	video - No description
 	"""
 	audio = None
 	doc = None
@@ -8753,16 +8024,6 @@ class WallCommentAttachment:
 class WallCommentAttachmentType:
 	"""VK Object WallCommentAttachmentType
 
-	photo - None
-	audio - None
-	video - None
-	doc - None
-	link - None
-	note - None
-	page - None
-	market_market_album - None
-	market - None
-	sticker - None
 	"""
 	photo = 0
 	audio = 1
@@ -8780,7 +8041,7 @@ class WallGeo:
 	"""VK Object WallGeo
 
 	coordinates - Coordinates as string. <latitude> <longtitude>
-	place - No description
+	place - 
 	showmap - Information whether a map is showed
 	type - Place type
 	"""
@@ -8807,10 +8068,6 @@ class WallGraffiti:
 class WallPostCopyright:
 	"""VK Object WallPostCopyright
 
-	id - No description
-	link - No description
-	name - No description
-	type - No description
 	"""
 	id = None
 	link = None
@@ -8823,7 +8080,7 @@ class WallPostSource:
 
 	data - Additional data
 	platform - Platform name
-	type - No description
+	type - 
 	url - URL to an external site used to publish the post
 	"""
 	data = None
@@ -8835,12 +8092,6 @@ class WallPostSource:
 class WallPostSourceType:
 	"""VK Object WallPostSourceType
 
-	vk - None
-	widget - None
-	api - None
-	rss - None
-	sms - None
-	mvk - None
 	"""
 	vk = 0
 	widget = 1
@@ -8853,11 +8104,6 @@ class WallPostSourceType:
 class WallPostType:
 	"""VK Object WallPostType
 
-	post - None
-	copy - None
-	reply - None
-	postpone - None
-	suggest - None
 	"""
 	post = 0
 	copy = 1
@@ -8891,21 +8137,21 @@ class WallVieWs:
 class WallWallComment:
 	"""VK Object WallWallComment
 
-	attachments - No description
+	attachments - 
 	date - Date when the comment has been added in Unixtime
-	donut - No description
+	donut - 
 	from_id - Author ID
 	id - Comment ID
-	likes - No description
+	likes - 
 	real_offset - Real position of the comment
 	reply_to_comment - Replied comment ID
 	reply_to_user - Replied user ID
 	text - Comment text
-	thread - No description
-	post_id - No description
-	owner_id - No description
-	parents_stack - No description
-	deleted - No description
+	thread - 
+	post_id - 
+	owner_id - 
+	parents_stack - 
+	deleted - 
 	"""
 	attachments = None
 	date = None
@@ -8928,7 +8174,7 @@ class WallWallCommentDonut:
 	"""VK Object WallWallCommentDonut
 
 	is_don - Means commentator is donator
-	placeholder - No description
+	placeholder - 
 	"""
 	is_don = None
 	placeholder = None
@@ -8937,7 +8183,6 @@ class WallWallCommentDonut:
 class WallWallCommentDonutPlaceholder:
 	"""VK Object WallWallCommentDonutPlaceholder
 
-	text - No description
 	"""
 	text = None
 
@@ -8946,23 +8191,23 @@ class WallWallpost:
 	"""VK Object WallWallpost
 
 	access_key - Access key to private object
-	attachments - No description
+	attachments - 
 	copyright - Information about the source of the post
 	date - Date of publishing in Unixtime
 	edited - Date of editing in Unixtime
 	from_id - Post author ID
-	geo - No description
+	geo - 
 	id - Post ID
 	is_archived - Is post archived, only for post owners
 	is_favorite - Information whether the post in favorites list
 	likes - Count of likes
 	owner_id - Wall owner's ID
-	poster - No description
+	poster - 
 	post_id - If post type 'reply', contains original post ID
 	parents_stack - If post type 'reply', contains original parent IDs stack
-	post_source - No description
-	post_type - No description
-	reposts - No description
+	post_source - 
+	post_type - 
+	reposts - 
 	signer_id - Post signer ID
 	text - Post text
 	views - Count of views
@@ -8994,24 +8239,24 @@ class WallWallpostAttachment:
 	"""VK Object WallWallpostAttachment
 
 	access_key - Access key for the audio
-	album - No description
-	app - No description
-	audio - No description
-	doc - No description
-	event - No description
-	group - No description
-	graffiti - No description
-	link - No description
-	market - No description
-	market_album - No description
-	note - No description
-	page - No description
-	photo - No description
-	photos_list - No description
-	poll - No description
-	posted_photo - No description
-	type - No description
-	video - No description
+	album - 
+	app - 
+	audio - 
+	doc - 
+	event - 
+	group - 
+	graffiti - 
+	link - 
+	market - 
+	market_album - 
+	note - 
+	page - 
+	photo - 
+	photos_list - 
+	poll - 
+	posted_photo - 
+	type - 
+	video - 
 	"""
 	access_key = None
 	album = None
@@ -9037,22 +8282,6 @@ class WallWallpostAttachment:
 class WallWallpostAttachmentType:
 	"""VK Object WallWallpostAttachmentType
 
-	photo - None
-	posted_photo - None
-	audio - None
-	video - None
-	doc - None
-	link - None
-	graffiti - None
-	note - None
-	app - None
-	poll - None
-	page - None
-	album - None
-	photos_list - None
-	market_market_album - None
-	market - None
-	event - None
 	"""
 	photo = 0
 	posted_photo = 1
@@ -9075,7 +8304,6 @@ class WallWallpostAttachmentType:
 class WallWallpostCommentsDonut:
 	"""VK Object WallWallpostCommentsDonut
 
-	placeholder - No description
 	"""
 	placeholder = None
 
@@ -9083,7 +8311,6 @@ class WallWallpostCommentsDonut:
 class WallWallpostCommentsDonutPlaceholder:
 	"""VK Object WallWallpostCommentsDonutPlaceholder
 
-	text - No description
 	"""
 	text = None
 
@@ -9107,7 +8334,6 @@ class WallWallpostDonut:
 class WallWallpostDonutPlaceholder:
 	"""VK Object WallWallpostDonutPlaceholder
 
-	text - No description
 	"""
 	text = None
 
@@ -9115,14 +8341,14 @@ class WallWallpostDonutPlaceholder:
 class WallWallpostFull:
 	"""VK Object WallWallpostFull
 
-	copy_history - No description
+	copy_history - 
 	can_edit - Information whether current user can edit the post
 	created_by - Post creator ID (if post still can be edited)
 	can_delete - Information whether current user can delete the post
 	can_pin - Information whether current user can pin the post
-	donut - No description
+	donut - 
 	is_pinned - Information whether the post is pinned
-	comments - No description
+	comments - 
 	marked_as_ads - Information whether the post is marked as ads
 	short_text_rate - Preview length control parameter
 	"""
@@ -9141,20 +8367,20 @@ class WallWallpostFull:
 class WallWallpostToId:
 	"""VK Object WallWallpostToId
 
-	attachments - No description
-	comments - No description
+	attachments - 
+	comments - 
 	copy_owner_id - ID of the source post owner
 	copy_post_id - ID of the source post
 	date - Date of publishing in Unixtime
 	from_id - Post author ID
-	geo - No description
+	geo - 
 	id - Post ID
 	is_favorite - Information whether the post in favorites list
-	likes - No description
+	likes - 
 	post_id - wall post ID (if comment)
-	post_source - No description
-	post_type - No description
-	reposts - No description
+	post_source - 
+	post_type - 
+	reposts - 
 	signer_id - Post signer ID
 	text - Post text
 	to_id - Wall owner's ID
@@ -9184,7 +8410,7 @@ class WidgetsCommentMedia:
 	item_id - Media item ID
 	owner_id - Media owner's ID
 	thumb_src - URL of the preview image (type=photo only)
-	type - No description
+	type - 
 	"""
 	item_id = None
 	owner_id = None
@@ -9195,9 +8421,6 @@ class WidgetsCommentMedia:
 class WidgetsCommentMediaType:
 	"""VK Object WidgetsCommentMediaType
 
-	audio - None
-	photo - None
-	video - None
 	"""
 	audio = 0
 	photo = 1
@@ -9209,7 +8432,7 @@ class WidgetsCommentReplies:
 
 	can_post - Information whether current user can comment the post
 	count - Comments number
-	replies - No description
+	replies - 
 	"""
 	can_post = None
 	count = None
@@ -9221,10 +8444,10 @@ class WidgetsCommentRepliesItem:
 
 	cid - Comment ID
 	date - Date when the comment has been added in Unixtime
-	likes - No description
+	likes - 
 	text - Comment text
 	uid - User ID
-	user - No description
+	user - 
 	"""
 	cid = None
 	date = None
@@ -9237,20 +8460,20 @@ class WidgetsCommentRepliesItem:
 class WidgetsWidgetComment:
 	"""VK Object WidgetsWidgetComment
 
-	attachments - No description
+	attachments - 
 	can_delete - Information whether current user can delete the comment
-	comments - No description
+	comments - 
 	date - Date when the comment has been added in Unixtime
 	from_id - Comment author ID
 	id - Comment ID
-	likes - No description
-	media - No description
-	post_source - No description
+	likes - 
+	media - 
+	post_source - 
 	post_type - Post type
-	reposts - No description
+	reposts - 
 	text - Comment text
 	to_id - Wall owner
-	user - No description
+	user - 
 	"""
 	attachments = None
 	can_delete = None
@@ -9279,11 +8502,11 @@ class WidgetsWidgetLikes:
 class WidgetsWidgetPage:
 	"""VK Object WidgetsWidgetPage
 
-	comments - No description
+	comments - 
 	date - Date when widgets on the page has been initialized firstly in Unixtime
 	description - Page description
 	id - Page ID
-	likes - No description
+	likes - 
 	page_id - page_id parameter value
 	photo - URL of the preview image
 	title - Page title
