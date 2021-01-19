@@ -2,19 +2,19 @@ from config import yaml_processing
 import json
 import re
 import logging
-from models.schema_objects import SchemaAllOfObject, SchemaObject, SchemaEnum
+from models.schema_objects import schema_object_fabric_method
 logging.basicConfig(level=logging.INFO)
 
 CONFIG = yaml_processing.get_config('config/config.yaml')
 objects_path: str = CONFIG['schema_objects_path']
 
 
-def get_dict(path: str) -> dict:
+def get_json_dict(path: str) -> dict:
     with open(path, 'r') as f:
         return json.loads(f.read())
 
 
-def camel_case_strings(string_list: list) -> list:
+def snake_case_to_camel_case(string_list: list) -> list:
     words_list: list = []
     pattern: re.Pattern = re.compile(r'\w*?(_.)')
     for word in string_list:
@@ -27,37 +27,26 @@ def camel_case_strings(string_list: list) -> list:
     return dict(zip(string_list, words_list))
 
 
-def prepare_data(plain_data: str, classnames: str) -> None:
+def shift_json_dict_names(plain_data: str, classnames: str) -> None:
     prepared_dict: dict = {}
     for k, v in classnames.items():
         prepared_dict[v] = plain_data[k]
     return prepared_dict
 
 
-def handle_classes(prepared_dict: dict) -> None:
+def write_translated_json(prepared_dict: dict) -> None:
     with open('codegen.py', 'a') as pyfile:
         for classname in prepared_dict.keys():
             class_form = None
-            try:
-                if prepared_dict[classname]['type'] == 'object':
-                    if prepared_dict[classname].get('allOf', None):
-                        class_form = SchemaAllOfObject(classname, prepared_dict)
-                    elif prepared_dict[classname].get('properties', None):
-                        class_form = SchemaObject(classname, prepared_dict)
-                elif prepared_dict[classname]['type'] == 'string':
-                    class_form = SchemaEnum(classname, prepared_dict)
-                else:
-                    continue
-            except KeyError:
-                continue
+            class_form = schema_object_fabric_method(classname, prepared_dict)
             pyfile.write(str(class_form))
 
 
 def parse_file(path: str) -> None:
-    types_dict: dict = get_dict(path)['definitions']
-    classnames: list = camel_case_strings(types_dict.keys())
-    prepared_dict: dict = prepare_data(types_dict, classnames)
-    handle_classes(prepared_dict)
+    types_dict: dict = get_json_dict(path)['definitions']
+    classnames: list = snake_case_to_camel_case(types_dict.keys())
+    prepared_dict: dict = shift_json_dict_names(types_dict, classnames)
+    write_translated_json(prepared_dict)
 
     logging.info("READY")
 
