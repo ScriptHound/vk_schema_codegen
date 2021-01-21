@@ -1,37 +1,15 @@
 from config import yaml_processing
-import json
-import re
+from utils.strings_util import (
+    get_json_dict,
+    snake_case_to_camel_case,
+    shift_json_dict_names
+)
 import logging
 from models.schema_objects import schema_object_fabric_method
 logging.basicConfig(level=logging.INFO)
 
 CONFIG = yaml_processing.get_config('config/config.yaml')
 objects_path: str = CONFIG['schema_objects_path']
-
-
-def get_json_dict(path: str) -> dict:
-    with open(path, 'r') as f:
-        return json.loads(f.read())
-
-
-def snake_case_to_camel_case(string_list: list) -> list:
-    words_list: list = []
-    pattern: re.Pattern = re.compile(r'\w*?(_.)')
-    for word in string_list:
-        chars = re.findall(pattern, word)
-        for ch in chars:
-            word = word.replace(ch, ch[-1].upper())
-        word = word.replace(word[0], word[0].upper())
-
-        words_list.append(word)
-    return dict(zip(string_list, words_list))
-
-
-def shift_json_dict_names(plain_data: str, classnames: str) -> None:
-    prepared_dict: dict = {}
-    for k, v in classnames.items():
-        prepared_dict[v] = plain_data[k]
-    return prepared_dict
 
 
 def write_translated_json(prepared_dict: dict) -> None:

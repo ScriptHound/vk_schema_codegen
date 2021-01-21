@@ -1,5 +1,6 @@
 import abc
 from .models import ClassForm
+# fabric method pattern
 
 
 class AbstractSchemaObject(abc.ABC):
@@ -28,27 +29,24 @@ class SchemaAllOfObject(AbstractSchemaObject):
             if properties:
                 for name in properties.keys():
                     text = properties[name].get('description', None)
-                    self.class_form.add_param(name, str(iter))
+                    self.class_form.add_param(name, None)
                     self.class_form.add_description_row(name, text)
 
 
 class SchemaEnum(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
-        self.class_form: ClassForm = ClassForm(classname)
-        counter = 0
+        self.class_form: ClassForm = ClassForm(classname, predecessor='enum.Enum')
         for name in prepared_dict[classname]['enum']:
             text = None
-            self.class_form.add_param(name, str(counter))
+            self.class_form.add_param(name.upper(), f'"{name}"')
             self.class_form.add_description_row(name, text)
-            counter += 1
 
 
 class SchemaEnumInitialized(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
-        self.class_form: ClassForm = ClassForm(classname)
+        self.class_form: ClassForm = ClassForm(classname, predecessor='enum.IntEnum')
         counter = 0
         for i in prepared_dict[classname]['enum']:
-            # minus one because numerical enum starts from 1
             name = prepared_dict[classname]['enumNames'][counter]
             text = None
             self.class_form.add_param(name, i)
@@ -62,21 +60,22 @@ class SchemaUndefined(AbstractSchemaObject):
 
 
 def schema_object_fabric_method(classname, prepared_dict):
-    if prepared_dict[classname].get('type', None) == 'object':
-        if prepared_dict[classname].get('allOf', None):
+    json_type = prepared_dict[classname]
+    if json_type.get('type', None) == 'object':
+        if json_type.get('allOf', None):
             return SchemaAllOfObject(classname, prepared_dict)
-        elif prepared_dict[classname].get('properties', None):
+        elif json_type.get('properties', None):
             return SchemaObject(classname, prepared_dict)
 
-    elif prepared_dict[classname].get('type', None) == 'string':
+    elif json_type.get('type', None) == 'string':
         # if enum is numerical
-        if type(prepared_dict[classname]['enum'][0]) == int:
+        if type(json_type['enum'][0]) == int:
             return SchemaEnumInitialized(classname, prepared_dict)
         else:
             return SchemaEnum(classname, prepared_dict)
 
-    elif prepared_dict[classname].get('type', None) == 'integer':
+    elif json_type.get('type', None) == 'integer':
         return SchemaEnumInitialized(classname, prepared_dict)
 
-    elif prepared_dict[classname].get('type', None) is None:
+    elif json_type.get('type', None) is None:
         return SchemaUndefined(classname, prepared_dict)

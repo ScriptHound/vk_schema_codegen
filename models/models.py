@@ -4,12 +4,16 @@ import abc
 
 
 class ObjectModel(abc.ABC):
-    def __init__(self, classname: str) -> None:
+    def __init__(self, classname: str, predecessor: str = 'BaseModel') -> None:
         self.params: dict = {}
         self.classname: str = classname
+        self.predecessor: str = predecessor
 
     def add_param(self, param_name: str, param_value: str) -> None:
         self.params.update({param_name: param_value})
+
+    def set_super_class(self, predecessor: str):
+        self.predecessor = predecessor
 
     @abc.abstractmethod
     def __str__(self):
@@ -31,8 +35,11 @@ class Description(ObjectModel):
 
 
 class ClassForm(ObjectModel):
-    def __init__(self, classname: str, desc: Description = None) -> None:
-        super().__init__(classname)
+    def __init__(self, classname: str,
+                 desc: Description = None,
+                 predecessor: str = 'BaseModel'
+                 ) -> None:
+        super().__init__(classname, predecessor=predecessor)
         self.description = desc if desc else Description(self.classname)
 
     def add_description_row(self, name, text):
@@ -40,6 +47,9 @@ class ClassForm(ObjectModel):
 
     def __str__(self):
         label = f'\n\nclass {self.classname}:\n'
+        if self.predecessor is not None:
+            label = f'\n\nclass {self.classname}({self.predecessor}):\n'    
+
         label += str(self.description)
 
         for name, value in self.params.items():

@@ -1,6 +1,6 @@
 
 
-class AccountAccountCounters:
+class AccountAccountCounters(BaseModel):
 	"""VK Object AccountAccountCounters
 
 	app_requests - New app requests number
@@ -38,7 +38,7 @@ class AccountAccountCounters:
 	sdk = None
 
 
-class AccountInfo:
+class AccountInfo(BaseModel):
 	"""VK Object AccountInfo
 
 	wishlists_ae_promo_banner_show - 
@@ -70,7 +70,7 @@ class AccountInfo:
 	subscriptions = None
 
 
-class AccountNAmeRequest:
+class AccountNAmeRequest(BaseModel):
 	"""VK Object AccountNAmeRequest
 
 	first_name - First name in request
@@ -90,21 +90,21 @@ class AccountNAmeRequest:
 	link_label = None
 
 
-class AccountNAmeRequestStAtus:
+class AccountNAmeRequestStAtus(enum.Enum):
 	"""VK Object AccountNAmeRequestStAtus
 
 	"""
-	success = 0
-	processing = 1
-	declined = 2
-	was_accepted = 3
-	was_declined = 4
-	declined_with_link = 5
-	response = 6
-	response_with_link = 7
+	SUCCESS = "success"
+	PROCESSING = "processing"
+	DECLINED = "declined"
+	WAS_ACCEPTED = "was_accepted"
+	WAS_DECLINED = "was_declined"
+	DECLINED_WITH_LINK = "declined_with_link"
+	RESPONSE = "response"
+	RESPONSE_WITH_LINK = "response_with_link"
 
 
-class AccountOffer:
+class AccountOffer(BaseModel):
 	"""VK Object AccountOffer
 
 	description - Offer description
@@ -134,7 +134,7 @@ class AccountOffer:
 	link_type = None
 
 
-class AccountPushConversAtions:
+class AccountPushConversAtions(BaseModel):
 	"""VK Object AccountPushConversAtions
 
 	count - Items count
@@ -144,7 +144,7 @@ class AccountPushConversAtions:
 	items = None
 
 
-class AccountPushConversAtionsItem:
+class AccountPushConversAtionsItem(BaseModel):
 	"""VK Object AccountPushConversAtionsItem
 
 	disabled_until - Time until that notifications are disabled in seconds
@@ -156,7 +156,7 @@ class AccountPushConversAtionsItem:
 	sound = None
 
 
-class AccountPushPArAms:
+class AccountPushPArAms(BaseModel):
 	"""VK Object AccountPushPArAms
 
 	"""
@@ -181,34 +181,34 @@ class AccountPushPArAms:
 	sdk_open = None
 
 
-class AccountPushPArAmsMode:
+class AccountPushPArAmsMode(enum.Enum):
 	"""VK Object AccountPushPArAmsMode
 
 	"""
-	on = 0
-	off = 1
-	no_sound = 2
-	no_text = 3
+	ON = "on"
+	OFF = "off"
+	NO_SOUND = "no_sound"
+	NO_TEXT = "no_text"
 
 
-class AccountPushPArAmsOnoff:
+class AccountPushPArAmsOnoff(enum.Enum):
 	"""VK Object AccountPushPArAmsOnoff
 
 	"""
-	on = 0
-	off = 1
+	ON = "on"
+	OFF = "off"
 
 
-class AccountPushPArAmsSettings:
+class AccountPushPArAmsSettings(enum.Enum):
 	"""VK Object AccountPushPArAmsSettings
 
 	"""
-	on = 0
-	off = 1
-	fr_of_fr = 2
+	ON = "on"
+	OFF = "off"
+	FR_OF_FR = "fr_of_fr"
 
 
-class AccountPushSettings:
+class AccountPushSettings(BaseModel):
 	"""VK Object AccountPushSettings
 
 	disabled - Information whether notifications are disabled
@@ -222,17 +222,17 @@ class AccountPushSettings:
 	conversations = None
 
 
-class AccountUserSettings:
+class AccountUserSettings(BaseModel):
 	"""VK Object AccountUserSettings
 
 	photo_200 - URL of square photo of the user with 200 pixels in width
 	is_service_account - flag about service account
 	"""
-	photo_200 = <built-in function iter>
-	is_service_account = <built-in function iter>
+	photo_200 = None
+	is_service_account = None
 
 
-class AccountUserSettingsInterest:
+class AccountUserSettingsInterest(BaseModel):
 	"""VK Object AccountUserSettingsInterest
 
 	"""
@@ -240,7 +240,7 @@ class AccountUserSettingsInterest:
 	value = None
 
 
-class AccountUserSettingsInterests:
+class AccountUserSettingsInterests(BaseModel):
 	"""VK Object AccountUserSettingsInterests
 
 	"""
@@ -255,44 +255,44 @@ class AccountUserSettingsInterests:
 	about = None
 
 
-class AddressesFields:
+class AddressesFields(enum.Enum):
 	"""VK Object AddressesFields
 
 	"""
-	id = 0
-	title = 1
-	address = 2
-	additional_address = 3
-	country_id = 4
-	city_id = 5
-	metro_station_id = 6
-	latitude = 7
-	longitude = 8
-	distance = 9
-	work_info_status = 10
-	timetable = 11
-	phone = 12
-	time_offset = 13
+	ID = "id"
+	TITLE = "title"
+	ADDRESS = "address"
+	ADDITIONAL_ADDRESS = "additional_address"
+	COUNTRY_ID = "country_id"
+	CITY_ID = "city_id"
+	METRO_STATION_ID = "metro_station_id"
+	LATITUDE = "latitude"
+	LONGITUDE = "longitude"
+	DISTANCE = "distance"
+	WORK_INFO_STATUS = "work_info_status"
+	TIMETABLE = "timetable"
+	PHONE = "phone"
+	TIME_OFFSET = "time_offset"
 
 
-class AdsAccessRole:
+class AdsAccessRole(enum.Enum):
 	"""VK Object AdsAccessRole
 
 	"""
-	admin = 0
-	manager = 1
-	reports = 2
+	ADMIN = "admin"
+	MANAGER = "manager"
+	REPORTS = "reports"
 
 
-class AdsAccessRolePublic:
+class AdsAccessRolePublic(enum.Enum):
 	"""VK Object AdsAccessRolePublic
 
 	"""
-	manager = 0
-	reports = 1
+	MANAGER = "manager"
+	REPORTS = "reports"
 
 
-class AdsAccesses:
+class AdsAccesses(BaseModel):
 	"""VK Object AdsAccesses
 
 	client_id - Client ID
@@ -302,7 +302,7 @@ class AdsAccesses:
 	role = None
 
 
-class AdsAccount:
+class AdsAccount(BaseModel):
 	"""VK Object AdsAccount
 
 	access_role - 
@@ -320,15 +320,15 @@ class AdsAccount:
 	can_view_budget = None
 
 
-class AdsAccountType:
+class AdsAccountType(enum.Enum):
 	"""VK Object AdsAccountType
 
 	"""
-	general = 0
-	agency = 1
+	GENERAL = "general"
+	AGENCY = "agency"
 
 
-class AdsAd:
+class AdsAd(BaseModel):
 	"""VK Object AdsAd
 
 	ad_format - Ad format
@@ -378,7 +378,7 @@ class AdsAd:
 	video = None
 
 
-class AdsAdApproved:
+class AdsAdApproved(enum.IntEnum):
 	"""VK Object AdsAdApproved
 
 	"""
@@ -388,7 +388,7 @@ class AdsAdApproved:
 	rejected = 3
 
 
-class AdsAdCostType:
+class AdsAdCostType(enum.IntEnum):
 	"""VK Object AdsAdCostType
 
 	"""
@@ -398,7 +398,7 @@ class AdsAdCostType:
 	per impressions optimized = 3
 
 
-class AdsAdLAyout:
+class AdsAdLAyout(BaseModel):
 	"""VK Object AdsAdLAyout
 
 	ad_format - Ad format
@@ -428,7 +428,7 @@ class AdsAdLAyout:
 	video = None
 
 
-class AdsAdStAtus:
+class AdsAdStAtus(enum.IntEnum):
 	"""VK Object AdsAdStAtus
 
 	"""
@@ -437,7 +437,7 @@ class AdsAdStAtus:
 	deleted = 2
 
 
-class AdsCAmpAign:
+class AdsCAmpAign(BaseModel):
 	"""VK Object AdsCAmpAign
 
 	all_limit - Campaign's total limit, rubles
@@ -459,7 +459,7 @@ class AdsCAmpAign:
 	type = None
 
 
-class AdsCAmpAignStAtus:
+class AdsCAmpAignStAtus(enum.IntEnum):
 	"""VK Object AdsCAmpAignStAtus
 
 	"""
@@ -468,17 +468,17 @@ class AdsCAmpAignStAtus:
 	deleted = 2
 
 
-class AdsCAmpAignType:
+class AdsCAmpAignType(enum.Enum):
 	"""VK Object AdsCAmpAignType
 
 	"""
-	normal = 0
-	vk_apps_managed = 1
-	mobile_apps = 2
-	promoted_posts = 3
+	NORMAL = "normal"
+	VK_APPS_MANAGED = "vk_apps_managed"
+	MOBILE_APPS = "mobile_apps"
+	PROMOTED_POSTS = "promoted_posts"
 
 
-class AdsCAtegory:
+class AdsCAtegory(BaseModel):
 	"""VK Object AdsCAtegory
 
 	id - Category ID
@@ -490,7 +490,7 @@ class AdsCAtegory:
 	subcategories = None
 
 
-class AdsClient:
+class AdsClient(BaseModel):
 	"""VK Object AdsClient
 
 	all_limit - Client's total limit, rubles
@@ -504,7 +504,7 @@ class AdsClient:
 	name = None
 
 
-class AdsCriteriA:
+class AdsCriteriA(BaseModel):
 	"""VK Object AdsCriteriA
 
 	age_from - Age from
@@ -570,7 +570,7 @@ class AdsCriteriA:
 	user_os = None
 
 
-class AdsCriteriASex:
+class AdsCriteriASex(enum.IntEnum):
 	"""VK Object AdsCriteriASex
 
 	"""
@@ -579,7 +579,7 @@ class AdsCriteriASex:
 	female = 2
 
 
-class AdsDemoStAts:
+class AdsDemoStAts(BaseModel):
 	"""VK Object AdsDemoStAts
 
 	id - Object ID
@@ -591,7 +591,7 @@ class AdsDemoStAts:
 	type = None
 
 
-class AdsDemostAtsFormAt:
+class AdsDemostAtsFormAt(BaseModel):
 	"""VK Object AdsDemostAtsFormAt
 
 	age - 
@@ -611,7 +611,7 @@ class AdsDemostAtsFormAt:
 	sex_age = None
 
 
-class AdsFloodStAts:
+class AdsFloodStAts(BaseModel):
 	"""VK Object AdsFloodStAts
 
 	left - Requests left
@@ -621,7 +621,7 @@ class AdsFloodStAts:
 	refresh = None
 
 
-class AdsLinkStAtus:
+class AdsLinkStAtus(BaseModel):
 	"""VK Object AdsLinkStAtus
 
 	description - Reject reason
@@ -633,7 +633,7 @@ class AdsLinkStAtus:
 	status = None
 
 
-class AdsLookAlikeRequest:
+class AdsLookAlikeRequest(BaseModel):
 	"""VK Object AdsLookAlikeRequest
 
 	id - Lookalike request ID
@@ -659,7 +659,7 @@ class AdsLookAlikeRequest:
 	save_audience_levels = None
 
 
-class AdsLookAlikeRequestSAveAudienceLevel:
+class AdsLookAlikeRequestSAveAudienceLevel(BaseModel):
 	"""VK Object AdsLookAlikeRequestSAveAudienceLevel
 
 	level - Save audience level id, which is used in save audience queries
@@ -669,7 +669,7 @@ class AdsLookAlikeRequestSAveAudienceLevel:
 	audience_count = None
 
 
-class AdsMusiciAn:
+class AdsMusiciAn(BaseModel):
 	"""VK Object AdsMusiciAn
 
 	id - Targeting music artist ID
@@ -681,17 +681,17 @@ class AdsMusiciAn:
 	avatar = None
 
 
-class AdsObjectType:
+class AdsObjectType(enum.Enum):
 	"""VK Object AdsObjectType
 
 	"""
-	ad = 0
-	campaign = 1
-	client = 2
-	office = 3
+	AD = "ad"
+	CAMPAIGN = "campaign"
+	CLIENT = "client"
+	OFFICE = "office"
 
 
-class AdsPArAgrAphs:
+class AdsPArAgrAphs(BaseModel):
 	"""VK Object AdsPArAgrAphs
 
 	paragraph - Rules paragraph
@@ -699,7 +699,7 @@ class AdsPArAgrAphs:
 	paragraph = None
 
 
-class AdsPromotedPostReAch:
+class AdsPromotedPostReAch(BaseModel):
 	"""VK Object AdsPromotedPostReAch
 
 	hide - Hides amount
@@ -735,7 +735,7 @@ class AdsPromotedPostReAch:
 	video_views_start = None
 
 
-class AdsRejectReAson:
+class AdsRejectReAson(BaseModel):
 	"""VK Object AdsRejectReAson
 
 	comment - Comment text
@@ -745,7 +745,7 @@ class AdsRejectReAson:
 	rules = None
 
 
-class AdsRules:
+class AdsRules(BaseModel):
 	"""VK Object AdsRules
 
 	paragraphs - 
@@ -755,7 +755,7 @@ class AdsRules:
 	title = None
 
 
-class AdsStAts:
+class AdsStAts(BaseModel):
 	"""VK Object AdsStAts
 
 	id - Object ID
@@ -769,7 +769,7 @@ class AdsStAts:
 	views_times = None
 
 
-class AdsStAtsAge:
+class AdsStAtsAge(BaseModel):
 	"""VK Object AdsStAtsAge
 
 	clicks_rate - Clicks rate
@@ -781,7 +781,7 @@ class AdsStAtsAge:
 	value = None
 
 
-class AdsStAtsCities:
+class AdsStAtsCities(BaseModel):
 	"""VK Object AdsStAtsCities
 
 	clicks_rate - Clicks rate
@@ -795,7 +795,7 @@ class AdsStAtsCities:
 	value = None
 
 
-class AdsStAtsFormAt:
+class AdsStAtsFormAt(BaseModel):
 	"""VK Object AdsStAtsFormAt
 
 	clicks - Clicks number
@@ -825,7 +825,7 @@ class AdsStAtsFormAt:
 	video_views_half = None
 
 
-class AdsStAtsSex:
+class AdsStAtsSex(BaseModel):
 	"""VK Object AdsStAtsSex
 
 	clicks_rate - Clicks rate
@@ -837,7 +837,7 @@ class AdsStAtsSex:
 	value = None
 
 
-class AdsStAtsSexAge:
+class AdsStAtsSexAge(BaseModel):
 	"""VK Object AdsStAtsSexAge
 
 	clicks_rate - Clicks rate
@@ -849,15 +849,15 @@ class AdsStAtsSexAge:
 	value = None
 
 
-class AdsStAtsSexVAlue:
+class AdsStAtsSexVAlue(enum.Enum):
 	"""VK Object AdsStAtsSexVAlue
 
 	"""
-	f = 0
-	m = 1
+	F = "f"
+	M = "m"
 
 
-class AdsStAtsViewsTimes:
+class AdsStAtsViewsTimes(BaseModel):
 	"""VK Object AdsStAtsViewsTimes
 
 	"""
@@ -874,17 +874,17 @@ class AdsStAtsViewsTimes:
 	views_ads_times_11_plus = None
 
 
-class AdsTArgSettings:
+class AdsTArgSettings(BaseModel):
 	"""VK Object AdsTArgSettings
 
 	id - Ad ID
 	campaign_id - Campaign ID
 	"""
-	id = <built-in function iter>
-	campaign_id = <built-in function iter>
+	id = None
+	campaign_id = None
 
 
-class AdsTArgStAts:
+class AdsTArgStAts(BaseModel):
 	"""VK Object AdsTArgStAts
 
 	audience_count - Audience
@@ -908,7 +908,7 @@ class AdsTArgStAts:
 	recommended_cpm_90 = None
 
 
-class AdsTArgSuggestions:
+class AdsTArgSuggestions(BaseModel):
 	"""VK Object AdsTArgSuggestions
 
 	id - Object ID
@@ -918,7 +918,7 @@ class AdsTArgSuggestions:
 	name = None
 
 
-class AdsTArgSuggestionsCities:
+class AdsTArgSuggestionsCities(BaseModel):
 	"""VK Object AdsTArgSuggestionsCities
 
 	id - Object ID
@@ -930,7 +930,7 @@ class AdsTArgSuggestionsCities:
 	parent = None
 
 
-class AdsTArgSuggestionsRegions:
+class AdsTArgSuggestionsRegions(BaseModel):
 	"""VK Object AdsTArgSuggestionsRegions
 
 	id - Object ID
@@ -942,7 +942,7 @@ class AdsTArgSuggestionsRegions:
 	type = None
 
 
-class AdsTArgSuggestionsSchools:
+class AdsTArgSuggestionsSchools(BaseModel):
 	"""VK Object AdsTArgSuggestionsSchools
 
 	desc - Full school title
@@ -958,17 +958,17 @@ class AdsTArgSuggestionsSchools:
 	type = None
 
 
-class AdsTArgSuggestionsSchoolsType:
+class AdsTArgSuggestionsSchoolsType(enum.Enum):
 	"""VK Object AdsTArgSuggestionsSchoolsType
 
 	"""
-	school = 0
-	university = 1
-	faculty = 2
-	chair = 3
+	SCHOOL = "school"
+	UNIVERSITY = "university"
+	FACULTY = "faculty"
+	CHAIR = "chair"
 
 
-class AdsTArgetGroup:
+class AdsTArgetGroup(BaseModel):
 	"""VK Object AdsTArgetGroup
 
 	audience_count - Audience
@@ -986,7 +986,7 @@ class AdsTArgetGroup:
 	pixel = None
 
 
-class AdsUpdAteOfficeUsersResult:
+class AdsUpdAteOfficeUsersResult(BaseModel):
 	"""VK Object AdsUpdAteOfficeUsersResult
 
 	"""
@@ -995,7 +995,7 @@ class AdsUpdAteOfficeUsersResult:
 	error = None
 
 
-class AdsUserSpecificAtion:
+class AdsUserSpecificAtion(BaseModel):
 	"""VK Object AdsUserSpecificAtion
 
 	"""
@@ -1006,7 +1006,7 @@ class AdsUserSpecificAtion:
 	view_budget = None
 
 
-class AdsUserSpecificAtionCutted:
+class AdsUserSpecificAtionCutted(BaseModel):
 	"""VK Object AdsUserSpecificAtionCutted
 
 	"""
@@ -1016,7 +1016,7 @@ class AdsUserSpecificAtionCutted:
 	view_budget = None
 
 
-class AdsUsers:
+class AdsUsers(BaseModel):
 	"""VK Object AdsUsers
 
 	accesses - 
@@ -1026,7 +1026,7 @@ class AdsUsers:
 	user_id = None
 
 
-class AdswebGetAdCAtegoriesResponseCAtegoriesCAtegory:
+class AdswebGetAdCAtegoriesResponseCAtegoriesCAtegory(BaseModel):
 	"""VK Object AdswebGetAdCAtegoriesResponseCAtegoriesCAtegory
 
 	"""
@@ -1034,7 +1034,7 @@ class AdswebGetAdCAtegoriesResponseCAtegoriesCAtegory:
 	name = None
 
 
-class AdswebGetAdUnitsResponseAdUnitsAdUnit:
+class AdswebGetAdUnitsResponseAdUnitsAdUnit(BaseModel):
 	"""VK Object AdswebGetAdUnitsResponseAdUnitsAdUnit
 
 	"""
@@ -1043,7 +1043,7 @@ class AdswebGetAdUnitsResponseAdUnitsAdUnit:
 	name = None
 
 
-class AdswebGetFrAudHistoryResponseEntriesEntry:
+class AdswebGetFrAudHistoryResponseEntriesEntry(BaseModel):
 	"""VK Object AdswebGetFrAudHistoryResponseEntriesEntry
 
 	"""
@@ -1051,7 +1051,7 @@ class AdswebGetFrAudHistoryResponseEntriesEntry:
 	day = None
 
 
-class AdswebGetSitesResponseSitesSite:
+class AdswebGetSitesResponseSitesSite(BaseModel):
 	"""VK Object AdswebGetSitesResponseSitesSite
 
 	"""
@@ -1061,7 +1061,7 @@ class AdswebGetSitesResponseSitesSite:
 	domains = None
 
 
-class AdswebGetStAtisticsResponseItemsItem:
+class AdswebGetStAtisticsResponseItemsItem(BaseModel):
 	"""VK Object AdswebGetStAtisticsResponseItemsItem
 
 	"""
@@ -1079,7 +1079,7 @@ class AdswebGetStAtisticsResponseItemsItem:
 	hour_max = None
 
 
-class AppWidgetsPhoto:
+class AppWidgetsPhoto(BaseModel):
 	"""VK Object AppWidgetsPhoto
 
 	id - Image ID
@@ -1089,7 +1089,7 @@ class AppWidgetsPhoto:
 	images = None
 
 
-class AppWidgetsPhotos:
+class AppWidgetsPhotos(BaseModel):
 	"""VK Object AppWidgetsPhotos
 
 	"""
@@ -1097,7 +1097,7 @@ class AppWidgetsPhotos:
 	items = None
 
 
-class AppsApp:
+class AppsApp(BaseModel):
 	"""VK Object AppsApp
 
 	author_url - Application author's URL
@@ -1121,29 +1121,29 @@ class AppsApp:
 	screen_name - Screen name
 	section - Application section name
 	"""
-	author_url = <built-in function iter>
-	banner_1120 = <built-in function iter>
-	banner_560 = <built-in function iter>
-	icon_16 = <built-in function iter>
-	is_new = <built-in function iter>
-	push_enabled = <built-in function iter>
-	screen_orientation = <built-in function iter>
-	friends = <built-in function iter>
-	catalog_position = <built-in function iter>
-	description = <built-in function iter>
-	genre = <built-in function iter>
-	genre_id = <built-in function iter>
-	international = <built-in function iter>
-	is_in_catalog = <built-in function iter>
-	leaderboard_type = <built-in function iter>
-	members_count = <built-in function iter>
-	platform_id = <built-in function iter>
-	published_date = <built-in function iter>
-	screen_name = <built-in function iter>
-	section = <built-in function iter>
+	author_url = None
+	banner_1120 = None
+	banner_560 = None
+	icon_16 = None
+	is_new = None
+	push_enabled = None
+	screen_orientation = None
+	friends = None
+	catalog_position = None
+	description = None
+	genre = None
+	genre_id = None
+	international = None
+	is_in_catalog = None
+	leaderboard_type = None
+	members_count = None
+	platform_id = None
+	published_date = None
+	screen_name = None
+	section = None
 
 
-class AppsAppLeAderboArdType:
+class AppsAppLeAderboArdType(enum.IntEnum):
 	"""VK Object AppsAppLeAderboArdType
 
 	"""
@@ -1152,7 +1152,7 @@ class AppsAppLeAderboArdType:
 	points = 2
 
 
-class AppsAppMin:
+class AppsAppMin(BaseModel):
 	"""VK Object AppsAppMin
 
 	type - 
@@ -1182,21 +1182,21 @@ class AppsAppMin:
 	icon_75 = None
 
 
-class AppsAppType:
+class AppsAppType(enum.Enum):
 	"""VK Object AppsAppType
 
 	"""
-	app = 0
-	game = 1
-	site = 2
-	standalone = 3
-	vk_app = 4
-	community_app = 5
-	html5_game = 6
-	mini_app = 7
+	APP = "app"
+	GAME = "game"
+	SITE = "site"
+	STANDALONE = "standalone"
+	VK_APP = "vk_app"
+	COMMUNITY_APP = "community_app"
+	HTML5_GAME = "html5_game"
+	MINI_APP = "mini_app"
 
 
-class AppsLeAderboArd:
+class AppsLeAderboArd(BaseModel):
 	"""VK Object AppsLeAderboArd
 
 	level - Level
@@ -1210,7 +1210,7 @@ class AppsLeAderboArd:
 	user_id = None
 
 
-class AppsScope:
+class AppsScope(BaseModel):
 	"""VK Object AppsScope
 
 	name - Scope name
@@ -1220,7 +1220,7 @@ class AppsScope:
 	title = None
 
 
-class AudioAudio:
+class AudioAudio(BaseModel):
 	"""VK Object AudioAudio
 
 	access_key - Access key for the audio
@@ -1248,7 +1248,7 @@ class AudioAudio:
 	performer = None
 
 
-class BaseBoolInt:
+class BaseBoolInt(enum.IntEnum):
 	"""VK Object BaseBoolInt
 
 	"""
@@ -1256,7 +1256,7 @@ class BaseBoolInt:
 	yes = 1
 
 
-class BaseCity:
+class BaseCity(BaseModel):
 	"""VK Object BaseCity
 
 	id - City ID
@@ -1266,7 +1266,7 @@ class BaseCity:
 	title = None
 
 
-class BaseCommentsInfo:
+class BaseCommentsInfo(BaseModel):
 	"""VK Object BaseCommentsInfo
 
 	can_post - Information whether current user can comment the post
@@ -1280,7 +1280,7 @@ class BaseCommentsInfo:
 	donut = None
 
 
-class BaseCountry:
+class BaseCountry(BaseModel):
 	"""VK Object BaseCountry
 
 	id - Country ID
@@ -1290,7 +1290,7 @@ class BaseCountry:
 	title = None
 
 
-class BaseCropPhoto:
+class BaseCropPhoto(BaseModel):
 	"""VK Object BaseCropPhoto
 
 	"""
@@ -1299,7 +1299,7 @@ class BaseCropPhoto:
 	rect = None
 
 
-class BaseCropPhotoCrop:
+class BaseCropPhotoCrop(BaseModel):
 	"""VK Object BaseCropPhotoCrop
 
 	x - Coordinate X of the left upper corner
@@ -1313,7 +1313,7 @@ class BaseCropPhotoCrop:
 	y2 = None
 
 
-class BaseCropPhotoRect:
+class BaseCropPhotoRect(BaseModel):
 	"""VK Object BaseCropPhotoRect
 
 	x - Coordinate X of the left upper corner
@@ -1327,7 +1327,7 @@ class BaseCropPhotoRect:
 	y2 = None
 
 
-class BaseError:
+class BaseError(BaseModel):
 	"""VK Object BaseError
 
 	error_code - Error code
@@ -1343,7 +1343,7 @@ class BaseError:
 	request_params = None
 
 
-class BaseGeo:
+class BaseGeo(BaseModel):
 	"""VK Object BaseGeo
 
 	coordinates - 
@@ -1357,7 +1357,7 @@ class BaseGeo:
 	type = None
 
 
-class BaseGeoCoordinates:
+class BaseGeoCoordinates(BaseModel):
 	"""VK Object BaseGeoCoordinates
 
 	"""
@@ -1365,7 +1365,7 @@ class BaseGeoCoordinates:
 	longitude = None
 
 
-class BaseGradientPoint:
+class BaseGradientPoint(BaseModel):
 	"""VK Object BaseGradientPoint
 
 	color - Hex color code without #
@@ -1375,7 +1375,7 @@ class BaseGradientPoint:
 	position = None
 
 
-class BaseImage:
+class BaseImage(BaseModel):
 	"""VK Object BaseImage
 
 	id - 
@@ -1389,7 +1389,7 @@ class BaseImage:
 	width = None
 
 
-class BaseLikes:
+class BaseLikes(BaseModel):
 	"""VK Object BaseLikes
 
 	count - Likes number
@@ -1399,7 +1399,7 @@ class BaseLikes:
 	user_likes = None
 
 
-class BaseLikesInfo:
+class BaseLikesInfo(BaseModel):
 	"""VK Object BaseLikesInfo
 
 	can_like - Information whether current user can like the post
@@ -1413,7 +1413,7 @@ class BaseLikesInfo:
 	user_likes = None
 
 
-class BaseLink:
+class BaseLink(BaseModel):
 	"""VK Object BaseLink
 
 	application - 
@@ -1451,7 +1451,7 @@ class BaseLink:
 	video = None
 
 
-class BaseLinkApplication:
+class BaseLinkApplication(BaseModel):
 	"""VK Object BaseLinkApplication
 
 	app_id - Application Id
@@ -1461,7 +1461,7 @@ class BaseLinkApplication:
 	store = None
 
 
-class BaseLinkApplicationStore:
+class BaseLinkApplicationStore(BaseModel):
 	"""VK Object BaseLinkApplicationStore
 
 	id - Store Id
@@ -1471,7 +1471,7 @@ class BaseLinkApplicationStore:
 	name = None
 
 
-class BaseLinkButton:
+class BaseLinkButton(BaseModel):
 	"""VK Object BaseLinkButton
 
 	action - Button action
@@ -1493,7 +1493,7 @@ class BaseLinkButton:
 	style = None
 
 
-class BaseLinkButtonAction:
+class BaseLinkButtonAction(BaseModel):
 	"""VK Object BaseLinkButtonAction
 
 	type - 
@@ -1505,22 +1505,22 @@ class BaseLinkButtonAction:
 	consume_reason = None
 
 
-class BaseLinkButtonActionType:
+class BaseLinkButtonActionType(enum.Enum):
 	"""VK Object BaseLinkButtonActionType
 
 	"""
-	open_url = 0
+	OPEN_URL = "open_url"
 
 
-class BaseLinkButtonStyle:
+class BaseLinkButtonStyle(enum.Enum):
 	"""VK Object BaseLinkButtonStyle
 
 	"""
-	primary = 0
-	secondary = 1
+	PRIMARY = "primary"
+	SECONDARY = "secondary"
 
 
-class BaseLinkProduct:
+class BaseLinkProduct(BaseModel):
 	"""VK Object BaseLinkProduct
 
 	"""
@@ -1529,18 +1529,18 @@ class BaseLinkProduct:
 	orders_count = None
 
 
-class BaseLinkProductStatus:
+class BaseLinkProductStatus(enum.Enum):
 	"""VK Object BaseLinkProductStatus
 
 	"""
-	active = 0
-	blocked = 1
-	sold = 2
-	deleted = 3
-	archived = 4
+	ACTIVE = "active"
+	BLOCKED = "blocked"
+	SOLD = "sold"
+	DELETED = "deleted"
+	ARCHIVED = "archived"
 
 
-class BaseLinkRating:
+class BaseLinkRating(BaseModel):
 	"""VK Object BaseLinkRating
 
 	reviews_count - Count of reviews
@@ -1550,7 +1550,7 @@ class BaseLinkRating:
 	stars = None
 
 
-class BaseMessageError:
+class BaseMessageError(BaseModel):
 	"""VK Object BaseMessageError
 
 	code - Error code
@@ -1560,7 +1560,7 @@ class BaseMessageError:
 	description = None
 
 
-class BaseOBject:
+class BaseOBject(BaseModel):
 	"""VK Object BaseOBject
 
 	id - Object ID
@@ -1570,7 +1570,7 @@ class BaseOBject:
 	title = None
 
 
-class BaseOBjectCount:
+class BaseOBjectCount(BaseModel):
 	"""VK Object BaseOBjectCount
 
 	count - Items count
@@ -1578,7 +1578,7 @@ class BaseOBjectCount:
 	count = None
 
 
-class BaseOBjectWithName:
+class BaseOBjectWithName(BaseModel):
 	"""VK Object BaseOBjectWithName
 
 	id - Object ID
@@ -1588,7 +1588,7 @@ class BaseOBjectWithName:
 	name = None
 
 
-class BasePlace:
+class BasePlace(BaseModel):
 	"""VK Object BasePlace
 
 	address - Place address
@@ -1616,14 +1616,14 @@ class BasePlace:
 	type = None
 
 
-class BasePropertyExists:
+class BasePropertyExists(enum.IntEnum):
 	"""VK Object BasePropertyExists
 
 	"""
 	Property exists = 1
 
 
-class BaseRepostsInfo:
+class BaseRepostsInfo(BaseModel):
 	"""VK Object BaseRepostsInfo
 
 	count - Total reposts counter. Sum of wall and mail reposts counters
@@ -1637,7 +1637,7 @@ class BaseRepostsInfo:
 	user_reposted = None
 
 
-class BaseRequestParam:
+class BaseRequestParam(BaseModel):
 	"""VK Object BaseRequestParam
 
 	key - Parameter name
@@ -1647,7 +1647,7 @@ class BaseRequestParam:
 	value = None
 
 
-class BaseSex:
+class BaseSex(enum.IntEnum):
 	"""VK Object BaseSex
 
 	"""
@@ -1656,7 +1656,7 @@ class BaseSex:
 	male = 2
 
 
-class BaseSticker:
+class BaseSticker(BaseModel):
 	"""VK Object BaseSticker
 
 	sticker_id - Sticker ID
@@ -1676,7 +1676,7 @@ class BaseSticker:
 	is_allowed = None
 
 
-class BaseStickerAnimation:
+class BaseStickerAnimation(BaseModel):
 	"""VK Object BaseStickerAnimation
 
 	type - Type of animation script
@@ -1686,7 +1686,7 @@ class BaseStickerAnimation:
 	url = None
 None
 
-class BaseUploadServer:
+class BaseUploadServer(BaseModel):
 	"""VK Object BaseUploadServer
 
 	upload_url - Upload URL
@@ -1694,113 +1694,113 @@ class BaseUploadServer:
 	upload_url = None
 
 
-class BaseUserGroupFields:
+class BaseUserGroupFields(enum.Enum):
 	"""VK Object BaseUserGroupFields
 
 	"""
-	about = 0
-	action_button = 1
-	activities = 2
-	activity = 3
-	addresses = 4
-	admin_level = 5
-	age_limits = 6
-	author_id = 7
-	ban_info = 8
-	bdate = 9
-	blacklisted = 10
-	blacklisted_by_me = 11
-	books = 12
-	can_create_topic = 13
-	can_message = 14
-	can_post = 15
-	can_see_all_posts = 16
-	can_see_audio = 17
-	can_send_friend_request = 18
-	can_upload_video = 19
-	can_write_private_message = 20
-	career = 21
-	city = 22
-	common_count = 23
-	connections = 24
-	contacts = 25
-	counters = 26
-	country = 27
-	cover = 28
-	crop_photo = 29
-	deactivated = 30
-	description = 31
-	domain = 32
-	education = 33
-	exports = 34
-	finish_date = 35
-	fixed_post = 36
-	followers_count = 37
-	friend_status = 38
-	games = 39
-	has_market_app = 40
-	has_mobile = 41
-	has_photo = 42
-	home_town = 43
-	id = 44
-	interests = 45
-	is_admin = 46
-	is_closed = 47
-	is_favorite = 48
-	is_friend = 49
-	is_hidden_from_feed = 50
-	is_member = 51
-	is_messages_blocked = 52
-	can_send_notify = 53
-	is_subscribed = 54
-	last_seen = 55
-	links = 56
-	lists = 57
-	maiden_name = 58
-	main_album_id = 59
-	main_section = 60
-	market = 61
-	member_status = 62
-	members_count = 63
-	military = 64
-	movies = 65
-	music = 66
-	name = 67
-	nickname = 68
-	occupation = 69
-	online = 70
-	online_status = 71
-	personal = 72
-	phone = 73
-	photo_100 = 74
-	photo_200 = 75
-	photo_200_orig = 76
-	photo_400_orig = 77
-	photo_50 = 78
-	photo_id = 79
-	photo_max = 80
-	photo_max_orig = 81
-	quotes = 82
-	relation = 83
-	relatives = 84
-	schools = 85
-	screen_name = 86
-	sex = 87
-	site = 88
-	start_date = 89
-	status = 90
-	timezone = 91
-	trending = 92
-	tv = 93
-	type = 94
-	universities = 95
-	verified = 96
-	wall_comments = 97
-	wiki_page = 98
-	vk_admin_status = 99
+	ABOUT = "about"
+	ACTION_BUTTON = "action_button"
+	ACTIVITIES = "activities"
+	ACTIVITY = "activity"
+	ADDRESSES = "addresses"
+	ADMIN_LEVEL = "admin_level"
+	AGE_LIMITS = "age_limits"
+	AUTHOR_ID = "author_id"
+	BAN_INFO = "ban_info"
+	BDATE = "bdate"
+	BLACKLISTED = "blacklisted"
+	BLACKLISTED_BY_ME = "blacklisted_by_me"
+	BOOKS = "books"
+	CAN_CREATE_TOPIC = "can_create_topic"
+	CAN_MESSAGE = "can_message"
+	CAN_POST = "can_post"
+	CAN_SEE_ALL_POSTS = "can_see_all_posts"
+	CAN_SEE_AUDIO = "can_see_audio"
+	CAN_SEND_FRIEND_REQUEST = "can_send_friend_request"
+	CAN_UPLOAD_VIDEO = "can_upload_video"
+	CAN_WRITE_PRIVATE_MESSAGE = "can_write_private_message"
+	CAREER = "career"
+	CITY = "city"
+	COMMON_COUNT = "common_count"
+	CONNECTIONS = "connections"
+	CONTACTS = "contacts"
+	COUNTERS = "counters"
+	COUNTRY = "country"
+	COVER = "cover"
+	CROP_PHOTO = "crop_photo"
+	DEACTIVATED = "deactivated"
+	DESCRIPTION = "description"
+	DOMAIN = "domain"
+	EDUCATION = "education"
+	EXPORTS = "exports"
+	FINISH_DATE = "finish_date"
+	FIXED_POST = "fixed_post"
+	FOLLOWERS_COUNT = "followers_count"
+	FRIEND_STATUS = "friend_status"
+	GAMES = "games"
+	HAS_MARKET_APP = "has_market_app"
+	HAS_MOBILE = "has_mobile"
+	HAS_PHOTO = "has_photo"
+	HOME_TOWN = "home_town"
+	ID = "id"
+	INTERESTS = "interests"
+	IS_ADMIN = "is_admin"
+	IS_CLOSED = "is_closed"
+	IS_FAVORITE = "is_favorite"
+	IS_FRIEND = "is_friend"
+	IS_HIDDEN_FROM_FEED = "is_hidden_from_feed"
+	IS_MEMBER = "is_member"
+	IS_MESSAGES_BLOCKED = "is_messages_blocked"
+	CAN_SEND_NOTIFY = "can_send_notify"
+	IS_SUBSCRIBED = "is_subscribed"
+	LAST_SEEN = "last_seen"
+	LINKS = "links"
+	LISTS = "lists"
+	MAIDEN_NAME = "maiden_name"
+	MAIN_ALBUM_ID = "main_album_id"
+	MAIN_SECTION = "main_section"
+	MARKET = "market"
+	MEMBER_STATUS = "member_status"
+	MEMBERS_COUNT = "members_count"
+	MILITARY = "military"
+	MOVIES = "movies"
+	MUSIC = "music"
+	NAME = "name"
+	NICKNAME = "nickname"
+	OCCUPATION = "occupation"
+	ONLINE = "online"
+	ONLINE_STATUS = "online_status"
+	PERSONAL = "personal"
+	PHONE = "phone"
+	PHOTO_100 = "photo_100"
+	PHOTO_200 = "photo_200"
+	PHOTO_200_ORIG = "photo_200_orig"
+	PHOTO_400_ORIG = "photo_400_orig"
+	PHOTO_50 = "photo_50"
+	PHOTO_ID = "photo_id"
+	PHOTO_MAX = "photo_max"
+	PHOTO_MAX_ORIG = "photo_max_orig"
+	QUOTES = "quotes"
+	RELATION = "relation"
+	RELATIVES = "relatives"
+	SCHOOLS = "schools"
+	SCREEN_NAME = "screen_name"
+	SEX = "sex"
+	SITE = "site"
+	START_DATE = "start_date"
+	STATUS = "status"
+	TIMEZONE = "timezone"
+	TRENDING = "trending"
+	TV = "tv"
+	TYPE = "type"
+	UNIVERSITIES = "universities"
+	VERIFIED = "verified"
+	WALL_COMMENTS = "wall_comments"
+	WIKI_PAGE = "wiki_page"
+	VK_ADMIN_STATUS = "vk_admin_status"
 
 
-class BaseUserId:
+class BaseUserId(BaseModel):
 	"""VK Object BaseUserId
 
 	user_id - User ID
@@ -1808,7 +1808,7 @@ class BaseUserId:
 	user_id = None
 
 
-class BoardDefaultOrder:
+class BoardDefaultOrder(enum.IntEnum):
 	"""VK Object BoardDefaultOrder
 
 	"""
@@ -1818,7 +1818,7 @@ class BoardDefaultOrder:
 	asc_created = -2
 
 
-class BoardTopic:
+class BoardTopic(BaseModel):
 	"""VK Object BoardTopic
 
 	comments - Comments number
@@ -1842,7 +1842,7 @@ class BoardTopic:
 	updated_by = None
 
 
-class BoardTopicComment:
+class BoardTopicComment(BaseModel):
 	"""VK Object BoardTopicComment
 
 	attachments - 
@@ -1864,7 +1864,7 @@ class BoardTopicComment:
 	likes = None
 
 
-class BoardTopicPoll:
+class BoardTopicPoll(BaseModel):
 	"""VK Object BoardTopicPoll
 
 	owner_id - Poll owner's ID
@@ -1886,7 +1886,7 @@ class BoardTopicPoll:
 	answers = None
 
 
-class CallbaCkBoardPostDelete:
+class CallbaCkBoardPostDelete(BaseModel):
 	"""VK Object CallbaCkBoardPostDelete
 
 	"""
@@ -1895,7 +1895,7 @@ class CallbaCkBoardPostDelete:
 	id = None
 
 
-class CallbaCkConfirmationMessage:
+class CallbaCkConfirmationMessage(BaseModel):
 	"""VK Object CallbaCkConfirmationMessage
 
 	"""
@@ -1904,7 +1904,7 @@ class CallbaCkConfirmationMessage:
 	secret = None
 
 
-class CallbaCkDonutMoneyWithdraw:
+class CallbaCkDonutMoneyWithdraw(BaseModel):
 	"""VK Object CallbaCkDonutMoneyWithdraw
 
 	"""
@@ -1912,21 +1912,21 @@ class CallbaCkDonutMoneyWithdraw:
 	amount_without_fee = None
 
 
-class CallbaCkDonutMoneyWithdrawError:
+class CallbaCkDonutMoneyWithdrawError(BaseModel):
 	"""VK Object CallbaCkDonutMoneyWithdrawError
 
 	"""
 	reason = None
 
 
-class CallbaCkDonutSubsCriptionCanCelled:
+class CallbaCkDonutSubsCriptionCanCelled(BaseModel):
 	"""VK Object CallbaCkDonutSubsCriptionCanCelled
 
 	"""
 	user_id = None
 
 
-class CallbaCkDonutSubsCriptionCreate:
+class CallbaCkDonutSubsCriptionCreate(BaseModel):
 	"""VK Object CallbaCkDonutSubsCriptionCreate
 
 	"""
@@ -1935,14 +1935,14 @@ class CallbaCkDonutSubsCriptionCreate:
 	amount_without_fee = None
 
 
-class CallbaCkDonutSubsCriptionExpired:
+class CallbaCkDonutSubsCriptionExpired(BaseModel):
 	"""VK Object CallbaCkDonutSubsCriptionExpired
 
 	"""
 	user_id = None
 
 
-class CallbaCkDonutSubsCriptionPriCeChanged:
+class CallbaCkDonutSubsCriptionPriCeChanged(BaseModel):
 	"""VK Object CallbaCkDonutSubsCriptionPriCeChanged
 
 	"""
@@ -1953,7 +1953,7 @@ class CallbaCkDonutSubsCriptionPriCeChanged:
 	amount_diff_without_fee = None
 
 
-class CallbaCkDonutSubsCriptionProlonged:
+class CallbaCkDonutSubsCriptionProlonged(BaseModel):
 	"""VK Object CallbaCkDonutSubsCriptionProlonged
 
 	"""
@@ -1962,7 +1962,7 @@ class CallbaCkDonutSubsCriptionProlonged:
 	amount_without_fee = None
 
 
-class CallbaCkGroupChangePhoto:
+class CallbaCkGroupChangePhoto(BaseModel):
 	"""VK Object CallbaCkGroupChangePhoto
 
 	"""
@@ -1970,7 +1970,7 @@ class CallbaCkGroupChangePhoto:
 	photo = None
 
 
-class CallbaCkGroupChangeSettings:
+class CallbaCkGroupChangeSettings(BaseModel):
 	"""VK Object CallbaCkGroupChangeSettings
 
 	"""
@@ -1978,7 +1978,7 @@ class CallbaCkGroupChangeSettings:
 	self = None
 
 
-class CallbaCkGroupJoin:
+class CallbaCkGroupJoin(BaseModel):
 	"""VK Object CallbaCkGroupJoin
 
 	"""
@@ -1986,18 +1986,18 @@ class CallbaCkGroupJoin:
 	join_type = None
 
 
-class CallbaCkGroupJoinType:
+class CallbaCkGroupJoinType(enum.Enum):
 	"""VK Object CallbaCkGroupJoinType
 
 	"""
-	join = 0
-	unsure = 1
-	accepted = 2
-	approved = 3
-	request = 4
+	JOIN = "join"
+	UNSURE = "unsure"
+	ACCEPTED = "accepted"
+	APPROVED = "approved"
+	REQUEST = "request"
 
 
-class CallbaCkGroupLeave:
+class CallbaCkGroupLeave(BaseModel):
 	"""VK Object CallbaCkGroupLeave
 
 	"""
@@ -2005,7 +2005,7 @@ class CallbaCkGroupLeave:
 	self = None
 
 
-class CallbaCkGroupMarket:
+class CallbaCkGroupMarket(enum.IntEnum):
 	"""VK Object CallbaCkGroupMarket
 
 	"""
@@ -2013,7 +2013,7 @@ class CallbaCkGroupMarket:
 	open = 1
 
 
-class CallbaCkGroupOffiCerRole:
+class CallbaCkGroupOffiCerRole(enum.IntEnum):
 	"""VK Object CallbaCkGroupOffiCerRole
 
 	"""
@@ -2023,7 +2023,7 @@ class CallbaCkGroupOffiCerRole:
 	administrator = 3
 
 
-class CallbaCkGroupOffiCersEdit:
+class CallbaCkGroupOffiCersEdit(BaseModel):
 	"""VK Object CallbaCkGroupOffiCersEdit
 
 	"""
@@ -2033,7 +2033,7 @@ class CallbaCkGroupOffiCersEdit:
 	level_new = None
 
 
-class CallbaCkGroupSettingsChanges:
+class CallbaCkGroupSettingsChanges(BaseModel):
 	"""VK Object CallbaCkGroupSettingsChanges
 
 	"""
@@ -2052,7 +2052,7 @@ class CallbaCkGroupSettingsChanges:
 	enable_market = None
 
 
-class CallbaCkLikeAddRemove:
+class CallbaCkLikeAddRemove(BaseModel):
 	"""VK Object CallbaCkLikeAddRemove
 
 	"""
@@ -2064,7 +2064,7 @@ class CallbaCkLikeAddRemove:
 	thread_reply_id = None
 
 
-class CallbaCkMarketComment:
+class CallbaCkMarketComment(BaseModel):
 	"""VK Object CallbaCkMarketComment
 
 	"""
@@ -2072,11 +2072,11 @@ class CallbaCkMarketComment:
 	from_id = None
 	date = None
 	text = None
-	market_owner_od = None
+	market_owner_id = None
 	photo_id = None
 
 
-class CallbaCkMarketCommentDelete:
+class CallbaCkMarketCommentDelete(BaseModel):
 	"""VK Object CallbaCkMarketCommentDelete
 
 	"""
@@ -2086,7 +2086,7 @@ class CallbaCkMarketCommentDelete:
 	item_id = None
 
 
-class CallbaCkMessageAllow:
+class CallbaCkMessageAllow(BaseModel):
 	"""VK Object CallbaCkMessageAllow
 
 	"""
@@ -2094,7 +2094,7 @@ class CallbaCkMessageAllow:
 	key = None
 
 
-class CallbaCkMessageBase:
+class CallbaCkMessageBase(BaseModel):
 	"""VK Object CallbaCkMessageBase
 
 	"""
@@ -2103,63 +2103,63 @@ class CallbaCkMessageBase:
 	group_id = None
 
 
-class CallbaCkMessageDeny:
+class CallbaCkMessageDeny(BaseModel):
 	"""VK Object CallbaCkMessageDeny
 
 	"""
 	user_id = None
 
 
-class CallbaCkMessageType:
+class CallbaCkMessageType(enum.Enum):
 	"""VK Object CallbaCkMessageType
 
 	"""
-	audio_new = 0
-	board_post_new = 1
-	board_post_edit = 2
-	board_post_restore = 3
-	board_post_delete = 4
-	confirmation = 5
-	group_leave = 6
-	group_join = 7
-	group_change_photo = 8
-	group_change_settings = 9
-	group_officers_edit = 10
-	lead_forms_new = 11
-	market_comment_new = 12
-	market_comment_delete = 13
-	market_comment_edit = 14
-	market_comment_restore = 15
-	message_allow = 16
-	message_new = 17
-	message_deny = 18
-	message_read = 19
-	message_reply = 20
-	message_edit = 21
-	message_typing_state = 22
-	messages_edit = 23
-	photo_new = 24
-	photo_comment_new = 25
-	photo_comment_delete = 26
-	photo_comment_edit = 27
-	photo_comment_restore = 28
-	poll_vote_new = 29
-	user_block = 30
-	user_unblock = 31
-	video_new = 32
-	video_comment_new = 33
-	video_comment_delete = 34
-	video_comment_edit = 35
-	video_comment_restore = 36
-	wall_post_new = 37
-	wall_reply_new = 38
-	wall_reply_edit = 39
-	wall_reply_delete = 40
-	wall_reply_restore = 41
-	wall_repost = 42
+	AUDIO_NEW = "audio_new"
+	BOARD_POST_NEW = "board_post_new"
+	BOARD_POST_EDIT = "board_post_edit"
+	BOARD_POST_RESTORE = "board_post_restore"
+	BOARD_POST_DELETE = "board_post_delete"
+	CONFIRMATION = "confirmation"
+	GROUP_LEAVE = "group_leave"
+	GROUP_JOIN = "group_join"
+	GROUP_CHANGE_PHOTO = "group_change_photo"
+	GROUP_CHANGE_SETTINGS = "group_change_settings"
+	GROUP_OFFICERS_EDIT = "group_officers_edit"
+	LEAD_FORMS_NEW = "lead_forms_new"
+	MARKET_COMMENT_NEW = "market_comment_new"
+	MARKET_COMMENT_DELETE = "market_comment_delete"
+	MARKET_COMMENT_EDIT = "market_comment_edit"
+	MARKET_COMMENT_RESTORE = "market_comment_restore"
+	MESSAGE_ALLOW = "message_allow"
+	MESSAGE_NEW = "message_new"
+	MESSAGE_DENY = "message_deny"
+	MESSAGE_READ = "message_read"
+	MESSAGE_REPLY = "message_reply"
+	MESSAGE_EDIT = "message_edit"
+	MESSAGE_TYPING_STATE = "message_typing_state"
+	MESSAGES_EDIT = "messages_edit"
+	PHOTO_NEW = "photo_new"
+	PHOTO_COMMENT_NEW = "photo_comment_new"
+	PHOTO_COMMENT_DELETE = "photo_comment_delete"
+	PHOTO_COMMENT_EDIT = "photo_comment_edit"
+	PHOTO_COMMENT_RESTORE = "photo_comment_restore"
+	POLL_VOTE_NEW = "poll_vote_new"
+	USER_BLOCK = "user_block"
+	USER_UNBLOCK = "user_unblock"
+	VIDEO_NEW = "video_new"
+	VIDEO_COMMENT_NEW = "video_comment_new"
+	VIDEO_COMMENT_DELETE = "video_comment_delete"
+	VIDEO_COMMENT_EDIT = "video_comment_edit"
+	VIDEO_COMMENT_RESTORE = "video_comment_restore"
+	WALL_POST_NEW = "wall_post_new"
+	WALL_REPLY_NEW = "wall_reply_new"
+	WALL_REPLY_EDIT = "wall_reply_edit"
+	WALL_REPLY_DELETE = "wall_reply_delete"
+	WALL_REPLY_RESTORE = "wall_reply_restore"
+	WALL_REPOST = "wall_repost"
 
 
-class CallbaCkPhotoComment:
+class CallbaCkPhotoComment(BaseModel):
 	"""VK Object CallbaCkPhotoComment
 
 	"""
@@ -2167,10 +2167,10 @@ class CallbaCkPhotoComment:
 	from_id = None
 	date = None
 	text = None
-	photo_owner_od = None
+	photo_owner_id = None
 
 
-class CallbaCkPhotoCommentDelete:
+class CallbaCkPhotoCommentDelete(BaseModel):
 	"""VK Object CallbaCkPhotoCommentDelete
 
 	"""
@@ -2180,7 +2180,7 @@ class CallbaCkPhotoCommentDelete:
 	photo_id = None
 
 
-class CallbaCkPollVoteNew:
+class CallbaCkPollVoteNew(BaseModel):
 	"""VK Object CallbaCkPollVoteNew
 
 	"""
@@ -2190,7 +2190,7 @@ class CallbaCkPollVoteNew:
 	user_id = None
 
 
-class CallbaCkQrSCan:
+class CallbaCkQrSCan(BaseModel):
 	"""VK Object CallbaCkQrSCan
 
 	"""
@@ -2201,7 +2201,7 @@ class CallbaCkQrSCan:
 	reread = None
 
 
-class CallbaCkUserBloCk:
+class CallbaCkUserBloCk(BaseModel):
 	"""VK Object CallbaCkUserBloCk
 
 	"""
@@ -2212,7 +2212,7 @@ class CallbaCkUserBloCk:
 	comment = None
 
 
-class CallbaCkUserUnbloCk:
+class CallbaCkUserUnbloCk(BaseModel):
 	"""VK Object CallbaCkUserUnbloCk
 
 	"""
@@ -2221,7 +2221,7 @@ class CallbaCkUserUnbloCk:
 	by_end_date = None
 
 
-class CallbaCkVideoComment:
+class CallbaCkVideoComment(BaseModel):
 	"""VK Object CallbaCkVideoComment
 
 	"""
@@ -2229,10 +2229,10 @@ class CallbaCkVideoComment:
 	from_id = None
 	date = None
 	text = None
-	video_owner_od = None
+	video_owner_id = None
 
 
-class CallbaCkVideoCommentDelete:
+class CallbaCkVideoCommentDelete(BaseModel):
 	"""VK Object CallbaCkVideoCommentDelete
 
 	"""
@@ -2242,7 +2242,7 @@ class CallbaCkVideoCommentDelete:
 	video_id = None
 
 
-class CallbaCkWallCommentDelete:
+class CallbaCkWallCommentDelete(BaseModel):
 	"""VK Object CallbaCkWallCommentDelete
 
 	"""
@@ -2252,7 +2252,7 @@ class CallbaCkWallCommentDelete:
 	post_id = None
 
 
-class CallsCall:
+class CallsCall(BaseModel):
 	"""VK Object CallsCall
 
 	duration - Call duration
@@ -2270,16 +2270,16 @@ class CallsCall:
 	video = None
 
 
-class CallsEndState:
+class CallsEndState(enum.Enum):
 	"""VK Object CallsEndState
 
 	"""
-	canceled_by_initiator = 0
-	canceled_by_receiver = 1
-	reached = 2
+	CANCELED_BY_INITIATOR = "canceled_by_initiator"
+	CANCELED_BY_RECEIVER = "canceled_by_receiver"
+	REACHED = "reached"
 
 
-class CallsPartiCipants:
+class CallsPartiCipants(BaseModel):
 	"""VK Object CallsPartiCipants
 
 	list - 
@@ -2289,7 +2289,7 @@ class CallsPartiCipants:
 	count = None
 
 
-class CommentThread:
+class CommentThread(BaseModel):
 	"""VK Object CommentThread
 
 	can_post - Information whether current user can comment the post
@@ -2305,19 +2305,19 @@ class CommentThread:
 	show_reply_button = None
 
 
-class DatabaseCity:
+class DatabaseCity(BaseModel):
 	"""VK Object DatabaseCity
 
 	area - Area title
 	region - Region title
 	important - Information whether the city is included in important cities list
 	"""
-	area = <built-in function iter>
-	region = <built-in function iter>
-	important = <built-in function iter>
+	area = None
+	region = None
+	important = None
 
 
-class DatabaseFaculty:
+class DatabaseFaculty(BaseModel):
 	"""VK Object DatabaseFaculty
 
 	id - Faculty ID
@@ -2327,7 +2327,7 @@ class DatabaseFaculty:
 	title = None
 
 
-class DatabaseRegion:
+class DatabaseRegion(BaseModel):
 	"""VK Object DatabaseRegion
 
 	id - Region ID
@@ -2337,7 +2337,7 @@ class DatabaseRegion:
 	title = None
 
 
-class DatabaseSchool:
+class DatabaseSchool(BaseModel):
 	"""VK Object DatabaseSchool
 
 	id - School ID
@@ -2347,7 +2347,7 @@ class DatabaseSchool:
 	title = None
 
 
-class DatabaseStation:
+class DatabaseStation(BaseModel):
 	"""VK Object DatabaseStation
 
 	city_id - City ID
@@ -2361,7 +2361,7 @@ class DatabaseStation:
 	name = None
 
 
-class DatabaseUniversity:
+class DatabaseUniversity(BaseModel):
 	"""VK Object DatabaseUniversity
 
 	id - University ID
@@ -2371,7 +2371,7 @@ class DatabaseUniversity:
 	title = None
 
 
-class DocsDoc:
+class DocsDoc(BaseModel):
 	"""VK Object DocsDoc
 
 	id - Document ID
@@ -2401,16 +2401,16 @@ class DocsDoc:
 	tags = None
 
 
-class DocsDocAttachmentType:
+class DocsDocAttachmentType(enum.Enum):
 	"""VK Object DocsDocAttachmentType
 
 	"""
-	doc = 0
-	graffiti = 1
-	audio_message = 2
+	DOC = "doc"
+	GRAFFITI = "graffiti"
+	AUDIO_MESSAGE = "audio_message"
 
 
-class DocsDocPreview:
+class DocsDocPreview(BaseModel):
 	"""VK Object DocsDocPreview
 
 	"""
@@ -2420,7 +2420,7 @@ class DocsDocPreview:
 	video = None
 
 
-class DocsDocPreviewAuDioMsg:
+class DocsDocPreviewAuDioMsg(BaseModel):
 	"""VK Object DocsDocPreviewAuDioMsg
 
 	duration - Audio message duration in seconds
@@ -2434,7 +2434,7 @@ class DocsDocPreviewAuDioMsg:
 	waveform = None
 
 
-class DocsDocPreviewGraffiti:
+class DocsDocPreviewGraffiti(BaseModel):
 	"""VK Object DocsDocPreviewGraffiti
 
 	src - Graffiti file URL
@@ -2446,14 +2446,14 @@ class DocsDocPreviewGraffiti:
 	height = None
 
 
-class DocsDocPreviewPhoto:
+class DocsDocPreviewPhoto(BaseModel):
 	"""VK Object DocsDocPreviewPhoto
 
 	"""
 	sizes = None
 
 
-class DocsDocPreviewPhotoSizes:
+class DocsDocPreviewPhotoSizes(BaseModel):
 	"""VK Object DocsDocPreviewPhotoSizes
 
 	src - URL of the image
@@ -2467,7 +2467,7 @@ class DocsDocPreviewPhotoSizes:
 	type = None
 
 
-class DocsDocPreviewViDeo:
+class DocsDocPreviewViDeo(BaseModel):
 	"""VK Object DocsDocPreviewViDeo
 
 	src - Video URL
@@ -2481,7 +2481,7 @@ class DocsDocPreviewViDeo:
 	file_size = None
 
 
-class DocsDocTypes:
+class DocsDocTypes(BaseModel):
 	"""VK Object DocsDocTypes
 
 	id - Doc type ID
@@ -2493,7 +2493,7 @@ class DocsDocTypes:
 	count = None
 
 
-class DonutDonatorSubscriptionInfo:
+class DonutDonatorSubscriptionInfo(BaseModel):
 	"""VK Object DonutDonatorSubscriptionInfo
 
 	"""
@@ -2503,7 +2503,7 @@ class DonutDonatorSubscriptionInfo:
 	status = None
 
 
-class EvEntsEvEntAttach:
+class EvEntsEvEntAttach(BaseModel):
 	"""VK Object EvEntsEvEntAttach
 
 	address - address of event
@@ -2525,7 +2525,7 @@ class EvEntsEvEntAttach:
 	time = None
 
 
-class FaveBookmark:
+class FaveBookmark(BaseModel):
 	"""VK Object FaveBookmark
 
 	added_date - Timestamp, when this item was bookmarked
@@ -2547,18 +2547,18 @@ class FaveBookmark:
 	video = None
 
 
-class FaveBookmarkType:
+class FaveBookmarkType(enum.Enum):
 	"""VK Object FaveBookmarkType
 
 	"""
-	post = 0
-	video = 1
-	product = 2
-	article = 3
-	link = 4
+	POST = "post"
+	VIDEO = "video"
+	PRODUCT = "product"
+	ARTICLE = "article"
+	LINK = "link"
 
 
-class FavePage:
+class FavePage(BaseModel):
 	"""VK Object FavePage
 
 	description - Some info about user or group
@@ -2576,16 +2576,16 @@ class FavePage:
 	user = None
 
 
-class FavePageType:
+class FavePageType(enum.Enum):
 	"""VK Object FavePageType
 
 	"""
-	user = 0
-	group = 1
-	hints = 2
+	USER = "user"
+	GROUP = "group"
+	HINTS = "hints"
 
 
-class FaveTag:
+class FaveTag(BaseModel):
 	"""VK Object FaveTag
 
 	id - Tag id
@@ -2595,15 +2595,15 @@ class FaveTag:
 	name = None
 
 
-class FriendsFriendExtendedStatus:
+class FriendsFriendExtendedStatus(BaseModel):
 	"""VK Object FriendsFriendExtendedStatus
 
 	is_request_unread - Is friend request from other user unread
 	"""
-	is_request_unread = <built-in function iter>
+	is_request_unread = None
 
 
-class FriendsFriendStatus:
+class FriendsFriendStatus(BaseModel):
 	"""VK Object FriendsFriendStatus
 
 	friend_status - 
@@ -2615,7 +2615,7 @@ class FriendsFriendStatus:
 	user_id = None
 
 
-class FriendsFriendStatusStatus:
+class FriendsFriendStatusStatus(enum.IntEnum):
 	"""VK Object FriendsFriendStatusStatus
 
 	"""
@@ -2625,7 +2625,7 @@ class FriendsFriendStatusStatus:
 	is friend = 3
 
 
-class FriendsFriendsList:
+class FriendsFriendsList(BaseModel):
 	"""VK Object FriendsFriendsList
 
 	id - List ID
@@ -2635,7 +2635,7 @@ class FriendsFriendsList:
 	name = None
 
 
-class FriendsMutualFriend:
+class FriendsMutualFriend(BaseModel):
 	"""VK Object FriendsMutualFriend
 
 	common_count - Total mutual friends number
@@ -2647,7 +2647,7 @@ class FriendsMutualFriend:
 	id = None
 
 
-class FriendsRequests:
+class FriendsRequests(BaseModel):
 	"""VK Object FriendsRequests
 
 	from - ID of the user by whom friend has been suggested
@@ -2659,7 +2659,7 @@ class FriendsRequests:
 	user_id = None
 
 
-class FriendsRequestsMutual:
+class FriendsRequestsMutual(BaseModel):
 	"""VK Object FriendsRequestsMutual
 
 	count - Total mutual friends number
@@ -2669,7 +2669,7 @@ class FriendsRequestsMutual:
 	users = None
 
 
-class FriendsRequestsXtrMessage:
+class FriendsRequestsXtrMessage(BaseModel):
 	"""VK Object FriendsRequestsXtrMessage
 
 	from - ID of the user by whom friend has been suggested
@@ -2683,22 +2683,22 @@ class FriendsRequestsXtrMessage:
 	user_id = None
 
 
-class FriendsUserXtrLists:
+class FriendsUserXtrLists(BaseModel):
 	"""VK Object FriendsUserXtrLists
 
 	"""
-	lists = <built-in function iter>
+	lists = None
 
 
-class FriendsUserXtrPhone:
+class FriendsUserXtrPhone(BaseModel):
 	"""VK Object FriendsUserXtrPhone
 
 	phone - User phone
 	"""
-	phone = <built-in function iter>
+	phone = None
 
 
-class GiftsGift:
+class GiftsGift(BaseModel):
 	"""VK Object GiftsGift
 
 	date - Date when gist has been sent in Unixtime
@@ -2718,7 +2718,7 @@ class GiftsGift:
 	privacy = None
 
 
-class GiftsGiftPrivacy:
+class GiftsGiftPrivacy(enum.IntEnum):
 	"""VK Object GiftsGiftPrivacy
 
 	"""
@@ -2727,7 +2727,7 @@ class GiftsGiftPrivacy:
 	name and message for recipient only = 2
 
 
-class GiftsLayout:
+class GiftsLayout(BaseModel):
 	"""VK Object GiftsLayout
 
 	id - Gift ID
@@ -2751,7 +2751,7 @@ class GiftsLayout:
 	keywords = None
 
 
-class GroupsAddress:
+class GroupsAddress(BaseModel):
 	"""VK Object GroupsAddress
 
 	additional_address - Additional address to the place (6 floor, left door)
@@ -2785,7 +2785,7 @@ class GroupsAddress:
 	work_info_status = None
 
 
-class GroupsAddressTimetable:
+class GroupsAddressTimetable(BaseModel):
 	"""VK Object GroupsAddressTimetable
 
 	fri - Timetable for friday
@@ -2805,7 +2805,7 @@ class GroupsAddressTimetable:
 	wed = None
 
 
-class GroupsAddressTimetableDay:
+class GroupsAddressTimetableDay(BaseModel):
 	"""VK Object GroupsAddressTimetableDay
 
 	break_close_time - Close time of the break in minutes
@@ -2819,18 +2819,18 @@ class GroupsAddressTimetableDay:
 	open_time = None
 
 
-class GroupsAddressWorkInfoStatus:
+class GroupsAddressWorkInfoStatus(enum.Enum):
 	"""VK Object GroupsAddressWorkInfoStatus
 
 	"""
-	no_information = 0
-	temporarily_closed = 1
-	always_opened = 2
-	timetable = 3
-	forever_closed = 4
+	NO_INFORMATION = "no_information"
+	TEMPORARILY_CLOSED = "temporarily_closed"
+	ALWAYS_OPENED = "always_opened"
+	TIMETABLE = "timetable"
+	FOREVER_CLOSED = "forever_closed"
 
 
-class GroupsAddressesInfo:
+class GroupsAddressesInfo(BaseModel):
 	"""VK Object GroupsAddressesInfo
 
 	is_enabled - Information whether addresses is enabled
@@ -2840,7 +2840,7 @@ class GroupsAddressesInfo:
 	main_address_id = None
 
 
-class GroupsBanInfo:
+class GroupsBanInfo(BaseModel):
 	"""VK Object GroupsBanInfo
 
 	admin_id - Administrator ID
@@ -2860,7 +2860,7 @@ class GroupsBanInfo:
 	reason = None
 
 
-class GroupsBanInfoReason:
+class GroupsBanInfoReason(enum.IntEnum):
 	"""VK Object GroupsBanInfoReason
 
 	"""
@@ -2871,13 +2871,13 @@ class GroupsBanInfoReason:
 	flood = 4
 
 
-class GroupsBannedItem:
+class GroupsBannedItem(BaseModel):
 	"""VK Object GroupsBannedItem
 
 	"""
 
 
-class GroupsCallbackServer:
+class GroupsCallbackServer(BaseModel):
 	"""VK Object GroupsCallbackServer
 
 	"""
@@ -2889,7 +2889,7 @@ class GroupsCallbackServer:
 	status = None
 
 
-class GroupsCallbackSettinGs:
+class GroupsCallbackSettinGs(BaseModel):
 	"""VK Object GroupsCallbackSettinGs
 
 	api_version - API version used for the events
@@ -2899,7 +2899,7 @@ class GroupsCallbackSettinGs:
 	events = None
 
 
-class GroupsContactsItem:
+class GroupsContactsItem(BaseModel):
 	"""VK Object GroupsContactsItem
 
 	user_id - User ID
@@ -2913,7 +2913,7 @@ class GroupsContactsItem:
 	email = None
 
 
-class GroupsCountersGroup:
+class GroupsCountersGroup(BaseModel):
 	"""VK Object GroupsCountersGroup
 
 	addresses - Addresses number
@@ -2937,7 +2937,7 @@ class GroupsCountersGroup:
 	videos = None
 
 
-class GroupsCover:
+class GroupsCover(BaseModel):
 	"""VK Object GroupsCover
 
 	enabled - Information whether cover is enabled
@@ -2947,87 +2947,87 @@ class GroupsCover:
 	images = None
 
 
-class GroupsFields:
+class GroupsFields(enum.Enum):
 	"""VK Object GroupsFields
 
 	"""
-	market = 0
-	member_status = 1
-	is_favorite = 2
-	is_subscribed = 3
-	is_subscribed_podcasts = 4
-	can_subscribe_podcasts = 5
-	city = 6
-	country = 7
-	verified = 8
-	description = 9
-	wiki_page = 10
-	members_count = 11
-	requests_count = 12
-	counters = 13
-	cover = 14
-	can_post = 15
-	can_suggest = 16
-	can_upload_story = 17
-	can_upload_doc = 18
-	can_upload_video = 19
-	can_see_all_posts = 20
-	can_create_topic = 21
-	activity = 22
-	fixed_post = 23
-	has_photo = 24
-	status = 25
-	main_album_id = 26
-	links = 27
-	contacts = 28
-	site = 29
-	main_section = 30
-	secondary_section = 31
-	wall = 32
-	trending = 33
-	can_message = 34
-	is_market_cart_enabled = 35
-	is_messages_blocked = 36
-	can_send_notify = 37
-	has_group_channel = 38
-	group_channel = 39
-	online_status = 40
-	start_date = 41
-	finish_date = 42
-	age_limits = 43
-	ban_info = 44
-	action_button = 45
-	author_id = 46
-	phone = 47
-	has_market_app = 48
-	addresses = 49
-	live_covers = 50
-	is_adult = 51
-	can_subscribe_posts = 52
-	warning_notification = 53
-	msg_push_allowed = 54
-	stories_archive_count = 55
-	video_live_level = 56
-	video_live_count = 57
-	clips_count = 58
-	is_business = 59
+	MARKET = "market"
+	MEMBER_STATUS = "member_status"
+	IS_FAVORITE = "is_favorite"
+	IS_SUBSCRIBED = "is_subscribed"
+	IS_SUBSCRIBED_PODCASTS = "is_subscribed_podcasts"
+	CAN_SUBSCRIBE_PODCASTS = "can_subscribe_podcasts"
+	CITY = "city"
+	COUNTRY = "country"
+	VERIFIED = "verified"
+	DESCRIPTION = "description"
+	WIKI_PAGE = "wiki_page"
+	MEMBERS_COUNT = "members_count"
+	REQUESTS_COUNT = "requests_count"
+	COUNTERS = "counters"
+	COVER = "cover"
+	CAN_POST = "can_post"
+	CAN_SUGGEST = "can_suggest"
+	CAN_UPLOAD_STORY = "can_upload_story"
+	CAN_UPLOAD_DOC = "can_upload_doc"
+	CAN_UPLOAD_VIDEO = "can_upload_video"
+	CAN_SEE_ALL_POSTS = "can_see_all_posts"
+	CAN_CREATE_TOPIC = "can_create_topic"
+	ACTIVITY = "activity"
+	FIXED_POST = "fixed_post"
+	HAS_PHOTO = "has_photo"
+	STATUS = "status"
+	MAIN_ALBUM_ID = "main_album_id"
+	LINKS = "links"
+	CONTACTS = "contacts"
+	SITE = "site"
+	MAIN_SECTION = "main_section"
+	SECONDARY_SECTION = "secondary_section"
+	WALL = "wall"
+	TRENDING = "trending"
+	CAN_MESSAGE = "can_message"
+	IS_MARKET_CART_ENABLED = "is_market_cart_enabled"
+	IS_MESSAGES_BLOCKED = "is_messages_blocked"
+	CAN_SEND_NOTIFY = "can_send_notify"
+	HAS_GROUP_CHANNEL = "has_group_channel"
+	GROUP_CHANNEL = "group_channel"
+	ONLINE_STATUS = "online_status"
+	START_DATE = "start_date"
+	FINISH_DATE = "finish_date"
+	AGE_LIMITS = "age_limits"
+	BAN_INFO = "ban_info"
+	ACTION_BUTTON = "action_button"
+	AUTHOR_ID = "author_id"
+	PHONE = "phone"
+	HAS_MARKET_APP = "has_market_app"
+	ADDRESSES = "addresses"
+	LIVE_COVERS = "live_covers"
+	IS_ADULT = "is_adult"
+	CAN_SUBSCRIBE_POSTS = "can_subscribe_posts"
+	WARNING_NOTIFICATION = "warning_notification"
+	MSG_PUSH_ALLOWED = "msg_push_allowed"
+	STORIES_ARCHIVE_COUNT = "stories_archive_count"
+	VIDEO_LIVE_LEVEL = "video_live_level"
+	VIDEO_LIVE_COUNT = "video_live_count"
+	CLIPS_COUNT = "clips_count"
+	IS_BUSINESS = "is_business"
 
 
-class GroupsFilter:
+class GroupsFilter(enum.Enum):
 	"""VK Object GroupsFilter
 
 	"""
-	admin = 0
-	editor = 1
-	moder = 2
-	advertiser = 3
-	groups = 4
-	publics = 5
-	events = 6
-	has_addresses = 7
+	ADMIN = "admin"
+	EDITOR = "editor"
+	MODER = "moder"
+	ADVERTISER = "advertiser"
+	GROUPS = "groups"
+	PUBLICS = "publics"
+	EVENTS = "events"
+	HAS_ADDRESSES = "has_addresses"
 
 
-class GroupsGroup:
+class GroupsGroup(BaseModel):
 	"""VK Object GroupsGroup
 
 	id - Community ID
@@ -3063,7 +3063,7 @@ class GroupsGroup:
 	photo_200 = None
 
 
-class GroupsGroupAccess:
+class GroupsGroupAccess(enum.IntEnum):
 	"""VK Object GroupsGroupAccess
 
 	"""
@@ -3072,7 +3072,7 @@ class GroupsGroupAccess:
 	private = 2
 
 
-class GroupsGroupAdminLevel:
+class GroupsGroupAdminLevel(enum.IntEnum):
 	"""VK Object GroupsGroupAdminLevel
 
 	"""
@@ -3081,7 +3081,7 @@ class GroupsGroupAdminLevel:
 	administrator = 3
 
 
-class GroupsGroupAGeLimits:
+class GroupsGroupAGeLimits(enum.IntEnum):
 	"""VK Object GroupsGroupAGeLimits
 
 	"""
@@ -3090,7 +3090,7 @@ class GroupsGroupAGeLimits:
 	_18 plus = 3
 
 
-class GroupsGroupAttach:
+class GroupsGroupAttach(BaseModel):
 	"""VK Object GroupsGroupAttach
 
 	id - group ID
@@ -3106,7 +3106,7 @@ class GroupsGroupAttach:
 	is_favorite = None
 
 
-class GroupsGroupAudio:
+class GroupsGroupAudio(enum.IntEnum):
 	"""VK Object GroupsGroupAudio
 
 	"""
@@ -3115,7 +3115,7 @@ class GroupsGroupAudio:
 	limited = 2
 
 
-class GroupsGroupBanInfo:
+class GroupsGroupBanInfo(BaseModel):
 	"""VK Object GroupsGroupBanInfo
 
 	comment - Ban comment
@@ -3127,7 +3127,7 @@ class GroupsGroupBanInfo:
 	reason = None
 
 
-class GroupsGroupCateGory:
+class GroupsGroupCateGory(BaseModel):
 	"""VK Object GroupsGroupCateGory
 
 	id - Category ID
@@ -3139,7 +3139,7 @@ class GroupsGroupCateGory:
 	subcategories = None
 
 
-class GroupsGroupCateGoryFull:
+class GroupsGroupCateGoryFull(BaseModel):
 	"""VK Object GroupsGroupCateGoryFull
 
 	id - Category ID
@@ -3155,7 +3155,7 @@ class GroupsGroupCateGoryFull:
 	subcategories = None
 
 
-class GroupsGroupCateGoryType:
+class GroupsGroupCateGoryType(BaseModel):
 	"""VK Object GroupsGroupCateGoryType
 
 	"""
@@ -3163,7 +3163,7 @@ class GroupsGroupCateGoryType:
 	name = None
 
 
-class GroupsGroupDocs:
+class GroupsGroupDocs(enum.IntEnum):
 	"""VK Object GroupsGroupDocs
 
 	"""
@@ -3172,7 +3172,7 @@ class GroupsGroupDocs:
 	limited = 2
 
 
-class GroupsGroupFull:
+class GroupsGroupFull(BaseModel):
 	"""VK Object GroupsGroupFull
 
 	market - 
@@ -3231,64 +3231,64 @@ class GroupsGroupFull:
 	live_covers - Live covers state
 	stories_archive_count - 
 	"""
-	market = <built-in function iter>
-	member_status = <built-in function iter>
-	is_adult = <built-in function iter>
-	is_hidden_from_feed = <built-in function iter>
-	is_favorite = <built-in function iter>
-	is_subscribed = <built-in function iter>
-	city = <built-in function iter>
-	country = <built-in function iter>
-	verified = <built-in function iter>
-	description = <built-in function iter>
-	wiki_page = <built-in function iter>
-	members_count = <built-in function iter>
-	requests_count = <built-in function iter>
-	video_live_level = <built-in function iter>
-	video_live_count = <built-in function iter>
-	clips_count = <built-in function iter>
-	counters = <built-in function iter>
-	cover = <built-in function iter>
-	can_post = <built-in function iter>
-	can_suggest = <built-in function iter>
-	can_upload_story = <built-in function iter>
-	can_upload_doc = <built-in function iter>
-	can_upload_video = <built-in function iter>
-	can_see_all_posts = <built-in function iter>
-	can_create_topic = <built-in function iter>
-	activity = <built-in function iter>
-	fixed_post = <built-in function iter>
-	has_photo = <built-in function iter>
-	crop_photo = <built-in function iter>
-	status = <built-in function iter>
-	status_audio = <built-in function iter>
-	main_album_id = <built-in function iter>
-	links = <built-in function iter>
-	contacts = <built-in function iter>
-	wall = <built-in function iter>
-	site = <built-in function iter>
-	main_section = <built-in function iter>
-	secondary_section = <built-in function iter>
-	trending = <built-in function iter>
-	can_message = <built-in function iter>
-	is_messages_blocked = <built-in function iter>
-	can_send_notify = <built-in function iter>
-	online_status = <built-in function iter>
-	invited_by = <built-in function iter>
-	age_limits = <built-in function iter>
-	ban_info = <built-in function iter>
-	has_market_app = <built-in function iter>
-	using_vkpay_market_app = <built-in function iter>
-	has_group_channel = <built-in function iter>
-	addresses = <built-in function iter>
-	is_subscribed_podcasts = <built-in function iter>
-	can_subscribe_podcasts = <built-in function iter>
-	can_subscribe_posts = <built-in function iter>
-	live_covers = <built-in function iter>
-	stories_archive_count = <built-in function iter>
+	market = None
+	member_status = None
+	is_adult = None
+	is_hidden_from_feed = None
+	is_favorite = None
+	is_subscribed = None
+	city = None
+	country = None
+	verified = None
+	description = None
+	wiki_page = None
+	members_count = None
+	requests_count = None
+	video_live_level = None
+	video_live_count = None
+	clips_count = None
+	counters = None
+	cover = None
+	can_post = None
+	can_suggest = None
+	can_upload_story = None
+	can_upload_doc = None
+	can_upload_video = None
+	can_see_all_posts = None
+	can_create_topic = None
+	activity = None
+	fixed_post = None
+	has_photo = None
+	crop_photo = None
+	status = None
+	status_audio = None
+	main_album_id = None
+	links = None
+	contacts = None
+	wall = None
+	site = None
+	main_section = None
+	secondary_section = None
+	trending = None
+	can_message = None
+	is_messages_blocked = None
+	can_send_notify = None
+	online_status = None
+	invited_by = None
+	age_limits = None
+	ban_info = None
+	has_market_app = None
+	using_vkpay_market_app = None
+	has_group_channel = None
+	addresses = None
+	is_subscribed_podcasts = None
+	can_subscribe_podcasts = None
+	can_subscribe_posts = None
+	live_covers = None
+	stories_archive_count = None
 
 
-class GroupsGroupFullAGeLimits:
+class GroupsGroupFullAGeLimits(enum.IntEnum):
 	"""VK Object GroupsGroupFullAGeLimits
 
 	"""
@@ -3297,7 +3297,7 @@ class GroupsGroupFullAGeLimits:
 	over 18 = 3
 
 
-class GroupsGroupFullMainSection:
+class GroupsGroupFullMainSection(enum.IntEnum):
 	"""VK Object GroupsGroupFullMainSection
 
 	"""
@@ -3309,7 +3309,7 @@ class GroupsGroupFullMainSection:
 	market = 5
 
 
-class GroupsGroupFullMemberStatus:
+class GroupsGroupFullMemberStatus(enum.IntEnum):
 	"""VK Object GroupsGroupFullMemberStatus
 
 	"""
@@ -3321,7 +3321,7 @@ class GroupsGroupFullMemberStatus:
 	invited = 5
 
 
-class GroupsGroupIsClosed:
+class GroupsGroupIsClosed(enum.IntEnum):
 	"""VK Object GroupsGroupIsClosed
 
 	"""
@@ -3330,7 +3330,7 @@ class GroupsGroupIsClosed:
 	private = 2
 
 
-class GroupsGroupLink:
+class GroupsGroupLink(BaseModel):
 	"""VK Object GroupsGroupLink
 
 	name - Link label
@@ -3348,7 +3348,7 @@ class GroupsGroupLink:
 	url = None
 
 
-class GroupsGroupMarketCurrency:
+class GroupsGroupMarketCurrency(enum.IntEnum):
 	"""VK Object GroupsGroupMarketCurrency
 
 	"""
@@ -3359,7 +3359,7 @@ class GroupsGroupMarketCurrency:
 	us dollars = 840
 
 
-class GroupsGroupPhotos:
+class GroupsGroupPhotos(enum.IntEnum):
 	"""VK Object GroupsGroupPhotos
 
 	"""
@@ -3368,7 +3368,7 @@ class GroupsGroupPhotos:
 	limited = 2
 
 
-class GroupsGroupPublicCateGoryList:
+class GroupsGroupPublicCateGoryList(BaseModel):
 	"""VK Object GroupsGroupPublicCateGoryList
 
 	"""
@@ -3377,17 +3377,17 @@ class GroupsGroupPublicCateGoryList:
 	subcategories = None
 
 
-class GroupsGroupRole:
+class GroupsGroupRole(enum.Enum):
 	"""VK Object GroupsGroupRole
 
 	"""
-	moderator = 0
-	editor = 1
-	administrator = 2
-	advertiser = 3
+	MODERATOR = "moderator"
+	EDITOR = "editor"
+	ADMINISTRATOR = "administrator"
+	ADVERTISER = "advertiser"
 
 
-class GroupsGroupSubject:
+class GroupsGroupSubject(enum.IntEnum):
 	"""VK Object GroupsGroupSubject
 
 	"""
@@ -3435,7 +3435,7 @@ class GroupsGroupSubject:
 	design and graphics = 42
 
 
-class GroupsGroupSuGGestedPrivacy:
+class GroupsGroupSuGGestedPrivacy(enum.IntEnum):
 	"""VK Object GroupsGroupSuGGestedPrivacy
 
 	"""
@@ -3444,7 +3444,7 @@ class GroupsGroupSuGGestedPrivacy:
 	subscribers = 2
 
 
-class GroupsGroupTaG:
+class GroupsGroupTaG(BaseModel):
 	"""VK Object GroupsGroupTaG
 
 	"""
@@ -3454,7 +3454,7 @@ class GroupsGroupTaG:
 	uses = None
 
 
-class GroupsGroupTopics:
+class GroupsGroupTopics(enum.IntEnum):
 	"""VK Object GroupsGroupTopics
 
 	"""
@@ -3463,16 +3463,16 @@ class GroupsGroupTopics:
 	limited = 2
 
 
-class GroupsGroupType:
+class GroupsGroupType(enum.Enum):
 	"""VK Object GroupsGroupType
 
 	"""
-	group = 0
-	page = 1
-	event = 2
+	GROUP = "group"
+	PAGE = "page"
+	EVENT = "event"
 
 
-class GroupsGroupVideo:
+class GroupsGroupVideo(enum.IntEnum):
 	"""VK Object GroupsGroupVideo
 
 	"""
@@ -3481,7 +3481,7 @@ class GroupsGroupVideo:
 	limited = 2
 
 
-class GroupsGroupWall:
+class GroupsGroupWall(enum.IntEnum):
 	"""VK Object GroupsGroupWall
 
 	"""
@@ -3491,7 +3491,7 @@ class GroupsGroupWall:
 	closed = 3
 
 
-class GroupsGroupWiki:
+class GroupsGroupWiki(enum.IntEnum):
 	"""VK Object GroupsGroupWiki
 
 	"""
@@ -3500,7 +3500,7 @@ class GroupsGroupWiki:
 	limited = 2
 
 
-class GroupsGroupsArray:
+class GroupsGroupsArray(BaseModel):
 	"""VK Object GroupsGroupsArray
 
 	count - Communities number
@@ -3510,7 +3510,7 @@ class GroupsGroupsArray:
 	items = None
 
 
-class GroupsLinksItem:
+class GroupsLinksItem(BaseModel):
 	"""VK Object GroupsLinksItem
 
 	desc - Link description
@@ -3530,7 +3530,7 @@ class GroupsLinksItem:
 	url = None
 
 
-class GroupsLiveCovers:
+class GroupsLiveCovers(BaseModel):
 	"""VK Object GroupsLiveCovers
 
 	is_enabled - Information whether live covers is enabled
@@ -3542,7 +3542,7 @@ class GroupsLiveCovers:
 	story_ids = None
 
 
-class GroupsLonGPollEvents:
+class GroupsLonGPollEvents(BaseModel):
 	"""VK Object GroupsLonGPollEvents
 
 	"""
@@ -3598,7 +3598,7 @@ class GroupsLonGPollEvents:
 	donut_money_withdraw_error = None
 
 
-class GroupsLonGPollServer:
+class GroupsLonGPollServer(BaseModel):
 	"""VK Object GroupsLonGPollServer
 
 	key - Long Poll key
@@ -3610,7 +3610,7 @@ class GroupsLonGPollServer:
 	ts = None
 
 
-class GroupsLonGPollSettinGs:
+class GroupsLonGPollSettinGs(BaseModel):
 	"""VK Object GroupsLonGPollSettinGs
 
 	api_version - API version used for the events
@@ -3622,7 +3622,7 @@ class GroupsLonGPollSettinGs:
 	is_enabled = None
 
 
-class GroupsMarketInfo:
+class GroupsMarketInfo(BaseModel):
 	"""VK Object GroupsMarketInfo
 
 	contact_id - Contact person ID
@@ -3642,16 +3642,16 @@ class GroupsMarketInfo:
 	price_min = None
 
 
-class GroupsMarketState:
+class GroupsMarketState(enum.Enum):
 	"""VK Object GroupsMarketState
 
 	"""
-	none = 0
-	basic = 1
-	advanced = 2
+	NONE = "none"
+	BASIC = "basic"
+	ADVANCED = "advanced"
 
 
-class GroupsMemberRole:
+class GroupsMemberRole(BaseModel):
 	"""VK Object GroupsMemberRole
 
 	id - User ID
@@ -3663,24 +3663,24 @@ class GroupsMemberRole:
 	role = None
 
 
-class GroupsMemberRolePermission:
+class GroupsMemberRolePermission(enum.Enum):
 	"""VK Object GroupsMemberRolePermission
 
 	"""
-	ads = 0
+	ADS = "ads"
 
 
-class GroupsMemberRoleStatus:
+class GroupsMemberRoleStatus(enum.Enum):
 	"""VK Object GroupsMemberRoleStatus
 
 	"""
-	moderator = 0
-	editor = 1
-	administrator = 2
-	creator = 3
+	MODERATOR = "moderator"
+	EDITOR = "editor"
+	ADMINISTRATOR = "administrator"
+	CREATOR = "creator"
 
 
-class GroupsMemberStatus:
+class GroupsMemberStatus(BaseModel):
 	"""VK Object GroupsMemberStatus
 
 	member - Information whether user is a member of the group
@@ -3690,7 +3690,7 @@ class GroupsMemberStatus:
 	user_id = None
 
 
-class GroupsMemberStatusFull:
+class GroupsMemberStatusFull(BaseModel):
 	"""VK Object GroupsMemberStatusFull
 
 	can_invite - Information whether user can be invited
@@ -3708,7 +3708,7 @@ class GroupsMemberStatusFull:
 	user_id = None
 
 
-class GroupsOnlineStatus:
+class GroupsOnlineStatus(BaseModel):
 	"""VK Object GroupsOnlineStatus
 
 	minutes - Estimated time of answer (for status = answer_mark)
@@ -3718,16 +3718,16 @@ class GroupsOnlineStatus:
 	status = None
 
 
-class GroupsOnlineStatusType:
+class GroupsOnlineStatusType(enum.Enum):
 	"""VK Object GroupsOnlineStatusType
 
 	"""
-	none = 0
-	online = 1
-	answer_mark = 2
+	NONE = "none"
+	ONLINE = "online"
+	ANSWER_MARK = "answer_mark"
 
 
-class GroupsOwnerXtrBanInfo:
+class GroupsOwnerXtrBanInfo(BaseModel):
 	"""VK Object GroupsOwnerXtrBanInfo
 
 	ban_info - 
@@ -3741,15 +3741,15 @@ class GroupsOwnerXtrBanInfo:
 	type = None
 
 
-class GroupsOwnerXtrBanInfoType:
+class GroupsOwnerXtrBanInfoType(enum.Enum):
 	"""VK Object GroupsOwnerXtrBanInfoType
 
 	"""
-	group = 0
-	profile = 1
+	GROUP = "group"
+	PROFILE = "profile"
 
 
-class GroupsProfileItem:
+class GroupsProfileItem(BaseModel):
 	"""VK Object GroupsProfileItem
 
 	id - User id
@@ -3763,17 +3763,17 @@ class GroupsProfileItem:
 	first_name = None
 
 
-class GroupsRoleOptions:
+class GroupsRoleOptions(enum.Enum):
 	"""VK Object GroupsRoleOptions
 
 	"""
-	moderator = 0
-	editor = 1
-	administrator = 2
-	creator = 3
+	MODERATOR = "moderator"
+	EDITOR = "editor"
+	ADMINISTRATOR = "administrator"
+	CREATOR = "creator"
 
 
-class GroupsSettinGsTwitter:
+class GroupsSettinGsTwitter(BaseModel):
 	"""VK Object GroupsSettinGsTwitter
 
 	"""
@@ -3781,7 +3781,7 @@ class GroupsSettinGsTwitter:
 	name = None
 
 
-class GroupsSubjectItem:
+class GroupsSubjectItem(BaseModel):
 	"""VK Object GroupsSubjectItem
 
 	id - Subject ID
@@ -3791,7 +3791,7 @@ class GroupsSubjectItem:
 	name = None
 
 
-class GroupsTokenPermissionSettinG:
+class GroupsTokenPermissionSettinG(BaseModel):
 	"""VK Object GroupsTokenPermissionSettinG
 
 	"""
@@ -3799,32 +3799,32 @@ class GroupsTokenPermissionSettinG:
 	setting = None
 
 
-class GroupsUserXtrRole:
+class GroupsUserXtrRole(BaseModel):
 	"""VK Object GroupsUserXtrRole
 
 	"""
-	role = <built-in function iter>
+	role = None
 
 
-class LikesType:
+class LikesType(enum.Enum):
 	"""VK Object LikesType
 
 	"""
-	post = 0
-	comment = 1
-	photo = 2
-	audio = 3
-	video = 4
-	note = 5
-	market = 6
-	photo_comment = 7
-	video_comment = 8
-	topic_comment = 9
-	market_comment = 10
-	sitepage = 11
+	POST = "post"
+	COMMENT = "comment"
+	PHOTO = "photo"
+	AUDIO = "audio"
+	VIDEO = "video"
+	NOTE = "note"
+	MARKET = "market"
+	PHOTO_COMMENT = "photo_comment"
+	VIDEO_COMMENT = "video_comment"
+	TOPIC_COMMENT = "topic_comment"
+	MARKET_COMMENT = "market_comment"
+	SITEPAGE = "sitepage"
 
 
-class LinkTargetObject:
+class LinkTargetObject(BaseModel):
 	"""VK Object LinkTargetObject
 
 	type - Object type
@@ -3836,7 +3836,7 @@ class LinkTargetObject:
 	item_id = None
 
 
-class MarketCurrency:
+class MarketCurrency(BaseModel):
 	"""VK Object MarketCurrency
 
 	id - Currency ID
@@ -3846,7 +3846,7 @@ class MarketCurrency:
 	name = None
 
 
-class MarketMarketAlbuM:
+class MarketMarketAlbuM(BaseModel):
 	"""VK Object MarketMarketAlbuM
 
 	count - Items number
@@ -3864,13 +3864,13 @@ class MarketMarketAlbuM:
 	updated_time = None
 
 
-class MarketMarketCategory:
+class MarketMarketCategory(BaseModel):
 	"""VK Object MarketMarketCategory
 
 	"""
 
 
-class MarketMarketCategoryNested:
+class MarketMarketCategoryNested(BaseModel):
 	"""VK Object MarketMarketCategoryNested
 
 	id - Category ID
@@ -3882,7 +3882,7 @@ class MarketMarketCategoryNested:
 	parent = None
 
 
-class MarketMarketCategoryOld:
+class MarketMarketCategoryOld(BaseModel):
 	"""VK Object MarketMarketCategoryOld
 
 	id - Category ID
@@ -3894,7 +3894,7 @@ class MarketMarketCategoryOld:
 	section = None
 
 
-class MarketMarketCategoryTree:
+class MarketMarketCategoryTree(BaseModel):
 	"""VK Object MarketMarketCategoryTree
 
 	id - Category ID
@@ -3906,7 +3906,7 @@ class MarketMarketCategoryTree:
 	children = None
 
 
-class MarketMarketIteM:
+class MarketMarketIteM(BaseModel):
 	"""VK Object MarketMarketIteM
 
 	access_key - Access key for the market item
@@ -3944,7 +3944,7 @@ class MarketMarketIteM:
 	is_main_variant = None
 
 
-class MarketMarketIteMAvailability:
+class MarketMarketIteMAvailability(enum.IntEnum):
 	"""VK Object MarketMarketIteMAvailability
 
 	"""
@@ -3953,7 +3953,7 @@ class MarketMarketIteMAvailability:
 	unavailable = 2
 
 
-class MarketMarketIteMFull:
+class MarketMarketIteMFull(BaseModel):
 	"""VK Object MarketMarketIteMFull
 
 	albums_ids - 
@@ -3967,19 +3967,19 @@ class MarketMarketIteMFull:
 	cancel_info - Information for cancel and revert order
 	user_agreement_info - User agreement info
 	"""
-	albums_ids = <built-in function iter>
-	photos = <built-in function iter>
-	can_comment = <built-in function iter>
-	can_repost = <built-in function iter>
-	likes = <built-in function iter>
-	reposts = <built-in function iter>
-	views_count = <built-in function iter>
-	wishlist_item_id = <built-in function iter>
-	cancel_info = <built-in function iter>
-	user_agreement_info = <built-in function iter>
+	albums_ids = None
+	photos = None
+	can_comment = None
+	can_repost = None
+	likes = None
+	reposts = None
+	views_count = None
+	wishlist_item_id = None
+	cancel_info = None
+	user_agreement_info = None
 
 
-class MarketOrder:
+class MarketOrder(BaseModel):
 	"""VK Object MarketOrder
 
 	id - 
@@ -4017,7 +4017,7 @@ class MarketOrder:
 	cancel_info = None
 
 
-class MarketOrderIteM:
+class MarketOrderIteM(BaseModel):
 	"""VK Object MarketOrderIteM
 
 	"""
@@ -4031,7 +4031,7 @@ class MarketOrderIteM:
 	variants = None
 
 
-class MarketPrice:
+class MarketPrice(BaseModel):
 	"""VK Object MarketPrice
 
 	amount - Amount
@@ -4049,7 +4049,7 @@ class MarketPrice:
 	old_amount_text = None
 
 
-class MarketSection:
+class MarketSection(BaseModel):
 	"""VK Object MarketSection
 
 	id - Section ID
@@ -4059,7 +4059,7 @@ class MarketSection:
 	name = None
 
 
-class MediaRestriction:
+class MediaRestriction(BaseModel):
 	"""VK Object MediaRestriction
 
 	text - 
@@ -4083,7 +4083,7 @@ class MediaRestriction:
 	list_icon = None
 
 
-class MessagesAudioMessage:
+class MessagesAudioMessage(BaseModel):
 	"""VK Object MessagesAudioMessage
 
 	access_key - Access key for audio message
@@ -4105,7 +4105,7 @@ class MessagesAudioMessage:
 	waveform = None
 
 
-class MessagesChat:
+class MessagesChat(BaseModel):
 	"""VK Object MessagesChat
 
 	admin_id - Chat creator ID
@@ -4135,7 +4135,7 @@ class MessagesChat:
 	is_default_photo = None
 
 
-class MessagesChatFull:
+class MessagesChatFull(BaseModel):
 	"""VK Object MessagesChatFull
 
 	admin_id - Chat creator ID
@@ -4163,7 +4163,7 @@ class MessagesChatFull:
 	users = None
 
 
-class MessagesChatPreview:
+class MessagesChatPreview(BaseModel):
 	"""VK Object MessagesChatPreview
 
 	"""
@@ -4176,7 +4176,7 @@ class MessagesChatPreview:
 	is_member = None
 
 
-class MessagesChatPushSettings:
+class MessagesChatPushSettings(BaseModel):
 	"""VK Object MessagesChatPushSettings
 
 	disabled_until - Time until that notifications are disabled
@@ -4186,7 +4186,7 @@ class MessagesChatPushSettings:
 	sound = None
 
 
-class MessagesChatRestrictions:
+class MessagesChatRestrictions(BaseModel):
 	"""VK Object MessagesChatRestrictions
 
 	admins_promote_users - Only admins can promote users to admins
@@ -4202,7 +4202,7 @@ class MessagesChatRestrictions:
 	only_admins_kick = None
 
 
-class MessagesChatSettings:
+class MessagesChatSettings(BaseModel):
 	"""VK Object MessagesChatSettings
 
 	members_count - 
@@ -4240,7 +4240,7 @@ class MessagesChatSettings:
 	is_service = None
 
 
-class MessagesChatSettingsAcl:
+class MessagesChatSettingsAcl(BaseModel):
 	"""VK Object MessagesChatSettingsAcl
 
 	can_change_info - Can you change photo, description and name
@@ -4268,7 +4268,7 @@ class MessagesChatSettingsAcl:
 	can_change_service_type = None
 
 
-class MessagesChatSettingsPerMissions:
+class MessagesChatSettingsPerMissions(BaseModel):
 	"""VK Object MessagesChatSettingsPerMissions
 
 	invite - Who can invite users to chat
@@ -4288,7 +4288,7 @@ class MessagesChatSettingsPerMissions:
 	change_admins = None
 
 
-class MessagesChatSettingsPhoto:
+class MessagesChatSettingsPhoto(BaseModel):
 	"""VK Object MessagesChatSettingsPhoto
 
 	photo_50 - URL of the preview image with 50px in width
@@ -4302,16 +4302,16 @@ class MessagesChatSettingsPhoto:
 	is_default_photo = None
 
 
-class MessagesChatSettingsState:
+class MessagesChatSettingsState(enum.Enum):
 	"""VK Object MessagesChatSettingsState
 
 	"""
-	_in = 0
-	kicked = 1
-	left = 2
+	IN = "in"
+	KICKED = "kicked"
+	LEFT = "left"
 
 
-class MessagesConversation:
+class MessagesConversation(BaseModel):
 	"""VK Object MessagesConversation
 
 	peer - 
@@ -4351,7 +4351,7 @@ class MessagesConversation:
 	chat_settings = None
 
 
-class MessagesConversationCanWrite:
+class MessagesConversationCanWrite(BaseModel):
 	"""VK Object MessagesConversationCanWrite
 
 	"""
@@ -4359,7 +4359,7 @@ class MessagesConversationCanWrite:
 	reason = None
 
 
-class MessagesConversationMeMber:
+class MessagesConversationMeMber(BaseModel):
 	"""VK Object MessagesConversationMeMber
 
 	can_kick - Is it possible for user to kick this member
@@ -4381,7 +4381,7 @@ class MessagesConversationMeMber:
 	member_id = None
 
 
-class MessagesConversationPeer:
+class MessagesConversationPeer(BaseModel):
 	"""VK Object MessagesConversationPeer
 
 	"""
@@ -4390,17 +4390,17 @@ class MessagesConversationPeer:
 	type = None
 
 
-class MessagesConversationPeerType:
+class MessagesConversationPeerType(enum.Enum):
 	"""VK Object MessagesConversationPeerType
 
 	"""
-	chat = 0
-	email = 1
-	user = 2
-	group = 3
+	CHAT = "chat"
+	EMAIL = "email"
+	USER = "user"
+	GROUP = "group"
 
 
-class MessagesConversationSortId:
+class MessagesConversationSortId(BaseModel):
 	"""VK Object MessagesConversationSortId
 
 	major_id - Major id for sorting conversations
@@ -4410,7 +4410,7 @@ class MessagesConversationSortId:
 	minor_id = None
 
 
-class MessagesConversationWithMessage:
+class MessagesConversationWithMessage(BaseModel):
 	"""VK Object MessagesConversationWithMessage
 
 	"""
@@ -4418,7 +4418,7 @@ class MessagesConversationWithMessage:
 	last_message = None
 
 
-class MessagesForeignMessage:
+class MessagesForeignMessage(BaseModel):
 	"""VK Object MessagesForeignMessage
 
 	attachments - 
@@ -4450,7 +4450,7 @@ class MessagesForeignMessage:
 	payload = None
 
 
-class MessagesForward:
+class MessagesForward(BaseModel):
 	"""VK Object MessagesForward
 
 	owner_id - Messages owner_id
@@ -4466,7 +4466,7 @@ class MessagesForward:
 	is_reply = None
 
 
-class MessagesGraffiti:
+class MessagesGraffiti(BaseModel):
 	"""VK Object MessagesGraffiti
 
 	access_key - Access key for graffiti
@@ -4484,7 +4484,7 @@ class MessagesGraffiti:
 	width = None
 
 
-class MessagesHistoryAttachMent:
+class MessagesHistoryAttachMent(BaseModel):
 	"""VK Object MessagesHistoryAttachMent
 
 	attachment - 
@@ -4498,7 +4498,7 @@ class MessagesHistoryAttachMent:
 	forward_level = None
 
 
-class MessagesHistoryMessageAttachMent:
+class MessagesHistoryMessageAttachMent(BaseModel):
 	"""VK Object MessagesHistoryMessageAttachMent
 
 	"""
@@ -4515,23 +4515,23 @@ class MessagesHistoryMessageAttachMent:
 	wall = None
 
 
-class MessagesHistoryMessageAttachMentType:
+class MessagesHistoryMessageAttachMentType(enum.Enum):
 	"""VK Object MessagesHistoryMessageAttachMentType
 
 	"""
-	photo = 0
-	video = 1
-	audio = 2
-	doc = 3
-	link = 4
-	market = 5
-	wall = 6
-	share = 7
-	graffiti = 8
-	audio_message = 9
+	PHOTO = "photo"
+	VIDEO = "video"
+	AUDIO = "audio"
+	DOC = "doc"
+	LINK = "link"
+	MARKET = "market"
+	WALL = "wall"
+	SHARE = "share"
+	GRAFFITI = "graffiti"
+	AUDIO_MESSAGE = "audio_message"
 
 
-class MessagesKeyboard:
+class MessagesKeyboard(BaseModel):
 	"""VK Object MessagesKeyboard
 
 	author_id - Community or bot, which set this keyboard
@@ -4545,7 +4545,7 @@ class MessagesKeyboard:
 	inline = None
 
 
-class MessagesKeyboardButton:
+class MessagesKeyboardButton(BaseModel):
 	"""VK Object MessagesKeyboardButton
 
 	action - 
@@ -4555,7 +4555,7 @@ class MessagesKeyboardButton:
 	color = None
 
 
-class MessagesKeyboardButtonAction:
+class MessagesKeyboardButtonAction(BaseModel):
 	"""VK Object MessagesKeyboardButtonAction
 
 	app_id - Fragment value in app link like vk.com/app{app_id}_-654321#hash
@@ -4575,7 +4575,7 @@ class MessagesKeyboardButtonAction:
 	type = None
 
 
-class MessagesLastActivity:
+class MessagesLastActivity(BaseModel):
 	"""VK Object MessagesLastActivity
 
 	online - Information whether user is online
@@ -4585,7 +4585,7 @@ class MessagesLastActivity:
 	time = None
 
 
-class MessagesLongpollMessages:
+class MessagesLongpollMessages(BaseModel):
 	"""VK Object MessagesLongpollMessages
 
 	count - Total number
@@ -4595,7 +4595,7 @@ class MessagesLongpollMessages:
 	items = None
 
 
-class MessagesLongpollParaMs:
+class MessagesLongpollParaMs(BaseModel):
 	"""VK Object MessagesLongpollParaMs
 
 	server - Server URL
@@ -4609,7 +4609,7 @@ class MessagesLongpollParaMs:
 	pts = None
 
 
-class MessagesMessage:
+class MessagesMessage(BaseModel):
 	"""VK Object MessagesMessage
 
 	action - 
@@ -4667,7 +4667,7 @@ class MessagesMessage:
 	pinned_at = None
 
 
-class MessagesMessageAction:
+class MessagesMessageAction(BaseModel):
 	"""VK Object MessagesMessageAction
 
 	conversation_message_id - Message ID
@@ -4687,7 +4687,7 @@ class MessagesMessageAction:
 	type = None
 
 
-class MessagesMessageActionPhoto:
+class MessagesMessageActionPhoto(BaseModel):
 	"""VK Object MessagesMessageActionPhoto
 
 	photo_100 - URL of the preview image with 100px in width
@@ -4699,22 +4699,22 @@ class MessagesMessageActionPhoto:
 	photo_50 = None
 
 
-class MessagesMessageActionStatus:
+class MessagesMessageActionStatus(enum.Enum):
 	"""VK Object MessagesMessageActionStatus
 
 	"""
-	chat_photo_update = 0
-	chat_photo_remove = 1
-	chat_create = 2
-	chat_title_update = 3
-	chat_invite_user = 4
-	chat_kick_user = 5
-	chat_pin_message = 6
-	chat_unpin_message = 7
-	chat_invite_user_by_link = 8
+	CHAT_PHOTO_UPDATE = "chat_photo_update"
+	CHAT_PHOTO_REMOVE = "chat_photo_remove"
+	CHAT_CREATE = "chat_create"
+	CHAT_TITLE_UPDATE = "chat_title_update"
+	CHAT_INVITE_USER = "chat_invite_user"
+	CHAT_KICK_USER = "chat_kick_user"
+	CHAT_PIN_MESSAGE = "chat_pin_message"
+	CHAT_UNPIN_MESSAGE = "chat_unpin_message"
+	CHAT_INVITE_USER_BY_LINK = "chat_invite_user_by_link"
 
 
-class MessagesMessageAttachMent:
+class MessagesMessageAttachMent(BaseModel):
 	"""VK Object MessagesMessageAttachMent
 
 	"""
@@ -4737,29 +4737,29 @@ class MessagesMessageAttachMent:
 	poll = None
 
 
-class MessagesMessageAttachMentType:
+class MessagesMessageAttachMentType(enum.Enum):
 	"""VK Object MessagesMessageAttachMentType
 
 	"""
-	photo = 0
-	audio = 1
-	video = 2
-	doc = 3
-	link = 4
-	market = 5
-	market_album = 6
-	gift = 7
-	sticker = 8
-	wall = 9
-	wall_reply = 10
-	article = 11
-	poll = 12
-	call = 13
-	graffiti = 14
-	audio_message = 15
+	PHOTO = "photo"
+	AUDIO = "audio"
+	VIDEO = "video"
+	DOC = "doc"
+	LINK = "link"
+	MARKET = "market"
+	MARKET_ALBUM = "market_album"
+	GIFT = "gift"
+	STICKER = "sticker"
+	WALL = "wall"
+	WALL_REPLY = "wall_reply"
+	ARTICLE = "article"
+	POLL = "poll"
+	CALL = "call"
+	GRAFFITI = "graffiti"
+	AUDIO_MESSAGE = "audio_message"
 
 
-class MessagesMessageRequestData:
+class MessagesMessageRequestData(BaseModel):
 	"""VK Object MessagesMessageRequestData
 
 	status - Status of message request
@@ -4771,7 +4771,7 @@ class MessagesMessageRequestData:
 	request_date = None
 
 
-class MessagesMessagesArray:
+class MessagesMessagesArray(BaseModel):
 	"""VK Object MessagesMessagesArray
 
 	"""
@@ -4779,7 +4779,7 @@ class MessagesMessagesArray:
 	items = None
 
 
-class MessagesOutReadBy:
+class MessagesOutReadBy(BaseModel):
 	"""VK Object MessagesOutReadBy
 
 	"""
@@ -4787,7 +4787,7 @@ class MessagesOutReadBy:
 	member_ids = None
 
 
-class MessagesPinnedMessage:
+class MessagesPinnedMessage(BaseModel):
 	"""VK Object MessagesPinnedMessage
 
 	attachments - 
@@ -4815,7 +4815,7 @@ class MessagesPinnedMessage:
 	keyboard = None
 
 
-class MessagesPushSettings:
+class MessagesPushSettings(BaseModel):
 	"""VK Object MessagesPushSettings
 
 	disabled_forever - Information whether push notifications are disabled forever
@@ -4827,40 +4827,40 @@ class MessagesPushSettings:
 	no_sound = None
 
 
-class MessagesTeMplateActionTypeNaMes:
+class MessagesTeMplateActionTypeNaMes(enum.Enum):
 	"""VK Object MessagesTeMplateActionTypeNaMes
 
 	"""
-	text = 0
-	start = 1
-	location = 2
-	vkpay = 3
-	open_app = 4
-	open_photo = 5
-	open_link = 6
-	callback = 7
+	TEXT = "text"
+	START = "start"
+	LOCATION = "location"
+	VKPAY = "vkpay"
+	OPEN_APP = "open_app"
+	OPEN_PHOTO = "open_photo"
+	OPEN_LINK = "open_link"
+	CALLBACK = "callback"
 
 
-class MessagesUserXtrInvitedBy:
+class MessagesUserXtrInvitedBy(BaseModel):
 	"""VK Object MessagesUserXtrInvitedBy
 
 	invited_by - ID of the inviter
 	"""
-	invited_by = <built-in function iter>
+	invited_by = None
 
 
-class NewsfeedCommeNtsFilters:
+class NewsfeedCommeNtsFilters(enum.Enum):
 	"""VK Object NewsfeedCommeNtsFilters
 
 	"""
-	post = 0
-	photo = 1
-	video = 2
-	topic = 3
-	note = 4
+	POST = "post"
+	PHOTO = "photo"
+	VIDEO = "video"
+	TOPIC = "topic"
+	NOTE = "note"
 
 
-class NewsfeedEveNtActivity:
+class NewsfeedEveNtActivity(BaseModel):
 	"""VK Object NewsfeedEveNtActivity
 
 	address - address of event
@@ -4878,45 +4878,45 @@ class NewsfeedEveNtActivity:
 	time = None
 
 
-class NewsfeedFilters:
+class NewsfeedFilters(enum.Enum):
 	"""VK Object NewsfeedFilters
 
 	"""
-	post = 0
-	photo = 1
-	photo_tag = 2
-	wall_photo = 3
-	friend = 4
-	note = 5
-	audio = 6
-	video = 7
-	audio_playlist = 8
-	clip = 9
+	POST = "post"
+	PHOTO = "photo"
+	PHOTO_TAG = "photo_tag"
+	WALL_PHOTO = "wall_photo"
+	FRIEND = "friend"
+	NOTE = "note"
+	AUDIO = "audio"
+	VIDEO = "video"
+	AUDIO_PLAYLIST = "audio_playlist"
+	CLIP = "clip"
 
 
-class NewsfeedIgNoreItemType:
+class NewsfeedIgNoreItemType(enum.Enum):
 	"""VK Object NewsfeedIgNoreItemType
 
 	"""
-	wall = 0
-	tag = 1
-	profilephoto = 2
-	video = 3
-	photo = 4
-	audio = 5
+	WALL = "wall"
+	TAG = "tag"
+	PROFILEPHOTO = "profilephoto"
+	VIDEO = "video"
+	PHOTO = "photo"
+	AUDIO = "audio"
 
 
-class NewsfeedItemAudio:
+class NewsfeedItemAudio(BaseModel):
 	"""VK Object NewsfeedItemAudio
 
 	audio - 
 	post_id - Post ID
 	"""
-	audio = <built-in function iter>
-	post_id = <built-in function iter>
+	audio = None
+	post_id = None
 
 
-class NewsfeedItemAudioAudio:
+class NewsfeedItemAudioAudio(BaseModel):
 	"""VK Object NewsfeedItemAudioAudio
 
 	count - Audios number
@@ -4926,7 +4926,7 @@ class NewsfeedItemAudioAudio:
 	items = None
 
 
-class NewsfeedItemBase:
+class NewsfeedItemBase(BaseModel):
 	"""VK Object NewsfeedItemBase
 
 	type - 
@@ -4938,7 +4938,7 @@ class NewsfeedItemBase:
 	date = None
 
 
-class NewsfeedItemDigest:
+class NewsfeedItemDigest(BaseModel):
 	"""VK Object NewsfeedItemDigest
 
 	feed_id - id of feed in digest
@@ -4949,16 +4949,16 @@ class NewsfeedItemDigest:
 	footer - 
 	track_code - 
 	"""
-	feed_id = <built-in function iter>
-	items = <built-in function iter>
-	main_post_ids = <built-in function iter>
-	template = <built-in function iter>
-	header = <built-in function iter>
-	footer = <built-in function iter>
-	track_code = <built-in function iter>
+	feed_id = None
+	items = None
+	main_post_ids = None
+	template = None
+	header = None
+	footer = None
+	track_code = None
 
 
-class NewsfeedItemDigestButtoN:
+class NewsfeedItemDigestButtoN(BaseModel):
 	"""VK Object NewsfeedItemDigestButtoN
 
 	"""
@@ -4966,7 +4966,7 @@ class NewsfeedItemDigestButtoN:
 	style = None
 
 
-class NewsfeedItemDigestFooter:
+class NewsfeedItemDigestFooter(BaseModel):
 	"""VK Object NewsfeedItemDigestFooter
 
 	style - 
@@ -4978,7 +4978,7 @@ class NewsfeedItemDigestFooter:
 	button = None
 
 
-class NewsfeedItemDigestFullItem:
+class NewsfeedItemDigestFullItem(BaseModel):
 	"""VK Object NewsfeedItemDigestFullItem
 
 	"""
@@ -4990,7 +4990,7 @@ class NewsfeedItemDigestFullItem:
 	post = None
 
 
-class NewsfeedItemDigestHeader:
+class NewsfeedItemDigestHeader(BaseModel):
 	"""VK Object NewsfeedItemDigestHeader
 
 	title - Title of the header
@@ -5004,20 +5004,20 @@ class NewsfeedItemDigestHeader:
 	button = None
 
 
-class NewsfeedItemDigestItem:
+class NewsfeedItemDigestItem(BaseModel):
 	"""VK Object NewsfeedItemDigestItem
 
 	"""
 
 
-class NewsfeedItemFrieNd:
+class NewsfeedItemFrieNd(BaseModel):
 	"""VK Object NewsfeedItemFrieNd
 
 	"""
-	friends = <built-in function iter>
+	friends = None
 
 
-class NewsfeedItemFrieNdFrieNds:
+class NewsfeedItemFrieNdFrieNds(BaseModel):
 	"""VK Object NewsfeedItemFrieNdFrieNds
 
 	count - Number of friends has been added
@@ -5027,7 +5027,7 @@ class NewsfeedItemFrieNdFrieNds:
 	items = None
 
 
-class NewsfeedItemHolidayRecommeNdatioNsBlockHeader:
+class NewsfeedItemHolidayRecommeNdatioNsBlockHeader(BaseModel):
 	"""VK Object NewsfeedItemHolidayRecommeNdatioNsBlockHeader
 
 	title - Title of the header
@@ -5041,17 +5041,17 @@ class NewsfeedItemHolidayRecommeNdatioNsBlockHeader:
 	action = None
 
 
-class NewsfeedItemPhoto:
+class NewsfeedItemPhoto(BaseModel):
 	"""VK Object NewsfeedItemPhoto
 
 	photos - 
 	post_id - Post ID
 	"""
-	photos = <built-in function iter>
-	post_id = <built-in function iter>
+	photos = None
+	post_id = None
 
 
-class NewsfeedItemPhotoPhotos:
+class NewsfeedItemPhotoPhotos(BaseModel):
 	"""VK Object NewsfeedItemPhotoPhotos
 
 	count - Photos number
@@ -5061,17 +5061,17 @@ class NewsfeedItemPhotoPhotos:
 	items = None
 
 
-class NewsfeedItemPhotoTag:
+class NewsfeedItemPhotoTag(BaseModel):
 	"""VK Object NewsfeedItemPhotoTag
 
 	photo_tags - 
 	post_id - Post ID
 	"""
-	photo_tags = <built-in function iter>
-	post_id = <built-in function iter>
+	photo_tags = None
+	post_id = None
 
 
-class NewsfeedItemPhotoTagPhotoTags:
+class NewsfeedItemPhotoTagPhotoTags(BaseModel):
 	"""VK Object NewsfeedItemPhotoTagPhotoTags
 
 	count - Tags number
@@ -5081,18 +5081,18 @@ class NewsfeedItemPhotoTagPhotoTags:
 	items = None
 
 
-class NewsfeedItemPromoButtoN:
+class NewsfeedItemPromoButtoN(BaseModel):
 	"""VK Object NewsfeedItemPromoButtoN
 
 	"""
-	text = <built-in function iter>
-	title = <built-in function iter>
-	action = <built-in function iter>
-	images = <built-in function iter>
-	track_code = <built-in function iter>
+	text = None
+	title = None
+	action = None
+	images = None
+	track_code = None
 
 
-class NewsfeedItemPromoButtoNActioN:
+class NewsfeedItemPromoButtoNActioN(BaseModel):
 	"""VK Object NewsfeedItemPromoButtoNActioN
 
 	"""
@@ -5101,7 +5101,7 @@ class NewsfeedItemPromoButtoNActioN:
 	target = None
 
 
-class NewsfeedItemPromoButtoNImage:
+class NewsfeedItemPromoButtoNImage(BaseModel):
 	"""VK Object NewsfeedItemPromoButtoNImage
 
 	"""
@@ -5110,7 +5110,7 @@ class NewsfeedItemPromoButtoNImage:
 	url = None
 
 
-class NewsfeedItemTopic:
+class NewsfeedItemTopic(BaseModel):
 	"""VK Object NewsfeedItemTopic
 
 	comments - 
@@ -5118,20 +5118,20 @@ class NewsfeedItemTopic:
 	post_id - Topic post ID
 	text - Post text
 	"""
-	comments = <built-in function iter>
-	likes = <built-in function iter>
-	post_id = <built-in function iter>
-	text = <built-in function iter>
+	comments = None
+	likes = None
+	post_id = None
+	text = None
 
 
-class NewsfeedItemVideo:
+class NewsfeedItemVideo(BaseModel):
 	"""VK Object NewsfeedItemVideo
 
 	"""
-	video = <built-in function iter>
+	video = None
 
 
-class NewsfeedItemVideoVideo:
+class NewsfeedItemVideoVideo(BaseModel):
 	"""VK Object NewsfeedItemVideoVideo
 
 	count - Tags number
@@ -5141,7 +5141,7 @@ class NewsfeedItemVideoVideo:
 	items = None
 
 
-class NewsfeedItemWallpost:
+class NewsfeedItemWallpost(BaseModel):
 	"""VK Object NewsfeedItemWallpost
 
 	activity - 
@@ -5162,26 +5162,26 @@ class NewsfeedItemWallpost:
 	views - Count of views
 	short_text_rate - Preview length control parameter
 	"""
-	activity = <built-in function iter>
-	attachments = <built-in function iter>
-	comments = <built-in function iter>
-	copy_history = <built-in function iter>
-	feedback = <built-in function iter>
-	geo = <built-in function iter>
-	is_favorite = <built-in function iter>
-	likes = <built-in function iter>
-	marked_as_ads = <built-in function iter>
-	post_id = <built-in function iter>
-	post_source = <built-in function iter>
-	post_type = <built-in function iter>
-	reposts = <built-in function iter>
-	signer_id = <built-in function iter>
-	text = <built-in function iter>
-	views = <built-in function iter>
-	short_text_rate = <built-in function iter>
+	activity = None
+	attachments = None
+	comments = None
+	copy_history = None
+	feedback = None
+	geo = None
+	is_favorite = None
+	likes = None
+	marked_as_ads = None
+	post_id = None
+	post_source = None
+	post_type = None
+	reposts = None
+	signer_id = None
+	text = None
+	views = None
+	short_text_rate = None
 
 
-class NewsfeedItemWallpostFeedback:
+class NewsfeedItemWallpostFeedback(BaseModel):
 	"""VK Object NewsfeedItemWallpostFeedback
 
 	"""
@@ -5192,7 +5192,7 @@ class NewsfeedItemWallpostFeedback:
 	gratitude = None
 
 
-class NewsfeedItemWallpostFeedbackANswer:
+class NewsfeedItemWallpostFeedbackANswer(BaseModel):
 	"""VK Object NewsfeedItemWallpostFeedbackANswer
 
 	"""
@@ -5200,24 +5200,24 @@ class NewsfeedItemWallpostFeedbackANswer:
 	id = None
 
 
-class NewsfeedItemWallpostFeedbackType:
+class NewsfeedItemWallpostFeedbackType(enum.Enum):
 	"""VK Object NewsfeedItemWallpostFeedbackType
 
 	"""
-	buttons = 0
-	stars = 1
+	BUTTONS = "buttons"
+	STARS = "stars"
 
 
-class NewsfeedItemWallpostType:
+class NewsfeedItemWallpostType(enum.Enum):
 	"""VK Object NewsfeedItemWallpostType
 
 	"""
-	post = 0
-	copy = 1
-	reply = 2
+	POST = "post"
+	COPY = "copy"
+	REPLY = "reply"
 
 
-class NewsfeedList:
+class NewsfeedList(BaseModel):
 	"""VK Object NewsfeedList
 
 	id - List ID
@@ -5227,45 +5227,45 @@ class NewsfeedList:
 	title = None
 
 
-class NewsfeedListFull:
+class NewsfeedListFull(BaseModel):
 	"""VK Object NewsfeedListFull
 
 	no_reposts - Information whether reposts hiding is enabled
 	source_ids - 
 	"""
-	no_reposts = <built-in function iter>
-	source_ids = <built-in function iter>
+	no_reposts = None
+	source_ids = None
 None
 
-class NewsfeedNewsfeedItemType:
+class NewsfeedNewsfeedItemType(enum.Enum):
 	"""VK Object NewsfeedNewsfeedItemType
 
 	"""
-	post = 0
-	photo = 1
-	photo_tag = 2
-	wall_photo = 3
-	friend = 4
-	audio = 5
-	video = 6
-	topic = 7
-	digest = 8
-	stories = 9
+	POST = "post"
+	PHOTO = "photo"
+	PHOTO_TAG = "photo_tag"
+	WALL_PHOTO = "wall_photo"
+	FRIEND = "friend"
+	AUDIO = "audio"
+	VIDEO = "video"
+	TOPIC = "topic"
+	DIGEST = "digest"
+	STORIES = "stories"
 
 
-class NewsfeedNewsfeedPhoto:
+class NewsfeedNewsfeedPhoto(BaseModel):
 	"""VK Object NewsfeedNewsfeedPhoto
 
 	likes - 
 	comments - 
 	can_repost - Information whether current user can repost the photo
 	"""
-	likes = <built-in function iter>
-	comments = <built-in function iter>
-	can_repost = <built-in function iter>
+	likes = None
+	comments = None
+	can_repost = None
 
 
-class NotesNote:
+class NotesNote(BaseModel):
 	"""VK Object NotesNote
 
 	read_comments - 
@@ -5291,7 +5291,7 @@ class NotesNote:
 	view_url = None
 
 
-class NotesNoteCommeNt:
+class NotesNoteCommeNt(BaseModel):
 	"""VK Object NotesNoteCommeNt
 
 	date - Date when the comment has beed added in Unixtime
@@ -5311,7 +5311,7 @@ class NotesNoteCommeNt:
 	uid = None
 
 
-class NotificatioNsFeedback:
+class NotificatioNsFeedback(BaseModel):
 	"""VK Object NotificatioNsFeedback
 
 	attachments - 
@@ -5331,7 +5331,7 @@ class NotificatioNsFeedback:
 	to_id = None
 
 
-class NotificatioNsNotificatioN:
+class NotificatioNsNotificatioN(BaseModel):
 	"""VK Object NotificatioNsNotificatioN
 
 	date - Date when the event has been occurred
@@ -5347,19 +5347,19 @@ class NotificatioNsNotificatioN:
 	type = None
 
 
-class NotificatioNsNotificatioNItem:
+class NotificatioNsNotificatioNItem(BaseModel):
 	"""VK Object NotificatioNsNotificatioNItem
 
 	"""
 
 
-class NotificatioNsNotificatioNPareNt:
+class NotificatioNsNotificatioNPareNt(BaseModel):
 	"""VK Object NotificatioNsNotificatioNPareNt
 
 	"""
 
 
-class NotificatioNsNotificatioNsCommeNt:
+class NotificatioNsNotificatioNsCommeNt(BaseModel):
 	"""VK Object NotificatioNsNotificatioNsCommeNt
 
 	date - Date when the comment has been added in Unixtime
@@ -5381,7 +5381,7 @@ class NotificatioNsNotificatioNsCommeNt:
 	video = None
 
 
-class NotificatioNsReply:
+class NotificatioNsReply(BaseModel):
 	"""VK Object NotificatioNsReply
 
 	date - Date when the reply has been created in Unixtime
@@ -5393,7 +5393,7 @@ class NotificatioNsReply:
 	text = None
 
 
-class NotificatioNsSeNdMessageError:
+class NotificatioNsSeNdMessageError(BaseModel):
 	"""VK Object NotificatioNsSeNdMessageError
 
 	code - Error code
@@ -5403,7 +5403,7 @@ class NotificatioNsSeNdMessageError:
 	description = None
 
 
-class NotificatioNsSeNdMessageItem:
+class NotificatioNsSeNdMessageItem(BaseModel):
 	"""VK Object NotificatioNsSeNdMessageItem
 
 	user_id - User ID
@@ -5415,7 +5415,7 @@ class NotificatioNsSeNdMessageItem:
 	error = None
 
 
-class OauthErrOr:
+class OauthErrOr(BaseModel):
 	"""VK Object OauthErrOr
 
 	error - Error type
@@ -5427,7 +5427,7 @@ class OauthErrOr:
 	redirect_uri = None
 
 
-class OrdersAmOunt:
+class OrdersAmOunt(BaseModel):
 	"""VK Object OrdersAmOunt
 
 	amounts - 
@@ -5437,7 +5437,7 @@ class OrdersAmOunt:
 	currency = None
 
 
-class OrdersAmOuntItem:
+class OrdersAmOuntItem(BaseModel):
 	"""VK Object OrdersAmOuntItem
 
 	amount - Votes amount in user's currency
@@ -5449,7 +5449,7 @@ class OrdersAmOuntItem:
 	votes = None
 
 
-class OrdersOrder:
+class OrdersOrder(BaseModel):
 	"""VK Object OrdersOrder
 
 	amount - Amount
@@ -5475,7 +5475,7 @@ class OrdersOrder:
 	user_id = None
 
 
-class OrdersSubscriptiOn:
+class OrdersSubscriptiOn(BaseModel):
 	"""VK Object OrdersSubscriptiOn
 
 	cancel_reason - Cancel reason
@@ -5507,7 +5507,7 @@ class OrdersSubscriptiOn:
 	update_time = None
 
 
-class OwnerState:
+class OwnerState(BaseModel):
 	"""VK Object OwnerState
 
 	state - 
@@ -5517,7 +5517,7 @@ class OwnerState:
 	description = None
 
 
-class PagesPrivacySettings:
+class PagesPrivacySettings(enum.IntEnum):
 	"""VK Object PagesPrivacySettings
 
 	"""
@@ -5526,7 +5526,7 @@ class PagesPrivacySettings:
 	everyone = 2
 
 
-class PagesWikiPage:
+class PagesWikiPage(BaseModel):
 	"""VK Object PagesWikiPage
 
 	creator_id - Page creator ID
@@ -5552,7 +5552,7 @@ class PagesWikiPage:
 	who_can_view = None
 
 
-class PagesWikiPageFull:
+class PagesWikiPageFull(BaseModel):
 	"""VK Object PagesWikiPageFull
 
 	created - Date when the page has been created in Unixtime
@@ -5588,7 +5588,7 @@ class PagesWikiPageFull:
 	who_can_view = None
 
 
-class PagesWikiPageHistory:
+class PagesWikiPageHistory(BaseModel):
 	"""VK Object PagesWikiPageHistory
 
 	id - Version ID
@@ -5604,7 +5604,7 @@ class PagesWikiPageHistory:
 	editor_name = None
 
 
-class PhotosCommentXtrPid:
+class PhotosCommentXtrPid(BaseModel):
 	"""VK Object PhotosCommentXtrPid
 
 	attachments - 
@@ -5632,7 +5632,7 @@ class PhotosCommentXtrPid:
 	thread = None
 
 
-class PhotosImage:
+class PhotosImage(BaseModel):
 	"""VK Object PhotosImage
 
 	height - Height of the photo in px.
@@ -5646,24 +5646,24 @@ class PhotosImage:
 	width = None
 
 
-class PhotosImageTyPe:
+class PhotosImageTyPe(enum.Enum):
 	"""VK Object PhotosImageTyPe
 
 	"""
-	s = 0
-	m = 1
-	x = 2
-	l = 3
-	o = 4
-	p = 5
-	q = 6
-	r = 7
-	y = 8
-	z = 9
-	w = 10
+	S = "s"
+	M = "m"
+	X = "x"
+	L = "l"
+	O = "o"
+	P = "p"
+	Q = "q"
+	R = "r"
+	Y = "y"
+	Z = "z"
+	W = "w"
 
 
-class PhotosPhoto:
+class PhotosPhoto(BaseModel):
 	"""VK Object PhotosPhoto
 
 	access_key - Access key for the photo
@@ -5707,7 +5707,7 @@ class PhotosPhoto:
 	restrictions = None
 
 
-class PhotosPhotoAlbum:
+class PhotosPhotoAlbum(BaseModel):
 	"""VK Object PhotosPhotoAlbum
 
 	created - Date when the album has been created in Unixtime
@@ -5729,7 +5729,7 @@ class PhotosPhotoAlbum:
 	updated = None
 
 
-class PhotosPhotoAlbumFull:
+class PhotosPhotoAlbumFull(BaseModel):
 	"""VK Object PhotosPhotoAlbumFull
 
 	can_upload - Information whether current user can upload photo to the album
@@ -5763,7 +5763,7 @@ class PhotosPhotoAlbumFull:
 	upload_by_admins_only = None
 None
 
-class PhotosPhotoFull:
+class PhotosPhotoFull(BaseModel):
 	"""VK Object PhotosPhotoFull
 
 	access_key - Access key for the photo
@@ -5805,7 +5805,7 @@ class PhotosPhotoFull:
 	width = None
 
 
-class PhotosPhotoFullXtrRealOffset:
+class PhotosPhotoFullXtrRealOffset(BaseModel):
 	"""VK Object PhotosPhotoFullXtrRealOffset
 
 	access_key - Access key for the photo
@@ -5863,7 +5863,7 @@ class PhotosPhotoFullXtrRealOffset:
 	width = None
 
 
-class PhotosPhotoSizes:
+class PhotosPhotoSizes(BaseModel):
 	"""VK Object PhotosPhotoSizes
 
 	height - Height in px
@@ -5879,38 +5879,38 @@ class PhotosPhotoSizes:
 	width = None
 
 
-class PhotosPhotoSizesTyPe:
+class PhotosPhotoSizesTyPe(enum.Enum):
 	"""VK Object PhotosPhotoSizesTyPe
 
 	"""
-	s = 0
-	m = 1
-	x = 2
-	o = 3
-	p = 4
-	q = 5
-	r = 6
-	k = 7
-	l = 8
-	y = 9
-	z = 10
-	c = 11
-	w = 12
-	a = 13
-	b = 14
-	e = 15
-	i = 16
-	d = 17
-	j = 18
-	temp = 19
-	h = 20
-	g = 21
-	n = 22
-	f = 23
-	max = 24
+	S = "s"
+	M = "m"
+	X = "x"
+	O = "o"
+	P = "p"
+	Q = "q"
+	R = "r"
+	K = "k"
+	L = "l"
+	Y = "y"
+	Z = "z"
+	C = "c"
+	W = "w"
+	A = "a"
+	B = "b"
+	E = "e"
+	I = "i"
+	D = "d"
+	J = "j"
+	TEMP = "temp"
+	H = "h"
+	G = "g"
+	N = "n"
+	F = "f"
+	MAX = "max"
 
 
-class PhotosPhotoTag:
+class PhotosPhotoTag(BaseModel):
 	"""VK Object PhotosPhotoTag
 
 	date - Date when tag has been added in Unixtime
@@ -5938,7 +5938,7 @@ class PhotosPhotoTag:
 	y2 = None
 
 
-class PhotosPhotoUPload:
+class PhotosPhotoUPload(BaseModel):
 	"""VK Object PhotosPhotoUPload
 
 	album_id - Album ID
@@ -5954,7 +5954,7 @@ class PhotosPhotoUPload:
 	group_id = None
 
 
-class PhotosPhotoXtrRealOffset:
+class PhotosPhotoXtrRealOffset(BaseModel):
 	"""VK Object PhotosPhotoXtrRealOffset
 
 	access_key - Access key for the photo
@@ -6002,7 +6002,7 @@ class PhotosPhotoXtrRealOffset:
 	width = None
 
 
-class PhotosPhotoXtrTagInfo:
+class PhotosPhotoXtrTagInfo(BaseModel):
 	"""VK Object PhotosPhotoXtrTagInfo
 
 	access_key - Access key for the photo
@@ -6052,7 +6052,7 @@ class PhotosPhotoXtrTagInfo:
 	width = None
 
 
-class PhotosTagsSuggestionItem:
+class PhotosTagsSuggestionItem(BaseModel):
 	"""VK Object PhotosTagsSuggestionItem
 
 	"""
@@ -6065,7 +6065,7 @@ class PhotosTagsSuggestionItem:
 	track_code = None
 
 
-class PhotosTagsSuggestionItemButton:
+class PhotosTagsSuggestionItemButton(BaseModel):
 	"""VK Object PhotosTagsSuggestionItemButton
 
 	"""
@@ -6074,14 +6074,14 @@ class PhotosTagsSuggestionItemButton:
 	style = None
 
 
-class PodcastCover:
+class PodcastCover(BaseModel):
 	"""VK Object PodcastCover
 
 	"""
 	sizes = None
 
 
-class PodcastExternalData:
+class PodcastExternalData(BaseModel):
 	"""VK Object PodcastExternalData
 
 	url - Url of the podcast page
@@ -6097,7 +6097,7 @@ class PodcastExternalData:
 	cover = None
 
 
-class PollsAnswer:
+class PollsAnswer(BaseModel):
 	"""VK Object PollsAnswer
 
 	id - Answer ID
@@ -6111,7 +6111,7 @@ class PollsAnswer:
 	votes = None
 
 
-class PollsBackground:
+class PollsBackground(BaseModel):
 	"""VK Object PollsBackground
 
 	angle - Gradient angle with 0 on positive X axis
@@ -6135,14 +6135,14 @@ class PollsBackground:
 	width = None
 
 
-class PollsFriend:
+class PollsFriend(BaseModel):
 	"""VK Object PollsFriend
 
 	"""
 	id = None
 
 
-class PollsPoll:
+class PollsPoll(BaseModel):
 	"""VK Object PollsPoll
 
 	anonymous - 
@@ -6192,7 +6192,7 @@ class PollsPoll:
 	disable_unvote = None
 None
 
-class PollsVoters:
+class PollsVoters(BaseModel):
 	"""VK Object PollsVoters
 
 	answer_id - Answer ID
@@ -6202,7 +6202,7 @@ class PollsVoters:
 	users = None
 
 
-class PollsVotersUsers:
+class PollsVotersUsers(BaseModel):
 	"""VK Object PollsVotersUsers
 
 	count - Votes number
@@ -6212,7 +6212,7 @@ class PollsVotersUsers:
 	items = None
 
 
-class PrettyCardsPrettyCard:
+class PrettyCardsPrettyCard(BaseModel):
 	"""VK Object PrettyCardsPrettyCard
 
 	button - Button key
@@ -6236,7 +6236,7 @@ class PrettyCardsPrettyCard:
 	title = None
 
 
-class SearchHint:
+class SearchHint(BaseModel):
 	"""VK Object SearchHint
 
 	app - 
@@ -6256,31 +6256,31 @@ class SearchHint:
 	type = None
 
 
-class SearchHintSection:
+class SearchHintSection(enum.Enum):
 	"""VK Object SearchHintSection
 
 	"""
-	groups = 0
-	events = 1
-	publics = 2
-	correspondents = 3
-	people = 4
-	friends = 5
-	mutual_friends = 6
+	GROUPS = "groups"
+	EVENTS = "events"
+	PUBLICS = "publics"
+	CORRESPONDENTS = "correspondents"
+	PEOPLE = "people"
+	FRIENDS = "friends"
+	MUTUAL_FRIENDS = "mutual_friends"
 
 
-class SearchHintType:
+class SearchHintType(enum.Enum):
 	"""VK Object SearchHintType
 
 	"""
-	group = 0
-	profile = 1
-	vk_app = 2
-	app = 3
-	html5_game = 4
+	GROUP = "group"
+	PROFILE = "profile"
+	VK_APP = "vk_app"
+	APP = "app"
+	HTML5_GAME = "html5_game"
 
 
-class SecureLevel:
+class SecureLevel(BaseModel):
 	"""VK Object SecureLevel
 
 	level - Level
@@ -6290,7 +6290,7 @@ class SecureLevel:
 	uid = None
 
 
-class SecureSmSNotification:
+class SecureSmSNotification(BaseModel):
 	"""VK Object SecureSmSNotification
 
 	app_id - Application ID
@@ -6306,7 +6306,7 @@ class SecureSmSNotification:
 	user_id = None
 
 
-class SecureTokenChecked:
+class SecureTokenChecked(BaseModel):
 	"""VK Object SecureTokenChecked
 
 	date - Date when access_token has been generated in Unixtime
@@ -6320,7 +6320,7 @@ class SecureTokenChecked:
 	user_id = None
 
 
-class SecureTranSaction:
+class SecureTranSaction(BaseModel):
 	"""VK Object SecureTranSaction
 
 	date - Transaction date in Unixtime
@@ -6336,7 +6336,7 @@ class SecureTranSaction:
 	votes = None
 
 
-class StatSActivity:
+class StatSActivity(BaseModel):
 	"""VK Object StatSActivity
 
 	comments - Comments number
@@ -6354,7 +6354,7 @@ class StatSActivity:
 	unsubscribed = None
 
 
-class StatSCity:
+class StatSCity(BaseModel):
 	"""VK Object StatSCity
 
 	count - Visitors number
@@ -6366,7 +6366,7 @@ class StatSCity:
 	value = None
 
 
-class StatSCountry:
+class StatSCountry(BaseModel):
 	"""VK Object StatSCountry
 
 	code - Country code
@@ -6380,7 +6380,7 @@ class StatSCountry:
 	value = None
 
 
-class StatSPeriod:
+class StatSPeriod(BaseModel):
 	"""VK Object StatSPeriod
 
 	activity - 
@@ -6396,7 +6396,7 @@ class StatSPeriod:
 	visitors = None
 
 
-class StatSReach:
+class StatSReach(BaseModel):
 	"""VK Object StatSReach
 
 	age - 
@@ -6418,7 +6418,7 @@ class StatSReach:
 	sex_age = None
 
 
-class StatSSexAge:
+class StatSSexAge(BaseModel):
 	"""VK Object StatSSexAge
 
 	count - Visitors number
@@ -6434,7 +6434,7 @@ class StatSSexAge:
 	count_subscribers = None
 
 
-class StatSViewS:
+class StatSViewS(BaseModel):
 	"""VK Object StatSViewS
 
 	age - 
@@ -6456,7 +6456,7 @@ class StatSViewS:
 	visitors = None
 
 
-class StatSWallpoStStat:
+class StatSWallpoStStat(BaseModel):
 	"""VK Object StatSWallpoStStat
 
 	post_id - 
@@ -6490,7 +6490,7 @@ class StatSWallpoStStat:
 	sex_age = None
 
 
-class StatuSStatuS:
+class StatuSStatuS(BaseModel):
 	"""VK Object StatuSStatuS
 
 	text - Status text
@@ -6500,7 +6500,7 @@ class StatuSStatuS:
 	audio = None
 
 
-class StickerSImageSet:
+class StickerSImageSet(BaseModel):
 	"""VK Object StickerSImageSet
 
 	base_url - Base URL for images in set
@@ -6510,7 +6510,7 @@ class StickerSImageSet:
 	version = None
 
 
-class StorageValue:
+class StorageValue(BaseModel):
 	"""VK Object StorageValue
 
 	"""
@@ -6518,7 +6518,7 @@ class StorageValue:
 	value = None
 
 
-class StoreProduct:
+class StoreProduct(BaseModel):
 	"""VK Object StoreProduct
 
 	id - Id of the product
@@ -6548,7 +6548,7 @@ class StoreProduct:
 	subtitle = None
 None
 
-class StoreStickerSKeyword:
+class StoreStickerSKeyword(BaseModel):
 	"""VK Object StoreStickerSKeyword
 
 	"""
@@ -6558,7 +6558,7 @@ class StoreStickerSKeyword:
 	stickers = None
 
 
-class StoreStickerSKeywordSticker:
+class StoreStickerSKeywordSticker(BaseModel):
 	"""VK Object StoreStickerSKeywordSticker
 
 	pack_id - Pack id
@@ -6568,13 +6568,13 @@ class StoreStickerSKeywordSticker:
 	sticker_id = None
 
 
-class StoreStickerSKeywordStickerS:
+class StoreStickerSKeywordStickerS(BaseModel):
 	"""VK Object StoreStickerSKeywordStickerS
 
 	"""
 
 
-class StorieSClickableArea:
+class StorieSClickableArea(BaseModel):
 	"""VK Object StorieSClickableArea
 
 	"""
@@ -6582,7 +6582,7 @@ class StorieSClickableArea:
 	y = None
 
 
-class StorieSClickableSticker:
+class StorieSClickableSticker(BaseModel):
 	"""VK Object StorieSClickableSticker
 
 	clickable_area - 
@@ -6646,7 +6646,7 @@ class StorieSClickableSticker:
 	situational_app_url = None
 
 
-class StorieSClickableStickerS:
+class StorieSClickableStickerS(BaseModel):
 	"""VK Object StorieSClickableStickerS
 
 	"""
@@ -6655,7 +6655,7 @@ class StorieSClickableStickerS:
 	original_width = None
 
 
-class StorieSFeedItem:
+class StorieSFeedItem(BaseModel):
 	"""VK Object StorieSFeedItem
 
 	type - Type of Feed Item
@@ -6675,7 +6675,7 @@ class StorieSFeedItem:
 	birthday_user_id = None
 
 
-class StorieSPromoBlock:
+class StorieSPromoBlock(BaseModel):
 	"""VK Object StorieSPromoBlock
 
 	name - Promo story title
@@ -6689,7 +6689,7 @@ class StorieSPromoBlock:
 	not_animated = None
 
 
-class StorieSReplieS:
+class StorieSReplieS(BaseModel):
 	"""VK Object StorieSReplieS
 
 	count - Replies number.
@@ -6699,7 +6699,7 @@ class StorieSReplieS:
 	new = None
 
 
-class StorieSStatLine:
+class StorieSStatLine(BaseModel):
 	"""VK Object StorieSStatLine
 
 	"""
@@ -6708,7 +6708,7 @@ class StorieSStatLine:
 	is_unavailable = None
 
 
-class StorieSStory:
+class StorieSStory(BaseModel):
 	"""VK Object StorieSStory
 
 	access_key - Access key for private object.
@@ -6776,7 +6776,7 @@ class StorieSStory:
 	can_use_in_narrative = None
 
 
-class StorieSStoryLink:
+class StorieSStoryLink(BaseModel):
 	"""VK Object StorieSStoryLink
 
 	text - Link text
@@ -6786,7 +6786,7 @@ class StorieSStoryLink:
 	url = None
 
 
-class StorieSStoryStatS:
+class StorieSStoryStatS(BaseModel):
 	"""VK Object StorieSStoryStatS
 
 	"""
@@ -6800,7 +6800,7 @@ class StorieSStoryStatS:
 	likes = None
 
 
-class StorieSStoryStatSStat:
+class StorieSStoryStatSStat(BaseModel):
 	"""VK Object StorieSStoryStatSStat
 
 	count - Stat value
@@ -6810,54 +6810,54 @@ class StorieSStoryStatSStat:
 	state = None
 
 
-class StorieSStoryStatSState:
+class StorieSStoryStatSState(enum.Enum):
 	"""VK Object StorieSStoryStatSState
 
 	"""
-	on = 0
-	off = 1
-	hidden = 2
+	ON = "on"
+	OFF = "off"
+	HIDDEN = "hidden"
 
 
-class StorieSStoryType:
+class StorieSStoryType(enum.Enum):
 	"""VK Object StorieSStoryType
 
 	"""
-	photo = 0
-	video = 1
-	live_active = 2
-	live_finished = 3
-	birthday_invite = 4
+	PHOTO = "photo"
+	VIDEO = "video"
+	LIVE_ACTIVE = "live_active"
+	LIVE_FINISHED = "live_finished"
+	BIRTHDAY_INVITE = "birthday_invite"
 
 
-class StorieSUploadLinkText:
+class StorieSUploadLinkText(enum.Enum):
 	"""VK Object StorieSUploadLinkText
 
 	"""
-	to_store = 0
-	vote = 1
-	more = 2
-	book = 3
-	order = 4
-	enroll = 5
-	fill = 6
-	signup = 7
-	buy = 8
-	ticket = 9
-	write = 10
-	open = 11
-	learn_more = 12
-	view = 13
-	go_to = 14
-	contact = 15
-	watch = 16
-	play = 17
-	install = 18
-	read = 19
-	calendar = 20
+	TO_STORE = "to_store"
+	VOTE = "vote"
+	MORE = "more"
+	BOOK = "book"
+	ORDER = "order"
+	ENROLL = "enroll"
+	FILL = "fill"
+	SIGNUP = "signup"
+	BUY = "buy"
+	TICKET = "ticket"
+	WRITE = "write"
+	OPEN = "open"
+	LEARN_MORE = "learn_more"
+	VIEW = "view"
+	GO_TO = "go_to"
+	CONTACT = "contact"
+	WATCH = "watch"
+	PLAY = "play"
+	INSTALL = "install"
+	READ = "read"
+	CALENDAR = "calendar"
 
 
-class StorieSViewerSItem:
+class StorieSViewerSItem(BaseModel):
 	"""VK Object StorieSViewerSItem
 
 	is_liked - user has like for this object
@@ -6869,7 +6869,7 @@ class StorieSViewerSItem:
 	user = None
 
 
-class UsersCareer:
+class UsersCareer(BaseModel):
 	"""VK Object UsersCareer
 
 	city_id - City ID
@@ -6893,7 +6893,7 @@ class UsersCareer:
 	until = None
 
 
-class UsersExports:
+class UsersExports(BaseModel):
 	"""VK Object UsersExports
 
 	"""
@@ -6902,102 +6902,102 @@ class UsersExports:
 	twitter = None
 
 
-class UsersFields:
+class UsersFields(enum.Enum):
 	"""VK Object UsersFields
 
 	"""
-	first_name_nom = 0
-	first_name_gen = 1
-	first_name_dat = 2
-	first_name_acc = 3
-	first_name_ins = 4
-	first_name_abl = 5
-	last_name_nom = 6
-	last_name_gen = 7
-	last_name_dat = 8
-	last_name_acc = 9
-	last_name_ins = 10
-	last_name_abl = 11
-	photo_id = 12
-	verified = 13
-	sex = 14
-	bdate = 15
-	city = 16
-	country = 17
-	home_town = 18
-	has_photo = 19
-	photo_50 = 20
-	photo_100 = 21
-	photo_200_orig = 22
-	photo_200 = 23
-	photo_400 = 24
-	photo_400_orig = 25
-	photo_max = 26
-	photo_max_orig = 27
-	photo_max_size = 28
-	online = 29
-	lists = 30
-	domain = 31
-	has_mobile = 32
-	contacts = 33
-	site = 34
-	education = 35
-	universities = 36
-	schools = 37
-	status = 38
-	last_seen = 39
-	followers_count = 40
-	counters = 41
-	common_count = 42
-	occupation = 43
-	nickname = 44
-	relatives = 45
-	relation = 46
-	personal = 47
-	connections = 48
-	exports = 49
-	wall_comments = 50
-	activities = 51
-	interests = 52
-	music = 53
-	movies = 54
-	tv = 55
-	books = 56
-	games = 57
-	about = 58
-	quotes = 59
-	can_post = 60
-	can_see_all_posts = 61
-	can_see_audio = 62
-	can_write_private_message = 63
-	can_send_friend_request = 64
-	is_favorite = 65
-	is_hidden_from_feed = 66
-	timezone = 67
-	screen_name = 68
-	maiden_name = 69
-	crop_photo = 70
-	is_friend = 71
-	friend_status = 72
-	career = 73
-	military = 74
-	blacklisted = 75
-	blacklisted_by_me = 76
-	can_subscribe_posts = 77
-	descriptions = 78
-	trending = 79
-	mutual = 80
-	friendship_weeks = 81
-	can_invite_to_chats = 82
-	stories_archive_count = 83
-	video_live_level = 84
-	video_live_count = 85
-	clips_count = 86
-	service_description = 87
-	is_dead = 88
+	FIRST_NAME_NOM = "first_name_nom"
+	FIRST_NAME_GEN = "first_name_gen"
+	FIRST_NAME_DAT = "first_name_dat"
+	FIRST_NAME_ACC = "first_name_acc"
+	FIRST_NAME_INS = "first_name_ins"
+	FIRST_NAME_ABL = "first_name_abl"
+	LAST_NAME_NOM = "last_name_nom"
+	LAST_NAME_GEN = "last_name_gen"
+	LAST_NAME_DAT = "last_name_dat"
+	LAST_NAME_ACC = "last_name_acc"
+	LAST_NAME_INS = "last_name_ins"
+	LAST_NAME_ABL = "last_name_abl"
+	PHOTO_ID = "photo_id"
+	VERIFIED = "verified"
+	SEX = "sex"
+	BDATE = "bdate"
+	CITY = "city"
+	COUNTRY = "country"
+	HOME_TOWN = "home_town"
+	HAS_PHOTO = "has_photo"
+	PHOTO_50 = "photo_50"
+	PHOTO_100 = "photo_100"
+	PHOTO_200_ORIG = "photo_200_orig"
+	PHOTO_200 = "photo_200"
+	PHOTO_400 = "photo_400"
+	PHOTO_400_ORIG = "photo_400_orig"
+	PHOTO_MAX = "photo_max"
+	PHOTO_MAX_ORIG = "photo_max_orig"
+	PHOTO_MAX_SIZE = "photo_max_size"
+	ONLINE = "online"
+	LISTS = "lists"
+	DOMAIN = "domain"
+	HAS_MOBILE = "has_mobile"
+	CONTACTS = "contacts"
+	SITE = "site"
+	EDUCATION = "education"
+	UNIVERSITIES = "universities"
+	SCHOOLS = "schools"
+	STATUS = "status"
+	LAST_SEEN = "last_seen"
+	FOLLOWERS_COUNT = "followers_count"
+	COUNTERS = "counters"
+	COMMON_COUNT = "common_count"
+	OCCUPATION = "occupation"
+	NICKNAME = "nickname"
+	RELATIVES = "relatives"
+	RELATION = "relation"
+	PERSONAL = "personal"
+	CONNECTIONS = "connections"
+	EXPORTS = "exports"
+	WALL_COMMENTS = "wall_comments"
+	ACTIVITIES = "activities"
+	INTERESTS = "interests"
+	MUSIC = "music"
+	MOVIES = "movies"
+	TV = "tv"
+	BOOKS = "books"
+	GAMES = "games"
+	ABOUT = "about"
+	QUOTES = "quotes"
+	CAN_POST = "can_post"
+	CAN_SEE_ALL_POSTS = "can_see_all_posts"
+	CAN_SEE_AUDIO = "can_see_audio"
+	CAN_WRITE_PRIVATE_MESSAGE = "can_write_private_message"
+	CAN_SEND_FRIEND_REQUEST = "can_send_friend_request"
+	IS_FAVORITE = "is_favorite"
+	IS_HIDDEN_FROM_FEED = "is_hidden_from_feed"
+	TIMEZONE = "timezone"
+	SCREEN_NAME = "screen_name"
+	MAIDEN_NAME = "maiden_name"
+	CROP_PHOTO = "crop_photo"
+	IS_FRIEND = "is_friend"
+	FRIEND_STATUS = "friend_status"
+	CAREER = "career"
+	MILITARY = "military"
+	BLACKLISTED = "blacklisted"
+	BLACKLISTED_BY_ME = "blacklisted_by_me"
+	CAN_SUBSCRIBE_POSTS = "can_subscribe_posts"
+	DESCRIPTIONS = "descriptions"
+	TRENDING = "trending"
+	MUTUAL = "mutual"
+	FRIENDSHIP_WEEKS = "friendship_weeks"
+	CAN_INVITE_TO_CHATS = "can_invite_to_chats"
+	STORIES_ARCHIVE_COUNT = "stories_archive_count"
+	VIDEO_LIVE_LEVEL = "video_live_level"
+	VIDEO_LIVE_COUNT = "video_live_count"
+	CLIPS_COUNT = "clips_count"
+	SERVICE_DESCRIPTION = "service_description"
+	IS_DEAD = "is_dead"
 
 
-class UsersLastSeen:
+class UsersLastSeen(BaseModel):
 	"""VK Object UsersLastSeen
 
 	platform - Type of the platform that used for the last authorization
@@ -7007,7 +7007,7 @@ class UsersLastSeen:
 	time = None
 
 
-class UsersMilitary:
+class UsersMilitary(BaseModel):
 	"""VK Object UsersMilitary
 
 	country_id - Country ID
@@ -7025,7 +7025,7 @@ class UsersMilitary:
 	until = None
 
 
-class UsersOccUpation:
+class UsersOccUpation(BaseModel):
 	"""VK Object UsersOccUpation
 
 	id - ID of school, university, company group
@@ -7037,7 +7037,7 @@ class UsersOccUpation:
 	type = None
 
 
-class UsersOnlineInfo:
+class UsersOnlineInfo(BaseModel):
 	"""VK Object UsersOnlineInfo
 
 	visible - Whether you can see real online status of user or not
@@ -7055,7 +7055,7 @@ class UsersOnlineInfo:
 	status = None
 
 
-class UsersPersonal:
+class UsersPersonal(BaseModel):
 	"""VK Object UsersPersonal
 
 	alcohol - User's views on alcohol
@@ -7079,7 +7079,7 @@ class UsersPersonal:
 	smoking = None
 
 
-class UsersRelative:
+class UsersRelative(BaseModel):
 	"""VK Object UsersRelative
 
 	birth_date - Date of child birthday (format dd.mm.yyyy)
@@ -7093,7 +7093,7 @@ class UsersRelative:
 	type = None
 
 
-class UsersSchool:
+class UsersSchool(BaseModel):
 	"""VK Object UsersSchool
 
 	city - City ID
@@ -7121,7 +7121,7 @@ class UsersSchool:
 	speciality = None
 None
 
-class UsersUniversity:
+class UsersUniversity(BaseModel):
 	"""VK Object UsersUniversity
 
 	chair - Chair ID
@@ -7151,7 +7151,7 @@ class UsersUniversity:
 	university_group_id = None
 
 
-class UsersUser:
+class UsersUser(BaseModel):
 	"""VK Object UsersUser
 
 	sex - User sex
@@ -7167,21 +7167,21 @@ class UsersUser:
 	friend_status - 
 	mutual - 
 	"""
-	sex = <built-in function iter>
-	screen_name = <built-in function iter>
-	photo_50 = <built-in function iter>
-	photo_100 = <built-in function iter>
-	online_info = <built-in function iter>
-	online = <built-in function iter>
-	online_mobile = <built-in function iter>
-	online_app = <built-in function iter>
-	verified = <built-in function iter>
-	trending = <built-in function iter>
-	friend_status = <built-in function iter>
-	mutual = <built-in function iter>
+	sex = None
+	screen_name = None
+	photo_50 = None
+	photo_100 = None
+	online_info = None
+	online = None
+	online_mobile = None
+	online_app = None
+	verified = None
+	trending = None
+	friend_status = None
+	mutual = None
 
 
-class UsersUserConnections:
+class UsersUserConnections(BaseModel):
 	"""VK Object UsersUserConnections
 
 	skype - User's Skype nickname
@@ -7199,7 +7199,7 @@ class UsersUserConnections:
 	instagram = None
 
 
-class UsersUserCoUnters:
+class UsersUserCoUnters(BaseModel):
 	"""VK Object UsersUserCoUnters
 
 	albums - Albums number
@@ -7251,7 +7251,7 @@ class UsersUserCoUnters:
 	clips_followers = None
 
 
-class UsersUserFUll:
+class UsersUserFUll(BaseModel):
 	"""VK Object UsersUserFUll
 
 	first_name_nom - User's first name in nominative case
@@ -7371,125 +7371,125 @@ class UsersUserFUll:
 	hash - 
 	has_email - 
 	"""
-	first_name_nom = <built-in function iter>
-	first_name_gen = <built-in function iter>
-	first_name_dat = <built-in function iter>
-	first_name_acc = <built-in function iter>
-	first_name_ins = <built-in function iter>
-	first_name_abl = <built-in function iter>
-	last_name_nom = <built-in function iter>
-	last_name_gen = <built-in function iter>
-	last_name_dat = <built-in function iter>
-	last_name_acc = <built-in function iter>
-	last_name_ins = <built-in function iter>
-	last_name_abl = <built-in function iter>
-	nickname = <built-in function iter>
-	maiden_name = <built-in function iter>
-	contact_name = <built-in function iter>
-	domain = <built-in function iter>
-	bdate = <built-in function iter>
-	city = <built-in function iter>
-	country = <built-in function iter>
-	timezone = <built-in function iter>
-	owner_state = <built-in function iter>
-	photo_200 = <built-in function iter>
-	photo_max = <built-in function iter>
-	photo_200_orig = <built-in function iter>
-	photo_400_orig = <built-in function iter>
-	photo_max_orig = <built-in function iter>
-	photo_id = <built-in function iter>
-	has_photo = <built-in function iter>
-	has_mobile = <built-in function iter>
-	is_friend = <built-in function iter>
-	wall_comments = <built-in function iter>
-	can_post = <built-in function iter>
-	can_see_all_posts = <built-in function iter>
-	can_see_audio = <built-in function iter>
-	type = <built-in function iter>
-	email = <built-in function iter>
-	skype = <built-in function iter>
-	facebook = <built-in function iter>
-	facebook_name = <built-in function iter>
-	twitter = <built-in function iter>
-	livejournal = <built-in function iter>
-	instagram = <built-in function iter>
-	test = <built-in function iter>
-	video_live = <built-in function iter>
-	is_video_live_notifications_blocked = <built-in function iter>
-	is_service = <built-in function iter>
-	service_description = <built-in function iter>
-	photo_rec = <built-in function iter>
-	photo_medium = <built-in function iter>
-	photo_medium_rec = <built-in function iter>
-	photo = <built-in function iter>
-	photo_big = <built-in function iter>
-	photo_400 = <built-in function iter>
-	photo_max_size = <built-in function iter>
-	language = <built-in function iter>
-	stories_archive_count = <built-in function iter>
-	wall_default = <built-in function iter>
-	can_call = <built-in function iter>
-	can_see_wishes = <built-in function iter>
-	can_see_gifts = <built-in function iter>
-	interests = <built-in function iter>
-	books = <built-in function iter>
-	tv = <built-in function iter>
-	quotes = <built-in function iter>
-	about = <built-in function iter>
-	games = <built-in function iter>
-	movies = <built-in function iter>
-	activities = <built-in function iter>
-	music = <built-in function iter>
-	can_write_private_message = <built-in function iter>
-	can_send_friend_request = <built-in function iter>
-	can_be_invited_group = <built-in function iter>
-	mobile_phone = <built-in function iter>
-	home_phone = <built-in function iter>
-	site = <built-in function iter>
-	status_audio = <built-in function iter>
-	status = <built-in function iter>
-	activity = <built-in function iter>
-	last_seen = <built-in function iter>
-	exports = <built-in function iter>
-	crop_photo = <built-in function iter>
-	followers_count = <built-in function iter>
-	video_live_level = <built-in function iter>
-	video_live_count = <built-in function iter>
-	clips_count = <built-in function iter>
-	blacklisted = <built-in function iter>
-	blacklisted_by_me = <built-in function iter>
-	is_favorite = <built-in function iter>
-	is_hidden_from_feed = <built-in function iter>
-	common_count = <built-in function iter>
-	occupation = <built-in function iter>
-	career = <built-in function iter>
-	military = <built-in function iter>
-	university = <built-in function iter>
-	university_name = <built-in function iter>
-	university_group_id = <built-in function iter>
-	faculty = <built-in function iter>
-	faculty_name = <built-in function iter>
-	graduation = <built-in function iter>
-	education_form = <built-in function iter>
-	education_status = <built-in function iter>
-	home_town = <built-in function iter>
-	relation = <built-in function iter>
-	relation_partner = <built-in function iter>
-	personal = <built-in function iter>
-	universities = <built-in function iter>
-	schools = <built-in function iter>
-	relatives = <built-in function iter>
-	is_subscribed_podcasts = <built-in function iter>
-	can_subscribe_podcasts = <built-in function iter>
-	can_subscribe_posts = <built-in function iter>
-	counters = <built-in function iter>
-	access_key = <built-in function iter>
-	can_upload_doc = <built-in function iter>
-	hash = <built-in function iter>
-	has_email = <built-in function iter>
+	first_name_nom = None
+	first_name_gen = None
+	first_name_dat = None
+	first_name_acc = None
+	first_name_ins = None
+	first_name_abl = None
+	last_name_nom = None
+	last_name_gen = None
+	last_name_dat = None
+	last_name_acc = None
+	last_name_ins = None
+	last_name_abl = None
+	nickname = None
+	maiden_name = None
+	contact_name = None
+	domain = None
+	bdate = None
+	city = None
+	country = None
+	timezone = None
+	owner_state = None
+	photo_200 = None
+	photo_max = None
+	photo_200_orig = None
+	photo_400_orig = None
+	photo_max_orig = None
+	photo_id = None
+	has_photo = None
+	has_mobile = None
+	is_friend = None
+	wall_comments = None
+	can_post = None
+	can_see_all_posts = None
+	can_see_audio = None
+	type = None
+	email = None
+	skype = None
+	facebook = None
+	facebook_name = None
+	twitter = None
+	livejournal = None
+	instagram = None
+	test = None
+	video_live = None
+	is_video_live_notifications_blocked = None
+	is_service = None
+	service_description = None
+	photo_rec = None
+	photo_medium = None
+	photo_medium_rec = None
+	photo = None
+	photo_big = None
+	photo_400 = None
+	photo_max_size = None
+	language = None
+	stories_archive_count = None
+	wall_default = None
+	can_call = None
+	can_see_wishes = None
+	can_see_gifts = None
+	interests = None
+	books = None
+	tv = None
+	quotes = None
+	about = None
+	games = None
+	movies = None
+	activities = None
+	music = None
+	can_write_private_message = None
+	can_send_friend_request = None
+	can_be_invited_group = None
+	mobile_phone = None
+	home_phone = None
+	site = None
+	status_audio = None
+	status = None
+	activity = None
+	last_seen = None
+	exports = None
+	crop_photo = None
+	followers_count = None
+	video_live_level = None
+	video_live_count = None
+	clips_count = None
+	blacklisted = None
+	blacklisted_by_me = None
+	is_favorite = None
+	is_hidden_from_feed = None
+	common_count = None
+	occupation = None
+	career = None
+	military = None
+	university = None
+	university_name = None
+	university_group_id = None
+	faculty = None
+	faculty_name = None
+	graduation = None
+	education_form = None
+	education_status = None
+	home_town = None
+	relation = None
+	relation_partner = None
+	personal = None
+	universities = None
+	schools = None
+	relatives = None
+	is_subscribed_podcasts = None
+	can_subscribe_podcasts = None
+	can_subscribe_posts = None
+	counters = None
+	access_key = None
+	can_upload_doc = None
+	hash = None
+	has_email = None
 
 
-class UsersUserMin:
+class UsersUserMin(BaseModel):
 	"""VK Object UsersUserMin
 
 	deactivated - Returns if a profile is deleted or blocked
@@ -7509,7 +7509,7 @@ class UsersUserMin:
 	is_closed = None
 
 
-class UsersUserRelation:
+class UsersUserRelation(enum.IntEnum):
 	"""VK Object UsersUserRelation
 
 	"""
@@ -7524,7 +7524,7 @@ class UsersUserRelation:
 	in a civil union = 8
 
 
-class UsersUserSettingsXtr:
+class UsersUserSettingsXtr(BaseModel):
 	"""VK Object UsersUserSettingsXtr
 
 	connections - 
@@ -7574,27 +7574,27 @@ class UsersUserSettingsXtr:
 	languages = None
 
 
-class UsersUserType:
+class UsersUserType(enum.Enum):
 	"""VK Object UsersUserType
 
 	"""
-	profile = 0
+	PROFILE = "profile"
 
 
-class UsersUserXtrCoUnters:
+class UsersUserXtrCoUnters(BaseModel):
 	"""VK Object UsersUserXtrCoUnters
 
 	"""
 
 
-class UsersUserXtrType:
+class UsersUserXtrType(BaseModel):
 	"""VK Object UsersUserXtrType
 
 	"""
-	type = <built-in function iter>
+	type = None
 
 
-class UsersUsersArray:
+class UsersUsersArray(BaseModel):
 	"""VK Object UsersUsersArray
 
 	count - Users number
@@ -7604,7 +7604,7 @@ class UsersUsersArray:
 	items = None
 
 
-class UtilsDomainResolved:
+class UtilsDomainResolved(BaseModel):
 	"""VK Object UtilsDomainResolved
 
 	object_id - Object ID
@@ -7616,19 +7616,19 @@ class UtilsDomainResolved:
 	type = None
 
 
-class UtilsDomainResolvedType:
+class UtilsDomainResolvedType(enum.Enum):
 	"""VK Object UtilsDomainResolvedType
 
 	"""
-	user = 0
-	group = 1
-	application = 2
-	page = 3
-	vk_app = 4
-	community_application = 5
+	USER = "user"
+	GROUP = "group"
+	APPLICATION = "application"
+	PAGE = "page"
+	VK_APP = "vk_app"
+	COMMUNITY_APPLICATION = "community_application"
 
 
-class UtilsLastShortenedLink:
+class UtilsLastShortenedLink(BaseModel):
 	"""VK Object UtilsLastShortenedLink
 
 	access_key - Access key for private stats
@@ -7646,7 +7646,7 @@ class UtilsLastShortenedLink:
 	views = None
 
 
-class UtilsLinkChecked:
+class UtilsLinkChecked(BaseModel):
 	"""VK Object UtilsLinkChecked
 
 	link - Link URL
@@ -7656,16 +7656,16 @@ class UtilsLinkChecked:
 	status = None
 
 
-class UtilsLinkCheckedStatUs:
+class UtilsLinkCheckedStatUs(enum.Enum):
 	"""VK Object UtilsLinkCheckedStatUs
 
 	"""
-	not_banned = 0
-	banned = 1
-	processing = 2
+	NOT_BANNED = "not_banned"
+	BANNED = "banned"
+	PROCESSING = "processing"
 
 
-class UtilsLinkStats:
+class UtilsLinkStats(BaseModel):
 	"""VK Object UtilsLinkStats
 
 	key - Link key (characters after vk.cc/)
@@ -7675,7 +7675,7 @@ class UtilsLinkStats:
 	stats = None
 
 
-class UtilsLinkStatsExtended:
+class UtilsLinkStatsExtended(BaseModel):
 	"""VK Object UtilsLinkStatsExtended
 
 	key - Link key (characters after vk.cc/)
@@ -7685,7 +7685,7 @@ class UtilsLinkStatsExtended:
 	stats = None
 
 
-class UtilsShortLink:
+class UtilsShortLink(BaseModel):
 	"""VK Object UtilsShortLink
 
 	access_key - Access key for private stats
@@ -7699,7 +7699,7 @@ class UtilsShortLink:
 	url = None
 
 
-class UtilsStats:
+class UtilsStats(BaseModel):
 	"""VK Object UtilsStats
 
 	timestamp - Start time
@@ -7709,7 +7709,7 @@ class UtilsStats:
 	views = None
 
 
-class UtilsStatsCity:
+class UtilsStatsCity(BaseModel):
 	"""VK Object UtilsStatsCity
 
 	city_id - City ID
@@ -7719,7 +7719,7 @@ class UtilsStatsCity:
 	views = None
 
 
-class UtilsStatsCoUntry:
+class UtilsStatsCoUntry(BaseModel):
 	"""VK Object UtilsStatsCoUntry
 
 	country_id - Country ID
@@ -7729,7 +7729,7 @@ class UtilsStatsCoUntry:
 	views = None
 
 
-class UtilsStatsExtended:
+class UtilsStatsExtended(BaseModel):
 	"""VK Object UtilsStatsExtended
 
 	cities - 
@@ -7745,7 +7745,7 @@ class UtilsStatsExtended:
 	views = None
 
 
-class UtilsStatsSexAge:
+class UtilsStatsSexAge(BaseModel):
 	"""VK Object UtilsStatsSexAge
 
 	age_range - Age denotation
@@ -7757,7 +7757,7 @@ class UtilsStatsSexAge:
 	male = None
 
 
-class VideoLiVeInfo:
+class VideoLiVeInfo(BaseModel):
 	"""VK Object VideoLiVeInfo
 
 	"""
@@ -7765,7 +7765,7 @@ class VideoLiVeInfo:
 	is_notifications_blocked = None
 
 
-class VideoLiVeSettings:
+class VideoLiVeSettings(BaseModel):
 	"""VK Object VideoLiVeSettings
 
 	can_rewind - If user car rewind live or not
@@ -7777,7 +7777,7 @@ class VideoLiVeSettings:
 	max_duration = None
 
 
-class VideoRestrictionButton:
+class VideoRestrictionButton(BaseModel):
 	"""VK Object VideoRestrictionButton
 
 	"""
@@ -7785,7 +7785,7 @@ class VideoRestrictionButton:
 	title = None
 
 
-class VideoSaVeResult:
+class VideoSaVeResult(BaseModel):
 	"""VK Object VideoSaVeResult
 
 	access_key - Video access key
@@ -7803,7 +7803,7 @@ class VideoSaVeResult:
 	video_id = None
 
 
-class VideoVideo:
+class VideoVideo(BaseModel):
 	"""VK Object VideoVideo
 
 	access_key - Video access key
@@ -7854,56 +7854,56 @@ class VideoVideo:
 	likes - 
 	reposts - 
 	"""
-	access_key = <built-in function iter>
-	adding_date = <built-in function iter>
-	can_comment = <built-in function iter>
-	can_edit = <built-in function iter>
-	can_like = <built-in function iter>
-	can_repost = <built-in function iter>
-	can_subscribe = <built-in function iter>
-	can_add_to_faves = <built-in function iter>
-	can_add = <built-in function iter>
-	can_attach_link = <built-in function iter>
-	is_private = <built-in function iter>
-	comments = <built-in function iter>
-	date = <built-in function iter>
-	description = <built-in function iter>
-	duration = <built-in function iter>
-	image = <built-in function iter>
-	first_frame = <built-in function iter>
-	width = <built-in function iter>
-	height = <built-in function iter>
-	id = <built-in function iter>
-	owner_id = <built-in function iter>
-	user_id = <built-in function iter>
-	title = <built-in function iter>
-	is_favorite = <built-in function iter>
-	player = <built-in function iter>
-	processing = <built-in function iter>
-	converting = <built-in function iter>
-	restriction = <built-in function iter>
-	added = <built-in function iter>
-	is_subscribed = <built-in function iter>
-	track_code = <built-in function iter>
-	repeat = <built-in function iter>
-	type = <built-in function iter>
-	views = <built-in function iter>
-	local_views = <built-in function iter>
-	content_restricted = <built-in function iter>
-	content_restricted_message = <built-in function iter>
-	balance = <built-in function iter>
-	live_status = <built-in function iter>
-	live = <built-in function iter>
-	upcoming = <built-in function iter>
-	live_start_time = <built-in function iter>
-	live_notify = <built-in function iter>
-	spectators = <built-in function iter>
-	platform = <built-in function iter>
-	likes = <built-in function iter>
-	reposts = <built-in function iter>
+	access_key = None
+	adding_date = None
+	can_comment = None
+	can_edit = None
+	can_like = None
+	can_repost = None
+	can_subscribe = None
+	can_add_to_faves = None
+	can_add = None
+	can_attach_link = None
+	is_private = None
+	comments = None
+	date = None
+	description = None
+	duration = None
+	image = None
+	first_frame = None
+	width = None
+	height = None
+	id = None
+	owner_id = None
+	user_id = None
+	title = None
+	is_favorite = None
+	player = None
+	processing = None
+	converting = None
+	restriction = None
+	added = None
+	is_subscribed = None
+	track_code = None
+	repeat = None
+	type = None
+	views = None
+	local_views = None
+	content_restricted = None
+	content_restricted_message = None
+	balance = None
+	live_status = None
+	live = None
+	upcoming = None
+	live_start_time = None
+	live_notify = None
+	spectators = None
+	platform = None
+	likes = None
+	reposts = None
 
 
-class VideoVideoAlbumFull:
+class VideoVideoAlbumFull(BaseModel):
 	"""VK Object VideoVideoAlbumFull
 
 	count - Total number of videos in album
@@ -7925,7 +7925,7 @@ class VideoVideoAlbumFull:
 	updated_time = None
 
 
-class VideoVideoFiles:
+class VideoVideoFiles(BaseModel):
 	"""VK Object VideoVideoFiles
 
 	external - URL of the external player
@@ -7945,24 +7945,24 @@ class VideoVideoFiles:
 	flv_320 = None
 
 
-class VideoVideoFull:
+class VideoVideoFull(BaseModel):
 	"""VK Object VideoVideoFull
 
 	files - 
 	live_settings - Settings for live stream
 	"""
-	files = <built-in function iter>
-	live_settings = <built-in function iter>
+	files = None
+	live_settings = None
 
 
-class VideoVideoImage:
+class VideoVideoImage(BaseModel):
 	"""VK Object VideoVideoImage
 
 	"""
-	with_padding = <built-in function iter>
+	with_padding = None
 
 
-class WallAppPost:
+class WallAppPost(BaseModel):
 	"""VK Object WallAppPost
 
 	id - Application ID
@@ -7976,7 +7976,7 @@ class WallAppPost:
 	photo_604 = None
 
 
-class WallAttachedNote:
+class WallAttachedNote(BaseModel):
 	"""VK Object WallAttachedNote
 
 	comments - Comments number
@@ -7996,7 +7996,7 @@ class WallAttachedNote:
 	view_url = None
 
 
-class WallCarouselBase:
+class WallCarouselBase(BaseModel):
 	"""VK Object WallCarouselBase
 
 	carousel_offset - Index of current carousel element
@@ -8004,7 +8004,7 @@ class WallCarouselBase:
 	carousel_offset = None
 
 
-class WallCommentAttachment:
+class WallCommentAttachment(BaseModel):
 	"""VK Object WallCommentAttachment
 
 	"""
@@ -8021,23 +8021,23 @@ class WallCommentAttachment:
 	video = None
 
 
-class WallCommentAttachmentType:
+class WallCommentAttachmentType(enum.Enum):
 	"""VK Object WallCommentAttachmentType
 
 	"""
-	photo = 0
-	audio = 1
-	video = 2
-	doc = 3
-	link = 4
-	note = 5
-	page = 6
-	market_market_album = 7
-	market = 8
-	sticker = 9
+	PHOTO = "photo"
+	AUDIO = "audio"
+	VIDEO = "video"
+	DOC = "doc"
+	LINK = "link"
+	NOTE = "note"
+	PAGE = "page"
+	MARKET_MARKET_ALBUM = "market_market_album"
+	MARKET = "market"
+	STICKER = "sticker"
 
 
-class WallGeo:
+class WallGeo(BaseModel):
 	"""VK Object WallGeo
 
 	coordinates - Coordinates as string. <latitude> <longtitude>
@@ -8051,7 +8051,7 @@ class WallGeo:
 	type = None
 
 
-class WallGraffiti:
+class WallGraffiti(BaseModel):
 	"""VK Object WallGraffiti
 
 	id - Graffiti ID
@@ -8065,7 +8065,7 @@ class WallGraffiti:
 	photo_586 = None
 
 
-class WallPostCopyright:
+class WallPostCopyright(BaseModel):
 	"""VK Object WallPostCopyright
 
 	"""
@@ -8075,7 +8075,7 @@ class WallPostCopyright:
 	type = None
 
 
-class WallPostSource:
+class WallPostSource(BaseModel):
 	"""VK Object WallPostSource
 
 	data - Additional data
@@ -8089,30 +8089,30 @@ class WallPostSource:
 	url = None
 
 
-class WallPostSourceType:
+class WallPostSourceType(enum.Enum):
 	"""VK Object WallPostSourceType
 
 	"""
-	vk = 0
-	widget = 1
-	api = 2
-	rss = 3
-	sms = 4
-	mvk = 5
+	VK = "vk"
+	WIDGET = "widget"
+	API = "api"
+	RSS = "rss"
+	SMS = "sms"
+	MVK = "mvk"
 
 
-class WallPostType:
+class WallPostType(enum.Enum):
 	"""VK Object WallPostType
 
 	"""
-	post = 0
-	copy = 1
-	reply = 2
-	postpone = 3
-	suggest = 4
+	POST = "post"
+	COPY = "copy"
+	REPLY = "reply"
+	POSTPONE = "postpone"
+	SUGGEST = "suggest"
 
 
-class WallPostedPhoto:
+class WallPostedPhoto(BaseModel):
 	"""VK Object WallPostedPhoto
 
 	id - Photo ID
@@ -8126,7 +8126,7 @@ class WallPostedPhoto:
 	photo_604 = None
 
 
-class WallVieWs:
+class WallVieWs(BaseModel):
 	"""VK Object WallVieWs
 
 	count - Count
@@ -8134,7 +8134,7 @@ class WallVieWs:
 	count = None
 
 
-class WallWallComment:
+class WallWallComment(BaseModel):
 	"""VK Object WallWallComment
 
 	attachments - 
@@ -8170,7 +8170,7 @@ class WallWallComment:
 	deleted = None
 
 
-class WallWallCommentDonut:
+class WallWallCommentDonut(BaseModel):
 	"""VK Object WallWallCommentDonut
 
 	is_don - Means commentator is donator
@@ -8180,14 +8180,14 @@ class WallWallCommentDonut:
 	placeholder = None
 
 
-class WallWallCommentDonutPlaceholder:
+class WallWallCommentDonutPlaceholder(BaseModel):
 	"""VK Object WallWallCommentDonutPlaceholder
 
 	"""
 	text = None
 
 
-class WallWallpost:
+class WallWallpost(BaseModel):
 	"""VK Object WallWallpost
 
 	access_key - Access key to private object
@@ -8235,7 +8235,7 @@ class WallWallpost:
 	views = None
 
 
-class WallWallpostAttachment:
+class WallWallpostAttachment(BaseModel):
 	"""VK Object WallWallpostAttachment
 
 	access_key - Access key for the audio
@@ -8279,43 +8279,43 @@ class WallWallpostAttachment:
 	video = None
 
 
-class WallWallpostAttachmentType:
+class WallWallpostAttachmentType(enum.Enum):
 	"""VK Object WallWallpostAttachmentType
 
 	"""
-	photo = 0
-	posted_photo = 1
-	audio = 2
-	video = 3
-	doc = 4
-	link = 5
-	graffiti = 6
-	note = 7
-	app = 8
-	poll = 9
-	page = 10
-	album = 11
-	photos_list = 12
-	market_market_album = 13
-	market = 14
-	event = 15
+	PHOTO = "photo"
+	POSTED_PHOTO = "posted_photo"
+	AUDIO = "audio"
+	VIDEO = "video"
+	DOC = "doc"
+	LINK = "link"
+	GRAFFITI = "graffiti"
+	NOTE = "note"
+	APP = "app"
+	POLL = "poll"
+	PAGE = "page"
+	ALBUM = "album"
+	PHOTOS_LIST = "photos_list"
+	MARKET_MARKET_ALBUM = "market_market_album"
+	MARKET = "market"
+	EVENT = "event"
 
 
-class WallWallpostCommentsDonut:
+class WallWallpostCommentsDonut(BaseModel):
 	"""VK Object WallWallpostCommentsDonut
 
 	"""
 	placeholder = None
 
 
-class WallWallpostCommentsDonutPlaceholder:
+class WallWallpostCommentsDonutPlaceholder(BaseModel):
 	"""VK Object WallWallpostCommentsDonutPlaceholder
 
 	"""
 	text = None
 
 
-class WallWallpostDonut:
+class WallWallpostDonut(BaseModel):
 	"""VK Object WallWallpostDonut
 
 	is_donut - Post only for dons
@@ -8331,14 +8331,14 @@ class WallWallpostDonut:
 	edit_mode = None
 
 
-class WallWallpostDonutPlaceholder:
+class WallWallpostDonutPlaceholder(BaseModel):
 	"""VK Object WallWallpostDonutPlaceholder
 
 	"""
 	text = None
 
 
-class WallWallpostFull:
+class WallWallpostFull(BaseModel):
 	"""VK Object WallWallpostFull
 
 	copy_history - 
@@ -8352,19 +8352,19 @@ class WallWallpostFull:
 	marked_as_ads - Information whether the post is marked as ads
 	short_text_rate - Preview length control parameter
 	"""
-	copy_history = <built-in function iter>
-	can_edit = <built-in function iter>
-	created_by = <built-in function iter>
-	can_delete = <built-in function iter>
-	can_pin = <built-in function iter>
-	donut = <built-in function iter>
-	is_pinned = <built-in function iter>
-	comments = <built-in function iter>
-	marked_as_ads = <built-in function iter>
-	short_text_rate = <built-in function iter>
+	copy_history = None
+	can_edit = None
+	created_by = None
+	can_delete = None
+	can_pin = None
+	donut = None
+	is_pinned = None
+	comments = None
+	marked_as_ads = None
+	short_text_rate = None
 
 
-class WallWallpostToId:
+class WallWallpostToId(BaseModel):
 	"""VK Object WallWallpostToId
 
 	attachments - 
@@ -8404,7 +8404,7 @@ class WallWallpostToId:
 	to_id = None
 
 
-class WidgetsCommentMedia:
+class WidgetsCommentMedia(BaseModel):
 	"""VK Object WidgetsCommentMedia
 
 	item_id - Media item ID
@@ -8418,16 +8418,16 @@ class WidgetsCommentMedia:
 	type = None
 
 
-class WidgetsCommentMediaType:
+class WidgetsCommentMediaType(enum.Enum):
 	"""VK Object WidgetsCommentMediaType
 
 	"""
-	audio = 0
-	photo = 1
-	video = 2
+	AUDIO = "audio"
+	PHOTO = "photo"
+	VIDEO = "video"
 
 
-class WidgetsCommentReplies:
+class WidgetsCommentReplies(BaseModel):
 	"""VK Object WidgetsCommentReplies
 
 	can_post - Information whether current user can comment the post
@@ -8439,7 +8439,7 @@ class WidgetsCommentReplies:
 	replies = None
 
 
-class WidgetsCommentRepliesItem:
+class WidgetsCommentRepliesItem(BaseModel):
 	"""VK Object WidgetsCommentRepliesItem
 
 	cid - Comment ID
@@ -8457,7 +8457,7 @@ class WidgetsCommentRepliesItem:
 	user = None
 
 
-class WidgetsWidgetComment:
+class WidgetsWidgetComment(BaseModel):
 	"""VK Object WidgetsWidgetComment
 
 	attachments - 
@@ -8491,7 +8491,7 @@ class WidgetsWidgetComment:
 	user = None
 
 
-class WidgetsWidgetLikes:
+class WidgetsWidgetLikes(BaseModel):
 	"""VK Object WidgetsWidgetLikes
 
 	count - Likes number
@@ -8499,7 +8499,7 @@ class WidgetsWidgetLikes:
 	count = None
 
 
-class WidgetsWidgetPage:
+class WidgetsWidgetPage(BaseModel):
 	"""VK Object WidgetsWidgetPage
 
 	comments - 
