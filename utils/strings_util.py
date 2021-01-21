@@ -2,14 +2,21 @@ import json
 import re
 
 
+def get_type_from_reference(str_ref):
+    pattern = re.compile('.*/(.*)')
+    ref_type = re.search(pattern, str_ref).group(1)
+    return snake_case_to_camel_case(ref_type)
+
+
 def output_switch_decorator(function):
     def wrapper(arg):
-        keys_type = type({1: 1}.keys())
+        keys_type = type(dict().keys())
         if type(arg) != keys_type and type(arg) != list:
             arg = {arg: arg}
         result = function(arg)
         if len(arg) == 1:
-            return next(iter(result))
+            # get first value in returned dict
+            return result[next(iter(result))]
         return result
     return wrapper
 

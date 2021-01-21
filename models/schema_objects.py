@@ -1,5 +1,6 @@
 import abc
 from .models import ClassForm
+from utils.strings_util import get_type_from_reference
 # fabric method pattern
 
 
@@ -16,8 +17,15 @@ class SchemaObject(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
         self.class_form: ClassForm = ClassForm(classname)
         for name in prepared_dict[classname]['properties'].keys():
-            text = prepared_dict[classname]['properties'][name].get('description', None)
-            self.class_form.add_param(name, None)
+            properties = prepared_dict[classname]['properties']
+            if properties[name].get('type', None):
+                type_anno = properties[name].get('type', None)
+            else:
+                type_anno = properties[name].get('$ref', None)
+                type_anno = get_type_from_reference(type_anno)
+
+            text = properties[name].get('description', None)
+            self.class_form.add_param(name, None, annotation=type_anno)
             self.class_form.add_description_row(name, text)
 
 

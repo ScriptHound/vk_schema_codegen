@@ -1,6 +1,7 @@
 import keyword
 import string
 import abc
+from utils.strings_util import snake_case_to_camel_case
 
 
 class ObjectModel(abc.ABC):
@@ -18,6 +19,40 @@ class ObjectModel(abc.ABC):
     @abc.abstractmethod
     def __str__(self):
         pass
+
+
+class Annotation(ObjectModel):
+    @staticmethod
+    def __type_string_to_default_type(classname):
+        classname_copy = classname.replace('"', '')
+        if classname_copy == 'Integer':
+            return 'int'
+        elif classname_copy == 'String':
+            return 'str'
+        elif classname_copy == 'Boolean':
+            return 'bool'
+        else:
+            return classname
+
+    def __unpack_dict_values(self, dictionary):
+        types_list = []
+        for _, v in dictionary.items():
+            v.replace("'", '')
+            types_list.append(self.__type_string_to_default_type(v))
+        return ', '.join(types_list)
+
+    def __str__(self):
+        camel_case_types = snake_case_to_camel_case(self.classname)
+        if type(camel_case_types) == dict:
+            camel_case_types = self.__unpack_dict_values(camel_case_types)
+            self.classname = f'Union[{camel_case_types}]'
+        else:
+            self.classname = '"' + camel_case_types + '"'
+
+        self.classname = self.__type_string_to_default_type(self.classname)
+
+        label: str = f': Optional[{self.classname}]'
+        return label
 
 
 class Description(ObjectModel):
@@ -44,6 +79,16 @@ class ClassForm(ObjectModel):
 
     def add_description_row(self, name, text):
         self.description.add_param(name, text)
+
+    def add_param(self,
+                  param_name: str,
+                  param_value: str,
+                  annotation: str = None
+                  ) -> None:
+        if annotation is not None:
+            param_name += str(Annotation(annotation))
+
+        self.params.update({param_name: param_value})
 
     def __str__(self):
         label = f'\n\nclass {self.classname}:\n'
