@@ -29,12 +29,12 @@ def get_json_dict(path: str) -> dict:
 @output_switch_decorator
 def snake_case_to_camel_case(string_list: list) -> list:
     words_list: list = []
-    pattern: re.Pattern = re.compile(r'\w*?(_.)')
+    pattern: re.Pattern = re.compile(r'(_.)')
     for word in string_list:
         chars = re.findall(pattern, word)
         for ch in chars:
             word = word.replace(ch, ch[-1].upper())
-        word = word.replace(word[0], word[0].upper())
+        word = word.replace(word[0], word[0].upper(), 1)
 
         words_list.append(word)
     return dict(zip(string_list, words_list))
