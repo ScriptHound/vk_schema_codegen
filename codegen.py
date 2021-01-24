@@ -225,7 +225,8 @@ class AccountPushSettings(BaseModel):
 	conversations: Optional["AccountPushConversations"] = None
 
 
-class AccountUserSettings(BaseModel):
+class AccountUserSettings(UsersUserMin,
+	UsersUserSettingsXtr):
 	"""VK Object AccountUserSettings
 
 	photo_200 - URL of square photo of the user with 200 pixels in width
@@ -877,7 +878,7 @@ class AdsStatsViewsTimes(BaseModel):
 	views_ads_times_11_plus: Optional[int] = None
 
 
-class AdsTargSettings(BaseModel):
+class AdsTargSettings(AdsCriteria):
 	"""VK Object AdsTargSettings
 
 	id - Ad ID
@@ -1100,7 +1101,7 @@ class AppWidgetsPhotos(BaseModel):
 	items: Optional["Array"] = None
 
 
-class AppsApp(BaseModel):
+class AppsApp(AppsAppMin):
 	"""VK Object AppsApp
 
 	author_url - Application author's URL
@@ -2308,7 +2309,7 @@ class CommentThread(BaseModel):
 	show_reply_button: Optional[bool] = None
 
 
-class DatabaseCity(BaseModel):
+class DatabaseCity(BaseObject):
 	"""VK Object DatabaseCity
 
 	area - Area title
@@ -2598,7 +2599,7 @@ class FaveTag(BaseModel):
 	name: Optional[str] = None
 
 
-class FriendsFriendExtendedStatus(BaseModel):
+class FriendsFriendExtendedStatus(FriendsFriendStatus):
 	"""VK Object FriendsFriendExtendedStatus
 
 	is_request_unread - Is friend request from other user unread
@@ -2686,14 +2687,14 @@ class FriendsRequestsXtrMessage(BaseModel):
 	user_id: Optional[int] = None
 
 
-class FriendsUserXtrLists(BaseModel):
+class FriendsUserXtrLists(UsersUserFull):
 	"""VK Object FriendsUserXtrLists
 
 	"""
 	lists = None
 
 
-class FriendsUserXtrPhone(BaseModel):
+class FriendsUserXtrPhone(UsersUserFull):
 	"""VK Object FriendsUserXtrPhone
 
 	phone - User phone
@@ -3175,7 +3176,7 @@ class GroupsGroupDocs(enum.IntEnum):
 	limited = 2
 
 
-class GroupsGroupFull(BaseModel):
+class GroupsGroupFull(GroupsGroup):
 	"""VK Object GroupsGroupFull
 
 	market - 
@@ -3802,7 +3803,7 @@ class GroupsTokenPermissionSetting(BaseModel):
 	setting: Optional[int] = None
 
 
-class GroupsUserXtrRole(BaseModel):
+class GroupsUserXtrRole(UsersUserFull):
 	"""VK Object GroupsUserXtrRole
 
 	"""
@@ -3956,7 +3957,7 @@ class MarketMarketItemAvailability(enum.IntEnum):
 	unavailable = 2
 
 
-class MarketMarketItemFull(BaseModel):
+class MarketMarketItemFull(MarketMarketItem):
 	"""VK Object MarketMarketItemFull
 
 	albums_ids - 
@@ -4844,7 +4845,7 @@ class MessagesTemplateActionTypeNames(enum.Enum):
 	CALLBACK = "callback"
 
 
-class MessagesUserXtrInvitedBy(BaseModel):
+class MessagesUserXtrInvitedBy(UsersUserXtrType):
 	"""VK Object MessagesUserXtrInvitedBy
 
 	invited_by - ID of the inviter
@@ -4909,7 +4910,7 @@ class NewsfeedIgnoreItemType(enum.Enum):
 	AUDIO = "audio"
 
 
-class NewsfeedItemAudio(BaseModel):
+class NewsfeedItemAudio(NewsfeedItemBase):
 	"""VK Object NewsfeedItemAudio
 
 	audio - 
@@ -4941,7 +4942,7 @@ class NewsfeedItemBase(BaseModel):
 	date: Optional[int] = None
 
 
-class NewsfeedItemDigest(BaseModel):
+class NewsfeedItemDigest(NewsfeedItemBase):
 	"""VK Object NewsfeedItemDigest
 
 	feed_id - id of feed in digest
@@ -5013,7 +5014,7 @@ class NewsfeedItemDigestItem(BaseModel):
 	"""
 
 
-class NewsfeedItemFriend(BaseModel):
+class NewsfeedItemFriend(NewsfeedItemBase):
 	"""VK Object NewsfeedItemFriend
 
 	"""
@@ -5044,7 +5045,8 @@ class NewsfeedItemHolidayRecommendationsBlockHeader(BaseModel):
 	action: Optional["BaseLinkButtonAction"] = None
 
 
-class NewsfeedItemPhoto(BaseModel):
+class NewsfeedItemPhoto(WallCarouselBase,
+	NewsfeedItemBase):
 	"""VK Object NewsfeedItemPhoto
 
 	photos - 
@@ -5064,7 +5066,8 @@ class NewsfeedItemPhotoPhotos(BaseModel):
 	items: Optional["Array"] = None
 
 
-class NewsfeedItemPhotoTag(BaseModel):
+class NewsfeedItemPhotoTag(WallCarouselBase,
+	NewsfeedItemBase):
 	"""VK Object NewsfeedItemPhotoTag
 
 	photo_tags - 
@@ -5084,7 +5087,7 @@ class NewsfeedItemPhotoTagPhotoTags(BaseModel):
 	items: Optional["Array"] = None
 
 
-class NewsfeedItemPromoButton(BaseModel):
+class NewsfeedItemPromoButton(NewsfeedItemBase):
 	"""VK Object NewsfeedItemPromoButton
 
 	"""
@@ -5113,7 +5116,7 @@ class NewsfeedItemPromoButtonImage(BaseModel):
 	url: Optional[str] = None
 
 
-class NewsfeedItemTopic(BaseModel):
+class NewsfeedItemTopic(NewsfeedItemBase):
 	"""VK Object NewsfeedItemTopic
 
 	comments - 
@@ -5127,7 +5130,8 @@ class NewsfeedItemTopic(BaseModel):
 	text = None
 
 
-class NewsfeedItemVideo(BaseModel):
+class NewsfeedItemVideo(WallCarouselBase,
+	NewsfeedItemBase):
 	"""VK Object NewsfeedItemVideo
 
 	"""
@@ -5144,7 +5148,8 @@ class NewsfeedItemVideoVideo(BaseModel):
 	items: Optional["Array"] = None
 
 
-class NewsfeedItemWallpost(BaseModel):
+class NewsfeedItemWallpost(WallCarouselBase,
+	NewsfeedItemBase):
 	"""VK Object NewsfeedItemWallpost
 
 	activity - 
@@ -5230,7 +5235,7 @@ class NewsfeedList(BaseModel):
 	title: Optional[str] = None
 
 
-class NewsfeedListFull(BaseModel):
+class NewsfeedListFull(NewsfeedList):
 	"""VK Object NewsfeedListFull
 
 	no_reposts - Information whether reposts hiding is enabled
@@ -5256,7 +5261,7 @@ class NewsfeedNewsfeedItemType(enum.Enum):
 	STORIES = "stories"
 
 
-class NewsfeedNewsfeedPhoto(BaseModel):
+class NewsfeedNewsfeedPhoto(PhotosPhoto):
 	"""VK Object NewsfeedNewsfeedPhoto
 
 	likes - 
@@ -5356,7 +5361,11 @@ class NotificationsNotificationItem(BaseModel):
 	"""
 
 
-class NotificationsNotificationParent(BaseModel):
+class NotificationsNotificationParent(WallWallpostToId,
+	PhotosPhoto,
+	BoardTopic,
+	VideoVideo,
+	NotificationsNotificationsComment):
 	"""VK Object NotificationsNotificationParent
 
 	"""
@@ -7154,7 +7163,7 @@ class UsersUniversity(BaseModel):
 	university_group_id: Optional[int] = None
 
 
-class UsersUser(BaseModel):
+class UsersUser(UsersUserMin):
 	"""VK Object UsersUser
 
 	sex - User sex
@@ -7254,7 +7263,7 @@ class UsersUserCounters(BaseModel):
 	clips_followers: Optional[int] = None
 
 
-class UsersUserFull(BaseModel):
+class UsersUserFull(UsersUser):
 	"""VK Object UsersUserFull
 
 	first_name_nom - User's first name in nominative case
@@ -7584,13 +7593,13 @@ class UsersUserType(enum.Enum):
 	PROFILE = "profile"
 
 
-class UsersUserXtrCounters(BaseModel):
+class UsersUserXtrCounters(UsersUserFull):
 	"""VK Object UsersUserXtrCounters
 
 	"""
 
 
-class UsersUserXtrType(BaseModel):
+class UsersUserXtrType(UsersUser):
 	"""VK Object UsersUserXtrType
 
 	"""
@@ -7806,7 +7815,7 @@ class VideoSaveResult(BaseModel):
 	video_id: Optional[int] = None
 
 
-class VideoVideo(BaseModel):
+class VideoVideo():
 	"""VK Object VideoVideo
 
 	access_key - Video access key
@@ -7948,7 +7957,7 @@ class VideoVideoFiles(BaseModel):
 	flv_320: Optional[str] = None
 
 
-class VideoVideoFull(BaseModel):
+class VideoVideoFull(VideoVideo):
 	"""VK Object VideoVideoFull
 
 	files - 
@@ -7958,7 +7967,7 @@ class VideoVideoFull(BaseModel):
 	live_settings = None
 
 
-class VideoVideoImage(BaseModel):
+class VideoVideoImage(BaseImage):
 	"""VK Object VideoVideoImage
 
 	"""
@@ -8341,7 +8350,8 @@ class WallWallpostDonutPlaceholder(BaseModel):
 	text: Optional[str] = None
 
 
-class WallWallpostFull(BaseModel):
+class WallWallpostFull(WallCarouselBase,
+	WallWallpost):
 	"""VK Object WallWallpostFull
 
 	copy_history - 

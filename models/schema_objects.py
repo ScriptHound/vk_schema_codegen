@@ -32,13 +32,22 @@ class SchemaObject(AbstractSchemaObject):
 class SchemaAllOfObject(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
         self.class_form: ClassForm = ClassForm(classname)
+        super_classes_list = []
+
         for element in prepared_dict[classname]['allOf']:
             properties = element.get('properties', None)
+            reference = element.get('$ref', None)
+
             if properties:
                 for name in properties.keys():
                     text = properties[name].get('description', None)
                     self.class_form.add_param(name, None)
                     self.class_form.add_description_row(name, text)
+            if reference:
+                ref = get_type_from_reference(reference)
+                super_classes_list.append(ref)
+
+        self.class_form.set_super_class(",\n\t".join(super_classes_list))
 
 
 class SchemaEnum(AbstractSchemaObject):
