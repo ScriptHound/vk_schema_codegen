@@ -18,7 +18,14 @@ class SchemaObject(AbstractSchemaObject):
         self.class_form: ClassForm = ClassForm(classname)
         for name in prepared_dict[classname]['properties'].keys():
             properties = prepared_dict[classname]['properties']
-            if properties[name].get('type', None):
+
+            if properties[name].get('type', None) == 'array':
+                if properties[name]['items'].get('type', None):
+                    type_anno = properties[name]['items']['type']
+                else:
+                    type_anno = properties[name]['items'].get('$ref', None)
+                    type_anno = get_type_from_reference(type_anno)
+            elif properties[name].get('type', None):
                 type_anno = properties[name].get('type', None)
             else:
                 type_anno = properties[name].get('$ref', None)
@@ -76,6 +83,16 @@ class SchemaUndefined(AbstractSchemaObject):
         self.class_form: ClassForm = ClassForm(classname)
 
 
+class SchemaBoolean(AbstractSchemaObject):
+    def __init__(self, classname, prepared_dict):
+        self.classname = classname
+        self.prepared_dict = prepared_dict
+
+    def __str__(self):
+        description = self.prepared_dict[self.classname].get('description', None)
+        return f'\n\n{self.classname} = Optional[bool] # {description}\n\n'
+
+
 def schema_object_fabric_method(classname, prepared_dict):
     json_type = prepared_dict[classname]
     if json_type.get('type', None) == 'object':
@@ -93,6 +110,9 @@ def schema_object_fabric_method(classname, prepared_dict):
 
     elif json_type.get('type', None) == 'integer':
         return SchemaEnumInitialized(classname, prepared_dict)
+
+    elif json_type.get('type', None) == 'boolean':
+        return SchemaBoolean(classname, prepared_dict)
 
     elif json_type.get('type', None) is None:
         return SchemaUndefined(classname, prepared_dict)
