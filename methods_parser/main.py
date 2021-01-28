@@ -10,7 +10,7 @@ def parse_file(filepath: str) -> None:
     filenames = set()
 
     with open(filepath, 'r') as f:
-        json_dict = json.loads(f.read())
+        json_dict = json.load(f)
         filenames = categorize_methods_as_files(json_dict, files_dir)
 
     for filename in filenames:

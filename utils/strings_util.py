@@ -3,21 +3,25 @@ import re
 
 
 def get_type_from_reference(str_ref):
-    pattern = re.compile('.*/(.*)')
+    pattern = r'.*/(.*)'
     ref_type = re.search(pattern, str_ref).group(1)
     return snake_case_to_camel_case(ref_type)
 
 
 def output_switch_decorator(function):
+    """ If input is dict, then return dict
+        If input is a single element, return single element
+    """
     def wrapper(arg):
         keys_type = type(dict().keys())
-        if type(arg) != keys_type and type(arg) != list:
+        if not isinstance(arg, (keys_type, list)):
             arg = {arg: arg}
         result = function(arg)
         if len(arg) == 1:
             # get first value in returned dict
             return result[next(iter(result))]
         return result
+
     return wrapper
 
 

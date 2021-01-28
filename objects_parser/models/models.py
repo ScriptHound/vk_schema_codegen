@@ -43,7 +43,7 @@ class Annotation(ObjectModel):
 
     def __str__(self):
         camel_case_types = snake_case_to_camel_case(self.classname)
-        if type(camel_case_types) == dict:
+        if isinstance(camel_case_types, dict):
             camel_case_types = self.__unpack_dict_values(camel_case_types)
             self.classname = f'Union[{camel_case_types}]'
         else:

@@ -19,19 +19,19 @@ class SchemaObject(AbstractSchemaObject):
         for name in prepared_dict[classname]['properties'].keys():
             properties = prepared_dict[classname]['properties']
 
-            if properties[name].get('type', None) == 'array':
-                if properties[name]['items'].get('type', None):
+            if properties[name].get('type') == 'array':
+                if properties[name]['items'].get('type'):
                     type_anno = properties[name]['items']['type']
                 else:
-                    type_anno = properties[name]['items'].get('$ref', None)
+                    type_anno = properties[name]['items'].get('$ref')
                     type_anno = get_type_from_reference(type_anno)
-            elif properties[name].get('type', None):
-                type_anno = properties[name].get('type', None)
+            elif properties[name].get('type'):
+                type_anno = properties[name].get('type')
             else:
-                type_anno = properties[name].get('$ref', None)
+                type_anno = properties[name].get('$ref')
                 type_anno = get_type_from_reference(type_anno)
 
-            text = properties[name].get('description', None)
+            text = properties[name].get('description')
             self.class_form.add_param(name, None, annotation=type_anno)
             self.class_form.add_description_row(name, text)
 
@@ -42,12 +42,12 @@ class SchemaAllOfObject(AbstractSchemaObject):
         super_classes_list = []
 
         for element in prepared_dict[classname]['allOf']:
-            properties = element.get('properties', None)
-            reference = element.get('$ref', None)
+            properties = element.get('properties')
+            reference = element.get('$ref')
 
             if properties:
                 for name in properties.keys():
-                    text = properties[name].get('description', None)
+                    text = properties[name].get('description')
                     self.class_form.add_param(name, None)
                     self.class_form.add_description_row(name, text)
             if reference:
@@ -95,24 +95,24 @@ class SchemaBoolean(AbstractSchemaObject):
 
 def schema_object_fabric_method(classname, prepared_dict):
     json_type = prepared_dict[classname]
-    if json_type.get('type', None) == 'object':
-        if json_type.get('allOf', None):
+    if json_type.get('type') == 'object':
+        if json_type.get('allOf'):
             return SchemaAllOfObject(classname, prepared_dict)
-        elif json_type.get('properties', None):
+        elif json_type.get('properties'):
             return SchemaObject(classname, prepared_dict)
 
-    elif json_type.get('type', None) == 'string':
+    elif json_type.get('type') == 'string':
         # if enum is numerical
         if type(json_type['enum'][0]) == int:
             return SchemaEnumInitialized(classname, prepared_dict)
         else:
             return SchemaEnum(classname, prepared_dict)
 
-    elif json_type.get('type', None) == 'integer':
+    elif json_type.get('type') == 'integer':
         return SchemaEnumInitialized(classname, prepared_dict)
 
-    elif json_type.get('type', None) == 'boolean':
+    elif json_type.get('type') == 'boolean':
         return SchemaBoolean(classname, prepared_dict)
 
-    elif json_type.get('type', None) is None:
+    elif json_type.get('type') is None:
         return SchemaUndefined(classname, prepared_dict)
