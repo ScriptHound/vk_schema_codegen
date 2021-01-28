@@ -1,5 +1,6 @@
 import logging
-from os import path, mkdir, getcwd
+
+from utils.os_utils import create_results_dir
 from utils.strings_util import (
     get_json_dict,
     snake_case_to_camel_case,
@@ -11,17 +12,10 @@ from .models.titles import Imports, UpdateForwardRefs
 logging.basicConfig(level=logging.INFO)
 
 
-def create_results_dir(dir_name: str) -> None:
-    try:
-        mkdir(path.normpath(path.join(getcwd(), 'results')))
-    except FileExistsError:
-        logging.info(f'{dir_name} dir already exists')
-
-
 def write_translated_json(prepared_dict: dict, imports: dict) -> None:
     create_results_dir('results')
 
-    with open('results/codegen.py', 'a') as pyfile:
+    with open('results/codegen.py', 'w') as pyfile:
         pyfile.write(str(Imports(imports)))
 
         for classname in prepared_dict.keys():
