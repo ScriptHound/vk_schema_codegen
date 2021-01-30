@@ -13,7 +13,7 @@ def parse_file(filepath: str) -> None:
         json_dict = json.load(f)
         filenames = categorize_methods_as_files(json_dict, files_dir)
 
-    for filename in filenames:
+    for filename in filenames.keys():
         with open(files_dir + "/" + filename + '.py', 'w'):
             pass
 
@@ -23,9 +23,12 @@ def create_parsed_files_dir(dir_name: str) -> None:
     return dir_name
 
 
-def categorize_methods_as_files(json_dict: dict, files_dir: str) -> set:
+def categorize_methods_as_files(json_dict: dict, files_dir: str) -> dict:
     filenames = set()
     for method_dict in json_dict['methods']:
         method_name = method_dict['name'].split('.')[0]
         filenames.add(method_name)
-    return filenames
+
+    classified_dict = {name: {} for name in filenames}
+
+    return classified_dict

@@ -14,7 +14,7 @@ class Imports(AbstractTitle):
     def __str__(self):
         import_str = ""
         for k, v in self.params.items():
-            if v is None:
+            if v == 'None':
                 import_str += f'import {str(k)}\n'
             else:
                 modules = ', '.join(v)
