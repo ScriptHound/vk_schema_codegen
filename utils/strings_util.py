@@ -2,7 +2,7 @@ import json
 import re
 
 
-def get_type_from_reference(str_ref):
+def get_type_from_reference(str_ref) -> str:
     pattern = r'.*/(.*)'
     ref_type = re.search(pattern, str_ref).group(1)
     return snake_case_to_camel_case(ref_type)
@@ -31,21 +31,16 @@ def get_json_dict(path: str) -> dict:
 
 
 @output_switch_decorator
-def snake_case_to_camel_case(string_list: list) -> list:
+def snake_case_to_camel_case(string_list: list) -> dict:
     words_list: list = []
-    pattern: re.Pattern = re.compile(r'(_.)')
     for word in string_list:
-        chars = re.findall(pattern, word)
-        for ch in chars:
-            word = word.replace(ch, ch[-1].upper())
+        init, *temp = word.split('_')
+        word = ''.join([init.lower(), *map(str.title, temp)])
         word = word.replace(word[0], word[0].upper(), 1)
 
         words_list.append(word)
     return dict(zip(string_list, words_list))
 
 
-def shift_json_dict_names(plain_data: str, classnames: str) -> None:
-    prepared_dict: dict = {}
-    for k, v in classnames.items():
-        prepared_dict[v] = plain_data[k]
-    return prepared_dict
+def shift_json_dict_names(plain_data: str, classnames: str) -> dict:
+    return {v: plain_data[k] for k, v in classnames.items()}

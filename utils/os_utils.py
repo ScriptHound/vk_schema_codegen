@@ -1,8 +1,9 @@
-from os import mkdir, path, getcwd
+from os import DirEntry, mkdir
+from pathlib import Path
 import logging
 logging.basicConfig(level=logging.INFO)
 
 
 def create_results_dir(dir_name: str) -> None:
-    if not path.exists(path.normpath(path.join(getcwd(), dir_name))):
-        mkdir(path.normpath(path.join(getcwd(), dir_name)))
+    if not Path(dir_name).exists():
+        mkdir(str(Path(dir_name)))
