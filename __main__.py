@@ -9,5 +9,5 @@ methods_path: str = CONFIG['schema_methods_path']
 objects_imports: dict = CONFIG['object_models_imports']
 
 if __name__ == "__main__":
-    objects_parser.main.parse_file(objects_path, objects_imports)
+    # objects_parser.main.parse_file(objects_path, objects_imports)
     methods_parser.main.parse_file(methods_path)

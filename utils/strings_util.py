@@ -42,5 +42,18 @@ def snake_case_to_camel_case(string_list: list) -> dict:
     return dict(zip(string_list, words_list))
 
 
+def camel_case_to_snake_case(string: str) -> dict:
+    return \
+        ''.join(
+            "_"+symbol.lower()
+            if symbol.isupper() else symbol
+            for symbol in list(string)
+        )
+    
+
+
+
 def shift_json_dict_names(plain_data: str, classnames: str) -> dict:
     return {v: plain_data[k] for k, v in classnames.items()}
+
+

@@ -1,7 +1,6 @@
 flake8==3.8.4
 importlib-metadata==3.4.0
 mccabe==0.6.1
-pkg-resources==0.0.0
 pycodestyle==2.6.0
 pyflakes==2.2.0
 PyYAML==5.3.1
