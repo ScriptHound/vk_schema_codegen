@@ -1,0 +1,4 @@
+
+
+class SearchPodcastResponse(BaseResponse):
+	pass

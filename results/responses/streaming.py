@@ -1,0 +1,4 @@
+
+
+class GetServerUrlResponse(BaseResponse):
+	pass

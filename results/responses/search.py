@@ -1,0 +1,4 @@
+
+
+class GetHintsResponse(BaseResponse):
+	pass

@@ -1,0 +1,4 @@
+
+
+class GetResponse(BaseResponse):
+	pass

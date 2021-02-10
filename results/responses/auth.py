@@ -1,0 +1,4 @@
+
+
+class RestoreResponse(BaseResponse):
+	pass
