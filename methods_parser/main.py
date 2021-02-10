@@ -1,6 +1,7 @@
 import logging
 import json
-from utils.os_utils import create_results_dir
+from utils.strings_util import categorize_methods_as_files
+from utils.os_utils import create_results_dir, create_python_files
 
 logging.basicConfig(level=logging.INFO)
 
@@ -11,24 +12,10 @@ def parse_file(filepath: str) -> None:
 
     with open(filepath, 'r') as f:
         json_dict = json.load(f)
-        filenames = categorize_methods_as_files(json_dict, files_dir)
-
-    for filename in filenames.keys():
-        with open(files_dir + "/" + filename + '.py', 'w'):
-            pass
+        filenames = categorize_methods_as_files(json_dict)
+        create_python_files(files_dir, list(filenames.keys()))
 
 
 def create_parsed_files_dir(dir_name: str) -> None:
     create_results_dir(dir_name)
     return dir_name
-
-
-def categorize_methods_as_files(json_dict: dict, files_dir: str) -> dict:
-    filenames = set()
-    for method_dict in json_dict['methods']:
-        method_name = method_dict['name'].split('.')[0]
-        filenames.add(method_name)
-
-    classified_dict = {name: {} for name in filenames}
-
-    return classified_dict

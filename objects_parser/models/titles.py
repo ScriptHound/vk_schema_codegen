@@ -2,7 +2,8 @@ import abc
 
 
 class AbstractTitle(abc.ABC):
-    def __init__(self, params={}):
+    def __init__(self, params=None):
+        params = {}
         self.params = params
 
     @abc.abstractmethod
