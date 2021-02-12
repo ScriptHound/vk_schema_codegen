@@ -1,24 +1,24 @@
 
 
 class CreateResponse(BaseResponse):
-	pass
-
+	owner_id = None
+	card_id = None
 
 class DeleteResponse(BaseResponse):
-	pass
-
+	owner_id = None
+	card_id = None
+	error = None
 
 class EditResponse(BaseResponse):
-	pass
-
+	owner_id = None
+	card_id = None
 
 class GetByIdResponse(BaseResponse):
-	pass
-
+	
 
 class GetUploadURLResponse(BaseResponse):
-	pass
-
+	
 
 class GetResponse(BaseResponse):
-	pass
+	count = None
+	items = None

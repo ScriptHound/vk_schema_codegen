@@ -1,4 +1,5 @@
 
 
 class SearchPodcastResponse(BaseResponse):
-	pass
+	podcasts = None
+	results_total = None

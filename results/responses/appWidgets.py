@@ -1,28 +1,22 @@
 
 
 class GetAppImageUploadServerResponse(BaseResponse):
-	pass
-
+	upload_url = None
 
 class GetAppImagesResponse(BaseResponse):
-	pass
-
+	
 
 class GetGroupImageUploadServerResponse(BaseResponse):
-	pass
-
+	upload_url = None
 
 class GetGroupImagesResponse(BaseResponse):
-	pass
-
+	
 
 class GetImagesByIdResponse(BaseResponse):
-	pass
-
+	
 
 class SaveAppImageResponse(BaseResponse):
-	pass
-
+	
 
 class SaveGroupImageResponse(BaseResponse):
-	pass
+	

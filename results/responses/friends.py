@@ -1,80 +1,75 @@
 
 
 class AddListResponse(BaseResponse):
-	pass
-
+	list_id = None
 
 class AddResponse(BaseResponse):
-	pass
-
+	
 
 class AreFriendsExtendedResponse(BaseResponse):
-	pass
-
+	
 
 class AreFriendsResponse(BaseResponse):
-	pass
-
+	
 
 class DeleteResponse(BaseResponse):
-	pass
-
+	success = None
+	friend_deleted = None
+	out_request_deleted = None
+	in_request_deleted = None
+	suggestion_deleted = None
 
 class GetAppUsersResponse(BaseResponse):
-	pass
-
+	
 
 class GetByPhonesResponse(BaseResponse):
-	pass
-
+	
 
 class GetListsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetMutualResponse(BaseResponse):
-	pass
-
+	
 
 class GetMutualTargetUidsResponse(BaseResponse):
-	pass
-
+	
 
 class GetOnlineOnlineMobileResponse(BaseResponse):
-	pass
-
+	online = None
+	online_mobile = None
 
 class GetOnlineResponse(BaseResponse):
-	pass
-
+	
 
 class GetRecentResponse(BaseResponse):
-	pass
-
+	
 
 class GetRequestsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetRequestsNeedMutualResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetRequestsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	count_unread = None
 
 class GetSuggestionsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetFieldsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class SearchResponse(BaseResponse):
-	pass
+	count = None
+	items = None

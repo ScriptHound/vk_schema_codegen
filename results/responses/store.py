@@ -1,12 +1,13 @@
 
 
 class GetFavoriteStickersResponse(BaseResponse):
-	pass
-
+	
 
 class GetProductsResponse(BaseResponse):
-	pass
-
+	
 
 class GetStickersKeywordsResponse(BaseResponse):
-	pass
+	count = None
+	dictionary = None
+	chunks_count = None
+	chunks_hash = None

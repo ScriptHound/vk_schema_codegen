@@ -1,4 +1,5 @@
 
 
 class GetResponse(BaseResponse):
-	pass
+	count = None
+	items = None

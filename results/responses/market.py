@@ -1,84 +1,79 @@
 
 
 class AddAlbumResponse(BaseResponse):
-	pass
-
+	market_album_id = None
 
 class AddResponse(BaseResponse):
-	pass
-
+	market_item_id = None
 
 class CreateCommentResponse(BaseResponse):
-	pass
-
+	
 
 class DeleteCommentResponse(BaseResponse):
-	pass
-
+	
 
 class GetAlbumByIdResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetAlbumsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetByIdExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetByIdResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetCategoriesNewResponse(BaseResponse):
-	pass
-
+	items = None
 
 class GetCategoriesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetCommentsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetGroupOrdersResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetOrderByIdResponse(BaseResponse):
-	pass
-
+	order = None
 
 class GetOrderItemsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetOrdersExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	groups = None
 
 class GetOrdersResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class RestoreCommentResponse(BaseResponse):
-	pass
-
+	
 
 class SearchExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class SearchResponse(BaseResponse):
-	pass
+	count = None
+	items = None

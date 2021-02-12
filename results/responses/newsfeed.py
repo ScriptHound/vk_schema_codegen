@@ -1,52 +1,65 @@
 
 
 class GetBannedExtendedResponse(BaseResponse):
-	pass
-
+	groups = None
+	profiles = None
 
 class GetBannedResponse(BaseResponse):
-	pass
-
+	groups = None
+	members = None
 
 class GetCommentsResponse(BaseResponse):
-	pass
-
+	items = None
+	profiles = None
+	groups = None
+	next_from = None
 
 class GetListsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetListsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetMentionsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetRecommendedResponse(BaseResponse):
-	pass
-
+	items = None
+	profiles = None
+	groups = None
+	next_from = None
 
 class GetSuggestedSourcesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetResponse(BaseResponse):
-	pass
-
+	items = None
+	profiles = None
+	groups = None
+	next_from = None
 
 class IgnoreItemResponse(BaseResponse):
-	pass
-
+	status = None
 
 class SaveListResponse(BaseResponse):
-	pass
-
+	
 
 class SearchExtendedResponse(BaseResponse):
-	pass
-
+	items = None
+	profiles = None
+	groups = None
+	suggested_queries = None
+	next_from = None
+	count = None
+	total_count = None
 
 class SearchResponse(BaseResponse):
-	pass
+	items = None
+	suggested_queries = None
+	next_from = None
+	count = None
+	total_count = None

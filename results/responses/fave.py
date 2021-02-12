@@ -1,20 +1,22 @@
 
 
 class AddTagResponse(BaseResponse):
-	pass
-
+	
 
 class GetPagesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetTagsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetResponse(BaseResponse):
-	pass
+	count = None
+	items = None

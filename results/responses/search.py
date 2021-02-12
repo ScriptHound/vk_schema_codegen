@@ -1,4 +1,6 @@
 
 
 class GetHintsResponse(BaseResponse):
-	pass
+	count = None
+	items = None
+	suggested_queries = None

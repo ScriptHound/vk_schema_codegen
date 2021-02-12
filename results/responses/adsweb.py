@@ -1,24 +1,23 @@
 
 
 class GetAdCategoriesResponse(BaseResponse):
-	pass
-
+	categories = None
 
 class GetAdUnitCodeResponse(BaseResponse):
-	pass
-
+	html = None
 
 class GetAdUnitsResponse(BaseResponse):
-	pass
-
+	count = None
+	ad_units = None
 
 class GetFraudHistoryResponse(BaseResponse):
-	pass
-
+	count = None
+	entries = None
 
 class GetSitesResponse(BaseResponse):
-	pass
-
+	count = None
+	sites = None
 
 class GetStatisticsResponse(BaseResponse):
-	pass
+	next_page_id = None
+	items = None

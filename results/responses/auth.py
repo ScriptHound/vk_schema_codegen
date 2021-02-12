@@ -1,4 +1,5 @@
 
 
 class RestoreResponse(BaseResponse):
-	pass
+	success = None
+	sid = None

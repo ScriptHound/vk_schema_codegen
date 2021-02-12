@@ -4,6 +4,15 @@ from .response_utils import (
 )
 
 
+class ResponseModelBody:
+    def __init__(self, **attributes) -> None:
+        self.attributes = attributes
+
+    def __repr__(self):
+        return '\n\t'.join([f'{name} = {value}'
+                           for name, value in self.attributes.items()])
+
+
 class ResponseModel:
     def __init__(self,
                  classname: str,
@@ -14,7 +23,9 @@ class ResponseModel:
         self.superclass = superclass
 
     def __repr__(self):
-        return f'\n\nclass {self.classname}({self.superclass}):\n\tpass\n'
+        header = f'\n\nclass {self.classname}({self.superclass}):\n\t'
+        body = str(ResponseModelBody(**self.variables))
+        return header + body
 
 
 def parse_file(schema_path: str, **imports) -> None:
@@ -30,4 +41,7 @@ def parse_file(schema_path: str, **imports) -> None:
     for filename, schema_body in responses_by_files.items():
         with open(f'results/responses/{filename}.py', 'w') as file:
             for classname, body in schema_body.items():
-                file.write(str(ResponseModel(classname)))
+                response = body['properties']['response']
+                # TODO .get('properties', {}).keys() is temporary
+                properties = {name: None for name in response.get('properties', {}).keys()}
+                file.write(str(ResponseModel(classname, **properties)))

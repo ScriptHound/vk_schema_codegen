@@ -1,52 +1,63 @@
 
 
 class GetBannedExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetBannedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetByIdExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetByIdResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetPhotoUploadServerResponse(BaseResponse):
-	pass
-
+	upload_url = None
+	user_ids = None
 
 class GetStatsResponse(BaseResponse):
-	pass
-
+	
 
 class GetVideoUploadServerResponse(BaseResponse):
-	pass
-
+	upload_url = None
+	user_ids = None
 
 class GetViewersExtendedV5115Response(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	hidden_reason = None
 
 class GetViewersExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetV5113Response(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
+	need_upload_screen = None
 
 class GetResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	promo_data = None
+	profiles = None
+	groups = None
+	need_upload_screen = None
 
 class SaveResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class UploadResponse(BaseResponse):
-	pass
+	upload_result = None

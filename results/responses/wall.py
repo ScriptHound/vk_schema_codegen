@@ -1,68 +1,82 @@
 
 
 class CreateCommentResponse(BaseResponse):
-	pass
-
+	comment_id = None
 
 class EditResponse(BaseResponse):
-	pass
-
+	post_id = None
 
 class GetByIdExtendedResponse(BaseResponse):
-	pass
-
+	items = None
+	profiles = None
+	groups = None
 
 class GetByIdLegacyResponse(BaseResponse):
-	pass
-
+	
 
 class GetByIdResponse(BaseResponse):
-	pass
-
+	items = None
 
 class GetCommentExtendedResponse(BaseResponse):
-	pass
-
+	items = None
+	profiles = None
+	groups = None
 
 class GetCommentResponse(BaseResponse):
-	pass
-
+	items = None
 
 class GetCommentsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	show_reply_button = None
+	can_post = None
+	groups_can_post = None
+	current_level_count = None
+	profiles = None
+	groups = None
 
 class GetCommentsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	can_post = None
+	groups_can_post = None
+	current_level_count = None
 
 class GetRepostsResponse(BaseResponse):
-	pass
-
+	items = None
+	profiles = None
+	groups = None
 
 class GetExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class PostAdsStealthResponse(BaseResponse):
-	pass
-
+	post_id = None
 
 class PostResponse(BaseResponse):
-	pass
-
+	post_id = None
 
 class RepostResponse(BaseResponse):
-	pass
-
+	success = None
+	post_id = None
+	reposts_count = None
+	wall_repost_count = None
+	mail_repost_count = None
+	likes_count = None
 
 class SearchExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class SearchResponse(BaseResponse):
-	pass
+	count = None
+	items = None

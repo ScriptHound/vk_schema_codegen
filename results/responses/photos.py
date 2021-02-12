@@ -1,160 +1,163 @@
 
 
 class CopyResponse(BaseResponse):
-	pass
-
+	
 
 class CreateAlbumResponse(BaseResponse):
-	pass
-
+	
 
 class CreateCommentResponse(BaseResponse):
-	pass
-
+	
 
 class DeleteCommentResponse(BaseResponse):
-	pass
-
+	
 
 class GetAlbumsCountResponse(BaseResponse):
-	pass
-
+	
 
 class GetAlbumsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetAllCommentsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetAllExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	more = None
 
 class GetAllResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	more = None
 
 class GetByIdExtendedResponse(BaseResponse):
-	pass
-
+	
 
 class GetByIdResponse(BaseResponse):
-	pass
-
+	
 
 class GetCommentsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	real_offset = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetCommentsResponse(BaseResponse):
-	pass
-
+	count = None
+	real_offset = None
+	items = None
 
 class GetMarketUploadServerResponse(BaseResponse):
-	pass
-
+	
 
 class GetMessagesUploadServerResponse(BaseResponse):
-	pass
-
+	
 
 class GetNewTagsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetTagsResponse(BaseResponse):
-	pass
-
+	
 
 class GetUploadServerResponse(BaseResponse):
-	pass
-
+	
 
 class GetUserPhotosExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetUserPhotosResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetWallUploadServerResponse(BaseResponse):
-	pass
-
+	
 
 class GetExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class MarketAlbumUploadResponse(BaseResponse):
-	pass
-
+	gid = None
+	hash = None
+	photo = None
+	server = None
 
 class MarketUploadResponse(BaseResponse):
-	pass
-
+	crop_data = None
+	crop_hash = None
+	group_id = None
+	hash = None
+	photo = None
+	server = None
 
 class MessageUploadResponse(BaseResponse):
-	pass
-
+	hash = None
+	photo = None
+	server = None
 
 class OwnerCoverUploadResponse(BaseResponse):
-	pass
-
+	hash = None
+	photo = None
 
 class OwnerUploadResponse(BaseResponse):
-	pass
-
+	hash = None
+	photo = None
+	server = None
 
 class PhotoUploadResponse(BaseResponse):
-	pass
-
+	aid = None
+	hash = None
+	photo = None
+	photos_list = None
+	server = None
 
 class PutTagResponse(BaseResponse):
-	pass
-
+	
 
 class RestoreCommentResponse(BaseResponse):
-	pass
-
+	
 
 class SaveMarketAlbumPhotoResponse(BaseResponse):
-	pass
-
+	
 
 class SaveMarketPhotoResponse(BaseResponse):
-	pass
-
+	
 
 class SaveMessagesPhotoResponse(BaseResponse):
-	pass
-
+	
 
 class SaveOwnerCoverPhotoResponse(BaseResponse):
-	pass
-
+	
 
 class SaveOwnerPhotoResponse(BaseResponse):
-	pass
-
+	photo_hash = None
+	photo_src = None
+	photo_src_big = None
+	photo_src_small = None
+	saved = None
+	post_id = None
 
 class SaveWallPhotoResponse(BaseResponse):
-	pass
-
+	
 
 class SaveResponse(BaseResponse):
-	pass
-
+	
 
 class SearchResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class WallUploadResponse(BaseResponse):
-	pass
+	hash = None
+	photo = None
+	server = None

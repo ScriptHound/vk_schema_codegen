@@ -1,20 +1,19 @@
 
 
 class AddResponse(BaseResponse):
-	pass
-
+	likes = None
 
 class DeleteResponse(BaseResponse):
-	pass
-
+	likes = None
 
 class GetListExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetListResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class IsLikedResponse(BaseResponse):
-	pass
+	liked = None
+	copied = None

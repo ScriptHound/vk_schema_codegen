@@ -1,48 +1,45 @@
 
 
 class GetChairsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetCitiesByIdResponse(BaseResponse):
-	pass
-
+	
 
 class GetCitiesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetCountriesByIdResponse(BaseResponse):
-	pass
-
+	
 
 class GetCountriesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetFacultiesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetMetroStationsByIdResponse(BaseResponse):
-	pass
-
+	
 
 class GetMetroStationsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetRegionsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetSchoolClassesResponse(BaseResponse):
-	pass
-
+	
 
 class GetSchoolsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetUniversitiesResponse(BaseResponse):
-	pass
+	count = None
+	items = None

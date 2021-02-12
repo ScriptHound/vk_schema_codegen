@@ -1,36 +1,34 @@
 
 
 class ChangePasswordResponse(BaseResponse):
-	pass
-
+	token = None
+	secret = None
 
 class GetActiveOffersResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetAppPermissionsResponse(BaseResponse):
-	pass
-
+	
 
 class GetBannedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetCountersResponse(BaseResponse):
-	pass
-
+	
 
 class GetInfoResponse(BaseResponse):
-	pass
-
+	
 
 class GetProfileInfoResponse(BaseResponse):
-	pass
-
+	
 
 class GetPushSettingsResponse(BaseResponse):
-	pass
-
+	
 
 class SaveProfileInfoResponse(BaseResponse):
-	pass
+	changed = None
+	name_request = None

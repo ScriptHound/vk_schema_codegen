@@ -1,24 +1,24 @@
 
 
 class GetFollowersFieldsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetFollowersResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetSubscriptionsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetSubscriptionsResponse(BaseResponse):
-	pass
-
+	users = None
+	groups = None
 
 class GetResponse(BaseResponse):
-	pass
-
+	
 
 class SearchResponse(BaseResponse):
-	pass
+	count = None
+	items = None

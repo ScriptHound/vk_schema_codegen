@@ -1,32 +1,31 @@
 
 
 class AddResponse(BaseResponse):
-	pass
-
+	
 
 class DocUploadResponse(BaseResponse):
-	pass
-
+	file = None
 
 class GetByIdResponse(BaseResponse):
-	pass
-
+	
 
 class GetTypesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetUploadServer(BaseResponse):
-	pass
-
+	
 
 class GetResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class SaveResponse(BaseResponse):
-	pass
-
+	type = None
+	audio_message = None
+	doc = None
+	graffiti = None
 
 class SearchResponse(BaseResponse):
-	pass
+	count = None
+	items = None

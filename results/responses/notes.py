@@ -1,20 +1,18 @@
 
 
 class AddResponse(BaseResponse):
-	pass
-
+	
 
 class CreateCommentResponse(BaseResponse):
-	pass
-
+	
 
 class GetByIdResponse(BaseResponse):
-	pass
-
+	
 
 class GetCommentsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetResponse(BaseResponse):
-	pass
+	count = None
+	items = None

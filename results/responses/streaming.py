@@ -1,4 +1,5 @@
 
 
 class GetServerUrlResponse(BaseResponse):
-	pass
+	endpoint = None
+	key = None

@@ -1,8 +1,10 @@
 
 
 class GetSubscriptionResponse(BaseResponse):
-	pass
-
+	
 
 class GetSubscriptionsResponse(BaseResponse):
-	pass
+	subscriptions = None
+	count = None
+	profiles = None
+	groups = None

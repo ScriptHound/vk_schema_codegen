@@ -1,8 +1,9 @@
 
 
 class GetCommentsResponse(BaseResponse):
-	pass
-
+	count = None
+	posts = None
 
 class GetPagesResponse(BaseResponse):
-	pass
+	count = None
+	pages = None

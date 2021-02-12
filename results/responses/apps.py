@@ -1,40 +1,41 @@
 
 
 class GetCatalogResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
 
 class GetFriendsListResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetLeaderboardExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
 
 class GetLeaderboardResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetMiniAppPoliciesResponse(BaseResponse):
-	pass
-
+	privacy_policy = None
+	terms = None
 
 class GetScopesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetScoreResponse(BaseResponse):
-	pass
-
+	
 
 class GetResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class ImageUploadResponse(BaseResponse):
-	pass
-
+	hash = None
+	image = None
 
 class SendRequestResponse(BaseResponse):
-	pass
+	

@@ -1,4 +1,4 @@
 
 
 class PaidStatusResponse(BaseResponse):
-	pass
+	is_paid = None

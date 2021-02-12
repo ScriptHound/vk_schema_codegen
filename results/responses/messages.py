@@ -1,152 +1,167 @@
 
 
 class CreateChatResponse(BaseResponse):
-	pass
-
+	
 
 class DeleteChatPhotoResponse(BaseResponse):
-	pass
-
+	message_id = None
+	chat = None
 
 class DeleteConversationResponse(BaseResponse):
-	pass
-
+	last_deleted_id = None
 
 class DeleteResponse(BaseResponse):
-	pass
-
+	
 
 class EditResponse(BaseResponse):
-	pass
-
+	
 
 class GetByConversationMessageIdResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetByIdExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetByIdResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetChatPreviewResponse(BaseResponse):
-	pass
-
+	preview = None
+	profiles = None
 
 class GetChatChatIdsFieldsResponse(BaseResponse):
-	pass
-
+	
 
 class GetChatChatIdsResponse(BaseResponse):
-	pass
-
+	
 
 class GetChatFieldsResponse(BaseResponse):
-	pass
-
+	
 
 class GetChatResponse(BaseResponse):
-	pass
-
+	
 
 class GetConversationMembersResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	chat_restrictions = None
+	profiles = None
+	groups = None
 
 class GetConversationsByIdExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetConversationsByIdResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetConversationsResponse(BaseResponse):
-	pass
-
+	count = None
+	unread_count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetHistoryAttachmentsResponse(BaseResponse):
-	pass
-
+	items = None
+	next_from = None
 
 class GetHistoryExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
+	conversations = None
 
 class GetHistoryResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetImportantMessagesExtendedResponse(BaseResponse):
-	pass
-
+	messages = None
+	profiles = None
+	groups = None
+	conversations = None
 
 class GetImportantMessagesResponse(BaseResponse):
-	pass
-
+	messages = None
+	profiles = None
+	groups = None
+	conversations = None
 
 class GetIntentUsersResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
 
 class GetInviteLinkResponse(BaseResponse):
-	pass
-
+	link = None
 
 class GetLastActivityResponse(BaseResponse):
-	pass
-
+	
 
 class GetLongPollHistoryResponse(BaseResponse):
-	pass
-
+	history = None
+	messages = None
+	credentials = None
+	profiles = None
+	groups = None
+	chats = None
+	new_pts = None
+	from_pts = None
+	more = None
+	conversations = None
 
 class GetLongPollServerResponse(BaseResponse):
-	pass
-
+	
 
 class IsMessagesFromGroupAllowedResponse(BaseResponse):
-	pass
-
+	is_allowed = None
 
 class JoinChatByInviteLinkResponse(BaseResponse):
-	pass
-
+	chat_id = None
 
 class MarkAsImportantResponse(BaseResponse):
-	pass
-
+	
 
 class PinResponse(BaseResponse):
-	pass
-
+	
 
 class SearchConversationsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class SearchConversationsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class SearchExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
+	conversations = None
 
 class SearchResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class SendResponse(BaseResponse):
-	pass
-
+	
 
 class SendUserIdsResponse(BaseResponse):
-	pass
-
+	
 
 class SetChatPhotoResponse(BaseResponse):
-	pass
+	message_id = None
+	chat = None

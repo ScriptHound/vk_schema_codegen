@@ -1,24 +1,32 @@
 
 
 class AddTopicResponse(BaseResponse):
-	pass
-
+	
 
 class CreateCommentResponse(BaseResponse):
-	pass
-
+	
 
 class GetCommentsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	poll = None
+	profiles = None
+	groups = None
 
 class GetCommentsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	poll = None
 
 class GetTopicsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	default_order = None
+	can_add_topics = None
+	profiles = None
 
 class GetTopicsResponse(BaseResponse):
-	pass
+	count = None
+	items = None
+	default_order = None
+	can_add_topics = None

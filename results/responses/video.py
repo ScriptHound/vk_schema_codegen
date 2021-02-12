@@ -1,64 +1,65 @@
 
 
 class AddAlbumResponse(BaseResponse):
-	pass
-
+	album_id = None
 
 class CreateCommentResponse(BaseResponse):
-	pass
-
+	
 
 class GetAlbumByIdResponse(BaseResponse):
-	pass
-
+	
 
 class GetAlbumsByVideoExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetAlbumsByVideoResponse(BaseResponse):
-	pass
-
+	
 
 class GetAlbumsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetAlbumsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetCommentsExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetCommentsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class RestoreCommentResponse(BaseResponse):
-	pass
-
+	
 
 class SaveResponse(BaseResponse):
-	pass
-
+	
 
 class SearchExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class SearchResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class UploadResponse(BaseResponse):
-	pass
+	size = None
+	video_id = None

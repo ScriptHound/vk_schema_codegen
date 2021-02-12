@@ -1,140 +1,171 @@
 
 
 class AddAddressResponse(BaseResponse):
-	pass
-
+	
 
 class AddCallbackServerResponse(BaseResponse):
-	pass
-
+	server_id = None
 
 class AddLinkResponse(BaseResponse):
-	pass
-
+	
 
 class CreateResponse(BaseResponse):
-	pass
-
+	
 
 class EditAddressResponse(BaseResponse):
-	pass
-
+	
 
 class GetAddressesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetBannedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetByIdLegacyResponse(BaseResponse):
-	pass
-
+	
 
 class GetByIdResponse(BaseResponse):
-	pass
-
+	groups = None
+	profiles = None
 
 class GetCallbackConfirmationCodeResponse(BaseResponse):
-	pass
-
+	code = None
 
 class GetCallbackServersResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetCallbackSettingsResponse(BaseResponse):
-	pass
-
+	
 
 class GetCatalogInfoExtendedResponse(BaseResponse):
-	pass
-
+	enabled = None
+	categories = None
 
 class GetCatalogInfoResponse(BaseResponse):
-	pass
-
+	enabled = None
+	categories = None
 
 class GetCatalogResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetInvitedUsersResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetInvitesExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
+	profiles = None
+	groups = None
 
 class GetInvitesResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetLongPollServerResponse(BaseResponse):
-	pass
-
+	
 
 class GetLongPollSettingsResponse(BaseResponse):
-	pass
-
+	
 
 class GetMembersFieldsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetMembersFilterResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetMembersResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetRequestsFieldsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetRequestsResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetSettingsResponse(BaseResponse):
-	pass
-
+	access = None
+	address = None
+	audio = None
+	articles = None
+	recognize_photo = None
+	city_id = None
+	contacts = None
+	links = None
+	sections_list = None
+	main_section = None
+	secondary_section = None
+	age_limits = None
+	country_id = None
+	description = None
+	docs = None
+	events = None
+	obscene_filter = None
+	obscene_stopwords = None
+	obscene_words = None
+	event_group_id = None
+	photos = None
+	public_category = None
+	public_category_list = None
+	public_date = None
+	public_date_label = None
+	public_subcategory = None
+	rss = None
+	start_date = None
+	finish_date = None
+	subject = None
+	subject_list = None
+	suggested_privacy = None
+	title = None
+	topics = None
+	twitter = None
+	video = None
+	wall = None
+	website = None
+	phone = None
+	email = None
+	wiki = None
 
 class GetTagListResponse(BaseResponse):
-	pass
-
+	
 
 class GetTokenPermissionsResponse(BaseResponse):
-	pass
-
+	mask = None
+	permissions = None
 
 class GetExtendedResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class GetResponse(BaseResponse):
-	pass
-
+	count = None
+	items = None
 
 class IsMemberExtendedResponse(BaseResponse):
-	pass
-
+	member = None
+	invitation = None
+	can_invite = None
+	can_recall = None
+	request = None
 
 class IsMemberResponse(BaseResponse):
-	pass
-
+	
 
 class IsMemberUserIdsExtendedResponse(BaseResponse):
-	pass
-
+	
 
 class IsMemberUserIdsResponse(BaseResponse):
-	pass
-
+	
 
 class SearchResponse(BaseResponse):
-	pass
+	count = None
+	items = None
