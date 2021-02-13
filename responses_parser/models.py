@@ -1,6 +1,22 @@
+from objects_parser.models.models import Annotation
+
+
 class ResponseModelBody:
-    def __init__(self, **attributes) -> None:
-        self.attributes = attributes
+    def __init__(self, annotations=None, **attributes) -> None:
+        if annotations:
+            annotations = [Annotation(anno) for anno in annotations]
+        else:
+            annotations = ['' for _ in attributes]
+
+        self.annotated_names = [
+            name + str(annotation)
+            for name, annotation in zip(attributes.keys(), annotations)
+        ]
+        self.attributes = {name: attributes[orig_name]
+                           for name, orig_name in zip(
+                                                     self.annotated_names,
+                                                     attributes.keys()
+                          )}
 
     def __repr__(self):
         return '\n\t'.join([f'{name} = {value}'
@@ -10,15 +26,17 @@ class ResponseModelBody:
 class ResponseModel:
     def __init__(self,
                  classname: str,
+                 annotations=None,
                  superclass="BaseResponse",
                  **variables):
         self.variables = variables
         self.classname = classname
         self.superclass = superclass
+        self.annotations = annotations
 
     def __repr__(self):
         header = f'\n\n\nclass {self.classname}({self.superclass}):\n\t'
-        body = str(ResponseModelBody(**self.variables))
+        body = str(ResponseModelBody(self.annotations, **self.variables))
         return header + body
 
 
@@ -45,11 +63,17 @@ def jsonschema_object_factory(classname: str, json_properties: dict) -> 'Model':
     elif schema_type == 'string':
         return SingleTypeModel(classname, 'string')
     else:
-        # HARDCODED SEEMS LIKE THIS IS UNIQUE CASE
+        # HARDCODED THIS IS UNIQUE CASE
         if json_properties['response'].get('patternProperties'):
             return SingleTypeModel(classname, 'typing.Dict[str, int]')
 
         properties = json_properties['response']['properties']
-        properties = {name: None for name in properties.keys()}
-        json_properties = {name: None for name in properties}
-        return ResponseModel(classname, **json_properties)
+        names = {name: None for name in properties.keys()}
+        json_properties = {name: None for name in names}
+        types = []
+        try:
+            types = [value['type'] for _, value in properties.items()]
+        except KeyError:
+            # TODO HANDLE MISSED KEYS
+            pass
+        return ResponseModel(classname, types, **json_properties)

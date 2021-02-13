@@ -1,166 +1,187 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class CreateCommentResponse(BaseResponse):
-	response = None
+	response: Optional["CreateCommentResponseModel"] = None
 
 
 class EditResponse(BaseResponse):
-	response = None
+	response: Optional["EditResponseModel"] = None
 
 
 class GetByIdExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdExtendedResponseModel"] = None
 
 
 class GetByIdLegacyResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdLegacyResponseModel"] = None
 
 
 class GetByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdResponseModel"] = None
 
 
 class GetCommentExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentExtendedResponseModel"] = None
 
 
 class GetCommentResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentResponseModel"] = None
 
 
 class GetCommentsExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsExtendedResponseModel"] = None
 
 
 class GetCommentsResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsResponseModel"] = None
 
 
 class GetRepostsResponse(BaseResponse):
-	response = None
+	response: Optional["GetRepostsResponseModel"] = None
 
 
 class GetExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetExtendedResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
 class PostAdsStealthResponse(BaseResponse):
-	response = None
+	response: Optional["PostAdsStealthResponseModel"] = None
 
 
 class PostResponse(BaseResponse):
-	response = None
+	response: Optional["PostResponseModel"] = None
 
 
 class RepostResponse(BaseResponse):
-	response = None
+	response: Optional["RepostResponseModel"] = None
 
 
 class SearchExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["SearchExtendedResponseModel"] = None
 
 
 class SearchResponse(BaseResponse):
-	response = None
+	response: Optional["SearchResponseModel"] = None
 
 
-class CreateCommentResponse(BaseResponse):
-	comment_id = None
+class CreateCommentResponseModel(BaseResponse):
+	comment_id: Optional[int] = None
 
 
-class EditResponse(BaseResponse):
-	post_id = None
+class EditResponseModel(BaseResponse):
+	post_id: Optional[int] = None
 
 
-class GetByIdExtendedResponse(BaseResponse):
-	items = None
-	profiles = None
-	groups = None
+class GetByIdExtendedResponseModel(BaseResponse):
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-GetByIdLegacyResponseModel = array
+GetByIdLegacyResponseModelModel = array
 
 
-class GetByIdResponse(BaseResponse):
-	items = None
+class GetByIdResponseModel(BaseResponse):
+	items: Optional["Array"] = None
 
 
-class GetCommentExtendedResponse(BaseResponse):
-	items = None
-	profiles = None
-	groups = None
+class GetCommentExtendedResponseModel(BaseResponse):
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetCommentResponse(BaseResponse):
-	items = None
+class GetCommentResponseModel(BaseResponse):
+	items: Optional["Array"] = None
 
 
-class GetCommentsExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	show_reply_button = None
-	can_post = None
-	groups_can_post = None
-	current_level_count = None
-	profiles = None
-	groups = None
+class GetCommentsExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	show_reply_button: Optional[bool] = None
+	can_post: Optional[bool] = None
+	groups_can_post: Optional[bool] = None
+	current_level_count: Optional[int] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetCommentsResponse(BaseResponse):
-	count = None
-	items = None
-	can_post = None
-	groups_can_post = None
-	current_level_count = None
+class GetCommentsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	can_post: Optional[bool] = None
+	groups_can_post: Optional[bool] = None
+	current_level_count: Optional[int] = None
 
 
-class GetRepostsResponse(BaseResponse):
-	items = None
-	profiles = None
-	groups = None
+class GetRepostsResponseModel(BaseResponse):
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class GetExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetResponse(BaseResponse):
-	count = None
-	items = None
+class GetResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class PostAdsStealthResponse(BaseResponse):
-	post_id = None
+class PostAdsStealthResponseModel(BaseResponse):
+	post_id: Optional[int] = None
 
 
-class PostResponse(BaseResponse):
-	post_id = None
+class PostResponseModel(BaseResponse):
+	post_id: Optional[int] = None
 
 
-class RepostResponse(BaseResponse):
-	success = None
-	post_id = None
-	reposts_count = None
-	wall_repost_count = None
-	mail_repost_count = None
-	likes_count = None
+class RepostResponseModel(BaseResponse):
+	success: Optional[int] = None
+	post_id: Optional[int] = None
+	reposts_count: Optional[int] = None
+	wall_repost_count: Optional[int] = None
+	mail_repost_count: Optional[int] = None
+	likes_count: Optional[int] = None
 
 
-class SearchExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class SearchExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class SearchResponse(BaseResponse):
-	count = None
-	items = None
+class SearchResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+
+CreateCommentResponse.update_forward_refs()
+EditResponse.update_forward_refs()
+GetByIdExtendedResponse.update_forward_refs()
+GetByIdLegacyResponse.update_forward_refs()
+GetByIdResponse.update_forward_refs()
+GetCommentExtendedResponse.update_forward_refs()
+GetCommentResponse.update_forward_refs()
+GetCommentsExtendedResponse.update_forward_refs()
+GetCommentsResponse.update_forward_refs()
+GetRepostsResponse.update_forward_refs()
+GetExtendedResponse.update_forward_refs()
+GetResponse.update_forward_refs()
+PostAdsStealthResponse.update_forward_refs()
+PostResponse.update_forward_refs()
+RepostResponse.update_forward_refs()
+SearchExtendedResponse.update_forward_refs()
+SearchResponse.update_forward_refs()

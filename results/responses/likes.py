@@ -1,44 +1,53 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class AddResponse(BaseResponse):
-	response = None
+	response: Optional["AddResponseModel"] = None
 
 
 class DeleteResponse(BaseResponse):
-	response = None
+	response: Optional["DeleteResponseModel"] = None
 
 
 class GetListExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetListExtendedResponseModel"] = None
 
 
 class GetListResponse(BaseResponse):
-	response = None
+	response: Optional["GetListResponseModel"] = None
 
 
 class IsLikedResponse(BaseResponse):
-	response = None
+	response: Optional["IsLikedResponseModel"] = None
 
 
-class AddResponse(BaseResponse):
-	likes = None
+class AddResponseModel(BaseResponse):
+	likes: Optional[int] = None
 
 
-class DeleteResponse(BaseResponse):
-	likes = None
+class DeleteResponseModel(BaseResponse):
+	likes: Optional[int] = None
 
 
-class GetListExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetListExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetListResponse(BaseResponse):
-	count = None
-	items = None
+class GetListResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class IsLikedResponse(BaseResponse):
+class IsLikedResponseModel(BaseResponse):
 	liked = None
 	copied = None
+
+AddResponse.update_forward_refs()
+DeleteResponse.update_forward_refs()
+GetListExtendedResponse.update_forward_refs()
+GetListResponse.update_forward_refs()
+IsLikedResponse.update_forward_refs()

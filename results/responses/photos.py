@@ -1,343 +1,387 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class CopyResponse(BaseResponse):
-	response = None
+	response: Optional["CopyResponseModel"] = None
 
 
 class CreateAlbumResponse(BaseResponse):
-	response = None
+	response: Optional["CreateAlbumResponseModel"] = None
 
 
 class CreateCommentResponse(BaseResponse):
-	response = None
+	response: Optional["CreateCommentResponseModel"] = None
 
 
 class DeleteCommentResponse(BaseResponse):
-	response = None
+	response: Optional["DeleteCommentResponseModel"] = None
 
 
 class GetAlbumsCountResponse(BaseResponse):
-	response = None
+	response: Optional["GetAlbumsCountResponseModel"] = None
 
 
 class GetAlbumsResponse(BaseResponse):
-	response = None
+	response: Optional["GetAlbumsResponseModel"] = None
 
 
 class GetAllCommentsResponse(BaseResponse):
-	response = None
+	response: Optional["GetAllCommentsResponseModel"] = None
 
 
 class GetAllExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetAllExtendedResponseModel"] = None
 
 
 class GetAllResponse(BaseResponse):
-	response = None
+	response: Optional["GetAllResponseModel"] = None
 
 
 class GetByIdExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdExtendedResponseModel"] = None
 
 
 class GetByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdResponseModel"] = None
 
 
 class GetCommentsExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsExtendedResponseModel"] = None
 
 
 class GetCommentsResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsResponseModel"] = None
 
 
 class GetMarketUploadServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetMarketUploadServerResponseModel"] = None
 
 
 class GetMessagesUploadServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetMessagesUploadServerResponseModel"] = None
 
 
 class GetNewTagsResponse(BaseResponse):
-	response = None
+	response: Optional["GetNewTagsResponseModel"] = None
 
 
 class GetTagsResponse(BaseResponse):
-	response = None
+	response: Optional["GetTagsResponseModel"] = None
 
 
 class GetUploadServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetUploadServerResponseModel"] = None
 
 
 class GetUserPhotosExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetUserPhotosExtendedResponseModel"] = None
 
 
 class GetUserPhotosResponse(BaseResponse):
-	response = None
+	response: Optional["GetUserPhotosResponseModel"] = None
 
 
 class GetWallUploadServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetWallUploadServerResponseModel"] = None
 
 
 class GetExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetExtendedResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
 class MarketAlbumUploadResponse(BaseResponse):
-	response = None
+	response: Optional["MarketAlbumUploadResponseModel"] = None
 
 
 class MarketUploadResponse(BaseResponse):
-	response = None
+	response: Optional["MarketUploadResponseModel"] = None
 
 
 class MessageUploadResponse(BaseResponse):
-	response = None
+	response: Optional["MessageUploadResponseModel"] = None
 
 
 class OwnerCoverUploadResponse(BaseResponse):
-	response = None
+	response: Optional["OwnerCoverUploadResponseModel"] = None
 
 
 class OwnerUploadResponse(BaseResponse):
-	response = None
+	response: Optional["OwnerUploadResponseModel"] = None
 
 
 class PhotoUploadResponse(BaseResponse):
-	response = None
+	response: Optional["PhotoUploadResponseModel"] = None
 
 
 class PutTagResponse(BaseResponse):
-	response = None
+	response: Optional["PutTagResponseModel"] = None
 
 
 class RestoreCommentResponse(BaseResponse):
-	response = None
+	response: Optional["RestoreCommentResponseModel"] = None
 
 
 class SaveMarketAlbumPhotoResponse(BaseResponse):
-	response = None
+	response: Optional["SaveMarketAlbumPhotoResponseModel"] = None
 
 
 class SaveMarketPhotoResponse(BaseResponse):
-	response = None
+	response: Optional["SaveMarketPhotoResponseModel"] = None
 
 
 class SaveMessagesPhotoResponse(BaseResponse):
-	response = None
+	response: Optional["SaveMessagesPhotoResponseModel"] = None
 
 
 class SaveOwnerCoverPhotoResponse(BaseResponse):
-	response = None
+	response: Optional["SaveOwnerCoverPhotoResponseModel"] = None
 
 
 class SaveOwnerPhotoResponse(BaseResponse):
-	response = None
+	response: Optional["SaveOwnerPhotoResponseModel"] = None
 
 
 class SaveWallPhotoResponse(BaseResponse):
-	response = None
+	response: Optional["SaveWallPhotoResponseModel"] = None
 
 
 class SaveResponse(BaseResponse):
-	response = None
+	response: Optional["SaveResponseModel"] = None
 
 
 class SearchResponse(BaseResponse):
-	response = None
+	response: Optional["SearchResponseModel"] = None
 
 
 class WallUploadResponse(BaseResponse):
-	response = None
+	response: Optional["WallUploadResponseModel"] = None
 
 
-CopyResponseModel = None
+CopyResponseModelModel = None
 
 
-CreateAlbumResponseModel = None
+CreateAlbumResponseModelModel = None
 
 
-CreateCommentResponseModel = None
+CreateCommentResponseModelModel = None
 
 
-DeleteCommentResponseModel = None
+DeleteCommentResponseModelModel = None
 
 
-GetAlbumsCountResponseModel = None
+GetAlbumsCountResponseModelModel = None
 
 
-class GetAlbumsResponse(BaseResponse):
-	count = None
-	items = None
+class GetAlbumsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetAllCommentsResponse(BaseResponse):
-	count = None
-	items = None
+class GetAllCommentsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetAllExtendedResponse(BaseResponse):
+class GetAllExtendedResponseModel(BaseResponse):
 	count = None
 	items = None
 	more = None
 
 
-class GetAllResponse(BaseResponse):
+class GetAllResponseModel(BaseResponse):
 	count = None
 	items = None
 	more = None
 
 
-GetByIdExtendedResponseModel = array
+GetByIdExtendedResponseModelModel = array
 
 
-GetByIdResponseModel = array
+GetByIdResponseModelModel = array
 
 
-class GetCommentsExtendedResponse(BaseResponse):
-	count = None
-	real_offset = None
-	items = None
-	profiles = None
-	groups = None
+class GetCommentsExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	real_offset: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetCommentsResponse(BaseResponse):
-	count = None
-	real_offset = None
-	items = None
+class GetCommentsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	real_offset: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-GetMarketUploadServerResponseModel = None
+GetMarketUploadServerResponseModelModel = None
 
 
-GetMessagesUploadServerResponseModel = None
+GetMessagesUploadServerResponseModelModel = None
 
 
-class GetNewTagsResponse(BaseResponse):
-	count = None
-	items = None
+class GetNewTagsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-GetTagsResponseModel = array
+GetTagsResponseModelModel = array
 
 
-GetUploadServerResponseModel = None
+GetUploadServerResponseModelModel = None
 
 
-class GetUserPhotosExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetUserPhotosExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetUserPhotosResponse(BaseResponse):
-	count = None
-	items = None
+class GetUserPhotosResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-GetWallUploadServerResponseModel = None
+GetWallUploadServerResponseModelModel = None
 
 
-class GetExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetResponse(BaseResponse):
-	count = None
-	items = None
+class GetResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class MarketAlbumUploadResponse(BaseResponse):
-	gid = None
-	hash = None
-	photo = None
-	server = None
+class MarketAlbumUploadResponseModel(BaseResponse):
+	gid: Optional[int] = None
+	hash: Optional[str] = None
+	photo: Optional[str] = None
+	server: Optional[int] = None
 
 
-class MarketUploadResponse(BaseResponse):
-	crop_data = None
-	crop_hash = None
-	group_id = None
-	hash = None
-	photo = None
-	server = None
+class MarketUploadResponseModel(BaseResponse):
+	crop_data: Optional[str] = None
+	crop_hash: Optional[str] = None
+	group_id: Optional[int] = None
+	hash: Optional[str] = None
+	photo: Optional[str] = None
+	server: Optional[int] = None
 
 
-class MessageUploadResponse(BaseResponse):
-	hash = None
-	photo = None
-	server = None
+class MessageUploadResponseModel(BaseResponse):
+	hash: Optional[str] = None
+	photo: Optional[str] = None
+	server: Optional[int] = None
 
 
-class OwnerCoverUploadResponse(BaseResponse):
-	hash = None
-	photo = None
+class OwnerCoverUploadResponseModel(BaseResponse):
+	hash: Optional[str] = None
+	photo: Optional[str] = None
 
 
-class OwnerUploadResponse(BaseResponse):
-	hash = None
-	photo = None
-	server = None
+class OwnerUploadResponseModel(BaseResponse):
+	hash: Optional[str] = None
+	photo: Optional[str] = None
+	server: Optional[int] = None
 
 
-class PhotoUploadResponse(BaseResponse):
-	aid = None
-	hash = None
-	photo = None
-	photos_list = None
-	server = None
+class PhotoUploadResponseModel(BaseResponse):
+	aid: Optional[int] = None
+	hash: Optional[str] = None
+	photo: Optional[str] = None
+	photos_list: Optional[str] = None
+	server: Optional[int] = None
 
 
-PutTagResponseModel = None
+PutTagResponseModelModel = None
 
 
-RestoreCommentResponseModel = None
+RestoreCommentResponseModelModel = None
 
 
-SaveMarketAlbumPhotoResponseModel = array
+SaveMarketAlbumPhotoResponseModelModel = array
 
 
-SaveMarketPhotoResponseModel = array
+SaveMarketPhotoResponseModelModel = array
 
 
-SaveMessagesPhotoResponseModel = array
+SaveMessagesPhotoResponseModelModel = array
 
 
-SaveOwnerCoverPhotoResponseModel = array
+SaveOwnerCoverPhotoResponseModelModel = array
 
 
-class SaveOwnerPhotoResponse(BaseResponse):
-	photo_hash = None
-	photo_src = None
-	photo_src_big = None
-	photo_src_small = None
-	saved = None
-	post_id = None
+class SaveOwnerPhotoResponseModel(BaseResponse):
+	photo_hash: Optional[str] = None
+	photo_src: Optional[str] = None
+	photo_src_big: Optional[str] = None
+	photo_src_small: Optional[str] = None
+	saved: Optional[int] = None
+	post_id: Optional[int] = None
 
 
-SaveWallPhotoResponseModel = array
+SaveWallPhotoResponseModelModel = array
 
 
-SaveResponseModel = array
+SaveResponseModelModel = array
 
 
-class SearchResponse(BaseResponse):
-	count = None
-	items = None
+class SearchResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class WallUploadResponse(BaseResponse):
-	hash = None
-	photo = None
-	server = None
+class WallUploadResponseModel(BaseResponse):
+	hash: Optional[str] = None
+	photo: Optional[str] = None
+	server: Optional[int] = None
+
+CopyResponse.update_forward_refs()
+CreateAlbumResponse.update_forward_refs()
+CreateCommentResponse.update_forward_refs()
+DeleteCommentResponse.update_forward_refs()
+GetAlbumsCountResponse.update_forward_refs()
+GetAlbumsResponse.update_forward_refs()
+GetAllCommentsResponse.update_forward_refs()
+GetAllExtendedResponse.update_forward_refs()
+GetAllResponse.update_forward_refs()
+GetByIdExtendedResponse.update_forward_refs()
+GetByIdResponse.update_forward_refs()
+GetCommentsExtendedResponse.update_forward_refs()
+GetCommentsResponse.update_forward_refs()
+GetMarketUploadServerResponse.update_forward_refs()
+GetMessagesUploadServerResponse.update_forward_refs()
+GetNewTagsResponse.update_forward_refs()
+GetTagsResponse.update_forward_refs()
+GetUploadServerResponse.update_forward_refs()
+GetUserPhotosExtendedResponse.update_forward_refs()
+GetUserPhotosResponse.update_forward_refs()
+GetWallUploadServerResponse.update_forward_refs()
+GetExtendedResponse.update_forward_refs()
+GetResponse.update_forward_refs()
+MarketAlbumUploadResponse.update_forward_refs()
+MarketUploadResponse.update_forward_refs()
+MessageUploadResponse.update_forward_refs()
+OwnerCoverUploadResponse.update_forward_refs()
+OwnerUploadResponse.update_forward_refs()
+PhotoUploadResponse.update_forward_refs()
+PutTagResponse.update_forward_refs()
+RestoreCommentResponse.update_forward_refs()
+SaveMarketAlbumPhotoResponse.update_forward_refs()
+SaveMarketPhotoResponse.update_forward_refs()
+SaveMessagesPhotoResponse.update_forward_refs()
+SaveOwnerCoverPhotoResponse.update_forward_refs()
+SaveOwnerPhotoResponse.update_forward_refs()
+SaveWallPhotoResponse.update_forward_refs()
+SaveResponse.update_forward_refs()
+SearchResponse.update_forward_refs()
+WallUploadResponse.update_forward_refs()

@@ -1,281 +1,324 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class AddOfficeUsersResponse(BaseResponse):
-	response = None
+	response: Optional["AddOfficeUsersResponseModel"] = None
 
 
 class CheckLinkResponse(BaseResponse):
-	response = None
+	response: Optional["CheckLinkResponseModel"] = None
 
 
 class CreateAdsResponse(BaseResponse):
-	response = None
+	response: Optional["CreateAdsResponseModel"] = None
 
 
 class CreateCampaignsResponse(BaseResponse):
-	response = None
+	response: Optional["CreateCampaignsResponseModel"] = None
 
 
 class CreateClientsResponse(BaseResponse):
-	response = None
+	response: Optional["CreateClientsResponseModel"] = None
 
 
 class CreateTargetGroupResponse(BaseResponse):
-	response = None
+	response: Optional["CreateTargetGroupResponseModel"] = None
 
 
 class DeleteAdsResponse(BaseResponse):
-	response = None
+	response: Optional["DeleteAdsResponseModel"] = None
 
 
 class DeleteCampaignsResponse(BaseResponse):
-	response = None
+	response: Optional["DeleteCampaignsResponseModel"] = None
 
 
 class DeleteClientsResponse(BaseResponse):
-	response = None
+	response: Optional["DeleteClientsResponseModel"] = None
 
 
 class GetAccountsResponse(BaseResponse):
-	response = None
+	response: Optional["GetAccountsResponseModel"] = None
 
 
 class GetAdsLayoutResponse(BaseResponse):
-	response = None
+	response: Optional["GetAdsLayoutResponseModel"] = None
 
 
 class GetAdsTargetingResponse(BaseResponse):
-	response = None
+	response: Optional["GetAdsTargetingResponseModel"] = None
 
 
 class GetAdsResponse(BaseResponse):
-	response = None
+	response: Optional["GetAdsResponseModel"] = None
 
 
 class GetBudgetResponse(BaseResponse):
-	response = None
+	response: Optional["GetBudgetResponseModel"] = None
 
 
 class GetCampaignsResponse(BaseResponse):
-	response = None
+	response: Optional["GetCampaignsResponseModel"] = None
 
 
 class GetCategoriesResponse(BaseResponse):
-	response = None
+	response: Optional["GetCategoriesResponseModel"] = None
 
 
 class GetClientsResponse(BaseResponse):
-	response = None
+	response: Optional["GetClientsResponseModel"] = None
 
 
 class GetDemographicsResponse(BaseResponse):
-	response = None
+	response: Optional["GetDemographicsResponseModel"] = None
 
 
 class GetFloodStatsResponse(BaseResponse):
-	response = None
+	response: Optional["GetFloodStatsResponseModel"] = None
 
 
 class GetLookalikeRequestsResponse(BaseResponse):
-	response = None
+	response: Optional["GetLookalikeRequestsResponseModel"] = None
 
 
 class GetMusiciansResponse(BaseResponse):
-	response = None
+	response: Optional["GetMusiciansResponseModel"] = None
 
 
 class GetOfficeUsersResponse(BaseResponse):
-	response = None
+	response: Optional["GetOfficeUsersResponseModel"] = None
 
 
 class GetPostsReachResponse(BaseResponse):
-	response = None
+	response: Optional["GetPostsReachResponseModel"] = None
 
 
 class GetRejectionReasonResponse(BaseResponse):
-	response = None
+	response: Optional["GetRejectionReasonResponseModel"] = None
 
 
 class GetStatisticsResponse(BaseResponse):
-	response = None
+	response: Optional["GetStatisticsResponseModel"] = None
 
 
 class GetSuggestionsCitiesResponse(BaseResponse):
-	response = None
+	response: Optional["GetSuggestionsCitiesResponseModel"] = None
 
 
 class GetSuggestionsRegionsResponse(BaseResponse):
-	response = None
+	response: Optional["GetSuggestionsRegionsResponseModel"] = None
 
 
 class GetSuggestionsResponse(BaseResponse):
-	response = None
+	response: Optional["GetSuggestionsResponseModel"] = None
 
 
 class GetSuggestionsSchoolsResponse(BaseResponse):
-	response = None
+	response: Optional["GetSuggestionsSchoolsResponseModel"] = None
 
 
 class GetTargetGroupsResponse(BaseResponse):
-	response = None
+	response: Optional["GetTargetGroupsResponseModel"] = None
 
 
 class GetTargetingStatsResponse(BaseResponse):
-	response = None
+	response: Optional["GetTargetingStatsResponseModel"] = None
 
 
 class GetUploadURLResponse(BaseResponse):
-	response = None
+	response: Optional["GetUploadURLResponseModel"] = None
 
 
 class GetVideoUploadURLResponse(BaseResponse):
-	response = None
+	response: Optional["GetVideoUploadURLResponseModel"] = None
 
 
 class ImportTargetContactsResponse(BaseResponse):
-	response = None
+	response: Optional["ImportTargetContactsResponseModel"] = None
 
 
 class RemoveOfficeUsersResponse(BaseResponse):
-	response = None
+	response: Optional["RemoveOfficeUsersResponseModel"] = None
 
 
 class UpdateAdsResponse(BaseResponse):
-	response = None
+	response: Optional["UpdateAdsResponseModel"] = None
 
 
 class UpdateCampaignsResponse(BaseResponse):
-	response = None
+	response: Optional["UpdateCampaignsResponseModel"] = None
 
 
 class UpdateClientsResponse(BaseResponse):
-	response = None
+	response: Optional["UpdateClientsResponseModel"] = None
 
 
 class UpdateOfficeUsersResponse(BaseResponse):
-	response = None
+	response: Optional["UpdateOfficeUsersResponseModel"] = None
 
 
-AddOfficeUsersResponseModel = bool
+AddOfficeUsersResponseModelModel = bool
 
 
-CheckLinkResponseModel = None
+CheckLinkResponseModelModel = None
 
 
-CreateAdsResponseModel = array
+CreateAdsResponseModelModel = array
 
 
-CreateCampaignsResponseModel = array
+CreateCampaignsResponseModelModel = array
 
 
-CreateClientsResponseModel = array
+CreateClientsResponseModelModel = array
 
 
-class CreateTargetGroupResponse(BaseResponse):
-	id = None
-	pixel = None
+class CreateTargetGroupResponseModel(BaseResponse):
+	id: Optional[int] = None
+	pixel: Optional[str] = None
 
 
-DeleteAdsResponseModel = array
+DeleteAdsResponseModelModel = array
 
 
-DeleteCampaignsResponseModel = None
+DeleteCampaignsResponseModelModel = None
 
 
-DeleteClientsResponseModel = None
+DeleteClientsResponseModelModel = None
 
 
-GetAccountsResponseModel = array
+GetAccountsResponseModelModel = array
 
 
-GetAdsLayoutResponseModel = array
+GetAdsLayoutResponseModelModel = array
 
 
-GetAdsTargetingResponseModel = array
+GetAdsTargetingResponseModelModel = array
 
 
-GetAdsResponseModel = array
+GetAdsResponseModelModel = array
 
 
-GetBudgetResponseModel = None
+GetBudgetResponseModelModel = None
 
 
-GetCampaignsResponseModel = array
+GetCampaignsResponseModelModel = array
 
 
-class GetCategoriesResponse(BaseResponse):
-	v1 = None
-	v2 = None
+class GetCategoriesResponseModel(BaseResponse):
+	v1: Optional["Array"] = None
+	v2: Optional["Array"] = None
 
 
-GetClientsResponseModel = array
+GetClientsResponseModelModel = array
 
 
-GetDemographicsResponseModel = array
+GetDemographicsResponseModelModel = array
 
 
-GetFloodStatsResponseModel = None
+GetFloodStatsResponseModelModel = None
 
 
-class GetLookalikeRequestsResponse(BaseResponse):
-	count = None
-	items = None
+class GetLookalikeRequestsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetMusiciansResponse(BaseResponse):
-	items = None
+class GetMusiciansResponseModel(BaseResponse):
+	items: Optional["Array"] = None
 
 
-GetOfficeUsersResponseModel = array
+GetOfficeUsersResponseModelModel = array
 
 
-GetPostsReachResponseModel = array
+GetPostsReachResponseModelModel = array
 
 
-GetRejectionReasonResponseModel = None
+GetRejectionReasonResponseModelModel = None
 
 
-GetStatisticsResponseModel = array
+GetStatisticsResponseModelModel = array
 
 
-GetSuggestionsCitiesResponseModel = array
+GetSuggestionsCitiesResponseModelModel = array
 
 
-GetSuggestionsRegionsResponseModel = array
+GetSuggestionsRegionsResponseModelModel = array
 
 
-GetSuggestionsResponseModel = array
+GetSuggestionsResponseModelModel = array
 
 
-GetSuggestionsSchoolsResponseModel = array
+GetSuggestionsSchoolsResponseModelModel = array
 
 
-GetTargetGroupsResponseModel = array
+GetTargetGroupsResponseModelModel = array
 
 
-GetTargetingStatsResponseModel = None
+GetTargetingStatsResponseModelModel = None
 
 
-GetUploadURLResponseModel = string
+GetUploadURLResponseModelModel = string
 
 
-GetVideoUploadURLResponseModel = string
+GetVideoUploadURLResponseModelModel = string
 
 
-ImportTargetContactsResponseModel = None
+ImportTargetContactsResponseModelModel = None
 
 
-RemoveOfficeUsersResponseModel = bool
+RemoveOfficeUsersResponseModelModel = bool
 
 
-UpdateAdsResponseModel = array
+UpdateAdsResponseModelModel = array
 
 
-UpdateCampaignsResponseModel = None
+UpdateCampaignsResponseModelModel = None
 
 
-UpdateClientsResponseModel = None
+UpdateClientsResponseModelModel = None
 
 
-UpdateOfficeUsersResponseModel = array
+UpdateOfficeUsersResponseModelModel = array
+
+AddOfficeUsersResponse.update_forward_refs()
+CheckLinkResponse.update_forward_refs()
+CreateAdsResponse.update_forward_refs()
+CreateCampaignsResponse.update_forward_refs()
+CreateClientsResponse.update_forward_refs()
+CreateTargetGroupResponse.update_forward_refs()
+DeleteAdsResponse.update_forward_refs()
+DeleteCampaignsResponse.update_forward_refs()
+DeleteClientsResponse.update_forward_refs()
+GetAccountsResponse.update_forward_refs()
+GetAdsLayoutResponse.update_forward_refs()
+GetAdsTargetingResponse.update_forward_refs()
+GetAdsResponse.update_forward_refs()
+GetBudgetResponse.update_forward_refs()
+GetCampaignsResponse.update_forward_refs()
+GetCategoriesResponse.update_forward_refs()
+GetClientsResponse.update_forward_refs()
+GetDemographicsResponse.update_forward_refs()
+GetFloodStatsResponse.update_forward_refs()
+GetLookalikeRequestsResponse.update_forward_refs()
+GetMusiciansResponse.update_forward_refs()
+GetOfficeUsersResponse.update_forward_refs()
+GetPostsReachResponse.update_forward_refs()
+GetRejectionReasonResponse.update_forward_refs()
+GetStatisticsResponse.update_forward_refs()
+GetSuggestionsCitiesResponse.update_forward_refs()
+GetSuggestionsRegionsResponse.update_forward_refs()
+GetSuggestionsResponse.update_forward_refs()
+GetSuggestionsSchoolsResponse.update_forward_refs()
+GetTargetGroupsResponse.update_forward_refs()
+GetTargetingStatsResponse.update_forward_refs()
+GetUploadURLResponse.update_forward_refs()
+GetVideoUploadURLResponse.update_forward_refs()
+ImportTargetContactsResponse.update_forward_refs()
+RemoveOfficeUsersResponse.update_forward_refs()
+UpdateAdsResponse.update_forward_refs()
+UpdateCampaignsResponse.update_forward_refs()
+UpdateClientsResponse.update_forward_refs()
+UpdateOfficeUsersResponse.update_forward_refs()

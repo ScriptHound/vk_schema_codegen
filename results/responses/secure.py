@@ -1,50 +1,61 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class CheckTokenResponse(BaseResponse):
-	response = None
+	response: Optional["CheckTokenResponseModel"] = None
 
 
 class GetAppBalanceResponse(BaseResponse):
-	response = None
+	response: Optional["GetAppBalanceResponseModel"] = None
 
 
 class GetSMSHistoryResponse(BaseResponse):
-	response = None
+	response: Optional["GetSMSHistoryResponseModel"] = None
 
 
 class GetTransactionsHistoryResponse(BaseResponse):
-	response = None
+	response: Optional["GetTransactionsHistoryResponseModel"] = None
 
 
 class GetUserLevelResponse(BaseResponse):
-	response = None
+	response: Optional["GetUserLevelResponseModel"] = None
 
 
 class GiveEventStickerResponse(BaseResponse):
-	response = None
+	response: Optional["GiveEventStickerResponseModel"] = None
 
 
 class SendNotificationResponse(BaseResponse):
-	response = None
+	response: Optional["SendNotificationResponseModel"] = None
 
 
-CheckTokenResponseModel = None
+CheckTokenResponseModelModel = None
 
 
-GetAppBalanceResponseModel = None
+GetAppBalanceResponseModelModel = None
 
 
-GetSMSHistoryResponseModel = array
+GetSMSHistoryResponseModelModel = array
 
 
-GetTransactionsHistoryResponseModel = array
+GetTransactionsHistoryResponseModelModel = array
 
 
-GetUserLevelResponseModel = array
+GetUserLevelResponseModelModel = array
 
 
-GiveEventStickerResponseModel = array
+GiveEventStickerResponseModelModel = array
 
 
-SendNotificationResponseModel = array
+SendNotificationResponseModelModel = array
+
+CheckTokenResponse.update_forward_refs()
+GetAppBalanceResponse.update_forward_refs()
+GetSMSHistoryResponse.update_forward_refs()
+GetTransactionsHistoryResponse.update_forward_refs()
+GetUserLevelResponse.update_forward_refs()
+GiveEventStickerResponse.update_forward_refs()
+SendNotificationResponse.update_forward_refs()

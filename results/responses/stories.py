@@ -1,115 +1,118 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class GetBannedExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetBannedExtendedResponseModel"] = None
 
 
 class GetBannedResponse(BaseResponse):
-	response = None
+	response: Optional["GetBannedResponseModel"] = None
 
 
 class GetByIdExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdExtendedResponseModel"] = None
 
 
 class GetByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdResponseModel"] = None
 
 
 class GetPhotoUploadServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetPhotoUploadServerResponseModel"] = None
 
 
 class GetStatsResponse(BaseResponse):
-	response = None
+	response: Optional["GetStatsResponseModel"] = None
 
 
 class GetVideoUploadServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetVideoUploadServerResponseModel"] = None
 
 
 class GetViewersExtendedV5115Response(BaseResponse):
-	response = None
+	response: Optional["GetViewersExtendedV5115ResponseModel"] = None
 
 
 class GetViewersExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetViewersExtendedResponseModel"] = None
 
 
 class GetV5113Response(BaseResponse):
-	response = None
+	response: Optional["GetV5113ResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
 class SaveResponse(BaseResponse):
-	response = None
+	response: Optional["SaveResponseModel"] = None
 
 
 class UploadResponse(BaseResponse):
-	response = None
+	response: Optional["UploadResponseModel"] = None
 
 
-class GetBannedExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class GetBannedExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetBannedResponse(BaseResponse):
-	count = None
-	items = None
+class GetBannedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetByIdExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class GetByIdExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetByIdResponse(BaseResponse):
-	count = None
-	items = None
+class GetByIdResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetPhotoUploadServerResponse(BaseResponse):
-	upload_url = None
-	user_ids = None
+class GetPhotoUploadServerResponseModel(BaseResponse):
+	upload_url: Optional[str] = None
+	user_ids: Optional["Array"] = None
 
 
-GetStatsResponseModel = None
+GetStatsResponseModelModel = None
 
 
-class GetVideoUploadServerResponse(BaseResponse):
-	upload_url = None
-	user_ids = None
+class GetVideoUploadServerResponseModel(BaseResponse):
+	upload_url: Optional[str] = None
+	user_ids: Optional["Array"] = None
 
 
-class GetViewersExtendedV5115Response(BaseResponse):
-	count = None
-	items = None
-	hidden_reason = None
+class GetViewersExtendedV5115ResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	hidden_reason: Optional[str] = None
 
 
-class GetViewersExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetViewersExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetV5113Response(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
-	need_upload_screen = None
+class GetV5113ResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
+	need_upload_screen: Optional[bool] = None
 
 
-class GetResponse(BaseResponse):
+class GetResponseModel(BaseResponse):
 	count = None
 	items = None
 	promo_data = None
@@ -118,10 +121,24 @@ class GetResponse(BaseResponse):
 	need_upload_screen = None
 
 
-class SaveResponse(BaseResponse):
-	count = None
-	items = None
+class SaveResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class UploadResponse(BaseResponse):
-	upload_result = None
+class UploadResponseModel(BaseResponse):
+	upload_result: Optional[str] = None
+
+GetBannedExtendedResponse.update_forward_refs()
+GetBannedResponse.update_forward_refs()
+GetByIdExtendedResponse.update_forward_refs()
+GetByIdResponse.update_forward_refs()
+GetPhotoUploadServerResponse.update_forward_refs()
+GetStatsResponse.update_forward_refs()
+GetVideoUploadServerResponse.update_forward_refs()
+GetViewersExtendedV5115Response.update_forward_refs()
+GetViewersExtendedResponse.update_forward_refs()
+GetV5113Response.update_forward_refs()
+GetResponse.update_forward_refs()
+SaveResponse.update_forward_refs()
+UploadResponse.update_forward_refs()

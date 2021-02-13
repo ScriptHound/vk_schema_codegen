@@ -1,140 +1,160 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class AddAlbumResponse(BaseResponse):
-	response = None
+	response: Optional["AddAlbumResponseModel"] = None
 
 
 class CreateCommentResponse(BaseResponse):
-	response = None
+	response: Optional["CreateCommentResponseModel"] = None
 
 
 class GetAlbumByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetAlbumByIdResponseModel"] = None
 
 
 class GetAlbumsByVideoExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetAlbumsByVideoExtendedResponseModel"] = None
 
 
 class GetAlbumsByVideoResponse(BaseResponse):
-	response = None
+	response: Optional["GetAlbumsByVideoResponseModel"] = None
 
 
 class GetAlbumsExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetAlbumsExtendedResponseModel"] = None
 
 
 class GetAlbumsResponse(BaseResponse):
-	response = None
+	response: Optional["GetAlbumsResponseModel"] = None
 
 
 class GetCommentsExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsExtendedResponseModel"] = None
 
 
 class GetCommentsResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsResponseModel"] = None
 
 
 class GetExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetExtendedResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
 class RestoreCommentResponse(BaseResponse):
-	response = None
+	response: Optional["RestoreCommentResponseModel"] = None
 
 
 class SaveResponse(BaseResponse):
-	response = None
+	response: Optional["SaveResponseModel"] = None
 
 
 class SearchExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["SearchExtendedResponseModel"] = None
 
 
 class SearchResponse(BaseResponse):
-	response = None
+	response: Optional["SearchResponseModel"] = None
 
 
 class UploadResponse(BaseResponse):
-	response = None
+	response: Optional["UploadResponseModel"] = None
 
 
-class AddAlbumResponse(BaseResponse):
-	album_id = None
+class AddAlbumResponseModel(BaseResponse):
+	album_id: Optional[int] = None
 
 
-CreateCommentResponseModel = None
+CreateCommentResponseModelModel = None
 
 
-GetAlbumByIdResponseModel = None
+GetAlbumByIdResponseModelModel = None
 
 
-class GetAlbumsByVideoExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetAlbumsByVideoExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-GetAlbumsByVideoResponseModel = array
+GetAlbumsByVideoResponseModelModel = array
 
 
-class GetAlbumsExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetAlbumsExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetAlbumsResponse(BaseResponse):
-	count = None
-	items = None
+class GetAlbumsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetCommentsExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class GetCommentsExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetCommentsResponse(BaseResponse):
-	count = None
-	items = None
+class GetCommentsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class GetExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetResponse(BaseResponse):
-	count = None
-	items = None
+class GetResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-RestoreCommentResponseModel = None
+RestoreCommentResponseModelModel = None
 
 
-SaveResponseModel = None
+SaveResponseModelModel = None
 
 
-class SearchExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class SearchExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class SearchResponse(BaseResponse):
-	count = None
-	items = None
+class SearchResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class UploadResponse(BaseResponse):
-	size = None
-	video_id = None
+class UploadResponseModel(BaseResponse):
+	size: Optional[int] = None
+	video_id: Optional[int] = None
+
+AddAlbumResponse.update_forward_refs()
+CreateCommentResponse.update_forward_refs()
+GetAlbumByIdResponse.update_forward_refs()
+GetAlbumsByVideoExtendedResponse.update_forward_refs()
+GetAlbumsByVideoResponse.update_forward_refs()
+GetAlbumsExtendedResponse.update_forward_refs()
+GetAlbumsResponse.update_forward_refs()
+GetCommentsExtendedResponse.update_forward_refs()
+GetCommentsResponse.update_forward_refs()
+GetExtendedResponse.update_forward_refs()
+GetResponse.update_forward_refs()
+RestoreCommentResponse.update_forward_refs()
+SaveResponse.update_forward_refs()
+SearchExtendedResponse.update_forward_refs()
+SearchResponse.update_forward_refs()
+UploadResponse.update_forward_refs()

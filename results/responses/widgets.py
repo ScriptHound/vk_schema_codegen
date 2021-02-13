@@ -1,19 +1,25 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class GetCommentsResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsResponseModel"] = None
 
 
 class GetPagesResponse(BaseResponse):
-	response = None
+	response: Optional["GetPagesResponseModel"] = None
 
 
-class GetCommentsResponse(BaseResponse):
-	count = None
-	posts = None
+class GetCommentsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	posts: Optional["Array"] = None
 
 
-class GetPagesResponse(BaseResponse):
-	count = None
-	pages = None
+class GetPagesResponseModel(BaseResponse):
+	count: Optional[int] = None
+	pages: Optional["Array"] = None
+
+GetCommentsResponse.update_forward_refs()
+GetPagesResponse.update_forward_refs()

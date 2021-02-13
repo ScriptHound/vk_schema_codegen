@@ -1,26 +1,33 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class GetFavoriteStickersResponse(BaseResponse):
-	response = None
+	response: Optional["GetFavoriteStickersResponseModel"] = None
 
 
 class GetProductsResponse(BaseResponse):
-	response = None
+	response: Optional["GetProductsResponseModel"] = None
 
 
 class GetStickersKeywordsResponse(BaseResponse):
-	response = None
+	response: Optional["GetStickersKeywordsResponseModel"] = None
 
 
-GetFavoriteStickersResponseModel = array
+GetFavoriteStickersResponseModelModel = array
 
 
-GetProductsResponseModel = array
+GetProductsResponseModelModel = array
 
 
-class GetStickersKeywordsResponse(BaseResponse):
-	count = None
-	dictionary = None
-	chunks_count = None
-	chunks_hash = None
+class GetStickersKeywordsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	dictionary: Optional["Array"] = None
+	chunks_count: Optional[int] = None
+	chunks_hash: Optional[str] = None
+
+GetFavoriteStickersResponse.update_forward_refs()
+GetProductsResponse.update_forward_refs()
+GetStickersKeywordsResponse.update_forward_refs()

@@ -1,46 +1,55 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class AddTagResponse(BaseResponse):
-	response = None
+	response: Optional["AddTagResponseModel"] = None
 
 
 class GetPagesResponse(BaseResponse):
-	response = None
+	response: Optional["GetPagesResponseModel"] = None
 
 
 class GetTagsResponse(BaseResponse):
-	response = None
+	response: Optional["GetTagsResponseModel"] = None
 
 
 class GetExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetExtendedResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
-AddTagResponseModel = None
+AddTagResponseModelModel = None
 
 
-class GetPagesResponse(BaseResponse):
-	count = None
-	items = None
+class GetPagesResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetTagsResponse(BaseResponse):
-	count = None
-	items = None
+class GetTagsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class GetExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetResponse(BaseResponse):
-	count = None
-	items = None
+class GetResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+
+AddTagResponse.update_forward_refs()
+GetPagesResponse.update_forward_refs()
+GetTagsResponse.update_forward_refs()
+GetExtendedResponse.update_forward_refs()
+GetResponse.update_forward_refs()

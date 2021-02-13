@@ -1,50 +1,61 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class AddVoteResponse(BaseResponse):
-	response = None
+	response: Optional["AddVoteResponseModel"] = None
 
 
 class CreateResponse(BaseResponse):
-	response = None
+	response: Optional["CreateResponseModel"] = None
 
 
 class DeleteVoteResponse(BaseResponse):
-	response = None
+	response: Optional["DeleteVoteResponseModel"] = None
 
 
 class GetBackgroundsResponse(BaseResponse):
-	response = None
+	response: Optional["GetBackgroundsResponseModel"] = None
 
 
 class GetByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdResponseModel"] = None
 
 
 class GetVotersResponse(BaseResponse):
-	response = None
+	response: Optional["GetVotersResponseModel"] = None
 
 
 class SavePhotoResponse(BaseResponse):
-	response = None
+	response: Optional["SavePhotoResponseModel"] = None
 
 
-AddVoteResponseModel = None
+AddVoteResponseModelModel = None
 
 
-CreateResponseModel = None
+CreateResponseModelModel = None
 
 
-DeleteVoteResponseModel = None
+DeleteVoteResponseModelModel = None
 
 
-GetBackgroundsResponseModel = array
+GetBackgroundsResponseModelModel = array
 
 
-GetByIdResponseModel = None
+GetByIdResponseModelModel = None
 
 
-GetVotersResponseModel = array
+GetVotersResponseModelModel = array
 
 
-SavePhotoResponseModel = None
+SavePhotoResponseModelModel = None
+
+AddVoteResponse.update_forward_refs()
+CreateResponse.update_forward_refs()
+DeleteVoteResponse.update_forward_refs()
+GetBackgroundsResponse.update_forward_refs()
+GetByIdResponse.update_forward_refs()
+GetVotersResponse.update_forward_refs()
+SavePhotoResponse.update_forward_refs()

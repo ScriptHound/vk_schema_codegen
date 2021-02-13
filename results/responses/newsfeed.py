@@ -1,129 +1,146 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class GetBannedExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetBannedExtendedResponseModel"] = None
 
 
 class GetBannedResponse(BaseResponse):
-	response = None
+	response: Optional["GetBannedResponseModel"] = None
 
 
 class GetCommentsResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsResponseModel"] = None
 
 
 class GetListsExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetListsExtendedResponseModel"] = None
 
 
 class GetListsResponse(BaseResponse):
-	response = None
+	response: Optional["GetListsResponseModel"] = None
 
 
 class GetMentionsResponse(BaseResponse):
-	response = None
+	response: Optional["GetMentionsResponseModel"] = None
 
 
 class GetRecommendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetRecommendedResponseModel"] = None
 
 
 class GetSuggestedSourcesResponse(BaseResponse):
-	response = None
+	response: Optional["GetSuggestedSourcesResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
 class IgnoreItemResponse(BaseResponse):
-	response = None
+	response: Optional["IgnoreItemResponseModel"] = None
 
 
 class SaveListResponse(BaseResponse):
-	response = None
+	response: Optional["SaveListResponseModel"] = None
 
 
 class SearchExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["SearchExtendedResponseModel"] = None
 
 
 class SearchResponse(BaseResponse):
-	response = None
+	response: Optional["SearchResponseModel"] = None
 
 
-class GetBannedExtendedResponse(BaseResponse):
-	groups = None
-	profiles = None
+class GetBannedExtendedResponseModel(BaseResponse):
+	groups: Optional["Array"] = None
+	profiles: Optional["Array"] = None
 
 
-class GetBannedResponse(BaseResponse):
-	groups = None
-	members = None
+class GetBannedResponseModel(BaseResponse):
+	groups: Optional["Array"] = None
+	members: Optional["Array"] = None
 
 
-class GetCommentsResponse(BaseResponse):
-	items = None
-	profiles = None
-	groups = None
-	next_from = None
+class GetCommentsResponseModel(BaseResponse):
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
+	next_from: Optional[str] = None
 
 
-class GetListsExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetListsExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetListsResponse(BaseResponse):
-	count = None
-	items = None
+class GetListsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetMentionsResponse(BaseResponse):
-	count = None
-	items = None
+class GetMentionsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetRecommendedResponse(BaseResponse):
-	items = None
-	profiles = None
-	groups = None
-	next_from = None
+class GetRecommendedResponseModel(BaseResponse):
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
+	next_from: Optional[str] = None
 
 
-class GetSuggestedSourcesResponse(BaseResponse):
-	count = None
-	items = None
+class GetSuggestedSourcesResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetResponse(BaseResponse):
-	items = None
-	profiles = None
-	groups = None
-	next_from = None
+class GetResponseModel(BaseResponse):
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
+	next_from: Optional[str] = None
 
 
-class IgnoreItemResponse(BaseResponse):
-	status = None
+class IgnoreItemResponseModel(BaseResponse):
+	status: Optional[bool] = None
 
 
-SaveListResponseModel = None
+SaveListResponseModelModel = None
 
 
-class SearchExtendedResponse(BaseResponse):
-	items = None
-	profiles = None
-	groups = None
-	suggested_queries = None
-	next_from = None
-	count = None
-	total_count = None
+class SearchExtendedResponseModel(BaseResponse):
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
+	suggested_queries: Optional["Array"] = None
+	next_from: Optional[str] = None
+	count: Optional[int] = None
+	total_count: Optional[int] = None
 
 
-class SearchResponse(BaseResponse):
-	items = None
-	suggested_queries = None
-	next_from = None
-	count = None
-	total_count = None
+class SearchResponseModel(BaseResponse):
+	items: Optional["Array"] = None
+	suggested_queries: Optional["Array"] = None
+	next_from: Optional[str] = None
+	count: Optional[int] = None
+	total_count: Optional[int] = None
+
+GetBannedExtendedResponse.update_forward_refs()
+GetBannedResponse.update_forward_refs()
+GetCommentsResponse.update_forward_refs()
+GetListsExtendedResponse.update_forward_refs()
+GetListsResponse.update_forward_refs()
+GetMentionsResponse.update_forward_refs()
+GetRecommendedResponse.update_forward_refs()
+GetSuggestedSourcesResponse.update_forward_refs()
+GetResponse.update_forward_refs()
+IgnoreItemResponse.update_forward_refs()
+SaveListResponse.update_forward_refs()
+SearchExtendedResponse.update_forward_refs()
+SearchResponse.update_forward_refs()

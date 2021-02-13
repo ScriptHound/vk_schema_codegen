@@ -1,256 +1,259 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class AddAddressResponse(BaseResponse):
-	response = None
+	response: Optional["AddAddressResponseModel"] = None
 
 
 class AddCallbackServerResponse(BaseResponse):
-	response = None
+	response: Optional["AddCallbackServerResponseModel"] = None
 
 
 class AddLinkResponse(BaseResponse):
-	response = None
+	response: Optional["AddLinkResponseModel"] = None
 
 
 class CreateResponse(BaseResponse):
-	response = None
+	response: Optional["CreateResponseModel"] = None
 
 
 class EditAddressResponse(BaseResponse):
-	response = None
+	response: Optional["EditAddressResponseModel"] = None
 
 
 class GetAddressesResponse(BaseResponse):
-	response = None
+	response: Optional["GetAddressesResponseModel"] = None
 
 
 class GetBannedResponse(BaseResponse):
-	response = None
+	response: Optional["GetBannedResponseModel"] = None
 
 
 class GetByIdLegacyResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdLegacyResponseModel"] = None
 
 
 class GetByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdResponseModel"] = None
 
 
 class GetCallbackConfirmationCodeResponse(BaseResponse):
-	response = None
+	response: Optional["GetCallbackConfirmationCodeResponseModel"] = None
 
 
 class GetCallbackServersResponse(BaseResponse):
-	response = None
+	response: Optional["GetCallbackServersResponseModel"] = None
 
 
 class GetCallbackSettingsResponse(BaseResponse):
-	response = None
+	response: Optional["GetCallbackSettingsResponseModel"] = None
 
 
 class GetCatalogInfoExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetCatalogInfoExtendedResponseModel"] = None
 
 
 class GetCatalogInfoResponse(BaseResponse):
-	response = None
+	response: Optional["GetCatalogInfoResponseModel"] = None
 
 
 class GetCatalogResponse(BaseResponse):
-	response = None
+	response: Optional["GetCatalogResponseModel"] = None
 
 
 class GetInvitedUsersResponse(BaseResponse):
-	response = None
+	response: Optional["GetInvitedUsersResponseModel"] = None
 
 
 class GetInvitesExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetInvitesExtendedResponseModel"] = None
 
 
 class GetInvitesResponse(BaseResponse):
-	response = None
+	response: Optional["GetInvitesResponseModel"] = None
 
 
 class GetLongPollServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetLongPollServerResponseModel"] = None
 
 
 class GetLongPollSettingsResponse(BaseResponse):
-	response = None
+	response: Optional["GetLongPollSettingsResponseModel"] = None
 
 
 class GetMembersFieldsResponse(BaseResponse):
-	response = None
+	response: Optional["GetMembersFieldsResponseModel"] = None
 
 
 class GetMembersFilterResponse(BaseResponse):
-	response = None
+	response: Optional["GetMembersFilterResponseModel"] = None
 
 
 class GetMembersResponse(BaseResponse):
-	response = None
+	response: Optional["GetMembersResponseModel"] = None
 
 
 class GetRequestsFieldsResponse(BaseResponse):
-	response = None
+	response: Optional["GetRequestsFieldsResponseModel"] = None
 
 
 class GetRequestsResponse(BaseResponse):
-	response = None
+	response: Optional["GetRequestsResponseModel"] = None
 
 
 class GetSettingsResponse(BaseResponse):
-	response = None
+	response: Optional["GetSettingsResponseModel"] = None
 
 
 class GetTagListResponse(BaseResponse):
-	response = None
+	response: Optional["GetTagListResponseModel"] = None
 
 
 class GetTokenPermissionsResponse(BaseResponse):
-	response = None
+	response: Optional["GetTokenPermissionsResponseModel"] = None
 
 
 class GetExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetExtendedResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
 class IsMemberExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["IsMemberExtendedResponseModel"] = None
 
 
 class IsMemberResponse(BaseResponse):
-	response = None
+	response: Optional["IsMemberResponseModel"] = None
 
 
 class IsMemberUserIdsExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["IsMemberUserIdsExtendedResponseModel"] = None
 
 
 class IsMemberUserIdsResponse(BaseResponse):
-	response = None
+	response: Optional["IsMemberUserIdsResponseModel"] = None
 
 
 class SearchResponse(BaseResponse):
-	response = None
+	response: Optional["SearchResponseModel"] = None
 
 
-AddAddressResponseModel = None
+AddAddressResponseModelModel = None
 
 
-class AddCallbackServerResponse(BaseResponse):
-	server_id = None
+class AddCallbackServerResponseModel(BaseResponse):
+	server_id: Optional[int] = None
 
 
-AddLinkResponseModel = None
+AddLinkResponseModelModel = None
 
 
-CreateResponseModel = None
+CreateResponseModelModel = None
 
 
-EditAddressResponseModel = None
+EditAddressResponseModelModel = None
 
 
-class GetAddressesResponse(BaseResponse):
-	count = None
-	items = None
+class GetAddressesResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetBannedResponse(BaseResponse):
-	count = None
-	items = None
+class GetBannedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-GetByIdLegacyResponseModel = array
+GetByIdLegacyResponseModelModel = array
 
 
-class GetByIdResponse(BaseResponse):
-	groups = None
-	profiles = None
+class GetByIdResponseModel(BaseResponse):
+	groups: Optional["Array"] = None
+	profiles: Optional["Array"] = None
 
 
-class GetCallbackConfirmationCodeResponse(BaseResponse):
-	code = None
+class GetCallbackConfirmationCodeResponseModel(BaseResponse):
+	code: Optional[str] = None
 
 
-class GetCallbackServersResponse(BaseResponse):
-	count = None
-	items = None
+class GetCallbackServersResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-GetCallbackSettingsResponseModel = None
+GetCallbackSettingsResponseModelModel = None
 
 
-class GetCatalogInfoExtendedResponse(BaseResponse):
-	enabled = None
-	categories = None
+class GetCatalogInfoExtendedResponseModel(BaseResponse):
+	enabled: Optional[int] = None
+	categories: Optional["Array"] = None
 
 
-class GetCatalogInfoResponse(BaseResponse):
-	enabled = None
-	categories = None
+class GetCatalogInfoResponseModel(BaseResponse):
+	enabled: Optional[int] = None
+	categories: Optional["Array"] = None
 
 
-class GetCatalogResponse(BaseResponse):
-	count = None
-	items = None
+class GetCatalogResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetInvitedUsersResponse(BaseResponse):
-	count = None
-	items = None
+class GetInvitedUsersResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetInvitesExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class GetInvitesExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetInvitesResponse(BaseResponse):
-	count = None
-	items = None
+class GetInvitesResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-GetLongPollServerResponseModel = None
+GetLongPollServerResponseModelModel = None
 
 
-GetLongPollSettingsResponseModel = None
+GetLongPollSettingsResponseModelModel = None
 
 
-class GetMembersFieldsResponse(BaseResponse):
-	count = None
-	items = None
+class GetMembersFieldsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetMembersFilterResponse(BaseResponse):
-	count = None
-	items = None
+class GetMembersFilterResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetMembersResponse(BaseResponse):
-	count = None
-	items = None
+class GetMembersResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetRequestsFieldsResponse(BaseResponse):
-	count = None
-	items = None
+class GetRequestsFieldsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetRequestsResponse(BaseResponse):
-	count = None
-	items = None
+class GetRequestsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetSettingsResponse(BaseResponse):
+class GetSettingsResponseModel(BaseResponse):
 	access = None
 	address = None
 	audio = None
@@ -294,25 +297,25 @@ class GetSettingsResponse(BaseResponse):
 	wiki = None
 
 
-GetTagListResponseModel = array
+GetTagListResponseModelModel = array
 
 
-class GetTokenPermissionsResponse(BaseResponse):
-	mask = None
-	permissions = None
+class GetTokenPermissionsResponseModel(BaseResponse):
+	mask: Optional[int] = None
+	permissions: Optional["Array"] = None
 
 
-class GetExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetResponse(BaseResponse):
-	count = None
-	items = None
+class GetResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class IsMemberExtendedResponse(BaseResponse):
+class IsMemberExtendedResponseModel(BaseResponse):
 	member = None
 	invitation = None
 	can_invite = None
@@ -320,15 +323,51 @@ class IsMemberExtendedResponse(BaseResponse):
 	request = None
 
 
-IsMemberResponseModel = None
+IsMemberResponseModelModel = None
 
 
-IsMemberUserIdsExtendedResponseModel = array
+IsMemberUserIdsExtendedResponseModelModel = array
 
 
-IsMemberUserIdsResponseModel = array
+IsMemberUserIdsResponseModelModel = array
 
 
-class SearchResponse(BaseResponse):
-	count = None
-	items = None
+class SearchResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+
+AddAddressResponse.update_forward_refs()
+AddCallbackServerResponse.update_forward_refs()
+AddLinkResponse.update_forward_refs()
+CreateResponse.update_forward_refs()
+EditAddressResponse.update_forward_refs()
+GetAddressesResponse.update_forward_refs()
+GetBannedResponse.update_forward_refs()
+GetByIdLegacyResponse.update_forward_refs()
+GetByIdResponse.update_forward_refs()
+GetCallbackConfirmationCodeResponse.update_forward_refs()
+GetCallbackServersResponse.update_forward_refs()
+GetCallbackSettingsResponse.update_forward_refs()
+GetCatalogInfoExtendedResponse.update_forward_refs()
+GetCatalogInfoResponse.update_forward_refs()
+GetCatalogResponse.update_forward_refs()
+GetInvitedUsersResponse.update_forward_refs()
+GetInvitesExtendedResponse.update_forward_refs()
+GetInvitesResponse.update_forward_refs()
+GetLongPollServerResponse.update_forward_refs()
+GetLongPollSettingsResponse.update_forward_refs()
+GetMembersFieldsResponse.update_forward_refs()
+GetMembersFilterResponse.update_forward_refs()
+GetMembersResponse.update_forward_refs()
+GetRequestsFieldsResponse.update_forward_refs()
+GetRequestsResponse.update_forward_refs()
+GetSettingsResponse.update_forward_refs()
+GetTagListResponse.update_forward_refs()
+GetTokenPermissionsResponse.update_forward_refs()
+GetExtendedResponse.update_forward_refs()
+GetResponse.update_forward_refs()
+IsMemberExtendedResponse.update_forward_refs()
+IsMemberResponse.update_forward_refs()
+IsMemberUserIdsExtendedResponse.update_forward_refs()
+IsMemberUserIdsResponse.update_forward_refs()
+SearchResponse.update_forward_refs()

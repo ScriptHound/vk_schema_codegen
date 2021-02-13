@@ -1,53 +1,63 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class GetAdCategoriesResponse(BaseResponse):
-	response = None
+	response: Optional["GetAdCategoriesResponseModel"] = None
 
 
 class GetAdUnitCodeResponse(BaseResponse):
-	response = None
+	response: Optional["GetAdUnitCodeResponseModel"] = None
 
 
 class GetAdUnitsResponse(BaseResponse):
-	response = None
+	response: Optional["GetAdUnitsResponseModel"] = None
 
 
 class GetFraudHistoryResponse(BaseResponse):
-	response = None
+	response: Optional["GetFraudHistoryResponseModel"] = None
 
 
 class GetSitesResponse(BaseResponse):
-	response = None
+	response: Optional["GetSitesResponseModel"] = None
 
 
 class GetStatisticsResponse(BaseResponse):
-	response = None
+	response: Optional["GetStatisticsResponseModel"] = None
 
 
-class GetAdCategoriesResponse(BaseResponse):
-	categories = None
+class GetAdCategoriesResponseModel(BaseResponse):
+	categories: Optional["Array"] = None
 
 
-class GetAdUnitCodeResponse(BaseResponse):
-	html = None
+class GetAdUnitCodeResponseModel(BaseResponse):
+	html: Optional[str] = None
 
 
-class GetAdUnitsResponse(BaseResponse):
-	count = None
-	ad_units = None
+class GetAdUnitsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	ad_units: Optional["Array"] = None
 
 
-class GetFraudHistoryResponse(BaseResponse):
-	count = None
-	entries = None
+class GetFraudHistoryResponseModel(BaseResponse):
+	count: Optional[int] = None
+	entries: Optional["Array"] = None
 
 
-class GetSitesResponse(BaseResponse):
-	count = None
-	sites = None
+class GetSitesResponseModel(BaseResponse):
+	count: Optional[int] = None
+	sites: Optional["Array"] = None
 
 
-class GetStatisticsResponse(BaseResponse):
-	next_page_id = None
-	items = None
+class GetStatisticsResponseModel(BaseResponse):
+	next_page_id: Optional[str] = None
+	items: Optional["Array"] = None
+
+GetAdCategoriesResponse.update_forward_refs()
+GetAdUnitCodeResponse.update_forward_refs()
+GetAdUnitsResponse.update_forward_refs()
+GetFraudHistoryResponse.update_forward_refs()
+GetSitesResponse.update_forward_refs()
+GetStatisticsResponse.update_forward_refs()

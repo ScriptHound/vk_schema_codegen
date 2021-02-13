@@ -1,40 +1,49 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class AddResponse(BaseResponse):
-	response = None
+	response: Optional["AddResponseModel"] = None
 
 
 class CreateCommentResponse(BaseResponse):
-	response = None
+	response: Optional["CreateCommentResponseModel"] = None
 
 
 class GetByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdResponseModel"] = None
 
 
 class GetCommentsResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
-AddResponseModel = None
+AddResponseModelModel = None
 
 
-CreateCommentResponseModel = None
+CreateCommentResponseModelModel = None
 
 
-GetByIdResponseModel = None
+GetByIdResponseModelModel = None
 
 
-class GetCommentsResponse(BaseResponse):
-	count = None
-	items = None
+class GetCommentsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetResponse(BaseResponse):
-	count = None
-	items = None
+class GetResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+
+AddResponse.update_forward_refs()
+CreateCommentResponse.update_forward_refs()
+GetByIdResponse.update_forward_refs()
+GetCommentsResponse.update_forward_refs()
+GetResponse.update_forward_refs()

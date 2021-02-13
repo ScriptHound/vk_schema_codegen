@@ -1,52 +1,63 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class GetAppImageUploadServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetAppImageUploadServerResponseModel"] = None
 
 
 class GetAppImagesResponse(BaseResponse):
-	response = None
+	response: Optional["GetAppImagesResponseModel"] = None
 
 
 class GetGroupImageUploadServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetGroupImageUploadServerResponseModel"] = None
 
 
 class GetGroupImagesResponse(BaseResponse):
-	response = None
+	response: Optional["GetGroupImagesResponseModel"] = None
 
 
 class GetImagesByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetImagesByIdResponseModel"] = None
 
 
 class SaveAppImageResponse(BaseResponse):
-	response = None
+	response: Optional["SaveAppImageResponseModel"] = None
 
 
 class SaveGroupImageResponse(BaseResponse):
-	response = None
+	response: Optional["SaveGroupImageResponseModel"] = None
 
 
-class GetAppImageUploadServerResponse(BaseResponse):
-	upload_url = None
+class GetAppImageUploadServerResponseModel(BaseResponse):
+	upload_url: Optional[str] = None
 
 
-GetAppImagesResponseModel = None
+GetAppImagesResponseModelModel = None
 
 
-class GetGroupImageUploadServerResponse(BaseResponse):
-	upload_url = None
+class GetGroupImageUploadServerResponseModel(BaseResponse):
+	upload_url: Optional[str] = None
 
 
-GetGroupImagesResponseModel = None
+GetGroupImagesResponseModelModel = None
 
 
-GetImagesByIdResponseModel = array
+GetImagesByIdResponseModelModel = array
 
 
-SaveAppImageResponseModel = None
+SaveAppImageResponseModelModel = None
 
 
-SaveGroupImageResponseModel = None
+SaveGroupImageResponseModelModel = None
+
+GetAppImageUploadServerResponse.update_forward_refs()
+GetAppImagesResponse.update_forward_refs()
+GetGroupImageUploadServerResponse.update_forward_refs()
+GetGroupImagesResponse.update_forward_refs()
+GetImagesByIdResponse.update_forward_refs()
+SaveAppImageResponse.update_forward_refs()
+SaveGroupImageResponse.update_forward_refs()

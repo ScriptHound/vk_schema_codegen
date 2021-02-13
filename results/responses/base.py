@@ -1,22 +1,29 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class BoolResponse(BaseResponse):
-	response = None
+	response: Optional["BoolResponseModel"] = None
 
 
 class GetUploadServerResponse(BaseResponse):
-	response = None
+	response: Optional["GetUploadServerResponseModel"] = None
 
 
 class OkResponse(BaseResponse):
-	response = None
+	response: Optional["OkResponseModel"] = None
 
 
-BoolResponseModel = None
+BoolResponseModelModel = None
 
 
-GetUploadServerResponseModel = None
+GetUploadServerResponseModelModel = None
 
 
-OkResponseModel = None
+OkResponseModelModel = None
+
+BoolResponse.update_forward_refs()
+GetUploadServerResponse.update_forward_refs()
+OkResponse.update_forward_refs()

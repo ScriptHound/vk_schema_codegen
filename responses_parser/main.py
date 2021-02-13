@@ -4,11 +4,13 @@ from .response_utils import (
 )
 from .models import ResponseModel
 from .models import jsonschema_object_factory
+from utils.titles import Imports, UpdateForwardRefs
 
 
 def write_response_alias(schema_body: dict, file: 'File') -> None:
-    for classname, bofy in schema_body.items():
-        properties = {'response': None}
+    for classname, body in schema_body.items():
+        annotation = f': Optional["{classname}Model"]'
+        properties = {'response' + annotation: None}
         file.write(str(ResponseModel(classname, **properties)))
 
 
@@ -24,11 +26,11 @@ def parse_file(schema_path: str, **imports) -> None:
 
     for filename, schema_body in responses_by_files.items():
         with open(f'results/responses/{filename}.py', 'w') as file:
-
+            file.write(str(Imports(**imports)))
             write_response_alias(schema_body, file)
 
             for classname, body in schema_body.items():
-                schema_object = jsonschema_object_factory(classname, body['properties'])
+                schema_object = jsonschema_object_factory(classname + 'Model', body['properties'])
 
-                # TODO .get('properties', {}).keys() is temporary
                 file.write(str(schema_object))
+            file.write('\n' + str(UpdateForwardRefs(**schema_body)))

@@ -1,74 +1,87 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class ChangePasswordResponse(BaseResponse):
-	response = None
+	response: Optional["ChangePasswordResponseModel"] = None
 
 
 class GetActiveOffersResponse(BaseResponse):
-	response = None
+	response: Optional["GetActiveOffersResponseModel"] = None
 
 
 class GetAppPermissionsResponse(BaseResponse):
-	response = None
+	response: Optional["GetAppPermissionsResponseModel"] = None
 
 
 class GetBannedResponse(BaseResponse):
-	response = None
+	response: Optional["GetBannedResponseModel"] = None
 
 
 class GetCountersResponse(BaseResponse):
-	response = None
+	response: Optional["GetCountersResponseModel"] = None
 
 
 class GetInfoResponse(BaseResponse):
-	response = None
+	response: Optional["GetInfoResponseModel"] = None
 
 
 class GetProfileInfoResponse(BaseResponse):
-	response = None
+	response: Optional["GetProfileInfoResponseModel"] = None
 
 
 class GetPushSettingsResponse(BaseResponse):
-	response = None
+	response: Optional["GetPushSettingsResponseModel"] = None
 
 
 class SaveProfileInfoResponse(BaseResponse):
-	response = None
+	response: Optional["SaveProfileInfoResponseModel"] = None
 
 
-class ChangePasswordResponse(BaseResponse):
-	token = None
-	secret = None
+class ChangePasswordResponseModel(BaseResponse):
+	token: Optional[str] = None
+	secret: Optional[str] = None
 
 
-class GetActiveOffersResponse(BaseResponse):
-	count = None
-	items = None
+class GetActiveOffersResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-GetAppPermissionsResponseModel = None
+GetAppPermissionsResponseModelModel = None
 
 
-class GetBannedResponse(BaseResponse):
-	count = None
-	items = None
-	profiles = None
-	groups = None
+class GetBannedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	profiles: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-GetCountersResponseModel = None
+GetCountersResponseModelModel = None
 
 
-GetInfoResponseModel = None
+GetInfoResponseModelModel = None
 
 
-GetProfileInfoResponseModel = None
+GetProfileInfoResponseModelModel = None
 
 
-GetPushSettingsResponseModel = None
+GetPushSettingsResponseModelModel = None
 
 
-class SaveProfileInfoResponse(BaseResponse):
+class SaveProfileInfoResponseModel(BaseResponse):
 	changed = None
 	name_request = None
+
+ChangePasswordResponse.update_forward_refs()
+GetActiveOffersResponse.update_forward_refs()
+GetAppPermissionsResponse.update_forward_refs()
+GetBannedResponse.update_forward_refs()
+GetCountersResponse.update_forward_refs()
+GetInfoResponse.update_forward_refs()
+GetProfileInfoResponse.update_forward_refs()
+GetPushSettingsResponse.update_forward_refs()
+SaveProfileInfoResponse.update_forward_refs()

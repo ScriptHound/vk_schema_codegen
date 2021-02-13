@@ -1,181 +1,206 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class AddAlbumResponse(BaseResponse):
-	response = None
+	response: Optional["AddAlbumResponseModel"] = None
 
 
 class AddResponse(BaseResponse):
-	response = None
+	response: Optional["AddResponseModel"] = None
 
 
 class CreateCommentResponse(BaseResponse):
-	response = None
+	response: Optional["CreateCommentResponseModel"] = None
 
 
 class DeleteCommentResponse(BaseResponse):
-	response = None
+	response: Optional["DeleteCommentResponseModel"] = None
 
 
 class GetAlbumByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetAlbumByIdResponseModel"] = None
 
 
 class GetAlbumsResponse(BaseResponse):
-	response = None
+	response: Optional["GetAlbumsResponseModel"] = None
 
 
 class GetByIdExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdExtendedResponseModel"] = None
 
 
 class GetByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdResponseModel"] = None
 
 
 class GetCategoriesNewResponse(BaseResponse):
-	response = None
+	response: Optional["GetCategoriesNewResponseModel"] = None
 
 
 class GetCategoriesResponse(BaseResponse):
-	response = None
+	response: Optional["GetCategoriesResponseModel"] = None
 
 
 class GetCommentsResponse(BaseResponse):
-	response = None
+	response: Optional["GetCommentsResponseModel"] = None
 
 
 class GetGroupOrdersResponse(BaseResponse):
-	response = None
+	response: Optional["GetGroupOrdersResponseModel"] = None
 
 
 class GetOrderByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetOrderByIdResponseModel"] = None
 
 
 class GetOrderItemsResponse(BaseResponse):
-	response = None
+	response: Optional["GetOrderItemsResponseModel"] = None
 
 
 class GetOrdersExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetOrdersExtendedResponseModel"] = None
 
 
 class GetOrdersResponse(BaseResponse):
-	response = None
+	response: Optional["GetOrdersResponseModel"] = None
 
 
 class GetExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["GetExtendedResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
 class RestoreCommentResponse(BaseResponse):
-	response = None
+	response: Optional["RestoreCommentResponseModel"] = None
 
 
 class SearchExtendedResponse(BaseResponse):
-	response = None
+	response: Optional["SearchExtendedResponseModel"] = None
 
 
 class SearchResponse(BaseResponse):
-	response = None
+	response: Optional["SearchResponseModel"] = None
 
 
-class AddAlbumResponse(BaseResponse):
-	market_album_id = None
+class AddAlbumResponseModel(BaseResponse):
+	market_album_id: Optional[int] = None
 
 
-class AddResponse(BaseResponse):
-	market_item_id = None
+class AddResponseModel(BaseResponse):
+	market_item_id: Optional[int] = None
 
 
-CreateCommentResponseModel = None
+CreateCommentResponseModelModel = None
 
 
-DeleteCommentResponseModel = None
+DeleteCommentResponseModelModel = None
 
 
-class GetAlbumByIdResponse(BaseResponse):
-	count = None
-	items = None
+class GetAlbumByIdResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetAlbumsResponse(BaseResponse):
-	count = None
-	items = None
+class GetAlbumsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetByIdExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetByIdExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetByIdResponse(BaseResponse):
-	count = None
-	items = None
+class GetByIdResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetCategoriesNewResponse(BaseResponse):
-	items = None
+class GetCategoriesNewResponseModel(BaseResponse):
+	items: Optional["Array"] = None
 
 
-class GetCategoriesResponse(BaseResponse):
-	count = None
-	items = None
+class GetCategoriesResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetCommentsResponse(BaseResponse):
-	count = None
-	items = None
+class GetCommentsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetGroupOrdersResponse(BaseResponse):
-	count = None
-	items = None
+class GetGroupOrdersResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetOrderByIdResponse(BaseResponse):
+class GetOrderByIdResponseModel(BaseResponse):
 	order = None
 
 
-class GetOrderItemsResponse(BaseResponse):
-	count = None
-	items = None
+class GetOrderItemsResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetOrdersExtendedResponse(BaseResponse):
-	count = None
-	items = None
-	groups = None
+class GetOrdersExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+	groups: Optional["Array"] = None
 
 
-class GetOrdersResponse(BaseResponse):
-	count = None
-	items = None
+class GetOrdersResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class GetExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class GetResponse(BaseResponse):
-	count = None
-	items = None
+class GetResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-RestoreCommentResponseModel = None
+RestoreCommentResponseModelModel = None
 
 
-class SearchExtendedResponse(BaseResponse):
-	count = None
-	items = None
+class SearchExtendedResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class SearchResponse(BaseResponse):
-	count = None
-	items = None
+class SearchResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+
+AddAlbumResponse.update_forward_refs()
+AddResponse.update_forward_refs()
+CreateCommentResponse.update_forward_refs()
+DeleteCommentResponse.update_forward_refs()
+GetAlbumByIdResponse.update_forward_refs()
+GetAlbumsResponse.update_forward_refs()
+GetByIdExtendedResponse.update_forward_refs()
+GetByIdResponse.update_forward_refs()
+GetCategoriesNewResponse.update_forward_refs()
+GetCategoriesResponse.update_forward_refs()
+GetCommentsResponse.update_forward_refs()
+GetGroupOrdersResponse.update_forward_refs()
+GetOrderByIdResponse.update_forward_refs()
+GetOrderItemsResponse.update_forward_refs()
+GetOrdersExtendedResponse.update_forward_refs()
+GetOrdersResponse.update_forward_refs()
+GetExtendedResponse.update_forward_refs()
+GetResponse.update_forward_refs()
+RestoreCommentResponse.update_forward_refs()
+SearchExtendedResponse.update_forward_refs()
+SearchResponse.update_forward_refs()

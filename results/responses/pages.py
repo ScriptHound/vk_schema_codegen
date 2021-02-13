@@ -1,50 +1,61 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class GetHistoryResponse(BaseResponse):
-	response = None
+	response: Optional["GetHistoryResponseModel"] = None
 
 
 class GetTitlesResponse(BaseResponse):
-	response = None
+	response: Optional["GetTitlesResponseModel"] = None
 
 
 class GetVersionResponse(BaseResponse):
-	response = None
+	response: Optional["GetVersionResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
 class ParseWikiResponse(BaseResponse):
-	response = None
+	response: Optional["ParseWikiResponseModel"] = None
 
 
 class SaveAccessResponse(BaseResponse):
-	response = None
+	response: Optional["SaveAccessResponseModel"] = None
 
 
 class SaveResponse(BaseResponse):
-	response = None
+	response: Optional["SaveResponseModel"] = None
 
 
-GetHistoryResponseModel = array
+GetHistoryResponseModelModel = array
 
 
-GetTitlesResponseModel = array
+GetTitlesResponseModelModel = array
 
 
-GetVersionResponseModel = None
+GetVersionResponseModelModel = None
 
 
-GetResponseModel = None
+GetResponseModelModel = None
 
 
-ParseWikiResponseModel = string
+ParseWikiResponseModelModel = string
 
 
-SaveAccessResponseModel = None
+SaveAccessResponseModelModel = None
 
 
-SaveResponseModel = None
+SaveResponseModelModel = None
+
+GetHistoryResponse.update_forward_refs()
+GetTitlesResponse.update_forward_refs()
+GetVersionResponse.update_forward_refs()
+GetResponse.update_forward_refs()
+ParseWikiResponse.update_forward_refs()
+SaveAccessResponse.update_forward_refs()
+SaveResponse.update_forward_refs()

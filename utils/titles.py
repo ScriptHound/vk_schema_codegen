@@ -2,17 +2,16 @@ import abc
 
 
 class AbstractTitle(abc.ABC):
-    def __init__(self, params=None):
-        params = {}
+    def __init__(self, **params):
         self.params = params
 
     @abc.abstractmethod
-    def __str__(self):
+    def __repr__(self):
         pass
 
 
 class Imports(AbstractTitle):
-    def __str__(self):
+    def __repr__(self):
         import_str = ""
         for k, v in self.params.items():
             if v == 'None':
@@ -24,7 +23,7 @@ class Imports(AbstractTitle):
 
 
 class UpdateForwardRefs(AbstractTitle):
-    def __str__(self):
+    def __repr__(self):
         update_refs_string = "\n"
         for k, _ in self.params.items():
             update_refs_string += f'{k}.update_forward_refs()\n'

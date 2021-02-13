@@ -1,68 +1,80 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class AddResponse(BaseResponse):
-	response = None
+	response: Optional["AddResponseModel"] = None
 
 
 class DocUploadResponse(BaseResponse):
-	response = None
+	response: Optional["DocUploadResponseModel"] = None
 
 
 class GetByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdResponseModel"] = None
 
 
 class GetTypesResponse(BaseResponse):
-	response = None
+	response: Optional["GetTypesResponseModel"] = None
 
 
 class GetUploadServer(BaseResponse):
-	response = None
+	response: Optional["GetUploadServerModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
 class SaveResponse(BaseResponse):
-	response = None
+	response: Optional["SaveResponseModel"] = None
 
 
 class SearchResponse(BaseResponse):
-	response = None
+	response: Optional["SearchResponseModel"] = None
 
 
-AddResponseModel = None
+AddResponseModelModel = None
 
 
-class DocUploadResponse(BaseResponse):
-	file = None
+class DocUploadResponseModel(BaseResponse):
+	file: Optional[str] = None
 
 
-GetByIdResponseModel = array
+GetByIdResponseModelModel = array
 
 
-class GetTypesResponse(BaseResponse):
-	count = None
-	items = None
+class GetTypesResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-GetUploadServerModel = None
+GetUploadServerModelModel = None
 
 
-class GetResponse(BaseResponse):
-	count = None
-	items = None
+class GetResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
 
 
-class SaveResponse(BaseResponse):
+class SaveResponseModel(BaseResponse):
 	type = None
 	audio_message = None
 	doc = None
 	graffiti = None
 
 
-class SearchResponse(BaseResponse):
-	count = None
-	items = None
+class SearchResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+
+AddResponse.update_forward_refs()
+DocUploadResponse.update_forward_refs()
+GetByIdResponse.update_forward_refs()
+GetTypesResponse.update_forward_refs()
+GetUploadServer.update_forward_refs()
+GetResponse.update_forward_refs()
+SaveResponse.update_forward_refs()
+SearchResponse.update_forward_refs()

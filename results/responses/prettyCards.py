@@ -1,52 +1,62 @@
+from typing import Optional, List, Union
+from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage, MessagesPinnedMessage, MessagesHistoryAttachment, MessagesChatFull, MessageChatPreview, MessagesLongpollParams, MessagesLastActivity, MessagesConversation, BaseMessageError, MessagesConversationWithMessage, BaseBoolInt, MessagesChatRestrictions, MessagesChat, UsersUser, UsersUserFull, MessagesLongpollMessages, MessagesConversationMember
+from .base_response import BaseResponse
 
 
 
 class CreateResponse(BaseResponse):
-	response = None
+	response: Optional["CreateResponseModel"] = None
 
 
 class DeleteResponse(BaseResponse):
-	response = None
+	response: Optional["DeleteResponseModel"] = None
 
 
 class EditResponse(BaseResponse):
-	response = None
+	response: Optional["EditResponseModel"] = None
 
 
 class GetByIdResponse(BaseResponse):
-	response = None
+	response: Optional["GetByIdResponseModel"] = None
 
 
 class GetUploadURLResponse(BaseResponse):
-	response = None
+	response: Optional["GetUploadURLResponseModel"] = None
 
 
 class GetResponse(BaseResponse):
-	response = None
+	response: Optional["GetResponseModel"] = None
 
 
-class CreateResponse(BaseResponse):
-	owner_id = None
-	card_id = None
+class CreateResponseModel(BaseResponse):
+	owner_id: Optional[int] = None
+	card_id: Optional[str] = None
 
 
-class DeleteResponse(BaseResponse):
-	owner_id = None
-	card_id = None
-	error = None
+class DeleteResponseModel(BaseResponse):
+	owner_id: Optional[int] = None
+	card_id: Optional[str] = None
+	error: Optional[str] = None
 
 
-class EditResponse(BaseResponse):
-	owner_id = None
-	card_id = None
+class EditResponseModel(BaseResponse):
+	owner_id: Optional[int] = None
+	card_id: Optional[str] = None
 
 
-GetByIdResponseModel = array
+GetByIdResponseModelModel = array
 
 
-GetUploadURLResponseModel = string
+GetUploadURLResponseModelModel = string
 
 
-class GetResponse(BaseResponse):
-	count = None
-	items = None
+class GetResponseModel(BaseResponse):
+	count: Optional[int] = None
+	items: Optional["Array"] = None
+
+CreateResponse.update_forward_refs()
+DeleteResponse.update_forward_refs()
+EditResponse.update_forward_refs()
+GetByIdResponse.update_forward_refs()
+GetUploadURLResponse.update_forward_refs()
+GetResponse.update_forward_refs()
