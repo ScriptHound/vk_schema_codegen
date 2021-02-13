@@ -2,30 +2,14 @@ from .response_utils import (
     generate_response_dir,
     put_responses_by_filename
 )
+from .models import ResponseModel
+from .models import jsonschema_object_factory
 
 
-class ResponseModelBody:
-    def __init__(self, **attributes) -> None:
-        self.attributes = attributes
-
-    def __repr__(self):
-        return '\n\t'.join([f'{name} = {value}'
-                           for name, value in self.attributes.items()])
-
-
-class ResponseModel:
-    def __init__(self,
-                 classname: str,
-                 superclass="BaseResponse",
-                 **variables):
-        self.variables = variables
-        self.classname = classname
-        self.superclass = superclass
-
-    def __repr__(self):
-        header = f'\n\nclass {self.classname}({self.superclass}):\n\t'
-        body = str(ResponseModelBody(**self.variables))
-        return header + body
+def write_response_alias(schema_body: dict, file: 'File') -> None:
+    for classname, bofy in schema_body.items():
+        properties = {'response': None}
+        file.write(str(ResponseModel(classname, **properties)))
 
 
 def parse_file(schema_path: str, **imports) -> None:
@@ -40,8 +24,11 @@ def parse_file(schema_path: str, **imports) -> None:
 
     for filename, schema_body in responses_by_files.items():
         with open(f'results/responses/{filename}.py', 'w') as file:
+
+            write_response_alias(schema_body, file)
+
             for classname, body in schema_body.items():
-                response = body['properties']['response']
+                schema_object = jsonschema_object_factory(classname, body['properties'])
+
                 # TODO .get('properties', {}).keys() is temporary
-                properties = {name: None for name in response.get('properties', {}).keys()}
-                file.write(str(ResponseModel(classname, **properties)))
+                file.write(str(schema_object))

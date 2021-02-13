@@ -1,16 +1,98 @@
 
 
+
+class AddListResponse(BaseResponse):
+	response = None
+
+
+class AddResponse(BaseResponse):
+	response = None
+
+
+class AreFriendsExtendedResponse(BaseResponse):
+	response = None
+
+
+class AreFriendsResponse(BaseResponse):
+	response = None
+
+
+class DeleteResponse(BaseResponse):
+	response = None
+
+
+class GetAppUsersResponse(BaseResponse):
+	response = None
+
+
+class GetByPhonesResponse(BaseResponse):
+	response = None
+
+
+class GetListsResponse(BaseResponse):
+	response = None
+
+
+class GetMutualResponse(BaseResponse):
+	response = None
+
+
+class GetMutualTargetUidsResponse(BaseResponse):
+	response = None
+
+
+class GetOnlineOnlineMobileResponse(BaseResponse):
+	response = None
+
+
+class GetOnlineResponse(BaseResponse):
+	response = None
+
+
+class GetRecentResponse(BaseResponse):
+	response = None
+
+
+class GetRequestsExtendedResponse(BaseResponse):
+	response = None
+
+
+class GetRequestsNeedMutualResponse(BaseResponse):
+	response = None
+
+
+class GetRequestsResponse(BaseResponse):
+	response = None
+
+
+class GetSuggestionsResponse(BaseResponse):
+	response = None
+
+
+class GetFieldsResponse(BaseResponse):
+	response = None
+
+
+class GetResponse(BaseResponse):
+	response = None
+
+
+class SearchResponse(BaseResponse):
+	response = None
+
+
 class AddListResponse(BaseResponse):
 	list_id = None
 
-class AddResponse(BaseResponse):
-	
 
-class AreFriendsExtendedResponse(BaseResponse):
-	
+AddResponseModel = None
 
-class AreFriendsResponse(BaseResponse):
-	
+
+AreFriendsExtendedResponseModel = array
+
+
+AreFriendsResponseModel = array
+
 
 class DeleteResponse(BaseResponse):
 	success = None
@@ -19,56 +101,65 @@ class DeleteResponse(BaseResponse):
 	in_request_deleted = None
 	suggestion_deleted = None
 
-class GetAppUsersResponse(BaseResponse):
-	
 
-class GetByPhonesResponse(BaseResponse):
-	
+GetAppUsersResponseModel = array
+
+
+GetByPhonesResponseModel = array
+
 
 class GetListsResponse(BaseResponse):
 	count = None
 	items = None
 
-class GetMutualResponse(BaseResponse):
-	
 
-class GetMutualTargetUidsResponse(BaseResponse):
-	
+GetMutualResponseModel = array
+
+
+GetMutualTargetUidsResponseModel = array
+
 
 class GetOnlineOnlineMobileResponse(BaseResponse):
 	online = None
 	online_mobile = None
 
-class GetOnlineResponse(BaseResponse):
-	
 
-class GetRecentResponse(BaseResponse):
-	
+GetOnlineResponseModel = array
+
+
+GetRecentResponseModel = array
+
 
 class GetRequestsExtendedResponse(BaseResponse):
 	count = None
 	items = None
 
+
 class GetRequestsNeedMutualResponse(BaseResponse):
 	count = None
 	items = None
+
 
 class GetRequestsResponse(BaseResponse):
 	count = None
 	items = None
 	count_unread = None
 
+
 class GetSuggestionsResponse(BaseResponse):
 	count = None
 	items = None
+
 
 class GetFieldsResponse(BaseResponse):
 	count = None
 	items = None
 
+
 class GetResponse(BaseResponse):
 	count = None
 	items = None
+
 
 class SearchResponse(BaseResponse):
 	count = None

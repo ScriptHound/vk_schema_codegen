@@ -1,24 +1,180 @@
 
 
+
 class CreateChatResponse(BaseResponse):
-	
+	response = None
+
+
+class DeleteChatPhotoResponse(BaseResponse):
+	response = None
+
+
+class DeleteConversationResponse(BaseResponse):
+	response = None
+
+
+class DeleteResponse(BaseResponse):
+	response = None
+
+
+class EditResponse(BaseResponse):
+	response = None
+
+
+class GetByConversationMessageIdResponse(BaseResponse):
+	response = None
+
+
+class GetByIdExtendedResponse(BaseResponse):
+	response = None
+
+
+class GetByIdResponse(BaseResponse):
+	response = None
+
+
+class GetChatPreviewResponse(BaseResponse):
+	response = None
+
+
+class GetChatChatIdsFieldsResponse(BaseResponse):
+	response = None
+
+
+class GetChatChatIdsResponse(BaseResponse):
+	response = None
+
+
+class GetChatFieldsResponse(BaseResponse):
+	response = None
+
+
+class GetChatResponse(BaseResponse):
+	response = None
+
+
+class GetConversationMembersResponse(BaseResponse):
+	response = None
+
+
+class GetConversationsByIdExtendedResponse(BaseResponse):
+	response = None
+
+
+class GetConversationsByIdResponse(BaseResponse):
+	response = None
+
+
+class GetConversationsResponse(BaseResponse):
+	response = None
+
+
+class GetHistoryAttachmentsResponse(BaseResponse):
+	response = None
+
+
+class GetHistoryExtendedResponse(BaseResponse):
+	response = None
+
+
+class GetHistoryResponse(BaseResponse):
+	response = None
+
+
+class GetImportantMessagesExtendedResponse(BaseResponse):
+	response = None
+
+
+class GetImportantMessagesResponse(BaseResponse):
+	response = None
+
+
+class GetIntentUsersResponse(BaseResponse):
+	response = None
+
+
+class GetInviteLinkResponse(BaseResponse):
+	response = None
+
+
+class GetLastActivityResponse(BaseResponse):
+	response = None
+
+
+class GetLongPollHistoryResponse(BaseResponse):
+	response = None
+
+
+class GetLongPollServerResponse(BaseResponse):
+	response = None
+
+
+class IsMessagesFromGroupAllowedResponse(BaseResponse):
+	response = None
+
+
+class JoinChatByInviteLinkResponse(BaseResponse):
+	response = None
+
+
+class MarkAsImportantResponse(BaseResponse):
+	response = None
+
+
+class PinResponse(BaseResponse):
+	response = None
+
+
+class SearchConversationsExtendedResponse(BaseResponse):
+	response = None
+
+
+class SearchConversationsResponse(BaseResponse):
+	response = None
+
+
+class SearchExtendedResponse(BaseResponse):
+	response = None
+
+
+class SearchResponse(BaseResponse):
+	response = None
+
+
+class SendResponse(BaseResponse):
+	response = None
+
+
+class SendUserIdsResponse(BaseResponse):
+	response = None
+
+
+class SetChatPhotoResponse(BaseResponse):
+	response = None
+
+
+CreateChatResponseModel = None
+
 
 class DeleteChatPhotoResponse(BaseResponse):
 	message_id = None
 	chat = None
 
+
 class DeleteConversationResponse(BaseResponse):
 	last_deleted_id = None
 
-class DeleteResponse(BaseResponse):
-	
 
-class EditResponse(BaseResponse):
-	
+DeleteResponseModel = typing.Dict[str, int]
+
+
+EditResponseModel = None
+
 
 class GetByConversationMessageIdResponse(BaseResponse):
 	count = None
 	items = None
+
 
 class GetByIdExtendedResponse(BaseResponse):
 	count = None
@@ -26,25 +182,28 @@ class GetByIdExtendedResponse(BaseResponse):
 	profiles = None
 	groups = None
 
+
 class GetByIdResponse(BaseResponse):
 	count = None
 	items = None
+
 
 class GetChatPreviewResponse(BaseResponse):
 	preview = None
 	profiles = None
 
-class GetChatChatIdsFieldsResponse(BaseResponse):
-	
 
-class GetChatChatIdsResponse(BaseResponse):
-	
+GetChatChatIdsFieldsResponseModel = array
 
-class GetChatFieldsResponse(BaseResponse):
-	
 
-class GetChatResponse(BaseResponse):
-	
+GetChatChatIdsResponseModel = array
+
+
+GetChatFieldsResponseModel = None
+
+
+GetChatResponseModel = None
+
 
 class GetConversationMembersResponse(BaseResponse):
 	count = None
@@ -53,15 +212,18 @@ class GetConversationMembersResponse(BaseResponse):
 	profiles = None
 	groups = None
 
+
 class GetConversationsByIdExtendedResponse(BaseResponse):
 	count = None
 	items = None
 	profiles = None
 	groups = None
 
+
 class GetConversationsByIdResponse(BaseResponse):
 	count = None
 	items = None
+
 
 class GetConversationsResponse(BaseResponse):
 	count = None
@@ -70,9 +232,11 @@ class GetConversationsResponse(BaseResponse):
 	profiles = None
 	groups = None
 
+
 class GetHistoryAttachmentsResponse(BaseResponse):
 	items = None
 	next_from = None
+
 
 class GetHistoryExtendedResponse(BaseResponse):
 	count = None
@@ -81,9 +245,11 @@ class GetHistoryExtendedResponse(BaseResponse):
 	groups = None
 	conversations = None
 
+
 class GetHistoryResponse(BaseResponse):
 	count = None
 	items = None
+
 
 class GetImportantMessagesExtendedResponse(BaseResponse):
 	messages = None
@@ -91,22 +257,26 @@ class GetImportantMessagesExtendedResponse(BaseResponse):
 	groups = None
 	conversations = None
 
+
 class GetImportantMessagesResponse(BaseResponse):
 	messages = None
 	profiles = None
 	groups = None
 	conversations = None
 
+
 class GetIntentUsersResponse(BaseResponse):
 	count = None
 	items = None
 	profiles = None
 
+
 class GetInviteLinkResponse(BaseResponse):
 	link = None
 
-class GetLastActivityResponse(BaseResponse):
-	
+
+GetLastActivityResponseModel = None
+
 
 class GetLongPollHistoryResponse(BaseResponse):
 	history = None
@@ -120,20 +290,23 @@ class GetLongPollHistoryResponse(BaseResponse):
 	more = None
 	conversations = None
 
-class GetLongPollServerResponse(BaseResponse):
-	
+
+GetLongPollServerResponseModel = None
+
 
 class IsMessagesFromGroupAllowedResponse(BaseResponse):
 	is_allowed = None
 
+
 class JoinChatByInviteLinkResponse(BaseResponse):
 	chat_id = None
 
-class MarkAsImportantResponse(BaseResponse):
-	
 
-class PinResponse(BaseResponse):
-	
+MarkAsImportantResponseModel = array
+
+
+PinResponseModel = None
+
 
 class SearchConversationsExtendedResponse(BaseResponse):
 	count = None
@@ -141,9 +314,11 @@ class SearchConversationsExtendedResponse(BaseResponse):
 	profiles = None
 	groups = None
 
+
 class SearchConversationsResponse(BaseResponse):
 	count = None
 	items = None
+
 
 class SearchExtendedResponse(BaseResponse):
 	count = None
@@ -152,15 +327,17 @@ class SearchExtendedResponse(BaseResponse):
 	groups = None
 	conversations = None
 
+
 class SearchResponse(BaseResponse):
 	count = None
 	items = None
 
-class SendResponse(BaseResponse):
-	
 
-class SendUserIdsResponse(BaseResponse):
-	
+SendResponseModel = None
+
+
+SendUserIdsResponseModel = array
+
 
 class SetChatPhotoResponse(BaseResponse):
 	message_id = None

@@ -1,5 +1,18 @@
 
 
+
+class GetResponse(BaseResponse):
+	response = None
+
+
+class MarkAsViewedResponse(BaseResponse):
+	response = None
+
+
+class SendMessageResponse(BaseResponse):
+	response = None
+
+
 class GetResponse(BaseResponse):
 	count = None
 	items = None
@@ -12,8 +25,8 @@ class GetResponse(BaseResponse):
 	next_from = None
 	ttl = None
 
-class MarkAsViewedResponse(BaseResponse):
-	
 
-class SendMessageResponse(BaseResponse):
-	
+MarkAsViewedResponseModel = None
+
+
+SendMessageResponseModel = array
