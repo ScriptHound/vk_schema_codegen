@@ -24,29 +24,29 @@ class GetResponse(BaseResponse):
 	response: Optional["GetResponseModel"] = None
 
 
-AddTagResponseModelModel = None
+AddTagResponseModel = Optional[Favetag]
 
 
 class GetPagesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetTagsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 AddTagResponse.update_forward_refs()
 GetPagesResponse.update_forward_refs()

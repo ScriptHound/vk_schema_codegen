@@ -16,17 +16,17 @@ class GetStickersKeywordsResponse(BaseResponse):
 	response: Optional["GetStickersKeywordsResponseModel"] = None
 
 
-GetFavoriteStickersResponseModelModel = array
+GetFavoriteStickersResponseModel = List[BaseSticker]
 
 
-GetProductsResponseModelModel = array
+GetProductsResponseModel = List[StoreProduct]
 
 
 class GetStickersKeywordsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	dictionary: Optional["Array"] = None
-	chunks_count: Optional[int] = None
-	chunks_hash: Optional[str] = None
+	count: Optional["integer"] = None
+	dictionary: Optional["array"] = None
+	chunks_count: Optional["integer"] = None
+	chunks_hash: Optional["string"] = None
 
 GetFavoriteStickersResponse.update_forward_refs()
 GetProductsResponse.update_forward_refs()

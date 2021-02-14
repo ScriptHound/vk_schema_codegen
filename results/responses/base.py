@@ -16,13 +16,13 @@ class OkResponse(BaseResponse):
 	response: Optional["OkResponseModel"] = None
 
 
-BoolResponseModelModel = None
+BoolResponseModel = Optional[Baseboolint]
 
 
-GetUploadServerResponseModelModel = None
+GetUploadServerResponseModel = Optional[Baseuploadserver]
 
 
-OkResponseModelModel = None
+OkResponseModel = int
 
 BoolResponse.update_forward_refs()
 GetUploadServerResponse.update_forward_refs()

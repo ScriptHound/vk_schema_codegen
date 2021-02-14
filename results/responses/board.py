@@ -28,39 +28,39 @@ class GetTopicsResponse(BaseResponse):
 	response: Optional["GetTopicsResponseModel"] = None
 
 
-AddTopicResponseModelModel = None
+AddTopicResponseModel = int
 
 
-CreateCommentResponseModelModel = None
+CreateCommentResponseModel = int
 
 
 class GetCommentsExtendedResponseModel(BaseResponse):
-	count = None
-	items = None
-	poll = None
-	profiles = None
-	groups = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	poll: Optional["boardtopicpoll"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count = None
-	items = None
-	poll = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	poll: Optional["boardtopicpoll"] = None
 
 
 class GetTopicsExtendedResponseModel(BaseResponse):
-	count = None
-	items = None
-	default_order = None
-	can_add_topics = None
-	profiles = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	default_order: Optional["boarddefaultorder"] = None
+	can_add_topics: Optional["baseboolint"] = None
+	profiles: Optional["array"] = None
 
 
 class GetTopicsResponseModel(BaseResponse):
-	count = None
-	items = None
-	default_order = None
-	can_add_topics = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	default_order: Optional["boarddefaultorder"] = None
+	can_add_topics: Optional["baseboolint"] = None
 
 AddTopicResponse.update_forward_refs()
 CreateCommentResponse.update_forward_refs()

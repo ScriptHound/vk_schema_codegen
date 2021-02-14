@@ -1,3 +1,4 @@
+from utils.strings_util import get_type_from_reference
 from objects_parser.models.models import Annotation
 
 
@@ -46,20 +47,30 @@ class SingleTypeModel:
         self.value = value
 
     def __repr__(self):
-        return f'\n\n\n{self.name}Model = {self.value}'
+        return f'\n\n\n{self.name} = {self.value}'
 
 
 def jsonschema_object_factory(classname: str, json_properties: dict) -> 'Model':
     schema_type = json_properties['response'].get('type', '$ref')
 
     if schema_type == '$ref':
-        return SingleTypeModel(classname, None)
+        t = get_type_from_reference(json_properties['response']['$ref'])
+        t = Annotation.type_string_to_default_type(t)
+        return SingleTypeModel(classname, f'Optional[{t}]')
     elif schema_type == 'integer':
-        return SingleTypeModel(classname, None)
+        return SingleTypeModel(classname, 'int')
     elif schema_type == 'boolean':
         return SingleTypeModel(classname, 'bool')
     elif schema_type == 'array':
-        return SingleTypeModel(classname, 'array')
+        t = None
+        if json_properties['response']['items'].get('type'):
+            t = json_properties['response']['items']['type']
+            t = Annotation.type_string_to_default_type(t)
+        else:
+            t = json_properties['response']['items']['$ref']
+            t = get_type_from_reference(t)
+
+        return SingleTypeModel(classname, f'List[{t}]')
     elif schema_type == 'string':
         return SingleTypeModel(classname, 'string')
     else:
@@ -71,9 +82,10 @@ def jsonschema_object_factory(classname: str, json_properties: dict) -> 'Model':
         names = {name: None for name in properties.keys()}
         json_properties = {name: None for name in names}
         types = []
-        try:
-            types = [value['type'] for _, value in properties.items()]
-        except KeyError:
-            # TODO HANDLE MISSED KEYS
-            pass
+        for _, value in properties.items():
+            if value.get('type'):
+                types.append(value['type'])
+            else:
+                t = get_type_from_reference(value['$ref'])
+                types.append(t)
         return ResponseModel(classname, types, **json_properties)

@@ -33,26 +33,26 @@ class SaveGroupImageResponse(BaseResponse):
 
 
 class GetAppImageUploadServerResponseModel(BaseResponse):
-	upload_url: Optional[str] = None
+	upload_url: Optional["string"] = None
 
 
-GetAppImagesResponseModelModel = None
+GetAppImagesResponseModel = Optional[Appwidgetsphotos]
 
 
 class GetGroupImageUploadServerResponseModel(BaseResponse):
-	upload_url: Optional[str] = None
+	upload_url: Optional["string"] = None
 
 
-GetGroupImagesResponseModelModel = None
+GetGroupImagesResponseModel = Optional[Appwidgetsphotos]
 
 
-GetImagesByIdResponseModelModel = array
+GetImagesByIdResponseModel = List[AppWidgetsPhoto]
 
 
-SaveAppImageResponseModelModel = None
+SaveAppImageResponseModel = Optional[Appwidgetsphoto]
 
 
-SaveGroupImageResponseModelModel = None
+SaveGroupImageResponseModel = Optional[Appwidgetsphoto]
 
 GetAppImageUploadServerResponse.update_forward_refs()
 GetAppImagesResponse.update_forward_refs()

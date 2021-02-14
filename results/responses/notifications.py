@@ -17,22 +17,22 @@ class SendMessageResponse(BaseResponse):
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
-	last_viewed: Optional[int] = None
-	photos: Optional["Array"] = None
-	videos: Optional["Array"] = None
-	apps: Optional["Array"] = None
-	next_from: Optional[str] = None
-	ttl: Optional[int] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
+	last_viewed: Optional["integer"] = None
+	photos: Optional["array"] = None
+	videos: Optional["array"] = None
+	apps: Optional["array"] = None
+	next_from: Optional["string"] = None
+	ttl: Optional["integer"] = None
 
 
-MarkAsViewedResponseModelModel = None
+MarkAsViewedResponseModel = Optional[Baseboolint]
 
 
-SendMessageResponseModelModel = array
+SendMessageResponseModel = List[NotificationsSendMessageItem]
 
 GetResponse.update_forward_refs()
 MarkAsViewedResponse.update_forward_refs()

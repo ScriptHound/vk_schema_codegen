@@ -89,99 +89,99 @@ class SearchResponse(BaseResponse):
 
 
 class AddAlbumResponseModel(BaseResponse):
-	market_album_id: Optional[int] = None
+	market_album_id: Optional["integer"] = None
 
 
 class AddResponseModel(BaseResponse):
-	market_item_id: Optional[int] = None
+	market_item_id: Optional["integer"] = None
 
 
-CreateCommentResponseModelModel = None
+CreateCommentResponseModel = int
 
 
-DeleteCommentResponseModelModel = None
+DeleteCommentResponseModel = Optional[Baseboolint]
 
 
 class GetAlbumByIdResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetAlbumsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetByIdExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetByIdResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetCategoriesNewResponseModel(BaseResponse):
-	items: Optional["Array"] = None
+	items: Optional["array"] = None
 
 
 class GetCategoriesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetGroupOrdersResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetOrderByIdResponseModel(BaseResponse):
-	order = None
+	order: Optional["marketorder"] = None
 
 
 class GetOrderItemsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetOrdersExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetOrdersResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-RestoreCommentResponseModelModel = None
+RestoreCommentResponseModel = Optional[Baseboolint]
 
 
 class SearchExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 AddAlbumResponse.update_forward_refs()
 AddResponse.update_forward_refs()

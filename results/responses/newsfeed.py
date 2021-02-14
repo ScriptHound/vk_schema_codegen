@@ -57,79 +57,79 @@ class SearchResponse(BaseResponse):
 
 
 class GetBannedExtendedResponseModel(BaseResponse):
-	groups: Optional["Array"] = None
-	profiles: Optional["Array"] = None
+	groups: Optional["array"] = None
+	profiles: Optional["array"] = None
 
 
 class GetBannedResponseModel(BaseResponse):
-	groups: Optional["Array"] = None
-	members: Optional["Array"] = None
+	groups: Optional["array"] = None
+	members: Optional["array"] = None
 
 
 class GetCommentsResponseModel(BaseResponse):
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
-	next_from: Optional[str] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
+	next_from: Optional["string"] = None
 
 
 class GetListsExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetListsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetMentionsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetRecommendedResponseModel(BaseResponse):
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
-	next_from: Optional[str] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
+	next_from: Optional["string"] = None
 
 
 class GetSuggestedSourcesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetResponseModel(BaseResponse):
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
-	next_from: Optional[str] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
+	next_from: Optional["string"] = None
 
 
 class IgnoreItemResponseModel(BaseResponse):
-	status: Optional[bool] = None
+	status: Optional["boolean"] = None
 
 
-SaveListResponseModelModel = None
+SaveListResponseModel = int
 
 
 class SearchExtendedResponseModel(BaseResponse):
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
-	suggested_queries: Optional["Array"] = None
-	next_from: Optional[str] = None
-	count: Optional[int] = None
-	total_count: Optional[int] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
+	suggested_queries: Optional["array"] = None
+	next_from: Optional["string"] = None
+	count: Optional["integer"] = None
+	total_count: Optional["integer"] = None
 
 
 class SearchResponseModel(BaseResponse):
-	items: Optional["Array"] = None
-	suggested_queries: Optional["Array"] = None
-	next_from: Optional[str] = None
-	count: Optional[int] = None
-	total_count: Optional[int] = None
+	items: Optional["array"] = None
+	suggested_queries: Optional["array"] = None
+	next_from: Optional["string"] = None
+	count: Optional["integer"] = None
+	total_count: Optional["integer"] = None
 
 GetBannedExtendedResponse.update_forward_refs()
 GetBannedResponse.update_forward_refs()

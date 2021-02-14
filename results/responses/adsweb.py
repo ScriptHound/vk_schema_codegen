@@ -29,31 +29,31 @@ class GetStatisticsResponse(BaseResponse):
 
 
 class GetAdCategoriesResponseModel(BaseResponse):
-	categories: Optional["Array"] = None
+	categories: Optional["array"] = None
 
 
 class GetAdUnitCodeResponseModel(BaseResponse):
-	html: Optional[str] = None
+	html: Optional["string"] = None
 
 
 class GetAdUnitsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	ad_units: Optional["Array"] = None
+	count: Optional["integer"] = None
+	ad_units: Optional["array"] = None
 
 
 class GetFraudHistoryResponseModel(BaseResponse):
-	count: Optional[int] = None
-	entries: Optional["Array"] = None
+	count: Optional["integer"] = None
+	entries: Optional["array"] = None
 
 
 class GetSitesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	sites: Optional["Array"] = None
+	count: Optional["integer"] = None
+	sites: Optional["array"] = None
 
 
 class GetStatisticsResponseModel(BaseResponse):
-	next_page_id: Optional[str] = None
-	items: Optional["Array"] = None
+	next_page_id: Optional["string"] = None
+	items: Optional["array"] = None
 
 GetAdCategoriesResponse.update_forward_refs()
 GetAdUnitCodeResponse.update_forward_refs()

@@ -53,55 +53,55 @@ class GetUniversitiesResponse(BaseResponse):
 
 
 class GetChairsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetCitiesByIdResponseModelModel = array
+GetCitiesByIdResponseModel = List[BaseObject]
 
 
 class GetCitiesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetCountriesByIdResponseModelModel = array
+GetCountriesByIdResponseModel = List[BaseCountry]
 
 
 class GetCountriesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetFacultiesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetMetroStationsByIdResponseModelModel = array
+GetMetroStationsByIdResponseModel = List[DatabaseStation]
 
 
 class GetMetroStationsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetRegionsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetSchoolClassesResponseModelModel = array
+GetSchoolClassesResponseModel = List[Array]
 
 
 class GetSchoolsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetUniversitiesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 GetChairsResponse.update_forward_refs()
 GetCitiesByIdResponse.update_forward_refs()

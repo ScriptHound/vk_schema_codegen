@@ -9,7 +9,7 @@ class GetServerUrlResponse(BaseResponse):
 
 
 class GetServerUrlResponseModel(BaseResponse):
-	endpoint: Optional[str] = None
-	key: Optional[str] = None
+	endpoint: Optional["string"] = None
+	key: Optional["string"] = None
 
 GetServerUrlResponse.update_forward_refs()

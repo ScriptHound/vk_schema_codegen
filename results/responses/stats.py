@@ -12,10 +12,10 @@ class GetResponse(BaseResponse):
 	response: Optional["GetResponseModel"] = None
 
 
-GetPostReachResponseModelModel = array
+GetPostReachResponseModel = List[StatsWallpostStat]
 
 
-GetResponseModelModel = array
+GetResponseModel = List[StatsPeriod]
 
 GetPostReachResponse.update_forward_refs()
 GetResponse.update_forward_refs()

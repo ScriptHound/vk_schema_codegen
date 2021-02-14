@@ -9,7 +9,7 @@ class SearchPodcastResponse(BaseResponse):
 
 
 class SearchPodcastResponseModel(BaseResponse):
-	podcasts: Optional["Array"] = None
-	results_total: Optional[int] = None
+	podcasts: Optional["array"] = None
+	results_total: Optional["integer"] = None
 
 SearchPodcastResponse.update_forward_refs()

@@ -12,10 +12,10 @@ class GetResponse(BaseResponse):
 	response: Optional["GetResponseModel"] = None
 
 
-GetKeysResponseModelModel = array
+GetKeysResponseModel = List[str]
 
 
-GetResponseModelModel = array
+GetResponseModel = List[StorageValue]
 
 GetKeysResponse.update_forward_refs()
 GetResponse.update_forward_refs()

@@ -32,25 +32,25 @@ class SaveResponse(BaseResponse):
 	response: Optional["SaveResponseModel"] = None
 
 
-GetHistoryResponseModelModel = array
+GetHistoryResponseModel = List[PagesWikipageHistory]
 
 
-GetTitlesResponseModelModel = array
+GetTitlesResponseModel = List[PagesWikipage]
 
 
-GetVersionResponseModelModel = None
+GetVersionResponseModel = Optional[Pageswikipagefull]
 
 
-GetResponseModelModel = None
+GetResponseModel = Optional[Pageswikipagefull]
 
 
-ParseWikiResponseModelModel = string
+ParseWikiResponseModel = string
 
 
-SaveAccessResponseModelModel = None
+SaveAccessResponseModel = int
 
 
-SaveResponseModelModel = None
+SaveResponseModel = int
 
 GetHistoryResponse.update_forward_refs()
 GetTitlesResponse.update_forward_refs()

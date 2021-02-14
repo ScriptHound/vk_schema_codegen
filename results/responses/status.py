@@ -8,6 +8,6 @@ class GetResponse(BaseResponse):
 	response: Optional["GetResponseModel"] = None
 
 
-GetResponseModelModel = None
+GetResponseModel = Optional[Statusstatus]
 
 GetResponse.update_forward_refs()

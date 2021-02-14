@@ -24,23 +24,23 @@ class GetResponse(BaseResponse):
 	response: Optional["GetResponseModel"] = None
 
 
-AddResponseModelModel = None
+AddResponseModel = int
 
 
-CreateCommentResponseModelModel = None
+CreateCommentResponseModel = int
 
 
-GetByIdResponseModelModel = None
+GetByIdResponseModel = Optional[Notesnote]
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 AddResponse.update_forward_refs()
 CreateCommentResponse.update_forward_refs()

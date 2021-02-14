@@ -73,100 +73,100 @@ class SearchResponse(BaseResponse):
 
 
 class CreateCommentResponseModel(BaseResponse):
-	comment_id: Optional[int] = None
+	comment_id: Optional["integer"] = None
 
 
 class EditResponseModel(BaseResponse):
-	post_id: Optional[int] = None
+	post_id: Optional["integer"] = None
 
 
 class GetByIdExtendedResponseModel(BaseResponse):
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
-GetByIdLegacyResponseModelModel = array
+GetByIdLegacyResponseModel = List[WallWallpostFull]
 
 
 class GetByIdResponseModel(BaseResponse):
-	items: Optional["Array"] = None
+	items: Optional["array"] = None
 
 
 class GetCommentExtendedResponseModel(BaseResponse):
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetCommentResponseModel(BaseResponse):
-	items: Optional["Array"] = None
+	items: Optional["array"] = None
 
 
 class GetCommentsExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	show_reply_button: Optional[bool] = None
-	can_post: Optional[bool] = None
-	groups_can_post: Optional[bool] = None
-	current_level_count: Optional[int] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	show_reply_button: Optional["boolean"] = None
+	can_post: Optional["boolean"] = None
+	groups_can_post: Optional["boolean"] = None
+	current_level_count: Optional["integer"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	can_post: Optional[bool] = None
-	groups_can_post: Optional[bool] = None
-	current_level_count: Optional[int] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	can_post: Optional["boolean"] = None
+	groups_can_post: Optional["boolean"] = None
+	current_level_count: Optional["integer"] = None
 
 
 class GetRepostsResponseModel(BaseResponse):
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class PostAdsStealthResponseModel(BaseResponse):
-	post_id: Optional[int] = None
+	post_id: Optional["integer"] = None
 
 
 class PostResponseModel(BaseResponse):
-	post_id: Optional[int] = None
+	post_id: Optional["integer"] = None
 
 
 class RepostResponseModel(BaseResponse):
-	success: Optional[int] = None
-	post_id: Optional[int] = None
-	reposts_count: Optional[int] = None
-	wall_repost_count: Optional[int] = None
-	mail_repost_count: Optional[int] = None
-	likes_count: Optional[int] = None
+	success: Optional["integer"] = None
+	post_id: Optional["integer"] = None
+	reposts_count: Optional["integer"] = None
+	wall_repost_count: Optional["integer"] = None
+	mail_repost_count: Optional["integer"] = None
+	likes_count: Optional["integer"] = None
 
 
 class SearchExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 CreateCommentResponse.update_forward_refs()
 EditResponse.update_forward_refs()

@@ -144,197 +144,197 @@ class SearchResponse(BaseResponse):
 	response: Optional["SearchResponseModel"] = None
 
 
-AddAddressResponseModelModel = None
+AddAddressResponseModel = Optional[Groupsaddress]
 
 
 class AddCallbackServerResponseModel(BaseResponse):
-	server_id: Optional[int] = None
+	server_id: Optional["integer"] = None
 
 
-AddLinkResponseModelModel = None
+AddLinkResponseModel = Optional[Groupsgrouplink]
 
 
-CreateResponseModelModel = None
+CreateResponseModel = Optional[Groupsgroup]
 
 
-EditAddressResponseModelModel = None
+EditAddressResponseModel = Optional[Groupsaddress]
 
 
 class GetAddressesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetBannedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetByIdLegacyResponseModelModel = array
+GetByIdLegacyResponseModel = List[GroupsGroupFull]
 
 
 class GetByIdResponseModel(BaseResponse):
-	groups: Optional["Array"] = None
-	profiles: Optional["Array"] = None
+	groups: Optional["array"] = None
+	profiles: Optional["array"] = None
 
 
 class GetCallbackConfirmationCodeResponseModel(BaseResponse):
-	code: Optional[str] = None
+	code: Optional["string"] = None
 
 
 class GetCallbackServersResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetCallbackSettingsResponseModelModel = None
+GetCallbackSettingsResponseModel = Optional[Groupscallbacksettings]
 
 
 class GetCatalogInfoExtendedResponseModel(BaseResponse):
-	enabled: Optional[int] = None
-	categories: Optional["Array"] = None
+	enabled: Optional["integer"] = None
+	categories: Optional["array"] = None
 
 
 class GetCatalogInfoResponseModel(BaseResponse):
-	enabled: Optional[int] = None
-	categories: Optional["Array"] = None
+	enabled: Optional["integer"] = None
+	categories: Optional["array"] = None
 
 
 class GetCatalogResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetInvitedUsersResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetInvitesExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetInvitesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetLongPollServerResponseModelModel = None
+GetLongPollServerResponseModel = Optional[Groupslongpollserver]
 
 
-GetLongPollSettingsResponseModelModel = None
+GetLongPollSettingsResponseModel = Optional[Groupslongpollsettings]
 
 
 class GetMembersFieldsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetMembersFilterResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetMembersResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetRequestsFieldsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetRequestsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetSettingsResponseModel(BaseResponse):
-	access = None
-	address = None
-	audio = None
-	articles = None
-	recognize_photo = None
-	city_id = None
-	contacts = None
-	links = None
-	sections_list = None
-	main_section = None
-	secondary_section = None
-	age_limits = None
-	country_id = None
-	description = None
-	docs = None
-	events = None
-	obscene_filter = None
-	obscene_stopwords = None
-	obscene_words = None
-	event_group_id = None
-	photos = None
-	public_category = None
-	public_category_list = None
-	public_date = None
-	public_date_label = None
-	public_subcategory = None
-	rss = None
-	start_date = None
-	finish_date = None
-	subject = None
-	subject_list = None
-	suggested_privacy = None
-	title = None
-	topics = None
-	twitter = None
-	video = None
-	wall = None
-	website = None
-	phone = None
-	email = None
-	wiki = None
+	access: Optional["groupsgroupaccess"] = None
+	address: Optional["string"] = None
+	audio: Optional["groupsgroupaudio"] = None
+	articles: Optional["integer"] = None
+	recognize_photo: Optional["integer"] = None
+	city_id: Optional["integer"] = None
+	contacts: Optional["baseboolint"] = None
+	links: Optional["baseboolint"] = None
+	sections_list: Optional["array"] = None
+	main_section: Optional["groupsgroupfullmainsection"] = None
+	secondary_section: Optional["integer"] = None
+	age_limits: Optional["groupsgroupagelimits"] = None
+	country_id: Optional["integer"] = None
+	description: Optional["string"] = None
+	docs: Optional["groupsgroupdocs"] = None
+	events: Optional["baseboolint"] = None
+	obscene_filter: Optional["baseboolint"] = None
+	obscene_stopwords: Optional["baseboolint"] = None
+	obscene_words: Optional["array"] = None
+	event_group_id: Optional["integer"] = None
+	photos: Optional["groupsgroupphotos"] = None
+	public_category: Optional["integer"] = None
+	public_category_list: Optional["array"] = None
+	public_date: Optional["string"] = None
+	public_date_label: Optional["string"] = None
+	public_subcategory: Optional["integer"] = None
+	rss: Optional["string"] = None
+	start_date: Optional["integer"] = None
+	finish_date: Optional["integer"] = None
+	subject: Optional["integer"] = None
+	subject_list: Optional["array"] = None
+	suggested_privacy: Optional["groupsgroupsuggestedprivacy"] = None
+	title: Optional["string"] = None
+	topics: Optional["groupsgrouptopics"] = None
+	twitter: Optional["groupssettingstwitter"] = None
+	video: Optional["groupsgroupvideo"] = None
+	wall: Optional["groupsgroupwall"] = None
+	website: Optional["string"] = None
+	phone: Optional["string"] = None
+	email: Optional["string"] = None
+	wiki: Optional["groupsgroupwiki"] = None
 
 
-GetTagListResponseModelModel = array
+GetTagListResponseModel = List[GroupsGroupTag]
 
 
 class GetTokenPermissionsResponseModel(BaseResponse):
-	mask: Optional[int] = None
-	permissions: Optional["Array"] = None
+	mask: Optional["integer"] = None
+	permissions: Optional["array"] = None
 
 
 class GetExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class IsMemberExtendedResponseModel(BaseResponse):
-	member = None
-	invitation = None
-	can_invite = None
-	can_recall = None
-	request = None
+	member: Optional["baseboolint"] = None
+	invitation: Optional["baseboolint"] = None
+	can_invite: Optional["baseboolint"] = None
+	can_recall: Optional["baseboolint"] = None
+	request: Optional["baseboolint"] = None
 
 
-IsMemberResponseModelModel = None
+IsMemberResponseModel = Optional[Baseboolint]
 
 
-IsMemberUserIdsExtendedResponseModelModel = array
+IsMemberUserIdsExtendedResponseModel = List[GroupsMemberStatusFull]
 
 
-IsMemberUserIdsResponseModelModel = array
+IsMemberUserIdsResponseModel = List[GroupsMemberStatus]
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 AddAddressResponse.update_forward_refs()
 AddCallbackServerResponse.update_forward_refs()

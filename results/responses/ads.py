@@ -160,128 +160,128 @@ class UpdateOfficeUsersResponse(BaseResponse):
 	response: Optional["UpdateOfficeUsersResponseModel"] = None
 
 
-AddOfficeUsersResponseModelModel = bool
+AddOfficeUsersResponseModel = bool
 
 
-CheckLinkResponseModelModel = None
+CheckLinkResponseModel = Optional[Adslinkstatus]
 
 
-CreateAdsResponseModelModel = array
+CreateAdsResponseModel = List[int]
 
 
-CreateCampaignsResponseModelModel = array
+CreateCampaignsResponseModel = List[int]
 
 
-CreateClientsResponseModelModel = array
+CreateClientsResponseModel = List[int]
 
 
 class CreateTargetGroupResponseModel(BaseResponse):
-	id: Optional[int] = None
-	pixel: Optional[str] = None
+	id: Optional["integer"] = None
+	pixel: Optional["string"] = None
 
 
-DeleteAdsResponseModelModel = array
+DeleteAdsResponseModel = List[int]
 
 
-DeleteCampaignsResponseModelModel = None
+DeleteCampaignsResponseModel = int
 
 
-DeleteClientsResponseModelModel = None
+DeleteClientsResponseModel = int
 
 
-GetAccountsResponseModelModel = array
+GetAccountsResponseModel = List[AdsAccount]
 
 
-GetAdsLayoutResponseModelModel = array
+GetAdsLayoutResponseModel = List[AdsAdLayout]
 
 
-GetAdsTargetingResponseModelModel = array
+GetAdsTargetingResponseModel = List[AdsTargSettings]
 
 
-GetAdsResponseModelModel = array
+GetAdsResponseModel = List[AdsAd]
 
 
-GetBudgetResponseModelModel = None
+GetBudgetResponseModel = int
 
 
-GetCampaignsResponseModelModel = array
+GetCampaignsResponseModel = List[AdsCampaign]
 
 
 class GetCategoriesResponseModel(BaseResponse):
-	v1: Optional["Array"] = None
-	v2: Optional["Array"] = None
+	v1: Optional["array"] = None
+	v2: Optional["array"] = None
 
 
-GetClientsResponseModelModel = array
+GetClientsResponseModel = List[AdsClient]
 
 
-GetDemographicsResponseModelModel = array
+GetDemographicsResponseModel = List[AdsDemoStats]
 
 
-GetFloodStatsResponseModelModel = None
+GetFloodStatsResponseModel = Optional[Adsfloodstats]
 
 
 class GetLookalikeRequestsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetMusiciansResponseModel(BaseResponse):
-	items: Optional["Array"] = None
+	items: Optional["array"] = None
 
 
-GetOfficeUsersResponseModelModel = array
+GetOfficeUsersResponseModel = List[AdsUsers]
 
 
-GetPostsReachResponseModelModel = array
+GetPostsReachResponseModel = List[AdsPromotedPostReach]
 
 
-GetRejectionReasonResponseModelModel = None
+GetRejectionReasonResponseModel = Optional[Adsrejectreason]
 
 
-GetStatisticsResponseModelModel = array
+GetStatisticsResponseModel = List[AdsStats]
 
 
-GetSuggestionsCitiesResponseModelModel = array
+GetSuggestionsCitiesResponseModel = List[AdsTargSuggestionsCities]
 
 
-GetSuggestionsRegionsResponseModelModel = array
+GetSuggestionsRegionsResponseModel = List[AdsTargSuggestionsRegions]
 
 
-GetSuggestionsResponseModelModel = array
+GetSuggestionsResponseModel = List[AdsTargSuggestions]
 
 
-GetSuggestionsSchoolsResponseModelModel = array
+GetSuggestionsSchoolsResponseModel = List[AdsTargSuggestionsSchools]
 
 
-GetTargetGroupsResponseModelModel = array
+GetTargetGroupsResponseModel = List[AdsTargetGroup]
 
 
-GetTargetingStatsResponseModelModel = None
+GetTargetingStatsResponseModel = Optional[Adstargstats]
 
 
-GetUploadURLResponseModelModel = string
+GetUploadURLResponseModel = string
 
 
-GetVideoUploadURLResponseModelModel = string
+GetVideoUploadURLResponseModel = string
 
 
-ImportTargetContactsResponseModelModel = None
+ImportTargetContactsResponseModel = int
 
 
-RemoveOfficeUsersResponseModelModel = bool
+RemoveOfficeUsersResponseModel = bool
 
 
-UpdateAdsResponseModelModel = array
+UpdateAdsResponseModel = List[int]
 
 
-UpdateCampaignsResponseModelModel = None
+UpdateCampaignsResponseModel = int
 
 
-UpdateClientsResponseModelModel = None
+UpdateClientsResponseModel = int
 
 
-UpdateOfficeUsersResponseModelModel = array
+UpdateOfficeUsersResponseModel = List[AdsUpdateofficeusersResult]
 
 AddOfficeUsersResponse.update_forward_refs()
 CheckLinkResponse.update_forward_refs()

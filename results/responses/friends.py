@@ -85,88 +85,88 @@ class SearchResponse(BaseResponse):
 
 
 class AddListResponseModel(BaseResponse):
-	list_id: Optional[int] = None
+	list_id: Optional["integer"] = None
 
 
-AddResponseModelModel = None
+AddResponseModel = int
 
 
-AreFriendsExtendedResponseModelModel = array
+AreFriendsExtendedResponseModel = List[FriendsFriendExtendedStatus]
 
 
-AreFriendsResponseModelModel = array
+AreFriendsResponseModel = List[FriendsFriendStatus]
 
 
 class DeleteResponseModel(BaseResponse):
-	success: Optional[int] = None
-	friend_deleted: Optional[int] = None
-	out_request_deleted: Optional[int] = None
-	in_request_deleted: Optional[int] = None
-	suggestion_deleted: Optional[int] = None
+	success: Optional["integer"] = None
+	friend_deleted: Optional["integer"] = None
+	out_request_deleted: Optional["integer"] = None
+	in_request_deleted: Optional["integer"] = None
+	suggestion_deleted: Optional["integer"] = None
 
 
-GetAppUsersResponseModelModel = array
+GetAppUsersResponseModel = List[int]
 
 
-GetByPhonesResponseModelModel = array
+GetByPhonesResponseModel = List[FriendsUserXtrPhone]
 
 
 class GetListsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetMutualResponseModelModel = array
+GetMutualResponseModel = List[int]
 
 
-GetMutualTargetUidsResponseModelModel = array
+GetMutualTargetUidsResponseModel = List[FriendsMutualFriend]
 
 
 class GetOnlineOnlineMobileResponseModel(BaseResponse):
-	online: Optional["Array"] = None
-	online_mobile: Optional["Array"] = None
+	online: Optional["array"] = None
+	online_mobile: Optional["array"] = None
 
 
-GetOnlineResponseModelModel = array
+GetOnlineResponseModel = List[int]
 
 
-GetRecentResponseModelModel = array
+GetRecentResponseModel = List[int]
 
 
 class GetRequestsExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetRequestsNeedMutualResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetRequestsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	count_unread: Optional[int] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	count_unread: Optional["integer"] = None
 
 
 class GetSuggestionsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetFieldsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 AddListResponse.update_forward_refs()
 AddResponse.update_forward_refs()

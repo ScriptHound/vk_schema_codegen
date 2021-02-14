@@ -57,77 +57,77 @@ class UploadResponse(BaseResponse):
 
 
 class GetBannedExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetBannedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetByIdExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetByIdResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetPhotoUploadServerResponseModel(BaseResponse):
-	upload_url: Optional[str] = None
-	user_ids: Optional["Array"] = None
+	upload_url: Optional["string"] = None
+	user_ids: Optional["array"] = None
 
 
-GetStatsResponseModelModel = None
+GetStatsResponseModel = Optional[Storiesstorystats]
 
 
 class GetVideoUploadServerResponseModel(BaseResponse):
-	upload_url: Optional[str] = None
-	user_ids: Optional["Array"] = None
+	upload_url: Optional["string"] = None
+	user_ids: Optional["array"] = None
 
 
 class GetViewersExtendedV5115ResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	hidden_reason: Optional[str] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	hidden_reason: Optional["string"] = None
 
 
 class GetViewersExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetV5113ResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
-	need_upload_screen: Optional[bool] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
+	need_upload_screen: Optional["boolean"] = None
 
 
 class GetResponseModel(BaseResponse):
-	count = None
-	items = None
-	promo_data = None
-	profiles = None
-	groups = None
-	need_upload_screen = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	promo_data: Optional["storiespromoblock"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
+	need_upload_screen: Optional["boolean"] = None
 
 
 class SaveResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class UploadResponseModel(BaseResponse):
-	upload_result: Optional[str] = None
+	upload_result: Optional["string"] = None
 
 GetBannedExtendedResponse.update_forward_refs()
 GetBannedResponse.update_forward_refs()

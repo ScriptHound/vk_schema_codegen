@@ -9,7 +9,7 @@ class GetResponse(BaseResponse):
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 GetResponse.update_forward_refs()

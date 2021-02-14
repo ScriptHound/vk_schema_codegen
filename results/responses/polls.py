@@ -32,25 +32,25 @@ class SavePhotoResponse(BaseResponse):
 	response: Optional["SavePhotoResponseModel"] = None
 
 
-AddVoteResponseModelModel = None
+AddVoteResponseModel = Optional[Baseboolint]
 
 
-CreateResponseModelModel = None
+CreateResponseModel = Optional[Pollspoll]
 
 
-DeleteVoteResponseModelModel = None
+DeleteVoteResponseModel = Optional[Baseboolint]
 
 
-GetBackgroundsResponseModelModel = array
+GetBackgroundsResponseModel = List[PollsBackground]
 
 
-GetByIdResponseModelModel = None
+GetByIdResponseModel = Optional[Pollspoll]
 
 
-GetVotersResponseModelModel = array
+GetVotersResponseModel = List[PollsVoters]
 
 
-SavePhotoResponseModelModel = None
+SavePhotoResponseModel = Optional[Pollsbackground]
 
 AddVoteResponse.update_forward_refs()
 CreateResponse.update_forward_refs()

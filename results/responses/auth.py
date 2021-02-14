@@ -9,7 +9,7 @@ class RestoreResponse(BaseResponse):
 
 
 class RestoreResponseModel(BaseResponse):
-	success: Optional[int] = None
-	sid: Optional[str] = None
+	success: Optional["integer"] = None
+	sid: Optional["string"] = None
 
 RestoreResponse.update_forward_refs()

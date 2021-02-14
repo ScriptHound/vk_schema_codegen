@@ -5,6 +5,7 @@ from .response_utils import (
 from .models import ResponseModel
 from .models import jsonschema_object_factory
 from utils.titles import Imports, UpdateForwardRefs
+from utils.strings_util import get_type_from_reference
 
 
 def write_response_alias(schema_body: dict, file: 'File') -> None:

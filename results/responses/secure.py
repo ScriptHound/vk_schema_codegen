@@ -32,25 +32,25 @@ class SendNotificationResponse(BaseResponse):
 	response: Optional["SendNotificationResponseModel"] = None
 
 
-CheckTokenResponseModelModel = None
+CheckTokenResponseModel = Optional[Securetokenchecked]
 
 
-GetAppBalanceResponseModelModel = None
+GetAppBalanceResponseModel = int
 
 
-GetSMSHistoryResponseModelModel = array
+GetSMSHistoryResponseModel = List[SecureSmsNotification]
 
 
-GetTransactionsHistoryResponseModelModel = array
+GetTransactionsHistoryResponseModel = List[SecureTransaction]
 
 
-GetUserLevelResponseModelModel = array
+GetUserLevelResponseModel = List[SecureLevel]
 
 
-GiveEventStickerResponseModelModel = array
+GiveEventStickerResponseModel = List[Object]
 
 
-SendNotificationResponseModelModel = array
+SendNotificationResponseModel = List[int]
 
 CheckTokenResponse.update_forward_refs()
 GetAppBalanceResponse.update_forward_refs()

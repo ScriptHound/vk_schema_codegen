@@ -9,8 +9,8 @@ class GetHintsResponse(BaseResponse):
 
 
 class GetHintsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	suggested_queries: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	suggested_queries: Optional["array"] = None
 
 GetHintsResponse.update_forward_refs()

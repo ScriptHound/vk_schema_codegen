@@ -164,186 +164,186 @@ class WallUploadResponse(BaseResponse):
 	response: Optional["WallUploadResponseModel"] = None
 
 
-CopyResponseModelModel = None
+CopyResponseModel = int
 
 
-CreateAlbumResponseModelModel = None
+CreateAlbumResponseModel = Optional[Photosphotoalbumfull]
 
 
-CreateCommentResponseModelModel = None
+CreateCommentResponseModel = int
 
 
-DeleteCommentResponseModelModel = None
+DeleteCommentResponseModel = Optional[Baseboolint]
 
 
-GetAlbumsCountResponseModelModel = None
+GetAlbumsCountResponseModel = int
 
 
 class GetAlbumsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetAllCommentsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetAllExtendedResponseModel(BaseResponse):
-	count = None
-	items = None
-	more = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	more: Optional["baseboolint"] = None
 
 
 class GetAllResponseModel(BaseResponse):
-	count = None
-	items = None
-	more = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	more: Optional["baseboolint"] = None
 
 
-GetByIdExtendedResponseModelModel = array
+GetByIdExtendedResponseModel = List[PhotosPhotoFull]
 
 
-GetByIdResponseModelModel = array
+GetByIdResponseModel = List[PhotosPhoto]
 
 
 class GetCommentsExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	real_offset: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	real_offset: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	real_offset: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	real_offset: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetMarketUploadServerResponseModelModel = None
+GetMarketUploadServerResponseModel = Optional[Baseuploadserver]
 
 
-GetMessagesUploadServerResponseModelModel = None
+GetMessagesUploadServerResponseModel = Optional[Photosphotoupload]
 
 
 class GetNewTagsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetTagsResponseModelModel = array
+GetTagsResponseModel = List[PhotosPhotoTag]
 
 
-GetUploadServerResponseModelModel = None
+GetUploadServerResponseModel = Optional[Photosphotoupload]
 
 
 class GetUserPhotosExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetUserPhotosResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetWallUploadServerResponseModelModel = None
+GetWallUploadServerResponseModel = Optional[Photosphotoupload]
 
 
 class GetExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class MarketAlbumUploadResponseModel(BaseResponse):
-	gid: Optional[int] = None
-	hash: Optional[str] = None
-	photo: Optional[str] = None
-	server: Optional[int] = None
+	gid: Optional["integer"] = None
+	hash: Optional["string"] = None
+	photo: Optional["string"] = None
+	server: Optional["integer"] = None
 
 
 class MarketUploadResponseModel(BaseResponse):
-	crop_data: Optional[str] = None
-	crop_hash: Optional[str] = None
-	group_id: Optional[int] = None
-	hash: Optional[str] = None
-	photo: Optional[str] = None
-	server: Optional[int] = None
+	crop_data: Optional["string"] = None
+	crop_hash: Optional["string"] = None
+	group_id: Optional["integer"] = None
+	hash: Optional["string"] = None
+	photo: Optional["string"] = None
+	server: Optional["integer"] = None
 
 
 class MessageUploadResponseModel(BaseResponse):
-	hash: Optional[str] = None
-	photo: Optional[str] = None
-	server: Optional[int] = None
+	hash: Optional["string"] = None
+	photo: Optional["string"] = None
+	server: Optional["integer"] = None
 
 
 class OwnerCoverUploadResponseModel(BaseResponse):
-	hash: Optional[str] = None
-	photo: Optional[str] = None
+	hash: Optional["string"] = None
+	photo: Optional["string"] = None
 
 
 class OwnerUploadResponseModel(BaseResponse):
-	hash: Optional[str] = None
-	photo: Optional[str] = None
-	server: Optional[int] = None
+	hash: Optional["string"] = None
+	photo: Optional["string"] = None
+	server: Optional["integer"] = None
 
 
 class PhotoUploadResponseModel(BaseResponse):
-	aid: Optional[int] = None
-	hash: Optional[str] = None
-	photo: Optional[str] = None
-	photos_list: Optional[str] = None
-	server: Optional[int] = None
+	aid: Optional["integer"] = None
+	hash: Optional["string"] = None
+	photo: Optional["string"] = None
+	photos_list: Optional["string"] = None
+	server: Optional["integer"] = None
 
 
-PutTagResponseModelModel = None
+PutTagResponseModel = int
 
 
-RestoreCommentResponseModelModel = None
+RestoreCommentResponseModel = Optional[Baseboolint]
 
 
-SaveMarketAlbumPhotoResponseModelModel = array
+SaveMarketAlbumPhotoResponseModel = List[PhotosPhoto]
 
 
-SaveMarketPhotoResponseModelModel = array
+SaveMarketPhotoResponseModel = List[PhotosPhoto]
 
 
-SaveMessagesPhotoResponseModelModel = array
+SaveMessagesPhotoResponseModel = List[PhotosPhoto]
 
 
-SaveOwnerCoverPhotoResponseModelModel = array
+SaveOwnerCoverPhotoResponseModel = List[BaseImage]
 
 
 class SaveOwnerPhotoResponseModel(BaseResponse):
-	photo_hash: Optional[str] = None
-	photo_src: Optional[str] = None
-	photo_src_big: Optional[str] = None
-	photo_src_small: Optional[str] = None
-	saved: Optional[int] = None
-	post_id: Optional[int] = None
+	photo_hash: Optional["string"] = None
+	photo_src: Optional["string"] = None
+	photo_src_big: Optional["string"] = None
+	photo_src_small: Optional["string"] = None
+	saved: Optional["integer"] = None
+	post_id: Optional["integer"] = None
 
 
-SaveWallPhotoResponseModelModel = array
+SaveWallPhotoResponseModel = List[PhotosPhoto]
 
 
-SaveResponseModelModel = array
+SaveResponseModel = List[PhotosPhoto]
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class WallUploadResponseModel(BaseResponse):
-	hash: Optional[str] = None
-	photo: Optional[str] = None
-	server: Optional[int] = None
+	hash: Optional["string"] = None
+	photo: Optional["string"] = None
+	server: Optional["integer"] = None
 
 CopyResponse.update_forward_refs()
 CreateAlbumResponse.update_forward_refs()

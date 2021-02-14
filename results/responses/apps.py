@@ -45,51 +45,51 @@ class SendRequestResponse(BaseResponse):
 
 
 class GetCatalogResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
 
 
 class GetFriendsListResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetLeaderboardExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
 
 
 class GetLeaderboardResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetMiniAppPoliciesResponseModel(BaseResponse):
-	privacy_policy: Optional[str] = None
-	terms: Optional[str] = None
+	privacy_policy: Optional["string"] = None
+	terms: Optional["string"] = None
 
 
 class GetScopesResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetScoreResponseModelModel = None
+GetScoreResponseModel = int
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class ImageUploadResponseModel(BaseResponse):
-	hash: Optional[str] = None
-	image: Optional[str] = None
+	hash: Optional["string"] = None
+	image: Optional["string"] = None
 
 
-SendRequestResponseModelModel = None
+SendRequestResponseModel = int
 
 GetCatalogResponse.update_forward_refs()
 GetFriendsListResponse.update_forward_refs()

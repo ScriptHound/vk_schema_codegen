@@ -69,78 +69,78 @@ class UploadResponse(BaseResponse):
 
 
 class AddAlbumResponseModel(BaseResponse):
-	album_id: Optional[int] = None
+	album_id: Optional["integer"] = None
 
 
-CreateCommentResponseModelModel = None
+CreateCommentResponseModel = int
 
 
-GetAlbumByIdResponseModelModel = None
+GetAlbumByIdResponseModel = Optional[Videovideoalbumfull]
 
 
 class GetAlbumsByVideoExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-GetAlbumsByVideoResponseModelModel = array
+GetAlbumsByVideoResponseModel = List[int]
 
 
 class GetAlbumsExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetAlbumsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetCommentsExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class GetExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
-RestoreCommentResponseModelModel = None
+RestoreCommentResponseModel = Optional[Baseboolint]
 
 
-SaveResponseModelModel = None
+SaveResponseModel = Optional[Videosaveresult]
 
 
 class SearchExtendedResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
-	profiles: Optional["Array"] = None
-	groups: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
+	profiles: Optional["array"] = None
+	groups: Optional["array"] = None
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional[int] = None
-	items: Optional["Array"] = None
+	count: Optional["integer"] = None
+	items: Optional["array"] = None
 
 
 class UploadResponseModel(BaseResponse):
-	size: Optional[int] = None
-	video_id: Optional[int] = None
+	size: Optional["integer"] = None
+	video_id: Optional["integer"] = None
 
 AddAlbumResponse.update_forward_refs()
 CreateCommentResponse.update_forward_refs()
