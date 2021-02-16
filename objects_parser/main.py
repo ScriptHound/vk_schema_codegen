@@ -7,7 +7,7 @@ from utils.strings_util import (
     shift_json_dict_names
 )
 from .models.schema_objects import schema_object_fabric_method
-from .models.titles import Imports, UpdateForwardRefs
+from utils.titles import Imports, UpdateForwardRefs
 
 logging.basicConfig(level=logging.INFO)
 

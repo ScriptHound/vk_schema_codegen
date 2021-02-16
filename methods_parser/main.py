@@ -1,38 +1,45 @@
 import logging
 import json
 from utils.os_utils import create_results_dir
-from objects_parser.models.titles import Imports
-from .models.schema import Schematik
+from utils.titles import Imports
+from .models import ClassForm
 
 logging.basicConfig(level=logging.INFO)
 
+default_imports = {
+    "typing": ("Optional", "Any", "List"),
+    ".base_category": ("BaseCategory",)
+}
 
 def parse_file(filepath: str, imports: dict = {}) -> None:
-    imports = imports or {"typing": ("Optional", "Any", "List"), ".base_category": ("BaseCategory",)}
+    default_imports.update(imports)
     base_dir = create_results_dir('results/methods')
+    categories = sort_json_schema(filepath)
 
-    with open(filepath, 'r') as f:
-        json_dict = json.load(f)
-
-    sorted_categories = collecter(json_dict['methods'])
-
-    for category, methods in sorted_categories.items():
+    for category, methods in categories.items():
         with open(f"{base_dir}/{category}.py", 'w') as pyfile:
-            pyfile.write(
-                "from vkbottle_types.responses import %s, base\n" % category
-            )
-            pyfile.write(str(Imports(imports)))
-            pyfile.write(Schematik(methods, category).get)
-
+            write_done_schema(pyfile, category, methods)
     logging.info("DONE")
 
+def write_done_schema(file, category, methods):
+    file.write("from vkbottle_types.responses import %s, base\n" % category)
+    file.write(str(Imports(default_imports)))
+    form = ClassForm(category)
+    for method in methods:
+        form.add_method(method['name'], method)
+    file.write(str(form))
 
-def collecter(json_object: dict):
+def sort_json_schema(path: str) -> dict:
+    with open(path, 'r') as f:
+        json_dict = json.load(f)
+    return collecter(json_dict['methods'])
+
+def collecter(methods: dict) -> dict:
     result = {}
-    for method in json_object:
-        method_ = method['name'].split('.')
-        if result.get(method_[0]):
-            result[method_[0]].append(method)
+    for method in methods:
+        method_name = method['name'].split('.')
+        if result.get(method_name[0]):
+            result[method_name[0]].append(method)
         else:
-            result[method_[0]] = [method]
+            result[method_name[0]] = [method]
     return result
