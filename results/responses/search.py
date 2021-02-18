@@ -3,7 +3,6 @@ from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage
 from .base_response import BaseResponse
 
 
-
 class GetHintsResponse(BaseResponse):
 	response: Optional["GetHintsResponseModel"] = None
 

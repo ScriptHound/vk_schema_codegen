@@ -3,7 +3,6 @@ from vkbottle_types.objects import GroupsGroupFull, GroupsGroup, MessagesMessage
 from .base_response import BaseResponse
 
 
-
 class AddAddressResponse(BaseResponse):
 	response: Optional["AddAddressResponseModel"] = None
 

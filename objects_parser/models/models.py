@@ -37,7 +37,7 @@ class Annotation(ObjectModel):
 
     def __unpack_dict_values(self, dictionary):
         return ', '.join(
-            self.__type_string_to_default_type(v.strip("'"))
+            self.type_string_to_default_type(v.strip("'"))
             for _, v in dictionary.items()
         )
 

@@ -1,7 +1,6 @@
-import enum
+from enum import N, o, n, e
 from typing import Any, List, Optional, Union
 from pydantic import BaseModel
-
 
 class AccountAccountCounters(BaseModel):
 	"""VK Object AccountAccountCounters

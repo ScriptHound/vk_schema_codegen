@@ -11,6 +11,7 @@ default_imports = {
     ".base_category": ("BaseCategory",)
 }
 
+
 def parse_file(filepath: str, imports: dict = {}) -> None:
     default_imports.update(imports)
     base_dir = create_results_dir('results/methods')
@@ -21,18 +22,21 @@ def parse_file(filepath: str, imports: dict = {}) -> None:
             write_done_schema(pyfile, category, methods)
     logging.info("DONE")
 
+
 def write_done_schema(file, category, methods):
     file.write("from vkbottle_types.responses import %s, base\n" % category)
-    file.write(str(Imports(default_imports)))
+    file.write(str(Imports(**default_imports)))
     form = ClassForm(category)
     for method in methods:
         form.add_method(method['name'], method)
     file.write(str(form))
 
+
 def sort_json_schema(path: str) -> dict:
     with open(path, 'r') as f:
         json_dict = json.load(f)
     return collecter(json_dict['methods'])
+
 
 def collecter(methods: dict) -> dict:
     result = {}
