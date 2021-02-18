@@ -11,20 +11,18 @@ class AbstractTitle(abc.ABC):
 
 
 class Imports(AbstractTitle):
-    def __repr__(self):
-        import_str = ""
-        for k, v in self.params.items():
-            if v == 'None':
-                import_str += f'import {str(k)}\n'
-            else:
-                modules = ', '.join(v)
-                import_str += f'from {str(k)} import {str(modules)}\n'
-        return import_str
+    def __str__(self):
+        return "\n".join(
+            "from %s import %s" % (k, ', '.join(v))
+            if v else
+            "import %s" % k
+            for k, v in self.params.items()
+        )
 
 
 class UpdateForwardRefs(AbstractTitle):
-    def __repr__(self):
-        update_refs_string = "\n"
-        for k, _ in self.params.items():
-            update_refs_string += f'{k}.update_forward_refs()\n'
-        return update_refs_string
+    def __str__(self):
+        return "\n" + "\n".join(
+            '%s.update_forward_refs()' % k
+            for k, _ in self.params.items()
+        )

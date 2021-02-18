@@ -36,11 +36,10 @@ class Annotation(ObjectModel):
             return classname
 
     def __unpack_dict_values(self, dictionary):
-        types_list = []
-        for _, v in dictionary.items():
-            v.replace("'", '')
-            types_list.append(self.type_string_to_default_type(v))
-        return ', '.join(types_list)
+        return ', '.join(
+            self.__type_string_to_default_type(v.strip("'"))
+            for _, v in dictionary.items()
+        )
 
     def __str__(self):
         camel_case_types = snake_case_to_camel_case(self.classname)

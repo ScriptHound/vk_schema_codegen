@@ -1,5 +1,5 @@
 schema_objects_path:
-  vk_schema/objects.json
+  config/objects.json
 schema_methods_path:
   vk_schema/methods.json
 schema_responses_path:
