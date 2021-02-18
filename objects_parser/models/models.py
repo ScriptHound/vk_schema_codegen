@@ -23,8 +23,9 @@ class ObjectModel(abc.ABC):
 
 class Annotation(ObjectModel):
     @staticmethod
-    def __type_string_to_default_type(classname):
-        classname_copy = classname.strip('"')
+    def type_string_to_default_type(classname: str) -> str:
+        classname = classname.capitalize()
+        classname_copy = classname.replace('"', '')
         if classname_copy == 'Integer':
             return 'int'
         elif classname_copy == 'String':
@@ -48,7 +49,7 @@ class Annotation(ObjectModel):
         else:
             self.classname = '"' + camel_case_types + '"'
 
-        self.classname = self.__type_string_to_default_type(self.classname)
+        self.classname = self.type_string_to_default_type(self.classname)
 
         label: str = f': Optional[{self.classname}]'
         return label

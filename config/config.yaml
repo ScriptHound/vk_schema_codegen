@@ -1,7 +1,9 @@
 schema_objects_path:
   config/objects.json
 schema_methods_path:
-  config/methods.json
+  vk_schema/methods.json
+schema_responses_path:
+  vk_schema/responses.json
 object_models_imports:
   enum:
     None

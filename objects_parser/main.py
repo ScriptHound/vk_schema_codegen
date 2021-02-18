@@ -16,13 +16,13 @@ def write_translated_json(prepared_dict: dict, imports: dict) -> None:
     create_results_dir('results')
 
     with open('results/codegen.py', 'w') as pyfile:
-        pyfile.write(str(Imports(imports)))
+        pyfile.write(str(Imports(**imports)))
 
         for classname in prepared_dict.keys():
             class_form = schema_object_fabric_method(classname, prepared_dict)
             pyfile.write(str(class_form))
 
-        pyfile.write(str(UpdateForwardRefs(prepared_dict)))
+        pyfile.write(str(UpdateForwardRefs(**prepared_dict)))
 
 
 def parse_file(path: str, imports_dict: dict) -> None:

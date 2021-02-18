@@ -35,7 +35,7 @@ def snake_case_to_camel_case(string_list: list) -> dict:
     words_list: list = []
     for word in string_list:
         init, *temp = word.split('_')
-        word = ''.join([init.lower(), *map(str.title, temp)])
+        word = ''.join([init, *map(str.title, temp)])
         word = word.replace(word[0], word[0].upper(), 1)
 
         words_list.append(word)
@@ -66,3 +66,12 @@ def shift_json_dict_names(plain_data: str, classnames: str) -> dict:
     return {v: plain_data[k] for k, v in classnames.items()}
 
 
+def categorize_methods_as_files(json_dict: dict) -> dict:
+    filenames = set()
+    for method_dict in json_dict['methods']:
+        method_name = method_dict['name'].split('.')[0]
+        filenames.add(method_name)
+
+    classified_dict = {name: {} for name in filenames}
+
+    return classified_dict

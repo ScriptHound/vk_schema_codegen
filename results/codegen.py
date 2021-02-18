@@ -23,22 +23,22 @@ class AccountAccountCounters(BaseModel):
 	photos - New photo tags number
 	sdk - New sdk number
 	"""
-	app_requests: Optional[int] = None
-	events: Optional[int] = None
-	faves: Optional[int] = None
-	friends: Optional[int] = None
-	friends_suggestions: Optional[int] = None
-	friends_recommendations: Optional[int] = None
-	gifts: Optional[int] = None
-	groups: Optional[int] = None
-	menu_discover_badge: Optional[int] = None
-	menu_clips_badge: Optional[int] = None
-	messages: Optional[int] = None
-	memories: Optional[int] = None
-	notes: Optional[int] = None
-	notifications: Optional[int] = None
-	photos: Optional[int] = None
-	sdk: Optional[int] = None
+	app_requests: Optional["integer"] = None
+	events: Optional["integer"] = None
+	faves: Optional["integer"] = None
+	friends: Optional["integer"] = None
+	friends_suggestions: Optional["integer"] = None
+	friends_recommendations: Optional["integer"] = None
+	gifts: Optional["integer"] = None
+	groups: Optional["integer"] = None
+	menu_discover_badge: Optional["integer"] = None
+	menu_clips_badge: Optional["integer"] = None
+	messages: Optional["integer"] = None
+	memories: Optional["integer"] = None
+	notes: Optional["integer"] = None
+	notifications: Optional["integer"] = None
+	photos: Optional["integer"] = None
+	sdk: Optional["integer"] = None
 
 
 class AccountInfo(BaseModel):
@@ -58,19 +58,19 @@ class AccountInfo(BaseModel):
 	own_posts_default - Information whether only owners posts should be shown
 	subscriptions - 
 	"""
-	wishlists_ae_promo_banner_show: Optional["Baseboolint"] = None
-	_2fa_required: Optional["Baseboolint"] = None
-	country: Optional[str] = None
-	https_required: Optional["Baseboolint"] = None
-	intro: Optional["Baseboolint"] = None
-	show_vk_apps_intro: Optional[bool] = None
-	mini_apps_ads_slot_id: Optional[int] = None
-	qr_promotion: Optional[int] = None
-	link_redirects: Optional["Object"] = None
-	lang: Optional[int] = None
-	no_wall_replies: Optional["Baseboolint"] = None
-	own_posts_default: Optional["Baseboolint"] = None
-	subscriptions: Optional[int] = None
+	wishlists_ae_promo_banner_show: Optional["baseboolint"] = None
+	_2fa_required: Optional["baseboolint"] = None
+	country: Optional["string"] = None
+	https_required: Optional["baseboolint"] = None
+	intro: Optional["baseboolint"] = None
+	show_vk_apps_intro: Optional["boolean"] = None
+	mini_apps_ads_slot_id: Optional["integer"] = None
+	qr_promotion: Optional["integer"] = None
+	link_redirects: Optional["object"] = None
+	lang: Optional["integer"] = None
+	no_wall_replies: Optional["baseboolint"] = None
+	own_posts_default: Optional["baseboolint"] = None
+	subscriptions: Optional["integer"] = None
 
 
 class AccountNameRequest(BaseModel):
@@ -84,13 +84,13 @@ class AccountNameRequest(BaseModel):
 	link_href - href for link in lang field
 	link_label - label to display for link in lang field
 	"""
-	first_name: Optional[str] = None
-	id: Optional[int] = None
-	last_name: Optional[str] = None
-	status: Optional["Accountnamerequeststatus"] = None
-	lang: Optional[str] = None
-	link_href: Optional[str] = None
-	link_label: Optional[str] = None
+	first_name: Optional["string"] = None
+	id: Optional["integer"] = None
+	last_name: Optional["string"] = None
+	status: Optional["accountnamerequeststatus"] = None
+	lang: Optional["string"] = None
+	link_href: Optional["string"] = None
+	link_label: Optional["string"] = None
 
 
 class AccountNameRequestStatus(enum.Enum):
@@ -123,18 +123,18 @@ class AccountOffer(BaseModel):
 	link_id - Link id
 	link_type - Link type
 	"""
-	description: Optional[str] = None
-	id: Optional[int] = None
-	img: Optional[str] = None
-	instruction: Optional[str] = None
-	instruction_html: Optional[str] = None
-	price: Optional[int] = None
-	short_description: Optional[str] = None
-	tag: Optional[str] = None
-	title: Optional[str] = None
-	currency_amount: Optional["Number"] = None
-	link_id: Optional[int] = None
-	link_type: Optional[str] = None
+	description: Optional["string"] = None
+	id: Optional["integer"] = None
+	img: Optional["string"] = None
+	instruction: Optional["string"] = None
+	instruction_html: Optional["string"] = None
+	price: Optional["integer"] = None
+	short_description: Optional["string"] = None
+	tag: Optional["string"] = None
+	title: Optional["string"] = None
+	currency_amount: Optional["number"] = None
+	link_id: Optional["integer"] = None
+	link_type: Optional["string"] = None
 
 
 class AccountPushConversations(BaseModel):
@@ -143,8 +143,8 @@ class AccountPushConversations(BaseModel):
 	count - Items count
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional["Accountpushconversationsitem"] = None
+	count: Optional["integer"] = None
+	items: Optional["accountpushconversationsitem"] = None
 
 
 class AccountPushConversationsItem(BaseModel):
@@ -154,34 +154,34 @@ class AccountPushConversationsItem(BaseModel):
 	peer_id - Peer ID
 	sound - Information whether the sound are enabled
 	"""
-	disabled_until: Optional[int] = None
-	peer_id: Optional[int] = None
-	sound: Optional["Baseboolint"] = None
+	disabled_until: Optional["integer"] = None
+	peer_id: Optional["integer"] = None
+	sound: Optional["baseboolint"] = None
 
 
 class AccountPushParams(BaseModel):
 	"""VK Object AccountPushParams
 
 	"""
-	msg: Optional["Accountpushparamsmode"] = None
-	chat: Optional["Accountpushparamsmode"] = None
-	like: Optional["Accountpushparamssettings"] = None
-	repost: Optional["Accountpushparamssettings"] = None
-	comment: Optional["Accountpushparamssettings"] = None
-	mention: Optional["Accountpushparamssettings"] = None
-	reply: Optional["Accountpushparamsonoff"] = None
-	new_post: Optional["Accountpushparamsonoff"] = None
-	wall_post: Optional["Accountpushparamsonoff"] = None
-	wall_publish: Optional["Accountpushparamsonoff"] = None
-	friend: Optional["Accountpushparamsonoff"] = None
-	friend_found: Optional["Accountpushparamsonoff"] = None
-	friend_accepted: Optional["Accountpushparamsonoff"] = None
-	group_invite: Optional["Accountpushparamsonoff"] = None
-	group_accepted: Optional["Accountpushparamsonoff"] = None
-	birthday: Optional["Accountpushparamsonoff"] = None
-	event_soon: Optional["Accountpushparamsonoff"] = None
-	app_request: Optional["Accountpushparamsonoff"] = None
-	sdk_open: Optional["Accountpushparamsonoff"] = None
+	msg: Optional["accountpushparamsmode"] = None
+	chat: Optional["accountpushparamsmode"] = None
+	like: Optional["accountpushparamssettings"] = None
+	repost: Optional["accountpushparamssettings"] = None
+	comment: Optional["accountpushparamssettings"] = None
+	mention: Optional["accountpushparamssettings"] = None
+	reply: Optional["accountpushparamsonoff"] = None
+	new_post: Optional["accountpushparamsonoff"] = None
+	wall_post: Optional["accountpushparamsonoff"] = None
+	wall_publish: Optional["accountpushparamsonoff"] = None
+	friend: Optional["accountpushparamsonoff"] = None
+	friend_found: Optional["accountpushparamsonoff"] = None
+	friend_accepted: Optional["accountpushparamsonoff"] = None
+	group_invite: Optional["accountpushparamsonoff"] = None
+	group_accepted: Optional["accountpushparamsonoff"] = None
+	birthday: Optional["accountpushparamsonoff"] = None
+	event_soon: Optional["accountpushparamsonoff"] = None
+	app_request: Optional["accountpushparamsonoff"] = None
+	sdk_open: Optional["accountpushparamsonoff"] = None
 
 
 class AccountPushParamsMode(enum.Enum):
@@ -219,10 +219,10 @@ class AccountPushSettings(BaseModel):
 	settings - 
 	conversations - 
 	"""
-	disabled: Optional["Baseboolint"] = None
-	disabled_until: Optional[int] = None
-	settings: Optional["Accountpushparams"] = None
-	conversations: Optional["Accountpushconversations"] = None
+	disabled: Optional["baseboolint"] = None
+	disabled_until: Optional["integer"] = None
+	settings: Optional["accountpushparams"] = None
+	conversations: Optional["accountpushconversations"] = None
 
 
 class AccountUserSettings(UsersUserMin,
@@ -240,23 +240,23 @@ class AccountUserSettingsInterest(BaseModel):
 	"""VK Object AccountUserSettingsInterest
 
 	"""
-	title: Optional[str] = None
-	value: Optional[str] = None
+	title: Optional["string"] = None
+	value: Optional["string"] = None
 
 
 class AccountUserSettingsInterests(BaseModel):
 	"""VK Object AccountUserSettingsInterests
 
 	"""
-	activities: Optional["Accountusersettingsinterest"] = None
-	interests: Optional["Accountusersettingsinterest"] = None
-	music: Optional["Accountusersettingsinterest"] = None
-	tv: Optional["Accountusersettingsinterest"] = None
-	movies: Optional["Accountusersettingsinterest"] = None
-	books: Optional["Accountusersettingsinterest"] = None
-	games: Optional["Accountusersettingsinterest"] = None
-	quotes: Optional["Accountusersettingsinterest"] = None
-	about: Optional["Accountusersettingsinterest"] = None
+	activities: Optional["accountusersettingsinterest"] = None
+	interests: Optional["accountusersettingsinterest"] = None
+	music: Optional["accountusersettingsinterest"] = None
+	tv: Optional["accountusersettingsinterest"] = None
+	movies: Optional["accountusersettingsinterest"] = None
+	books: Optional["accountusersettingsinterest"] = None
+	games: Optional["accountusersettingsinterest"] = None
+	quotes: Optional["accountusersettingsinterest"] = None
+	about: Optional["accountusersettingsinterest"] = None
 
 
 class AddressesFields(enum.Enum):
@@ -302,8 +302,8 @@ class AdsAccesses(BaseModel):
 	client_id - Client ID
 	role - 
 	"""
-	client_id: Optional[str] = None
-	role: Optional["Adsaccessrole"] = None
+	client_id: Optional["string"] = None
+	role: Optional["adsaccessrole"] = None
 
 
 class AdsAccount(BaseModel):
@@ -316,12 +316,12 @@ class AdsAccount(BaseModel):
 	account_name - Account name
 	can_view_budget - Can user view account budget
 	"""
-	access_role: Optional["Adsaccessrole"] = None
-	account_id: Optional[int] = None
-	account_status: Optional["Baseboolint"] = None
-	account_type: Optional["Adsaccounttype"] = None
-	account_name: Optional[str] = None
-	can_view_budget: Optional[bool] = None
+	access_role: Optional["adsaccessrole"] = None
+	account_id: Optional["integer"] = None
+	account_status: Optional["baseboolint"] = None
+	account_type: Optional["adsaccounttype"] = None
+	account_name: Optional["string"] = None
+	can_view_budget: Optional["boolean"] = None
 
 
 class AdsAccountType(enum.Enum):
@@ -358,28 +358,28 @@ class AdsAd(BaseModel):
 	status - 
 	video - Information whether the ad is a video
 	"""
-	ad_format: Optional[int] = None
+	ad_format: Optional["integer"] = None
 	ad_platform: Optional[Union[int, str]] = None
-	all_limit: Optional[int] = None
-	approved: Optional["Adsadapproved"] = None
-	campaign_id: Optional[int] = None
-	category1_id: Optional[int] = None
-	category2_id: Optional[int] = None
-	cost_type: Optional["Adsadcosttype"] = None
-	cpc: Optional[int] = None
-	cpm: Optional[int] = None
-	cpa: Optional[int] = None
-	ocpm: Optional[int] = None
-	autobidding_max_cost: Optional[int] = None
-	disclaimer_medical: Optional["Baseboolint"] = None
-	disclaimer_specialist: Optional["Baseboolint"] = None
-	disclaimer_supplements: Optional["Baseboolint"] = None
-	id: Optional[int] = None
-	impressions_limit: Optional[int] = None
-	impressions_limited: Optional["Baseboolint"] = None
-	name: Optional[str] = None
-	status: Optional["Adsadstatus"] = None
-	video: Optional["Baseboolint"] = None
+	all_limit: Optional["integer"] = None
+	approved: Optional["adsadapproved"] = None
+	campaign_id: Optional["integer"] = None
+	category1_id: Optional["integer"] = None
+	category2_id: Optional["integer"] = None
+	cost_type: Optional["adsadcosttype"] = None
+	cpc: Optional["integer"] = None
+	cpm: Optional["integer"] = None
+	cpa: Optional["integer"] = None
+	ocpm: Optional["integer"] = None
+	autobidding_max_cost: Optional["integer"] = None
+	disclaimer_medical: Optional["baseboolint"] = None
+	disclaimer_specialist: Optional["baseboolint"] = None
+	disclaimer_supplements: Optional["baseboolint"] = None
+	id: Optional["integer"] = None
+	impressions_limit: Optional["integer"] = None
+	impressions_limited: Optional["baseboolint"] = None
+	name: Optional["string"] = None
+	status: Optional["adsadstatus"] = None
+	video: Optional["baseboolint"] = None
 
 
 class AdsAdApproved(enum.IntEnum):
@@ -418,18 +418,18 @@ class AdsAdLayout(BaseModel):
 	title - Ad title
 	video - Information whether the ad is a video
 	"""
-	ad_format: Optional[int] = None
-	campaign_id: Optional[int] = None
-	cost_type: Optional["Adsadcosttype"] = None
-	description: Optional[str] = None
-	id: Optional[str] = None
-	image_src: Optional[str] = None
-	image_src_2x: Optional[str] = None
-	link_domain: Optional[str] = None
-	link_url: Optional[str] = None
+	ad_format: Optional["integer"] = None
+	campaign_id: Optional["integer"] = None
+	cost_type: Optional["adsadcosttype"] = None
+	description: Optional["string"] = None
+	id: Optional["string"] = None
+	image_src: Optional["string"] = None
+	image_src_2x: Optional["string"] = None
+	link_domain: Optional["string"] = None
+	link_url: Optional["string"] = None
 	preview_link: Optional[Union[int, str]] = None
-	title: Optional[str] = None
-	video: Optional["Baseboolint"] = None
+	title: Optional["string"] = None
+	video: Optional["baseboolint"] = None
 
 
 class AdsAdStatus(enum.IntEnum):
@@ -453,14 +453,14 @@ class AdsCampaign(BaseModel):
 	stop_time - Campaign stop time, as Unixtime
 	type - 
 	"""
-	all_limit: Optional[str] = None
-	day_limit: Optional[str] = None
-	id: Optional[int] = None
-	name: Optional[str] = None
-	start_time: Optional[int] = None
-	status: Optional["Adscampaignstatus"] = None
-	stop_time: Optional[int] = None
-	type: Optional["Adscampaigntype"] = None
+	all_limit: Optional["string"] = None
+	day_limit: Optional["string"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	start_time: Optional["integer"] = None
+	status: Optional["adscampaignstatus"] = None
+	stop_time: Optional["integer"] = None
+	type: Optional["adscampaigntype"] = None
 
 
 class AdsCampaignStatus(enum.IntEnum):
@@ -489,9 +489,9 @@ class AdsCategory(BaseModel):
 	name - Category name
 	subcategories - 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	subcategories: Optional["Baseobjectwithname"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	subcategories: Optional["baseobjectwithname"] = None
 
 
 class AdsClient(BaseModel):
@@ -502,10 +502,10 @@ class AdsClient(BaseModel):
 	id - Client ID
 	name - Client name
 	"""
-	all_limit: Optional[str] = None
-	day_limit: Optional[str] = None
-	id: Optional[int] = None
-	name: Optional[str] = None
+	all_limit: Optional["string"] = None
+	day_limit: Optional["string"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class AdsCriteria(BaseModel):
@@ -542,36 +542,36 @@ class AdsCriteria(BaseModel):
 	user_devices - Devices
 	user_os - Operating systems
 	"""
-	age_from: Optional[int] = None
-	age_to: Optional[int] = None
-	apps: Optional[str] = None
-	apps_not: Optional[str] = None
-	birthday: Optional[int] = None
-	cities: Optional[str] = None
-	cities_not: Optional[str] = None
-	country: Optional[int] = None
-	districts: Optional[str] = None
-	groups: Optional[str] = None
-	interest_categories: Optional[str] = None
-	interests: Optional[str] = None
-	paying: Optional["Baseboolint"] = None
-	positions: Optional[str] = None
-	religions: Optional[str] = None
-	retargeting_groups: Optional[str] = None
-	retargeting_groups_not: Optional[str] = None
-	school_from: Optional[int] = None
-	school_to: Optional[int] = None
-	schools: Optional[str] = None
-	sex: Optional["Adscriteriasex"] = None
-	stations: Optional[str] = None
-	statuses: Optional[str] = None
-	streets: Optional[str] = None
-	travellers: Optional["Basepropertyexists"] = None
-	uni_from: Optional[int] = None
-	uni_to: Optional[int] = None
-	user_browsers: Optional[str] = None
-	user_devices: Optional[str] = None
-	user_os: Optional[str] = None
+	age_from: Optional["integer"] = None
+	age_to: Optional["integer"] = None
+	apps: Optional["string"] = None
+	apps_not: Optional["string"] = None
+	birthday: Optional["integer"] = None
+	cities: Optional["string"] = None
+	cities_not: Optional["string"] = None
+	country: Optional["integer"] = None
+	districts: Optional["string"] = None
+	groups: Optional["string"] = None
+	interest_categories: Optional["string"] = None
+	interests: Optional["string"] = None
+	paying: Optional["baseboolint"] = None
+	positions: Optional["string"] = None
+	religions: Optional["string"] = None
+	retargeting_groups: Optional["string"] = None
+	retargeting_groups_not: Optional["string"] = None
+	school_from: Optional["integer"] = None
+	school_to: Optional["integer"] = None
+	schools: Optional["string"] = None
+	sex: Optional["adscriteriasex"] = None
+	stations: Optional["string"] = None
+	statuses: Optional["string"] = None
+	streets: Optional["string"] = None
+	travellers: Optional["basepropertyexists"] = None
+	uni_from: Optional["integer"] = None
+	uni_to: Optional["integer"] = None
+	user_browsers: Optional["string"] = None
+	user_devices: Optional["string"] = None
+	user_os: Optional["string"] = None
 
 
 class AdsCriteriaSex(enum.IntEnum):
@@ -590,9 +590,9 @@ class AdsDemoStats(BaseModel):
 	stats - 
 	type - 
 	"""
-	id: Optional[int] = None
-	stats: Optional["Adsdemostatsformat"] = None
-	type: Optional["Adsobjecttype"] = None
+	id: Optional["integer"] = None
+	stats: Optional["adsdemostatsformat"] = None
+	type: Optional["adsobjecttype"] = None
 
 
 class AdsDemostatsFormat(BaseModel):
@@ -606,13 +606,13 @@ class AdsDemostatsFormat(BaseModel):
 	sex - 
 	sex_age - 
 	"""
-	age: Optional["Adsstatsage"] = None
-	cities: Optional["Adsstatscities"] = None
-	day: Optional[str] = None
-	month: Optional[str] = None
-	overall: Optional[int] = None
-	sex: Optional["Adsstatssex"] = None
-	sex_age: Optional["Adsstatssexage"] = None
+	age: Optional["adsstatsage"] = None
+	cities: Optional["adsstatscities"] = None
+	day: Optional["string"] = None
+	month: Optional["string"] = None
+	overall: Optional["integer"] = None
+	sex: Optional["adsstatssex"] = None
+	sex_age: Optional["adsstatssexage"] = None
 
 
 class AdsFloodStats(BaseModel):
@@ -621,8 +621,8 @@ class AdsFloodStats(BaseModel):
 	left - Requests left
 	refresh - Time to refresh in seconds
 	"""
-	left: Optional[int] = None
-	refresh: Optional[int] = None
+	left: Optional["integer"] = None
+	refresh: Optional["integer"] = None
 
 
 class AdsLinkStatus(BaseModel):
@@ -632,9 +632,9 @@ class AdsLinkStatus(BaseModel):
 	redirect_url - URL
 	status - Link status
 	"""
-	description: Optional[str] = None
-	redirect_url: Optional[str] = None
-	status: Optional[str] = None
+	description: Optional["string"] = None
+	redirect_url: Optional["string"] = None
+	status: Optional["string"] = None
 
 
 class AdsLookalikeRequest(BaseModel):
@@ -651,16 +651,16 @@ class AdsLookalikeRequest(BaseModel):
 	audience_count - Lookalike request seed audience size
 	save_audience_levels - 
 	"""
-	id: Optional[int] = None
-	create_time: Optional[int] = None
-	update_time: Optional[int] = None
-	scheduled_delete_time: Optional[int] = None
-	status: Optional[str] = None
-	source_type: Optional[str] = None
-	source_retargeting_group_id: Optional[int] = None
-	source_name: Optional[str] = None
-	audience_count: Optional[int] = None
-	save_audience_levels: Optional["Adslookalikerequestsaveaudiencelevel"] = None
+	id: Optional["integer"] = None
+	create_time: Optional["integer"] = None
+	update_time: Optional["integer"] = None
+	scheduled_delete_time: Optional["integer"] = None
+	status: Optional["string"] = None
+	source_type: Optional["string"] = None
+	source_retargeting_group_id: Optional["integer"] = None
+	source_name: Optional["string"] = None
+	audience_count: Optional["integer"] = None
+	save_audience_levels: Optional["adslookalikerequestsaveaudiencelevel"] = None
 
 
 class AdsLookalikeRequestSaveAudienceLevel(BaseModel):
@@ -669,8 +669,8 @@ class AdsLookalikeRequestSaveAudienceLevel(BaseModel):
 	level - Save audience level id, which is used in save audience queries
 	audience_count - Saved audience audience size for according level
 	"""
-	level: Optional[int] = None
-	audience_count: Optional[int] = None
+	level: Optional["integer"] = None
+	audience_count: Optional["integer"] = None
 
 
 class AdsMusician(BaseModel):
@@ -680,9 +680,9 @@ class AdsMusician(BaseModel):
 	name - Music artist name
 	avatar - Music artist photo
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	avatar: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	avatar: Optional["string"] = None
 
 
 class AdsObjectType(enum.Enum):
@@ -700,7 +700,7 @@ class AdsParagraphs(BaseModel):
 
 	paragraph - Rules paragraph
 	"""
-	paragraph: Optional[str] = None
+	paragraph: Optional["string"] = None
 
 
 class AdsPromotedPostReach(BaseModel):
@@ -722,21 +722,21 @@ class AdsPromotedPostReach(BaseModel):
 	video_views_75p - Video views for 75 percent
 	video_views_start - Video starts
 	"""
-	hide: Optional[int] = None
-	id: Optional[int] = None
-	join_group: Optional[int] = None
-	links: Optional[int] = None
-	reach_subscribers: Optional[int] = None
-	reach_total: Optional[int] = None
-	report: Optional[int] = None
-	to_group: Optional[int] = None
-	unsubscribe: Optional[int] = None
-	video_views_100p: Optional[int] = None
-	video_views_25p: Optional[int] = None
-	video_views_3s: Optional[int] = None
-	video_views_50p: Optional[int] = None
-	video_views_75p: Optional[int] = None
-	video_views_start: Optional[int] = None
+	hide: Optional["integer"] = None
+	id: Optional["integer"] = None
+	join_group: Optional["integer"] = None
+	links: Optional["integer"] = None
+	reach_subscribers: Optional["integer"] = None
+	reach_total: Optional["integer"] = None
+	report: Optional["integer"] = None
+	to_group: Optional["integer"] = None
+	unsubscribe: Optional["integer"] = None
+	video_views_100p: Optional["integer"] = None
+	video_views_25p: Optional["integer"] = None
+	video_views_3s: Optional["integer"] = None
+	video_views_50p: Optional["integer"] = None
+	video_views_75p: Optional["integer"] = None
+	video_views_start: Optional["integer"] = None
 
 
 class AdsRejectReason(BaseModel):
@@ -745,8 +745,8 @@ class AdsRejectReason(BaseModel):
 	comment - Comment text
 	rules - 
 	"""
-	comment: Optional[str] = None
-	rules: Optional["Adsrules"] = None
+	comment: Optional["string"] = None
+	rules: Optional["adsrules"] = None
 
 
 class AdsRules(BaseModel):
@@ -755,8 +755,8 @@ class AdsRules(BaseModel):
 	paragraphs - 
 	title - Comment
 	"""
-	paragraphs: Optional["Adsparagraphs"] = None
-	title: Optional[str] = None
+	paragraphs: Optional["adsparagraphs"] = None
+	title: Optional["string"] = None
 
 
 class AdsStats(BaseModel):
@@ -767,10 +767,10 @@ class AdsStats(BaseModel):
 	type - 
 	views_times - 
 	"""
-	id: Optional[int] = None
-	stats: Optional["Adsstatsformat"] = None
-	type: Optional["Adsobjecttype"] = None
-	views_times: Optional["Adsstatsviewstimes"] = None
+	id: Optional["integer"] = None
+	stats: Optional["adsstatsformat"] = None
+	type: Optional["adsobjecttype"] = None
+	views_times: Optional["adsstatsviewstimes"] = None
 
 
 class AdsStatsAge(BaseModel):
@@ -780,9 +780,9 @@ class AdsStatsAge(BaseModel):
 	impressions_rate - Impressions rate
 	value - Age interval
 	"""
-	clicks_rate: Optional["Number"] = None
-	impressions_rate: Optional["Number"] = None
-	value: Optional[str] = None
+	clicks_rate: Optional["number"] = None
+	impressions_rate: Optional["number"] = None
+	value: Optional["string"] = None
 
 
 class AdsStatsCities(BaseModel):
@@ -793,10 +793,10 @@ class AdsStatsCities(BaseModel):
 	name - City name
 	value - City ID
 	"""
-	clicks_rate: Optional["Number"] = None
-	impressions_rate: Optional["Number"] = None
-	name: Optional[str] = None
-	value: Optional[int] = None
+	clicks_rate: Optional["number"] = None
+	impressions_rate: Optional["number"] = None
+	name: Optional["string"] = None
+	value: Optional["integer"] = None
 
 
 class AdsStatsFormat(BaseModel):
@@ -815,18 +815,18 @@ class AdsStatsFormat(BaseModel):
 	video_views_full - Video views (full video)
 	video_views_half - Video views (half of video)
 	"""
-	clicks: Optional[int] = None
-	day: Optional[str] = None
-	impressions: Optional[int] = None
-	join_rate: Optional[int] = None
-	month: Optional[str] = None
-	overall: Optional[int] = None
-	reach: Optional[int] = None
-	spent: Optional[int] = None
-	video_clicks_site: Optional[int] = None
-	video_views: Optional[int] = None
-	video_views_full: Optional[int] = None
-	video_views_half: Optional[int] = None
+	clicks: Optional["integer"] = None
+	day: Optional["string"] = None
+	impressions: Optional["integer"] = None
+	join_rate: Optional["integer"] = None
+	month: Optional["string"] = None
+	overall: Optional["integer"] = None
+	reach: Optional["integer"] = None
+	spent: Optional["integer"] = None
+	video_clicks_site: Optional["integer"] = None
+	video_views: Optional["integer"] = None
+	video_views_full: Optional["integer"] = None
+	video_views_half: Optional["integer"] = None
 
 
 class AdsStatsSex(BaseModel):
@@ -836,9 +836,9 @@ class AdsStatsSex(BaseModel):
 	impressions_rate - Impressions rate
 	value - 
 	"""
-	clicks_rate: Optional["Number"] = None
-	impressions_rate: Optional["Number"] = None
-	value: Optional["Adsstatssexvalue"] = None
+	clicks_rate: Optional["number"] = None
+	impressions_rate: Optional["number"] = None
+	value: Optional["adsstatssexvalue"] = None
 
 
 class AdsStatsSexAge(BaseModel):
@@ -848,9 +848,9 @@ class AdsStatsSexAge(BaseModel):
 	impressions_rate - Impressions rate
 	value - Sex and age interval
 	"""
-	clicks_rate: Optional["Number"] = None
-	impressions_rate: Optional["Number"] = None
-	value: Optional[str] = None
+	clicks_rate: Optional["number"] = None
+	impressions_rate: Optional["number"] = None
+	value: Optional["string"] = None
 
 
 class AdsStatsSexValue(enum.Enum):
@@ -865,17 +865,17 @@ class AdsStatsViewsTimes(BaseModel):
 	"""VK Object AdsStatsViewsTimes
 
 	"""
-	views_ads_times_1: Optional[int] = None
-	views_ads_times_2: Optional[int] = None
-	views_ads_times_3: Optional[int] = None
-	views_ads_times_4: Optional[int] = None
-	views_ads_times_5: Optional[str] = None
-	views_ads_times_6: Optional[int] = None
-	views_ads_times_7: Optional[int] = None
-	views_ads_times_8: Optional[int] = None
-	views_ads_times_9: Optional[int] = None
-	views_ads_times_10: Optional[int] = None
-	views_ads_times_11_plus: Optional[int] = None
+	views_ads_times_1: Optional["integer"] = None
+	views_ads_times_2: Optional["integer"] = None
+	views_ads_times_3: Optional["integer"] = None
+	views_ads_times_4: Optional["integer"] = None
+	views_ads_times_5: Optional["string"] = None
+	views_ads_times_6: Optional["integer"] = None
+	views_ads_times_7: Optional["integer"] = None
+	views_ads_times_8: Optional["integer"] = None
+	views_ads_times_9: Optional["integer"] = None
+	views_ads_times_10: Optional["integer"] = None
+	views_ads_times_11_plus: Optional["integer"] = None
 
 
 class AdsTargSettings(AdsCriteria):
@@ -901,15 +901,15 @@ class AdsTargStats(BaseModel):
 	recommended_cpc_90 - Recommended CPC value for 90% reach
 	recommended_cpm_90 - Recommended CPM value for 90% reach
 	"""
-	audience_count: Optional[int] = None
-	recommended_cpc: Optional["Number"] = None
-	recommended_cpm: Optional["Number"] = None
-	recommended_cpc_50: Optional["Number"] = None
-	recommended_cpm_50: Optional["Number"] = None
-	recommended_cpc_70: Optional["Number"] = None
-	recommended_cpm_70: Optional["Number"] = None
-	recommended_cpc_90: Optional["Number"] = None
-	recommended_cpm_90: Optional["Number"] = None
+	audience_count: Optional["integer"] = None
+	recommended_cpc: Optional["number"] = None
+	recommended_cpm: Optional["number"] = None
+	recommended_cpc_50: Optional["number"] = None
+	recommended_cpm_50: Optional["number"] = None
+	recommended_cpc_70: Optional["number"] = None
+	recommended_cpm_70: Optional["number"] = None
+	recommended_cpc_90: Optional["number"] = None
+	recommended_cpm_90: Optional["number"] = None
 
 
 class AdsTargSuggestions(BaseModel):
@@ -918,8 +918,8 @@ class AdsTargSuggestions(BaseModel):
 	id - Object ID
 	name - Object name
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class AdsTargSuggestionsCities(BaseModel):
@@ -929,9 +929,9 @@ class AdsTargSuggestionsCities(BaseModel):
 	name - Object name
 	parent - Parent object
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	parent: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	parent: Optional["string"] = None
 
 
 class AdsTargSuggestionsRegions(BaseModel):
@@ -941,9 +941,9 @@ class AdsTargSuggestionsRegions(BaseModel):
 	name - Object name
 	type - Object type
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	type: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	type: Optional["string"] = None
 
 
 class AdsTargSuggestionsSchools(BaseModel):
@@ -955,11 +955,11 @@ class AdsTargSuggestionsSchools(BaseModel):
 	parent - City name
 	type - 
 	"""
-	desc: Optional[str] = None
-	id: Optional[int] = None
-	name: Optional[str] = None
-	parent: Optional[str] = None
-	type: Optional["Adstargsuggestionsschoolstype"] = None
+	desc: Optional["string"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	parent: Optional["string"] = None
+	type: Optional["adstargsuggestionsschoolstype"] = None
 
 
 class AdsTargSuggestionsSchoolsType(enum.Enum):
@@ -982,42 +982,42 @@ class AdsTargetGroup(BaseModel):
 	name - Group name
 	pixel - Pixel code
 	"""
-	audience_count: Optional[int] = None
-	domain: Optional[str] = None
-	id: Optional[int] = None
-	lifetime: Optional[int] = None
-	name: Optional[str] = None
-	pixel: Optional[str] = None
+	audience_count: Optional["integer"] = None
+	domain: Optional["string"] = None
+	id: Optional["integer"] = None
+	lifetime: Optional["integer"] = None
+	name: Optional["string"] = None
+	pixel: Optional["string"] = None
 
 
 class AdsUpdateofficeusersResult(BaseModel):
 	"""VK Object AdsUpdateofficeusersResult
 
 	"""
-	user_id: Optional[int] = None
-	is_success: Optional[bool] = None
-	error: Optional["Baseerror"] = None
+	user_id: Optional["integer"] = None
+	is_success: Optional["boolean"] = None
+	error: Optional["baseerror"] = None
 
 
 class AdsUserSpecification(BaseModel):
 	"""VK Object AdsUserSpecification
 
 	"""
-	user_id: Optional[int] = None
-	role: Optional["Adsaccessrolepublic"] = None
-	grant_access_to_all_clients: Optional[bool] = None
-	client_ids: Optional[int] = None
-	view_budget: Optional[bool] = None
+	user_id: Optional["integer"] = None
+	role: Optional["adsaccessrolepublic"] = None
+	grant_access_to_all_clients: Optional["boolean"] = None
+	client_ids: Optional["integer"] = None
+	view_budget: Optional["boolean"] = None
 
 
 class AdsUserSpecificationCutted(BaseModel):
 	"""VK Object AdsUserSpecificationCutted
 
 	"""
-	user_id: Optional[int] = None
-	role: Optional["Adsaccessrolepublic"] = None
-	client_id: Optional[int] = None
-	view_budget: Optional[bool] = None
+	user_id: Optional["integer"] = None
+	role: Optional["adsaccessrolepublic"] = None
+	client_id: Optional["integer"] = None
+	view_budget: Optional["boolean"] = None
 
 
 class AdsUsers(BaseModel):
@@ -1026,79 +1026,79 @@ class AdsUsers(BaseModel):
 	accesses - 
 	user_id - User ID
 	"""
-	accesses: Optional["Adsaccesses"] = None
-	user_id: Optional[int] = None
+	accesses: Optional["adsaccesses"] = None
+	user_id: Optional["integer"] = None
 
 
 class AdswebGetadcategoriesResponseCategoriesCategory(BaseModel):
 	"""VK Object AdswebGetadcategoriesResponseCategoriesCategory
 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class AdswebGetadunitsResponseAdUnitsAdUnit(BaseModel):
 	"""VK Object AdswebGetadunitsResponseAdUnitsAdUnit
 
 	"""
-	id: Optional[int] = None
-	site_id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	site_id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class AdswebGetfraudhistoryResponseEntriesEntry(BaseModel):
 	"""VK Object AdswebGetfraudhistoryResponseEntriesEntry
 
 	"""
-	site_id: Optional[int] = None
-	day: Optional[str] = None
+	site_id: Optional["integer"] = None
+	day: Optional["string"] = None
 
 
 class AdswebGetsitesResponseSitesSite(BaseModel):
 	"""VK Object AdswebGetsitesResponseSitesSite
 
 	"""
-	id: Optional[int] = None
-	status_user: Optional[str] = None
-	status_moder: Optional[str] = None
-	domains: Optional[str] = None
+	id: Optional["integer"] = None
+	status_user: Optional["string"] = None
+	status_moder: Optional["string"] = None
+	domains: Optional["string"] = None
 
 
 class AdswebGetstatisticsResponseItemsItem(BaseModel):
 	"""VK Object AdswebGetstatisticsResponseItemsItem
 
 	"""
-	site_id: Optional[int] = None
-	ad_unit_id: Optional[int] = None
-	overall_count: Optional[int] = None
-	months_count: Optional[int] = None
-	month_min: Optional[str] = None
-	month_max: Optional[str] = None
-	days_count: Optional[int] = None
-	day_min: Optional[str] = None
-	day_max: Optional[str] = None
-	hours_count: Optional[int] = None
-	hour_min: Optional[str] = None
-	hour_max: Optional[str] = None
+	site_id: Optional["integer"] = None
+	ad_unit_id: Optional["integer"] = None
+	overall_count: Optional["integer"] = None
+	months_count: Optional["integer"] = None
+	month_min: Optional["string"] = None
+	month_max: Optional["string"] = None
+	days_count: Optional["integer"] = None
+	day_min: Optional["string"] = None
+	day_max: Optional["string"] = None
+	hours_count: Optional["integer"] = None
+	hour_min: Optional["string"] = None
+	hour_max: Optional["string"] = None
 
 
-class AppwidgetsPhoto(BaseModel):
-	"""VK Object AppwidgetsPhoto
+class AppWidgetsPhoto(BaseModel):
+	"""VK Object AppWidgetsPhoto
 
 	id - Image ID
 	images - 
 	"""
-	id: Optional[str] = None
-	images: Optional["Baseimage"] = None
+	id: Optional["string"] = None
+	images: Optional["baseimage"] = None
 
 
-class AppwidgetsPhotos(BaseModel):
-	"""VK Object AppwidgetsPhotos
+class AppWidgetsPhotos(BaseModel):
+	"""VK Object AppWidgetsPhotos
 
 	"""
-	count: Optional[int] = None
-	items: Optional["Appwidgetsphoto"] = None
+	count: Optional["integer"] = None
+	items: Optional["appwidgetsphoto"] = None
 
 
 class AppsApp(AppsAppMin):
@@ -1172,18 +1172,18 @@ class AppsAppMin(BaseModel):
 	loader_icon - SVG data
 	icon_75 - URL of the app icon with 75 px in width
 	"""
-	type: Optional["Appsapptype"] = None
-	id: Optional[int] = None
-	title: Optional[str] = None
-	author_owner_id: Optional[int] = None
-	is_installed: Optional[bool] = None
-	icon_139: Optional[str] = None
-	icon_150: Optional[str] = None
-	icon_278: Optional[str] = None
-	icon_576: Optional[str] = None
-	background_loader_color: Optional[str] = None
-	loader_icon: Optional[str] = None
-	icon_75: Optional[str] = None
+	type: Optional["appsapptype"] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
+	author_owner_id: Optional["integer"] = None
+	is_installed: Optional["boolean"] = None
+	icon_139: Optional["string"] = None
+	icon_150: Optional["string"] = None
+	icon_278: Optional["string"] = None
+	icon_576: Optional["string"] = None
+	background_loader_color: Optional["string"] = None
+	loader_icon: Optional["string"] = None
+	icon_75: Optional["string"] = None
 
 
 class AppsAppType(enum.Enum):
@@ -1208,10 +1208,10 @@ class AppsLeaderboard(BaseModel):
 	score - Score number
 	user_id - User ID
 	"""
-	level: Optional[int] = None
-	points: Optional[int] = None
-	score: Optional[int] = None
-	user_id: Optional[int] = None
+	level: Optional["integer"] = None
+	points: Optional["integer"] = None
+	score: Optional["integer"] = None
+	user_id: Optional["integer"] = None
 
 
 class AppsScope(BaseModel):
@@ -1220,8 +1220,8 @@ class AppsScope(BaseModel):
 	name - Scope name
 	title - Scope title
 	"""
-	name: Optional[str] = None
-	title: Optional[str] = None
+	name: Optional["string"] = None
+	title: Optional["string"] = None
 
 
 class AudioAudio(BaseModel):
@@ -1239,17 +1239,17 @@ class AudioAudio(BaseModel):
 	genre_id - Genre ID
 	performer - Performer name
 	"""
-	access_key: Optional[str] = None
-	artist: Optional[str] = None
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	title: Optional[str] = None
-	url: Optional[str] = None
-	duration: Optional[int] = None
-	date: Optional[int] = None
-	album_id: Optional[int] = None
-	genre_id: Optional[int] = None
-	performer: Optional[str] = None
+	access_key: Optional["string"] = None
+	artist: Optional["string"] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	title: Optional["string"] = None
+	url: Optional["string"] = None
+	duration: Optional["integer"] = None
+	date: Optional["integer"] = None
+	album_id: Optional["integer"] = None
+	genre_id: Optional["integer"] = None
+	performer: Optional["string"] = None
 
 
 class BaseBoolInt(enum.IntEnum):
@@ -1266,8 +1266,8 @@ class BaseCity(BaseModel):
 	id - City ID
 	title - City title
 	"""
-	id: Optional[int] = None
-	title: Optional[str] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
 
 
 class BaseCommentsInfo(BaseModel):
@@ -1278,10 +1278,10 @@ class BaseCommentsInfo(BaseModel):
 	groups_can_post - Information whether groups can comment the post
 	donut - 
 	"""
-	can_post: Optional["Baseboolint"] = None
-	count: Optional[int] = None
-	groups_can_post: Optional[bool] = None
-	donut: Optional["Wallwallpostcommentsdonut"] = None
+	can_post: Optional["baseboolint"] = None
+	count: Optional["integer"] = None
+	groups_can_post: Optional["boolean"] = None
+	donut: Optional["wallwallpostcommentsdonut"] = None
 
 
 class BaseCountry(BaseModel):
@@ -1290,17 +1290,17 @@ class BaseCountry(BaseModel):
 	id - Country ID
 	title - Country title
 	"""
-	id: Optional[int] = None
-	title: Optional[str] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
 
 
 class BaseCropPhoto(BaseModel):
 	"""VK Object BaseCropPhoto
 
 	"""
-	photo: Optional["Photosphoto"] = None
-	crop: Optional["Basecropphotocrop"] = None
-	rect: Optional["Basecropphotorect"] = None
+	photo: Optional["photosphoto"] = None
+	crop: Optional["basecropphotocrop"] = None
+	rect: Optional["basecropphotorect"] = None
 
 
 class BaseCropPhotoCrop(BaseModel):
@@ -1311,10 +1311,10 @@ class BaseCropPhotoCrop(BaseModel):
 	x2 - Coordinate X of the right lower corner
 	y2 - Coordinate Y of the right lower corner
 	"""
-	x: Optional["Number"] = None
-	y: Optional["Number"] = None
-	x2: Optional["Number"] = None
-	y2: Optional["Number"] = None
+	x: Optional["number"] = None
+	y: Optional["number"] = None
+	x2: Optional["number"] = None
+	y2: Optional["number"] = None
 
 
 class BaseCropPhotoRect(BaseModel):
@@ -1325,10 +1325,10 @@ class BaseCropPhotoRect(BaseModel):
 	x2 - Coordinate X of the right lower corner
 	y2 - Coordinate Y of the right lower corner
 	"""
-	x: Optional["Number"] = None
-	y: Optional["Number"] = None
-	x2: Optional["Number"] = None
-	y2: Optional["Number"] = None
+	x: Optional["number"] = None
+	y: Optional["number"] = None
+	x2: Optional["number"] = None
+	y2: Optional["number"] = None
 
 
 class BaseError(BaseModel):
@@ -1340,11 +1340,11 @@ class BaseError(BaseModel):
 	error_text - Localized error message
 	request_params - 
 	"""
-	error_code: Optional[int] = None
-	error_subcode: Optional[int] = None
-	error_msg: Optional[str] = None
-	error_text: Optional[str] = None
-	request_params: Optional["Baserequestparam"] = None
+	error_code: Optional["integer"] = None
+	error_subcode: Optional["integer"] = None
+	error_msg: Optional["string"] = None
+	error_text: Optional["string"] = None
+	request_params: Optional["baserequestparam"] = None
 
 
 class BaseGeo(BaseModel):
@@ -1355,18 +1355,18 @@ class BaseGeo(BaseModel):
 	showmap - Information whether a map is showed
 	type - Place type
 	"""
-	coordinates: Optional["Basegeocoordinates"] = None
-	place: Optional["Baseplace"] = None
-	showmap: Optional[int] = None
-	type: Optional[str] = None
+	coordinates: Optional["basegeocoordinates"] = None
+	place: Optional["baseplace"] = None
+	showmap: Optional["integer"] = None
+	type: Optional["string"] = None
 
 
 class BaseGeoCoordinates(BaseModel):
 	"""VK Object BaseGeoCoordinates
 
 	"""
-	latitude: Optional["Number"] = None
-	longitude: Optional["Number"] = None
+	latitude: Optional["number"] = None
+	longitude: Optional["number"] = None
 
 
 class BaseGradientPoint(BaseModel):
@@ -1375,8 +1375,8 @@ class BaseGradientPoint(BaseModel):
 	color - Hex color code without #
 	position - Point position
 	"""
-	color: Optional[str] = None
-	position: Optional["Number"] = None
+	color: Optional["string"] = None
+	position: Optional["number"] = None
 
 
 class BaseImage(BaseModel):
@@ -1387,10 +1387,10 @@ class BaseImage(BaseModel):
 	url - Image url
 	width - Image width
 	"""
-	id: Optional[str] = None
-	height: Optional[int] = None
-	url: Optional[str] = None
-	width: Optional[int] = None
+	id: Optional["string"] = None
+	height: Optional["integer"] = None
+	url: Optional["string"] = None
+	width: Optional["integer"] = None
 
 
 class BaseLikes(BaseModel):
@@ -1399,8 +1399,8 @@ class BaseLikes(BaseModel):
 	count - Likes number
 	user_likes - Information whether current user likes the photo
 	"""
-	count: Optional[int] = None
-	user_likes: Optional["Baseboolint"] = None
+	count: Optional["integer"] = None
+	user_likes: Optional["baseboolint"] = None
 
 
 class BaseLikesInfo(BaseModel):
@@ -1411,10 +1411,10 @@ class BaseLikesInfo(BaseModel):
 	count - Likes number
 	user_likes - Information whether current uer has liked the post
 	"""
-	can_like: Optional["Baseboolint"] = None
-	can_publish: Optional["Baseboolint"] = None
-	count: Optional[int] = None
-	user_likes: Optional[int] = None
+	can_like: Optional["baseboolint"] = None
+	can_publish: Optional["baseboolint"] = None
+	count: Optional["integer"] = None
+	user_likes: Optional["integer"] = None
 
 
 class BaseLink(BaseModel):
@@ -1437,22 +1437,22 @@ class BaseLink(BaseModel):
 	is_external - Information whether the current link is external
 	video - Video from link
 	"""
-	application: Optional["Baselinkapplication"] = None
-	button: Optional["Baselinkbutton"] = None
-	caption: Optional[str] = None
-	description: Optional[str] = None
-	id: Optional[str] = None
-	is_favorite: Optional[bool] = None
-	photo: Optional["Photosphoto"] = None
-	preview_page: Optional[str] = None
-	preview_url: Optional[str] = None
-	product: Optional["Baselinkproduct"] = None
-	rating: Optional["Baselinkrating"] = None
-	title: Optional[str] = None
-	url: Optional[str] = None
-	target_object: Optional["Linktargetobject"] = None
-	is_external: Optional[bool] = None
-	video: Optional["Videovideo"] = None
+	application: Optional["baselinkapplication"] = None
+	button: Optional["baselinkbutton"] = None
+	caption: Optional["string"] = None
+	description: Optional["string"] = None
+	id: Optional["string"] = None
+	is_favorite: Optional["boolean"] = None
+	photo: Optional["photosphoto"] = None
+	preview_page: Optional["string"] = None
+	preview_url: Optional["string"] = None
+	product: Optional["baselinkproduct"] = None
+	rating: Optional["baselinkrating"] = None
+	title: Optional["string"] = None
+	url: Optional["string"] = None
+	target_object: Optional["linktargetobject"] = None
+	is_external: Optional["boolean"] = None
+	video: Optional["videovideo"] = None
 
 
 class BaseLinkApplication(BaseModel):
@@ -1461,8 +1461,8 @@ class BaseLinkApplication(BaseModel):
 	app_id - Application Id
 	store - 
 	"""
-	app_id: Optional["Number"] = None
-	store: Optional["Baselinkapplicationstore"] = None
+	app_id: Optional["number"] = None
+	store: Optional["baselinkapplicationstore"] = None
 
 
 class BaseLinkApplicationStore(BaseModel):
@@ -1471,8 +1471,8 @@ class BaseLinkApplicationStore(BaseModel):
 	id - Store Id
 	name - Store name
 	"""
-	id: Optional["Number"] = None
-	name: Optional[str] = None
+	id: Optional["number"] = None
+	name: Optional["string"] = None
 
 
 class BaseLinkButton(BaseModel):
@@ -1487,14 +1487,14 @@ class BaseLinkButton(BaseModel):
 	icon - Button icon name, e.g. 'phone' or 'gift'
 	style - 
 	"""
-	action: Optional["Baselinkbuttonaction"] = None
-	title: Optional[str] = None
-	block_id: Optional[str] = None
-	section_id: Optional[str] = None
-	curator_id: Optional[int] = None
-	owner_id: Optional[int] = None
-	icon: Optional[str] = None
-	style: Optional["Baselinkbuttonstyle"] = None
+	action: Optional["baselinkbuttonaction"] = None
+	title: Optional["string"] = None
+	block_id: Optional["string"] = None
+	section_id: Optional["string"] = None
+	curator_id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	icon: Optional["string"] = None
+	style: Optional["baselinkbuttonstyle"] = None
 
 
 class BaseLinkButtonAction(BaseModel):
@@ -1504,9 +1504,9 @@ class BaseLinkButtonAction(BaseModel):
 	url - Action URL
 	consume_reason - 
 	"""
-	type: Optional["Baselinkbuttonactiontype"] = None
-	url: Optional[str] = None
-	consume_reason: Optional[str] = None
+	type: Optional["baselinkbuttonactiontype"] = None
+	url: Optional["string"] = None
+	consume_reason: Optional["string"] = None
 
 
 class BaseLinkButtonActionType(enum.Enum):
@@ -1528,9 +1528,9 @@ class BaseLinkProduct(BaseModel):
 	"""VK Object BaseLinkProduct
 
 	"""
-	price: Optional["Marketprice"] = None
-	merchant: Optional[str] = None
-	orders_count: Optional[int] = None
+	price: Optional["marketprice"] = None
+	merchant: Optional["string"] = None
+	orders_count: Optional["integer"] = None
 
 
 class BaseLinkProductStatus(enum.Enum):
@@ -1550,8 +1550,8 @@ class BaseLinkRating(BaseModel):
 	reviews_count - Count of reviews
 	stars - Count of stars
 	"""
-	reviews_count: Optional[int] = None
-	stars: Optional["Number"] = None
+	reviews_count: Optional["integer"] = None
+	stars: Optional["number"] = None
 
 
 class BaseMessageError(BaseModel):
@@ -1560,8 +1560,8 @@ class BaseMessageError(BaseModel):
 	code - Error code
 	description - Error message
 	"""
-	code: Optional[int] = None
-	description: Optional[str] = None
+	code: Optional["integer"] = None
+	description: Optional["string"] = None
 
 
 class BaseObject(BaseModel):
@@ -1570,8 +1570,8 @@ class BaseObject(BaseModel):
 	id - Object ID
 	title - Object title
 	"""
-	id: Optional[int] = None
-	title: Optional[str] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
 
 
 class BaseObjectCount(BaseModel):
@@ -1579,7 +1579,7 @@ class BaseObjectCount(BaseModel):
 
 	count - Items count
 	"""
-	count: Optional[int] = None
+	count: Optional["integer"] = None
 
 
 class BaseObjectWithName(BaseModel):
@@ -1588,8 +1588,8 @@ class BaseObjectWithName(BaseModel):
 	id - Object ID
 	name - Object name
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class BasePlace(BaseModel):
@@ -1607,17 +1607,17 @@ class BasePlace(BaseModel):
 	title - Place title
 	type - Place type
 	"""
-	address: Optional[str] = None
-	checkins: Optional[int] = None
-	city: Optional[str] = None
-	country: Optional[str] = None
-	created: Optional[int] = None
-	icon: Optional[str] = None
-	id: Optional[int] = None
-	latitude: Optional["Number"] = None
-	longitude: Optional["Number"] = None
-	title: Optional[str] = None
-	type: Optional[str] = None
+	address: Optional["string"] = None
+	checkins: Optional["integer"] = None
+	city: Optional["string"] = None
+	country: Optional["string"] = None
+	created: Optional["integer"] = None
+	icon: Optional["string"] = None
+	id: Optional["integer"] = None
+	latitude: Optional["number"] = None
+	longitude: Optional["number"] = None
+	title: Optional["string"] = None
+	type: Optional["string"] = None
 
 
 class BasePropertyExists(enum.IntEnum):
@@ -1635,10 +1635,10 @@ class BaseRepostsInfo(BaseModel):
 	mail_count - Mail reposts counter
 	user_reposted - Information whether current user has reposted the post
 	"""
-	count: Optional[int] = None
-	wall_count: Optional[int] = None
-	mail_count: Optional[int] = None
-	user_reposted: Optional[int] = None
+	count: Optional["integer"] = None
+	wall_count: Optional["integer"] = None
+	mail_count: Optional["integer"] = None
+	user_reposted: Optional["integer"] = None
 
 
 class BaseRequestParam(BaseModel):
@@ -1647,8 +1647,8 @@ class BaseRequestParam(BaseModel):
 	key - Parameter name
 	value - Parameter value
 	"""
-	key: Optional[str] = None
-	value: Optional[str] = None
+	key: Optional["string"] = None
+	value: Optional["string"] = None
 
 
 class BaseSex(enum.IntEnum):
@@ -1671,13 +1671,13 @@ class BaseSticker(BaseModel):
 	animations - Array of sticker animation script objects
 	is_allowed - Information whether the sticker is allowed
 	"""
-	sticker_id: Optional[int] = None
-	product_id: Optional[int] = None
-	images: Optional["Baseimage"] = None
-	images_with_background: Optional["Baseimage"] = None
-	animation_url: Optional[str] = None
-	animations: Optional["Basestickeranimation"] = None
-	is_allowed: Optional[bool] = None
+	sticker_id: Optional["integer"] = None
+	product_id: Optional["integer"] = None
+	images: Optional["baseimage"] = None
+	images_with_background: Optional["baseimage"] = None
+	animation_url: Optional["string"] = None
+	animations: Optional["basestickeranimation"] = None
+	is_allowed: Optional["boolean"] = None
 
 
 class BaseStickerAnimation(BaseModel):
@@ -1686,8 +1686,8 @@ class BaseStickerAnimation(BaseModel):
 	type - Type of animation script
 	url - URL of animation script
 	"""
-	type: Optional[str] = None
-	url: Optional[str] = None
+	type: Optional["string"] = None
+	url: Optional["string"] = None
 None
 
 class BaseUploadServer(BaseModel):
@@ -1695,7 +1695,7 @@ class BaseUploadServer(BaseModel):
 
 	upload_url - Upload URL
 	"""
-	upload_url: Optional[str] = None
+	upload_url: Optional["string"] = None
 
 
 class BaseUserGroupFields(enum.Enum):
@@ -1809,7 +1809,7 @@ class BaseUserId(BaseModel):
 
 	user_id - User ID
 	"""
-	user_id: Optional[int] = None
+	user_id: Optional["integer"] = None
 
 
 class BoardDefaultOrder(enum.IntEnum):
@@ -1835,15 +1835,15 @@ class BoardTopic(BaseModel):
 	updated - Date when the topic has been updated in Unixtime
 	updated_by - ID of user who updated the topic
 	"""
-	comments: Optional[int] = None
-	created: Optional[int] = None
-	created_by: Optional[int] = None
-	id: Optional[int] = None
-	is_closed: Optional["Baseboolint"] = None
-	is_fixed: Optional["Baseboolint"] = None
-	title: Optional[str] = None
-	updated: Optional[int] = None
-	updated_by: Optional[int] = None
+	comments: Optional["integer"] = None
+	created: Optional["integer"] = None
+	created_by: Optional["integer"] = None
+	id: Optional["integer"] = None
+	is_closed: Optional["baseboolint"] = None
+	is_fixed: Optional["baseboolint"] = None
+	title: Optional["string"] = None
+	updated: Optional["integer"] = None
+	updated_by: Optional["integer"] = None
 
 
 class BoardTopicComment(BaseModel):
@@ -1858,14 +1858,14 @@ class BoardTopicComment(BaseModel):
 	can_edit - Information whether current user can edit the comment
 	likes - 
 	"""
-	attachments: Optional["Wallcommentattachment"] = None
-	date: Optional[int] = None
-	from_id: Optional[int] = None
-	id: Optional[int] = None
-	real_offset: Optional[int] = None
-	text: Optional[str] = None
-	can_edit: Optional["Baseboolint"] = None
-	likes: Optional["Baselikesinfo"] = None
+	attachments: Optional["wallcommentattachment"] = None
+	date: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	real_offset: Optional["integer"] = None
+	text: Optional["string"] = None
+	can_edit: Optional["baseboolint"] = None
+	likes: Optional["baselikesinfo"] = None
 
 
 class BoardTopicPoll(BaseModel):
@@ -1880,114 +1880,114 @@ class BoardTopicPoll(BaseModel):
 	answer_id - Current user's answer ID
 	answers - 
 	"""
-	owner_id: Optional[int] = None
-	poll_id: Optional[int] = None
-	created: Optional[int] = None
-	is_closed: Optional["Baseboolint"] = None
-	question: Optional[str] = None
-	votes: Optional[int] = None
-	answer_id: Optional[int] = None
-	answers: Optional["Pollsanswer"] = None
+	owner_id: Optional["integer"] = None
+	poll_id: Optional["integer"] = None
+	created: Optional["integer"] = None
+	is_closed: Optional["baseboolint"] = None
+	question: Optional["string"] = None
+	votes: Optional["integer"] = None
+	answer_id: Optional["integer"] = None
+	answers: Optional["pollsanswer"] = None
 
 
 class CallbackBoardPostDelete(BaseModel):
 	"""VK Object CallbackBoardPostDelete
 
 	"""
-	topic_owner_id: Optional[int] = None
-	topic_id: Optional[int] = None
-	id: Optional[int] = None
+	topic_owner_id: Optional["integer"] = None
+	topic_id: Optional["integer"] = None
+	id: Optional["integer"] = None
 
 
 class CallbackConfirmationMessage(BaseModel):
 	"""VK Object CallbackConfirmationMessage
 
 	"""
-	type: Optional["Callbackmessagetype"] = None
-	group_id: Optional[int] = None
-	secret: Optional[str] = None
+	type: Optional["callbackmessagetype"] = None
+	group_id: Optional["integer"] = None
+	secret: Optional["string"] = None
 
 
 class CallbackDonutMoneyWithdraw(BaseModel):
 	"""VK Object CallbackDonutMoneyWithdraw
 
 	"""
-	amount: Optional["Number"] = None
-	amount_without_fee: Optional["Number"] = None
+	amount: Optional["number"] = None
+	amount_without_fee: Optional["number"] = None
 
 
 class CallbackDonutMoneyWithdrawError(BaseModel):
 	"""VK Object CallbackDonutMoneyWithdrawError
 
 	"""
-	reason: Optional[str] = None
+	reason: Optional["string"] = None
 
 
 class CallbackDonutSubscriptionCancelled(BaseModel):
 	"""VK Object CallbackDonutSubscriptionCancelled
 
 	"""
-	user_id: Optional[int] = None
+	user_id: Optional["integer"] = None
 
 
 class CallbackDonutSubscriptionCreate(BaseModel):
 	"""VK Object CallbackDonutSubscriptionCreate
 
 	"""
-	user_id: Optional[int] = None
-	amount: Optional[int] = None
-	amount_without_fee: Optional["Number"] = None
+	user_id: Optional["integer"] = None
+	amount: Optional["integer"] = None
+	amount_without_fee: Optional["number"] = None
 
 
 class CallbackDonutSubscriptionExpired(BaseModel):
 	"""VK Object CallbackDonutSubscriptionExpired
 
 	"""
-	user_id: Optional[int] = None
+	user_id: Optional["integer"] = None
 
 
 class CallbackDonutSubscriptionPriceChanged(BaseModel):
 	"""VK Object CallbackDonutSubscriptionPriceChanged
 
 	"""
-	user_id: Optional[int] = None
-	amount_old: Optional[int] = None
-	amount_new: Optional[int] = None
-	amount_diff: Optional["Number"] = None
-	amount_diff_without_fee: Optional["Number"] = None
+	user_id: Optional["integer"] = None
+	amount_old: Optional["integer"] = None
+	amount_new: Optional["integer"] = None
+	amount_diff: Optional["number"] = None
+	amount_diff_without_fee: Optional["number"] = None
 
 
 class CallbackDonutSubscriptionProlonged(BaseModel):
 	"""VK Object CallbackDonutSubscriptionProlonged
 
 	"""
-	user_id: Optional[int] = None
-	amount: Optional[int] = None
-	amount_without_fee: Optional["Number"] = None
+	user_id: Optional["integer"] = None
+	amount: Optional["integer"] = None
+	amount_without_fee: Optional["number"] = None
 
 
 class CallbackGroupChangePhoto(BaseModel):
 	"""VK Object CallbackGroupChangePhoto
 
 	"""
-	user_id: Optional[int] = None
-	photo: Optional["Photosphoto"] = None
+	user_id: Optional["integer"] = None
+	photo: Optional["photosphoto"] = None
 
 
 class CallbackGroupChangeSettings(BaseModel):
 	"""VK Object CallbackGroupChangeSettings
 
 	"""
-	user_id: Optional[int] = None
-	self: Optional["Baseboolint"] = None
+	user_id: Optional["integer"] = None
+	self: Optional["baseboolint"] = None
 
 
 class CallbackGroupJoin(BaseModel):
 	"""VK Object CallbackGroupJoin
 
 	"""
-	user_id: Optional[int] = None
-	join_type: Optional["Callbackgroupjointype"] = None
+	user_id: Optional["integer"] = None
+	join_type: Optional["callbackgroupjointype"] = None
 
 
 class CallbackGroupJoinType(enum.Enum):
@@ -2005,8 +2005,8 @@ class CallbackGroupLeave(BaseModel):
 	"""VK Object CallbackGroupLeave
 
 	"""
-	user_id: Optional[int] = None
-	self: Optional["Baseboolint"] = None
+	user_id: Optional["integer"] = None
+	self: Optional["baseboolint"] = None
 
 
 class CallbackGroupMarket(enum.IntEnum):
@@ -2031,87 +2031,87 @@ class CallbackGroupOfficersEdit(BaseModel):
 	"""VK Object CallbackGroupOfficersEdit
 
 	"""
-	admin_id: Optional[int] = None
-	user_id: Optional[int] = None
-	level_old: Optional["Callbackgroupofficerrole"] = None
-	level_new: Optional["Callbackgroupofficerrole"] = None
+	admin_id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
+	level_old: Optional["callbackgroupofficerrole"] = None
+	level_new: Optional["callbackgroupofficerrole"] = None
 
 
 class CallbackGroupSettingsChanges(BaseModel):
 	"""VK Object CallbackGroupSettingsChanges
 
 	"""
-	title: Optional[str] = None
-	description: Optional[str] = None
-	access: Optional["Groupsgroupisclosed"] = None
-	screen_name: Optional[str] = None
-	public_category: Optional[int] = None
-	public_subcategory: Optional[int] = None
-	age_limits: Optional["Groupsgroupfullagelimits"] = None
-	website: Optional[str] = None
-	enable_status_default: Optional["Groupsgroupwall"] = None
-	enable_audio: Optional["Groupsgroupaudio"] = None
-	enable_video: Optional["Groupsgroupvideo"] = None
-	enable_photo: Optional["Groupsgroupphotos"] = None
-	enable_market: Optional["Callbackgroupmarket"] = None
+	title: Optional["string"] = None
+	description: Optional["string"] = None
+	access: Optional["groupsgroupisclosed"] = None
+	screen_name: Optional["string"] = None
+	public_category: Optional["integer"] = None
+	public_subcategory: Optional["integer"] = None
+	age_limits: Optional["groupsgroupfullagelimits"] = None
+	website: Optional["string"] = None
+	enable_status_default: Optional["groupsgroupwall"] = None
+	enable_audio: Optional["groupsgroupaudio"] = None
+	enable_video: Optional["groupsgroupvideo"] = None
+	enable_photo: Optional["groupsgroupphotos"] = None
+	enable_market: Optional["callbackgroupmarket"] = None
 
 
 class CallbackLikeAddRemove(BaseModel):
 	"""VK Object CallbackLikeAddRemove
 
 	"""
-	liker_id: Optional[int] = None
-	object_type: Optional[str] = None
-	object_owner_id: Optional[int] = None
-	object_id: Optional[int] = None
-	post_id: Optional[int] = None
-	thread_reply_id: Optional[int] = None
+	liker_id: Optional["integer"] = None
+	object_type: Optional["string"] = None
+	object_owner_id: Optional["integer"] = None
+	object_id: Optional["integer"] = None
+	post_id: Optional["integer"] = None
+	thread_reply_id: Optional["integer"] = None
 
 
 class CallbackMarketComment(BaseModel):
 	"""VK Object CallbackMarketComment
 
 	"""
-	id: Optional[int] = None
-	from_id: Optional[int] = None
-	date: Optional[int] = None
-	text: Optional[str] = None
-	market_owner_id: Optional[int] = None
-	photo_id: Optional[int] = None
+	id: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	text: Optional["string"] = None
+	market_owner_id: Optional["integer"] = None
+	photo_id: Optional["integer"] = None
 
 
 class CallbackMarketCommentDelete(BaseModel):
 	"""VK Object CallbackMarketCommentDelete
 
 	"""
-	owner_id: Optional[int] = None
-	id: Optional[int] = None
-	user_id: Optional[int] = None
-	item_id: Optional[int] = None
+	owner_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
+	item_id: Optional["integer"] = None
 
 
 class CallbackMessageAllow(BaseModel):
 	"""VK Object CallbackMessageAllow
 
 	"""
-	user_id: Optional[int] = None
-	key: Optional[str] = None
+	user_id: Optional["integer"] = None
+	key: Optional["string"] = None
 
 
 class CallbackMessageBase(BaseModel):
 	"""VK Object CallbackMessageBase
 
 	"""
-	type: Optional["Callbackmessagetype"] = None
-	object: Optional["Object"] = None
-	group_id: Optional[int] = None
+	type: Optional["callbackmessagetype"] = None
+	object: Optional["object"] = None
+	group_id: Optional["integer"] = None
 
 
 class CallbackMessageDeny(BaseModel):
 	"""VK Object CallbackMessageDeny
 
 	"""
-	user_id: Optional[int] = None
+	user_id: Optional["integer"] = None
 
 
 class CallbackMessageType(enum.Enum):
@@ -2167,93 +2167,93 @@ class CallbackPhotoComment(BaseModel):
 	"""VK Object CallbackPhotoComment
 
 	"""
-	id: Optional[int] = None
-	from_id: Optional[int] = None
-	date: Optional[int] = None
-	text: Optional[str] = None
-	photo_owner_id: Optional[int] = None
+	id: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	text: Optional["string"] = None
+	photo_owner_id: Optional["integer"] = None
 
 
 class CallbackPhotoCommentDelete(BaseModel):
 	"""VK Object CallbackPhotoCommentDelete
 
 	"""
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	user_id: Optional[int] = None
-	photo_id: Optional[int] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
+	photo_id: Optional["integer"] = None
 
 
 class CallbackPollVoteNew(BaseModel):
 	"""VK Object CallbackPollVoteNew
 
 	"""
-	owner_id: Optional[int] = None
-	poll_id: Optional[int] = None
-	option_id: Optional[int] = None
-	user_id: Optional[int] = None
+	owner_id: Optional["integer"] = None
+	poll_id: Optional["integer"] = None
+	option_id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
 
 
 class CallbackQrScan(BaseModel):
 	"""VK Object CallbackQrScan
 
 	"""
-	user_id: Optional[int] = None
-	data: Optional[str] = None
-	type: Optional[str] = None
-	subtype: Optional[str] = None
-	reread: Optional[bool] = None
+	user_id: Optional["integer"] = None
+	data: Optional["string"] = None
+	type: Optional["string"] = None
+	subtype: Optional["string"] = None
+	reread: Optional["boolean"] = None
 
 
 class CallbackUserBlock(BaseModel):
 	"""VK Object CallbackUserBlock
 
 	"""
-	admin_id: Optional[int] = None
-	user_id: Optional[int] = None
-	unblock_date: Optional[int] = None
-	reason: Optional[int] = None
-	comment: Optional[str] = None
+	admin_id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
+	unblock_date: Optional["integer"] = None
+	reason: Optional["integer"] = None
+	comment: Optional["string"] = None
 
 
 class CallbackUserUnblock(BaseModel):
 	"""VK Object CallbackUserUnblock
 
 	"""
-	admin_id: Optional[int] = None
-	user_id: Optional[int] = None
-	by_end_date: Optional[int] = None
+	admin_id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
+	by_end_date: Optional["integer"] = None
 
 
 class CallbackVideoComment(BaseModel):
 	"""VK Object CallbackVideoComment
 
 	"""
-	id: Optional[int] = None
-	from_id: Optional[int] = None
-	date: Optional[int] = None
-	text: Optional[str] = None
-	video_owner_id: Optional[int] = None
+	id: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	text: Optional["string"] = None
+	video_owner_id: Optional["integer"] = None
 
 
 class CallbackVideoCommentDelete(BaseModel):
 	"""VK Object CallbackVideoCommentDelete
 
 	"""
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	user_id: Optional[int] = None
-	video_id: Optional[int] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
+	video_id: Optional["integer"] = None
 
 
 class CallbackWallCommentDelete(BaseModel):
 	"""VK Object CallbackWallCommentDelete
 
 	"""
-	owner_id: Optional[int] = None
-	id: Optional[int] = None
-	user_id: Optional[int] = None
-	post_id: Optional[int] = None
+	owner_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
+	post_id: Optional["integer"] = None
 
 
 class CallsCall(BaseModel):
@@ -2266,12 +2266,12 @@ class CallsCall(BaseModel):
 	time - Timestamp for call
 	video - Was this call initiated as video call
 	"""
-	duration: Optional[int] = None
-	initiator_id: Optional[int] = None
-	receiver_id: Optional[int] = None
-	state: Optional["Callsendstate"] = None
-	time: Optional[int] = None
-	video: Optional[bool] = None
+	duration: Optional["integer"] = None
+	initiator_id: Optional["integer"] = None
+	receiver_id: Optional["integer"] = None
+	state: Optional["callsendstate"] = None
+	time: Optional["integer"] = None
+	video: Optional["boolean"] = None
 
 
 class CallsEndState(enum.Enum):
@@ -2289,8 +2289,8 @@ class CallsParticipants(BaseModel):
 	list - 
 	count - Participants count
 	"""
-	list: Optional[int] = None
-	count: Optional[int] = None
+	list: Optional["integer"] = None
+	count: Optional["integer"] = None
 
 
 class CommentThread(BaseModel):
@@ -2302,11 +2302,11 @@ class CommentThread(BaseModel):
 	items - 
 	show_reply_button - Information whether recommended to display reply button
 	"""
-	can_post: Optional[bool] = None
-	count: Optional[int] = None
-	groups_can_post: Optional[bool] = None
-	items: Optional["Wallwallcomment"] = None
-	show_reply_button: Optional[bool] = None
+	can_post: Optional["boolean"] = None
+	count: Optional["integer"] = None
+	groups_can_post: Optional["boolean"] = None
+	items: Optional["wallwallcomment"] = None
+	show_reply_button: Optional["boolean"] = None
 
 
 class DatabaseCity(BaseObject):
@@ -2327,8 +2327,8 @@ class DatabaseFaculty(BaseModel):
 	id - Faculty ID
 	title - Faculty title
 	"""
-	id: Optional[int] = None
-	title: Optional[str] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
 
 
 class DatabaseRegion(BaseModel):
@@ -2337,8 +2337,8 @@ class DatabaseRegion(BaseModel):
 	id - Region ID
 	title - Region title
 	"""
-	id: Optional[int] = None
-	title: Optional[str] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
 
 
 class DatabaseSchool(BaseModel):
@@ -2347,8 +2347,8 @@ class DatabaseSchool(BaseModel):
 	id - School ID
 	title - School title
 	"""
-	id: Optional[int] = None
-	title: Optional[str] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
 
 
 class DatabaseStation(BaseModel):
@@ -2359,10 +2359,10 @@ class DatabaseStation(BaseModel):
 	id - Station ID
 	name - Station name
 	"""
-	city_id: Optional[int] = None
-	color: Optional[str] = None
-	id: Optional[int] = None
-	name: Optional[str] = None
+	city_id: Optional["integer"] = None
+	color: Optional["string"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class DatabaseUniversity(BaseModel):
@@ -2371,8 +2371,8 @@ class DatabaseUniversity(BaseModel):
 	id - University ID
 	title - University title
 	"""
-	id: Optional[int] = None
-	title: Optional[str] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
 
 
 class DocsDoc(BaseModel):
@@ -2391,18 +2391,18 @@ class DocsDoc(BaseModel):
 	access_key - Access key for the document
 	tags - Document tags
 	"""
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	title: Optional[str] = None
-	size: Optional[int] = None
-	ext: Optional[str] = None
-	url: Optional[str] = None
-	date: Optional[int] = None
-	type: Optional[int] = None
-	preview: Optional["Docsdocpreview"] = None
-	is_licensed: Optional["Baseboolint"] = None
-	access_key: Optional[str] = None
-	tags: Optional[str] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	title: Optional["string"] = None
+	size: Optional["integer"] = None
+	ext: Optional["string"] = None
+	url: Optional["string"] = None
+	date: Optional["integer"] = None
+	type: Optional["integer"] = None
+	preview: Optional["docsdocpreview"] = None
+	is_licensed: Optional["baseboolint"] = None
+	access_key: Optional["string"] = None
+	tags: Optional["string"] = None
 
 
 class DocsDocAttachmentType(enum.Enum):
@@ -2418,10 +2418,10 @@ class DocsDocPreview(BaseModel):
 	"""VK Object DocsDocPreview
 
 	"""
-	audio_msg: Optional["Docsdocpreviewaudiomsg"] = None
-	graffiti: Optional["Docsdocpreviewgraffiti"] = None
-	photo: Optional["Docsdocpreviewphoto"] = None
-	video: Optional["Docsdocpreviewvideo"] = None
+	audio_msg: Optional["docsdocpreviewaudiomsg"] = None
+	graffiti: Optional["docsdocpreviewgraffiti"] = None
+	photo: Optional["docsdocpreviewphoto"] = None
+	video: Optional["docsdocpreviewvideo"] = None
 
 
 class DocsDocPreviewAudioMsg(BaseModel):
@@ -2432,10 +2432,10 @@ class DocsDocPreviewAudioMsg(BaseModel):
 	link_ogg - OGG file URL
 	waveform - 
 	"""
-	duration: Optional[int] = None
-	link_mp3: Optional[str] = None
-	link_ogg: Optional[str] = None
-	waveform: Optional[int] = None
+	duration: Optional["integer"] = None
+	link_mp3: Optional["string"] = None
+	link_ogg: Optional["string"] = None
+	waveform: Optional["integer"] = None
 
 
 class DocsDocPreviewGraffiti(BaseModel):
@@ -2445,16 +2445,16 @@ class DocsDocPreviewGraffiti(BaseModel):
 	width - Graffiti width
 	height - Graffiti height
 	"""
-	src: Optional[str] = None
-	width: Optional[int] = None
-	height: Optional[int] = None
+	src: Optional["string"] = None
+	width: Optional["integer"] = None
+	height: Optional["integer"] = None
 
 
 class DocsDocPreviewPhoto(BaseModel):
 	"""VK Object DocsDocPreviewPhoto
 
 	"""
-	sizes: Optional["Docsdocpreviewphotosizes"] = None
+	sizes: Optional["docsdocpreviewphotosizes"] = None
 
 
 class DocsDocPreviewPhotoSizes(BaseModel):
@@ -2465,10 +2465,10 @@ class DocsDocPreviewPhotoSizes(BaseModel):
 	height - Height in px
 	type - 
 	"""
-	src: Optional[str] = None
-	width: Optional[int] = None
-	height: Optional[int] = None
-	type: Optional["Photosphotosizestype"] = None
+	src: Optional["string"] = None
+	width: Optional["integer"] = None
+	height: Optional["integer"] = None
+	type: Optional["photosphotosizestype"] = None
 
 
 class DocsDocPreviewVideo(BaseModel):
@@ -2479,10 +2479,10 @@ class DocsDocPreviewVideo(BaseModel):
 	height - Video's height in pixels
 	file_size - Video file size in bites
 	"""
-	src: Optional[str] = None
-	width: Optional[int] = None
-	height: Optional[int] = None
-	file_size: Optional[int] = None
+	src: Optional["string"] = None
+	width: Optional["integer"] = None
+	height: Optional["integer"] = None
+	file_size: Optional["integer"] = None
 
 
 class DocsDocTypes(BaseModel):
@@ -2492,19 +2492,19 @@ class DocsDocTypes(BaseModel):
 	name - Doc type title
 	count - Number of docs
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	count: Optional[int] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	count: Optional["integer"] = None
 
 
 class DonutDonatorSubscriptionInfo(BaseModel):
 	"""VK Object DonutDonatorSubscriptionInfo
 
 	"""
-	owner_id: Optional[int] = None
-	next_payment_date: Optional[int] = None
-	amount: Optional[int] = None
-	status: Optional[str] = None
+	owner_id: Optional["integer"] = None
+	next_payment_date: Optional["integer"] = None
+	amount: Optional["integer"] = None
+	status: Optional["string"] = None
 
 
 class EventsEventAttach(BaseModel):
@@ -2519,14 +2519,14 @@ class EventsEventAttach(BaseModel):
 	text - text of attach
 	time - event start time
 	"""
-	address: Optional[str] = None
-	button_text: Optional[str] = None
-	friends: Optional[int] = None
-	id: Optional[int] = None
-	is_favorite: Optional[bool] = None
-	member_status: Optional["Groupsgroupfullmemberstatus"] = None
-	text: Optional[str] = None
-	time: Optional[int] = None
+	address: Optional["string"] = None
+	button_text: Optional["string"] = None
+	friends: Optional["integer"] = None
+	id: Optional["integer"] = None
+	is_favorite: Optional["boolean"] = None
+	member_status: Optional["groupsgroupfullmemberstatus"] = None
+	text: Optional["string"] = None
+	time: Optional["integer"] = None
 
 
 class FaveBookmark(BaseModel):
@@ -2541,14 +2541,14 @@ class FaveBookmark(BaseModel):
 	type - Item type
 	video - 
 	"""
-	added_date: Optional[int] = None
-	link: Optional["Baselink"] = None
-	post: Optional["Wallwallpostfull"] = None
-	product: Optional["Marketmarketitem"] = None
-	seen: Optional[bool] = None
-	tags: Optional["Favetag"] = None
-	type: Optional["Favebookmarktype"] = None
-	video: Optional["Videovideo"] = None
+	added_date: Optional["integer"] = None
+	link: Optional["baselink"] = None
+	post: Optional["wallwallpostfull"] = None
+	product: Optional["marketmarketitem"] = None
+	seen: Optional["boolean"] = None
+	tags: Optional["favetag"] = None
+	type: Optional["favebookmarktype"] = None
+	video: Optional["videovideo"] = None
 
 
 class FaveBookmarkType(enum.Enum):
@@ -2572,12 +2572,12 @@ class FavePage(BaseModel):
 	updated_date - Timestamp, when this page was bookmarked
 	user - 
 	"""
-	description: Optional[str] = None
-	group: Optional["Groupsgroupfull"] = None
-	tags: Optional["Favetag"] = None
-	type: Optional["Favepagetype"] = None
-	updated_date: Optional[int] = None
-	user: Optional["Usersuserfull"] = None
+	description: Optional["string"] = None
+	group: Optional["groupsgroupfull"] = None
+	tags: Optional["favetag"] = None
+	type: Optional["favepagetype"] = None
+	updated_date: Optional["integer"] = None
+	user: Optional["usersuserfull"] = None
 
 
 class FavePageType(enum.Enum):
@@ -2595,8 +2595,8 @@ class FaveTag(BaseModel):
 	id - Tag id
 	name - Tag name
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class FriendsFriendExtendedStatus(FriendsFriendStatus):
@@ -2614,9 +2614,9 @@ class FriendsFriendStatus(BaseModel):
 	sign - MD5 hash for the result validation
 	user_id - User ID
 	"""
-	friend_status: Optional["Friendsfriendstatusstatus"] = None
-	sign: Optional[str] = None
-	user_id: Optional[int] = None
+	friend_status: Optional["friendsfriendstatusstatus"] = None
+	sign: Optional["string"] = None
+	user_id: Optional["integer"] = None
 
 
 class FriendsFriendStatusStatus(enum.IntEnum):
@@ -2635,8 +2635,8 @@ class FriendsFriendsList(BaseModel):
 	id - List ID
 	name - List title
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class FriendsMutualFriend(BaseModel):
@@ -2646,9 +2646,9 @@ class FriendsMutualFriend(BaseModel):
 	common_friends - 
 	id - User ID
 	"""
-	common_count: Optional[int] = None
-	common_friends: Optional[int] = None
-	id: Optional[int] = None
+	common_count: Optional["integer"] = None
+	common_friends: Optional["integer"] = None
+	id: Optional["integer"] = None
 
 
 class FriendsRequests(BaseModel):
@@ -2658,9 +2658,9 @@ class FriendsRequests(BaseModel):
 	mutual - 
 	user_id - User ID
 	"""
-	from: Optional[str] = None
-	mutual: Optional["Friendsrequestsmutual"] = None
-	user_id: Optional[int] = None
+	from: Optional["string"] = None
+	mutual: Optional["friendsrequestsmutual"] = None
+	user_id: Optional["integer"] = None
 
 
 class FriendsRequestsMutual(BaseModel):
@@ -2669,8 +2669,8 @@ class FriendsRequestsMutual(BaseModel):
 	count - Total mutual friends number
 	users - 
 	"""
-	count: Optional[int] = None
-	users: Optional[int] = None
+	count: Optional["integer"] = None
+	users: Optional["integer"] = None
 
 
 class FriendsRequestsXtrMessage(BaseModel):
@@ -2681,10 +2681,10 @@ class FriendsRequestsXtrMessage(BaseModel):
 	mutual - 
 	user_id - User ID
 	"""
-	from: Optional[str] = None
-	message: Optional[str] = None
-	mutual: Optional["Friendsrequestsmutual"] = None
-	user_id: Optional[int] = None
+	from: Optional["string"] = None
+	message: Optional["string"] = None
+	mutual: Optional["friendsrequestsmutual"] = None
+	user_id: Optional["integer"] = None
 
 
 class FriendsUserXtrLists(UsersUserFull):
@@ -2713,13 +2713,13 @@ class GiftsGift(BaseModel):
 	message - Comment text
 	privacy - 
 	"""
-	date: Optional[int] = None
-	from_id: Optional[int] = None
-	gift: Optional["Giftslayout"] = None
-	gift_hash: Optional[str] = None
-	id: Optional[int] = None
-	message: Optional[str] = None
-	privacy: Optional["Giftsgiftprivacy"] = None
+	date: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	gift: Optional["giftslayout"] = None
+	gift_hash: Optional["string"] = None
+	id: Optional["integer"] = None
+	message: Optional["string"] = None
+	privacy: Optional["giftsgiftprivacy"] = None
 
 
 class GiftsGiftPrivacy(enum.IntEnum):
@@ -2744,15 +2744,15 @@ class GiftsLayout(BaseModel):
 	build_id - ID of the build of constructor gift
 	keywords - Keywords used for search
 	"""
-	id: Optional[int] = None
-	thumb_512: Optional[str] = None
-	thumb_256: Optional[str] = None
-	thumb_48: Optional[str] = None
-	thumb_96: Optional[str] = None
-	stickers_product_id: Optional[int] = None
-	is_stickers_style: Optional[bool] = None
-	build_id: Optional[str] = None
-	keywords: Optional[str] = None
+	id: Optional["integer"] = None
+	thumb_512: Optional["string"] = None
+	thumb_256: Optional["string"] = None
+	thumb_48: Optional["string"] = None
+	thumb_96: Optional["string"] = None
+	stickers_product_id: Optional["integer"] = None
+	is_stickers_style: Optional["boolean"] = None
+	build_id: Optional["string"] = None
+	keywords: Optional["string"] = None
 
 
 class GroupsAddress(BaseModel):
@@ -2773,20 +2773,20 @@ class GroupsAddress(BaseModel):
 	title - Title of the place (Zinger, etc)
 	work_info_status - Status of information about timetable
 	"""
-	additional_address: Optional[str] = None
-	address: Optional[str] = None
-	city_id: Optional[int] = None
-	country_id: Optional[int] = None
-	distance: Optional[int] = None
-	id: Optional[int] = None
-	latitude: Optional["Number"] = None
-	longitude: Optional["Number"] = None
-	metro_station_id: Optional[int] = None
-	phone: Optional[str] = None
-	time_offset: Optional[int] = None
-	timetable: Optional["Groupsaddresstimetable"] = None
-	title: Optional[str] = None
-	work_info_status: Optional["Groupsaddressworkinfostatus"] = None
+	additional_address: Optional["string"] = None
+	address: Optional["string"] = None
+	city_id: Optional["integer"] = None
+	country_id: Optional["integer"] = None
+	distance: Optional["integer"] = None
+	id: Optional["integer"] = None
+	latitude: Optional["number"] = None
+	longitude: Optional["number"] = None
+	metro_station_id: Optional["integer"] = None
+	phone: Optional["string"] = None
+	time_offset: Optional["integer"] = None
+	timetable: Optional["groupsaddresstimetable"] = None
+	title: Optional["string"] = None
+	work_info_status: Optional["groupsaddressworkinfostatus"] = None
 
 
 class GroupsAddressTimetable(BaseModel):
@@ -2800,13 +2800,13 @@ class GroupsAddressTimetable(BaseModel):
 	tue - Timetable for tuesday
 	wed - Timetable for wednesday
 	"""
-	fri: Optional["Groupsaddresstimetableday"] = None
-	mon: Optional["Groupsaddresstimetableday"] = None
-	sat: Optional["Groupsaddresstimetableday"] = None
-	sun: Optional["Groupsaddresstimetableday"] = None
-	thu: Optional["Groupsaddresstimetableday"] = None
-	tue: Optional["Groupsaddresstimetableday"] = None
-	wed: Optional["Groupsaddresstimetableday"] = None
+	fri: Optional["groupsaddresstimetableday"] = None
+	mon: Optional["groupsaddresstimetableday"] = None
+	sat: Optional["groupsaddresstimetableday"] = None
+	sun: Optional["groupsaddresstimetableday"] = None
+	thu: Optional["groupsaddresstimetableday"] = None
+	tue: Optional["groupsaddresstimetableday"] = None
+	wed: Optional["groupsaddresstimetableday"] = None
 
 
 class GroupsAddressTimetableDay(BaseModel):
@@ -2817,10 +2817,10 @@ class GroupsAddressTimetableDay(BaseModel):
 	close_time - Close time in minutes
 	open_time - Open time in minutes
 	"""
-	break_close_time: Optional[int] = None
-	break_open_time: Optional[int] = None
-	close_time: Optional[int] = None
-	open_time: Optional[int] = None
+	break_close_time: Optional["integer"] = None
+	break_open_time: Optional["integer"] = None
+	close_time: Optional["integer"] = None
+	open_time: Optional["integer"] = None
 
 
 class GroupsAddressWorkInfoStatus(enum.Enum):
@@ -2840,8 +2840,8 @@ class GroupsAddressesInfo(BaseModel):
 	is_enabled - Information whether addresses is enabled
 	main_address_id - Main address id for group
 	"""
-	is_enabled: Optional[bool] = None
-	main_address_id: Optional[int] = None
+	is_enabled: Optional["boolean"] = None
+	main_address_id: Optional["integer"] = None
 
 
 class GroupsBanInfo(BaseModel):
@@ -2855,13 +2855,13 @@ class GroupsBanInfo(BaseModel):
 	end_date - Date when user will be removed from blacklist in Unixtime
 	reason - 
 	"""
-	admin_id: Optional[int] = None
-	comment: Optional[str] = None
-	comment_visible: Optional[bool] = None
-	is_closed: Optional[bool] = None
-	date: Optional[int] = None
-	end_date: Optional[int] = None
-	reason: Optional["Groupsbaninforeason"] = None
+	admin_id: Optional["integer"] = None
+	comment: Optional["string"] = None
+	comment_visible: Optional["boolean"] = None
+	is_closed: Optional["boolean"] = None
+	date: Optional["integer"] = None
+	end_date: Optional["integer"] = None
+	reason: Optional["groupsbaninforeason"] = None
 
 
 class GroupsBanInfoReason(enum.IntEnum):
@@ -2885,12 +2885,12 @@ class GroupsCallbackServer(BaseModel):
 	"""VK Object GroupsCallbackServer
 
 	"""
-	id: Optional[int] = None
-	title: Optional[str] = None
-	creator_id: Optional[int] = None
-	url: Optional[str] = None
-	secret_key: Optional[str] = None
-	status: Optional[str] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
+	creator_id: Optional["integer"] = None
+	url: Optional["string"] = None
+	secret_key: Optional["string"] = None
+	status: Optional["string"] = None
 
 
 class GroupsCallbackSettings(BaseModel):
@@ -2899,8 +2899,8 @@ class GroupsCallbackSettings(BaseModel):
 	api_version - API version used for the events
 	events - 
 	"""
-	api_version: Optional[str] = None
-	events: Optional["Groupslongpollevents"] = None
+	api_version: Optional["string"] = None
+	events: Optional["groupslongpollevents"] = None
 
 
 class GroupsContactsItem(BaseModel):
@@ -2911,10 +2911,10 @@ class GroupsContactsItem(BaseModel):
 	phone - Contact phone
 	email - Contact email
 	"""
-	user_id: Optional[int] = None
-	desc: Optional[str] = None
-	phone: Optional[str] = None
-	email: Optional[str] = None
+	user_id: Optional["integer"] = None
+	desc: Optional["string"] = None
+	phone: Optional["string"] = None
+	email: Optional["string"] = None
 
 
 class GroupsCountersGroup(BaseModel):
@@ -2930,15 +2930,15 @@ class GroupsCountersGroup(BaseModel):
 	topics - Topics number
 	videos - Videos number
 	"""
-	addresses: Optional[int] = None
-	albums: Optional[int] = None
-	audios: Optional[int] = None
-	audio_playlists: Optional[int] = None
-	docs: Optional[int] = None
-	market: Optional[int] = None
-	photos: Optional[int] = None
-	topics: Optional[int] = None
-	videos: Optional[int] = None
+	addresses: Optional["integer"] = None
+	albums: Optional["integer"] = None
+	audios: Optional["integer"] = None
+	audio_playlists: Optional["integer"] = None
+	docs: Optional["integer"] = None
+	market: Optional["integer"] = None
+	photos: Optional["integer"] = None
+	topics: Optional["integer"] = None
+	videos: Optional["integer"] = None
 
 
 class GroupsCover(BaseModel):
@@ -2947,8 +2947,8 @@ class GroupsCover(BaseModel):
 	enabled - Information whether cover is enabled
 	images - 
 	"""
-	enabled: Optional["Baseboolint"] = None
-	images: Optional["Baseimage"] = None
+	enabled: Optional["baseboolint"] = None
+	images: Optional["baseimage"] = None
 
 
 class GroupsFields(enum.Enum):
@@ -3050,21 +3050,21 @@ class GroupsGroup(BaseModel):
 	photo_100 - URL of square photo of the community with 100 pixels in width
 	photo_200 - URL of square photo of the community with 200 pixels in width
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	screen_name: Optional[str] = None
-	is_closed: Optional["Groupsgroupisclosed"] = None
-	type: Optional["Groupsgrouptype"] = None
-	is_admin: Optional["Baseboolint"] = None
-	admin_level: Optional["Groupsgroupadminlevel"] = None
-	is_member: Optional["Baseboolint"] = None
-	is_advertiser: Optional["Baseboolint"] = None
-	start_date: Optional[int] = None
-	finish_date: Optional[int] = None
-	deactivated: Optional[str] = None
-	photo_50: Optional[str] = None
-	photo_100: Optional[str] = None
-	photo_200: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	screen_name: Optional["string"] = None
+	is_closed: Optional["groupsgroupisclosed"] = None
+	type: Optional["groupsgrouptype"] = None
+	is_admin: Optional["baseboolint"] = None
+	admin_level: Optional["groupsgroupadminlevel"] = None
+	is_member: Optional["baseboolint"] = None
+	is_advertiser: Optional["baseboolint"] = None
+	start_date: Optional["integer"] = None
+	finish_date: Optional["integer"] = None
+	deactivated: Optional["string"] = None
+	photo_50: Optional["string"] = None
+	photo_100: Optional["string"] = None
+	photo_200: Optional["string"] = None
 
 
 class GroupsGroupAccess(enum.IntEnum):
@@ -3103,11 +3103,11 @@ class GroupsGroupAttach(BaseModel):
 	size - size of group
 	is_favorite - is favorite
 	"""
-	id: Optional[int] = None
-	text: Optional[str] = None
-	status: Optional[str] = None
-	size: Optional[int] = None
-	is_favorite: Optional[bool] = None
+	id: Optional["integer"] = None
+	text: Optional["string"] = None
+	status: Optional["string"] = None
+	size: Optional["integer"] = None
+	is_favorite: Optional["boolean"] = None
 
 
 class GroupsGroupAudio(enum.IntEnum):
@@ -3126,9 +3126,9 @@ class GroupsGroupBanInfo(BaseModel):
 	end_date - End date of ban in Unixtime
 	reason - 
 	"""
-	comment: Optional[str] = None
-	end_date: Optional[int] = None
-	reason: Optional["Groupsbaninforeason"] = None
+	comment: Optional["string"] = None
+	end_date: Optional["integer"] = None
+	reason: Optional["groupsbaninforeason"] = None
 
 
 class GroupsGroupCategory(BaseModel):
@@ -3138,9 +3138,9 @@ class GroupsGroupCategory(BaseModel):
 	name - Category name
 	subcategories - 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	subcategories: Optional["Baseobjectwithname"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	subcategories: Optional["baseobjectwithname"] = None
 
 
 class GroupsGroupCategoryFull(BaseModel):
@@ -3152,19 +3152,19 @@ class GroupsGroupCategoryFull(BaseModel):
 	page_previews - 
 	subcategories - 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	page_count: Optional[int] = None
-	page_previews: Optional["Groupsgroup"] = None
-	subcategories: Optional["Groupsgroupcategory"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	page_count: Optional["integer"] = None
+	page_previews: Optional["groupsgroup"] = None
+	subcategories: Optional["groupsgroupcategory"] = None
 
 
 class GroupsGroupCategoryType(BaseModel):
 	"""VK Object GroupsGroupCategoryType
 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class GroupsGroupDocs(enum.IntEnum):
@@ -3344,12 +3344,12 @@ class GroupsGroupLink(BaseModel):
 	image_processing - Information whether the image on processing
 	url - Link URL
 	"""
-	name: Optional[str] = None
-	desc: Optional[str] = None
-	edit_title: Optional["Baseboolint"] = None
-	id: Optional[int] = None
-	image_processing: Optional["Baseboolint"] = None
-	url: Optional[str] = None
+	name: Optional["string"] = None
+	desc: Optional["string"] = None
+	edit_title: Optional["baseboolint"] = None
+	id: Optional["integer"] = None
+	image_processing: Optional["baseboolint"] = None
+	url: Optional["string"] = None
 
 
 class GroupsGroupMarketCurrency(enum.IntEnum):
@@ -3376,9 +3376,9 @@ class GroupsGroupPublicCategoryList(BaseModel):
 	"""VK Object GroupsGroupPublicCategoryList
 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	subcategories: Optional["Groupsgroupcategorytype"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	subcategories: Optional["groupsgroupcategorytype"] = None
 
 
 class GroupsGroupRole(enum.Enum):
@@ -3452,10 +3452,10 @@ class GroupsGroupTag(BaseModel):
 	"""VK Object GroupsGroupTag
 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	color: Optional[str] = None
-	uses: Optional[int] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	color: Optional["string"] = None
+	uses: Optional["integer"] = None
 
 
 class GroupsGroupTopics(enum.IntEnum):
@@ -3510,8 +3510,8 @@ class GroupsGroupsArray(BaseModel):
 	count - Communities number
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional[int] = None
+	count: Optional["integer"] = None
+	items: Optional["integer"] = None
 
 
 class GroupsLinksItem(BaseModel):
@@ -3525,13 +3525,13 @@ class GroupsLinksItem(BaseModel):
 	photo_50 - URL of square image of the link with 50 pixels in width
 	url - Link URL
 	"""
-	desc: Optional[str] = None
-	edit_title: Optional["Baseboolint"] = None
-	id: Optional[int] = None
-	name: Optional[str] = None
-	photo_100: Optional[str] = None
-	photo_50: Optional[str] = None
-	url: Optional[str] = None
+	desc: Optional["string"] = None
+	edit_title: Optional["baseboolint"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	photo_100: Optional["string"] = None
+	photo_50: Optional["string"] = None
+	url: Optional["string"] = None
 
 
 class GroupsLiveCovers(BaseModel):
@@ -3541,65 +3541,65 @@ class GroupsLiveCovers(BaseModel):
 	is_scalable - Information whether live covers photo scaling is enabled
 	story_ids - 
 	"""
-	is_enabled: Optional[bool] = None
-	is_scalable: Optional[bool] = None
-	story_ids: Optional[str] = None
+	is_enabled: Optional["boolean"] = None
+	is_scalable: Optional["boolean"] = None
+	story_ids: Optional["string"] = None
 
 
 class GroupsLongPollEvents(BaseModel):
 	"""VK Object GroupsLongPollEvents
 
 	"""
-	audio_new: Optional["Baseboolint"] = None
-	board_post_delete: Optional["Baseboolint"] = None
-	board_post_edit: Optional["Baseboolint"] = None
-	board_post_new: Optional["Baseboolint"] = None
-	board_post_restore: Optional["Baseboolint"] = None
-	group_change_photo: Optional["Baseboolint"] = None
-	group_change_settings: Optional["Baseboolint"] = None
-	group_join: Optional["Baseboolint"] = None
-	group_leave: Optional["Baseboolint"] = None
-	group_officers_edit: Optional["Baseboolint"] = None
-	lead_forms_new: Optional["Baseboolint"] = None
-	market_comment_delete: Optional["Baseboolint"] = None
-	market_comment_edit: Optional["Baseboolint"] = None
-	market_comment_new: Optional["Baseboolint"] = None
-	market_comment_restore: Optional["Baseboolint"] = None
-	market_order_new: Optional["Baseboolint"] = None
-	market_order_edit: Optional["Baseboolint"] = None
-	message_allow: Optional["Baseboolint"] = None
-	message_deny: Optional["Baseboolint"] = None
-	message_new: Optional["Baseboolint"] = None
-	message_read: Optional["Baseboolint"] = None
-	message_reply: Optional["Baseboolint"] = None
-	message_typing_state: Optional["Baseboolint"] = None
-	message_edit: Optional["Baseboolint"] = None
-	photo_comment_delete: Optional["Baseboolint"] = None
-	photo_comment_edit: Optional["Baseboolint"] = None
-	photo_comment_new: Optional["Baseboolint"] = None
-	photo_comment_restore: Optional["Baseboolint"] = None
-	photo_new: Optional["Baseboolint"] = None
-	poll_vote_new: Optional["Baseboolint"] = None
-	user_block: Optional["Baseboolint"] = None
-	user_unblock: Optional["Baseboolint"] = None
-	video_comment_delete: Optional["Baseboolint"] = None
-	video_comment_edit: Optional["Baseboolint"] = None
-	video_comment_new: Optional["Baseboolint"] = None
-	video_comment_restore: Optional["Baseboolint"] = None
-	video_new: Optional["Baseboolint"] = None
-	wall_post_new: Optional["Baseboolint"] = None
-	wall_reply_delete: Optional["Baseboolint"] = None
-	wall_reply_edit: Optional["Baseboolint"] = None
-	wall_reply_new: Optional["Baseboolint"] = None
-	wall_reply_restore: Optional["Baseboolint"] = None
-	wall_repost: Optional["Baseboolint"] = None
-	donut_subscription_create: Optional["Baseboolint"] = None
-	donut_subscription_prolonged: Optional["Baseboolint"] = None
-	donut_subscription_cancelled: Optional["Baseboolint"] = None
-	donut_subscription_expired: Optional["Baseboolint"] = None
-	donut_subscription_price_changed: Optional["Baseboolint"] = None
-	donut_money_withdraw: Optional["Baseboolint"] = None
-	donut_money_withdraw_error: Optional["Baseboolint"] = None
+	audio_new: Optional["baseboolint"] = None
+	board_post_delete: Optional["baseboolint"] = None
+	board_post_edit: Optional["baseboolint"] = None
+	board_post_new: Optional["baseboolint"] = None
+	board_post_restore: Optional["baseboolint"] = None
+	group_change_photo: Optional["baseboolint"] = None
+	group_change_settings: Optional["baseboolint"] = None
+	group_join: Optional["baseboolint"] = None
+	group_leave: Optional["baseboolint"] = None
+	group_officers_edit: Optional["baseboolint"] = None
+	lead_forms_new: Optional["baseboolint"] = None
+	market_comment_delete: Optional["baseboolint"] = None
+	market_comment_edit: Optional["baseboolint"] = None
+	market_comment_new: Optional["baseboolint"] = None
+	market_comment_restore: Optional["baseboolint"] = None
+	market_order_new: Optional["baseboolint"] = None
+	market_order_edit: Optional["baseboolint"] = None
+	message_allow: Optional["baseboolint"] = None
+	message_deny: Optional["baseboolint"] = None
+	message_new: Optional["baseboolint"] = None
+	message_read: Optional["baseboolint"] = None
+	message_reply: Optional["baseboolint"] = None
+	message_typing_state: Optional["baseboolint"] = None
+	message_edit: Optional["baseboolint"] = None
+	photo_comment_delete: Optional["baseboolint"] = None
+	photo_comment_edit: Optional["baseboolint"] = None
+	photo_comment_new: Optional["baseboolint"] = None
+	photo_comment_restore: Optional["baseboolint"] = None
+	photo_new: Optional["baseboolint"] = None
+	poll_vote_new: Optional["baseboolint"] = None
+	user_block: Optional["baseboolint"] = None
+	user_unblock: Optional["baseboolint"] = None
+	video_comment_delete: Optional["baseboolint"] = None
+	video_comment_edit: Optional["baseboolint"] = None
+	video_comment_new: Optional["baseboolint"] = None
+	video_comment_restore: Optional["baseboolint"] = None
+	video_new: Optional["baseboolint"] = None
+	wall_post_new: Optional["baseboolint"] = None
+	wall_reply_delete: Optional["baseboolint"] = None
+	wall_reply_edit: Optional["baseboolint"] = None
+	wall_reply_new: Optional["baseboolint"] = None
+	wall_reply_restore: Optional["baseboolint"] = None
+	wall_repost: Optional["baseboolint"] = None
+	donut_subscription_create: Optional["baseboolint"] = None
+	donut_subscription_prolonged: Optional["baseboolint"] = None
+	donut_subscription_cancelled: Optional["baseboolint"] = None
+	donut_subscription_expired: Optional["baseboolint"] = None
+	donut_subscription_price_changed: Optional["baseboolint"] = None
+	donut_money_withdraw: Optional["baseboolint"] = None
+	donut_money_withdraw_error: Optional["baseboolint"] = None
 
 
 class GroupsLongPollServer(BaseModel):
@@ -3609,9 +3609,9 @@ class GroupsLongPollServer(BaseModel):
 	server - Long Poll server address
 	ts - Number of the last event
 	"""
-	key: Optional[str] = None
-	server: Optional[str] = None
-	ts: Optional[str] = None
+	key: Optional["string"] = None
+	server: Optional["string"] = None
+	ts: Optional["string"] = None
 
 
 class GroupsLongPollSettings(BaseModel):
@@ -3621,9 +3621,9 @@ class GroupsLongPollSettings(BaseModel):
 	events - 
 	is_enabled - Shows whether Long Poll is enabled
 	"""
-	api_version: Optional[str] = None
-	events: Optional["Groupslongpollevents"] = None
-	is_enabled: Optional[bool] = None
+	api_version: Optional["string"] = None
+	events: Optional["groupslongpollevents"] = None
+	is_enabled: Optional["boolean"] = None
 
 
 class GroupsMarketInfo(BaseModel):
@@ -3637,13 +3637,13 @@ class GroupsMarketInfo(BaseModel):
 	price_max - Maximum price
 	price_min - Minimum price
 	"""
-	contact_id: Optional[int] = None
-	currency: Optional["Marketcurrency"] = None
-	currency_text: Optional[str] = None
-	enabled: Optional["Baseboolint"] = None
-	main_album_id: Optional[int] = None
-	price_max: Optional[str] = None
-	price_min: Optional[str] = None
+	contact_id: Optional["integer"] = None
+	currency: Optional["marketcurrency"] = None
+	currency_text: Optional["string"] = None
+	enabled: Optional["baseboolint"] = None
+	main_album_id: Optional["integer"] = None
+	price_max: Optional["string"] = None
+	price_min: Optional["string"] = None
 
 
 class GroupsMarketState(enum.Enum):
@@ -3662,9 +3662,9 @@ class GroupsMemberRole(BaseModel):
 	permissions - 
 	role - 
 	"""
-	id: Optional[int] = None
-	permissions: Optional["Groupsmemberrolepermission"] = None
-	role: Optional["Groupsmemberrolestatus"] = None
+	id: Optional["integer"] = None
+	permissions: Optional["groupsmemberrolepermission"] = None
+	role: Optional["groupsmemberrolestatus"] = None
 
 
 class GroupsMemberRolePermission(enum.Enum):
@@ -3690,8 +3690,8 @@ class GroupsMemberStatus(BaseModel):
 	member - Information whether user is a member of the group
 	user_id - User ID
 	"""
-	member: Optional["Baseboolint"] = None
-	user_id: Optional[int] = None
+	member: Optional["baseboolint"] = None
+	user_id: Optional["integer"] = None
 
 
 class GroupsMemberStatusFull(BaseModel):
@@ -3704,12 +3704,12 @@ class GroupsMemberStatusFull(BaseModel):
 	request - Information whether user has send request to the group
 	user_id - User ID
 	"""
-	can_invite: Optional["Baseboolint"] = None
-	can_recall: Optional["Baseboolint"] = None
-	invitation: Optional["Baseboolint"] = None
-	member: Optional["Baseboolint"] = None
-	request: Optional["Baseboolint"] = None
-	user_id: Optional[int] = None
+	can_invite: Optional["baseboolint"] = None
+	can_recall: Optional["baseboolint"] = None
+	invitation: Optional["baseboolint"] = None
+	member: Optional["baseboolint"] = None
+	request: Optional["baseboolint"] = None
+	user_id: Optional["integer"] = None
 
 
 class GroupsOnlineStatus(BaseModel):
@@ -3718,8 +3718,8 @@ class GroupsOnlineStatus(BaseModel):
 	minutes - Estimated time of answer (for status = answer_mark)
 	status - 
 	"""
-	minutes: Optional[int] = None
-	status: Optional["Groupsonlinestatustype"] = None
+	minutes: Optional["integer"] = None
+	status: Optional["groupsonlinestatustype"] = None
 
 
 class GroupsOnlineStatusType(enum.Enum):
@@ -3739,10 +3739,10 @@ class GroupsOwnerXtrBanInfo(BaseModel):
 	profile - Information about group if type = profile
 	type - 
 	"""
-	ban_info: Optional["Groupsbaninfo"] = None
-	group: Optional["Groupsgroup"] = None
-	profile: Optional["Usersuser"] = None
-	type: Optional["Groupsownerxtrbaninfotype"] = None
+	ban_info: Optional["groupsbaninfo"] = None
+	group: Optional["groupsgroup"] = None
+	profile: Optional["usersuser"] = None
+	type: Optional["groupsownerxtrbaninfotype"] = None
 
 
 class GroupsOwnerXtrBanInfoType(enum.Enum):
@@ -3761,10 +3761,10 @@ class GroupsProfileItem(BaseModel):
 	photo_100 - Url for user photo
 	first_name - User first name
 	"""
-	id: Optional[int] = None
-	photo_50: Optional[str] = None
-	photo_100: Optional[str] = None
-	first_name: Optional[str] = None
+	id: Optional["integer"] = None
+	photo_50: Optional["string"] = None
+	photo_100: Optional["string"] = None
+	first_name: Optional["string"] = None
 
 
 class GroupsRoleOptions(enum.Enum):
@@ -3781,8 +3781,8 @@ class GroupsSettingsTwitter(BaseModel):
 	"""VK Object GroupsSettingsTwitter
 
 	"""
-	status: Optional[str] = None
-	name: Optional[str] = None
+	status: Optional["string"] = None
+	name: Optional["string"] = None
 
 
 class GroupsSubjectItem(BaseModel):
@@ -3791,16 +3791,16 @@ class GroupsSubjectItem(BaseModel):
 	id - Subject ID
 	name - Subject title
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class GroupsTokenPermissionSetting(BaseModel):
 	"""VK Object GroupsTokenPermissionSetting
 
 	"""
-	name: Optional[str] = None
-	setting: Optional[int] = None
+	name: Optional["string"] = None
+	setting: Optional["integer"] = None
 
 
 class GroupsUserXtrRole(UsersUserFull):
@@ -3835,9 +3835,9 @@ class LinkTargetObject(BaseModel):
 	owner_id - Owner ID
 	item_id - Item ID
 	"""
-	type: Optional[str] = None
-	owner_id: Optional[int] = None
-	item_id: Optional[int] = None
+	type: Optional["string"] = None
+	owner_id: Optional["integer"] = None
+	item_id: Optional["integer"] = None
 
 
 class MarketCurrency(BaseModel):
@@ -3846,8 +3846,8 @@ class MarketCurrency(BaseModel):
 	id - Currency ID
 	name - Currency sign
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class MarketMarketAlbum(BaseModel):
@@ -3860,12 +3860,12 @@ class MarketMarketAlbum(BaseModel):
 	title - Market album title
 	updated_time - Date when album has been updated last time in Unixtime
 	"""
-	count: Optional[int] = None
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	photo: Optional["Photosphoto"] = None
-	title: Optional[str] = None
-	updated_time: Optional[int] = None
+	count: Optional["integer"] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	photo: Optional["photosphoto"] = None
+	title: Optional["string"] = None
+	updated_time: Optional["integer"] = None
 
 
 class MarketMarketCategory(BaseModel):
@@ -3881,9 +3881,9 @@ class MarketMarketCategoryNested(BaseModel):
 	name - Category name
 	parent - 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	parent: Optional["Marketmarketcategorynested"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	parent: Optional["marketmarketcategorynested"] = None
 
 
 class MarketMarketCategoryOld(BaseModel):
@@ -3893,9 +3893,9 @@ class MarketMarketCategoryOld(BaseModel):
 	name - Category name
 	section - 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	section: Optional["Marketsection"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	section: Optional["marketsection"] = None
 
 
 class MarketMarketCategoryTree(BaseModel):
@@ -3905,9 +3905,9 @@ class MarketMarketCategoryTree(BaseModel):
 	name - Category name
 	children - 
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	children: Optional["Marketmarketcategorytree"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	children: Optional["marketmarketcategorytree"] = None
 
 
 class MarketMarketItem(BaseModel):
@@ -3930,22 +3930,22 @@ class MarketMarketItem(BaseModel):
 	variants_grouping_id - 
 	is_main_variant - 
 	"""
-	access_key: Optional[str] = None
-	availability: Optional["Marketmarketitemavailability"] = None
-	button_title: Optional[str] = None
-	category: Optional["Marketmarketcategory"] = None
-	date: Optional[int] = None
-	description: Optional[str] = None
-	external_id: Optional[str] = None
-	id: Optional[int] = None
-	is_favorite: Optional[bool] = None
-	owner_id: Optional[int] = None
-	price: Optional["Marketprice"] = None
-	thumb_photo: Optional[str] = None
-	title: Optional[str] = None
-	url: Optional[str] = None
-	variants_grouping_id: Optional[int] = None
-	is_main_variant: Optional[bool] = None
+	access_key: Optional["string"] = None
+	availability: Optional["marketmarketitemavailability"] = None
+	button_title: Optional["string"] = None
+	category: Optional["marketmarketcategory"] = None
+	date: Optional["integer"] = None
+	description: Optional["string"] = None
+	external_id: Optional["string"] = None
+	id: Optional["integer"] = None
+	is_favorite: Optional["boolean"] = None
+	owner_id: Optional["integer"] = None
+	price: Optional["marketprice"] = None
+	thumb_photo: Optional["string"] = None
+	title: Optional["string"] = None
+	url: Optional["string"] = None
+	variants_grouping_id: Optional["integer"] = None
+	is_main_variant: Optional["boolean"] = None
 
 
 class MarketMarketItemAvailability(enum.IntEnum):
@@ -4003,36 +4003,36 @@ class MarketOrder(BaseModel):
 	preview_order_items - Several order items for preview
 	cancel_info - Information for cancel and revert order
 	"""
-	id: Optional[int] = None
-	group_id: Optional[int] = None
-	user_id: Optional[int] = None
-	display_order_id: Optional[str] = None
-	date: Optional[int] = None
-	status: Optional[int] = None
-	items_count: Optional[int] = None
-	track_number: Optional[str] = None
-	track_link: Optional[str] = None
-	comment: Optional[str] = None
-	address: Optional[str] = None
-	merchant_comment: Optional[str] = None
-	weight: Optional[int] = None
-	total_price: Optional["Marketprice"] = None
-	preview_order_items: Optional["Marketorderitem"] = None
-	cancel_info: Optional["Baselink"] = None
+	id: Optional["integer"] = None
+	group_id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
+	display_order_id: Optional["string"] = None
+	date: Optional["integer"] = None
+	status: Optional["integer"] = None
+	items_count: Optional["integer"] = None
+	track_number: Optional["string"] = None
+	track_link: Optional["string"] = None
+	comment: Optional["string"] = None
+	address: Optional["string"] = None
+	merchant_comment: Optional["string"] = None
+	weight: Optional["integer"] = None
+	total_price: Optional["marketprice"] = None
+	preview_order_items: Optional["marketorderitem"] = None
+	cancel_info: Optional["baselink"] = None
 
 
 class MarketOrderItem(BaseModel):
 	"""VK Object MarketOrderItem
 
 	"""
-	owner_id: Optional[int] = None
-	item_id: Optional[int] = None
-	price: Optional["Marketprice"] = None
-	quantity: Optional[int] = None
-	item: Optional["Marketmarketitem"] = None
-	title: Optional[str] = None
-	photo: Optional["Photosphoto"] = None
-	variants: Optional[str] = None
+	owner_id: Optional["integer"] = None
+	item_id: Optional["integer"] = None
+	price: Optional["marketprice"] = None
+	quantity: Optional["integer"] = None
+	item: Optional["marketmarketitem"] = None
+	title: Optional["string"] = None
+	photo: Optional["photosphoto"] = None
+	variants: Optional["string"] = None
 
 
 class MarketPrice(BaseModel):
@@ -4045,12 +4045,12 @@ class MarketPrice(BaseModel):
 	text - Text
 	old_amount_text - Textual representation of old price
 	"""
-	amount: Optional[str] = None
-	currency: Optional["Marketcurrency"] = None
-	discount_rate: Optional[int] = None
-	old_amount: Optional[str] = None
-	text: Optional[str] = None
-	old_amount_text: Optional[str] = None
+	amount: Optional["string"] = None
+	currency: Optional["marketcurrency"] = None
+	discount_rate: Optional["integer"] = None
+	old_amount: Optional["string"] = None
+	text: Optional["string"] = None
+	old_amount_text: Optional["string"] = None
 
 
 class MarketSection(BaseModel):
@@ -4059,8 +4059,8 @@ class MarketSection(BaseModel):
 	id - Section ID
 	name - Section name
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
 
 
 class MediaRestriction(BaseModel):
@@ -4076,15 +4076,15 @@ class MediaRestriction(BaseModel):
 	card_icon - 
 	list_icon - 
 	"""
-	text: Optional[str] = None
-	title: Optional[str] = None
-	button: Optional["Videorestrictionbutton"] = None
-	always_shown: Optional["Baseboolint"] = None
-	blur: Optional["Baseboolint"] = None
-	can_play: Optional["Baseboolint"] = None
-	can_preview: Optional["Baseboolint"] = None
-	card_icon: Optional["Baseimage"] = None
-	list_icon: Optional["Baseimage"] = None
+	text: Optional["string"] = None
+	title: Optional["string"] = None
+	button: Optional["videorestrictionbutton"] = None
+	always_shown: Optional["baseboolint"] = None
+	blur: Optional["baseboolint"] = None
+	can_play: Optional["baseboolint"] = None
+	can_preview: Optional["baseboolint"] = None
+	card_icon: Optional["baseimage"] = None
+	list_icon: Optional["baseimage"] = None
 
 
 class MessagesAudioMessage(BaseModel):
@@ -4099,14 +4099,14 @@ class MessagesAudioMessage(BaseModel):
 	owner_id - Audio message owner ID
 	waveform - 
 	"""
-	access_key: Optional[str] = None
-	transcript_error: Optional[int] = None
-	duration: Optional[int] = None
-	id: Optional[int] = None
-	link_mp3: Optional[str] = None
-	link_ogg: Optional[str] = None
-	owner_id: Optional[int] = None
-	waveform: Optional[int] = None
+	access_key: Optional["string"] = None
+	transcript_error: Optional["integer"] = None
+	duration: Optional["integer"] = None
+	id: Optional["integer"] = None
+	link_mp3: Optional["string"] = None
+	link_ogg: Optional["string"] = None
+	owner_id: Optional["integer"] = None
+	waveform: Optional["integer"] = None
 
 
 class MessagesChat(BaseModel):
@@ -4125,18 +4125,18 @@ class MessagesChat(BaseModel):
 	users - 
 	is_default_photo - If provided photo is default
 	"""
-	admin_id: Optional[int] = None
-	id: Optional[int] = None
-	kicked: Optional["Baseboolint"] = None
-	left: Optional["Baseboolint"] = None
-	photo_100: Optional[str] = None
-	photo_200: Optional[str] = None
-	photo_50: Optional[str] = None
-	push_settings: Optional["Messageschatpushsettings"] = None
-	title: Optional[str] = None
-	type: Optional[str] = None
-	users: Optional[int] = None
-	is_default_photo: Optional[bool] = None
+	admin_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	kicked: Optional["baseboolint"] = None
+	left: Optional["baseboolint"] = None
+	photo_100: Optional["string"] = None
+	photo_200: Optional["string"] = None
+	photo_50: Optional["string"] = None
+	push_settings: Optional["messageschatpushsettings"] = None
+	title: Optional["string"] = None
+	type: Optional["string"] = None
+	users: Optional["integer"] = None
+	is_default_photo: Optional["boolean"] = None
 
 
 class MessagesChatFull(BaseModel):
@@ -4154,30 +4154,30 @@ class MessagesChatFull(BaseModel):
 	type - Chat type
 	users - 
 	"""
-	admin_id: Optional[int] = None
-	id: Optional[int] = None
-	kicked: Optional["Baseboolint"] = None
-	left: Optional["Baseboolint"] = None
-	photo_100: Optional[str] = None
-	photo_200: Optional[str] = None
-	photo_50: Optional[str] = None
-	push_settings: Optional["Messageschatpushsettings"] = None
-	title: Optional[str] = None
-	type: Optional[str] = None
-	users: Optional["Messagesuserxtrinvitedby"] = None
+	admin_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	kicked: Optional["baseboolint"] = None
+	left: Optional["baseboolint"] = None
+	photo_100: Optional["string"] = None
+	photo_200: Optional["string"] = None
+	photo_50: Optional["string"] = None
+	push_settings: Optional["messageschatpushsettings"] = None
+	title: Optional["string"] = None
+	type: Optional["string"] = None
+	users: Optional["messagesuserxtrinvitedby"] = None
 
 
 class MessagesChatPreview(BaseModel):
 	"""VK Object MessagesChatPreview
 
 	"""
-	admin_id: Optional[int] = None
-	joined: Optional[bool] = None
-	local_id: Optional[int] = None
-	members: Optional[int] = None
-	members_count: Optional[int] = None
-	title: Optional[str] = None
-	is_member: Optional[bool] = None
+	admin_id: Optional["integer"] = None
+	joined: Optional["boolean"] = None
+	local_id: Optional["integer"] = None
+	members: Optional["integer"] = None
+	members_count: Optional["integer"] = None
+	title: Optional["string"] = None
+	is_member: Optional["boolean"] = None
 
 
 class MessagesChatPushSettings(BaseModel):
@@ -4186,8 +4186,8 @@ class MessagesChatPushSettings(BaseModel):
 	disabled_until - Time until that notifications are disabled
 	sound - Information whether the sound is on
 	"""
-	disabled_until: Optional[int] = None
-	sound: Optional["Baseboolint"] = None
+	disabled_until: Optional["integer"] = None
+	sound: Optional["baseboolint"] = None
 
 
 class MessagesChatRestrictions(BaseModel):
@@ -4199,11 +4199,11 @@ class MessagesChatRestrictions(BaseModel):
 	only_admins_invite - Only admins can invite users to this chat
 	only_admins_kick - Only admins can kick users from this chat
 	"""
-	admins_promote_users: Optional[bool] = None
-	only_admins_edit_info: Optional[bool] = None
-	only_admins_edit_pin: Optional[bool] = None
-	only_admins_invite: Optional[bool] = None
-	only_admins_kick: Optional[bool] = None
+	admins_promote_users: Optional["boolean"] = None
+	only_admins_edit_info: Optional["boolean"] = None
+	only_admins_edit_pin: Optional["boolean"] = None
+	only_admins_invite: Optional["boolean"] = None
+	only_admins_kick: Optional["boolean"] = None
 
 
 class MessagesChatSettings(BaseModel):
@@ -4226,22 +4226,22 @@ class MessagesChatSettings(BaseModel):
 	disappearing_chat_link - 
 	is_service - 
 	"""
-	members_count: Optional[int] = None
-	friends_count: Optional[int] = None
-	owner_id: Optional[int] = None
-	title: Optional[str] = None
-	pinned_message: Optional["Messagespinnedmessage"] = None
-	state: Optional["Messageschatsettingsstate"] = None
-	photo: Optional["Messageschatsettingsphoto"] = None
-	admin_ids: Optional[int] = None
-	active_ids: Optional[int] = None
-	is_group_channel: Optional[bool] = None
-	acl: Optional["Messageschatsettingsacl"] = None
-	permissions: Optional["Messageschatsettingspermissions"] = None
-	is_disappearing: Optional[bool] = None
-	theme: Optional[str] = None
-	disappearing_chat_link: Optional[str] = None
-	is_service: Optional[bool] = None
+	members_count: Optional["integer"] = None
+	friends_count: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	title: Optional["string"] = None
+	pinned_message: Optional["messagespinnedmessage"] = None
+	state: Optional["messageschatsettingsstate"] = None
+	photo: Optional["messageschatsettingsphoto"] = None
+	admin_ids: Optional["integer"] = None
+	active_ids: Optional["integer"] = None
+	is_group_channel: Optional["boolean"] = None
+	acl: Optional["messageschatsettingsacl"] = None
+	permissions: Optional["messageschatsettingspermissions"] = None
+	is_disappearing: Optional["boolean"] = None
+	theme: Optional["string"] = None
+	disappearing_chat_link: Optional["string"] = None
+	is_service: Optional["boolean"] = None
 
 
 class MessagesChatSettingsAcl(BaseModel):
@@ -4259,17 +4259,17 @@ class MessagesChatSettingsAcl(BaseModel):
 	can_use_mass_mentions - Can you use mass mentions
 	can_change_service_type - Can you change chat service type
 	"""
-	can_change_info: Optional[bool] = None
-	can_change_invite_link: Optional[bool] = None
-	can_change_pin: Optional[bool] = None
-	can_invite: Optional[bool] = None
-	can_promote_users: Optional[bool] = None
-	can_see_invite_link: Optional[bool] = None
-	can_moderate: Optional[bool] = None
-	can_copy_chat: Optional[bool] = None
-	can_call: Optional[bool] = None
-	can_use_mass_mentions: Optional[bool] = None
-	can_change_service_type: Optional[bool] = None
+	can_change_info: Optional["boolean"] = None
+	can_change_invite_link: Optional["boolean"] = None
+	can_change_pin: Optional["boolean"] = None
+	can_invite: Optional["boolean"] = None
+	can_promote_users: Optional["boolean"] = None
+	can_see_invite_link: Optional["boolean"] = None
+	can_moderate: Optional["boolean"] = None
+	can_copy_chat: Optional["boolean"] = None
+	can_call: Optional["boolean"] = None
+	can_use_mass_mentions: Optional["boolean"] = None
+	can_change_service_type: Optional["boolean"] = None
 
 
 class MessagesChatSettingsPermissions(BaseModel):
@@ -4283,13 +4283,13 @@ class MessagesChatSettingsPermissions(BaseModel):
 	call - Who can make calls
 	change_admins - Who can change admins
 	"""
-	invite: Optional[str] = None
-	change_info: Optional[str] = None
-	change_pin: Optional[str] = None
-	use_mass_mentions: Optional[str] = None
-	see_invite_link: Optional[str] = None
-	call: Optional[str] = None
-	change_admins: Optional[str] = None
+	invite: Optional["string"] = None
+	change_info: Optional["string"] = None
+	change_pin: Optional["string"] = None
+	use_mass_mentions: Optional["string"] = None
+	see_invite_link: Optional["string"] = None
+	call: Optional["string"] = None
+	change_admins: Optional["string"] = None
 
 
 class MessagesChatSettingsPhoto(BaseModel):
@@ -4300,10 +4300,10 @@ class MessagesChatSettingsPhoto(BaseModel):
 	photo_200 - URL of the preview image with 200px in width
 	is_default_photo - If provided photo is default
 	"""
-	photo_50: Optional[str] = None
-	photo_100: Optional[str] = None
-	photo_200: Optional[str] = None
-	is_default_photo: Optional[bool] = None
+	photo_50: Optional["string"] = None
+	photo_100: Optional["string"] = None
+	photo_200: Optional["string"] = None
+	is_default_photo: Optional["boolean"] = None
 
 
 class MessagesChatSettingsState(enum.Enum):
@@ -4336,31 +4336,31 @@ class MessagesConversation(BaseModel):
 	can_write - 
 	chat_settings - 
 	"""
-	peer: Optional["Messagesconversationpeer"] = None
-	sort_id: Optional["Messagesconversationsortid"] = None
-	last_message_id: Optional[int] = None
-	in_read: Optional[int] = None
-	out_read: Optional[int] = None
-	unread_count: Optional[int] = None
-	is_marked_unread: Optional[bool] = None
-	out_read_by: Optional["Messagesoutreadby"] = None
-	important: Optional[bool] = None
-	unanswered: Optional[bool] = None
-	special_service_type: Optional[str] = None
-	message_request_data: Optional["Messagesmessagerequestdata"] = None
-	mentions: Optional[int] = None
-	current_keyboard: Optional["Messageskeyboard"] = None
-	push_settings: Optional["Messagespushsettings"] = None
-	can_write: Optional["Messagesconversationcanwrite"] = None
-	chat_settings: Optional["Messageschatsettings"] = None
+	peer: Optional["messagesconversationpeer"] = None
+	sort_id: Optional["messagesconversationsortid"] = None
+	last_message_id: Optional["integer"] = None
+	in_read: Optional["integer"] = None
+	out_read: Optional["integer"] = None
+	unread_count: Optional["integer"] = None
+	is_marked_unread: Optional["boolean"] = None
+	out_read_by: Optional["messagesoutreadby"] = None
+	important: Optional["boolean"] = None
+	unanswered: Optional["boolean"] = None
+	special_service_type: Optional["string"] = None
+	message_request_data: Optional["messagesmessagerequestdata"] = None
+	mentions: Optional["integer"] = None
+	current_keyboard: Optional["messageskeyboard"] = None
+	push_settings: Optional["messagespushsettings"] = None
+	can_write: Optional["messagesconversationcanwrite"] = None
+	chat_settings: Optional["messageschatsettings"] = None
 
 
 class MessagesConversationCanWrite(BaseModel):
 	"""VK Object MessagesConversationCanWrite
 
 	"""
-	allowed: Optional[bool] = None
-	reason: Optional[int] = None
+	allowed: Optional["boolean"] = None
+	reason: Optional["integer"] = None
 
 
 class MessagesConversationMember(BaseModel):
@@ -4375,23 +4375,23 @@ class MessagesConversationMember(BaseModel):
 	request_date - Message request date
 	member_id - 
 	"""
-	can_kick: Optional[bool] = None
-	invited_by: Optional[int] = None
-	is_admin: Optional[bool] = None
-	is_owner: Optional[bool] = None
-	is_message_request: Optional[bool] = None
-	join_date: Optional[int] = None
-	request_date: Optional[int] = None
-	member_id: Optional[int] = None
+	can_kick: Optional["boolean"] = None
+	invited_by: Optional["integer"] = None
+	is_admin: Optional["boolean"] = None
+	is_owner: Optional["boolean"] = None
+	is_message_request: Optional["boolean"] = None
+	join_date: Optional["integer"] = None
+	request_date: Optional["integer"] = None
+	member_id: Optional["integer"] = None
 
 
 class MessagesConversationPeer(BaseModel):
 	"""VK Object MessagesConversationPeer
 
 	"""
-	id: Optional[int] = None
-	local_id: Optional[int] = None
-	type: Optional["Messagesconversationpeertype"] = None
+	id: Optional["integer"] = None
+	local_id: Optional["integer"] = None
+	type: Optional["messagesconversationpeertype"] = None
 
 
 class MessagesConversationPeerType(enum.Enum):
@@ -4410,16 +4410,16 @@ class MessagesConversationSortId(BaseModel):
 	major_id - Major id for sorting conversations
 	minor_id - Minor id for sorting conversations
 	"""
-	major_id: Optional[int] = None
-	minor_id: Optional[int] = None
+	major_id: Optional["integer"] = None
+	minor_id: Optional["integer"] = None
 
 
 class MessagesConversationWithMessage(BaseModel):
 	"""VK Object MessagesConversationWithMessage
 
 	"""
-	conversation: Optional["Messagesconversation"] = None
-	last_message: Optional["Messagesmessage"] = None
+	conversation: Optional["messagesconversation"] = None
+	last_message: Optional["messagesmessage"] = None
 
 
 class MessagesForeignMessage(BaseModel):
@@ -4439,19 +4439,19 @@ class MessagesForeignMessage(BaseModel):
 	was_listened - Was the audio message inside already listened by you
 	payload - Additional data sent along with message for developer convenience
 	"""
-	attachments: Optional["Messagesmessageattachment"] = None
-	conversation_message_id: Optional[int] = None
-	date: Optional[int] = None
-	from_id: Optional[int] = None
-	fwd_messages: Optional["Messagesforeignmessage"] = None
-	geo: Optional["Basegeo"] = None
-	id: Optional[int] = None
-	peer_id: Optional[int] = None
-	reply_message: Optional["Messagesforeignmessage"] = None
-	text: Optional[str] = None
-	update_time: Optional[int] = None
-	was_listened: Optional[bool] = None
-	payload: Optional[str] = None
+	attachments: Optional["messagesmessageattachment"] = None
+	conversation_message_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	fwd_messages: Optional["messagesforeignmessage"] = None
+	geo: Optional["basegeo"] = None
+	id: Optional["integer"] = None
+	peer_id: Optional["integer"] = None
+	reply_message: Optional["messagesforeignmessage"] = None
+	text: Optional["string"] = None
+	update_time: Optional["integer"] = None
+	was_listened: Optional["boolean"] = None
+	payload: Optional["string"] = None
 
 
 class MessagesForward(BaseModel):
@@ -4463,11 +4463,11 @@ class MessagesForward(BaseModel):
 	message_ids - 
 	is_reply - If you need to reply to a message
 	"""
-	owner_id: Optional[int] = None
-	peer_id: Optional[int] = None
-	conversation_message_ids: Optional[int] = None
-	message_ids: Optional[int] = None
-	is_reply: Optional[bool] = None
+	owner_id: Optional["integer"] = None
+	peer_id: Optional["integer"] = None
+	conversation_message_ids: Optional["integer"] = None
+	message_ids: Optional["integer"] = None
+	is_reply: Optional["boolean"] = None
 
 
 class MessagesGraffiti(BaseModel):
@@ -4480,12 +4480,12 @@ class MessagesGraffiti(BaseModel):
 	url - Graffiti URL
 	width - Graffiti width
 	"""
-	access_key: Optional[str] = None
-	height: Optional[int] = None
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	url: Optional[str] = None
-	width: Optional[int] = None
+	access_key: Optional["string"] = None
+	height: Optional["integer"] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	url: Optional["string"] = None
+	width: Optional["integer"] = None
 
 
 class MessagesHistoryAttachment(BaseModel):
@@ -4496,27 +4496,27 @@ class MessagesHistoryAttachment(BaseModel):
 	from_id - Message author's ID
 	forward_level - Forward level (optional)
 	"""
-	attachment: Optional["Messageshistorymessageattachment"] = None
-	message_id: Optional[int] = None
-	from_id: Optional[int] = None
-	forward_level: Optional[int] = None
+	attachment: Optional["messageshistorymessageattachment"] = None
+	message_id: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	forward_level: Optional["integer"] = None
 
 
 class MessagesHistoryMessageAttachment(BaseModel):
 	"""VK Object MessagesHistoryMessageAttachment
 
 	"""
-	audio: Optional["Audioaudio"] = None
-	audio_message: Optional["Messagesaudiomessage"] = None
-	doc: Optional["Docsdoc"] = None
-	graffiti: Optional["Messagesgraffiti"] = None
-	link: Optional["Baselink"] = None
-	market: Optional["Baselink"] = None
-	photo: Optional["Photosphoto"] = None
-	share: Optional["Baselink"] = None
-	type: Optional["Messageshistorymessageattachmenttype"] = None
-	video: Optional["Videovideo"] = None
-	wall: Optional["Baselink"] = None
+	audio: Optional["audioaudio"] = None
+	audio_message: Optional["messagesaudiomessage"] = None
+	doc: Optional["docsdoc"] = None
+	graffiti: Optional["messagesgraffiti"] = None
+	link: Optional["baselink"] = None
+	market: Optional["baselink"] = None
+	photo: Optional["photosphoto"] = None
+	share: Optional["baselink"] = None
+	type: Optional["messageshistorymessageattachmenttype"] = None
+	video: Optional["videovideo"] = None
+	wall: Optional["baselink"] = None
 
 
 class MessagesHistoryMessageAttachmentType(enum.Enum):
@@ -4543,10 +4543,10 @@ class MessagesKeyboard(BaseModel):
 	one_time - Should this keyboard disappear on first use
 	inline - 
 	"""
-	author_id: Optional[int] = None
-	buttons: Optional["Array"] = None
-	one_time: Optional[bool] = None
-	inline: Optional[bool] = None
+	author_id: Optional["integer"] = None
+	buttons: Optional["array"] = None
+	one_time: Optional["boolean"] = None
+	inline: Optional["boolean"] = None
 
 
 class MessagesKeyboardButton(BaseModel):
@@ -4555,8 +4555,8 @@ class MessagesKeyboardButton(BaseModel):
 	action - 
 	color - Button color
 	"""
-	action: Optional["Messageskeyboardbuttonaction"] = None
-	color: Optional[str] = None
+	action: Optional["messageskeyboardbuttonaction"] = None
+	color: Optional["string"] = None
 
 
 class MessagesKeyboardButtonAction(BaseModel):
@@ -4570,13 +4570,13 @@ class MessagesKeyboardButtonAction(BaseModel):
 	payload - Additional data sent along with message for developer convenience
 	type - Button type
 	"""
-	app_id: Optional[int] = None
-	hash: Optional[str] = None
-	label: Optional[str] = None
-	link: Optional[str] = None
-	owner_id: Optional[int] = None
-	payload: Optional[str] = None
-	type: Optional["Messagestemplateactiontypenames"] = None
+	app_id: Optional["integer"] = None
+	hash: Optional["string"] = None
+	label: Optional["string"] = None
+	link: Optional["string"] = None
+	owner_id: Optional["integer"] = None
+	payload: Optional["string"] = None
+	type: Optional["messagestemplateactiontypenames"] = None
 
 
 class MessagesLastActivity(BaseModel):
@@ -4585,8 +4585,8 @@ class MessagesLastActivity(BaseModel):
 	online - Information whether user is online
 	time - Time when user was online in Unixtime
 	"""
-	online: Optional["Baseboolint"] = None
-	time: Optional[int] = None
+	online: Optional["baseboolint"] = None
+	time: Optional["integer"] = None
 
 
 class MessagesLongpollMessages(BaseModel):
@@ -4595,8 +4595,8 @@ class MessagesLongpollMessages(BaseModel):
 	count - Total number
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional["Messagesmessage"] = None
+	count: Optional["integer"] = None
+	items: Optional["messagesmessage"] = None
 
 
 class MessagesLongpollParams(BaseModel):
@@ -4607,10 +4607,10 @@ class MessagesLongpollParams(BaseModel):
 	ts - Timestamp
 	pts - Persistent timestamp
 	"""
-	server: Optional[str] = None
-	key: Optional[str] = None
-	ts: Optional[int] = None
-	pts: Optional[int] = None
+	server: Optional["string"] = None
+	key: Optional["string"] = None
+	ts: Optional["integer"] = None
+	pts: Optional["integer"] = None
 
 
 class MessagesMessage(BaseModel):
@@ -4643,32 +4643,32 @@ class MessagesMessage(BaseModel):
 	was_listened - Was the audio message inside already listened by you
 	pinned_at - Date when the message has been pinned in Unixtime
 	"""
-	action: Optional["Messagesmessageaction"] = None
-	admin_author_id: Optional[int] = None
-	attachments: Optional["Messagesmessageattachment"] = None
-	conversation_message_id: Optional[int] = None
-	date: Optional[int] = None
-	deleted: Optional["Baseboolint"] = None
-	from_id: Optional[int] = None
-	fwd_messages: Optional["Messagesforeignmessage"] = None
-	geo: Optional["Basegeo"] = None
-	id: Optional[int] = None
-	important: Optional[bool] = None
-	is_hidden: Optional[bool] = None
-	is_cropped: Optional[bool] = None
-	keyboard: Optional["Messageskeyboard"] = None
-	members_count: Optional[int] = None
-	out: Optional["Baseboolint"] = None
-	payload: Optional[str] = None
-	peer_id: Optional[int] = None
-	random_id: Optional[int] = None
-	ref: Optional[str] = None
-	ref_source: Optional[str] = None
-	reply_message: Optional["Messagesforeignmessage"] = None
-	text: Optional[str] = None
-	update_time: Optional[int] = None
-	was_listened: Optional[bool] = None
-	pinned_at: Optional[int] = None
+	action: Optional["messagesmessageaction"] = None
+	admin_author_id: Optional["integer"] = None
+	attachments: Optional["messagesmessageattachment"] = None
+	conversation_message_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	deleted: Optional["baseboolint"] = None
+	from_id: Optional["integer"] = None
+	fwd_messages: Optional["messagesforeignmessage"] = None
+	geo: Optional["basegeo"] = None
+	id: Optional["integer"] = None
+	important: Optional["boolean"] = None
+	is_hidden: Optional["boolean"] = None
+	is_cropped: Optional["boolean"] = None
+	keyboard: Optional["messageskeyboard"] = None
+	members_count: Optional["integer"] = None
+	out: Optional["baseboolint"] = None
+	payload: Optional["string"] = None
+	peer_id: Optional["integer"] = None
+	random_id: Optional["integer"] = None
+	ref: Optional["string"] = None
+	ref_source: Optional["string"] = None
+	reply_message: Optional["messagesforeignmessage"] = None
+	text: Optional["string"] = None
+	update_time: Optional["integer"] = None
+	was_listened: Optional["boolean"] = None
+	pinned_at: Optional["integer"] = None
 
 
 class MessagesMessageAction(BaseModel):
@@ -4682,13 +4682,13 @@ class MessagesMessageAction(BaseModel):
 	text - New chat title for chat_create and chat_title_update actions
 	type - 
 	"""
-	conversation_message_id: Optional[int] = None
-	email: Optional[str] = None
-	member_id: Optional[int] = None
-	message: Optional[str] = None
-	photo: Optional["Messagesmessageactionphoto"] = None
-	text: Optional[str] = None
-	type: Optional["Messagesmessageactionstatus"] = None
+	conversation_message_id: Optional["integer"] = None
+	email: Optional["string"] = None
+	member_id: Optional["integer"] = None
+	message: Optional["string"] = None
+	photo: Optional["messagesmessageactionphoto"] = None
+	text: Optional["string"] = None
+	type: Optional["messagesmessageactionstatus"] = None
 
 
 class MessagesMessageActionPhoto(BaseModel):
@@ -4698,9 +4698,9 @@ class MessagesMessageActionPhoto(BaseModel):
 	photo_200 - URL of the preview image with 200px in width
 	photo_50 - URL of the preview image with 50px in width
 	"""
-	photo_100: Optional[str] = None
-	photo_200: Optional[str] = None
-	photo_50: Optional[str] = None
+	photo_100: Optional["string"] = None
+	photo_200: Optional["string"] = None
+	photo_50: Optional["string"] = None
 
 
 class MessagesMessageActionStatus(enum.Enum):
@@ -4722,23 +4722,23 @@ class MessagesMessageAttachment(BaseModel):
 	"""VK Object MessagesMessageAttachment
 
 	"""
-	audio: Optional["Audioaudio"] = None
-	audio_message: Optional["Messagesaudiomessage"] = None
-	call: Optional["Callscall"] = None
-	doc: Optional["Docsdoc"] = None
-	gift: Optional["Giftslayout"] = None
-	graffiti: Optional["Messagesgraffiti"] = None
-	link: Optional["Baselink"] = None
-	market: Optional["Marketmarketitem"] = None
-	market_market_album: Optional["Marketmarketalbum"] = None
-	photo: Optional["Photosphoto"] = None
-	sticker: Optional["Basesticker"] = None
-	story: Optional["Storiesstory"] = None
-	type: Optional["Messagesmessageattachmenttype"] = None
-	video: Optional["Videovideo"] = None
-	wall: Optional["Wallwallpostfull"] = None
-	wall_reply: Optional["Wallwallcomment"] = None
-	poll: Optional["Pollspoll"] = None
+	audio: Optional["audioaudio"] = None
+	audio_message: Optional["messagesaudiomessage"] = None
+	call: Optional["callscall"] = None
+	doc: Optional["docsdoc"] = None
+	gift: Optional["giftslayout"] = None
+	graffiti: Optional["messagesgraffiti"] = None
+	link: Optional["baselink"] = None
+	market: Optional["marketmarketitem"] = None
+	market_market_album: Optional["marketmarketalbum"] = None
+	photo: Optional["photosphoto"] = None
+	sticker: Optional["basesticker"] = None
+	story: Optional["storiesstory"] = None
+	type: Optional["messagesmessageattachmenttype"] = None
+	video: Optional["videovideo"] = None
+	wall: Optional["wallwallpostfull"] = None
+	wall_reply: Optional["wallwallcomment"] = None
+	poll: Optional["pollspoll"] = None
 
 
 class MessagesMessageAttachmentType(enum.Enum):
@@ -4770,25 +4770,25 @@ class MessagesMessageRequestData(BaseModel):
 	inviter_id - Message request sender id
 	request_date - Message request date
 	"""
-	status: Optional[str] = None
-	inviter_id: Optional[int] = None
-	request_date: Optional[int] = None
+	status: Optional["string"] = None
+	inviter_id: Optional["integer"] = None
+	request_date: Optional["integer"] = None
 
 
 class MessagesMessagesArray(BaseModel):
 	"""VK Object MessagesMessagesArray
 
 	"""
-	count: Optional[int] = None
-	items: Optional["Messagesmessage"] = None
+	count: Optional["integer"] = None
+	items: Optional["messagesmessage"] = None
 
 
 class MessagesOutReadBy(BaseModel):
 	"""VK Object MessagesOutReadBy
 
 	"""
-	count: Optional[int] = None
-	member_ids: Optional[int] = None
+	count: Optional["integer"] = None
+	member_ids: Optional["integer"] = None
 
 
 class MessagesPinnedMessage(BaseModel):
@@ -4806,17 +4806,17 @@ class MessagesPinnedMessage(BaseModel):
 	text - Message text
 	keyboard - 
 	"""
-	attachments: Optional["Messagesmessageattachment"] = None
-	conversation_message_id: Optional[int] = None
-	date: Optional[int] = None
-	from_id: Optional[int] = None
-	fwd_messages: Optional["Messagesforeignmessage"] = None
-	geo: Optional["Basegeo"] = None
-	id: Optional[int] = None
-	peer_id: Optional[int] = None
-	reply_message: Optional["Messagesforeignmessage"] = None
-	text: Optional[str] = None
-	keyboard: Optional["Messageskeyboard"] = None
+	attachments: Optional["messagesmessageattachment"] = None
+	conversation_message_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	fwd_messages: Optional["messagesforeignmessage"] = None
+	geo: Optional["basegeo"] = None
+	id: Optional["integer"] = None
+	peer_id: Optional["integer"] = None
+	reply_message: Optional["messagesforeignmessage"] = None
+	text: Optional["string"] = None
+	keyboard: Optional["messageskeyboard"] = None
 
 
 class MessagesPushSettings(BaseModel):
@@ -4826,9 +4826,9 @@ class MessagesPushSettings(BaseModel):
 	disabled_until - Time until what notifications are disabled
 	no_sound - Information whether the sound is on
 	"""
-	disabled_forever: Optional[bool] = None
-	disabled_until: Optional[int] = None
-	no_sound: Optional[bool] = None
+	disabled_forever: Optional["boolean"] = None
+	disabled_until: Optional["integer"] = None
+	no_sound: Optional["boolean"] = None
 
 
 class MessagesTemplateActionTypeNames(enum.Enum):
@@ -4874,12 +4874,12 @@ class NewsfeedEventActivity(BaseModel):
 	text - text of attach
 	time - event start time
 	"""
-	address: Optional[str] = None
-	button_text: Optional[str] = None
-	friends: Optional[int] = None
-	member_status: Optional["Groupsgroupfullmemberstatus"] = None
-	text: Optional[str] = None
-	time: Optional[int] = None
+	address: Optional["string"] = None
+	button_text: Optional["string"] = None
+	friends: Optional["integer"] = None
+	member_status: Optional["groupsgroupfullmemberstatus"] = None
+	text: Optional["string"] = None
+	time: Optional["integer"] = None
 
 
 class NewsfeedFilters(enum.Enum):
@@ -4926,8 +4926,8 @@ class NewsfeedItemAudioAudio(BaseModel):
 	count - Audios number
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional["Audioaudio"] = None
+	count: Optional["integer"] = None
+	items: Optional["audioaudio"] = None
 
 
 class NewsfeedItemBase(BaseModel):
@@ -4937,9 +4937,9 @@ class NewsfeedItemBase(BaseModel):
 	source_id - Item source ID
 	date - Date when item has been added in Unixtime
 	"""
-	type: Optional["Newsfeednewsfeeditemtype"] = None
-	source_id: Optional[int] = None
-	date: Optional[int] = None
+	type: Optional["newsfeednewsfeeditemtype"] = None
+	source_id: Optional["integer"] = None
+	date: Optional["integer"] = None
 
 
 class NewsfeedItemDigest(NewsfeedItemBase):
@@ -4966,8 +4966,8 @@ class NewsfeedItemDigestButton(BaseModel):
 	"""VK Object NewsfeedItemDigestButton
 
 	"""
-	title: Optional[str] = None
-	style: Optional[str] = None
+	title: Optional["string"] = None
+	style: Optional["string"] = None
 
 
 class NewsfeedItemDigestFooter(BaseModel):
@@ -4977,21 +4977,21 @@ class NewsfeedItemDigestFooter(BaseModel):
 	text - text for invite to enable smart feed
 	button - 
 	"""
-	style: Optional[str] = None
-	text: Optional[str] = None
-	button: Optional["Newsfeeditemdigestbutton"] = None
+	style: Optional["string"] = None
+	text: Optional["string"] = None
+	button: Optional["newsfeeditemdigestbutton"] = None
 
 
 class NewsfeedItemDigestFullItem(BaseModel):
 	"""VK Object NewsfeedItemDigestFullItem
 
 	"""
-	text: Optional[str] = None
-	source_name: Optional[str] = None
-	attachment_index: Optional[int] = None
-	attachment: Optional["Wallwallpostattachment"] = None
-	style: Optional[str] = None
-	post: Optional["Wallwallpost"] = None
+	text: Optional["string"] = None
+	source_name: Optional["string"] = None
+	attachment_index: Optional["integer"] = None
+	attachment: Optional["wallwallpostattachment"] = None
+	style: Optional["string"] = None
+	post: Optional["wallwallpost"] = None
 
 
 class NewsfeedItemDigestHeader(BaseModel):
@@ -5002,10 +5002,10 @@ class NewsfeedItemDigestHeader(BaseModel):
 	style - 
 	button - 
 	"""
-	title: Optional[str] = None
-	subtitle: Optional[str] = None
-	style: Optional[str] = None
-	button: Optional["Newsfeeditemdigestbutton"] = None
+	title: Optional["string"] = None
+	subtitle: Optional["string"] = None
+	style: Optional["string"] = None
+	button: Optional["newsfeeditemdigestbutton"] = None
 
 
 class NewsfeedItemDigestItem(BaseModel):
@@ -5027,8 +5027,8 @@ class NewsfeedItemFriendFriends(BaseModel):
 	count - Number of friends has been added
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional["Baseuserid"] = None
+	count: Optional["integer"] = None
+	items: Optional["baseuserid"] = None
 
 
 class NewsfeedItemHolidayRecommendationsBlockHeader(BaseModel):
@@ -5039,10 +5039,10 @@ class NewsfeedItemHolidayRecommendationsBlockHeader(BaseModel):
 	image - 
 	action - 
 	"""
-	title: Optional[str] = None
-	subtitle: Optional[str] = None
-	image: Optional["Baseimage"] = None
-	action: Optional["Baselinkbuttonaction"] = None
+	title: Optional["string"] = None
+	subtitle: Optional["string"] = None
+	image: Optional["baseimage"] = None
+	action: Optional["baselinkbuttonaction"] = None
 
 
 class NewsfeedItemPhoto(WallCarouselBase,
@@ -5062,8 +5062,8 @@ class NewsfeedItemPhotoPhotos(BaseModel):
 	count - Photos number
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional["Newsfeednewsfeedphoto"] = None
+	count: Optional["integer"] = None
+	items: Optional["newsfeednewsfeedphoto"] = None
 
 
 class NewsfeedItemPhotoTag(WallCarouselBase,
@@ -5083,8 +5083,8 @@ class NewsfeedItemPhotoTagPhotoTags(BaseModel):
 	count - Tags number
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional["Newsfeednewsfeedphoto"] = None
+	count: Optional["integer"] = None
+	items: Optional["newsfeednewsfeedphoto"] = None
 
 
 class NewsfeedItemPromoButton(NewsfeedItemBase):
@@ -5102,18 +5102,18 @@ class NewsfeedItemPromoButtonAction(BaseModel):
 	"""VK Object NewsfeedItemPromoButtonAction
 
 	"""
-	url: Optional[str] = None
-	type: Optional[str] = None
-	target: Optional[str] = None
+	url: Optional["string"] = None
+	type: Optional["string"] = None
+	target: Optional["string"] = None
 
 
 class NewsfeedItemPromoButtonImage(BaseModel):
 	"""VK Object NewsfeedItemPromoButtonImage
 
 	"""
-	width: Optional[int] = None
-	height: Optional[int] = None
-	url: Optional[str] = None
+	width: Optional["integer"] = None
+	height: Optional["integer"] = None
+	url: Optional["string"] = None
 
 
 class NewsfeedItemTopic(NewsfeedItemBase):
@@ -5144,8 +5144,8 @@ class NewsfeedItemVideoVideo(BaseModel):
 	count - Tags number
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional["Videovideo"] = None
+	count: Optional["integer"] = None
+	items: Optional["videovideo"] = None
 
 
 class NewsfeedItemWallpost(WallCarouselBase,
@@ -5193,19 +5193,19 @@ class NewsfeedItemWallpostFeedback(BaseModel):
 	"""VK Object NewsfeedItemWallpostFeedback
 
 	"""
-	type: Optional["Newsfeeditemwallpostfeedbacktype"] = None
-	question: Optional[str] = None
-	answers: Optional["Newsfeeditemwallpostfeedbackanswer"] = None
-	stars_count: Optional[int] = None
-	gratitude: Optional[str] = None
+	type: Optional["newsfeeditemwallpostfeedbacktype"] = None
+	question: Optional["string"] = None
+	answers: Optional["newsfeeditemwallpostfeedbackanswer"] = None
+	stars_count: Optional["integer"] = None
+	gratitude: Optional["string"] = None
 
 
 class NewsfeedItemWallpostFeedbackAnswer(BaseModel):
 	"""VK Object NewsfeedItemWallpostFeedbackAnswer
 
 	"""
-	title: Optional[str] = None
-	id: Optional[str] = None
+	title: Optional["string"] = None
+	id: Optional["string"] = None
 
 
 class NewsfeedItemWallpostFeedbackType(enum.Enum):
@@ -5231,8 +5231,8 @@ class NewsfeedList(BaseModel):
 	id - List ID
 	title - List title
 	"""
-	id: Optional[int] = None
-	title: Optional[str] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
 
 
 class NewsfeedListFull(NewsfeedList):
@@ -5287,16 +5287,16 @@ class NotesNote(BaseModel):
 	title - Note title
 	view_url - URL of the page with note preview
 	"""
-	read_comments: Optional[int] = None
-	can_comment: Optional["Baseboolint"] = None
-	comments: Optional[int] = None
-	date: Optional[int] = None
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	text: Optional[str] = None
-	text_wiki: Optional[str] = None
-	title: Optional[str] = None
-	view_url: Optional[str] = None
+	read_comments: Optional["integer"] = None
+	can_comment: Optional["baseboolint"] = None
+	comments: Optional["integer"] = None
+	date: Optional["integer"] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	text: Optional["string"] = None
+	text_wiki: Optional["string"] = None
+	title: Optional["string"] = None
+	view_url: Optional["string"] = None
 
 
 class NotesNoteComment(BaseModel):
@@ -5310,13 +5310,13 @@ class NotesNoteComment(BaseModel):
 	reply_to - ID of replied comment 
 	uid - Comment author's ID
 	"""
-	date: Optional[int] = None
-	id: Optional[int] = None
-	message: Optional[str] = None
-	nid: Optional[int] = None
-	oid: Optional[int] = None
-	reply_to: Optional[int] = None
-	uid: Optional[int] = None
+	date: Optional["integer"] = None
+	id: Optional["integer"] = None
+	message: Optional["string"] = None
+	nid: Optional["integer"] = None
+	oid: Optional["integer"] = None
+	reply_to: Optional["integer"] = None
+	uid: Optional["integer"] = None
 
 
 class NotificationsFeedback(BaseModel):
@@ -5330,13 +5330,13 @@ class NotificationsFeedback(BaseModel):
 	text - Reply text
 	to_id - Wall owner's ID
 	"""
-	attachments: Optional["Wallwallpostattachment"] = None
-	from_id: Optional[int] = None
-	geo: Optional["Basegeo"] = None
-	id: Optional[int] = None
-	likes: Optional["Baselikesinfo"] = None
-	text: Optional[str] = None
-	to_id: Optional[int] = None
+	attachments: Optional["wallwallpostattachment"] = None
+	from_id: Optional["integer"] = None
+	geo: Optional["basegeo"] = None
+	id: Optional["integer"] = None
+	likes: Optional["baselikesinfo"] = None
+	text: Optional["string"] = None
+	to_id: Optional["integer"] = None
 
 
 class NotificationsNotification(BaseModel):
@@ -5348,11 +5348,11 @@ class NotificationsNotification(BaseModel):
 	reply - 
 	type - Notification type
 	"""
-	date: Optional[int] = None
-	feedback: Optional["Notificationsfeedback"] = None
-	parent: Optional["Notificationsnotificationparent"] = None
-	reply: Optional["Notificationsreply"] = None
-	type: Optional[str] = None
+	date: Optional["integer"] = None
+	feedback: Optional["notificationsfeedback"] = None
+	parent: Optional["notificationsnotificationparent"] = None
+	reply: Optional["notificationsreply"] = None
+	type: Optional["string"] = None
 
 
 class NotificationsNotificationItem(BaseModel):
@@ -5383,14 +5383,14 @@ class NotificationsNotificationsComment(BaseModel):
 	topic - 
 	video - 
 	"""
-	date: Optional[int] = None
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	photo: Optional["Photosphoto"] = None
-	post: Optional["Wallwallpost"] = None
-	text: Optional[str] = None
-	topic: Optional["Boardtopic"] = None
-	video: Optional["Videovideo"] = None
+	date: Optional["integer"] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	photo: Optional["photosphoto"] = None
+	post: Optional["wallwallpost"] = None
+	text: Optional["string"] = None
+	topic: Optional["boardtopic"] = None
+	video: Optional["videovideo"] = None
 
 
 class NotificationsReply(BaseModel):
@@ -5400,9 +5400,9 @@ class NotificationsReply(BaseModel):
 	id - Reply ID
 	text - Reply text
 	"""
-	date: Optional[int] = None
-	id: Optional[int] = None
-	text: Optional[int] = None
+	date: Optional["integer"] = None
+	id: Optional["integer"] = None
+	text: Optional["integer"] = None
 
 
 class NotificationsSendMessageError(BaseModel):
@@ -5411,8 +5411,8 @@ class NotificationsSendMessageError(BaseModel):
 	code - Error code
 	description - Error description
 	"""
-	code: Optional[int] = None
-	description: Optional[str] = None
+	code: Optional["integer"] = None
+	description: Optional["string"] = None
 
 
 class NotificationsSendMessageItem(BaseModel):
@@ -5422,9 +5422,9 @@ class NotificationsSendMessageItem(BaseModel):
 	status - Notification status
 	error - 
 	"""
-	user_id: Optional[int] = None
-	status: Optional[bool] = None
-	error: Optional["Notificationssendmessageerror"] = None
+	user_id: Optional["integer"] = None
+	status: Optional["boolean"] = None
+	error: Optional["notificationssendmessageerror"] = None
 
 
 class OauthError(BaseModel):
@@ -5434,9 +5434,9 @@ class OauthError(BaseModel):
 	error_description - Error description
 	redirect_uri - URI for validation
 	"""
-	error: Optional[str] = None
-	error_description: Optional[str] = None
-	redirect_uri: Optional[str] = None
+	error: Optional["string"] = None
+	error_description: Optional["string"] = None
+	redirect_uri: Optional["string"] = None
 
 
 class OrdersAmount(BaseModel):
@@ -5445,8 +5445,8 @@ class OrdersAmount(BaseModel):
 	amounts - 
 	currency - Currency name
 	"""
-	amounts: Optional["Ordersamountitem"] = None
-	currency: Optional[str] = None
+	amounts: Optional["ordersamountitem"] = None
+	currency: Optional["string"] = None
 
 
 class OrdersAmountItem(BaseModel):
@@ -5456,9 +5456,9 @@ class OrdersAmountItem(BaseModel):
 	description - Amount description
 	votes - Votes number
 	"""
-	amount: Optional[int] = None
-	description: Optional[str] = None
-	votes: Optional[str] = None
+	amount: Optional["integer"] = None
+	description: Optional["string"] = None
+	votes: Optional["string"] = None
 
 
 class OrdersOrder(BaseModel):
@@ -5475,16 +5475,16 @@ class OrdersOrder(BaseModel):
 	transaction_id - Transaction ID
 	user_id - User ID
 	"""
-	amount: Optional[int] = None
-	app_order_id: Optional[int] = None
-	cancel_transaction_id: Optional[int] = None
-	date: Optional[int] = None
-	id: Optional[int] = None
-	item: Optional[str] = None
-	receiver_id: Optional[int] = None
-	status: Optional[str] = None
-	transaction_id: Optional[int] = None
-	user_id: Optional[int] = None
+	amount: Optional["integer"] = None
+	app_order_id: Optional["integer"] = None
+	cancel_transaction_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	id: Optional["integer"] = None
+	item: Optional["string"] = None
+	receiver_id: Optional["integer"] = None
+	status: Optional["string"] = None
+	transaction_id: Optional["integer"] = None
+	user_id: Optional["integer"] = None
 
 
 class OrdersSubscription(BaseModel):
@@ -5504,19 +5504,19 @@ class OrdersSubscription(BaseModel):
 	trial_expire_time - Date of trial expire in Unixtime
 	update_time - Date of last change in Unixtime
 	"""
-	cancel_reason: Optional[str] = None
-	create_time: Optional[int] = None
-	id: Optional[int] = None
-	item_id: Optional[str] = None
-	next_bill_time: Optional[int] = None
-	pending_cancel: Optional[bool] = None
-	period: Optional[int] = None
-	period_start_time: Optional[int] = None
-	price: Optional[int] = None
-	status: Optional[str] = None
-	test_mode: Optional[bool] = None
-	trial_expire_time: Optional[int] = None
-	update_time: Optional[int] = None
+	cancel_reason: Optional["string"] = None
+	create_time: Optional["integer"] = None
+	id: Optional["integer"] = None
+	item_id: Optional["string"] = None
+	next_bill_time: Optional["integer"] = None
+	pending_cancel: Optional["boolean"] = None
+	period: Optional["integer"] = None
+	period_start_time: Optional["integer"] = None
+	price: Optional["integer"] = None
+	status: Optional["string"] = None
+	test_mode: Optional["boolean"] = None
+	trial_expire_time: Optional["integer"] = None
+	update_time: Optional["integer"] = None
 
 
 class OwnerState(BaseModel):
@@ -5525,8 +5525,8 @@ class OwnerState(BaseModel):
 	state - 
 	description - wiki text to describe user state
 	"""
-	state: Optional[int] = None
-	description: Optional[str] = None
+	state: Optional["integer"] = None
+	description: Optional["string"] = None
 
 
 class PagesPrivacySettings(enum.IntEnum):
@@ -5552,16 +5552,16 @@ class PagesWikipage(BaseModel):
 	who_can_edit - Edit settings of the page
 	who_can_view - View settings of the page
 	"""
-	creator_id: Optional[int] = None
-	creator_name: Optional[int] = None
-	editor_id: Optional[int] = None
-	editor_name: Optional[str] = None
-	group_id: Optional[int] = None
-	id: Optional[int] = None
-	title: Optional[str] = None
-	views: Optional[int] = None
-	who_can_edit: Optional["Pagesprivacysettings"] = None
-	who_can_view: Optional["Pagesprivacysettings"] = None
+	creator_id: Optional["integer"] = None
+	creator_name: Optional["integer"] = None
+	editor_id: Optional["integer"] = None
+	editor_name: Optional["string"] = None
+	group_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	title: Optional["string"] = None
+	views: Optional["integer"] = None
+	who_can_edit: Optional["pagesprivacysettings"] = None
+	who_can_view: Optional["pagesprivacysettings"] = None
 
 
 class PagesWikipageFull(BaseModel):
@@ -5583,21 +5583,21 @@ class PagesWikipageFull(BaseModel):
 	who_can_edit - Edit settings of the page
 	who_can_view - View settings of the page
 	"""
-	created: Optional[int] = None
-	creator_id: Optional[int] = None
-	current_user_can_edit: Optional["Baseboolint"] = None
-	current_user_can_edit_access: Optional["Baseboolint"] = None
-	edited: Optional[int] = None
-	editor_id: Optional[int] = None
-	group_id: Optional[int] = None
-	html: Optional[str] = None
-	id: Optional[int] = None
-	source: Optional[str] = None
-	title: Optional[str] = None
-	view_url: Optional[str] = None
-	views: Optional[int] = None
-	who_can_edit: Optional["Pagesprivacysettings"] = None
-	who_can_view: Optional["Pagesprivacysettings"] = None
+	created: Optional["integer"] = None
+	creator_id: Optional["integer"] = None
+	current_user_can_edit: Optional["baseboolint"] = None
+	current_user_can_edit_access: Optional["baseboolint"] = None
+	edited: Optional["integer"] = None
+	editor_id: Optional["integer"] = None
+	group_id: Optional["integer"] = None
+	html: Optional["string"] = None
+	id: Optional["integer"] = None
+	source: Optional["string"] = None
+	title: Optional["string"] = None
+	view_url: Optional["string"] = None
+	views: Optional["integer"] = None
+	who_can_edit: Optional["pagesprivacysettings"] = None
+	who_can_view: Optional["pagesprivacysettings"] = None
 
 
 class PagesWikipageHistory(BaseModel):
@@ -5609,11 +5609,11 @@ class PagesWikipageHistory(BaseModel):
 	editor_id - Last editor ID
 	editor_name - Last editor name
 	"""
-	id: Optional[int] = None
-	length: Optional[int] = None
-	date: Optional[int] = None
-	editor_id: Optional[int] = None
-	editor_name: Optional[str] = None
+	id: Optional["integer"] = None
+	length: Optional["integer"] = None
+	date: Optional["integer"] = None
+	editor_id: Optional["integer"] = None
+	editor_name: Optional["string"] = None
 
 
 class PhotosCommentXtrPid(BaseModel):
@@ -5631,17 +5631,17 @@ class PhotosCommentXtrPid(BaseModel):
 	parents_stack - 
 	thread - 
 	"""
-	attachments: Optional["Wallcommentattachment"] = None
-	date: Optional[int] = None
-	from_id: Optional[int] = None
-	id: Optional[int] = None
-	likes: Optional["Baselikesinfo"] = None
-	pid: Optional[int] = None
-	reply_to_comment: Optional[int] = None
-	reply_to_user: Optional[int] = None
-	text: Optional[str] = None
-	parents_stack: Optional[int] = None
-	thread: Optional["Commentthread"] = None
+	attachments: Optional["wallcommentattachment"] = None
+	date: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	likes: Optional["baselikesinfo"] = None
+	pid: Optional["integer"] = None
+	reply_to_comment: Optional["integer"] = None
+	reply_to_user: Optional["integer"] = None
+	text: Optional["string"] = None
+	parents_stack: Optional["integer"] = None
+	thread: Optional["commentthread"] = None
 
 
 class PhotosImage(BaseModel):
@@ -5652,10 +5652,10 @@ class PhotosImage(BaseModel):
 	url - Photo URL.
 	width - Width of the photo in px.
 	"""
-	height: Optional[int] = None
-	type: Optional["Photosimagetype"] = None
-	url: Optional[str] = None
-	width: Optional[int] = None
+	height: Optional["integer"] = None
+	type: Optional["photosimagetype"] = None
+	url: Optional["string"] = None
+	width: Optional["integer"] = None
 
 
 class PhotosImageType(enum.Enum):
@@ -5698,25 +5698,25 @@ class PhotosPhoto(BaseModel):
 	has_tags - Whether photo has attached tag links
 	restrictions - 
 	"""
-	access_key: Optional[str] = None
-	album_id: Optional[int] = None
-	date: Optional[int] = None
-	height: Optional[int] = None
-	id: Optional[int] = None
-	images: Optional["Photosimage"] = None
-	lat: Optional["Number"] = None
-	long: Optional["Number"] = None
-	owner_id: Optional[int] = None
-	photo_256: Optional[str] = None
-	can_comment: Optional["Baseboolint"] = None
-	place: Optional[str] = None
-	post_id: Optional[int] = None
-	sizes: Optional["Photosphotosizes"] = None
-	text: Optional[str] = None
-	user_id: Optional[int] = None
-	width: Optional[int] = None
-	has_tags: Optional[bool] = None
-	restrictions: Optional["Mediarestriction"] = None
+	access_key: Optional["string"] = None
+	album_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	height: Optional["integer"] = None
+	id: Optional["integer"] = None
+	images: Optional["photosimage"] = None
+	lat: Optional["number"] = None
+	long: Optional["number"] = None
+	owner_id: Optional["integer"] = None
+	photo_256: Optional["string"] = None
+	can_comment: Optional["baseboolint"] = None
+	place: Optional["string"] = None
+	post_id: Optional["integer"] = None
+	sizes: Optional["photosphotosizes"] = None
+	text: Optional["string"] = None
+	user_id: Optional["integer"] = None
+	width: Optional["integer"] = None
+	has_tags: Optional["boolean"] = None
+	restrictions: Optional["mediarestriction"] = None
 
 
 class PhotosPhotoAlbum(BaseModel):
@@ -5731,14 +5731,14 @@ class PhotosPhotoAlbum(BaseModel):
 	title - Photo album title
 	updated - Date when the album has been updated last time in Unixtime
 	"""
-	created: Optional[int] = None
-	description: Optional[str] = None
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	size: Optional[int] = None
-	thumb: Optional["Photosphoto"] = None
-	title: Optional[str] = None
-	updated: Optional[int] = None
+	created: Optional["integer"] = None
+	description: Optional["string"] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	size: Optional["integer"] = None
+	thumb: Optional["photosphoto"] = None
+	title: Optional["string"] = None
+	updated: Optional["integer"] = None
 
 
 class PhotosPhotoAlbumFull(BaseModel):
@@ -5759,20 +5759,20 @@ class PhotosPhotoAlbumFull(BaseModel):
 	updated - Date when the album has been updated last time in Unixtime
 	upload_by_admins_only - Information whether only community administrators can upload photos
 	"""
-	can_upload: Optional["Baseboolint"] = None
-	comments_disabled: Optional["Baseboolint"] = None
-	created: Optional[int] = None
-	description: Optional[str] = None
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	size: Optional[int] = None
-	sizes: Optional["Photosphotosizes"] = None
-	thumb_id: Optional[int] = None
-	thumb_is_last: Optional["Baseboolint"] = None
-	thumb_src: Optional[str] = None
-	title: Optional[str] = None
-	updated: Optional[int] = None
-	upload_by_admins_only: Optional["Baseboolint"] = None
+	can_upload: Optional["baseboolint"] = None
+	comments_disabled: Optional["baseboolint"] = None
+	created: Optional["integer"] = None
+	description: Optional["string"] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	size: Optional["integer"] = None
+	sizes: Optional["photosphotosizes"] = None
+	thumb_id: Optional["integer"] = None
+	thumb_is_last: Optional["baseboolint"] = None
+	thumb_src: Optional["string"] = None
+	title: Optional["string"] = None
+	updated: Optional["integer"] = None
+	upload_by_admins_only: Optional["baseboolint"] = None
 None
 
 class PhotosPhotoFull(BaseModel):
@@ -5797,24 +5797,24 @@ class PhotosPhotoFull(BaseModel):
 	user_id - ID of the user who have uploaded the photo
 	width - Original photo width
 	"""
-	access_key: Optional[str] = None
-	album_id: Optional[int] = None
-	can_comment: Optional["Baseboolint"] = None
-	date: Optional[int] = None
-	height: Optional[int] = None
-	id: Optional[int] = None
-	images: Optional["Photosimage"] = None
-	lat: Optional["Number"] = None
-	likes: Optional["Baselikes"] = None
-	reposts: Optional["Baserepostsinfo"] = None
-	comments: Optional["Baseobjectcount"] = None
-	long: Optional["Number"] = None
-	owner_id: Optional[int] = None
-	post_id: Optional[int] = None
-	tags: Optional["Baseobjectcount"] = None
-	text: Optional[str] = None
-	user_id: Optional[int] = None
-	width: Optional[int] = None
+	access_key: Optional["string"] = None
+	album_id: Optional["integer"] = None
+	can_comment: Optional["baseboolint"] = None
+	date: Optional["integer"] = None
+	height: Optional["integer"] = None
+	id: Optional["integer"] = None
+	images: Optional["photosimage"] = None
+	lat: Optional["number"] = None
+	likes: Optional["baselikes"] = None
+	reposts: Optional["baserepostsinfo"] = None
+	comments: Optional["baseobjectcount"] = None
+	long: Optional["number"] = None
+	owner_id: Optional["integer"] = None
+	post_id: Optional["integer"] = None
+	tags: Optional["baseobjectcount"] = None
+	text: Optional["string"] = None
+	user_id: Optional["integer"] = None
+	width: Optional["integer"] = None
 
 
 class PhotosPhotoFullXtrRealOffset(BaseModel):
@@ -5847,32 +5847,32 @@ class PhotosPhotoFullXtrRealOffset(BaseModel):
 	user_id - ID of the user who have uploaded the photo
 	width - Original photo width
 	"""
-	access_key: Optional[str] = None
-	album_id: Optional[int] = None
-	can_comment: Optional["Baseboolint"] = None
-	comments: Optional["Baseobjectcount"] = None
-	date: Optional[int] = None
-	height: Optional[int] = None
-	hidden: Optional["Basepropertyexists"] = None
-	id: Optional[int] = None
-	lat: Optional["Number"] = None
-	likes: Optional["Baselikes"] = None
-	long: Optional["Number"] = None
-	owner_id: Optional[int] = None
-	photo_1280: Optional[str] = None
-	photo_130: Optional[str] = None
-	photo_2560: Optional[str] = None
-	photo_604: Optional[str] = None
-	photo_75: Optional[str] = None
-	photo_807: Optional[str] = None
-	post_id: Optional[int] = None
-	real_offset: Optional[int] = None
-	reposts: Optional["Baseobjectcount"] = None
-	sizes: Optional["Photosphotosizes"] = None
-	tags: Optional["Baseobjectcount"] = None
-	text: Optional[str] = None
-	user_id: Optional[int] = None
-	width: Optional[int] = None
+	access_key: Optional["string"] = None
+	album_id: Optional["integer"] = None
+	can_comment: Optional["baseboolint"] = None
+	comments: Optional["baseobjectcount"] = None
+	date: Optional["integer"] = None
+	height: Optional["integer"] = None
+	hidden: Optional["basepropertyexists"] = None
+	id: Optional["integer"] = None
+	lat: Optional["number"] = None
+	likes: Optional["baselikes"] = None
+	long: Optional["number"] = None
+	owner_id: Optional["integer"] = None
+	photo_1280: Optional["string"] = None
+	photo_130: Optional["string"] = None
+	photo_2560: Optional["string"] = None
+	photo_604: Optional["string"] = None
+	photo_75: Optional["string"] = None
+	photo_807: Optional["string"] = None
+	post_id: Optional["integer"] = None
+	real_offset: Optional["integer"] = None
+	reposts: Optional["baseobjectcount"] = None
+	sizes: Optional["photosphotosizes"] = None
+	tags: Optional["baseobjectcount"] = None
+	text: Optional["string"] = None
+	user_id: Optional["integer"] = None
+	width: Optional["integer"] = None
 
 
 class PhotosPhotoSizes(BaseModel):
@@ -5884,11 +5884,11 @@ class PhotosPhotoSizes(BaseModel):
 	type - 
 	width - Width in px
 	"""
-	height: Optional[int] = None
-	url: Optional[str] = None
-	src: Optional[str] = None
-	type: Optional["Photosphotosizestype"] = None
-	width: Optional[int] = None
+	height: Optional["integer"] = None
+	url: Optional["string"] = None
+	src: Optional["string"] = None
+	type: Optional["photosphotosizestype"] = None
+	width: Optional["integer"] = None
 
 
 class PhotosPhotoSizesType(enum.Enum):
@@ -5937,17 +5937,17 @@ class PhotosPhotoTag(BaseModel):
 	y - Coordinate Y of the left upper corner
 	y2 - Coordinate Y of the right lower corner
 	"""
-	date: Optional[int] = None
-	id: Optional[int] = None
-	placer_id: Optional[int] = None
-	tagged_name: Optional[str] = None
-	description: Optional[str] = None
-	user_id: Optional[int] = None
-	viewed: Optional["Baseboolint"] = None
-	x: Optional["Number"] = None
-	x2: Optional["Number"] = None
-	y: Optional["Number"] = None
-	y2: Optional["Number"] = None
+	date: Optional["integer"] = None
+	id: Optional["integer"] = None
+	placer_id: Optional["integer"] = None
+	tagged_name: Optional["string"] = None
+	description: Optional["string"] = None
+	user_id: Optional["integer"] = None
+	viewed: Optional["baseboolint"] = None
+	x: Optional["number"] = None
+	x2: Optional["number"] = None
+	y: Optional["number"] = None
+	y2: Optional["number"] = None
 
 
 class PhotosPhotoUpload(BaseModel):
@@ -5959,11 +5959,11 @@ class PhotosPhotoUpload(BaseModel):
 	user_id - User ID
 	group_id - Group ID
 	"""
-	album_id: Optional[int] = None
-	upload_url: Optional[str] = None
-	fallback_upload_url: Optional[str] = None
-	user_id: Optional[int] = None
-	group_id: Optional[int] = None
+	album_id: Optional["integer"] = None
+	upload_url: Optional["string"] = None
+	fallback_upload_url: Optional["string"] = None
+	user_id: Optional["integer"] = None
+	group_id: Optional["integer"] = None
 
 
 class PhotosPhotoXtrRealOffset(BaseModel):
@@ -5991,27 +5991,27 @@ class PhotosPhotoXtrRealOffset(BaseModel):
 	user_id - ID of the user who have uploaded the photo
 	width - Original photo width
 	"""
-	access_key: Optional[str] = None
-	album_id: Optional[int] = None
-	date: Optional[int] = None
-	height: Optional[int] = None
-	hidden: Optional["Basepropertyexists"] = None
-	id: Optional[int] = None
-	lat: Optional["Number"] = None
-	long: Optional["Number"] = None
-	owner_id: Optional[int] = None
-	photo_1280: Optional[str] = None
-	photo_130: Optional[str] = None
-	photo_2560: Optional[str] = None
-	photo_604: Optional[str] = None
-	photo_75: Optional[str] = None
-	photo_807: Optional[str] = None
-	post_id: Optional[int] = None
-	real_offset: Optional[int] = None
-	sizes: Optional["Photosphotosizes"] = None
-	text: Optional[str] = None
-	user_id: Optional[int] = None
-	width: Optional[int] = None
+	access_key: Optional["string"] = None
+	album_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	height: Optional["integer"] = None
+	hidden: Optional["basepropertyexists"] = None
+	id: Optional["integer"] = None
+	lat: Optional["number"] = None
+	long: Optional["number"] = None
+	owner_id: Optional["integer"] = None
+	photo_1280: Optional["string"] = None
+	photo_130: Optional["string"] = None
+	photo_2560: Optional["string"] = None
+	photo_604: Optional["string"] = None
+	photo_75: Optional["string"] = None
+	photo_807: Optional["string"] = None
+	post_id: Optional["integer"] = None
+	real_offset: Optional["integer"] = None
+	sizes: Optional["photosphotosizes"] = None
+	text: Optional["string"] = None
+	user_id: Optional["integer"] = None
+	width: Optional["integer"] = None
 
 
 class PhotosPhotoXtrTagInfo(BaseModel):
@@ -6040,57 +6040,57 @@ class PhotosPhotoXtrTagInfo(BaseModel):
 	user_id - ID of the user who have uploaded the photo
 	width - Original photo width
 	"""
-	access_key: Optional[str] = None
-	album_id: Optional[int] = None
-	date: Optional[int] = None
-	height: Optional[int] = None
-	id: Optional[int] = None
-	lat: Optional["Number"] = None
-	long: Optional["Number"] = None
-	owner_id: Optional[int] = None
-	photo_1280: Optional[str] = None
-	photo_130: Optional[str] = None
-	photo_2560: Optional[str] = None
-	photo_604: Optional[str] = None
-	photo_75: Optional[str] = None
-	photo_807: Optional[str] = None
-	placer_id: Optional[int] = None
-	post_id: Optional[int] = None
-	sizes: Optional["Photosphotosizes"] = None
-	tag_created: Optional[int] = None
-	tag_id: Optional[int] = None
-	text: Optional[str] = None
-	user_id: Optional[int] = None
-	width: Optional[int] = None
+	access_key: Optional["string"] = None
+	album_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	height: Optional["integer"] = None
+	id: Optional["integer"] = None
+	lat: Optional["number"] = None
+	long: Optional["number"] = None
+	owner_id: Optional["integer"] = None
+	photo_1280: Optional["string"] = None
+	photo_130: Optional["string"] = None
+	photo_2560: Optional["string"] = None
+	photo_604: Optional["string"] = None
+	photo_75: Optional["string"] = None
+	photo_807: Optional["string"] = None
+	placer_id: Optional["integer"] = None
+	post_id: Optional["integer"] = None
+	sizes: Optional["photosphotosizes"] = None
+	tag_created: Optional["integer"] = None
+	tag_id: Optional["integer"] = None
+	text: Optional["string"] = None
+	user_id: Optional["integer"] = None
+	width: Optional["integer"] = None
 
 
 class PhotosTagsSuggestionItem(BaseModel):
 	"""VK Object PhotosTagsSuggestionItem
 
 	"""
-	title: Optional[str] = None
-	caption: Optional[str] = None
-	type: Optional[str] = None
-	buttons: Optional["Photostagssuggestionitembutton"] = None
-	photo: Optional["Photosphoto"] = None
-	tags: Optional["Photosphototag"] = None
-	track_code: Optional[str] = None
+	title: Optional["string"] = None
+	caption: Optional["string"] = None
+	type: Optional["string"] = None
+	buttons: Optional["photostagssuggestionitembutton"] = None
+	photo: Optional["photosphoto"] = None
+	tags: Optional["photosphototag"] = None
+	track_code: Optional["string"] = None
 
 
 class PhotosTagsSuggestionItemButton(BaseModel):
 	"""VK Object PhotosTagsSuggestionItemButton
 
 	"""
-	title: Optional[str] = None
-	action: Optional[str] = None
-	style: Optional[str] = None
+	title: Optional["string"] = None
+	action: Optional["string"] = None
+	style: Optional["string"] = None
 
 
 class PodcastCover(BaseModel):
 	"""VK Object PodcastCover
 
 	"""
-	sizes: Optional["Photosphotosizes"] = None
+	sizes: Optional["photosphotosizes"] = None
 
 
 class PodcastExternalData(BaseModel):
@@ -6102,11 +6102,11 @@ class PodcastExternalData(BaseModel):
 	owner_name - Name of the podcasts owner community
 	cover - Podcast cover
 	"""
-	url: Optional[str] = None
-	owner_url: Optional[str] = None
-	title: Optional[str] = None
-	owner_name: Optional[str] = None
-	cover: Optional["Podcastcover"] = None
+	url: Optional["string"] = None
+	owner_url: Optional["string"] = None
+	title: Optional["string"] = None
+	owner_name: Optional["string"] = None
+	cover: Optional["podcastcover"] = None
 
 
 class PollsAnswer(BaseModel):
@@ -6117,10 +6117,10 @@ class PollsAnswer(BaseModel):
 	text - Answer text
 	votes - Votes number
 	"""
-	id: Optional[int] = None
-	rate: Optional["Number"] = None
-	text: Optional[str] = None
-	votes: Optional[int] = None
+	id: Optional["integer"] = None
+	rate: Optional["number"] = None
+	text: Optional["string"] = None
+	votes: Optional["integer"] = None
 
 
 class PollsBackground(BaseModel):
@@ -6136,22 +6136,22 @@ class PollsBackground(BaseModel):
 	type - 
 	width - Original with of pattern tile
 	"""
-	angle: Optional[int] = None
-	color: Optional[str] = None
-	height: Optional[int] = None
-	id: Optional[int] = None
-	name: Optional[str] = None
-	images: Optional["Baseimage"] = None
-	points: Optional["Basegradientpoint"] = None
-	type: Optional[str] = None
-	width: Optional[int] = None
+	angle: Optional["integer"] = None
+	color: Optional["string"] = None
+	height: Optional["integer"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	images: Optional["baseimage"] = None
+	points: Optional["basegradientpoint"] = None
+	type: Optional["string"] = None
+	width: Optional["integer"] = None
 
 
 class PollsFriend(BaseModel):
 	"""VK Object PollsFriend
 
 	"""
-	id: Optional[int] = None
+	id: Optional["integer"] = None
 
 
 class PollsPoll(BaseModel):
@@ -6180,28 +6180,28 @@ class PollsPoll(BaseModel):
 	votes - Votes number
 	disable_unvote - 
 	"""
-	anonymous: Optional["Pollspollanonymous"] = None
-	friends: Optional["Pollsfriend"] = None
-	multiple: Optional[bool] = None
-	answer_id: Optional[int] = None
-	end_date: Optional[int] = None
-	answer_ids: Optional[int] = None
-	closed: Optional[bool] = None
-	is_board: Optional[bool] = None
-	can_edit: Optional[bool] = None
-	can_vote: Optional[bool] = None
-	can_report: Optional[bool] = None
-	can_share: Optional[bool] = None
-	photo: Optional["Pollsbackground"] = None
-	answers: Optional["Pollsanswer"] = None
-	created: Optional[int] = None
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	author_id: Optional[int] = None
-	question: Optional[str] = None
-	background: Optional["Pollsbackground"] = None
-	votes: Optional[int] = None
-	disable_unvote: Optional[bool] = None
+	anonymous: Optional["pollspollanonymous"] = None
+	friends: Optional["pollsfriend"] = None
+	multiple: Optional["boolean"] = None
+	answer_id: Optional["integer"] = None
+	end_date: Optional["integer"] = None
+	answer_ids: Optional["integer"] = None
+	closed: Optional["boolean"] = None
+	is_board: Optional["boolean"] = None
+	can_edit: Optional["boolean"] = None
+	can_vote: Optional["boolean"] = None
+	can_report: Optional["boolean"] = None
+	can_share: Optional["boolean"] = None
+	photo: Optional["pollsbackground"] = None
+	answers: Optional["pollsanswer"] = None
+	created: Optional["integer"] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	author_id: Optional["integer"] = None
+	question: Optional["string"] = None
+	background: Optional["pollsbackground"] = None
+	votes: Optional["integer"] = None
+	disable_unvote: Optional["boolean"] = None
 
 
 PollsPollAnonymous = Optional[bool] # Information whether the field is anonymous
@@ -6214,8 +6214,8 @@ class PollsVoters(BaseModel):
 	answer_id - Answer ID
 	users - 
 	"""
-	answer_id: Optional[int] = None
-	users: Optional["Pollsvotersusers"] = None
+	answer_id: Optional["integer"] = None
+	users: Optional["pollsvotersusers"] = None
 
 
 class PollsVotersUsers(BaseModel):
@@ -6224,12 +6224,12 @@ class PollsVotersUsers(BaseModel):
 	count - Votes number
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional[int] = None
+	count: Optional["integer"] = None
+	items: Optional["integer"] = None
 
 
-class PrettycardsPrettycard(BaseModel):
-	"""VK Object PrettycardsPrettycard
+class PrettyCardsPrettycard(BaseModel):
+	"""VK Object PrettyCardsPrettycard
 
 	button - Button key
 	button_text - Button text in current language
@@ -6241,15 +6241,15 @@ class PrettycardsPrettycard(BaseModel):
 	price_old - Old price if set (decimal number returned as string)
 	title - Title
 	"""
-	button: Optional[str] = None
-	button_text: Optional[str] = None
-	card_id: Optional[str] = None
-	images: Optional["Baseimage"] = None
-	link_url: Optional[str] = None
-	photo: Optional[str] = None
-	price: Optional[str] = None
-	price_old: Optional[str] = None
-	title: Optional[str] = None
+	button: Optional["string"] = None
+	button_text: Optional["string"] = None
+	card_id: Optional["string"] = None
+	images: Optional["baseimage"] = None
+	link_url: Optional["string"] = None
+	photo: Optional["string"] = None
+	price: Optional["string"] = None
+	price_old: Optional["string"] = None
+	title: Optional["string"] = None
 
 
 class SearchHint(BaseModel):
@@ -6263,13 +6263,13 @@ class SearchHint(BaseModel):
 	section - 
 	type - 
 	"""
-	app: Optional["Appsapp"] = None
-	description: Optional[str] = None
-	global: Optional["Baseboolint"] = None
-	group: Optional["Groupsgroup"] = None
-	profile: Optional["Usersusermin"] = None
-	section: Optional["Searchhintsection"] = None
-	type: Optional["Searchhinttype"] = None
+	app: Optional["appsapp"] = None
+	description: Optional["string"] = None
+	global: Optional["baseboolint"] = None
+	group: Optional["groupsgroup"] = None
+	profile: Optional["usersusermin"] = None
+	section: Optional["searchhintsection"] = None
+	type: Optional["searchhinttype"] = None
 
 
 class SearchHintSection(enum.Enum):
@@ -6302,8 +6302,8 @@ class SecureLevel(BaseModel):
 	level - Level
 	uid - User ID
 	"""
-	level: Optional[int] = None
-	uid: Optional[int] = None
+	level: Optional["integer"] = None
+	uid: Optional["integer"] = None
 
 
 class SecureSmsNotification(BaseModel):
@@ -6315,11 +6315,11 @@ class SecureSmsNotification(BaseModel):
 	message - Messsage text
 	user_id - User ID
 	"""
-	app_id: Optional[str] = None
-	date: Optional[str] = None
-	id: Optional[str] = None
-	message: Optional[str] = None
-	user_id: Optional[str] = None
+	app_id: Optional["string"] = None
+	date: Optional["string"] = None
+	id: Optional["string"] = None
+	message: Optional["string"] = None
+	user_id: Optional["string"] = None
 
 
 class SecureTokenChecked(BaseModel):
@@ -6330,10 +6330,10 @@ class SecureTokenChecked(BaseModel):
 	success - Returns if successfully processed
 	user_id - User ID
 	"""
-	date: Optional[int] = None
-	expire: Optional[int] = None
-	success: Optional[int] = None
-	user_id: Optional[int] = None
+	date: Optional["integer"] = None
+	expire: Optional["integer"] = None
+	success: Optional["integer"] = None
+	user_id: Optional["integer"] = None
 
 
 class SecureTransaction(BaseModel):
@@ -6345,11 +6345,11 @@ class SecureTransaction(BaseModel):
 	uid_to - To ID
 	votes - Votes number
 	"""
-	date: Optional[int] = None
-	id: Optional[int] = None
-	uid_from: Optional[int] = None
-	uid_to: Optional[int] = None
-	votes: Optional[int] = None
+	date: Optional["integer"] = None
+	id: Optional["integer"] = None
+	uid_from: Optional["integer"] = None
+	uid_to: Optional["integer"] = None
+	votes: Optional["integer"] = None
 
 
 class StatsActivity(BaseModel):
@@ -6362,12 +6362,12 @@ class StatsActivity(BaseModel):
 	subscribed - New subscribers count
 	unsubscribed - Unsubscribed count
 	"""
-	comments: Optional[int] = None
-	copies: Optional[int] = None
-	hidden: Optional[int] = None
-	likes: Optional[int] = None
-	subscribed: Optional[int] = None
-	unsubscribed: Optional[int] = None
+	comments: Optional["integer"] = None
+	copies: Optional["integer"] = None
+	hidden: Optional["integer"] = None
+	likes: Optional["integer"] = None
+	subscribed: Optional["integer"] = None
+	unsubscribed: Optional["integer"] = None
 
 
 class StatsCity(BaseModel):
@@ -6377,9 +6377,9 @@ class StatsCity(BaseModel):
 	name - City name
 	value - City ID
 	"""
-	count: Optional[int] = None
-	name: Optional[str] = None
-	value: Optional[int] = None
+	count: Optional["integer"] = None
+	name: Optional["string"] = None
+	value: Optional["integer"] = None
 
 
 class StatsCountry(BaseModel):
@@ -6390,10 +6390,10 @@ class StatsCountry(BaseModel):
 	name - Country name
 	value - Country ID
 	"""
-	code: Optional[str] = None
-	count: Optional[int] = None
-	name: Optional[str] = None
-	value: Optional[int] = None
+	code: Optional["string"] = None
+	count: Optional["integer"] = None
+	name: Optional["string"] = None
+	value: Optional["integer"] = None
 
 
 class StatsPeriod(BaseModel):
@@ -6405,11 +6405,11 @@ class StatsPeriod(BaseModel):
 	reach - 
 	visitors - 
 	"""
-	activity: Optional["Statsactivity"] = None
-	period_from: Optional[int] = None
-	period_to: Optional[int] = None
-	reach: Optional["Statsreach"] = None
-	visitors: Optional["Statsviews"] = None
+	activity: Optional["statsactivity"] = None
+	period_from: Optional["integer"] = None
+	period_to: Optional["integer"] = None
+	reach: Optional["statsreach"] = None
+	visitors: Optional["statsviews"] = None
 
 
 class StatsReach(BaseModel):
@@ -6424,14 +6424,14 @@ class StatsReach(BaseModel):
 	sex - 
 	sex_age - 
 	"""
-	age: Optional["Statssexage"] = None
-	cities: Optional["Statscity"] = None
-	countries: Optional["Statscountry"] = None
-	mobile_reach: Optional[int] = None
-	reach: Optional[int] = None
-	reach_subscribers: Optional[int] = None
-	sex: Optional["Statssexage"] = None
-	sex_age: Optional["Statssexage"] = None
+	age: Optional["statssexage"] = None
+	cities: Optional["statscity"] = None
+	countries: Optional["statscountry"] = None
+	mobile_reach: Optional["integer"] = None
+	reach: Optional["integer"] = None
+	reach_subscribers: Optional["integer"] = None
+	sex: Optional["statssexage"] = None
+	sex_age: Optional["statssexage"] = None
 
 
 class StatsSexAge(BaseModel):
@@ -6443,11 +6443,11 @@ class StatsSexAge(BaseModel):
 	reach_subscribers - 
 	count_subscribers - 
 	"""
-	count: Optional[int] = None
-	value: Optional[str] = None
-	reach: Optional[int] = None
-	reach_subscribers: Optional[int] = None
-	count_subscribers: Optional[int] = None
+	count: Optional["integer"] = None
+	value: Optional["string"] = None
+	reach: Optional["integer"] = None
+	reach_subscribers: Optional["integer"] = None
+	count_subscribers: Optional["integer"] = None
 
 
 class StatsViews(BaseModel):
@@ -6462,14 +6462,14 @@ class StatsViews(BaseModel):
 	views - Views number
 	visitors - Visitors number
 	"""
-	age: Optional["Statssexage"] = None
-	cities: Optional["Statscity"] = None
-	countries: Optional["Statscountry"] = None
-	mobile_views: Optional[int] = None
-	sex: Optional["Statssexage"] = None
-	sex_age: Optional["Statssexage"] = None
-	views: Optional[int] = None
-	visitors: Optional[int] = None
+	age: Optional["statssexage"] = None
+	cities: Optional["statscity"] = None
+	countries: Optional["statscountry"] = None
+	mobile_views: Optional["integer"] = None
+	sex: Optional["statssexage"] = None
+	sex_age: Optional["statssexage"] = None
+	views: Optional["integer"] = None
+	visitors: Optional["integer"] = None
 
 
 class StatsWallpostStat(BaseModel):
@@ -6490,20 +6490,20 @@ class StatsWallpostStat(BaseModel):
 	unsubscribe - Unsubscribed members
 	sex_age - 
 	"""
-	post_id: Optional[int] = None
-	hide: Optional[int] = None
-	join_group: Optional[int] = None
-	links: Optional[int] = None
-	reach_subscribers: Optional[int] = None
-	reach_subscribers_count: Optional[int] = None
-	reach_total: Optional[int] = None
-	reach_total_count: Optional[int] = None
-	reach_viral: Optional[int] = None
-	reach_ads: Optional[int] = None
-	report: Optional[int] = None
-	to_group: Optional[int] = None
-	unsubscribe: Optional[int] = None
-	sex_age: Optional["Statssexage"] = None
+	post_id: Optional["integer"] = None
+	hide: Optional["integer"] = None
+	join_group: Optional["integer"] = None
+	links: Optional["integer"] = None
+	reach_subscribers: Optional["integer"] = None
+	reach_subscribers_count: Optional["integer"] = None
+	reach_total: Optional["integer"] = None
+	reach_total_count: Optional["integer"] = None
+	reach_viral: Optional["integer"] = None
+	reach_ads: Optional["integer"] = None
+	report: Optional["integer"] = None
+	to_group: Optional["integer"] = None
+	unsubscribe: Optional["integer"] = None
+	sex_age: Optional["statssexage"] = None
 
 
 class StatusStatus(BaseModel):
@@ -6512,8 +6512,8 @@ class StatusStatus(BaseModel):
 	text - Status text
 	audio - 
 	"""
-	text: Optional[str] = None
-	audio: Optional["Audioaudio"] = None
+	text: Optional["string"] = None
+	audio: Optional["audioaudio"] = None
 
 
 class StickersImageSet(BaseModel):
@@ -6522,16 +6522,16 @@ class StickersImageSet(BaseModel):
 	base_url - Base URL for images in set
 	version - Version number to be appended to the image URL
 	"""
-	base_url: Optional[str] = None
-	version: Optional[int] = None
+	base_url: Optional["string"] = None
+	version: Optional["integer"] = None
 
 
 class StorageValue(BaseModel):
 	"""VK Object StorageValue
 
 	"""
-	key: Optional[str] = None
-	value: Optional[str] = None
+	key: Optional["string"] = None
+	value: Optional["string"] = None
 
 
 class StoreProduct(BaseModel):
@@ -6550,28 +6550,28 @@ class StoreProduct(BaseModel):
 	has_animation - Information whether the product is an animated sticker pack (for stickers product type)
 	subtitle - Subtitle of the product
 	"""
-	id: Optional[int] = None
-	type: Optional[str] = None
-	purchased: Optional["Baseboolint"] = None
-	active: Optional["Baseboolint"] = None
-	promoted: Optional["Baseboolint"] = None
-	purchase_date: Optional[int] = None
-	title: Optional[str] = None
-	stickers: Optional["Basestickerslist"] = None
-	icon: Optional["Storeproducticon"] = None
-	previews: Optional["Baseimage"] = None
-	has_animation: Optional[bool] = None
-	subtitle: Optional[str] = None
+	id: Optional["integer"] = None
+	type: Optional["string"] = None
+	purchased: Optional["baseboolint"] = None
+	active: Optional["baseboolint"] = None
+	promoted: Optional["baseboolint"] = None
+	purchase_date: Optional["integer"] = None
+	title: Optional["string"] = None
+	stickers: Optional["basestickerslist"] = None
+	icon: Optional["storeproducticon"] = None
+	previews: Optional["baseimage"] = None
+	has_animation: Optional["boolean"] = None
+	subtitle: Optional["string"] = None
 None
 
 class StoreStickersKeyword(BaseModel):
 	"""VK Object StoreStickersKeyword
 
 	"""
-	words: Optional[str] = None
-	user_stickers: Optional["Storestickerskeywordstickers"] = None
-	promoted_stickers: Optional["Storestickerskeywordstickers"] = None
-	stickers: Optional["Storestickerskeywordsticker"] = None
+	words: Optional["string"] = None
+	user_stickers: Optional["storestickerskeywordstickers"] = None
+	promoted_stickers: Optional["storestickerskeywordstickers"] = None
+	stickers: Optional["storestickerskeywordsticker"] = None
 
 
 class StoreStickersKeywordSticker(BaseModel):
@@ -6580,8 +6580,8 @@ class StoreStickersKeywordSticker(BaseModel):
 	pack_id - Pack id
 	sticker_id - Sticker id
 	"""
-	pack_id: Optional[int] = None
-	sticker_id: Optional[int] = None
+	pack_id: Optional["integer"] = None
+	sticker_id: Optional["integer"] = None
 
 
 class StoreStickersKeywordStickers(BaseModel):
@@ -6594,8 +6594,8 @@ class StoriesClickableArea(BaseModel):
 	"""VK Object StoriesClickableArea
 
 	"""
-	x: Optional[int] = None
-	y: Optional[int] = None
+	x: Optional["integer"] = None
+	y: Optional["integer"] = None
 
 
 class StoriesClickableSticker(BaseModel):
@@ -6631,44 +6631,44 @@ class StoriesClickableSticker(BaseModel):
 	situational_theme_id - 
 	situational_app_url - 
 	"""
-	clickable_area: Optional["Storiesclickablearea"] = None
-	id: Optional[int] = None
-	hashtag: Optional[str] = None
-	link_object: Optional["Baselink"] = None
-	mention: Optional[str] = None
-	tooltip_text: Optional[str] = None
-	owner_id: Optional[int] = None
-	story_id: Optional[int] = None
-	question: Optional[str] = None
-	question_button: Optional[str] = None
-	place_id: Optional[int] = None
-	market_item: Optional["Marketmarketitem"] = None
-	audio: Optional["Audioaudio"] = None
-	audio_start_time: Optional[int] = None
-	style: Optional[str] = None
-	type: Optional[str] = None
-	subtype: Optional[str] = None
-	post_owner_id: Optional[int] = None
-	post_id: Optional[int] = None
-	poll: Optional["Pollspoll"] = None
-	color: Optional[str] = None
-	sticker_id: Optional[int] = None
-	sticker_pack_id: Optional[int] = None
-	app: Optional["Appsappmin"] = None
-	app_context: Optional[str] = None
-	has_new_interactions: Optional[bool] = None
-	is_broadcast_notify_allowed: Optional[bool] = None
-	situational_theme_id: Optional[int] = None
-	situational_app_url: Optional[str] = None
+	clickable_area: Optional["storiesclickablearea"] = None
+	id: Optional["integer"] = None
+	hashtag: Optional["string"] = None
+	link_object: Optional["baselink"] = None
+	mention: Optional["string"] = None
+	tooltip_text: Optional["string"] = None
+	owner_id: Optional["integer"] = None
+	story_id: Optional["integer"] = None
+	question: Optional["string"] = None
+	question_button: Optional["string"] = None
+	place_id: Optional["integer"] = None
+	market_item: Optional["marketmarketitem"] = None
+	audio: Optional["audioaudio"] = None
+	audio_start_time: Optional["integer"] = None
+	style: Optional["string"] = None
+	type: Optional["string"] = None
+	subtype: Optional["string"] = None
+	post_owner_id: Optional["integer"] = None
+	post_id: Optional["integer"] = None
+	poll: Optional["pollspoll"] = None
+	color: Optional["string"] = None
+	sticker_id: Optional["integer"] = None
+	sticker_pack_id: Optional["integer"] = None
+	app: Optional["appsappmin"] = None
+	app_context: Optional["string"] = None
+	has_new_interactions: Optional["boolean"] = None
+	is_broadcast_notify_allowed: Optional["boolean"] = None
+	situational_theme_id: Optional["integer"] = None
+	situational_app_url: Optional["string"] = None
 
 
 class StoriesClickableStickers(BaseModel):
 	"""VK Object StoriesClickableStickers
 
 	"""
-	clickable_stickers: Optional["Storiesclickablesticker"] = None
-	original_height: Optional[int] = None
-	original_width: Optional[int] = None
+	clickable_stickers: Optional["storiesclickablesticker"] = None
+	original_height: Optional["integer"] = None
+	original_width: Optional["integer"] = None
 
 
 class StoriesFeedItem(BaseModel):
@@ -6682,13 +6682,13 @@ class StoriesFeedItem(BaseModel):
 	promo_data - Additional data for promo stories (for type promo_stories)
 	birthday_user_id - 
 	"""
-	type: Optional[str] = None
-	id: Optional[str] = None
-	stories: Optional["Storiesstory"] = None
-	grouped: Optional["Storiesfeeditem"] = None
-	app: Optional["Appsappmin"] = None
-	promo_data: Optional["Storiespromoblock"] = None
-	birthday_user_id: Optional[int] = None
+	type: Optional["string"] = None
+	id: Optional["string"] = None
+	stories: Optional["storiesstory"] = None
+	grouped: Optional["storiesfeeditem"] = None
+	app: Optional["appsappmin"] = None
+	promo_data: Optional["storiespromoblock"] = None
+	birthday_user_id: Optional["integer"] = None
 
 
 class StoriesPromoBlock(BaseModel):
@@ -6699,10 +6699,10 @@ class StoriesPromoBlock(BaseModel):
 	photo_100 - RL of square photo of the story with 100 pixels in width
 	not_animated - Hide animation for promo story
 	"""
-	name: Optional[str] = None
-	photo_50: Optional[str] = None
-	photo_100: Optional[str] = None
-	not_animated: Optional[bool] = None
+	name: Optional["string"] = None
+	photo_50: Optional["string"] = None
+	photo_100: Optional["string"] = None
+	not_animated: Optional["boolean"] = None
 
 
 class StoriesReplies(BaseModel):
@@ -6711,17 +6711,17 @@ class StoriesReplies(BaseModel):
 	count - Replies number.
 	new - New replies number.
 	"""
-	count: Optional[int] = None
-	new: Optional[int] = None
+	count: Optional["integer"] = None
+	new: Optional["integer"] = None
 
 
 class StoriesStatLine(BaseModel):
 	"""VK Object StoriesStatLine
 
 	"""
-	name: Optional[str] = None
-	counter: Optional[int] = None
-	is_unavailable: Optional[bool] = None
+	name: Optional["string"] = None
+	counter: Optional["integer"] = None
+	is_unavailable: Optional["boolean"] = None
 
 
 class StoriesStory(BaseModel):
@@ -6759,37 +6759,37 @@ class StoriesStory(BaseModel):
 	birthday_wish_user_id - 
 	can_use_in_narrative - 
 	"""
-	access_key: Optional[str] = None
-	can_comment: Optional["Baseboolint"] = None
-	can_reply: Optional["Baseboolint"] = None
-	can_see: Optional["Baseboolint"] = None
-	can_like: Optional[bool] = None
-	can_share: Optional["Baseboolint"] = None
-	can_hide: Optional["Baseboolint"] = None
-	date: Optional[int] = None
-	expires_at: Optional[int] = None
-	id: Optional[int] = None
-	is_deleted: Optional[bool] = None
-	is_expired: Optional[bool] = None
-	link: Optional["Storiesstorylink"] = None
-	owner_id: Optional[int] = None
-	parent_story: Optional["Storiesstory"] = None
-	parent_story_access_key: Optional[str] = None
-	parent_story_id: Optional[int] = None
-	parent_story_owner_id: Optional[int] = None
-	photo: Optional["Photosphoto"] = None
-	replies: Optional["Storiesreplies"] = None
-	seen: Optional["Baseboolint"] = None
-	type: Optional["Storiesstorytype"] = None
-	clickable_stickers: Optional["Storiesclickablestickers"] = None
-	video: Optional["Videovideo"] = None
-	views: Optional[int] = None
-	can_ask: Optional["Baseboolint"] = None
-	can_ask_anonymous: Optional["Baseboolint"] = None
-	narratives_count: Optional[int] = None
-	first_narrative_title: Optional[str] = None
-	birthday_wish_user_id: Optional[int] = None
-	can_use_in_narrative: Optional[bool] = None
+	access_key: Optional["string"] = None
+	can_comment: Optional["baseboolint"] = None
+	can_reply: Optional["baseboolint"] = None
+	can_see: Optional["baseboolint"] = None
+	can_like: Optional["boolean"] = None
+	can_share: Optional["baseboolint"] = None
+	can_hide: Optional["baseboolint"] = None
+	date: Optional["integer"] = None
+	expires_at: Optional["integer"] = None
+	id: Optional["integer"] = None
+	is_deleted: Optional["boolean"] = None
+	is_expired: Optional["boolean"] = None
+	link: Optional["storiesstorylink"] = None
+	owner_id: Optional["integer"] = None
+	parent_story: Optional["storiesstory"] = None
+	parent_story_access_key: Optional["string"] = None
+	parent_story_id: Optional["integer"] = None
+	parent_story_owner_id: Optional["integer"] = None
+	photo: Optional["photosphoto"] = None
+	replies: Optional["storiesreplies"] = None
+	seen: Optional["baseboolint"] = None
+	type: Optional["storiesstorytype"] = None
+	clickable_stickers: Optional["storiesclickablestickers"] = None
+	video: Optional["videovideo"] = None
+	views: Optional["integer"] = None
+	can_ask: Optional["baseboolint"] = None
+	can_ask_anonymous: Optional["baseboolint"] = None
+	narratives_count: Optional["integer"] = None
+	first_narrative_title: Optional["string"] = None
+	birthday_wish_user_id: Optional["integer"] = None
+	can_use_in_narrative: Optional["boolean"] = None
 
 
 class StoriesStoryLink(BaseModel):
@@ -6798,22 +6798,22 @@ class StoriesStoryLink(BaseModel):
 	text - Link text
 	url - Link URL
 	"""
-	text: Optional[str] = None
-	url: Optional[str] = None
+	text: Optional["string"] = None
+	url: Optional["string"] = None
 
 
 class StoriesStoryStats(BaseModel):
 	"""VK Object StoriesStoryStats
 
 	"""
-	answer: Optional["Storiesstorystatsstat"] = None
-	bans: Optional["Storiesstorystatsstat"] = None
-	open_link: Optional["Storiesstorystatsstat"] = None
-	replies: Optional["Storiesstorystatsstat"] = None
-	shares: Optional["Storiesstorystatsstat"] = None
-	subscribers: Optional["Storiesstorystatsstat"] = None
-	views: Optional["Storiesstorystatsstat"] = None
-	likes: Optional["Storiesstorystatsstat"] = None
+	answer: Optional["storiesstorystatsstat"] = None
+	bans: Optional["storiesstorystatsstat"] = None
+	open_link: Optional["storiesstorystatsstat"] = None
+	replies: Optional["storiesstorystatsstat"] = None
+	shares: Optional["storiesstorystatsstat"] = None
+	subscribers: Optional["storiesstorystatsstat"] = None
+	views: Optional["storiesstorystatsstat"] = None
+	likes: Optional["storiesstorystatsstat"] = None
 
 
 class StoriesStoryStatsStat(BaseModel):
@@ -6822,8 +6822,8 @@ class StoriesStoryStatsStat(BaseModel):
 	count - Stat value
 	state - 
 	"""
-	count: Optional[int] = None
-	state: Optional["Storiesstorystatsstate"] = None
+	count: Optional["integer"] = None
+	state: Optional["storiesstorystatsstate"] = None
 
 
 class StoriesStoryStatsState(enum.Enum):
@@ -6880,9 +6880,9 @@ class StoriesViewersItem(BaseModel):
 	user_id - user id
 	user - 
 	"""
-	is_liked: Optional[bool] = None
-	user_id: Optional[int] = None
-	user: Optional["Usersuserfull"] = None
+	is_liked: Optional["boolean"] = None
+	user_id: Optional["integer"] = None
+	user: Optional["usersuserfull"] = None
 
 
 class UsersCareer(BaseModel):
@@ -6898,24 +6898,24 @@ class UsersCareer(BaseModel):
 	position - Position
 	until - Till year
 	"""
-	city_id: Optional[int] = None
-	city_name: Optional[str] = None
-	company: Optional[str] = None
-	country_id: Optional[int] = None
-	from: Optional[int] = None
-	group_id: Optional[int] = None
-	id: Optional[int] = None
-	position: Optional[str] = None
-	until: Optional[int] = None
+	city_id: Optional["integer"] = None
+	city_name: Optional["string"] = None
+	company: Optional["string"] = None
+	country_id: Optional["integer"] = None
+	from: Optional["integer"] = None
+	group_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	position: Optional["string"] = None
+	until: Optional["integer"] = None
 
 
 class UsersExports(BaseModel):
 	"""VK Object UsersExports
 
 	"""
-	facebook: Optional[int] = None
-	livejournal: Optional[int] = None
-	twitter: Optional[int] = None
+	facebook: Optional["integer"] = None
+	livejournal: Optional["integer"] = None
+	twitter: Optional["integer"] = None
 
 
 class UsersFields(enum.Enum):
@@ -7019,8 +7019,8 @@ class UsersLastSeen(BaseModel):
 	platform - Type of the platform that used for the last authorization
 	time - Last visit date (in Unix time)
 	"""
-	platform: Optional[int] = None
-	time: Optional[int] = None
+	platform: Optional["integer"] = None
+	time: Optional["integer"] = None
 
 
 class UsersMilitary(BaseModel):
@@ -7033,12 +7033,12 @@ class UsersMilitary(BaseModel):
 	unit_id - Unit ID
 	until - Till year
 	"""
-	country_id: Optional[int] = None
-	from: Optional[int] = None
-	id: Optional[int] = None
-	unit: Optional[str] = None
-	unit_id: Optional[int] = None
-	until: Optional[int] = None
+	country_id: Optional["integer"] = None
+	from: Optional["integer"] = None
+	id: Optional["integer"] = None
+	unit: Optional["string"] = None
+	unit_id: Optional["integer"] = None
+	until: Optional["integer"] = None
 
 
 class UsersOccupation(BaseModel):
@@ -7048,9 +7048,9 @@ class UsersOccupation(BaseModel):
 	name - Name of occupation
 	type - Type of occupation
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	type: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	type: Optional["string"] = None
 
 
 class UsersOnlineInfo(BaseModel):
@@ -7063,12 +7063,12 @@ class UsersOnlineInfo(BaseModel):
 	is_mobile - Is user online from desktop app or mobile app
 	status - In case user online is not visible, it indicates approximate timeframe of user online
 	"""
-	visible: Optional[bool] = None
-	last_seen: Optional[int] = None
-	is_online: Optional[bool] = None
-	app_id: Optional[int] = None
-	is_mobile: Optional[bool] = None
-	status: Optional[str] = None
+	visible: Optional["boolean"] = None
+	last_seen: Optional["integer"] = None
+	is_online: Optional["boolean"] = None
+	app_id: Optional["integer"] = None
+	is_mobile: Optional["boolean"] = None
+	status: Optional["string"] = None
 
 
 class UsersPersonal(BaseModel):
@@ -7084,15 +7084,15 @@ class UsersPersonal(BaseModel):
 	religion_id - User's religion id
 	smoking - User's views on smoking
 	"""
-	alcohol: Optional[int] = None
-	inspired_by: Optional[str] = None
-	langs: Optional[str] = None
-	life_main: Optional[int] = None
-	people_main: Optional[int] = None
-	political: Optional[int] = None
-	religion: Optional[str] = None
-	religion_id: Optional[int] = None
-	smoking: Optional[int] = None
+	alcohol: Optional["integer"] = None
+	inspired_by: Optional["string"] = None
+	langs: Optional["string"] = None
+	life_main: Optional["integer"] = None
+	people_main: Optional["integer"] = None
+	political: Optional["integer"] = None
+	religion: Optional["string"] = None
+	religion_id: Optional["integer"] = None
+	smoking: Optional["integer"] = None
 
 
 class UsersRelative(BaseModel):
@@ -7103,10 +7103,10 @@ class UsersRelative(BaseModel):
 	name - Name of relative
 	type - Relative type
 	"""
-	birth_date: Optional[str] = None
-	id: Optional[int] = None
-	name: Optional[str] = None
-	type: Optional[str] = None
+	birth_date: Optional["string"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	type: Optional["string"] = None
 
 
 class UsersSchool(BaseModel):
@@ -7124,17 +7124,17 @@ class UsersSchool(BaseModel):
 	year_to - Year the user finished to study
 	speciality - 
 	"""
-	city: Optional[int] = None
-	class: Optional[str] = None
-	country: Optional[int] = None
-	id: Optional[str] = None
-	name: Optional[str] = None
-	type: Optional[int] = None
-	type_str: Optional[str] = None
-	year_from: Optional[int] = None
-	year_graduated: Optional[int] = None
-	year_to: Optional[int] = None
-	speciality: Optional[str] = None
+	city: Optional["integer"] = None
+	class: Optional["string"] = None
+	country: Optional["integer"] = None
+	id: Optional["string"] = None
+	name: Optional["string"] = None
+	type: Optional["integer"] = None
+	type_str: Optional["string"] = None
+	year_from: Optional["integer"] = None
+	year_graduated: Optional["integer"] = None
+	year_to: Optional["integer"] = None
+	speciality: Optional["string"] = None
 None
 
 class UsersUniversity(BaseModel):
@@ -7153,18 +7153,18 @@ class UsersUniversity(BaseModel):
 	name - University name
 	university_group_id - 
 	"""
-	chair: Optional[int] = None
-	chair_name: Optional[str] = None
-	city: Optional[int] = None
-	country: Optional[int] = None
-	education_form: Optional[str] = None
-	education_status: Optional[str] = None
-	faculty: Optional[int] = None
-	faculty_name: Optional[str] = None
-	graduation: Optional[int] = None
-	id: Optional[int] = None
-	name: Optional[str] = None
-	university_group_id: Optional[int] = None
+	chair: Optional["integer"] = None
+	chair_name: Optional["string"] = None
+	city: Optional["integer"] = None
+	country: Optional["integer"] = None
+	education_form: Optional["string"] = None
+	education_status: Optional["string"] = None
+	faculty: Optional["integer"] = None
+	faculty_name: Optional["string"] = None
+	graduation: Optional["integer"] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	university_group_id: Optional["integer"] = None
 
 
 class UsersUser(UsersUserMin):
@@ -7207,12 +7207,12 @@ class UsersUserConnections(BaseModel):
 	livejournal - User's Livejournal account
 	instagram - User's Instagram account
 	"""
-	skype: Optional[str] = None
-	facebook: Optional[str] = None
-	facebook_name: Optional[str] = None
-	twitter: Optional[str] = None
-	livejournal: Optional[str] = None
-	instagram: Optional[str] = None
+	skype: Optional["string"] = None
+	facebook: Optional["string"] = None
+	facebook_name: Optional["string"] = None
+	twitter: Optional["string"] = None
+	livejournal: Optional["string"] = None
+	instagram: Optional["string"] = None
 
 
 class UsersUserCounters(BaseModel):
@@ -7242,29 +7242,29 @@ class UsersUserCounters(BaseModel):
 	clips - 
 	clips_followers - 
 	"""
-	albums: Optional[int] = None
-	audios: Optional[int] = None
-	followers: Optional[int] = None
-	friends: Optional[int] = None
-	gifts: Optional[int] = None
-	groups: Optional[int] = None
-	notes: Optional[int] = None
-	online_friends: Optional[int] = None
-	pages: Optional[int] = None
-	photos: Optional[int] = None
-	subscriptions: Optional[int] = None
-	user_photos: Optional[int] = None
-	user_videos: Optional[int] = None
-	videos: Optional[int] = None
-	new_photo_tags: Optional[int] = None
-	new_recognition_tags: Optional[int] = None
-	mutual_friends: Optional[int] = None
-	posts: Optional[int] = None
-	articles: Optional[int] = None
-	wishes: Optional[int] = None
-	podcasts: Optional[int] = None
-	clips: Optional[int] = None
-	clips_followers: Optional[int] = None
+	albums: Optional["integer"] = None
+	audios: Optional["integer"] = None
+	followers: Optional["integer"] = None
+	friends: Optional["integer"] = None
+	gifts: Optional["integer"] = None
+	groups: Optional["integer"] = None
+	notes: Optional["integer"] = None
+	online_friends: Optional["integer"] = None
+	pages: Optional["integer"] = None
+	photos: Optional["integer"] = None
+	subscriptions: Optional["integer"] = None
+	user_photos: Optional["integer"] = None
+	user_videos: Optional["integer"] = None
+	videos: Optional["integer"] = None
+	new_photo_tags: Optional["integer"] = None
+	new_recognition_tags: Optional["integer"] = None
+	mutual_friends: Optional["integer"] = None
+	posts: Optional["integer"] = None
+	articles: Optional["integer"] = None
+	wishes: Optional["integer"] = None
+	podcasts: Optional["integer"] = None
+	clips: Optional["integer"] = None
+	clips_followers: Optional["integer"] = None
 
 
 class UsersUserFull(UsersUser):
@@ -7516,13 +7516,13 @@ class UsersUserMin(BaseModel):
 	can_access_closed - 
 	is_closed - 
 	"""
-	deactivated: Optional[str] = None
-	first_name: Optional[str] = None
-	hidden: Optional[int] = None
-	id: Optional[int] = None
-	last_name: Optional[str] = None
-	can_access_closed: Optional[bool] = None
-	is_closed: Optional[bool] = None
+	deactivated: Optional["string"] = None
+	first_name: Optional["string"] = None
+	hidden: Optional["integer"] = None
+	id: Optional["integer"] = None
+	last_name: Optional["string"] = None
+	can_access_closed: Optional["boolean"] = None
+	is_closed: Optional["boolean"] = None
 
 
 class UsersUserRelation(enum.IntEnum):
@@ -7566,28 +7566,28 @@ class UsersUserSettingsXtr(BaseModel):
 	interests - 
 	languages - 
 	"""
-	connections: Optional["Usersuserconnections"] = None
-	bdate: Optional[str] = None
-	bdate_visibility: Optional[int] = None
-	city: Optional["Basecity"] = None
-	country: Optional["Basecountry"] = None
-	first_name: Optional[str] = None
-	home_town: Optional[str] = None
-	last_name: Optional[str] = None
-	maiden_name: Optional[str] = None
-	name_request: Optional["Accountnamerequest"] = None
-	personal: Optional["Userspersonal"] = None
-	phone: Optional[str] = None
-	relation: Optional["Usersuserrelation"] = None
-	relation_partner: Optional["Usersusermin"] = None
-	relation_pending: Optional["Baseboolint"] = None
-	relation_requests: Optional["Usersusermin"] = None
-	screen_name: Optional[str] = None
-	sex: Optional["Basesex"] = None
-	status: Optional[str] = None
-	status_audio: Optional["Audioaudio"] = None
-	interests: Optional["Accountusersettingsinterests"] = None
-	languages: Optional[str] = None
+	connections: Optional["usersuserconnections"] = None
+	bdate: Optional["string"] = None
+	bdate_visibility: Optional["integer"] = None
+	city: Optional["basecity"] = None
+	country: Optional["basecountry"] = None
+	first_name: Optional["string"] = None
+	home_town: Optional["string"] = None
+	last_name: Optional["string"] = None
+	maiden_name: Optional["string"] = None
+	name_request: Optional["accountnamerequest"] = None
+	personal: Optional["userspersonal"] = None
+	phone: Optional["string"] = None
+	relation: Optional["usersuserrelation"] = None
+	relation_partner: Optional["usersusermin"] = None
+	relation_pending: Optional["baseboolint"] = None
+	relation_requests: Optional["usersusermin"] = None
+	screen_name: Optional["string"] = None
+	sex: Optional["basesex"] = None
+	status: Optional["string"] = None
+	status_audio: Optional["audioaudio"] = None
+	interests: Optional["accountusersettingsinterests"] = None
+	languages: Optional["string"] = None
 
 
 class UsersUserType(enum.Enum):
@@ -7616,8 +7616,8 @@ class UsersUsersArray(BaseModel):
 	count - Users number
 	items - 
 	"""
-	count: Optional[int] = None
-	items: Optional[int] = None
+	count: Optional["integer"] = None
+	items: Optional["integer"] = None
 
 
 class UtilsDomainResolved(BaseModel):
@@ -7627,9 +7627,9 @@ class UtilsDomainResolved(BaseModel):
 	group_id - Group ID
 	type - 
 	"""
-	object_id: Optional[int] = None
-	group_id: Optional[int] = None
-	type: Optional["Utilsdomainresolvedtype"] = None
+	object_id: Optional["integer"] = None
+	group_id: Optional["integer"] = None
+	type: Optional["utilsdomainresolvedtype"] = None
 
 
 class UtilsDomainResolvedType(enum.Enum):
@@ -7654,12 +7654,12 @@ class UtilsLastShortenedLink(BaseModel):
 	url - Full URL
 	views - Total views number
 	"""
-	access_key: Optional[str] = None
-	key: Optional[str] = None
-	short_url: Optional[str] = None
-	timestamp: Optional[int] = None
-	url: Optional[str] = None
-	views: Optional[int] = None
+	access_key: Optional["string"] = None
+	key: Optional["string"] = None
+	short_url: Optional["string"] = None
+	timestamp: Optional["integer"] = None
+	url: Optional["string"] = None
+	views: Optional["integer"] = None
 
 
 class UtilsLinkChecked(BaseModel):
@@ -7668,8 +7668,8 @@ class UtilsLinkChecked(BaseModel):
 	link - Link URL
 	status - 
 	"""
-	link: Optional[str] = None
-	status: Optional["Utilslinkcheckedstatus"] = None
+	link: Optional["string"] = None
+	status: Optional["utilslinkcheckedstatus"] = None
 
 
 class UtilsLinkCheckedStatus(enum.Enum):
@@ -7687,8 +7687,8 @@ class UtilsLinkStats(BaseModel):
 	key - Link key (characters after vk.cc/)
 	stats - 
 	"""
-	key: Optional[str] = None
-	stats: Optional["Utilsstats"] = None
+	key: Optional["string"] = None
+	stats: Optional["utilsstats"] = None
 
 
 class UtilsLinkStatsExtended(BaseModel):
@@ -7697,8 +7697,8 @@ class UtilsLinkStatsExtended(BaseModel):
 	key - Link key (characters after vk.cc/)
 	stats - 
 	"""
-	key: Optional[str] = None
-	stats: Optional["Utilsstatsextended"] = None
+	key: Optional["string"] = None
+	stats: Optional["utilsstatsextended"] = None
 
 
 class UtilsShortLink(BaseModel):
@@ -7709,10 +7709,10 @@ class UtilsShortLink(BaseModel):
 	short_url - Short link URL
 	url - Full URL
 	"""
-	access_key: Optional[str] = None
-	key: Optional[str] = None
-	short_url: Optional[str] = None
-	url: Optional[str] = None
+	access_key: Optional["string"] = None
+	key: Optional["string"] = None
+	short_url: Optional["string"] = None
+	url: Optional["string"] = None
 
 
 class UtilsStats(BaseModel):
@@ -7721,8 +7721,8 @@ class UtilsStats(BaseModel):
 	timestamp - Start time
 	views - Total views number
 	"""
-	timestamp: Optional[int] = None
-	views: Optional[int] = None
+	timestamp: Optional["integer"] = None
+	views: Optional["integer"] = None
 
 
 class UtilsStatsCity(BaseModel):
@@ -7731,8 +7731,8 @@ class UtilsStatsCity(BaseModel):
 	city_id - City ID
 	views - Views number
 	"""
-	city_id: Optional[int] = None
-	views: Optional[int] = None
+	city_id: Optional["integer"] = None
+	views: Optional["integer"] = None
 
 
 class UtilsStatsCountry(BaseModel):
@@ -7741,8 +7741,8 @@ class UtilsStatsCountry(BaseModel):
 	country_id - Country ID
 	views - Views number
 	"""
-	country_id: Optional[int] = None
-	views: Optional[int] = None
+	country_id: Optional["integer"] = None
+	views: Optional["integer"] = None
 
 
 class UtilsStatsExtended(BaseModel):
@@ -7754,11 +7754,11 @@ class UtilsStatsExtended(BaseModel):
 	timestamp - Start time
 	views - Total views number
 	"""
-	cities: Optional["Utilsstatscity"] = None
-	countries: Optional["Utilsstatscountry"] = None
-	sex_age: Optional["Utilsstatssexage"] = None
-	timestamp: Optional[int] = None
-	views: Optional[int] = None
+	cities: Optional["utilsstatscity"] = None
+	countries: Optional["utilsstatscountry"] = None
+	sex_age: Optional["utilsstatssexage"] = None
+	timestamp: Optional["integer"] = None
+	views: Optional["integer"] = None
 
 
 class UtilsStatsSexAge(BaseModel):
@@ -7768,17 +7768,17 @@ class UtilsStatsSexAge(BaseModel):
 	female -  Views by female users
 	male -  Views by male users
 	"""
-	age_range: Optional[str] = None
-	female: Optional[int] = None
-	male: Optional[int] = None
+	age_range: Optional["string"] = None
+	female: Optional["integer"] = None
+	male: Optional["integer"] = None
 
 
 class VideoLiveInfo(BaseModel):
 	"""VK Object VideoLiveInfo
 
 	"""
-	enabled: Optional["Baseboolint"] = None
-	is_notifications_blocked: Optional["Baseboolint"] = None
+	enabled: Optional["baseboolint"] = None
+	is_notifications_blocked: Optional["baseboolint"] = None
 
 
 class VideoLiveSettings(BaseModel):
@@ -7788,17 +7788,17 @@ class VideoLiveSettings(BaseModel):
 	is_endless - If live is endless or not
 	max_duration - Max possible time for rewind
 	"""
-	can_rewind: Optional["Baseboolint"] = None
-	is_endless: Optional["Baseboolint"] = None
-	max_duration: Optional[int] = None
+	can_rewind: Optional["baseboolint"] = None
+	is_endless: Optional["baseboolint"] = None
+	max_duration: Optional["integer"] = None
 
 
 class VideoRestrictionButton(BaseModel):
 	"""VK Object VideoRestrictionButton
 
 	"""
-	action: Optional[str] = None
-	title: Optional[str] = None
+	action: Optional["string"] = None
+	title: Optional["string"] = None
 
 
 class VideoSaveResult(BaseModel):
@@ -7811,12 +7811,12 @@ class VideoSaveResult(BaseModel):
 	upload_url - URL for the video uploading
 	video_id - Video ID
 	"""
-	access_key: Optional[str] = None
-	description: Optional[str] = None
-	owner_id: Optional[int] = None
-	title: Optional[str] = None
-	upload_url: Optional[str] = None
-	video_id: Optional[int] = None
+	access_key: Optional["string"] = None
+	description: Optional["string"] = None
+	owner_id: Optional["integer"] = None
+	title: Optional["string"] = None
+	upload_url: Optional["string"] = None
+	video_id: Optional["integer"] = None
 
 
 class VideoVideo():
@@ -7931,14 +7931,14 @@ class VideoVideoAlbumFull(BaseModel):
 	title - Album title
 	updated_time - Date when the album has been updated last time in Unixtime
 	"""
-	count: Optional[int] = None
-	id: Optional[int] = None
-	image: Optional["Videovideoimage"] = None
-	image_blur: Optional["Basepropertyexists"] = None
-	is_system: Optional["Basepropertyexists"] = None
-	owner_id: Optional[int] = None
-	title: Optional[str] = None
-	updated_time: Optional[int] = None
+	count: Optional["integer"] = None
+	id: Optional["integer"] = None
+	image: Optional["videovideoimage"] = None
+	image_blur: Optional["basepropertyexists"] = None
+	is_system: Optional["basepropertyexists"] = None
+	owner_id: Optional["integer"] = None
+	title: Optional["string"] = None
+	updated_time: Optional["integer"] = None
 
 
 class VideoVideoFiles(BaseModel):
@@ -7952,13 +7952,13 @@ class VideoVideoFiles(BaseModel):
 	mp4_1080 - URL of the mpeg4 file with 1080p quality
 	flv_320 - URL of the flv file with 320p quality
 	"""
-	external: Optional[str] = None
-	mp4_240: Optional[str] = None
-	mp4_360: Optional[str] = None
-	mp4_480: Optional[str] = None
-	mp4_720: Optional[str] = None
-	mp4_1080: Optional[str] = None
-	flv_320: Optional[str] = None
+	external: Optional["string"] = None
+	mp4_240: Optional["string"] = None
+	mp4_360: Optional["string"] = None
+	mp4_480: Optional["string"] = None
+	mp4_720: Optional["string"] = None
+	mp4_1080: Optional["string"] = None
+	flv_320: Optional["string"] = None
 
 
 class VideoVideoFull(VideoVideo):
@@ -7986,10 +7986,10 @@ class WallAppPost(BaseModel):
 	photo_130 - URL of the preview image with 130 px in width
 	photo_604 - URL of the preview image with 604 px in width
 	"""
-	id: Optional[int] = None
-	name: Optional[str] = None
-	photo_130: Optional[str] = None
-	photo_604: Optional[str] = None
+	id: Optional["integer"] = None
+	name: Optional["string"] = None
+	photo_130: Optional["string"] = None
+	photo_604: Optional["string"] = None
 
 
 class WallAttachedNote(BaseModel):
@@ -8003,13 +8003,13 @@ class WallAttachedNote(BaseModel):
 	title - Note title
 	view_url - URL of the page with note preview
 	"""
-	comments: Optional[int] = None
-	date: Optional[int] = None
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	read_comments: Optional[int] = None
-	title: Optional[str] = None
-	view_url: Optional[str] = None
+	comments: Optional["integer"] = None
+	date: Optional["integer"] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	read_comments: Optional["integer"] = None
+	title: Optional["string"] = None
+	view_url: Optional["string"] = None
 
 
 class WallCarouselBase(BaseModel):
@@ -8017,24 +8017,24 @@ class WallCarouselBase(BaseModel):
 
 	carousel_offset - Index of current carousel element
 	"""
-	carousel_offset: Optional[int] = None
+	carousel_offset: Optional["integer"] = None
 
 
 class WallCommentAttachment(BaseModel):
 	"""VK Object WallCommentAttachment
 
 	"""
-	audio: Optional["Audioaudio"] = None
-	doc: Optional["Docsdoc"] = None
-	link: Optional["Baselink"] = None
-	market: Optional["Marketmarketitem"] = None
-	market_market_album: Optional["Marketmarketalbum"] = None
-	note: Optional["Wallattachednote"] = None
-	page: Optional["Pageswikipagefull"] = None
-	photo: Optional["Photosphoto"] = None
-	sticker: Optional["Basesticker"] = None
-	type: Optional["Wallcommentattachmenttype"] = None
-	video: Optional["Videovideo"] = None
+	audio: Optional["audioaudio"] = None
+	doc: Optional["docsdoc"] = None
+	link: Optional["baselink"] = None
+	market: Optional["marketmarketitem"] = None
+	market_market_album: Optional["marketmarketalbum"] = None
+	note: Optional["wallattachednote"] = None
+	page: Optional["pageswikipagefull"] = None
+	photo: Optional["photosphoto"] = None
+	sticker: Optional["basesticker"] = None
+	type: Optional["wallcommentattachmenttype"] = None
+	video: Optional["videovideo"] = None
 
 
 class WallCommentAttachmentType(enum.Enum):
@@ -8061,10 +8061,10 @@ class WallGeo(BaseModel):
 	showmap - Information whether a map is showed
 	type - Place type
 	"""
-	coordinates: Optional[str] = None
-	place: Optional["Baseplace"] = None
-	showmap: Optional[int] = None
-	type: Optional[str] = None
+	coordinates: Optional["string"] = None
+	place: Optional["baseplace"] = None
+	showmap: Optional["integer"] = None
+	type: Optional["string"] = None
 
 
 class WallGraffiti(BaseModel):
@@ -8075,20 +8075,20 @@ class WallGraffiti(BaseModel):
 	photo_200 - URL of the preview image with 200 px in width
 	photo_586 - URL of the preview image with 586 px in width
 	"""
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	photo_200: Optional[str] = None
-	photo_586: Optional[str] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	photo_200: Optional["string"] = None
+	photo_586: Optional["string"] = None
 
 
 class WallPostCopyright(BaseModel):
 	"""VK Object WallPostCopyright
 
 	"""
-	id: Optional[int] = None
-	link: Optional[str] = None
-	name: Optional[str] = None
-	type: Optional[str] = None
+	id: Optional["integer"] = None
+	link: Optional["string"] = None
+	name: Optional["string"] = None
+	type: Optional["string"] = None
 
 
 class WallPostSource(BaseModel):
@@ -8099,10 +8099,10 @@ class WallPostSource(BaseModel):
 	type - 
 	url - URL to an external site used to publish the post
 	"""
-	data: Optional[str] = None
-	platform: Optional[str] = None
-	type: Optional["Wallpostsourcetype"] = None
-	url: Optional[str] = None
+	data: Optional["string"] = None
+	platform: Optional["string"] = None
+	type: Optional["wallpostsourcetype"] = None
+	url: Optional["string"] = None
 
 
 class WallPostSourceType(enum.Enum):
@@ -8136,10 +8136,10 @@ class WallPostedPhoto(BaseModel):
 	photo_130 - URL of the preview image with 130 px in width
 	photo_604 - URL of the preview image with 604 px in width
 	"""
-	id: Optional[int] = None
-	owner_id: Optional[int] = None
-	photo_130: Optional[str] = None
-	photo_604: Optional[str] = None
+	id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	photo_130: Optional["string"] = None
+	photo_604: Optional["string"] = None
 
 
 class WallViews(BaseModel):
@@ -8147,7 +8147,7 @@ class WallViews(BaseModel):
 
 	count - Count
 	"""
-	count: Optional[int] = None
+	count: Optional["integer"] = None
 
 
 class WallWallComment(BaseModel):
@@ -8169,21 +8169,21 @@ class WallWallComment(BaseModel):
 	parents_stack - 
 	deleted - 
 	"""
-	attachments: Optional["Wallcommentattachment"] = None
-	date: Optional[int] = None
-	donut: Optional["Wallwallcommentdonut"] = None
-	from_id: Optional[int] = None
-	id: Optional[int] = None
-	likes: Optional["Baselikesinfo"] = None
-	real_offset: Optional[int] = None
-	reply_to_comment: Optional[int] = None
-	reply_to_user: Optional[int] = None
-	text: Optional[str] = None
-	thread: Optional["Commentthread"] = None
-	post_id: Optional[int] = None
-	owner_id: Optional[int] = None
-	parents_stack: Optional[int] = None
-	deleted: Optional[bool] = None
+	attachments: Optional["wallcommentattachment"] = None
+	date: Optional["integer"] = None
+	donut: Optional["wallwallcommentdonut"] = None
+	from_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	likes: Optional["baselikesinfo"] = None
+	real_offset: Optional["integer"] = None
+	reply_to_comment: Optional["integer"] = None
+	reply_to_user: Optional["integer"] = None
+	text: Optional["string"] = None
+	thread: Optional["commentthread"] = None
+	post_id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	parents_stack: Optional["integer"] = None
+	deleted: Optional["boolean"] = None
 
 
 class WallWallCommentDonut(BaseModel):
@@ -8192,15 +8192,15 @@ class WallWallCommentDonut(BaseModel):
 	is_don - Means commentator is donator
 	placeholder - 
 	"""
-	is_don: Optional[bool] = None
-	placeholder: Optional["Wallwallcommentdonutplaceholder"] = None
+	is_don: Optional["boolean"] = None
+	placeholder: Optional["wallwallcommentdonutplaceholder"] = None
 
 
 class WallWallCommentDonutPlaceholder(BaseModel):
 	"""VK Object WallWallCommentDonutPlaceholder
 
 	"""
-	text: Optional[str] = None
+	text: Optional["string"] = None
 
 
 class WallWallpost(BaseModel):
@@ -8228,27 +8228,27 @@ class WallWallpost(BaseModel):
 	text - Post text
 	views - Count of views
 	"""
-	access_key: Optional[str] = None
-	attachments: Optional["Wallwallpostattachment"] = None
-	copyright: Optional["Wallpostcopyright"] = None
-	date: Optional[int] = None
-	edited: Optional[int] = None
-	from_id: Optional[int] = None
-	geo: Optional["Wallgeo"] = None
-	id: Optional[int] = None
-	is_archived: Optional[bool] = None
-	is_favorite: Optional[bool] = None
-	likes: Optional["Baselikesinfo"] = None
-	owner_id: Optional[int] = None
-	poster: Optional["Object"] = None
-	post_id: Optional[int] = None
-	parents_stack: Optional[int] = None
-	post_source: Optional["Wallpostsource"] = None
-	post_type: Optional["Wallposttype"] = None
-	reposts: Optional["Baserepostsinfo"] = None
-	signer_id: Optional[int] = None
-	text: Optional[str] = None
-	views: Optional["Wallviews"] = None
+	access_key: Optional["string"] = None
+	attachments: Optional["wallwallpostattachment"] = None
+	copyright: Optional["wallpostcopyright"] = None
+	date: Optional["integer"] = None
+	edited: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	geo: Optional["wallgeo"] = None
+	id: Optional["integer"] = None
+	is_archived: Optional["boolean"] = None
+	is_favorite: Optional["boolean"] = None
+	likes: Optional["baselikesinfo"] = None
+	owner_id: Optional["integer"] = None
+	poster: Optional["object"] = None
+	post_id: Optional["integer"] = None
+	parents_stack: Optional["integer"] = None
+	post_source: Optional["wallpostsource"] = None
+	post_type: Optional["wallposttype"] = None
+	reposts: Optional["baserepostsinfo"] = None
+	signer_id: Optional["integer"] = None
+	text: Optional["string"] = None
+	views: Optional["wallviews"] = None
 
 
 class WallWallpostAttachment(BaseModel):
@@ -8274,25 +8274,25 @@ class WallWallpostAttachment(BaseModel):
 	type - 
 	video - 
 	"""
-	access_key: Optional[str] = None
-	album: Optional["Photosphotoalbum"] = None
-	app: Optional["Wallapppost"] = None
-	audio: Optional["Audioaudio"] = None
-	doc: Optional["Docsdoc"] = None
-	event: Optional["Eventseventattach"] = None
-	group: Optional["Groupsgroupattach"] = None
-	graffiti: Optional["Wallgraffiti"] = None
-	link: Optional["Baselink"] = None
-	market: Optional["Marketmarketitem"] = None
-	market_album: Optional["Marketmarketalbum"] = None
-	note: Optional["Wallattachednote"] = None
-	page: Optional["Pageswikipagefull"] = None
-	photo: Optional["Photosphoto"] = None
-	photos_list: Optional[str] = None
-	poll: Optional["Pollspoll"] = None
-	posted_photo: Optional["Wallpostedphoto"] = None
-	type: Optional["Wallwallpostattachmenttype"] = None
-	video: Optional["Videovideo"] = None
+	access_key: Optional["string"] = None
+	album: Optional["photosphotoalbum"] = None
+	app: Optional["wallapppost"] = None
+	audio: Optional["audioaudio"] = None
+	doc: Optional["docsdoc"] = None
+	event: Optional["eventseventattach"] = None
+	group: Optional["groupsgroupattach"] = None
+	graffiti: Optional["wallgraffiti"] = None
+	link: Optional["baselink"] = None
+	market: Optional["marketmarketitem"] = None
+	market_album: Optional["marketmarketalbum"] = None
+	note: Optional["wallattachednote"] = None
+	page: Optional["pageswikipagefull"] = None
+	photo: Optional["photosphoto"] = None
+	photos_list: Optional["string"] = None
+	poll: Optional["pollspoll"] = None
+	posted_photo: Optional["wallpostedphoto"] = None
+	type: Optional["wallwallpostattachmenttype"] = None
+	video: Optional["videovideo"] = None
 
 
 class WallWallpostAttachmentType(enum.Enum):
@@ -8321,14 +8321,14 @@ class WallWallpostCommentsDonut(BaseModel):
 	"""VK Object WallWallpostCommentsDonut
 
 	"""
-	placeholder: Optional["Wallwallpostcommentsdonutplaceholder"] = None
+	placeholder: Optional["wallwallpostcommentsdonutplaceholder"] = None
 
 
 class WallWallpostCommentsDonutPlaceholder(BaseModel):
 	"""VK Object WallWallpostCommentsDonutPlaceholder
 
 	"""
-	text: Optional[str] = None
+	text: Optional["string"] = None
 
 
 class WallWallpostDonut(BaseModel):
@@ -8340,18 +8340,18 @@ class WallWallpostDonut(BaseModel):
 	can_publish_free_copy - Says whether group admin can post free copy of this donut post
 	edit_mode - Says what user can edit in post about donut properties
 	"""
-	is_donut: Optional[bool] = None
-	paid_duration: Optional[int] = None
-	placeholder: Optional["Wallwallpostdonutplaceholder"] = None
-	can_publish_free_copy: Optional[bool] = None
-	edit_mode: Optional[str] = None
+	is_donut: Optional["boolean"] = None
+	paid_duration: Optional["integer"] = None
+	placeholder: Optional["wallwallpostdonutplaceholder"] = None
+	can_publish_free_copy: Optional["boolean"] = None
+	edit_mode: Optional["string"] = None
 
 
 class WallWallpostDonutPlaceholder(BaseModel):
 	"""VK Object WallWallpostDonutPlaceholder
 
 	"""
-	text: Optional[str] = None
+	text: Optional["string"] = None
 
 
 class WallWallpostFull(WallCarouselBase,
@@ -8402,23 +8402,23 @@ class WallWallpostToId(BaseModel):
 	text - Post text
 	to_id - Wall owner's ID
 	"""
-	attachments: Optional["Wallwallpostattachment"] = None
-	comments: Optional["Basecommentsinfo"] = None
-	copy_owner_id: Optional[int] = None
-	copy_post_id: Optional[int] = None
-	date: Optional[int] = None
-	from_id: Optional[int] = None
-	geo: Optional["Wallgeo"] = None
-	id: Optional[int] = None
-	is_favorite: Optional[bool] = None
-	likes: Optional["Baselikesinfo"] = None
-	post_id: Optional[int] = None
-	post_source: Optional["Wallpostsource"] = None
-	post_type: Optional["Wallposttype"] = None
-	reposts: Optional["Baserepostsinfo"] = None
-	signer_id: Optional[int] = None
-	text: Optional[str] = None
-	to_id: Optional[int] = None
+	attachments: Optional["wallwallpostattachment"] = None
+	comments: Optional["basecommentsinfo"] = None
+	copy_owner_id: Optional["integer"] = None
+	copy_post_id: Optional["integer"] = None
+	date: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	geo: Optional["wallgeo"] = None
+	id: Optional["integer"] = None
+	is_favorite: Optional["boolean"] = None
+	likes: Optional["baselikesinfo"] = None
+	post_id: Optional["integer"] = None
+	post_source: Optional["wallpostsource"] = None
+	post_type: Optional["wallposttype"] = None
+	reposts: Optional["baserepostsinfo"] = None
+	signer_id: Optional["integer"] = None
+	text: Optional["string"] = None
+	to_id: Optional["integer"] = None
 
 
 class WidgetsCommentMedia(BaseModel):
@@ -8429,10 +8429,10 @@ class WidgetsCommentMedia(BaseModel):
 	thumb_src - URL of the preview image (type=photo only)
 	type - 
 	"""
-	item_id: Optional[int] = None
-	owner_id: Optional[int] = None
-	thumb_src: Optional[str] = None
-	type: Optional["Widgetscommentmediatype"] = None
+	item_id: Optional["integer"] = None
+	owner_id: Optional["integer"] = None
+	thumb_src: Optional["string"] = None
+	type: Optional["widgetscommentmediatype"] = None
 
 
 class WidgetsCommentMediaType(enum.Enum):
@@ -8451,9 +8451,9 @@ class WidgetsCommentReplies(BaseModel):
 	count - Comments number
 	replies - 
 	"""
-	can_post: Optional["Baseboolint"] = None
-	count: Optional[int] = None
-	replies: Optional["Widgetscommentrepliesitem"] = None
+	can_post: Optional["baseboolint"] = None
+	count: Optional["integer"] = None
+	replies: Optional["widgetscommentrepliesitem"] = None
 
 
 class WidgetsCommentRepliesItem(BaseModel):
@@ -8466,12 +8466,12 @@ class WidgetsCommentRepliesItem(BaseModel):
 	uid - User ID
 	user - 
 	"""
-	cid: Optional[int] = None
-	date: Optional[int] = None
-	likes: Optional["Widgetswidgetlikes"] = None
-	text: Optional[str] = None
-	uid: Optional[int] = None
-	user: Optional["Usersuserfull"] = None
+	cid: Optional["integer"] = None
+	date: Optional["integer"] = None
+	likes: Optional["widgetswidgetlikes"] = None
+	text: Optional["string"] = None
+	uid: Optional["integer"] = None
+	user: Optional["usersuserfull"] = None
 
 
 class WidgetsWidgetComment(BaseModel):
@@ -8492,20 +8492,20 @@ class WidgetsWidgetComment(BaseModel):
 	to_id - Wall owner
 	user - 
 	"""
-	attachments: Optional["Wallcommentattachment"] = None
-	can_delete: Optional["Baseboolint"] = None
-	comments: Optional["Widgetscommentreplies"] = None
-	date: Optional[int] = None
-	from_id: Optional[int] = None
-	id: Optional[int] = None
-	likes: Optional["Baselikesinfo"] = None
-	media: Optional["Widgetscommentmedia"] = None
-	post_source: Optional["Wallpostsource"] = None
-	post_type: Optional[int] = None
-	reposts: Optional["Baserepostsinfo"] = None
-	text: Optional[str] = None
-	to_id: Optional[int] = None
-	user: Optional["Usersuserfull"] = None
+	attachments: Optional["wallcommentattachment"] = None
+	can_delete: Optional["baseboolint"] = None
+	comments: Optional["widgetscommentreplies"] = None
+	date: Optional["integer"] = None
+	from_id: Optional["integer"] = None
+	id: Optional["integer"] = None
+	likes: Optional["baselikesinfo"] = None
+	media: Optional["widgetscommentmedia"] = None
+	post_source: Optional["wallpostsource"] = None
+	post_type: Optional["integer"] = None
+	reposts: Optional["baserepostsinfo"] = None
+	text: Optional["string"] = None
+	to_id: Optional["integer"] = None
+	user: Optional["usersuserfull"] = None
 
 
 class WidgetsWidgetLikes(BaseModel):
@@ -8513,7 +8513,7 @@ class WidgetsWidgetLikes(BaseModel):
 
 	count - Likes number
 	"""
-	count: Optional[int] = None
+	count: Optional["integer"] = None
 
 
 class WidgetsWidgetPage(BaseModel):
@@ -8529,15 +8529,15 @@ class WidgetsWidgetPage(BaseModel):
 	title - Page title
 	url - Page absolute URL
 	"""
-	comments: Optional["Baseobjectcount"] = None
-	date: Optional[int] = None
-	description: Optional[str] = None
-	id: Optional[int] = None
-	likes: Optional["Baseobjectcount"] = None
-	page_id: Optional[str] = None
-	photo: Optional[str] = None
-	title: Optional[str] = None
-	url: Optional[str] = None
+	comments: Optional["baseobjectcount"] = None
+	date: Optional["integer"] = None
+	description: Optional["string"] = None
+	id: Optional["integer"] = None
+	likes: Optional["baseobjectcount"] = None
+	page_id: Optional["string"] = None
+	photo: Optional["string"] = None
+	title: Optional["string"] = None
+	url: Optional["string"] = None
 
 AccountAccountCounters.update_forward_refs()
 AccountInfo.update_forward_refs()
@@ -8609,8 +8609,8 @@ AdswebGetadunitsResponseAdUnitsAdUnit.update_forward_refs()
 AdswebGetfraudhistoryResponseEntriesEntry.update_forward_refs()
 AdswebGetsitesResponseSitesSite.update_forward_refs()
 AdswebGetstatisticsResponseItemsItem.update_forward_refs()
-AppwidgetsPhoto.update_forward_refs()
-AppwidgetsPhotos.update_forward_refs()
+AppWidgetsPhoto.update_forward_refs()
+AppWidgetsPhotos.update_forward_refs()
 AppsApp.update_forward_refs()
 AppsAppLeaderboardType.update_forward_refs()
 AppsAppMin.update_forward_refs()
@@ -8942,7 +8942,7 @@ PollsPoll.update_forward_refs()
 PollsPollAnonymous.update_forward_refs()
 PollsVoters.update_forward_refs()
 PollsVotersUsers.update_forward_refs()
-PrettycardsPrettycard.update_forward_refs()
+PrettyCardsPrettycard.update_forward_refs()
 SearchHint.update_forward_refs()
 SearchHintSection.update_forward_refs()
 SearchHintType.update_forward_refs()

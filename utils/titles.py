@@ -2,11 +2,11 @@ import abc
 
 
 class AbstractTitle(abc.ABC):
-    def __init__(self, params={}):
+    def __init__(self, **params):
         self.params = params
 
     @abc.abstractmethod
-    def __str__(self):
+    def __repr__(self):
         pass
 
 
