@@ -5242,7 +5242,13 @@ class NewsfeedListFull(NewsfeedList):
 	"""
 	no_reposts = None
 	source_ids = None
-None
+
+
+class NewsfeedNewsfeedItem(BaseModel):
+	"""VK Object NewsfeedNewsfeedItem
+
+	"""
+
 
 class NewsfeedNewsfeedItemType(enum.Enum):
 	"""VK Object NewsfeedNewsfeedItemType
@@ -5772,7 +5778,13 @@ class PhotosPhotoAlbumFull(BaseModel):
 	title: Optional["string"] = None
 	updated: Optional["integer"] = None
 	upload_by_admins_only: Optional["baseboolint"] = None
-None
+
+
+class PhotosPhotoFalseable(BaseModel):
+	"""VK Object PhotosPhotoFalseable
+
+	"""
+
 
 class PhotosPhotoFull(BaseModel):
 	"""VK Object PhotosPhotoFull
@@ -7134,7 +7146,13 @@ class UsersSchool(BaseModel):
 	year_graduated: Optional["integer"] = None
 	year_to: Optional["integer"] = None
 	speciality: Optional["string"] = None
-None
+
+
+class UsersSubscriptionsItem(BaseModel):
+	"""VK Object UsersSubscriptionsItem
+
+	"""
+
 
 class UsersUniversity(BaseModel):
 	"""VK Object UsersUniversity
