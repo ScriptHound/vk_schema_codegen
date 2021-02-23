@@ -29,17 +29,17 @@ AddResponseModel = int
 CreateCommentResponseModel = int
 
 
-GetByIdResponseModel = Optional[Notesnote]
+GetByIdResponseModel = Optional[NotesNote]
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["NotesNoteComment"]] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["NotesNote"]] = None
 
 AddResponse.update_forward_refs()
 CreateCommentResponse.update_forward_refs()

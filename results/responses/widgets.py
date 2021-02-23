@@ -12,13 +12,13 @@ class GetPagesResponse(BaseResponse):
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	posts: Optional["array"] = None
+	count: Optional[int] = None
+	posts: Optional[List["WidgetsWidgetComment"]] = None
 
 
 class GetPagesResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	pages: Optional["array"] = None
+	count: Optional[int] = None
+	pages: Optional[List["WidgetsWidgetPage"]] = None
 
 GetCommentsResponse.update_forward_refs()
 GetPagesResponse.update_forward_refs()

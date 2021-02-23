@@ -18,7 +18,6 @@ METHOD_PATTERN = \
         return model(**response).response"""
 
 
-
 class ObjectModel:
     def __init__(self, method_name: str = None, method: dict = None, **params):
         self.method = method
@@ -48,7 +47,6 @@ class Annotation(ObjectModel):
         if param_type is False:
             return f"Optional[{convert_to_python_type(param_annotate)}] = None"
         return convert_to_python_type(param_annotate)
-
 
 
 class ConvertToArgs(ObjectModel):

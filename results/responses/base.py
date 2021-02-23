@@ -15,10 +15,10 @@ class OkResponse(BaseResponse):
 	response: Optional["OkResponseModel"] = None
 
 
-BoolResponseModel = Optional[Baseboolint]
+BoolResponseModel = Optional[BaseBoolInt]
 
 
-GetUploadServerResponseModel = Optional[Baseuploadserver]
+GetUploadServerResponseModel = Optional[BaseUploadServer]
 
 
 OkResponseModel = int

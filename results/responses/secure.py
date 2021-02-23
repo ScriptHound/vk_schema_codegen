@@ -31,7 +31,7 @@ class SendNotificationResponse(BaseResponse):
 	response: Optional["SendNotificationResponseModel"] = None
 
 
-CheckTokenResponseModel = Optional[Securetokenchecked]
+CheckTokenResponseModel = Optional[SecureTokenChecked]
 
 
 GetAppBalanceResponseModel = int
@@ -46,10 +46,10 @@ GetTransactionsHistoryResponseModel = List[SecureTransaction]
 GetUserLevelResponseModel = List[SecureLevel]
 
 
-GiveEventStickerResponseModel = List[Object]
+GiveEventStickerResponseModel = List[: Optional[List["object"]]]
 
 
-SendNotificationResponseModel = List[int]
+SendNotificationResponseModel = List[: Optional[List[int]]]
 
 CheckTokenResponse.update_forward_refs()
 GetAppBalanceResponse.update_forward_refs()

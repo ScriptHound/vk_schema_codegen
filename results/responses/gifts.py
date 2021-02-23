@@ -8,7 +8,7 @@ class GetResponse(BaseResponse):
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["GiftsGift"]] = None
 
 GetResponse.update_forward_refs()

@@ -44,48 +44,48 @@ class SendRequestResponse(BaseResponse):
 
 
 class GetCatalogResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["AppsApp"]] = None
+	profiles: Optional[List["UsersUserMin"]] = None
 
 
 class GetFriendsListResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["UsersUserFull"]] = None
 
 
 class GetLeaderboardExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["AppsLeaderboard"]] = None
+	profiles: Optional[List["UsersUserMin"]] = None
 
 
 class GetLeaderboardResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["AppsLeaderboard"]] = None
 
 
 class GetMiniAppPoliciesResponseModel(BaseResponse):
-	privacy_policy: Optional["string"] = None
-	terms: Optional["string"] = None
+	privacy_policy: Optional[str] = None
+	terms: Optional[str] = None
 
 
 class GetScopesResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["AppsScope"]] = None
 
 
 GetScoreResponseModel = int
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["AppsApp"]] = None
 
 
 class ImageUploadResponseModel(BaseResponse):
-	hash: Optional["string"] = None
-	image: Optional["string"] = None
+	hash: Optional[str] = None
+	image: Optional[str] = None
 
 
 SendRequestResponseModel = int

@@ -8,8 +8,8 @@ class GetHintsResponse(BaseResponse):
 
 
 class GetHintsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	suggested_queries: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["SearchHint"]] = None
+	suggested_queries: Optional[List[str]] = None
 
 GetHintsResponse.update_forward_refs()

@@ -39,35 +39,35 @@ AddResponseModel = int
 
 
 class DocUploadResponseModel(BaseResponse):
-	file: Optional["string"] = None
+	file: Optional[str] = None
 
 
 GetByIdResponseModel = List[DocsDoc]
 
 
 class GetTypesResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["DocsDocTypes"]] = None
 
 
-GetUploadServerModel = Optional[Baseuploadserver]
+GetUploadServerModel = Optional[BaseUploadServer]
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["DocsDoc"]] = None
 
 
 class SaveResponseModel(BaseResponse):
-	type: Optional["docsdocattachmenttype"] = None
-	audio_message: Optional["messagesaudiomessage"] = None
-	doc: Optional["docsdoc"] = None
-	graffiti: Optional["messagesgraffiti"] = None
+	type: Optional["DocsDocAttachmentType"] = None
+	audio_message: Optional["MessagesAudioMessage"] = None
+	doc: Optional["DocsDoc"] = None
+	graffiti: Optional["MessagesGraffiti"] = None
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["DocsDoc"]] = None
 
 AddResponse.update_forward_refs()
 DocUploadResponse.update_forward_refs()

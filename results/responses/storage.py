@@ -11,7 +11,7 @@ class GetResponse(BaseResponse):
 	response: Optional["GetResponseModel"] = None
 
 
-GetKeysResponseModel = List[str]
+GetKeysResponseModel = List[: Optional[List[str]]]
 
 
 GetResponseModel = List[StorageValue]

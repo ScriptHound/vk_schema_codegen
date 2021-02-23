@@ -24,26 +24,26 @@ class IsLikedResponse(BaseResponse):
 
 
 class AddResponseModel(BaseResponse):
-	likes: Optional["integer"] = None
+	likes: Optional[int] = None
 
 
 class DeleteResponseModel(BaseResponse):
-	likes: Optional["integer"] = None
+	likes: Optional[int] = None
 
 
 class GetListExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["UsersUserMin"]] = None
 
 
 class GetListResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List[int]] = None
 
 
 class IsLikedResponseModel(BaseResponse):
-	liked: Optional["baseboolint"] = None
-	copied: Optional["baseboolint"] = None
+	liked: Optional["BaseBoolInt"] = None
+	copied: Optional["BaseBoolInt"] = None
 
 AddResponse.update_forward_refs()
 DeleteResponse.update_forward_refs()

@@ -56,79 +56,79 @@ class SearchResponse(BaseResponse):
 
 
 class GetBannedExtendedResponseModel(BaseResponse):
-	groups: Optional["array"] = None
-	profiles: Optional["array"] = None
+	groups: Optional[List["UsersUserFull"]] = None
+	profiles: Optional[List["GroupsGroupFull"]] = None
 
 
 class GetBannedResponseModel(BaseResponse):
-	groups: Optional["array"] = None
-	members: Optional["array"] = None
+	groups: Optional[List[int]] = None
+	members: Optional[List[int]] = None
 
 
 class GetCommentsResponseModel(BaseResponse):
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
-	next_from: Optional["string"] = None
+	items: Optional[List["NewsfeedNewsfeedItem"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
+	next_from: Optional[str] = None
 
 
 class GetListsExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["NewsfeedListFull"]] = None
 
 
 class GetListsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["NewsfeedList"]] = None
 
 
 class GetMentionsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["WallWallpostToId"]] = None
 
 
 class GetRecommendedResponseModel(BaseResponse):
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
-	next_from: Optional["string"] = None
+	items: Optional[List["NewsfeedNewsfeedItem"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
+	next_from: Optional[str] = None
 
 
 class GetSuggestedSourcesResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["UsersSubscriptionsItem"]] = None
 
 
 class GetResponseModel(BaseResponse):
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
-	next_from: Optional["string"] = None
+	items: Optional[List["NewsfeedNewsfeedItem"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
+	next_from: Optional[str] = None
 
 
 class IgnoreItemResponseModel(BaseResponse):
-	status: Optional["boolean"] = None
+	status: Optional[bool] = None
 
 
 SaveListResponseModel = int
 
 
 class SearchExtendedResponseModel(BaseResponse):
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
-	suggested_queries: Optional["array"] = None
-	next_from: Optional["string"] = None
-	count: Optional["integer"] = None
-	total_count: Optional["integer"] = None
+	items: Optional[List["WallWallpostFull"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
+	suggested_queries: Optional[List[str]] = None
+	next_from: Optional[str] = None
+	count: Optional[int] = None
+	total_count: Optional[int] = None
 
 
 class SearchResponseModel(BaseResponse):
-	items: Optional["array"] = None
-	suggested_queries: Optional["array"] = None
-	next_from: Optional["string"] = None
-	count: Optional["integer"] = None
-	total_count: Optional["integer"] = None
+	items: Optional[List["WallWallpostFull"]] = None
+	suggested_queries: Optional[List[str]] = None
+	next_from: Optional[str] = None
+	count: Optional[int] = None
+	total_count: Optional[int] = None
 
 GetBannedExtendedResponse.update_forward_refs()
 GetBannedResponse.update_forward_refs()

@@ -159,40 +159,40 @@ CreateChatResponseModel = int
 
 
 class DeleteChatPhotoResponseModel(BaseResponse):
-	message_id: Optional["integer"] = None
-	chat: Optional["messageschat"] = None
+	message_id: Optional[int] = None
+	chat: Optional["MessagesChat"] = None
 
 
 class DeleteConversationResponseModel(BaseResponse):
-	last_deleted_id: Optional["integer"] = None
+	last_deleted_id: Optional[int] = None
 
 
 DeleteResponseModel = typing.Dict[str, int]
 
 
-EditResponseModel = Optional[Baseboolint]
+EditResponseModel = Optional[BaseBoolInt]
 
 
 class GetByConversationMessageIdResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesMessage"]] = None
 
 
 class GetByIdExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesMessage"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
 
 
 class GetByIdResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesMessage"]] = None
 
 
 class GetChatPreviewResponseModel(BaseResponse):
-	preview: Optional["messageschatpreview"] = None
-	profiles: Optional["array"] = None
+	preview: Optional["MessagesChatPreview"] = None
+	profiles: Optional[List["UsersUserFull"]] = None
 
 
 GetChatChatIdsFieldsResponseModel = List[MessagesChatFull]
@@ -201,149 +201,149 @@ GetChatChatIdsFieldsResponseModel = List[MessagesChatFull]
 GetChatChatIdsResponseModel = List[MessagesChat]
 
 
-GetChatFieldsResponseModel = Optional[Messageschatfull]
+GetChatFieldsResponseModel = Optional[MessagesChatFull]
 
 
-GetChatResponseModel = Optional[Messageschat]
+GetChatResponseModel = Optional[MessagesChat]
 
 
 class GetConversationMembersResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	chat_restrictions: Optional["messageschatrestrictions"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesConversationMember"]] = None
+	chat_restrictions: Optional["MessagesChatRestrictions"] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
 
 
 class GetConversationsByIdExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesConversation"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
 
 
 class GetConversationsByIdResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesConversation"]] = None
 
 
 class GetConversationsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	unread_count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
+	count: Optional[int] = None
+	unread_count: Optional[int] = None
+	items: Optional[List["MessagesConversationWithMessage"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
 
 
 class GetHistoryAttachmentsResponseModel(BaseResponse):
-	items: Optional["array"] = None
-	next_from: Optional["string"] = None
+	items: Optional[List["MessagesHistoryAttachment"]] = None
+	next_from: Optional[str] = None
 
 
 class GetHistoryExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
-	conversations: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesMessage"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
+	conversations: Optional[List["MessagesConversation"]] = None
 
 
 class GetHistoryResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesMessage"]] = None
 
 
 class GetImportantMessagesExtendedResponseModel(BaseResponse):
-	messages: Optional["messagesmessagesarray"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
-	conversations: Optional["array"] = None
+	messages: Optional["MessagesMessagesArray"] = None
+	profiles: Optional[List["UsersUser"]] = None
+	groups: Optional[List["GroupsGroup"]] = None
+	conversations: Optional[List["MessagesConversation"]] = None
 
 
 class GetImportantMessagesResponseModel(BaseResponse):
-	messages: Optional["messagesmessagesarray"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
-	conversations: Optional["array"] = None
+	messages: Optional["MessagesMessagesArray"] = None
+	profiles: Optional[List["UsersUser"]] = None
+	groups: Optional[List["GroupsGroup"]] = None
+	conversations: Optional[List["MessagesConversation"]] = None
 
 
 class GetIntentUsersResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List[int]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
 
 
 class GetInviteLinkResponseModel(BaseResponse):
-	link: Optional["string"] = None
+	link: Optional[str] = None
 
 
-GetLastActivityResponseModel = Optional[Messageslastactivity]
+GetLastActivityResponseModel = Optional[MessagesLastActivity]
 
 
 class GetLongPollHistoryResponseModel(BaseResponse):
-	history: Optional["array"] = None
-	messages: Optional["messageslongpollmessages"] = None
-	credentials: Optional["messageslongpollparams"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
-	chats: Optional["array"] = None
-	new_pts: Optional["integer"] = None
-	from_pts: Optional["integer"] = None
-	more: Optional["boolean"] = None
-	conversations: Optional["array"] = None
+	history: Optional[List["list"]] = None
+	messages: Optional["MessagesLongpollMessages"] = None
+	credentials: Optional["MessagesLongpollParams"] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroup"]] = None
+	chats: Optional[List["MessagesChat"]] = None
+	new_pts: Optional[int] = None
+	from_pts: Optional[int] = None
+	more: Optional[bool] = None
+	conversations: Optional[List["MessagesConversation"]] = None
 
 
-GetLongPollServerResponseModel = Optional[Messageslongpollparams]
+GetLongPollServerResponseModel = Optional[MessagesLongpollParams]
 
 
 class IsMessagesFromGroupAllowedResponseModel(BaseResponse):
-	is_allowed: Optional["baseboolint"] = None
+	is_allowed: Optional["BaseBoolInt"] = None
 
 
 class JoinChatByInviteLinkResponseModel(BaseResponse):
-	chat_id: Optional["integer"] = None
+	chat_id: Optional[int] = None
 
 
-MarkAsImportantResponseModel = List[int]
+MarkAsImportantResponseModel = List[: Optional[List[int]]]
 
 
-PinResponseModel = Optional[Messagespinnedmessage]
+PinResponseModel = Optional[MessagesPinnedMessage]
 
 
 class SearchConversationsExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesConversation"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
 
 
 class SearchConversationsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesConversation"]] = None
 
 
 class SearchExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
-	conversations: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesMessage"]] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
+	conversations: Optional[List["MessagesConversation"]] = None
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MessagesMessage"]] = None
 
 
 SendResponseModel = int
 
 
-SendUserIdsResponseModel = List[Object]
+SendUserIdsResponseModel = List[: Optional[List["object"]]]
 
 
 class SetChatPhotoResponseModel(BaseResponse):
-	message_id: Optional["integer"] = None
-	chat: Optional["messageschat"] = None
+	message_id: Optional[int] = None
+	chat: Optional["MessagesChat"] = None
 
 CreateChatResponse.update_forward_refs()
 DeleteChatPhotoResponse.update_forward_refs()

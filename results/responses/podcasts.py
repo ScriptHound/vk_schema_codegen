@@ -8,7 +8,7 @@ class SearchPodcastResponse(BaseResponse):
 
 
 class SearchPodcastResponseModel(BaseResponse):
-	podcasts: Optional["array"] = None
-	results_total: Optional["integer"] = None
+	podcasts: Optional[List["PodcastExternalData"]] = None
+	results_total: Optional[int] = None
 
 SearchPodcastResponse.update_forward_refs()

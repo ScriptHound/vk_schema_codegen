@@ -162,24 +162,24 @@ class UpdateOfficeUsersResponse(BaseResponse):
 AddOfficeUsersResponseModel = bool
 
 
-CheckLinkResponseModel = Optional[Adslinkstatus]
+CheckLinkResponseModel = Optional[AdsLinkStatus]
 
 
-CreateAdsResponseModel = List[int]
+CreateAdsResponseModel = List[: Optional[List[int]]]
 
 
-CreateCampaignsResponseModel = List[int]
+CreateCampaignsResponseModel = List[: Optional[List[int]]]
 
 
-CreateClientsResponseModel = List[int]
+CreateClientsResponseModel = List[: Optional[List[int]]]
 
 
 class CreateTargetGroupResponseModel(BaseResponse):
-	id: Optional["integer"] = None
-	pixel: Optional["string"] = None
+	id: Optional[int] = None
+	pixel: Optional[str] = None
 
 
-DeleteAdsResponseModel = List[int]
+DeleteAdsResponseModel = List[: Optional[List[int]]]
 
 
 DeleteCampaignsResponseModel = int
@@ -207,8 +207,8 @@ GetCampaignsResponseModel = List[AdsCampaign]
 
 
 class GetCategoriesResponseModel(BaseResponse):
-	v1: Optional["array"] = None
-	v2: Optional["array"] = None
+	v1: Optional[List["AdsCategory"]] = None
+	v2: Optional[List["AdsCategory"]] = None
 
 
 GetClientsResponseModel = List[AdsClient]
@@ -217,16 +217,16 @@ GetClientsResponseModel = List[AdsClient]
 GetDemographicsResponseModel = List[AdsDemoStats]
 
 
-GetFloodStatsResponseModel = Optional[Adsfloodstats]
+GetFloodStatsResponseModel = Optional[AdsFloodStats]
 
 
 class GetLookalikeRequestsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["AdsLookalikeRequest"]] = None
 
 
 class GetMusiciansResponseModel(BaseResponse):
-	items: Optional["array"] = None
+	items: Optional[List["AdsMusician"]] = None
 
 
 GetOfficeUsersResponseModel = List[AdsUsers]
@@ -235,7 +235,7 @@ GetOfficeUsersResponseModel = List[AdsUsers]
 GetPostsReachResponseModel = List[AdsPromotedPostReach]
 
 
-GetRejectionReasonResponseModel = Optional[Adsrejectreason]
+GetRejectionReasonResponseModel = Optional[AdsRejectReason]
 
 
 GetStatisticsResponseModel = List[AdsStats]
@@ -256,7 +256,7 @@ GetSuggestionsSchoolsResponseModel = List[AdsTargSuggestionsSchools]
 GetTargetGroupsResponseModel = List[AdsTargetGroup]
 
 
-GetTargetingStatsResponseModel = Optional[Adstargstats]
+GetTargetingStatsResponseModel = Optional[AdsTargStats]
 
 
 GetUploadURLResponseModel = string
@@ -271,7 +271,7 @@ ImportTargetContactsResponseModel = int
 RemoveOfficeUsersResponseModel = bool
 
 
-UpdateAdsResponseModel = List[int]
+UpdateAdsResponseModel = List[: Optional[List[int]]]
 
 
 UpdateCampaignsResponseModel = int

@@ -21,10 +21,10 @@ class SchemaObject(AbstractSchemaObject):
 
             if properties[name].get('type') == 'array':
                 if properties[name]['items'].get('type'):
-                    type_anno = properties[name]['items']['type']
+                    type_anno = [properties[name]['items']['type']]
                 else:
                     type_anno = properties[name]['items'].get('$ref')
-                    type_anno = get_type_from_reference(type_anno)
+                    type_anno = [get_type_from_reference(type_anno)]
             elif properties[name].get('type'):
                 type_anno = properties[name].get('type')
             else:

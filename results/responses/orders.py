@@ -35,30 +35,30 @@ class UpdateSubscriptionResponse(BaseResponse):
 	response: Optional["UpdateSubscriptionResponseModel"] = None
 
 
-CancelSubscriptionResponseModel = Optional[Baseboolint]
+CancelSubscriptionResponseModel = Optional[BaseBoolInt]
 
 
 ChangeStateResponseModel = string
 
 
-GetAmountResponseModel = Optional[Ordersamount]
+GetAmountResponseModel = Optional[OrdersAmount]
 
 
 GetByIdResponseModel = List[OrdersOrder]
 
 
-GetUserSubscriptionByIdResponseModel = Optional[Orderssubscription]
+GetUserSubscriptionByIdResponseModel = Optional[OrdersSubscription]
 
 
 class GetUserSubscriptionsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["OrdersSubscription"]] = None
 
 
 GetResponseModel = List[OrdersOrder]
 
 
-UpdateSubscriptionResponseModel = Optional[Baseboolint]
+UpdateSubscriptionResponseModel = Optional[BaseBoolInt]
 
 CancelSubscriptionResponse.update_forward_refs()
 ChangeStateResponse.update_forward_refs()

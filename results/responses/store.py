@@ -22,10 +22,10 @@ GetProductsResponseModel = List[StoreProduct]
 
 
 class GetStickersKeywordsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	dictionary: Optional["array"] = None
-	chunks_count: Optional["integer"] = None
-	chunks_hash: Optional["string"] = None
+	count: Optional[int] = None
+	dictionary: Optional[List["StoreStickersKeyword"]] = None
+	chunks_count: Optional[int] = None
+	chunks_hash: Optional[str] = None
 
 GetFavoriteStickersResponse.update_forward_refs()
 GetProductsResponse.update_forward_refs()

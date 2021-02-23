@@ -88,99 +88,99 @@ class SearchResponse(BaseResponse):
 
 
 class AddAlbumResponseModel(BaseResponse):
-	market_album_id: Optional["integer"] = None
+	market_album_id: Optional[int] = None
 
 
 class AddResponseModel(BaseResponse):
-	market_item_id: Optional["integer"] = None
+	market_item_id: Optional[int] = None
 
 
 CreateCommentResponseModel = int
 
 
-DeleteCommentResponseModel = Optional[Baseboolint]
+DeleteCommentResponseModel = Optional[BaseBoolInt]
 
 
 class GetAlbumByIdResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketMarketAlbum"]] = None
 
 
 class GetAlbumsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketMarketAlbum"]] = None
 
 
 class GetByIdExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketMarketItemFull"]] = None
 
 
 class GetByIdResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketMarketItem"]] = None
 
 
 class GetCategoriesNewResponseModel(BaseResponse):
-	items: Optional["array"] = None
+	items: Optional[List["MarketMarketCategoryTree"]] = None
 
 
 class GetCategoriesResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketMarketCategory"]] = None
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["WallWallComment"]] = None
 
 
 class GetGroupOrdersResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketOrder"]] = None
 
 
 class GetOrderByIdResponseModel(BaseResponse):
-	order: Optional["marketorder"] = None
+	order: Optional["MarketOrder"] = None
 
 
 class GetOrderItemsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketOrderItem"]] = None
 
 
 class GetOrdersExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	groups: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketOrder"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
 
 
 class GetOrdersResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketOrder"]] = None
 
 
 class GetExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketMarketItemFull"]] = None
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketMarketItem"]] = None
 
 
-RestoreCommentResponseModel = Optional[Baseboolint]
+RestoreCommentResponseModel = Optional[BaseBoolInt]
 
 
 class SearchExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketMarketItemFull"]] = None
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["MarketMarketItem"]] = None
 
 AddAlbumResponse.update_forward_refs()
 AddResponse.update_forward_refs()

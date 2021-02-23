@@ -28,19 +28,19 @@ class GetResponse(BaseResponse):
 
 
 class CreateResponseModel(BaseResponse):
-	owner_id: Optional["integer"] = None
-	card_id: Optional["string"] = None
+	owner_id: Optional[int] = None
+	card_id: Optional[str] = None
 
 
 class DeleteResponseModel(BaseResponse):
-	owner_id: Optional["integer"] = None
-	card_id: Optional["string"] = None
-	error: Optional["string"] = None
+	owner_id: Optional[int] = None
+	card_id: Optional[str] = None
+	error: Optional[str] = None
 
 
 class EditResponseModel(BaseResponse):
-	owner_id: Optional["integer"] = None
-	card_id: Optional["string"] = None
+	owner_id: Optional[int] = None
+	card_id: Optional[str] = None
 
 
 GetByIdResponseModel = List[PrettyCardsPrettycard]
@@ -50,8 +50,8 @@ GetUploadURLResponseModel = string
 
 
 class GetResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["PrettyCardsPrettycard"]] = None
 
 CreateResponse.update_forward_refs()
 DeleteResponse.update_forward_refs()

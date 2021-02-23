@@ -40,40 +40,40 @@ class SaveProfileInfoResponse(BaseResponse):
 
 
 class ChangePasswordResponseModel(BaseResponse):
-	token: Optional["string"] = None
-	secret: Optional["string"] = None
+	token: Optional[str] = None
+	secret: Optional[str] = None
 
 
 class GetActiveOffersResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["AccountOffer"]] = None
 
 
 GetAppPermissionsResponseModel = int
 
 
 class GetBannedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List[int]] = None
+	profiles: Optional[List["UsersUserMin"]] = None
+	groups: Optional[List["GroupsGroup"]] = None
 
 
-GetCountersResponseModel = Optional[Accountaccountcounters]
+GetCountersResponseModel = Optional[AccountAccountCounters]
 
 
-GetInfoResponseModel = Optional[Accountinfo]
+GetInfoResponseModel = Optional[AccountInfo]
 
 
-GetProfileInfoResponseModel = Optional[Accountusersettings]
+GetProfileInfoResponseModel = Optional[AccountUserSettings]
 
 
-GetPushSettingsResponseModel = Optional[Accountpushsettings]
+GetPushSettingsResponseModel = Optional[AccountPushSettings]
 
 
 class SaveProfileInfoResponseModel(BaseResponse):
-	changed: Optional["baseboolint"] = None
-	name_request: Optional["accountnamerequest"] = None
+	changed: Optional["BaseBoolInt"] = None
+	name_request: Optional["AccountNameRequest"] = None
 
 ChangePasswordResponse.update_forward_refs()
 GetActiveOffersResponse.update_forward_refs()

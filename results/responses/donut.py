@@ -11,14 +11,14 @@ class GetSubscriptionsResponse(BaseResponse):
 	response: Optional["GetSubscriptionsResponseModel"] = None
 
 
-GetSubscriptionResponseModel = Optional[Donutdonatorsubscriptioninfo]
+GetSubscriptionResponseModel = Optional[DonutDonatorSubscriptionInfo]
 
 
 class GetSubscriptionsResponseModel(BaseResponse):
-	subscriptions: Optional["array"] = None
-	count: Optional["integer"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
+	subscriptions: Optional[List["DonutDonatorSubscriptionInfo"]] = None
+	count: Optional[int] = None
+	profiles: Optional[List["UsersUserFull"]] = None
+	groups: Optional[List["GroupsGroupFull"]] = None
 
 GetSubscriptionResponse.update_forward_refs()
 GetSubscriptionsResponse.update_forward_refs()

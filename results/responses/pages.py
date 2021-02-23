@@ -37,10 +37,10 @@ GetHistoryResponseModel = List[PagesWikipageHistory]
 GetTitlesResponseModel = List[PagesWikipage]
 
 
-GetVersionResponseModel = Optional[Pageswikipagefull]
+GetVersionResponseModel = Optional[PagesWikipageFull]
 
 
-GetResponseModel = Optional[Pageswikipagefull]
+GetResponseModel = Optional[PagesWikipageFull]
 
 
 ParseWikiResponseModel = string

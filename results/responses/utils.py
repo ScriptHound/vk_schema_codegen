@@ -31,27 +31,27 @@ class ResolveScreenNameResponse(BaseResponse):
 	response: Optional["ResolveScreenNameResponseModel"] = None
 
 
-CheckLinkResponseModel = Optional[Utilslinkchecked]
+CheckLinkResponseModel = Optional[UtilsLinkChecked]
 
 
 class GetLastShortenedLinksResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["UtilsLastShortenedLink"]] = None
 
 
-GetLinkStatsExtendedResponseModel = Optional[Utilslinkstatsextended]
+GetLinkStatsExtendedResponseModel = Optional[UtilsLinkStatsExtended]
 
 
-GetLinkStatsResponseModel = Optional[Utilslinkstats]
+GetLinkStatsResponseModel = Optional[UtilsLinkStats]
 
 
 GetServerTimeResponseModel = int
 
 
-GetShortLinkResponseModel = Optional[Utilsshortlink]
+GetShortLinkResponseModel = Optional[UtilsShortLink]
 
 
-ResolveScreenNameResponseModel = Optional[Utilsdomainresolved]
+ResolveScreenNameResponseModel = Optional[UtilsDomainResolved]
 
 CheckLinkResponse.update_forward_refs()
 GetLastShortenedLinksResponse.update_forward_refs()

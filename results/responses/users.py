@@ -28,31 +28,31 @@ class SearchResponse(BaseResponse):
 
 
 class GetFollowersFieldsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["UsersUserFull"]] = None
 
 
 class GetFollowersResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List[int]] = None
 
 
 class GetSubscriptionsExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["UsersSubscriptionsItem"]] = None
 
 
 class GetSubscriptionsResponseModel(BaseResponse):
-	users: Optional["usersusersarray"] = None
-	groups: Optional["groupsgroupsarray"] = None
+	users: Optional["UsersUsersArray"] = None
+	groups: Optional["GroupsGroupsArray"] = None
 
 
 GetResponseModel = List[UsersUserXtrCounters]
 
 
 class SearchResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["UsersUserFull"]] = None
 
 GetFollowersFieldsResponse.update_forward_refs()
 GetFollowersResponse.update_forward_refs()

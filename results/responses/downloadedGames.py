@@ -8,6 +8,6 @@ class PaidStatusResponse(BaseResponse):
 
 
 class PaidStatusResponseModel(BaseResponse):
-	is_paid: Optional["boolean"] = None
+	is_paid: Optional[bool] = None
 
 PaidStatusResponse.update_forward_refs()

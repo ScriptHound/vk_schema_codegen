@@ -34,32 +34,32 @@ CreateCommentResponseModel = int
 
 
 class GetCommentsExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	poll: Optional["boardtopicpoll"] = None
-	profiles: Optional["array"] = None
-	groups: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["BoardTopicComment"]] = None
+	poll: Optional["BoardTopicPoll"] = None
+	profiles: Optional[List["UsersUser"]] = None
+	groups: Optional[List["GroupsGroup"]] = None
 
 
 class GetCommentsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	poll: Optional["boardtopicpoll"] = None
+	count: Optional[int] = None
+	items: Optional[List["BoardTopicComment"]] = None
+	poll: Optional["BoardTopicPoll"] = None
 
 
 class GetTopicsExtendedResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	default_order: Optional["boarddefaultorder"] = None
-	can_add_topics: Optional["baseboolint"] = None
-	profiles: Optional["array"] = None
+	count: Optional[int] = None
+	items: Optional[List["BoardTopic"]] = None
+	default_order: Optional["BoardDefaultOrder"] = None
+	can_add_topics: Optional["BaseBoolInt"] = None
+	profiles: Optional[List["UsersUserMin"]] = None
 
 
 class GetTopicsResponseModel(BaseResponse):
-	count: Optional["integer"] = None
-	items: Optional["array"] = None
-	default_order: Optional["boarddefaultorder"] = None
-	can_add_topics: Optional["baseboolint"] = None
+	count: Optional[int] = None
+	items: Optional[List["BoardTopic"]] = None
+	default_order: Optional["BoardDefaultOrder"] = None
+	can_add_topics: Optional["BaseBoolInt"] = None
 
 AddTopicResponse.update_forward_refs()
 CreateCommentResponse.update_forward_refs()
