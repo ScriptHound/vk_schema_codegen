@@ -49,7 +49,8 @@ def camel_case_to_snake_case(string: str) -> dict:
             if symbol.isupper() else symbol
             for symbol in list(string)
         )
-    
+
+
 def convert_to_python_type(field):
     if field == 'integer':
         return 'int'

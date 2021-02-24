@@ -5,7 +5,15 @@ from objects_parser.models.models import Annotation
 class ResponseModelBody:
     def __init__(self, annotations=None, **attributes) -> None:
         if annotations:
-            annotations = [Annotation(anno) for anno in annotations]
+            temp = []
+            for anno in annotations:
+                if isinstance(anno, list):
+                    anno = anno[0]
+                    temp.append(Annotation('Array', list_inner_type=anno))
+                else:
+                    temp.append(Annotation(anno))
+
+            annotations = temp
         else:
             annotations = ['' for _ in attributes]
 
@@ -62,15 +70,16 @@ def jsonschema_object_factory(classname: str, json_properties: dict) -> 'Model':
     elif schema_type == 'boolean':
         return SingleTypeModel(classname, 'bool')
     elif schema_type == 'array':
-        t = None
+        type_ = None
         if json_properties['response']['items'].get('type'):
-            t = json_properties['response']['items']['type']
-            t = Annotation.type_string_to_default_type(t)
-        else:
-            t = json_properties['response']['items']['$ref']
-            t = get_type_from_reference(t)
+            type_ = json_properties['response']['items']['type']
 
-        return SingleTypeModel(classname, f'List[{t}]')
+            type_ = Annotation('Array', list_inner_type=type_)
+        else:
+            type_ = json_properties['response']['items']['$ref']
+            type_ = get_type_from_reference(type_)
+
+        return SingleTypeModel(classname, f'List[{type_}]')
     elif schema_type == 'string':
         return SingleTypeModel(classname, 'string')
     else:
@@ -84,7 +93,15 @@ def jsonschema_object_factory(classname: str, json_properties: dict) -> 'Model':
         types = []
         for _, value in properties.items():
             if value.get('type'):
-                types.append(value['type'])
+                property_type = value.get('type')
+                if property_type == 'array':
+                    ref_type = value['items'].get('$ref')
+                    if ref_type:
+                        types.append([get_type_from_reference(ref_type)])
+                    else:
+                        types.append([value['items']['type']])
+                else:
+                    types.append(value['type'])
             else:
                 t = get_type_from_reference(value['$ref'])
                 types.append(t)

@@ -1,5 +1,5 @@
 schema_objects_path:
-  config/objects.json
+  vk_schema/objects.json
 schema_methods_path:
   vk_schema/methods.json
 schema_responses_path:
@@ -14,3 +14,10 @@ object_models_imports:
     - Union
   pydantic:
     - BaseModel
+object_methods_imports:
+  typing:
+    - Optional
+    - List
+    - Any
+  .base_category:
+    - BaseCategory

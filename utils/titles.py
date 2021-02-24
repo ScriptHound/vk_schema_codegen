@@ -11,7 +11,7 @@ class AbstractTitle(abc.ABC):
 
 
 class Imports(AbstractTitle):
-    def __str__(self):
+    def __repr__(self):
         return "\n".join(
             "from %s import %s" % (k, ', '.join(v))
             if v else
@@ -21,7 +21,7 @@ class Imports(AbstractTitle):
 
 
 class UpdateForwardRefs(AbstractTitle):
-    def __str__(self):
+    def __repr__(self):
         return "\n" + "\n".join(
             '%s.update_forward_refs()' % k
             for k, _ in self.params.items()

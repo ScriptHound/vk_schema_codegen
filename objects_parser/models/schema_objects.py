@@ -21,10 +21,10 @@ class SchemaObject(AbstractSchemaObject):
 
             if properties[name].get('type') == 'array':
                 if properties[name]['items'].get('type'):
-                    type_anno = properties[name]['items']['type']
+                    type_anno = [properties[name]['items']['type']]
                 else:
                     type_anno = properties[name]['items'].get('$ref')
-                    type_anno = get_type_from_reference(type_anno)
+                    type_anno = [get_type_from_reference(type_anno)]
             elif properties[name].get('type'):
                 type_anno = properties[name].get('type')
             else:
@@ -57,6 +57,11 @@ class SchemaAllOfObject(AbstractSchemaObject):
         self.class_form.set_super_class(",\n\t".join(super_classes_list))
 
 
+class SchemaOneOfObject(AbstractSchemaObject):
+    def __init__(self, classname, prepared_dict):
+        self.class_form: ClassForm = ClassForm(classname)
+
+
 class SchemaEnum(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
         self.class_form: ClassForm = ClassForm(classname, predecessor='enum.Enum')
@@ -79,7 +84,7 @@ class SchemaEnumInitialized(AbstractSchemaObject):
 
 
 class SchemaUndefined(AbstractSchemaObject):
-    def __init__(self, classname, prepared_dict):
+    def __init__(self, classname):
         self.class_form: ClassForm = ClassForm(classname)
 
 
@@ -100,10 +105,12 @@ def schema_object_fabric_method(classname, prepared_dict):
             return SchemaAllOfObject(classname, prepared_dict)
         elif json_type.get('properties'):
             return SchemaObject(classname, prepared_dict)
+        elif json_type.get('oneOf'):
+            return SchemaOneOfObject(classname, prepared_dict)
 
     elif json_type.get('type') == 'string':
         # if enum is numerical
-        if type(json_type['enum'][0]) == int:
+        if isinstance(json_type['enum'][0], int):
             return SchemaEnumInitialized(classname, prepared_dict)
         else:
             return SchemaEnum(classname, prepared_dict)
@@ -115,4 +122,4 @@ def schema_object_fabric_method(classname, prepared_dict):
         return SchemaBoolean(classname, prepared_dict)
 
     elif json_type.get('type') is None:
-        return SchemaUndefined(classname, prepared_dict)
+        return SchemaUndefined(classname)

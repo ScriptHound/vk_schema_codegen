@@ -2,6 +2,7 @@ import keyword
 import string
 import abc
 from utils.strings_util import snake_case_to_camel_case
+STANDART_TYPES = ('str', 'int', 'float')
 
 
 class ObjectModel(abc.ABC):
@@ -22,22 +23,31 @@ class ObjectModel(abc.ABC):
 
 
 class Annotation(ObjectModel):
+    def __init__(self,
+                 classname: str,
+                 predecessor: str = 'BaseModel',
+                 list_inner_type: str = "default_name") -> None:
+        super().__init__(classname, predecessor=predecessor)
+        self.list_inner_type = list_inner_type
+
     @staticmethod
     def type_string_to_default_type(classname: str) -> str:
-        classname = classname.capitalize()
         classname_copy = classname.replace('"', '')
-        if classname_copy == 'Integer':
+        classname_copy = classname_copy.lower()
+        if classname_copy == 'integer':
             return 'int'
-        elif classname_copy == 'String':
+        elif classname_copy == 'string':
             return 'str'
-        elif classname_copy == 'Boolean':
+        elif classname_copy == 'boolean':
             return 'bool'
+        elif classname_copy == 'array':
+            return 'list'
         else:
             return classname
 
     def __unpack_dict_values(self, dictionary):
         return ', '.join(
-            self.__type_string_to_default_type(v.strip("'"))
+            self.type_string_to_default_type(v.strip("'"))
             for _, v in dictionary.items()
         )
 
@@ -46,6 +56,12 @@ class Annotation(ObjectModel):
         if isinstance(camel_case_types, dict):
             camel_case_types = self.__unpack_dict_values(camel_case_types)
             self.classname = f'Union[{camel_case_types}]'
+        elif camel_case_types == 'Array':
+            self.list_inner_type = self.type_string_to_default_type(self.list_inner_type)
+            if self.list_inner_type in STANDART_TYPES:
+                self.classname = f'List[{self.list_inner_type}]'
+            else:
+                self.classname = f'List["{self.list_inner_type}"]'
         else:
             self.classname = '"' + camel_case_types + '"'
 
@@ -86,7 +102,10 @@ class ClassForm(ObjectModel):
                   annotation: str = None
                   ) -> None:
         if annotation is not None:
-            param_name += str(Annotation(annotation))
+            if isinstance(annotation, list):
+                param_name += str(Annotation("array", list_inner_type=annotation[0]))
+            else:
+                param_name += str(Annotation(annotation))
 
         self.params.update({param_name: param_value})
 

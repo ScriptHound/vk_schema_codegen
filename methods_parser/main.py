@@ -6,30 +6,24 @@ from .models import ClassForm
 
 logging.basicConfig(level=logging.INFO)
 
-default_imports = {
-    "typing": ("Optional", "Any", "List"),
-    ".base_category": ("BaseCategory",)
-}
 
-def parse_file(filepath: str, imports: dict = {}) -> None:
-    default_imports.update(imports)
+def parse_file(filepath: str, imports: dict) -> None:
     base_dir = create_results_dir('results/methods')
-    categories = sort_json_schema(filepath)
+    categories = sort_jsonmethods_schema(filepath)
 
     for category, methods in categories.items():
         with open(f"{base_dir}/{category}.py", 'w') as pyfile:
-            write_done_schema(pyfile, category, methods)
-    logging.info("DONE")
+            construct_schema(pyfile, category, methods, **imports)
 
-def write_done_schema(file, category, methods):
+def construct_schema(file, category, methods, **imports):
     file.write("from vkbottle_types.responses import %s, base\n" % category)
-    file.write(str(Imports(default_imports)))
+    file.write(str(Imports(**imports)))
     form = ClassForm(category)
     for method in methods:
         form.add_method(method['name'], method)
     file.write(str(form))
 
-def sort_json_schema(path: str) -> dict:
+def sort_jsonmethods_schema(path: str) -> dict:
     with open(path, 'r') as f:
         json_dict = json.load(f)
     return collecter(json_dict['methods'])
@@ -38,6 +32,7 @@ def collecter(methods: dict) -> dict:
     result = {}
     for method in methods:
         method_name = method['name'].split('.')
+
         if result.get(method_name[0]):
             result[method_name[0]].append(method)
         else:
