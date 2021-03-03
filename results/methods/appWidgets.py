@@ -1,6 +1,5 @@
 from vkbottle_types.responses import appWidgets, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class AppwidgetsCategory(BaseCategory):
@@ -65,7 +64,7 @@ class AppwidgetsCategory(BaseCategory):
         return model(**response).response
 
     async def get_images_by_id(
-        self, images: list, **kwargs
+        self, images: List[str], **kwargs
     ) -> appWidgets.GetImagesByIdResponseModel:
         """Returns an image for community app widgets by its ID
 		:param images: List of images IDs

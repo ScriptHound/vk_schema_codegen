@@ -1,11 +1,10 @@
 from vkbottle_types.responses import stories, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class StoriesCategory(BaseCategory):
     async def ban_owner(
-        self, owners_ids: list, **kwargs
+        self, owners_ids: List[int], **kwargs
     ) -> base.OkResponseModel:
         """Allows to hide stories from chosen sources from current user's feed.
 		:param owners_ids: List of sources IDs
@@ -20,7 +19,7 @@ class StoriesCategory(BaseCategory):
         self,
 		owner_id: Optional[int] = None,
 		story_id: Optional[int] = None,
-		stories: Optional[list] = None,
+		stories: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Allows to delete story.
@@ -38,7 +37,7 @@ class StoriesCategory(BaseCategory):
         self,
 		owner_id: Optional[int] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> stories.GetResponseModel:
         """Returns stories available for current user.
@@ -53,7 +52,10 @@ class StoriesCategory(BaseCategory):
         return model(**response).response
 
     async def get_banned(
-        self, extended: Optional[bool] = None, fields: Optional[list] = None, **kwargs
+        self,
+		extended: Optional[bool] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
+		**kwargs
     ) -> stories.GetBannedResponseModel:
         """Returns list of sources hidden from current user's feed.
 		:param extended: '1' — to return additional fields for users and communities. Default value is 0.
@@ -67,9 +69,9 @@ class StoriesCategory(BaseCategory):
 
     async def get_by_id(
         self,
-		stories: list,
+		stories: List[str],
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> stories.GetByIdResponseModel:
         """Returns story by its ID.
@@ -86,7 +88,7 @@ class StoriesCategory(BaseCategory):
     async def get_photo_upload_server(
         self,
 		add_to_news: Optional[bool] = None,
-		user_ids: Optional[list] = None,
+		user_ids: Optional[List[int]] = None,
 		reply_to_story: Optional[str] = None,
 		link_text: Optional[str] = None,
 		link_url: Optional[str] = None,
@@ -115,7 +117,7 @@ class StoriesCategory(BaseCategory):
 		story_id: int,
 		access_key: Optional[str] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> stories.GetRepliesResponseModel:
         """Returns replies to the story.
@@ -147,7 +149,7 @@ class StoriesCategory(BaseCategory):
     async def get_video_upload_server(
         self,
 		add_to_news: Optional[bool] = None,
-		user_ids: Optional[list] = None,
+		user_ids: Optional[List[int]] = None,
 		reply_to_story: Optional[str] = None,
 		link_text: Optional[str] = None,
 		link_url: Optional[str] = None,
@@ -219,7 +221,7 @@ class StoriesCategory(BaseCategory):
         return model(**response).response
 
     async def save(
-        self, upload_results: list, **kwargs
+        self, upload_results: List[str], **kwargs
     ) -> stories.SaveResponseModel:
         """stories.save method
 		:param upload_results: 
@@ -240,7 +242,7 @@ class StoriesCategory(BaseCategory):
 		mentioned_id: Optional[int] = None,
 		count: Optional[int] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[str]] = None,
 		**kwargs
     ) -> stories.SearchResponseModel:
         """stories.search method
@@ -283,7 +285,7 @@ class StoriesCategory(BaseCategory):
         return model(**response).response
 
     async def unban_owner(
-        self, owners_ids: list, **kwargs
+        self, owners_ids: List[int], **kwargs
     ) -> base.OkResponseModel:
         """Allows to show stories from hidden sources in current user's feed.
 		:param owners_ids: List of hidden sources to show stories from.

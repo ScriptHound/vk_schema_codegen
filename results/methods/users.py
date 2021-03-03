@@ -1,13 +1,12 @@
 from vkbottle_types.responses import users, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class UsersCategory(BaseCategory):
     async def get(
         self,
-		user_ids: Optional[list] = None,
-		fields: Optional[list] = None,
+		user_ids: Optional[List[str]] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		**kwargs
     ) -> users.GetResponseModel:
@@ -27,7 +26,7 @@ class UsersCategory(BaseCategory):
 		user_id: Optional[int] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		**kwargs
     ) -> users.GetFollowersResponseModel:
@@ -50,7 +49,7 @@ class UsersCategory(BaseCategory):
 		extended: Optional[bool] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		**kwargs
     ) -> users.GetSubscriptionsResponseModel:
         """Returns a list of IDs of users and communities followed by the user.
@@ -86,7 +85,7 @@ class UsersCategory(BaseCategory):
 		sort: Optional[int] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		city: Optional[int] = None,
 		country: Optional[int] = None,
 		hometown: Optional[str] = None,
@@ -113,7 +112,7 @@ class UsersCategory(BaseCategory):
 		company: Optional[str] = None,
 		position: Optional[str] = None,
 		group_id: Optional[int] = None,
-		from_list: Optional[list] = None,
+		from_list: Optional[List[str]] = None,
 		**kwargs
     ) -> users.SearchResponseModel:
         """Returns a list of users matching the search criteria.

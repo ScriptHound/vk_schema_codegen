@@ -1,6 +1,5 @@
 from vkbottle_types.responses import notes, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class NotesCategory(BaseCategory):
@@ -8,8 +7,8 @@ class NotesCategory(BaseCategory):
         self,
 		title: str,
 		text: str,
-		privacy_view: Optional[list] = None,
-		privacy_comment: Optional[list] = None,
+		privacy_view: Optional[List[str]] = None,
+		privacy_comment: Optional[List[str]] = None,
 		**kwargs
     ) -> notes.AddResponseModel:
         """Creates a new note for the current user.
@@ -76,8 +75,8 @@ class NotesCategory(BaseCategory):
 		note_id: int,
 		title: str,
 		text: str,
-		privacy_view: Optional[list] = None,
-		privacy_comment: Optional[list] = None,
+		privacy_view: Optional[List[str]] = None,
+		privacy_comment: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Edits a note of the current user.
@@ -109,7 +108,7 @@ class NotesCategory(BaseCategory):
 
     async def get(
         self,
-		note_ids: Optional[list] = None,
+		note_ids: Optional[List[int]] = None,
 		user_id: Optional[int] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,

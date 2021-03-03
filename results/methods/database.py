@@ -1,6 +1,5 @@
 from vkbottle_types.responses import database, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class DatabaseCategory(BaseCategory):
@@ -47,7 +46,7 @@ class DatabaseCategory(BaseCategory):
         return model(**response).response
 
     async def get_cities_by_id(
-        self, city_ids: Optional[list] = None, **kwargs
+        self, city_ids: Optional[List[int]] = None, **kwargs
     ) -> database.GetCitiesByIdResponseModel:
         """Returns information about cities by their IDs.
 		:param city_ids: City IDs.
@@ -79,7 +78,7 @@ class DatabaseCategory(BaseCategory):
         return model(**response).response
 
     async def get_countries_by_id(
-        self, country_ids: Optional[list] = None, **kwargs
+        self, country_ids: Optional[List[int]] = None, **kwargs
     ) -> database.GetCountriesByIdResponseModel:
         """Returns information about countries by their IDs.
 		:param country_ids: Country IDs.
@@ -129,7 +128,7 @@ class DatabaseCategory(BaseCategory):
         return model(**response).response
 
     async def get_metro_stations_by_id(
-        self, station_ids: Optional[list] = None, **kwargs
+        self, station_ids: Optional[List[int]] = None, **kwargs
     ) -> database.GetMetroStationsByIdResponseModel:
         """Get metro station by his id
 		:param station_ids: 

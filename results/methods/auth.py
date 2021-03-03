@@ -1,6 +1,5 @@
 from vkbottle_types.responses import auth, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class AuthCategory(BaseCategory):

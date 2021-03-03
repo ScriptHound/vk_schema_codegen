@@ -1,6 +1,5 @@
 from vkbottle_types.responses import pages, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class PagesCategory(BaseCategory):

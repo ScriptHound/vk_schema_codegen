@@ -1,6 +1,5 @@
 from vkbottle_types.responses import donut, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class DonutCategory(BaseCategory):
@@ -9,7 +8,7 @@ class DonutCategory(BaseCategory):
 		owner_id: int,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[str]] = None,
 		**kwargs
     ) -> donut.GetFriendsResponseModel:
         """donut.getFriends method
@@ -38,7 +37,7 @@ class DonutCategory(BaseCategory):
 
     async def get_subscriptions(
         self,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
 		**kwargs

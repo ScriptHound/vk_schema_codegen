@@ -1,6 +1,5 @@
 from vkbottle_types.responses import notifications, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class NotificationsCategory(BaseCategory):
@@ -8,7 +7,7 @@ class NotificationsCategory(BaseCategory):
         self,
 		count: Optional[int] = None,
 		start_from: Optional[str] = None,
-		filters: Optional[list] = None,
+		filters: Optional[List[str]] = None,
 		start_time: Optional[int] = None,
 		end_time: Optional[int] = None,
 		**kwargs
@@ -38,7 +37,7 @@ class NotificationsCategory(BaseCategory):
 
     async def send_message(
         self,
-		user_ids: list,
+		user_ids: List[int],
 		message: str,
 		fragment: Optional[str] = None,
 		group_id: Optional[int] = None,

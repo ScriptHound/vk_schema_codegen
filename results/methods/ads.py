@@ -1,11 +1,10 @@
 from vkbottle_types.responses import ads, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class AdsCategory(BaseCategory):
     async def add_office_users(
-        self, account_id: int, data: list, **kwargs
+        self, account_id: int, data: List[AdsUserSpecificationCutted], **kwargs
     ) -> ads.AddOfficeUsersResponseModel:
         """Adds managers and/or supervisors to advertising account.
 		:param account_id: Advertising account ID.
@@ -265,7 +264,7 @@ class AdsCategory(BaseCategory):
 		client_id: Optional[int] = None,
 		include_deleted: Optional[bool] = None,
 		campaign_ids: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[str]] = None,
 		**kwargs
     ) -> ads.GetCampaignsResponseModel:
         """Returns a list of campaigns in an advertising account.
@@ -378,7 +377,7 @@ class AdsCategory(BaseCategory):
         return model(**response).response
 
     async def get_musicians_by_ids(
-        self, ids: list, **kwargs
+        self, ids: List[int], **kwargs
     ) -> ads.GetMusiciansByIdsResponseModel:
         """ads.getMusiciansByIds method
 		:param ids: 
@@ -436,7 +435,7 @@ class AdsCategory(BaseCategory):
 		period: str,
 		date_from: str,
 		date_to: str,
-		stats_fields: Optional[list] = None,
+		stats_fields: Optional[List[str]] = None,
 		**kwargs
     ) -> ads.GetStatisticsResponseModel:
         """Returns statistics of performance indicators for ads, campaigns, clients or the whole account.
@@ -628,7 +627,7 @@ class AdsCategory(BaseCategory):
         return model(**response).response
 
     async def update_office_users(
-        self, account_id: int, data: list, **kwargs
+        self, account_id: int, data: List[AdsUserSpecification], **kwargs
     ) -> ads.UpdateOfficeUsersResponseModel:
         """Adds managers and/or supervisors to advertising account.
 		:param account_id: Advertising account ID.

@@ -1,6 +1,5 @@
 from vkbottle_types.responses import gifts, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class GiftsCategory(BaseCategory):

@@ -1,6 +1,5 @@
 from vkbottle_types.responses import secure, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class SecureCategory(BaseCategory):
@@ -86,7 +85,7 @@ class SecureCategory(BaseCategory):
         return model(**response).response
 
     async def get_user_level(
-        self, user_ids: list, **kwargs
+        self, user_ids: List[int], **kwargs
     ) -> secure.GetUserLevelResponseModel:
         """Returns one of the previously set game levels of one or more users in the application.
 		:param user_ids: 
@@ -98,7 +97,7 @@ class SecureCategory(BaseCategory):
         return model(**response).response
 
     async def give_event_sticker(
-        self, user_ids: list, achievement_id: int, **kwargs
+        self, user_ids: List[int], achievement_id: int, **kwargs
     ) -> secure.GiveEventStickerResponseModel:
         """Opens the game achievement and gives the user a sticker
 		:param user_ids: 
@@ -113,7 +112,7 @@ class SecureCategory(BaseCategory):
     async def send_notification(
         self,
 		message: str,
-		user_ids: Optional[list] = None,
+		user_ids: Optional[List[int]] = None,
 		user_id: Optional[int] = None,
 		**kwargs
     ) -> secure.SendNotificationResponseModel:
@@ -143,7 +142,7 @@ class SecureCategory(BaseCategory):
 
     async def set_counter(
         self,
-		counters: Optional[list] = None,
+		counters: Optional[List[str]] = None,
 		user_id: Optional[int] = None,
 		counter: Optional[int] = None,
 		increment: Optional[bool] = None,

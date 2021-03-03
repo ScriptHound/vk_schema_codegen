@@ -1,6 +1,5 @@
 from vkbottle_types.responses import groups, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class GroupsCategory(BaseCategory):
@@ -221,14 +220,14 @@ class GroupsCategory(BaseCategory):
 		age_limits: Optional[int] = None,
 		market: Optional[bool] = None,
 		market_comments: Optional[bool] = None,
-		market_country: Optional[list] = None,
-		market_city: Optional[list] = None,
+		market_country: Optional[List[int]] = None,
+		market_city: Optional[List[int]] = None,
 		market_currency: Optional[int] = None,
 		market_contact: Optional[int] = None,
 		market_wiki: Optional[int] = None,
 		obscene_filter: Optional[bool] = None,
 		obscene_stopwords: Optional[bool] = None,
-		obscene_words: Optional[list] = None,
+		obscene_words: Optional[List[str]] = None,
 		main_section: Optional[int] = None,
 		secondary_section: Optional[int] = None,
 		country: Optional[int] = None,
@@ -406,8 +405,8 @@ class GroupsCategory(BaseCategory):
         self,
 		user_id: Optional[int] = None,
 		extended: Optional[bool] = None,
-		filter: Optional[list] = None,
-		fields: Optional[list] = None,
+		filter: Optional[List[GroupsFilter]] = None,
+		fields: Optional[List[GroupsFields]] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
 		**kwargs
@@ -429,12 +428,12 @@ class GroupsCategory(BaseCategory):
     async def get_addresses(
         self,
 		group_id: int,
-		address_ids: Optional[list] = None,
+		address_ids: Optional[List[int]] = None,
 		latitude: Optional[number] = None,
 		longitude: Optional[number] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[AddressesFields]] = None,
 		**kwargs
     ) -> groups.GetAddressesResponseModel:
         """Returns a list of community addresses.
@@ -457,7 +456,7 @@ class GroupsCategory(BaseCategory):
 		group_id: int,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		owner_id: Optional[int] = None,
 		**kwargs
     ) -> groups.GetBannedResponseModel:
@@ -476,9 +475,9 @@ class GroupsCategory(BaseCategory):
 
     async def get_by_id(
         self,
-		group_ids: Optional[list] = None,
+		group_ids: Optional[List[str]] = None,
 		group_id: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[GroupsFields]] = None,
 		**kwargs
     ) -> groups.GetByIdResponseModel:
         """Returns information about communities by their IDs.
@@ -505,7 +504,7 @@ class GroupsCategory(BaseCategory):
         return model(**response).response
 
     async def get_callback_servers(
-        self, group_id: int, server_ids: Optional[list] = None, **kwargs
+        self, group_id: int, server_ids: Optional[List[int]] = None, **kwargs
     ) -> groups.GetCallbackServersResponseModel:
         """groups.getCallbackServers method
 		:param group_id: 
@@ -567,7 +566,7 @@ class GroupsCategory(BaseCategory):
 		group_id: int,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		**kwargs
     ) -> groups.GetInvitedUsersResponseModel:
@@ -632,7 +631,7 @@ class GroupsCategory(BaseCategory):
 		sort: Optional[str] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		filter: Optional[str] = None,
 		**kwargs
     ) -> groups.GetMembersResponseModel:
@@ -655,7 +654,7 @@ class GroupsCategory(BaseCategory):
 		group_id: int,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		**kwargs
     ) -> groups.GetRequestsResponseModel:
         """Returns a list of requests to the community.
@@ -721,7 +720,7 @@ class GroupsCategory(BaseCategory):
         self,
 		group_id: str,
 		user_id: Optional[int] = None,
-		user_ids: Optional[list] = None,
+		user_ids: Optional[List[int]] = None,
 		extended: Optional[bool] = None,
 		**kwargs
     ) -> groups.IsMemberResponseModel:

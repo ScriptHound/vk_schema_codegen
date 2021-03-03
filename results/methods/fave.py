@@ -1,6 +1,5 @@
 from vkbottle_types.responses import fave, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class FaveCategory(BaseCategory):
@@ -153,7 +152,7 @@ class FaveCategory(BaseCategory):
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
 		type: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		tag_id: Optional[int] = None,
 		**kwargs
     ) -> fave.GetPagesResponseModel:
@@ -294,7 +293,7 @@ class FaveCategory(BaseCategory):
         return model(**response).response
 
     async def reorder_tags(
-        self, ids: list, **kwargs
+        self, ids: List[int], **kwargs
     ) -> base.OkResponseModel:
         """fave.reorderTags method
 		:param ids: 
@@ -309,7 +308,7 @@ class FaveCategory(BaseCategory):
         self,
 		user_id: Optional[int] = None,
 		group_id: Optional[int] = None,
-		tag_ids: Optional[list] = None,
+		tag_ids: Optional[List[int]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """fave.setPageTags method
@@ -328,7 +327,7 @@ class FaveCategory(BaseCategory):
 		item_type: Optional[str] = None,
 		item_owner_id: Optional[int] = None,
 		item_id: Optional[int] = None,
-		tag_ids: Optional[list] = None,
+		tag_ids: Optional[List[int]] = None,
 		link_id: Optional[str] = None,
 		link_url: Optional[str] = None,
 		**kwargs

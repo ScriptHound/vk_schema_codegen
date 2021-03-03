@@ -1,6 +1,5 @@
 from vkbottle_types.responses import prettyCards, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class PrettycardsCategory(BaseCategory):
@@ -90,7 +89,7 @@ class PrettycardsCategory(BaseCategory):
         return model(**response).response
 
     async def get_by_id(
-        self, owner_id: int, card_ids: list, **kwargs
+        self, owner_id: int, card_ids: List[int], **kwargs
     ) -> prettyCards.GetByIdResponseModel:
         """prettyCards.getById method
 		:param owner_id: 

@@ -1,6 +1,5 @@
 from vkbottle_types.responses import wall, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class WallCategory(BaseCategory):
@@ -36,7 +35,7 @@ class WallCategory(BaseCategory):
 		from_group: Optional[int] = None,
 		message: Optional[str] = None,
 		reply_to_comment: Optional[int] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		sticker_id: Optional[int] = None,
 		guid: Optional[str] = None,
 		**kwargs
@@ -89,7 +88,7 @@ class WallCategory(BaseCategory):
 		owner_id: Optional[int] = None,
 		friends_only: Optional[bool] = None,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		services: Optional[str] = None,
 		signed: Optional[bool] = None,
 		publish_date: Optional[int] = None,
@@ -136,7 +135,7 @@ class WallCategory(BaseCategory):
 		post_id: int,
 		owner_id: Optional[int] = None,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		signed: Optional[bool] = None,
 		lat: Optional[number] = None,
 		long: Optional[number] = None,
@@ -172,7 +171,7 @@ class WallCategory(BaseCategory):
 		comment_id: int,
 		owner_id: Optional[int] = None,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Edits a comment on a user wall or community wall.
@@ -195,7 +194,7 @@ class WallCategory(BaseCategory):
 		count: Optional[int] = None,
 		filter: Optional[str] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> wall.GetResponseModel:
         """Returns a list of posts on a user wall or community wall.
@@ -215,10 +214,10 @@ class WallCategory(BaseCategory):
 
     async def get_by_id(
         self,
-		posts: list,
+		posts: List[str],
 		extended: Optional[bool] = None,
 		copy_history_depth: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> wall.GetByIdResponseModel:
         """Returns a list of posts from user or community walls by their IDs.
@@ -238,7 +237,7 @@ class WallCategory(BaseCategory):
 		comment_id: int,
 		owner_id: Optional[int] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> wall.GetCommentResponseModel:
         """Returns a comment on a post on a user wall or community wall.
@@ -264,7 +263,7 @@ class WallCategory(BaseCategory):
 		sort: Optional[str] = None,
 		preview_length: Optional[int] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		comment_id: Optional[int] = None,
 		thread_items_count: Optional[int] = None,
 		**kwargs
@@ -341,7 +340,7 @@ class WallCategory(BaseCategory):
 		friends_only: Optional[bool] = None,
 		from_group: Optional[bool] = None,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		services: Optional[str] = None,
 		signed: Optional[bool] = None,
 		publish_date: Optional[int] = None,
@@ -387,7 +386,7 @@ class WallCategory(BaseCategory):
         self,
 		owner_id: int,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		signed: Optional[bool] = None,
 		lat: Optional[number] = None,
 		long: Optional[number] = None,
@@ -504,7 +503,7 @@ class WallCategory(BaseCategory):
 		count: Optional[int] = None,
 		offset: Optional[int] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> wall.SearchResponseModel:
         """Allows to search posts on user or community walls.

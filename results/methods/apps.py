@@ -1,6 +1,5 @@
 from vkbottle_types.responses import apps, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class AppsCategory(BaseCategory):
@@ -17,11 +16,11 @@ class AppsCategory(BaseCategory):
     async def get(
         self,
 		app_id: Optional[int] = None,
-		app_ids: Optional[list] = None,
+		app_ids: Optional[List[str]] = None,
 		platform: Optional[str] = None,
 		extended: Optional[bool] = None,
 		return_friends: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		**kwargs
     ) -> apps.GetResponseModel:
@@ -48,7 +47,7 @@ class AppsCategory(BaseCategory):
 		platform: Optional[str] = None,
 		extended: Optional[bool] = None,
 		return_friends: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		q: Optional[str] = None,
 		genre_id: Optional[int] = None,
@@ -80,7 +79,7 @@ class AppsCategory(BaseCategory):
 		count: Optional[int] = None,
 		offset: Optional[int] = None,
 		type: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		**kwargs
     ) -> apps.GetFriendsListResponseModel:
         """Creates friends list for requests and invites in current app.

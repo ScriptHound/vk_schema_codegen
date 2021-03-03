@@ -1,13 +1,12 @@
 from vkbottle_types.responses import newsfeed, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class NewsfeedCategory(BaseCategory):
     async def add_ban(
         self,
-		user_ids: Optional[list] = None,
-		group_ids: Optional[list] = None,
+		user_ids: Optional[List[int]] = None,
+		group_ids: Optional[List[int]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Prevents news from specified users and communities from appearing in the current user's newsfeed.
@@ -22,8 +21,8 @@ class NewsfeedCategory(BaseCategory):
 
     async def delete_ban(
         self,
-		user_ids: Optional[list] = None,
-		group_ids: Optional[list] = None,
+		user_ids: Optional[List[int]] = None,
+		group_ids: Optional[List[int]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Allows news from previously banned users and communities to be shown in the current user's newsfeed.
@@ -50,7 +49,7 @@ class NewsfeedCategory(BaseCategory):
 
     async def get(
         self,
-		filters: Optional[list] = None,
+		filters: Optional[List[NewsfeedFilters]] = None,
 		return_banned: Optional[bool] = None,
 		start_time: Optional[int] = None,
 		end_time: Optional[int] = None,
@@ -58,7 +57,7 @@ class NewsfeedCategory(BaseCategory):
 		source_ids: Optional[str] = None,
 		start_from: Optional[str] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		section: Optional[str] = None,
 		**kwargs
     ) -> newsfeed.GetResponseModel:
@@ -83,7 +82,7 @@ class NewsfeedCategory(BaseCategory):
     async def get_banned(
         self,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		**kwargs
     ) -> newsfeed.GetBannedResponseModel:
@@ -101,13 +100,13 @@ class NewsfeedCategory(BaseCategory):
     async def get_comments(
         self,
 		count: Optional[int] = None,
-		filters: Optional[list] = None,
+		filters: Optional[List[NewsfeedCommentsFilters]] = None,
 		reposts: Optional[str] = None,
 		start_time: Optional[int] = None,
 		end_time: Optional[int] = None,
 		last_comments_count: Optional[int] = None,
 		start_from: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> newsfeed.GetCommentsResponseModel:
         """Returns a list of comments in the current user's newsfeed.
@@ -128,7 +127,7 @@ class NewsfeedCategory(BaseCategory):
 
     async def get_lists(
         self,
-		list_ids: Optional[list] = None,
+		list_ids: Optional[List[int]] = None,
 		extended: Optional[bool] = None,
 		**kwargs
     ) -> newsfeed.GetListsResponseModel:
@@ -171,7 +170,7 @@ class NewsfeedCategory(BaseCategory):
 		max_photos: Optional[int] = None,
 		start_from: Optional[str] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> newsfeed.GetRecommendedResponseModel:
         """, Returns a list of newsfeeds recommended to the current user.
@@ -193,7 +192,7 @@ class NewsfeedCategory(BaseCategory):
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
 		shuffle: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> newsfeed.GetSuggestedSourcesResponseModel:
         """Returns communities and users that current user is suggested to follow.
@@ -230,7 +229,7 @@ class NewsfeedCategory(BaseCategory):
         self,
 		title: str,
 		list_id: Optional[int] = None,
-		source_ids: Optional[list] = None,
+		source_ids: Optional[List[int]] = None,
 		no_reposts: Optional[bool] = None,
 		**kwargs
     ) -> newsfeed.SaveListResponseModel:
@@ -256,7 +255,7 @@ class NewsfeedCategory(BaseCategory):
 		start_time: Optional[int] = None,
 		end_time: Optional[int] = None,
 		start_from: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		**kwargs
     ) -> newsfeed.SearchResponseModel:
         """Returns search results by statuses.

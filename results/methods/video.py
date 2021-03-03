@@ -1,6 +1,5 @@
 from vkbottle_types.responses import video, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class VideoCategory(BaseCategory):
@@ -22,7 +21,7 @@ class VideoCategory(BaseCategory):
         self,
 		group_id: Optional[int] = None,
 		title: Optional[str] = None,
-		privacy: Optional[list] = None,
+		privacy: Optional[List[str]] = None,
 		**kwargs
     ) -> video.AddAlbumResponseModel:
         """Creates an empty album for videos.
@@ -42,7 +41,7 @@ class VideoCategory(BaseCategory):
 		video_id: int,
 		target_id: Optional[int] = None,
 		album_id: Optional[int] = None,
-		album_ids: Optional[list] = None,
+		album_ids: Optional[List[int]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """video.addToAlbum method
@@ -63,7 +62,7 @@ class VideoCategory(BaseCategory):
 		video_id: int,
 		owner_id: Optional[int] = None,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		from_group: Optional[bool] = None,
 		reply_to_comment: Optional[int] = None,
 		sticker_id: Optional[int] = None,
@@ -136,8 +135,8 @@ class VideoCategory(BaseCategory):
 		owner_id: Optional[int] = None,
 		name: Optional[str] = None,
 		desc: Optional[str] = None,
-		privacy_view: Optional[list] = None,
-		privacy_comment: Optional[list] = None,
+		privacy_view: Optional[List[str]] = None,
+		privacy_comment: Optional[List[str]] = None,
 		no_comments: Optional[bool] = None,
 		repeat: Optional[bool] = None,
 		**kwargs
@@ -163,7 +162,7 @@ class VideoCategory(BaseCategory):
 		album_id: int,
 		title: str,
 		group_id: Optional[int] = None,
-		privacy: Optional[list] = None,
+		privacy: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Edits the title of a video album.
@@ -183,7 +182,7 @@ class VideoCategory(BaseCategory):
 		comment_id: int,
 		owner_id: Optional[int] = None,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Edits the text of a comment on a video.
@@ -201,7 +200,7 @@ class VideoCategory(BaseCategory):
     async def get(
         self,
 		owner_id: Optional[int] = None,
-		videos: Optional[list] = None,
+		videos: Optional[List[str]] = None,
 		album_id: Optional[int] = None,
 		count: Optional[int] = None,
 		offset: Optional[int] = None,
@@ -287,7 +286,7 @@ class VideoCategory(BaseCategory):
 		count: Optional[int] = None,
 		sort: Optional[str] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[str]] = None,
 		**kwargs
     ) -> video.GetCommentsResponseModel:
         """Returns a list of comments on a video.
@@ -313,7 +312,7 @@ class VideoCategory(BaseCategory):
 		video_id: int,
 		target_id: Optional[int] = None,
 		album_id: Optional[int] = None,
-		album_ids: Optional[list] = None,
+		album_ids: Optional[List[int]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """video.removeFromAlbum method
@@ -448,8 +447,8 @@ class VideoCategory(BaseCategory):
 		link: Optional[str] = None,
 		group_id: Optional[int] = None,
 		album_id: Optional[int] = None,
-		privacy_view: Optional[list] = None,
-		privacy_comment: Optional[list] = None,
+		privacy_view: Optional[List[str]] = None,
+		privacy_comment: Optional[List[str]] = None,
 		no_comments: Optional[bool] = None,
 		repeat: Optional[bool] = None,
 		compression: Optional[bool] = None,
@@ -481,7 +480,7 @@ class VideoCategory(BaseCategory):
 		sort: Optional[int] = None,
 		hd: Optional[int] = None,
 		adult: Optional[bool] = None,
-		filters: Optional[list] = None,
+		filters: Optional[List[str]] = None,
 		search_own: Optional[bool] = None,
 		offset: Optional[int] = None,
 		longer: Optional[int] = None,

@@ -1,6 +1,5 @@
 from vkbottle_types.responses import widgets, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class WidgetsCategory(BaseCategory):
@@ -10,7 +9,7 @@ class WidgetsCategory(BaseCategory):
 		url: Optional[str] = None,
 		page_id: Optional[str] = None,
 		order: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
 		**kwargs

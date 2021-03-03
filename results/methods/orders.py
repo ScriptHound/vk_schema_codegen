@@ -1,6 +1,5 @@
 from vkbottle_types.responses import orders, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class OrdersCategory(BaseCategory):
@@ -61,7 +60,7 @@ class OrdersCategory(BaseCategory):
         return model(**response).response
 
     async def get_amount(
-        self, user_id: int, votes: list, **kwargs
+        self, user_id: int, votes: List[str], **kwargs
     ) -> orders.GetAmountResponseModel:
         """orders.getAmount method
 		:param user_id: 
@@ -76,7 +75,7 @@ class OrdersCategory(BaseCategory):
     async def get_by_id(
         self,
 		order_id: Optional[int] = None,
-		order_ids: Optional[list] = None,
+		order_ids: Optional[List[int]] = None,
 		test_mode: Optional[bool] = None,
 		**kwargs
     ) -> orders.GetByIdResponseModel:

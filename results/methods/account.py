@@ -1,6 +1,5 @@
 from vkbottle_types.responses import account, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class AccountCategory(BaseCategory):
@@ -75,7 +74,7 @@ class AccountCategory(BaseCategory):
         return model(**response).response
 
     async def get_counters(
-        self, filter: Optional[list] = None, **kwargs
+        self, filter: Optional[List[str]] = None, **kwargs
     ) -> account.GetCountersResponseModel:
         """Returns non-null values of user counters.
 		:param filter: Counters to be returned.
@@ -87,7 +86,7 @@ class AccountCategory(BaseCategory):
         return model(**response).response
 
     async def get_info(
-        self, fields: Optional[list] = None, **kwargs
+        self, fields: Optional[List[str]] = None, **kwargs
     ) -> account.GetInfoResponseModel:
         """Returns current account info.
 		:param fields: Fields to return. Possible values: *'country' — user country,, *'https_required' — is "HTTPS only" option enabled,, *'own_posts_default' — is "Show my posts only" option is enabled,, *'no_wall_replies' — are wall replies disabled or not,, *'intro' — is intro passed by user or not,, *'lang' — user language. By default: all.
@@ -239,7 +238,7 @@ class AccountCategory(BaseCategory):
 		device_id: str,
 		settings: Optional[str] = None,
 		key: Optional[str] = None,
-		value: Optional[list] = None,
+		value: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Change push settings.

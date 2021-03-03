@@ -1,6 +1,5 @@
 from vkbottle_types.responses import messages, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class MessagesCategory(BaseCategory):
@@ -37,7 +36,7 @@ class MessagesCategory(BaseCategory):
 
     async def create_chat(
         self,
-		user_ids: Optional[list] = None,
+		user_ids: Optional[List[int]] = None,
 		title: Optional[str] = None,
 		group_id: Optional[int] = None,
 		**kwargs
@@ -55,7 +54,7 @@ class MessagesCategory(BaseCategory):
 
     async def delete(
         self,
-		message_ids: Optional[list] = None,
+		message_ids: Optional[List[int]] = None,
 		spam: Optional[bool] = None,
 		group_id: Optional[int] = None,
 		delete_for_all: Optional[bool] = None,
@@ -170,9 +169,9 @@ class MessagesCategory(BaseCategory):
     async def get_by_conversation_message_id(
         self,
 		peer_id: int,
-		conversation_message_ids: list,
+		conversation_message_ids: List[int],
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		group_id: Optional[int] = None,
 		**kwargs
     ) -> messages.GetByConversationMessageIdResponseModel:
@@ -191,10 +190,10 @@ class MessagesCategory(BaseCategory):
 
     async def get_by_id(
         self,
-		message_ids: list,
+		message_ids: List[int],
 		preview_length: Optional[int] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		group_id: Optional[int] = None,
 		**kwargs
     ) -> messages.GetByIdResponseModel:
@@ -215,7 +214,7 @@ class MessagesCategory(BaseCategory):
         self,
 		peer_id: Optional[int] = None,
 		link: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		**kwargs
     ) -> messages.GetChatPreviewResponseModel:
         """messages.getChatPreview method
@@ -232,7 +231,7 @@ class MessagesCategory(BaseCategory):
     async def get_conversation_members(
         self,
 		peer_id: int,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		group_id: Optional[int] = None,
 		**kwargs
     ) -> messages.GetConversationMembersResponseModel:
@@ -254,7 +253,7 @@ class MessagesCategory(BaseCategory):
 		filter: Optional[str] = None,
 		extended: Optional[bool] = None,
 		start_message_id: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		group_id: Optional[int] = None,
 		**kwargs
     ) -> messages.GetConversationsResponseModel:
@@ -275,9 +274,9 @@ class MessagesCategory(BaseCategory):
 
     async def get_conversations_by_id(
         self,
-		peer_ids: list,
+		peer_ids: List[int],
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		group_id: Optional[int] = None,
 		**kwargs
     ) -> messages.GetConversationsByIdResponseModel:
@@ -302,7 +301,7 @@ class MessagesCategory(BaseCategory):
 		start_message_id: Optional[int] = None,
 		rev: Optional[int] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		group_id: Optional[int] = None,
 		**kwargs
     ) -> messages.GetHistoryResponseModel:
@@ -330,7 +329,7 @@ class MessagesCategory(BaseCategory):
 		start_from: Optional[str] = None,
 		count: Optional[int] = None,
 		photo_sizes: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		group_id: Optional[int] = None,
 		preserve_order: Optional[bool] = None,
 		max_forwards_level: Optional[int] = None,
@@ -359,7 +358,7 @@ class MessagesCategory(BaseCategory):
 		offset: Optional[int] = None,
 		start_message_id: Optional[int] = None,
 		preview_length: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[BaseUserGroupFields]] = None,
 		extended: Optional[bool] = None,
 		group_id: Optional[int] = None,
 		**kwargs
@@ -386,8 +385,8 @@ class MessagesCategory(BaseCategory):
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
 		extended: Optional[bool] = None,
-		name_case: Optional[list] = None,
-		fields: Optional[list] = None,
+		name_case: Optional[List[str]] = None,
+		fields: Optional[List[str]] = None,
 		**kwargs
     ) -> messages.GetIntentUsersResponseModel:
         """messages.getIntentUsers method
@@ -441,7 +440,7 @@ class MessagesCategory(BaseCategory):
 		pts: Optional[int] = None,
 		preview_length: Optional[int] = None,
 		onlines: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		events_limit: Optional[int] = None,
 		msgs_limit: Optional[int] = None,
 		max_msg_id: Optional[int] = None,
@@ -534,7 +533,7 @@ class MessagesCategory(BaseCategory):
 
     async def mark_as_important(
         self,
-		message_ids: Optional[list] = None,
+		message_ids: Optional[List[int]] = None,
 		important: Optional[int] = None,
 		**kwargs
     ) -> messages.MarkAsImportantResponseModel:
@@ -568,7 +567,7 @@ class MessagesCategory(BaseCategory):
 
     async def mark_as_read(
         self,
-		message_ids: Optional[list] = None,
+		message_ids: Optional[List[int]] = None,
 		peer_id: Optional[int] = None,
 		start_message_id: Optional[int] = None,
 		group_id: Optional[int] = None,
@@ -646,7 +645,7 @@ class MessagesCategory(BaseCategory):
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[str]] = None,
 		group_id: Optional[int] = None,
 		**kwargs
     ) -> messages.SearchResponseModel:
@@ -672,7 +671,7 @@ class MessagesCategory(BaseCategory):
 		q: Optional[str] = None,
 		count: Optional[int] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		group_id: Optional[int] = None,
 		**kwargs
     ) -> messages.SearchConversationsResponseModel:
@@ -694,16 +693,16 @@ class MessagesCategory(BaseCategory):
 		user_id: Optional[int] = None,
 		random_id: Optional[int] = None,
 		peer_id: Optional[int] = None,
-		peer_ids: Optional[list] = None,
+		peer_ids: Optional[List[int]] = None,
 		domain: Optional[str] = None,
 		chat_id: Optional[int] = None,
-		user_ids: Optional[list] = None,
+		user_ids: Optional[List[int]] = None,
 		message: Optional[str] = None,
 		lat: Optional[number] = None,
 		long: Optional[number] = None,
 		attachment: Optional[str] = None,
 		reply_to: Optional[int] = None,
-		forward_messages: Optional[list] = None,
+		forward_messages: Optional[List[int]] = None,
 		forward: Optional[str] = None,
 		sticker_id: Optional[int] = None,
 		group_id: Optional[int] = None,

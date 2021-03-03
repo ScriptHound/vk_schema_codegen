@@ -1,6 +1,5 @@
 from vkbottle_types.responses import board, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class BoardCategory(BaseCategory):
@@ -10,7 +9,7 @@ class BoardCategory(BaseCategory):
 		title: str,
 		text: Optional[str] = None,
 		from_group: Optional[bool] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		**kwargs
     ) -> board.AddTopicResponseModel:
         """Creates a new topic on a community's discussion board.
@@ -44,7 +43,7 @@ class BoardCategory(BaseCategory):
 		group_id: int,
 		topic_id: int,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		from_group: Optional[bool] = None,
 		sticker_id: Optional[int] = None,
 		guid: Optional[str] = None,
@@ -98,7 +97,7 @@ class BoardCategory(BaseCategory):
 		topic_id: int,
 		comment_id: int,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Edits a comment on a topic on a community's discussion board.
@@ -172,7 +171,7 @@ class BoardCategory(BaseCategory):
     async def get_topics(
         self,
 		group_id: int,
-		topic_ids: Optional[list] = None,
+		topic_ids: Optional[List[int]] = None,
 		order: Optional[int] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,

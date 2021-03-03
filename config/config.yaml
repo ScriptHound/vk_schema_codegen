@@ -14,3 +14,10 @@ object_models_imports:
     - Union
   pydantic:
     - BaseModel
+object_methods_imports:
+  typing:
+    - Optional
+    - List
+    - Any
+  .base_category:
+    - BaseCategory

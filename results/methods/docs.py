@@ -1,6 +1,5 @@
 from vkbottle_types.responses import docs, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class DocsCategory(BaseCategory):
@@ -36,7 +35,7 @@ class DocsCategory(BaseCategory):
 		owner_id: int,
 		doc_id: int,
 		title: Optional[str] = None,
-		tags: Optional[list] = None,
+		tags: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Edits a document.
@@ -74,7 +73,7 @@ class DocsCategory(BaseCategory):
         return model(**response).response
 
     async def get_by_id(
-        self, docs: list, return_tags: Optional[bool] = None, **kwargs
+        self, docs: List[str], return_tags: Optional[bool] = None, **kwargs
     ) -> docs.GetByIdResponseModel:
         """Returns information about documents by their IDs.
 		:param docs: Document IDs. Example: , "66748_91488,66748_91455",

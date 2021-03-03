@@ -1,13 +1,12 @@
 from vkbottle_types.responses import polls, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class PollsCategory(BaseCategory):
     async def add_vote(
         self,
 		poll_id: int,
-		answer_ids: list,
+		answer_ids: List[int],
 		owner_id: Optional[int] = None,
 		is_board: Optional[bool] = None,
 		**kwargs
@@ -121,7 +120,7 @@ class PollsCategory(BaseCategory):
 		is_board: Optional[bool] = None,
 		extended: Optional[bool] = None,
 		friends_count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[str]] = None,
 		name_case: Optional[str] = None,
 		**kwargs
     ) -> polls.GetByIdResponseModel:
@@ -155,13 +154,13 @@ class PollsCategory(BaseCategory):
     async def get_voters(
         self,
 		poll_id: int,
-		answer_ids: list,
+		answer_ids: List[int],
 		owner_id: Optional[int] = None,
 		is_board: Optional[bool] = None,
 		friends_only: Optional[bool] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		**kwargs
     ) -> polls.GetVotersResponseModel:

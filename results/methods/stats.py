@@ -1,6 +1,5 @@
 from vkbottle_types.responses import stats, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class StatsCategory(BaseCategory):
@@ -12,8 +11,8 @@ class StatsCategory(BaseCategory):
 		timestamp_to: Optional[int] = None,
 		interval: Optional[str] = None,
 		intervals_count: Optional[int] = None,
-		filters: Optional[list] = None,
-		stats_groups: Optional[list] = None,
+		filters: Optional[List[str]] = None,
+		stats_groups: Optional[List[str]] = None,
 		extended: Optional[bool] = None,
 		**kwargs
     ) -> stats.GetResponseModel:
@@ -35,7 +34,7 @@ class StatsCategory(BaseCategory):
         return model(**response).response
 
     async def get_post_reach(
-        self, owner_id: str, post_ids: list, **kwargs
+        self, owner_id: str, post_ids: List[int], **kwargs
     ) -> stats.GetPostReachResponseModel:
         """Returns stats for a wall post.
 		:param owner_id: post owner community id. Specify with "-" sign.

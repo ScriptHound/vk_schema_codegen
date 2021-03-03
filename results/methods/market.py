@@ -1,6 +1,5 @@
 from vkbottle_types.responses import market, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class MarketCategory(BaseCategory):
@@ -14,7 +13,7 @@ class MarketCategory(BaseCategory):
 		old_price: Optional[number] = None,
 		deleted: Optional[bool] = None,
 		main_photo_id: Optional[int] = None,
-		photo_ids: Optional[list] = None,
+		photo_ids: Optional[List[int]] = None,
 		url: Optional[str] = None,
 		dimension_width: Optional[int] = None,
 		dimension_height: Optional[int] = None,
@@ -65,7 +64,7 @@ class MarketCategory(BaseCategory):
         return model(**response).response
 
     async def add_to_album(
-        self, owner_id: int, item_id: int, album_ids: list, **kwargs
+        self, owner_id: int, item_id: int, album_ids: List[int], **kwargs
     ) -> base.OkResponseModel:
         """Adds an item to one or multiple collections.
 		:param owner_id: ID of an item owner community.
@@ -83,7 +82,7 @@ class MarketCategory(BaseCategory):
 		owner_id: int,
 		item_id: int,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		from_group: Optional[bool] = None,
 		reply_to_comment: Optional[int] = None,
 		sticker_id: Optional[int] = None,
@@ -155,7 +154,7 @@ class MarketCategory(BaseCategory):
 		price: number,
 		main_photo_id: int,
 		deleted: Optional[bool] = None,
-		photo_ids: Optional[list] = None,
+		photo_ids: Optional[List[int]] = None,
 		url: Optional[str] = None,
 		**kwargs
     ) -> base.OkResponseModel:
@@ -204,7 +203,7 @@ class MarketCategory(BaseCategory):
 		owner_id: int,
 		comment_id: int,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Chages item comment's text
@@ -262,7 +261,7 @@ class MarketCategory(BaseCategory):
         return model(**response).response
 
     async def get_album_by_id(
-        self, owner_id: int, album_ids: list, **kwargs
+        self, owner_id: int, album_ids: List[int], **kwargs
     ) -> market.GetAlbumByIdResponseModel:
         """Returns items album's data
 		:param owner_id: identifier of an album owner community, "Note that community id in the 'owner_id' parameter should be negative number. For example 'owner_id'=-1 matches the [vk.com/apiclub|VK API] community "
@@ -293,7 +292,7 @@ class MarketCategory(BaseCategory):
         return model(**response).response
 
     async def get_by_id(
-        self, item_ids: list, extended: Optional[bool] = None, **kwargs
+        self, item_ids: List[str], extended: Optional[bool] = None, **kwargs
     ) -> market.GetByIdResponseModel:
         """Returns information about market items by their ids.
 		:param item_ids: Comma-separated ids list: {user id}_{item id}. If an item belongs to a community -{community id} is used. " 'Videos' value example: , '-4363_136089719,13245770_137352259'"
@@ -328,7 +327,7 @@ class MarketCategory(BaseCategory):
 		count: Optional[int] = None,
 		sort: Optional[str] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		**kwargs
     ) -> market.GetCommentsResponseModel:
         """Returns comments list for an item.
@@ -421,7 +420,7 @@ class MarketCategory(BaseCategory):
         return model(**response).response
 
     async def remove_from_album(
-        self, owner_id: int, item_id: int, album_ids: list, **kwargs
+        self, owner_id: int, item_id: int, album_ids: List[int], **kwargs
     ) -> base.OkResponseModel:
         """Removes an item from one or multiple collections.
 		:param owner_id: ID of an item owner community.

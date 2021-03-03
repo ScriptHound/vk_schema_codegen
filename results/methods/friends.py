@@ -1,6 +1,5 @@
 from vkbottle_types.responses import friends, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class FriendsCategory(BaseCategory):
@@ -23,7 +22,7 @@ class FriendsCategory(BaseCategory):
         return model(**response).response
 
     async def add_list(
-        self, name: str, user_ids: Optional[list] = None, **kwargs
+        self, name: str, user_ids: Optional[List[int]] = None, **kwargs
     ) -> friends.AddListResponseModel:
         """Creates a new friend list for the current user.
 		:param name: Name of the friend list.
@@ -37,7 +36,7 @@ class FriendsCategory(BaseCategory):
 
     async def are_friends(
         self,
-		user_ids: list,
+		user_ids: List[int],
 		need_sign: Optional[bool] = None,
 		extended: Optional[bool] = None,
 		**kwargs
@@ -88,7 +87,7 @@ class FriendsCategory(BaseCategory):
         return model(**response).response
 
     async def edit(
-        self, user_id: int, list_ids: Optional[list] = None, **kwargs
+        self, user_id: int, list_ids: Optional[List[int]] = None, **kwargs
     ) -> base.OkResponseModel:
         """Edits the friend lists of the selected user.
 		:param user_id: ID of the user whose friend list is to be edited.
@@ -104,9 +103,9 @@ class FriendsCategory(BaseCategory):
         self,
 		list_id: int,
 		name: Optional[str] = None,
-		user_ids: Optional[list] = None,
-		add_user_ids: Optional[list] = None,
-		delete_user_ids: Optional[list] = None,
+		user_ids: Optional[List[int]] = None,
+		add_user_ids: Optional[List[int]] = None,
+		delete_user_ids: Optional[List[int]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Edits a friend list of the current user.
@@ -129,7 +128,7 @@ class FriendsCategory(BaseCategory):
 		list_id: Optional[int] = None,
 		count: Optional[int] = None,
 		offset: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		ref: Optional[str] = None,
 		**kwargs
@@ -161,7 +160,10 @@ class FriendsCategory(BaseCategory):
         return model(**response).response
 
     async def get_by_phones(
-        self, phones: Optional[list] = None, fields: Optional[list] = None, **kwargs
+        self,
+		phones: Optional[List[str]] = None,
+		fields: Optional[List[UsersFields]] = None,
+		**kwargs
     ) -> friends.GetByPhonesResponseModel:
         """Returns a list of the current user's friends whose phone numbers, validated or specified in a profile, are in a given list.
 		:param phones: List of phone numbers in MSISDN format (maximum 1000). Example: "+79219876543,+79111234567"
@@ -193,7 +195,7 @@ class FriendsCategory(BaseCategory):
         self,
 		source_uid: Optional[int] = None,
 		target_uid: Optional[int] = None,
-		target_uids: Optional[list] = None,
+		target_uids: Optional[List[int]] = None,
 		order: Optional[str] = None,
 		count: Optional[int] = None,
 		offset: Optional[int] = None,
@@ -260,7 +262,7 @@ class FriendsCategory(BaseCategory):
 		need_viewed: Optional[bool] = None,
 		suggested: Optional[bool] = None,
 		ref: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		**kwargs
     ) -> friends.GetRequestsResponseModel:
         """Returns information about the current user's incoming and outgoing friend requests.
@@ -283,10 +285,10 @@ class FriendsCategory(BaseCategory):
 
     async def get_suggestions(
         self,
-		filter: Optional[list] = None,
+		filter: Optional[List[str]] = None,
 		count: Optional[int] = None,
 		offset: Optional[int] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		**kwargs
     ) -> friends.GetSuggestionsResponseModel:
@@ -307,7 +309,7 @@ class FriendsCategory(BaseCategory):
         self,
 		user_id: int,
 		q: Optional[str] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		name_case: Optional[str] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,

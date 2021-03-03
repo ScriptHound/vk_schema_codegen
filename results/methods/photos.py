@@ -1,6 +1,5 @@
 from vkbottle_types.responses import photos, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class PhotosCategory(BaseCategory):
@@ -37,8 +36,8 @@ class PhotosCategory(BaseCategory):
 		title: str,
 		group_id: Optional[int] = None,
 		description: Optional[str] = None,
-		privacy_view: Optional[list] = None,
-		privacy_comment: Optional[list] = None,
+		privacy_view: Optional[List[str]] = None,
+		privacy_comment: Optional[List[str]] = None,
 		upload_by_admins_only: Optional[bool] = None,
 		comments_disabled: Optional[bool] = None,
 		**kwargs
@@ -63,7 +62,7 @@ class PhotosCategory(BaseCategory):
 		photo_id: int,
 		owner_id: Optional[int] = None,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		from_group: Optional[bool] = None,
 		reply_to_comment: Optional[int] = None,
 		sticker_id: Optional[int] = None,
@@ -161,8 +160,8 @@ class PhotosCategory(BaseCategory):
 		title: Optional[str] = None,
 		description: Optional[str] = None,
 		owner_id: Optional[int] = None,
-		privacy_view: Optional[list] = None,
-		privacy_comment: Optional[list] = None,
+		privacy_view: Optional[List[str]] = None,
+		privacy_comment: Optional[List[str]] = None,
 		upload_by_admins_only: Optional[bool] = None,
 		comments_disabled: Optional[bool] = None,
 		**kwargs
@@ -188,7 +187,7 @@ class PhotosCategory(BaseCategory):
 		comment_id: int,
 		owner_id: Optional[int] = None,
 		message: Optional[str] = None,
-		attachments: Optional[list] = None,
+		attachments: Optional[List[str]] = None,
 		**kwargs
     ) -> base.OkResponseModel:
         """Edits a comment on a photo.
@@ -207,7 +206,7 @@ class PhotosCategory(BaseCategory):
         self,
 		owner_id: Optional[int] = None,
 		album_id: Optional[str] = None,
-		photo_ids: Optional[list] = None,
+		photo_ids: Optional[List[str]] = None,
 		rev: Optional[bool] = None,
 		extended: Optional[bool] = None,
 		feed_type: Optional[str] = None,
@@ -238,7 +237,7 @@ class PhotosCategory(BaseCategory):
     async def get_albums(
         self,
 		owner_id: Optional[int] = None,
-		album_ids: Optional[list] = None,
+		album_ids: Optional[List[int]] = None,
 		offset: Optional[int] = None,
 		count: Optional[int] = None,
 		need_system: Optional[bool] = None,
@@ -326,7 +325,7 @@ class PhotosCategory(BaseCategory):
 
     async def get_by_id(
         self,
-		photos: list,
+		photos: List[str],
 		extended: Optional[bool] = None,
 		photo_sizes: Optional[bool] = None,
 		**kwargs
@@ -373,7 +372,7 @@ class PhotosCategory(BaseCategory):
 		sort: Optional[str] = None,
 		access_key: Optional[str] = None,
 		extended: Optional[bool] = None,
-		fields: Optional[list] = None,
+		fields: Optional[List[UsersFields]] = None,
 		**kwargs
     ) -> photos.GetCommentsResponseModel:
         """Returns a list of comments on a photo.

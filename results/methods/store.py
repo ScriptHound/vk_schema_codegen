@@ -1,11 +1,10 @@
 from vkbottle_types.responses import store, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class StoreCategory(BaseCategory):
     async def add_stickers_to_favorite(
-        self, sticker_ids: list, **kwargs
+        self, sticker_ids: List[int], **kwargs
     ) -> base.OkResponseModel:
         """Adds given sticker IDs to the list of user's favorite stickers
 		:param sticker_ids: Sticker IDs to be added
@@ -31,8 +30,8 @@ class StoreCategory(BaseCategory):
 		type: Optional[str] = None,
 		merchant: Optional[str] = None,
 		section: Optional[str] = None,
-		product_ids: Optional[list] = None,
-		filters: Optional[list] = None,
+		product_ids: Optional[List[int]] = None,
+		filters: Optional[List[str]] = None,
 		extended: Optional[bool] = None,
 		**kwargs
     ) -> store.GetProductsResponseModel:
@@ -52,8 +51,8 @@ class StoreCategory(BaseCategory):
 
     async def get_stickers_keywords(
         self,
-		stickers_ids: Optional[list] = None,
-		products_ids: Optional[list] = None,
+		stickers_ids: Optional[List[int]] = None,
+		products_ids: Optional[List[int]] = None,
 		aliases: Optional[bool] = None,
 		all_products: Optional[bool] = None,
 		need_stickers: Optional[bool] = None,
@@ -73,7 +72,7 @@ class StoreCategory(BaseCategory):
         return model(**response).response
 
     async def remove_stickers_from_favorite(
-        self, sticker_ids: list, **kwargs
+        self, sticker_ids: List[int], **kwargs
     ) -> base.OkResponseModel:
         """Removes given sticker IDs from the list of user's favorite stickers
 		:param sticker_ids: Sticker IDs to be removed

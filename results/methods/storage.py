@@ -1,13 +1,12 @@
 from vkbottle_types.responses import storage, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class StorageCategory(BaseCategory):
     async def get(
         self,
 		key: Optional[str] = None,
-		keys: Optional[list] = None,
+		keys: Optional[List[str]] = None,
 		user_id: Optional[int] = None,
 		**kwargs
     ) -> storage.GetResponseModel:

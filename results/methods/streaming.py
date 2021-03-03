@@ -1,6 +1,5 @@
 from vkbottle_types.responses import streaming, base
-from typing import Optional, Any, List
-from .base_category import BaseCategory
+
 
 
 class StreamingCategory(BaseCategory):

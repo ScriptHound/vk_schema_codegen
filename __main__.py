@@ -14,6 +14,7 @@ methods_path: str = CONFIG['schema_methods_path']
 responses_path: str = CONFIG['schema_responses_path']
 
 objects_imports: dict = CONFIG['object_models_imports']
+methods_imports: dict = CONFIG['object_methods_imports']
 
 if __name__ == "__main__":
     responses_imports = responses_parser.imports_dict.imports
