@@ -15,8 +15,8 @@ def write_response_alias(schema_body: dict, file: 'File') -> None:
         file.write(str(ResponseModel(classname, **properties)))
 
 
-def parse_file(schema_path: str, **imports) -> None:
-    files_dir = 'results/responses'
+def parse_file(schema_path: str, filepath_to: str, **imports) -> None:
+    files_dir = f'{filepath_to}/responses'
     filenames, json_dict = generate_response_dir(schema_path, files_dir)
     categorized_responses = {name: {} for name in sorted(filenames)}
     definitions = json_dict['definitions']
@@ -26,7 +26,7 @@ def parse_file(schema_path: str, **imports) -> None:
                                                   categorized_responses)
 
     for filename, schema_body in responses_by_files.items():
-        with open(f'results/responses/{filename}.py', 'w') as file:
+        with open(f'{filepath_to}/responses/{filename}.py', 'w') as file:
             file.write(str(Imports(**imports)))
             write_response_alias(schema_body, file)
 

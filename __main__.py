@@ -16,9 +16,10 @@ responses_path: str = CONFIG['schema_responses_path']
 objects_imports: dict = CONFIG['object_models_imports']
 methods_imports: dict = CONFIG['object_methods_imports']
 
-if __name__ == "__main__":
+
+def generate_to_dir(dirname: str):
     responses_imports = responses_parser.imports_dict.imports
 
-    objects_parser.main.parse_file(objects_path, objects_imports)
-    methods_parser.main.parse_file(methods_path)
-    responses_parser.main.parse_file(responses_path, **responses_imports)
+    objects_parser.main.parse_file(objects_path, dirname, objects_imports)
+    methods_parser.main.parse_file(methods_path, dirname)
+    responses_parser.main.parse_file(responses_path, dirname, **responses_imports)

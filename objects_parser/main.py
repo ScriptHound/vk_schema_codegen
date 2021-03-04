@@ -12,10 +12,10 @@ from utils.titles import Imports, UpdateForwardRefs
 logging.basicConfig(level=logging.INFO)
 
 
-def write_translated_json(prepared_dict: dict, imports: dict) -> None:
-    create_results_dir('results')
+def write_translated_json(filepath_to: str, prepared_dict: dict, imports: dict) -> None:
+    create_results_dir(filepath_to)
 
-    with open('results/codegen.py', 'w') as pyfile:
+    with open(f'{filepath_to}/codegen.py', 'w') as pyfile:
         pyfile.write(str(Imports(**imports)))
 
         for classname in prepared_dict.keys():
@@ -25,10 +25,10 @@ def write_translated_json(prepared_dict: dict, imports: dict) -> None:
         pyfile.write(str(UpdateForwardRefs(**prepared_dict)))
 
 
-def parse_file(path: str, imports_dict: dict) -> None:
+def parse_file(path: str, filepath_to: str, imports_dict: dict) -> None:
     types_dict: dict = get_json_dict(path)['definitions']
     classnames: list = snake_case_to_camel_case(types_dict.keys())
     prepared_dict: dict = shift_json_dict_names(types_dict, classnames)
-    write_translated_json(prepared_dict, imports_dict)
+    write_translated_json(filepath_to, prepared_dict, imports_dict)
 
     logging.info("READY")
