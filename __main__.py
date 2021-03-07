@@ -1,8 +1,8 @@
 import pytest
 
-import objects_parser.main
-import methods_parser.main
-import responses_parser.main
+import objects_parser.main as obj_main
+import methods_parser.main as meth_main
+import responses_parser.main as resp_main
 from config import yaml_processing
 import responses_parser.imports_dict
 
@@ -20,6 +20,6 @@ methods_imports: dict = CONFIG['object_methods_imports']
 def generate_to_dir(dirname: str):
     responses_imports = responses_parser.imports_dict.imports
 
-    objects_parser.main.parse_file(objects_path, dirname, objects_imports)
-    methods_parser.main.parse_file(methods_path, dirname)
-    responses_parser.main.parse_file(responses_path, dirname, **responses_imports)
+    obj_main.parse_file(objects_path, dirname, objects_imports)
+    meth_main.parse_file(methods_path, dirname)
+    resp_main.parse_file(responses_path, dirname, **responses_imports)
