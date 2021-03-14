@@ -1,6 +1,7 @@
+import logging
 from os import DirEntry, mkdir
 from pathlib import Path
-import logging
+
 logging.basicConfig(level=logging.INFO)
 
 
@@ -10,10 +11,9 @@ def create_results_dir(dir_name: str) -> str:
     return dir_name
 
 
-
 def create_python_files(files_dir: str, filenames: list) -> list:
     for filename in filenames:
-        with open(files_dir + "/" + filename + '.py', 'w'):
+        with open(files_dir + "/" + filename + ".py", "w"):
             pass
 
     return filenames
