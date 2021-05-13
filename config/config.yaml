@@ -6,7 +6,7 @@ schema_responses_path:
   vk_schema/responses.json
 object_models_imports:
   enum:
-    None
+    null
   typing:
     - Any
     - List
