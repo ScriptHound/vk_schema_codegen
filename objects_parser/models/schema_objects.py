@@ -91,6 +91,11 @@ class SchemaUndefined(AbstractSchemaObject):
         self.class_form: ClassForm = ClassForm(classname)
 
 
+class SchemaReference(AbstractSchemaObject):
+    def __init__(self, classname, predecessor="BaseModel"):
+        self.class_form: ClassForm = ClassForm(classname, predecessor=predecessor)
+
+
 class SchemaBoolean(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
         self.classname = classname
@@ -125,6 +130,10 @@ def schema_object_fabric_method(classname, prepared_dict):
 
     elif json_type.get("type") == "boolean":
         return SchemaBoolean(classname, prepared_dict)
+
+    elif json_type.get("$ref"):
+        predecessor = get_type_from_reference(json_type["$ref"])
+        return SchemaReference(classname, predecessor)
 
     elif json_type.get("type") is None:
         return SchemaUndefined(classname)
