@@ -79,7 +79,7 @@ class SchemaEnumInitialized(AbstractSchemaObject):
         self.class_form: ClassForm = ClassForm(classname, predecessor="enum.IntEnum")
         counter = 0
         for i in prepared_dict[classname]["enum"]:
-            name = prepared_dict[classname]["enumNames"][counter]
+            name = "_".join(prepared_dict[classname]["enumNames"][counter].lower().split())
             text = None
             self.class_form.add_param(name, i)
             self.class_form.add_description_row(name, text)
