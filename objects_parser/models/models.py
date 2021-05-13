@@ -119,6 +119,9 @@ class ClassForm(ObjectModel):
 
         label += str(self.description)
 
+        if not self.params:
+            label += "\tpass"
+
         for name, value in self.params.items():
             is_keyword = ""
             if name in keyword.kwlist or name[0] in string.digits:

@@ -113,7 +113,9 @@ def schema_object_fabric_method(classname, prepared_dict):
 
     elif json_type.get("type") == "string":
         # if enum is numerical
-        if isinstance(json_type["enum"][0], int):
+        if not json_type.get("enum"):
+            return SchemaUndefined(classname)
+        elif isinstance(json_type["enum"][0], int):
             return SchemaEnumInitialized(classname, prepared_dict)
         else:
             return SchemaEnum(classname, prepared_dict)
