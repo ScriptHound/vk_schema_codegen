@@ -35,9 +35,10 @@ class Annotation(ObjectModel):
 
     @staticmethod
     def type_string_to_default_type(classname: str) -> str:
-        classname_copy = classname.replace('"', "")
-        classname_copy = classname_copy.lower()
+        classname_copy = classname.replace('"', "").lower()
         if classname_copy == "integer":
+            return "int"
+        if classname_copy == "number":
             return "int"
         elif classname_copy == "string":
             return "str"
@@ -45,6 +46,8 @@ class Annotation(ObjectModel):
             return "bool"
         elif classname_copy == "array":
             return "list"
+        elif classname_copy == "object":
+            return "Any"
         else:
             return classname
 

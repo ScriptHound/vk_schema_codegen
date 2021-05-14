@@ -63,6 +63,22 @@ class SchemaAllOfObject(AbstractSchemaObject):
 class SchemaOneOfObject(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
         self.class_form: ClassForm = ClassForm(classname)
+        super_classes_list = []
+
+        for element in prepared_dict[classname]["oneOf"]:
+            properties = element.get("properties")
+            reference = element.get("$ref")
+
+            if properties:
+                for name in properties.keys():
+                    text = properties[name].get("description")
+                    self.class_form.add_param(name, None)
+                    self.class_form.add_description_row(name, text)
+            if reference:
+                ref = get_type_from_reference(reference)
+                super_classes_list.append(ref)
+
+        self.class_form.set_super_class(", ".join(super_classes_list))
 
 
 class SchemaEnum(AbstractSchemaObject):
@@ -103,7 +119,24 @@ class SchemaBoolean(AbstractSchemaObject):
 
     def __str__(self):
         description = self.prepared_dict[self.classname].get("description", None)
-        return f"\n\n{self.classname} = Optional[bool] # {description}\n\n"
+class SchemaArray(AbstractSchemaObject):
+    def __init__(self, classname, prepared_dict):
+        self.classname = classname
+        self.prepared_dict = prepared_dict
+
+    def __str__(self):
+        description = self.prepared_dict[self.classname].get("description", None)
+        items = self.prepared_dict[self.classname].get("items", [])
+        annotations = []
+        for key, value in items.items():
+            if key == "$ref":
+                annotations.append(get_type_from_reference(value))
+            elif key == "type":
+                if not isinstance(value, list):
+                    value = [value]
+                for item in value:
+                    annotations.append(Annotation.type_string_to_default_type(item))
+        return f"\n\n{self.classname} = Optional[List{annotations}]  # {description}\n"
 
 
 def schema_object_fabric_method(classname, prepared_dict):
@@ -130,6 +163,9 @@ def schema_object_fabric_method(classname, prepared_dict):
 
     elif json_type.get("type") == "boolean":
         return SchemaBoolean(classname, prepared_dict)
+
+    elif json_type.get("type") == "array":
+        return SchemaArray(classname, prepared_dict)
 
     elif json_type.get("$ref"):
         predecessor = get_type_from_reference(json_type["$ref"])
