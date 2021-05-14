@@ -124,7 +124,7 @@ class ClassForm(ObjectModel):
         label += str(self.description)
 
         if not self.params:
-            label += "\tpass"
+            label += "\tpass\n"
 
         for name, value in self.params.items():
             label += f"\t{name} = {value}\n"

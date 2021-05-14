@@ -20,6 +20,6 @@ class Imports(AbstractTitle):
 
 class UpdateForwardRefs(AbstractTitle):
     def __repr__(self):
-        return "\n" + "\n".join(
+        return "\n\n" + "\n".join(
             "%s.update_forward_refs()" % k for k, _ in self.params.items()
-        )
+        ) + "\n"

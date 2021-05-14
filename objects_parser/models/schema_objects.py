@@ -57,7 +57,7 @@ class SchemaAllOfObject(AbstractSchemaObject):
                 ref = get_type_from_reference(reference)
                 super_classes_list.append(ref)
 
-        self.class_form.set_super_class(",\n\t".join(super_classes_list))
+        self.class_form.set_super_class(", ".join(super_classes_list))
 
 
 class SchemaOneOfObject(AbstractSchemaObject):
@@ -119,6 +119,9 @@ class SchemaBoolean(AbstractSchemaObject):
 
     def __str__(self):
         description = self.prepared_dict[self.classname].get("description", None)
+        return f"\n\n{self.classname} = Optional[bool]  # {description}\n"
+
+
 class SchemaArray(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
         self.classname = classname
