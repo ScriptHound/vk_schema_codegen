@@ -15,7 +15,7 @@ class Imports(AbstractTitle):
         return "\n".join(
             "from %s import %s" % (k, ", ".join(v)) if v else "import %s" % k
             for k, v in self.params.items()
-        )
+        ) + "\n"
 
 
 class UpdateForwardRefs(AbstractTitle):

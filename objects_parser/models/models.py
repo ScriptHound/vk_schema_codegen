@@ -83,9 +83,10 @@ class Description(ObjectModel):
             label += '\t"""\n'
             return label
         for name, description in self.params.items():
-            if description is None:
-                description = ""
-            label += f"\t{name} - {description}\n"
+            if not description:
+                label += f"\t{name} -\n"
+            else:
+                label += f"\t{name} - {description}\n"
         label += '\t"""\n'
         return label
 
