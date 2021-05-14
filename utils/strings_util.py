@@ -1,5 +1,6 @@
 import json
 import re
+from keyword import kwlist
 
 
 def get_type_from_reference(str_ref) -> str:
@@ -74,3 +75,9 @@ def categorize_methods_as_files(json_dict: dict) -> dict:
     classified_dict = {name: {} for name in filenames}
 
     return classified_dict
+
+
+def resolve_property_name(name: str):
+    if name[0].isdigit() or name in kwlist:
+        name = "_" + name
+    return name

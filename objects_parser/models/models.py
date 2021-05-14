@@ -1,8 +1,6 @@
 import abc
-import keyword
-import string
 
-from utils.strings_util import snake_case_to_camel_case
+from utils.strings_util import resolve_property_name, snake_case_to_camel_case
 
 STANDART_TYPES = ("str", "int", "float")
 
@@ -14,6 +12,7 @@ class ObjectModel(abc.ABC):
         self.predecessor: str = predecessor
 
     def add_param(self, param_name: str, param_value: str) -> None:
+        param_name = resolve_property_name(param_name)
         self.params.update({param_name: param_value})
 
     def set_super_class(self, predecessor: str):
@@ -104,6 +103,7 @@ class ClassForm(ObjectModel):
     def add_param(
         self, param_name: str, param_value: str, annotation: str = None
     ) -> None:
+        param_name = resolve_property_name(param_name)
         if annotation is not None:
             if isinstance(annotation, list):
                 param_name += str(Annotation("array", list_inner_type=annotation[0]))
@@ -123,8 +123,5 @@ class ClassForm(ObjectModel):
             label += "\tpass"
 
         for name, value in self.params.items():
-            is_keyword = ""
-            if name in keyword.kwlist or name[0] in string.digits:
-                is_keyword = "_"
-            label += f"\t{is_keyword}{name} = {value}\n"
+            label += f"\t{name} = {value}\n"
         return label
