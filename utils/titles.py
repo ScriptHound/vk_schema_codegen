@@ -12,14 +12,19 @@ class AbstractTitle(abc.ABC):
 
 class Imports(AbstractTitle):
     def __repr__(self):
-        return "\n".join(
-            "from %s import %s" % (k, ", ".join(v)) if v else "import %s" % k
-            for k, v in self.params.items()
-        ) + "\n"
+        return (
+            "\n".join(
+                "from %s import %s" % (k, ", ".join(v)) if v else "import %s" % k
+                for k, v in self.params.items()
+            )
+            + "\n"
+        )
 
 
 class UpdateForwardRefs(AbstractTitle):
     def __repr__(self):
-        return "\n\n" + "\n".join(
-            "%s.update_forward_refs()" % k for k, _ in self.params.items()
-        ) + "\n"
+        return (
+            "\n\n"
+            + "\n".join("%s.update_forward_refs()" % k for k, _ in self.params.items())
+            + "\n"
+        )
