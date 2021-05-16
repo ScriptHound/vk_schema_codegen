@@ -3,10 +3,12 @@ import re
 from keyword import kwlist
 
 
-def get_type_from_reference(str_ref) -> str:
+def get_type_from_reference(str_ref, convert_to_calmel_case=True) -> str:
     pattern = r".*/(.*)"
     ref_type = re.search(pattern, str_ref).group(1)
-    return snake_case_to_camel_case(ref_type)
+    if convert_to_calmel_case:
+        return snake_case_to_camel_case(ref_type)
+    return ref_type
 
 
 def output_switch_decorator(function):
