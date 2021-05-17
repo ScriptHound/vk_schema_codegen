@@ -1,8 +1,8 @@
 import abc
 
-from utils.strings_util import get_type_from_reference
+from utils.strings_util import convert_to_python_type, get_type_from_reference
 
-from .models import Annotation, ClassForm
+from .models import ClassForm
 
 # fabric method pattern
 
@@ -140,7 +140,7 @@ class SchemaArray(AbstractSchemaObject):
                 if not isinstance(value, list):
                     value = [value]
                 for item in value:
-                    annotations.append(Annotation.type_string_to_default_type(item))
+                    annotations.append(convert_to_python_type(item))
         return f"\n\n{self.classname} = Optional[List{annotations}]  # {description}\n"
 
 

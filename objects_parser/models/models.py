@@ -1,4 +1,5 @@
 import abc
+from typing import List, Union
 
 from utils.strings_util import resolve_property_name, snake_case_to_camel_case
 
@@ -28,9 +29,12 @@ class Annotation(ObjectModel):
         self,
         classname: str,
         predecessor: str = "BaseModel",
-        list_inner_type: str = "default_name",
+        list_inner_type: Union[str, List[str]] = "default_name",
     ) -> None:
         super().__init__(classname, predecessor=predecessor)
+        if isinstance(list_inner_type, list):
+            if len(list_inner_type) == 1:
+                list_inner_type = list_inner_type[0]
         self.list_inner_type = list_inner_type
 
     @staticmethod
@@ -38,7 +42,7 @@ class Annotation(ObjectModel):
         classname_copy = classname.replace('"', "").lower()
         if classname_copy == "integer":
             return "int"
-        if classname_copy == "number":
+        elif classname_copy == "number":
             return "int"
         elif classname_copy == "string":
             return "str"
@@ -63,13 +67,23 @@ class Annotation(ObjectModel):
             camel_case_types = self.__unpack_dict_values(camel_case_types)
             self.classname = f"Union[{camel_case_types}]"
         elif camel_case_types == "Array":
-            self.list_inner_type = self.type_string_to_default_type(
-                self.list_inner_type
+            if not isinstance(self.list_inner_type, list):
+                self.list_inner_type = [self.list_inner_type]
+            self.list_inner_type = [
+                self.type_string_to_default_type(list_inner_type)
+                for list_inner_type in self.list_inner_type
+            ]
+            self.classname = (
+                "List"
+                + "["
+                + ", ".join(
+                    [
+                        f'"{item}"' if item not in STANDART_TYPES else item
+                        for item in self.list_inner_type
+                    ]
+                )
+                + "]"
             )
-            if self.list_inner_type in STANDART_TYPES:
-                self.classname = f"List[{self.list_inner_type}]"
-            else:
-                self.classname = f'List["{self.list_inner_type}"]'
         else:
             self.classname = '"' + camel_case_types + '"'
 
@@ -110,7 +124,7 @@ class ClassForm(ObjectModel):
         param_name = resolve_property_name(param_name)
         if annotation is not None:
             if isinstance(annotation, list):
-                param_name += str(Annotation("array", list_inner_type=annotation[0]))
+                param_name += str(Annotation("array", list_inner_type=annotation))
             else:
                 param_name += str(Annotation(annotation))
 

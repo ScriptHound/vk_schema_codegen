@@ -1,5 +1,5 @@
 from objects_parser.models.models import Annotation
-from utils.strings_util import get_type_from_reference
+from utils.strings_util import convert_to_python_type, get_type_from_reference
 
 
 class ResponseModelBody:
@@ -60,8 +60,9 @@ def jsonschema_object_factory(classname: str, json_properties: dict) -> "Model":
     schema_type = json_properties["response"].get("type", "$ref")
 
     if schema_type == "$ref":
-        t = get_type_from_reference(json_properties["response"]["$ref"])
-        t = Annotation.type_string_to_default_type(t)
+        t = convert_to_python_type(
+            get_type_from_reference(json_properties["response"]["$ref"])
+        )
         return SingleTypeModel(classname, f"Optional[{t}]")
     elif schema_type == "integer":
         return SingleTypeModel(classname, "int")

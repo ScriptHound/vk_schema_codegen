@@ -55,13 +55,18 @@ def camel_case_to_snake_case(string: str) -> dict:
 def convert_to_python_type(field):
     if field == "integer":
         return "int"
+    elif field == "number":
+        return "int"
     elif field == "string":
         return "str"
     elif field == "boolean":
         return "bool"
     elif field == "array":
         return "list"
-    return str(field)
+    elif field == "object":
+        return "Any"
+    else:
+        return str(field)
 
 
 def shift_json_dict_names(plain_data: str, classnames: str) -> dict:
