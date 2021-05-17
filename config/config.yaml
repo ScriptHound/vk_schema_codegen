@@ -7,6 +7,8 @@ schema_responses_path:
 object_models_imports:
   enum:
     null
+  inspect:
+    null
   typing:
     - Any
     - List

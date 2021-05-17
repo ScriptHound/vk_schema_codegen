@@ -25,6 +25,10 @@ class UpdateForwardRefs(AbstractTitle):
     def __repr__(self):
         return (
             "\n\n"
-            + "\n".join("%s.update_forward_refs()" % k for k, _ in self.params.items())
+            + (
+                "for item in locals().copy().values():"
+                "\n\tif inspect.isclass(item) and issubclass(item, BaseModel):"
+                "\n\t\titem.update_forward_refs()"
+            )
             + "\n"
         )
