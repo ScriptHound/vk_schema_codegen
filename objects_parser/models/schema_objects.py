@@ -1,6 +1,10 @@
 import abc
 
-from utils.strings_util import get_type_from_reference, get_annotation_type
+from utils.strings_util import (
+    convert_to_python_type,
+    get_type_from_reference,
+    get_annotation_type,
+)
 
 from .models import Annotation, ClassForm
 
@@ -53,34 +57,26 @@ class SchemaAllOfObject(AbstractSchemaObject):
             if reference:
                 ref = get_type_from_reference(reference)
                 super_classes_list.append(ref)
-
-        self.class_form.set_super_class(", ".join(super_classes_list))
+        if super_classes_list:
+            self.class_form.set_super_class(", ".join(super_classes_list))
 
 
 class SchemaOneOfObject(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
-        self.class_form: ClassForm = ClassForm(classname)
-        super_classes_list = []
+        one_of = prepared_dict[classname]["oneOf"]
+        references = [element.get("$ref") for element in one_of]
+        if all(references):
+            self.class_form: ClassForm = ClassForm(classname)
+            super_classes_list = []
 
-        for element in prepared_dict[classname]["oneOf"]:
-            properties = element.get("properties")
-            required = prepared_dict[classname].get("required", [])
-            reference = element.get("$ref")
-
-            if properties:
-                for name in properties.keys():
-                    type_anno = get_annotation_type(properties[name])
-
-                    text = properties[name].get("description")
-                    self.class_form.add_param(
-                        name, None, annotation=type_anno, required=name in required
-                    )
-                    self.class_form.add_description_row(name, text)
-            if reference:
+            for reference in references:
                 ref = get_type_from_reference(reference)
                 super_classes_list.append(ref)
 
-        self.class_form.set_super_class(", ".join(super_classes_list))
+            self.class_form.set_super_class(", ".join(super_classes_list))
+        else:
+            types = ", ".join(convert_to_python_type(item["type"]) for item in one_of)
+            self.class_form = f"\n\n{classname} = Union[{types}]\n"
 
 
 class SchemaEnum(AbstractSchemaObject):
@@ -112,8 +108,11 @@ class SchemaUndefined(AbstractSchemaObject):
 
 
 class SchemaReference(AbstractSchemaObject):
-    def __init__(self, classname, predecessor="BaseModel"):
-        self.class_form: ClassForm = ClassForm(classname, predecessor=predecessor)
+    def __init__(self, classname, prepared_dict, predecessor="BaseModel"):
+        if prepared_dict[predecessor].get("type") == "object":
+            self.class_form: ClassForm = ClassForm(classname, predecessor=predecessor)
+        else:
+            self.class_form = f"\n\n{classname} = {predecessor}\n"
 
 
 class SchemaBoolean(AbstractSchemaObject):
@@ -170,7 +169,7 @@ def schema_object_fabric_method(classname, prepared_dict):
 
     elif json_type.get("$ref"):
         predecessor = get_type_from_reference(json_type["$ref"])
-        return SchemaReference(classname, predecessor)
+        return SchemaReference(classname, prepared_dict, predecessor)
 
     elif json_type.get("type") is None:
         return SchemaUndefined(classname)
