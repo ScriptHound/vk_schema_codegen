@@ -95,10 +95,12 @@ class Annotation(ObjectModel):
 
 class Description(ObjectModel):
     def __str__(self):
-        label: str = f'\t"""VK Object {self.classname}\n\n'
-        if all(isinstance(desc, type(None)) for _, desc in self.params.items()):
-            label += '\t"""\n'
+        label: str = f'\t"""VK Object {self.classname}'
+        if all(desc is None for _, desc in self.params.items()):
+            label += '"""\n\n'
             return label
+
+        label += "\n\n"
         for name, description in self.params.items():
             if not description:
                 label += f"\t{name} -\n"
