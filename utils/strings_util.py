@@ -11,6 +11,21 @@ def get_type_from_reference(str_ref, convert_to_calmel_case=True) -> str:
     return ref_type
 
 
+def get_annotation_type(item: dict):
+    if item.get("type") == "array":
+        if item["items"].get("type"):
+            type_anno = [item["items"]["type"]]
+        else:
+            type_anno = item["items"].get("$ref")
+            type_anno = [get_type_from_reference(type_anno)]
+    elif item.get("type"):
+        type_anno = item.get("type")
+    else:
+        type_anno = item.get("$ref")
+        type_anno = get_type_from_reference(type_anno)
+    return type_anno
+
+
 def output_switch_decorator(function):
     """If input is dict, then return dict
     If input is a single element, return single element

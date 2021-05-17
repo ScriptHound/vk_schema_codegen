@@ -1,8 +1,8 @@
 import abc
 
-from utils.strings_util import convert_to_python_type, get_type_from_reference
+from utils.strings_util import get_type_from_reference, get_annotation_type
 
-from .models import ClassForm
+from .models import Annotation, ClassForm
 
 # fabric method pattern
 
@@ -19,23 +19,15 @@ class AbstractSchemaObject(abc.ABC):
 class SchemaObject(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
         self.class_form: ClassForm = ClassForm(classname)
-        for name in prepared_dict[classname]["properties"].keys():
-            properties = prepared_dict[classname]["properties"]
-
-            if properties[name].get("type") == "array":
-                if properties[name]["items"].get("type"):
-                    type_anno = [properties[name]["items"]["type"]]
-                else:
-                    type_anno = properties[name]["items"].get("$ref")
-                    type_anno = [get_type_from_reference(type_anno)]
-            elif properties[name].get("type"):
-                type_anno = properties[name].get("type")
-            else:
-                type_anno = properties[name].get("$ref")
-                type_anno = get_type_from_reference(type_anno)
+        properties = prepared_dict[classname].get("properties")
+        required = prepared_dict[classname].get("required", [])
+        for name in properties.keys():
+            type_anno = get_annotation_type(properties[name])
 
             text = properties[name].get("description")
-            self.class_form.add_param(name, None, annotation=type_anno)
+            self.class_form.add_param(
+                name, None, annotation=type_anno, required=name in required
+            )
             self.class_form.add_description_row(name, text)
 
 
@@ -46,12 +38,17 @@ class SchemaAllOfObject(AbstractSchemaObject):
 
         for element in prepared_dict[classname]["allOf"]:
             properties = element.get("properties")
+            required = prepared_dict[classname].get("required", [])
             reference = element.get("$ref")
 
             if properties:
                 for name in properties.keys():
+                    type_anno = get_annotation_type(properties[name])
+
                     text = properties[name].get("description")
-                    self.class_form.add_param(name, None)
+                    self.class_form.add_param(
+                        name, None, annotation=type_anno, required=name in required
+                    )
                     self.class_form.add_description_row(name, text)
             if reference:
                 ref = get_type_from_reference(reference)
@@ -67,12 +64,17 @@ class SchemaOneOfObject(AbstractSchemaObject):
 
         for element in prepared_dict[classname]["oneOf"]:
             properties = element.get("properties")
+            required = prepared_dict[classname].get("required", [])
             reference = element.get("$ref")
 
             if properties:
                 for name in properties.keys():
+                    type_anno = get_annotation_type(properties[name])
+
                     text = properties[name].get("description")
-                    self.class_form.add_param(name, None)
+                    self.class_form.add_param(
+                        name, None, annotation=type_anno, required=name in required
+                    )
                     self.class_form.add_description_row(name, text)
             if reference:
                 ref = get_type_from_reference(reference)
@@ -131,17 +133,11 @@ class SchemaArray(AbstractSchemaObject):
 
     def __str__(self):
         description = self.prepared_dict[self.classname].get("description", None)
-        items = self.prepared_dict[self.classname].get("items", [])
-        annotations = []
-        for key, value in items.items():
-            if key == "$ref":
-                annotations.append(get_type_from_reference(value))
-            elif key == "type":
-                if not isinstance(value, list):
-                    value = [value]
-                for item in value:
-                    annotations.append(convert_to_python_type(item))
-        return f"\n\n{self.classname} = Optional[List{annotations}]  # {description}\n"
+        items = self.prepared_dict[self.classname].get("items", {})
+        annotation = str(
+            Annotation("array", list_inner_type=get_annotation_type(items))
+        )[2:]
+        return f"\n\n{self.classname} = {annotation}  # {description}\n"
 
 
 def schema_object_fabric_method(classname, prepared_dict):

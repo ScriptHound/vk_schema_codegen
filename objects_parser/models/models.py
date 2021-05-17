@@ -29,6 +29,7 @@ class Annotation(ObjectModel):
         self,
         classname: str,
         predecessor: str = "BaseModel",
+        required: bool = False,
         list_inner_type: Union[str, List[str]] = "default_name",
     ) -> None:
         super().__init__(classname, predecessor=predecessor)
@@ -36,6 +37,7 @@ class Annotation(ObjectModel):
             if len(list_inner_type) == 1:
                 list_inner_type = list_inner_type[0]
         self.list_inner_type = list_inner_type
+        self.required = required
 
     @staticmethod
     def type_string_to_default_type(classname: str) -> str:
@@ -68,28 +70,40 @@ class Annotation(ObjectModel):
             self.classname = f"Union[{camel_case_types}]"
         elif camel_case_types == "Array":
             if not isinstance(self.list_inner_type, list):
-                self.list_inner_type = [self.list_inner_type]
-            self.list_inner_type = [
-                self.type_string_to_default_type(list_inner_type)
-                for list_inner_type in self.list_inner_type
-            ]
-            self.classname = (
-                "List"
-                + "["
-                + ", ".join(
-                    [
+                self.list_inner_type = self.type_string_to_default_type(
+                    self.list_inner_type
+                )
+                self.classname = (
+                    "List["
+                    + (
+                        f'"{self.list_inner_type}"'
+                        if self.list_inner_type not in STANDART_TYPES
+                        else self.list_inner_type
+                    )
+                    + "]"
+                )
+            else:
+                self.list_inner_type = [
+                    self.type_string_to_default_type(list_inner_type)
+                    for list_inner_type in self.list_inner_type
+                ]
+
+                self.classname = (
+                    "List[Union["
+                    + ", ".join(
                         f'"{item}"' if item not in STANDART_TYPES else item
                         for item in self.list_inner_type
-                    ]
+                    )
+                    + "]]"
                 )
-                + "]"
-            )
         else:
             self.classname = '"' + camel_case_types + '"'
 
         self.classname = self.type_string_to_default_type(self.classname)
-
-        label: str = f": Optional[{self.classname}]"
+        if not self.required:
+            label = f": Optional[{self.classname}]"
+        else:
+            label = f": {self.classname}"
         return label
 
 
@@ -121,14 +135,16 @@ class ClassForm(ObjectModel):
         self.description.add_param(name, text)
 
     def add_param(
-        self, param_name: str, param_value: str, annotation: str = None
+        self, param_name: str, param_value: str, annotation: str = None, required=False
     ) -> None:
         param_name = resolve_property_name(param_name)
         if annotation is not None:
             if isinstance(annotation, list):
-                param_name += str(Annotation("array", list_inner_type=annotation))
+                param_name += str(
+                    Annotation("array", list_inner_type=annotation, required=required)
+                )
             else:
-                param_name += str(Annotation(annotation))
+                param_name += str(Annotation(annotation, required=required))
 
         self.params.update({param_name: param_value})
 
