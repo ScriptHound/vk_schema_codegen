@@ -1,5 +1,5 @@
 import logging
-from utils.sorting import sort_by_reference
+from utils.sorting import create_objects_from_enum_types, sort_by_reference
 
 from utils.os_utils import create_results_dir
 from utils.strings_util import (
@@ -28,7 +28,9 @@ def write_translated_json(filepath_to: str, prepared_dict: dict, imports: dict) 
 
 
 def parse_file(path: str, filepath_to: str, imports_dict: dict) -> None:
-    types_dict: dict = sort_by_reference(get_json_dict(path)["definitions"])
+    types_dict: dict = create_objects_from_enum_types(
+        sort_by_reference(get_json_dict(path)["definitions"])
+    )
     classnames: dict = snake_case_to_camel_case(types_dict.keys())
     prepared_dict: dict = shift_json_dict_names(types_dict, classnames)
     write_translated_json(filepath_to, prepared_dict, imports_dict)

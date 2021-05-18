@@ -34,3 +34,25 @@ def sort_by_reference(definitions: dict):
         if key not in sorted_dict:
             sorted_dict[key] = value
     return sorted_dict
+
+
+def create_objects_from_enum_types(definitions: dict):
+    sorted_dict = {}
+    for key, value in definitions.items():
+        properties = value.get("properties")
+        if not properties:
+            sorted_dict[key] = value
+            continue
+        for item_name, item_value in properties.items():
+            item_type = item_value.get("type")
+            item_enum = item_value.get("enum")
+            item_description = item_value.get("description")
+            if not (item_type and item_enum):
+                continue
+            enum_name = key + "_" + item_name
+            sorted_dict[enum_name] = item_value
+            properties[item_name] = {"$ref": f"objects.json#/definitions/{enum_name}"}
+            if item_description:
+                properties[item_name]["description"] = item_description
+        sorted_dict[key] = value
+    return sorted_dict
