@@ -76,7 +76,7 @@ def jsonschema_object_factory(classname: str, json_properties: dict):
             return SingleTypeModel(classname, type_)
         type_ = json_properties["response"]["items"]["$ref"]
         type_ = get_type_from_reference(type_)
-        return SingleTypeModel(classname, f"List[{type_}]")
+        return SingleTypeModel(classname, f"typing.List[{type_}]")
 
     elif schema_type == "string":
         return SingleTypeModel(classname, "str")

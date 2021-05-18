@@ -25,7 +25,7 @@ class SchemaObject(AbstractSchemaObject):
         self.class_form: ClassForm = ClassForm(classname)
         properties = prepared_dict[classname].get("properties")
         required = prepared_dict[classname].get("required", [])
-        for name in properties.keys():
+        for name in sorted(properties.keys()):
             type_anno = get_annotation_type(properties[name])
 
             text = properties[name].get("description")
@@ -46,7 +46,7 @@ class SchemaAllOfObject(AbstractSchemaObject):
             reference = element.get("$ref")
 
             if properties:
-                for name in properties.keys():
+                for name in sorted(properties.keys()):
                     type_anno = get_annotation_type(properties[name])
 
                     text = properties[name].get("description")
@@ -82,29 +82,41 @@ class SchemaOneOfObject(AbstractSchemaObject):
                 self.class_form.set_super_class(formatted)
         else:
             types = ", ".join(convert_to_python_type(item["type"]) for item in one_of)
-            self.class_form = f"\n\n{classname} = Union[{types}]\n"
+            self.class_form = f"\n\n{classname} = typing.Union[{types}]\n"
 
 
 class SchemaEnum(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
-        self.class_form: ClassForm = ClassForm(classname, predecessor="enum.Enum")
+        self.class_form: ClassForm = ClassForm(
+            classname,
+            desc=(
+                '\t""" '
+                + prepared_dict[classname].get("description", f"{classname} enum")
+                + ' """\n'
+            ),
+            predecessor="enum.Enum",
+        )
         for name in prepared_dict[classname]["enum"]:
-            text = None
             self.class_form.add_param(name.upper(), f'"{name}"')
-            self.class_form.add_description_row(name, text)
 
 
 class SchemaEnumInitialized(AbstractSchemaObject):
     def __init__(self, classname, prepared_dict):
-        self.class_form: ClassForm = ClassForm(classname, predecessor="enum.IntEnum")
+        self.class_form: ClassForm = ClassForm(
+            classname,
+            desc=(
+                '\t""" '
+                + prepared_dict[classname].get("description", f"{classname} enum")
+                + ' """\n'
+            ),
+            predecessor="enum.IntEnum",
+        )
         counter = 0
         for i in prepared_dict[classname]["enum"]:
             name = "_".join(
                 prepared_dict[classname]["enumNames"][counter].lower().split()
             )
-            text = None
             self.class_form.add_param(name, i)
-            self.class_form.add_description_row(name, text)
             counter += 1
 
 
@@ -128,7 +140,11 @@ class SchemaBoolean(AbstractSchemaObject):
 
     def __str__(self):
         description = self.prepared_dict[self.classname].get("description", None)
-        return f"\n\n{self.classname} = Optional[bool]  # {description}\n"
+        return (
+            f"\n\n{self.classname} = typing.Optional[bool]"
+            + (f"  # {description}" if description else "")
+            + "\n"
+        )
 
 
 class SchemaArray(AbstractSchemaObject):
@@ -142,7 +158,11 @@ class SchemaArray(AbstractSchemaObject):
         annotation = str(
             Annotation("array", list_inner_type=get_annotation_type(items))
         )[2:]
-        return f"\n\n{self.classname} = {annotation}  # {description}\n"
+        return (
+            f"\n\n{self.classname} = {annotation}"
+            + (f"  # {description}" if description else "")
+            + "\n"
+        )
 
 
 def schema_object_fabric_method(classname, prepared_dict):

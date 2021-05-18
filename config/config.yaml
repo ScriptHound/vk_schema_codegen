@@ -10,26 +10,18 @@ object_models_imports:
   inspect:
     null
   typing:
-    - Any
-    - Dict
-    - List
-    - Optional
-    - Union
+    null
   pydantic:
     - BaseModel
 object_methods_imports:
   typing:
-    - Any
-    - List
-    - Optional
+    null
   .base_category:
     - BaseCategory
 object_responses_imports:
   inspect:
     null
   typing:
-    - Any
-    - List
-    - Optional
+    null
   .base_response:
     - BaseResponse

@@ -79,7 +79,7 @@ def convert_to_python_type(field):
     elif field == "array":
         return "list"
     elif field == "object":
-        return "Any"
+        return "typing.Any"
     else:
         return str(field)
 

@@ -6,7 +6,7 @@ from .response_utils import generate_response_dir, put_responses_by_filename
 
 def write_response_alias(schema_body: dict, file) -> None:
     for classname in schema_body.keys():
-        annotation = f': Optional["{classname}Model"]'
+        annotation = f': typing.Optional["{classname}Model"]'
         properties = {"response" + annotation: None}
         file.write(str(ResponseModel(classname, **properties)))
 

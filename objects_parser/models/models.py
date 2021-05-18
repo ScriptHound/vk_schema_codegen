@@ -53,7 +53,7 @@ class Annotation(ObjectModel):
         elif classname_copy == "array":
             return "list"
         elif classname_copy == "object":
-            return "Any"
+            return "typing.Any"
         else:
             return classname
 
@@ -67,14 +67,14 @@ class Annotation(ObjectModel):
         camel_case_types = snake_case_to_camel_case(self.classname)
         if isinstance(camel_case_types, dict):
             camel_case_types = self.__unpack_dict_values(camel_case_types)
-            self.classname = f"Union[{camel_case_types}]"
+            self.classname = f"typing.Union[{camel_case_types}]"
         elif camel_case_types == "Array":
             if not isinstance(self.list_inner_type, list):
                 self.list_inner_type = self.type_string_to_default_type(
                     self.list_inner_type
                 )
                 self.classname = (
-                    "List["
+                    "typing.List["
                     + (
                         f'"{self.list_inner_type}"'
                         if self.list_inner_type not in STANDART_TYPES
@@ -89,7 +89,7 @@ class Annotation(ObjectModel):
                 ]
 
                 self.classname = (
-                    "List[Union["
+                    "typing.List[typing.Union["
                     + ", ".join(
                         f'"{item}"' if item not in STANDART_TYPES else item
                         for item in self.list_inner_type
@@ -101,7 +101,7 @@ class Annotation(ObjectModel):
 
         self.classname = self.type_string_to_default_type(self.classname)
         if not self.required:
-            label = f": Optional[{self.classname}]"
+            label = f": typing.Optional[{self.classname}]"
         else:
             label = f": {self.classname}"
         return label

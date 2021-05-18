@@ -2,22 +2,25 @@ from utils.strings_util import (
     camel_case_to_snake_case,
     convert_to_python_type,
     resolve_property_name,
+    get_type_from_reference,
 )
 
 response_models = {
     "base_bool_response": "base.Bool",
     "base_getUploadServer_response": "base.GetUploadServer",
-    "base_ok_response": "base.Ok",
+    "base_ok_response": "base.OkResponse",
 }
 
-CLASSMETHOD_PATTERN = """\tasync def {snake_name}(
-\t\t{args}
-\t) -> {type}ResponseModel:
-\t\t{desc}
-\t\tparams = self.get_set_params(locals())
-\t\tresponse = await self.api.request(\"{name}\", params)
-\t\tmodel = {type}Response
-\t\treturn model(**response).response"""
+CLASSMETHOD_PATTERN = (
+    "\tasync def {snake_name}(\n"
+    "\t\t{args}\n"
+    "\t) -> {return_type}Model:\n"
+    "\t\t{desc}\n"
+    "\t\tparams = self.get_set_params(locals())\n"
+    '\t\tresponse = await self.api.request("{name}", params)\n'
+    "{model}\n"
+    "\t\treturn model(**response).response"
+)
 
 
 class ObjectModel:
@@ -56,10 +59,10 @@ class Annotation(ObjectModel):
             else:
                 post_annotate = convert_to_python_type(items["type"])
 
-            param_annotate = "List[%s]" % convert_to_python_type(post_annotate)
+            param_annotate = "typing.List[%s]" % convert_to_python_type(post_annotate)
 
         if param_type is False:
-            return f"Optional[{param_annotate}] = None"
+            return f"typing.Optional[{param_annotate}] = None"
         return param_annotate
 
 
@@ -88,12 +91,23 @@ class ConvertToArgs(ObjectModel):
 
 class MethodForm:
     def parse_return_type(m_name, type_response):
-        category, name = m_name.split(".")
+        category = m_name.split(".")[0]
+        name = get_type_from_reference(type_response.replace(f"{category}_", ""))
         method_name = f"{category}.{name[0].upper() + name[1:]}"
         return_type = type_response.split("/")[-1]
         return response_models.get(return_type, method_name)
 
     def costruct(**params):
+        if params["extended_return_type"]:
+            params["model"] = (
+                "\t\tmodel = self.get_model(\n"
+                '\t\t\t{("extended",): ' + f'{params["extended_return_type"]}' + "},\n"
+                f"\t\t\tdefault={params['return_type']},\n"
+                "\t\t\tparams=params,\n"
+                "\t\t)"
+            )
+        else:
+            params["model"] = f"\t\tmodel = {params['return_type']}"
         return CLASSMETHOD_PATTERN.format(**params)
 
 
@@ -114,13 +128,19 @@ class ClassForm:
         return_type = MethodForm.parse_return_type(
             method_name, method["responses"]["response"]["$ref"]
         )
+        extended_type = method["responses"].get("extendedResponse")
+        if extended_type:
+            extended_type = MethodForm.parse_return_type(
+                method_name, extended_type["$ref"]
+            )
         self.constructed_methods.append(
             MethodForm.costruct(
                 name=method_name,
                 snake_name=camel_case_to_snake_case(method_name.split(".")[1]),
                 args=args,
                 desc=desc,
-                type=return_type,
+                return_type=return_type,
+                extended_return_type=extended_type,
             )
         )
 
