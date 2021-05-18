@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.INFO)
 def write_translated_json(filepath_to: str, prepared_dict: dict, imports: dict) -> None:
     create_results_dir(filepath_to)
 
-    with open(f"{filepath_to}/codegen.py", "w") as pyfile:
+    with open(f"{filepath_to}/objects.py", "w") as pyfile:
         pyfile.write(str(Imports(**imports)))
 
         for classname in prepared_dict.keys():
