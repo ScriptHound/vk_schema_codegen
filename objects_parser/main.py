@@ -1,13 +1,13 @@
 import logging
 
 from utils.os_utils import create_results_dir
-from utils.sorting import create_objects_from_enum_types, sort_by_reference
 from utils.strings_util import (
     get_json_dict,
     shift_json_dict_names,
     snake_case_to_camel_case,
 )
 from utils.titles import Imports, UpdateForwardRefs
+from utils.tools import create_objects_from_enum_types, sort_by_reference
 
 from .models.schema_objects import schema_object_fabric_method
 
