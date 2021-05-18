@@ -23,3 +23,10 @@ object_methods_imports:
     - Any
   .base_category:
     - BaseCategory
+object_responses_imports:
+  typing:
+    - Optional
+    - List
+    - Any
+  .base_response:
+    - BaseResponse
