@@ -64,7 +64,7 @@ def snake_case_to_camel_case(string_list: list) -> dict:
 def camel_case_to_snake_case(string: str) -> dict:
     return "".join(
         "_" + symbol.lower() if symbol.isupper() else symbol for symbol in list(string)
-    )
+    ).strip('_')
 
 
 def convert_to_python_type(field):

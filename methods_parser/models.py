@@ -1,7 +1,7 @@
 from utils.strings_util import (
     camel_case_to_snake_case,
     convert_to_python_type,
-    get_type_from_reference,
+    resolve_property_name,
 )
 
 response_models = {
@@ -10,14 +10,14 @@ response_models = {
     "base_ok_response": "base.Ok",
 }
 
-CLASSMETHOD_PATTERN = """    async def {snake_name}(
-        {args}
-    ) -> {type}ResponseModel:
-        {desc}
-        params = self.get_set_params(locals())
-        response = await self.api.request(\"{name}\", params)
-        model = {type}Response
-        return model(**response).response"""
+CLASSMETHOD_PATTERN = """\tasync def {snake_name}(
+\t\t{args}
+\t) -> {type}ResponseModel:
+\t\t{desc}
+\t\tparams = self.get_set_params(locals())
+\t\tresponse = await self.api.request(\"{name}\", params)
+\t\tmodel = {type}Response
+\t\treturn model(**response).response"""
 
 
 class ObjectModel:
@@ -30,13 +30,17 @@ class ObjectModel:
 class Description(ObjectModel):
     def __str__(self):
         title = self.method.get("description") or self.method_name + " method"
+        descriptions = []
+        description = ""
+        for param in self.params["sorted_params"]:
+            param_description = param.get("description", "").strip()
+            descriptions.append(
+                f'\t\t:param {param["name"]}:'
+                + ((" " + param_description) if param_description else "")
+            )
 
-        description = "\n".join(
-            "\t\t:param %s: %s" % (param["name"], param.get("description", ""))
-            for param in self.params["sorted_params"]
-        )
-        if description:
-            description = "\n" + description + "\n\t\t"
+        if descriptions:
+            description = "\n" + "\n".join(descriptions) + "\n\t\t"
         return '"""%s%s"""\n' % (title, description)
 
 
@@ -47,11 +51,11 @@ class Annotation(ObjectModel):
         param_annotate = convert_to_python_type(self.params["annotate"])
 
         if param_annotate == "list" and items.get("$ref", items.get("type")):
-            post_annotate = (
-                get_type_from_reference(items["$ref"])
-                if items.get("$ref")
-                else items["type"]
-            )
+            if items.get("$ref"):
+                post_annotate = "str"  # it's enum
+            else:
+                post_annotate = convert_to_python_type(items["type"])
+
             param_annotate = "List[%s]" % convert_to_python_type(post_annotate)
 
         if param_type is False:
@@ -103,6 +107,8 @@ class ClassForm:
         sorted_params = sorted(
             method.get("parameters", {}), key=lambda x: not x.get("required", False)
         )
+        for item in sorted_params:
+            item["name"] = resolve_property_name(item["name"])
         desc = Description(method_name, method, sorted_params=sorted_params)
         args = ConvertToArgs(sorted_params=sorted_params)
         return_type = MethodForm.parse_return_type(
@@ -120,6 +126,7 @@ class ClassForm:
 
     def __str__(self):
         return (
-            f"\n\n\nclass {self.name.capitalize()}Category({self.predproc}):\n"
+            f"\n\nclass {self.name.capitalize()}Category({self.predproc}):\n"
             + "\n\n".join(self.constructed_methods)
+            + "\n"
         )
