@@ -9,16 +9,16 @@ from .models import ClassForm
 logging.basicConfig(level=logging.INFO)
 
 
-def parse_file(filepath: str, filepath_to: str, **imports) -> None:
+def parse_file(filepath: str, filepath_to: str, imports) -> None:
     base_dir = create_results_dir(f"{filepath_to}/methods")
     categories = sort_jsonmethods_schema(filepath)
 
     for category, methods in categories.items():
         with open(f"{base_dir}/{category}.py", "w") as pyfile:
-            construct_schema(pyfile, category, methods, **imports)
+            construct_schema(pyfile, category, methods, imports)
 
 
-def construct_schema(file, category, methods, **imports):
+def construct_schema(file, category, methods, imports):
     file.write("from vkbottle_types.responses import %s, base\n" % category)
     file.write(str(Imports(**imports)))
     form = ClassForm(category)
