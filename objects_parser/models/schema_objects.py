@@ -58,7 +58,10 @@ class SchemaAllOfObject(AbstractSchemaObject):
                 ref = get_type_from_reference(reference)
                 super_classes_list.append(ref)
         if super_classes_list:
-            self.class_form.set_super_class(", ".join(super_classes_list))
+            formatted = ", ".join(super_classes_list)
+            if len(formatted) >= 80:
+                formatted = "\n\t" + formatted.replace(", ", ",\n\t") + "\n"
+            self.class_form.set_super_class(formatted)
 
 
 class SchemaOneOfObject(AbstractSchemaObject):
@@ -72,8 +75,11 @@ class SchemaOneOfObject(AbstractSchemaObject):
             for reference in references:
                 ref = get_type_from_reference(reference)
                 super_classes_list.append(ref)
-
-            self.class_form.set_super_class(", ".join(super_classes_list))
+            if super_classes_list:
+                formatted = ", ".join(super_classes_list)
+                if len(formatted) >= 80:
+                    formatted = "\n\t" + formatted.replace(", ", ",\n\t") + "\n"
+                self.class_form.set_super_class(formatted)
         else:
             types = ", ".join(convert_to_python_type(item["type"]) for item in one_of)
             self.class_form = f"\n\n{classname} = Union[{types}]\n"

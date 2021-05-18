@@ -11,6 +11,7 @@ object_models_imports:
     null
   typing:
     - Any
+    - Dict
     - List
     - Optional
     - Union
@@ -18,15 +19,17 @@ object_models_imports:
     - BaseModel
 object_methods_imports:
   typing:
-    - Optional
-    - List
     - Any
+    - List
+    - Optional
   .base_category:
     - BaseCategory
 object_responses_imports:
+  inspect:
+    null
   typing:
-    - Optional
-    - List
     - Any
+    - List
+    - Optional
   .base_response:
     - BaseResponse

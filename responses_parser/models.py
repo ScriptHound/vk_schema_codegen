@@ -8,7 +8,6 @@ class ResponseModelBody:
             temp = []
             for anno in annotations:
                 if isinstance(anno, list):
-                    anno = anno[0]
                     temp.append(Annotation("Array", list_inner_type=anno))
                 else:
                     temp.append(Annotation(anno))
@@ -42,9 +41,9 @@ class ResponseModel:
         self.annotations = annotations
 
     def __repr__(self):
-        header = f"\n\n\nclass {self.classname}({self.superclass}):\n\t"
+        header = f"\n\nclass {self.classname}({self.superclass}):\n\t"
         body = str(ResponseModelBody(self.annotations, **self.variables))
-        return header + body
+        return header + body + "\n"
 
 
 class SingleTypeModel:
@@ -53,17 +52,17 @@ class SingleTypeModel:
         self.value = value
 
     def __repr__(self):
-        return f"\n\n\n{self.name} = {self.value}"
+        return f"\n\n{self.name} = {self.value}\n".replace(": ", "")
 
 
-def jsonschema_object_factory(classname: str, json_properties: dict) -> "Model":
+def jsonschema_object_factory(classname: str, json_properties: dict):
     schema_type = json_properties["response"].get("type", "$ref")
 
     if schema_type == "$ref":
         t = convert_to_python_type(
             get_type_from_reference(json_properties["response"]["$ref"])
         )
-        return SingleTypeModel(classname, f"Optional[{t}]")
+        return SingleTypeModel(classname, t)
     elif schema_type == "integer":
         return SingleTypeModel(classname, "int")
     elif schema_type == "boolean":
@@ -73,14 +72,14 @@ def jsonschema_object_factory(classname: str, json_properties: dict) -> "Model":
         if json_properties["response"]["items"].get("type"):
             type_ = json_properties["response"]["items"]["type"]
 
-            type_ = Annotation("Array", list_inner_type=type_)
-        else:
-            type_ = json_properties["response"]["items"]["$ref"]
-            type_ = get_type_from_reference(type_)
-
+            type_ = Annotation("Array", list_inner_type=type_, required=True)
+            return SingleTypeModel(classname, type_)
+        type_ = json_properties["response"]["items"]["$ref"]
+        type_ = get_type_from_reference(type_)
         return SingleTypeModel(classname, f"List[{type_}]")
+
     elif schema_type == "string":
-        return SingleTypeModel(classname, "string")
+        return SingleTypeModel(classname, "str")
     else:
         # HARDCODED THIS IS UNIQUE CASE
         if json_properties["response"].get("patternProperties"):

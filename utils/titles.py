@@ -12,13 +12,16 @@ class AbstractTitle(abc.ABC):
 
 class Imports(AbstractTitle):
     def __repr__(self):
-        return (
-            "\n".join(
-                "from %s import %s" % (k, ", ".join(v)) if v else "import %s" % k
-                for k, v in self.params.items()
-            )
-            + "\n"
-        )
+        imports = ""
+        for key, value in self.params.items():
+            if not value:
+                imports += f"import {key}\n"
+                continue
+            formatted = ", ".join(value)
+            if len(formatted) >= 80:
+                formatted = "(\n\t" + formatted.replace(", ", ",\n\t") + "\n)"
+            imports += f"from {key} import {formatted}\n"
+        return imports
 
 
 class UpdateForwardRefs(AbstractTitle):
@@ -27,7 +30,8 @@ class UpdateForwardRefs(AbstractTitle):
             "\n\n"
             + (
                 "for item in locals().copy().values():"
-                "\n\tif inspect.isclass(item) and issubclass(item, BaseModel):"
+                "\n\tif inspect.isclass(item) and issubclass("
+                f"item, {self.params.get('subclass', 'BaseModel')}):"
                 "\n\t\titem.update_forward_refs()"
             )
             + "\n"

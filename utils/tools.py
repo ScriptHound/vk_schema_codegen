@@ -56,3 +56,24 @@ def create_objects_from_enum_types(definitions: dict):
                 properties[item_name]["description"] = item_description
         sorted_dict[key] = value
     return sorted_dict
+
+
+def get_response_imports(definitions: dict):
+    imports = []
+    for value in definitions.values():
+        properties = value.get("properties", {})
+        response = properties.get("response", {})
+        ref = response.get("$ref")
+        if ref:
+            imports.append(get_type_from_reference(ref))
+            continue
+        if response.get("PatternProperties"):
+            continue
+        for item in [*response.get("properties", {}).values(), response]:
+            if item.get("type") == "array":
+                ref = item["items"].get("$ref")
+            else:
+                ref = item.get("$ref")
+            if ref:
+                imports.append(get_type_from_reference(ref))
+    return {"vkbottle_types.objects": sorted(set(imports))}
