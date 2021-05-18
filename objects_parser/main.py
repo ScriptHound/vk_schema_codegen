@@ -1,7 +1,7 @@
 import logging
-from utils.sorting import create_objects_from_enum_types, sort_by_reference
 
 from utils.os_utils import create_results_dir
+from utils.sorting import create_objects_from_enum_types, sort_by_reference
 from utils.strings_util import (
     get_json_dict,
     shift_json_dict_names,

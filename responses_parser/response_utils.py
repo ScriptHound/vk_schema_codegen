@@ -1,7 +1,7 @@
 import json
 
 from utils.os_utils import create_python_files, create_results_dir
-from utils.strings_util import categorize_methods_as_files, snake_case_to_camel_case
+from utils.strings_util import snake_case_to_camel_case
 
 
 def get_responses_titles(json_schema) -> list:
