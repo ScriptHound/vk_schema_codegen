@@ -49,7 +49,9 @@ def create_objects_from_enum_types(definitions: dict):
             item_description = item_value.get("description")
             if not (item_type and item_enum):
                 continue
-            enum_name = key + "_" + item_name
+            enum_name = (
+                (key + "_" + item_name) if item_name in sorted_dict else item_name
+            )
             sorted_dict[enum_name] = item_value
             properties[item_name] = {"$ref": f"objects.json#/definitions/{enum_name}"}
             if item_description:
