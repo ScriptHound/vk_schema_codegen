@@ -6,8 +6,8 @@ from utils.strings_util import (
 )
 
 response_models = {
-    "base_bool_response": "base.Bool",
-    "base_getUploadServer_response": "base.GetUploadServer",
+    "base_bool_response": "base.BoolResponse",
+    "base_getUploadServer_response": "base.GetUploadServerResponse",
     "base_ok_response": "base.OkResponse",
 }
 
