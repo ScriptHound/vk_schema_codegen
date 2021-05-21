@@ -1,3 +1,4 @@
+import re
 from utils.strings_util import get_type_from_reference
 
 
@@ -47,11 +48,16 @@ def create_objects_from_enum_types(definitions: dict):
             item_type = item_value.get("type")
             item_enum = item_value.get("enum")
             item_description = item_value.get("description")
+            enum_name = key + "_" + item_name
             if not (item_type and item_enum):
                 continue
-            enum_name = (
-                (key + "_" + item_name) if item_name in sorted_dict else item_name
-            )
+            if item_description:
+                name_from_description = item_description
+                match = re.match(r"(.*) of (.*)", item_description)
+                if match:
+                    name_from_description = f"{match.group(2)} {match.group(1)}"
+                if len(name_from_description.split()) <= 4:
+                    enum_name = "_".join(name_from_description.split())
             sorted_dict[enum_name] = item_value
             properties[item_name] = {"$ref": f"objects.json#/definitions/{enum_name}"}
             if item_description:

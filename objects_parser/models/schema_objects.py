@@ -92,7 +92,7 @@ class SchemaEnum(AbstractSchemaObject):
             desc=(
                 '\t""" '
                 + prepared_dict[classname].get("description", f"{classname} enum")
-                + ' """\n'
+                + ' """\n\n'
             ),
             predecessor="enum.Enum",
         )
@@ -107,7 +107,7 @@ class SchemaEnumInitialized(AbstractSchemaObject):
             desc=(
                 '\t""" '
                 + prepared_dict[classname].get("description", f"{classname} enum")
-                + ' """\n'
+                + ' """\n\n'
             ),
             predecessor="enum.IntEnum",
         )

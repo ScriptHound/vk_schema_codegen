@@ -120,7 +120,7 @@ class Description(ObjectModel):
                 label += f"\t{name} -\n"
             else:
                 label += f"\t{name} - {description.strip()}\n"
-        label += '\t"""\n'
+        label += '\t"""\n\n'
         return label
 
 
