@@ -14,17 +14,21 @@ from .models.schema_objects import schema_object_fabric_method
 logging.basicConfig(level=logging.INFO)
 
 
-def write_translated_json(filepath_to: str, prepared_dict: dict, imports: dict) -> None:
+def write_translated_json(
+    filepath_to: str, prepared_dict: dict, imports: dict, tabulation="    "
+) -> None:
     create_results_dir(filepath_to)
 
-    with open(f"{filepath_to}/objects.py", "w") as pyfile:
-        pyfile.write(str(Imports(**imports)))
+    with open(f"{filepath_to}/objects.py", "w") as file:
+        text = str(Imports(**imports))
 
         for classname in prepared_dict.keys():
             class_form = schema_object_fabric_method(classname, prepared_dict)
-            pyfile.write(str(class_form))
+            text += str(class_form)
 
-        pyfile.write(str(UpdateForwardRefs(**prepared_dict)))
+        text += str(UpdateForwardRefs(**prepared_dict))
+        text = text.replace("\t", tabulation)
+        file.write(text)
 
 
 def parse_file(path: str, filepath_to: str, imports_dict: dict) -> None:

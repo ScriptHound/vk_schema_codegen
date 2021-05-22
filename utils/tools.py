@@ -1,4 +1,5 @@
 import re
+
 from utils.strings_util import get_type_from_reference
 
 
@@ -85,3 +86,14 @@ def get_response_imports(definitions: dict):
             if ref:
                 imports.append(get_type_from_reference(ref))
     return {"vkbottle_types.objects": sorted(set(imports))}
+
+
+def get_methods_imports(definitions: list):
+    imports = []
+    for item in definitions:
+        base = item["name"].split(".")[0]
+        ref = item["responses"]["response"]["$ref"].split("/")[-1].split("_")[0]
+        for item in [ref, base]:
+            if item not in imports:
+                imports.append(item)
+    return {"vkbottle_types.responses": imports}

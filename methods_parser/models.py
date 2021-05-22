@@ -2,14 +2,8 @@ from utils.strings_util import (
     camel_case_to_snake_case,
     convert_to_python_type,
     resolve_property_name,
-    get_type_from_reference,
+    snake_case_to_camel_case,
 )
-
-response_models = {
-    "base_bool_response": "base.BoolResponse",
-    "base_getUploadServer_response": "base.GetUploadServerResponse",
-    "base_ok_response": "base.OkResponse",
-}
 
 CLASSMETHOD_PATTERN = (
     "\tasync def {snake_name}(\n"
@@ -90,12 +84,9 @@ class ConvertToArgs(ObjectModel):
 
 
 class MethodForm:
-    def parse_return_type(m_name, type_response):
-        category = m_name.split(".")[0]
-        name = get_type_from_reference(type_response.replace(f"{category}_", ""))
-        method_name = f"{category}.{name[0].upper() + name[1:]}"
-        return_type = type_response.split("/")[-1]
-        return response_models.get(return_type, method_name)
+    def parse_return_type(referense):
+        category, model = referense.split("/")[-1].split("_", 1)
+        return f"{category}.{snake_case_to_camel_case(model)}"
 
     def costruct(**params):
         if params["extended_return_type"]:
@@ -125,14 +116,10 @@ class ClassForm:
             item["name"] = resolve_property_name(item["name"])
         desc = Description(method_name, method, sorted_params=sorted_params)
         args = ConvertToArgs(sorted_params=sorted_params)
-        return_type = MethodForm.parse_return_type(
-            method_name, method["responses"]["response"]["$ref"]
-        )
+        return_type = MethodForm.parse_return_type(method["responses"]["response"]["$ref"])
         extended_type = method["responses"].get("extendedResponse")
         if extended_type:
-            extended_type = MethodForm.parse_return_type(
-                method_name, extended_type["$ref"]
-            )
+            extended_type = MethodForm.parse_return_type(extended_type["$ref"])
         self.constructed_methods.append(
             MethodForm.costruct(
                 name=method_name,

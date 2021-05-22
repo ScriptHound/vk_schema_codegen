@@ -3,28 +3,34 @@ import logging
 
 from utils.os_utils import create_results_dir
 from utils.titles import Imports
+from utils.tools import get_methods_imports
 
 from .models import ClassForm
 
 logging.basicConfig(level=logging.INFO)
 
 
-def parse_file(filepath: str, filepath_to: str, imports) -> None:
+def parse_file(
+    filepath: str, filepath_to: str, imports: dict, tabulation="    "
+) -> None:
     base_dir = create_results_dir(f"{filepath_to}/methods")
     categories = sort_jsonmethods_schema(filepath)
 
     for category, methods in categories.items():
-        with open(f"{base_dir}/{category}.py", "w") as pyfile:
-            construct_schema(pyfile, category, methods, imports)
+        with open(f"{base_dir}/{category}.py", "w") as file:
+            text = construct_schema(category, methods, imports).replace(
+                "\t", tabulation
+            )
+            file.write(text)
 
 
-def construct_schema(file, category, methods, imports):
-    file.write("from vkbottle_types.responses import %s, base\n" % category)
-    file.write(str(Imports(**imports)))
+def construct_schema(category, methods, imports):
+    text = str(Imports(**imports, **get_methods_imports(methods)))
     form = ClassForm(category)
     for method in methods:
         form.add_method(method["name"], method)
-    file.write(str(form))
+    text += str(form)
+    return text
 
 
 def sort_jsonmethods_schema(path: str) -> dict:
