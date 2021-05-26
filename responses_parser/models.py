@@ -20,14 +20,10 @@ class ResponseModelBody:
             name + str(annotation)
             for name, annotation in zip(attributes.keys(), annotations)
         ]
-        self.attributes = {
-            name: attributes[orig_name]
-            for name, orig_name in zip(self.annotated_names, attributes.keys())
-        }
 
     def __repr__(self):
         return "\n\t".join(
-            [f"{name} = {value}" for name, value in self.attributes.items()]
+            [f"{name} = None" for name in self.annotated_names]
         )
 
 
@@ -71,7 +67,14 @@ def jsonschema_object_factory(classname: str, json_properties: dict):
         type_ = None
         if json_properties["response"]["items"].get("type"):
             type_ = json_properties["response"]["items"]["type"]
-
+            if type_ == "object":
+                properties = json_properties["response"]["items"]["properties"]
+                return [
+                    ResponseModel(
+                        classname + "Object", get_types(properties), **properties
+                    ),
+                    SingleTypeModel(classname, f'typing.List["{classname + "Object"}"]'),
+                ]
             type_ = Annotation("Array", list_inner_type=type_, required=True)
             return SingleTypeModel(classname, type_)
         type_ = json_properties["response"]["items"]["$ref"]
@@ -88,19 +91,24 @@ def jsonschema_object_factory(classname: str, json_properties: dict):
         properties = json_properties["response"]["properties"]
         names = {name: None for name in properties.keys()}
         json_properties = {name: None for name in names}
-        types = []
-        for _, value in properties.items():
-            if value.get("type"):
-                property_type = value.get("type")
-                if property_type == "array":
-                    ref_type = value["items"].get("$ref")
-                    if ref_type:
-                        types.append([get_type_from_reference(ref_type)])
-                    else:
-                        types.append([value["items"]["type"]])
-                else:
-                    types.append(value["type"])
-            else:
-                t = get_type_from_reference(value["$ref"])
-                types.append(t)
+        types = get_types(properties)
         return ResponseModel(classname, types, **json_properties)
+
+
+def get_types(properties: dict):
+    types = []
+    for value in properties.values():
+        property_type = value.get("type")
+        if not property_type:
+            t = get_type_from_reference(value["$ref"])
+            types.append(t)
+            continue
+        elif property_type == "array":
+            ref_type = value["items"].get("$ref")
+            if not ref_type:
+                types.append([value["items"]["type"]])
+                continue
+            types.append([get_type_from_reference(ref_type)])
+        else:
+            types.append(value["type"])
+    return types

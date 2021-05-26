@@ -31,7 +31,11 @@ def parse_file(schema_path: str, filepath_to: str, imports: dict, tabulation="  
                 schema_object = jsonschema_object_factory(
                     classname + "Model", body["properties"]
                 )
+                if not isinstance(schema_object, list):
+                    text += str(schema_object)
+                    continue
+                for item in schema_object:
+                    text += str(item)
 
-                text += str(schema_object)
             text += str(UpdateForwardRefs(**schema_body, subclass="BaseResponse"))
             file.write(text.replace("\t", tabulation))

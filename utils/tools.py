@@ -81,6 +81,11 @@ def get_response_imports(definitions: dict):
         for item in [*response.get("properties", {}).values(), response]:
             if item.get("type") == "array":
                 ref = item["items"].get("$ref")
+                if not ref and item["items"].get("type") == "object":
+                    for property_item in item["items"]["properties"].values():
+                        property_ref = property_item.get("$ref")
+                        if property_ref:
+                            imports.append(get_type_from_reference(property_ref))
             else:
                 ref = item.get("$ref")
             if ref:
@@ -96,4 +101,4 @@ def get_methods_imports(definitions: list):
         for item in [ref, base]:
             if item not in imports:
                 imports.append(item)
-    return {"vkbottle_types.responses": imports}
+    return {"vkbottle_types.responses": sorted(set(imports))}

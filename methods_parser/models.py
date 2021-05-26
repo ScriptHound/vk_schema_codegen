@@ -8,7 +8,7 @@ from utils.strings_util import (
 CLASSMETHOD_PATTERN = (
     "\tasync def {snake_name}(\n"
     "\t\t{args}\n"
-    "\t) -> {return_type}Model:\n"
+    "\t) -> {response}Model:\n"
     "\t\t{desc}\n"
     "\t\tparams = self.get_set_params(locals())\n"
     '\t\tresponse = await self.api.request("{name}", params)\n'
@@ -89,16 +89,18 @@ class MethodForm:
         return f"{category}.{snake_case_to_camel_case(model)}"
 
     def costruct(**params):
-        if params["extended_return_type"]:
+        if params["additional_responses"]:
             params["model"] = (
                 "\t\tmodel = self.get_model(\n"
-                '\t\t\t{("extended",): ' + f'{params["extended_return_type"]}' + "},\n"
-                f"\t\t\tdefault={params['return_type']},\n"
+                "\t\t\t{"
+                + ",".join(f'("{key}",): {value}' for key, value in params["additional_responses"].items())
+                + "},\n"
+                f"\t\t\tdefault={params['response']},\n"
                 "\t\t\tparams=params,\n"
                 "\t\t)"
             )
         else:
-            params["model"] = f"\t\tmodel = {params['return_type']}"
+            params["model"] = f"\t\tmodel = {params['response']}"
         return CLASSMETHOD_PATTERN.format(**params)
 
 
@@ -116,18 +118,21 @@ class ClassForm:
             item["name"] = resolve_property_name(item["name"])
         desc = Description(method_name, method, sorted_params=sorted_params)
         args = ConvertToArgs(sorted_params=sorted_params)
-        return_type = MethodForm.parse_return_type(method["responses"]["response"]["$ref"])
-        extended_type = method["responses"].get("extendedResponse")
-        if extended_type:
-            extended_type = MethodForm.parse_return_type(extended_type["$ref"])
+        response = None
+        additional_responses = {}
+        for key, value in method["responses"].items():
+            if key == "response":
+                response = MethodForm.parse_return_type(value["$ref"])
+                continue
+            additional_responses[", ".join(camel_case_to_snake_case(k) for k in key.replace("Response", "").split("_"))] = MethodForm.parse_return_type(value["$ref"])
         self.constructed_methods.append(
             MethodForm.costruct(
                 name=method_name,
                 snake_name=camel_case_to_snake_case(method_name.split(".")[1]),
                 args=args,
                 desc=desc,
-                return_type=return_type,
-                extended_return_type=extended_type,
+                response=response,
+                additional_responses=additional_responses
             )
         )
 
