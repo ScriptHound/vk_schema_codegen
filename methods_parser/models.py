@@ -1,3 +1,4 @@
+import re
 from utils.strings_util import (
     camel_case_to_snake_case,
     convert_to_python_type,
@@ -8,7 +9,7 @@ from utils.strings_util import (
 CLASSMETHOD_PATTERN = (
     "\tasync def {snake_name}(\n"
     "\t\t{args}\n"
-    "\t) -> {response}Model:\n"
+    "\t) -> {return_type}:\n"
     "\t\t{desc}\n"
     "\t\tparams = self.get_set_params(locals())\n"
     '\t\tresponse = await self.api.request("{name}", params)\n'
@@ -90,11 +91,20 @@ class MethodForm:
 
     def costruct(**params):
         if params["additional_responses"]:
+            responses = ", ".join(
+                f'("{key}",): {value}'
+                for key, value in params["additional_responses"].items()
+            )
+
+            if len(responses) >= 80:
+                responses = (
+                    "\n\t\t\t\t"
+                    + responses.replace(", (", ",\n\t\t\t\t(")
+                    + ",\n\t\t\t"
+                )
             params["model"] = (
                 "\t\tmodel = self.get_model(\n"
-                "\t\t\t{"
-                + ",".join(f'("{key}",): {value}' for key, value in params["additional_responses"].items())
-                + "},\n"
+                "\t\t\t{" + responses + "},\n"
                 f"\t\t\tdefault={params['response']},\n"
                 "\t\t\tparams=params,\n"
                 "\t\t)"
@@ -110,7 +120,7 @@ class ClassForm:
         self.predproc = predproc
         self.constructed_methods = []
 
-    def add_method(self, method_name, method):
+    def add_method(self, method_name, method, return_type_annotations):
         sorted_params = sorted(
             method.get("parameters", {}), key=lambda x: not x.get("required", False)
         )
@@ -124,7 +134,37 @@ class ClassForm:
             if key == "response":
                 response = MethodForm.parse_return_type(value["$ref"])
                 continue
-            additional_responses[", ".join(camel_case_to_snake_case(k) for k in key.replace("Response", "").split("_"))] = MethodForm.parse_return_type(value["$ref"])
+            additional_responses[
+                '", "'.join(
+                    camel_case_to_snake_case(k)
+                    for k in key.replace("Response", "").split("_")
+                    if k
+                )
+            ] = MethodForm.parse_return_type(value["$ref"])
+        if response == "base.BoolResponse":
+            return_type = "base.BaseBoolInt"
+        elif response == "base.GetUploadServerResponse":
+            return_type = "base.BaseUploadServer"
+        elif response == "base.OkResponse":
+            return_type = "int"
+        else:
+            return_type = return_type_annotations.get(response.split(".")[1], response)
+            for default_type in ("bool", "int", "typing", "str"):
+                if 'typing.List["' in return_type:
+                    list_inner_type = re.match(
+                        r'typing\.List\["(.*)"\]', return_type
+                    ).group(1)
+                    return_type = (
+                        f"""typing.List[{response.split('.')[0]}.{list_inner_type}]"""
+                    )
+                    break
+                elif default_type in return_type:
+                    break
+            else:
+                if "." not in return_type:
+                    return_type = (
+                        f"""{response.split('.')[0]}.{return_type.replace('"', '')}"""
+                    )
         self.constructed_methods.append(
             MethodForm.costruct(
                 name=method_name,
@@ -132,7 +172,8 @@ class ClassForm:
                 args=args,
                 desc=desc,
                 response=response,
-                additional_responses=additional_responses
+                return_type=return_type,
+                additional_responses=additional_responses,
             )
         )
 

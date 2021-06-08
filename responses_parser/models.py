@@ -22,9 +22,7 @@ class ResponseModelBody:
         ]
 
     def __repr__(self):
-        return "\n\t".join(
-            [f"{name} = None" for name in self.annotated_names]
-        )
+        return "\n\t".join(f"{name} = None" for name in self.annotated_names)
 
 
 class ResponseModel:
@@ -51,48 +49,60 @@ class SingleTypeModel:
         return f"\n\n{self.name} = {self.value}\n".replace(": ", "")
 
 
+def write_response_alias(schema_body: dict) -> None:
+    text = ""
+    annotations = {}
+    for classname, value in schema_body.items():
+        schema_type = value["properties"]["response"].get("type", "$ref")
+        if schema_type == "$ref":
+            annotation = convert_to_python_type(
+                get_type_from_reference(value["properties"]["response"]["$ref"])
+            )
+        elif schema_type == "array":
+            type_ = value["properties"]["response"]["items"].get("type")
+            if not type_:
+                type_ = value["properties"]["response"]["items"]["$ref"]
+                annotation = f'typing.List["{get_type_from_reference(type_)}"]'
+            elif type_ == "object":
+                annotation = f'typing.List["{classname}Model"]'
+            else:
+                annotation = f"typing.List[{convert_to_python_type(type_)}]"
+        # HARDCODED THIS IS UNIQUE CASE
+        elif value["properties"]["response"].get("patternProperties"):
+            annotation = "typing.Dict[str, int]"
+        elif schema_type == "object":
+            annotation = f'"{classname}Model"'
+        else:
+            annotation = convert_to_python_type(schema_type)
+        annotations[classname] = annotation
+        properties = {"response: " + annotation: None}
+        text += str(ResponseModel(classname, **properties))
+    return text, annotations
+
+
 def jsonschema_object_factory(classname: str, json_properties: dict):
     schema_type = json_properties["response"].get("type", "$ref")
 
-    if schema_type == "$ref":
-        t = convert_to_python_type(
-            get_type_from_reference(json_properties["response"]["$ref"])
-        )
-        return SingleTypeModel(classname, t)
-    elif schema_type == "integer":
-        return SingleTypeModel(classname, "int")
-    elif schema_type == "boolean":
-        return SingleTypeModel(classname, "bool")
-    elif schema_type == "array":
-        type_ = None
-        if json_properties["response"]["items"].get("type"):
-            type_ = json_properties["response"]["items"]["type"]
-            if type_ == "object":
-                properties = json_properties["response"]["items"]["properties"]
-                return [
-                    ResponseModel(
-                        classname + "Object", get_types(properties), **properties
-                    ),
-                    SingleTypeModel(classname, f'typing.List["{classname + "Object"}"]'),
-                ]
-            type_ = Annotation("Array", list_inner_type=type_, required=True)
-            return SingleTypeModel(classname, type_)
-        type_ = json_properties["response"]["items"]["$ref"]
-        type_ = get_type_from_reference(type_)
-        return SingleTypeModel(classname, f"typing.List[{type_}]")
+    if schema_type == "array":
+        type_ = json_properties["response"]["items"].get("type")
+        if type_ == "object":
+            properties = json_properties["response"]["items"]["properties"]
+            return ResponseModel(classname, get_types(properties), **properties)
+        return ""
+    elif schema_type in [
+        "$ref",
+        "integer",
+        "number",
+        "string",
+        "boolean",
+    ] or json_properties["response"].get("patternProperties"):
+        return ""
 
-    elif schema_type == "string":
-        return SingleTypeModel(classname, "str")
-    else:
-        # HARDCODED THIS IS UNIQUE CASE
-        if json_properties["response"].get("patternProperties"):
-            return SingleTypeModel(classname, "typing.Dict[str, int]")
-
-        properties = json_properties["response"]["properties"]
-        names = {name: None for name in properties.keys()}
-        json_properties = {name: None for name in names}
-        types = get_types(properties)
-        return ResponseModel(classname, types, **json_properties)
+    properties = json_properties["response"]["properties"]
+    names = {name: None for name in properties.keys()}
+    json_properties = {name: None for name in names}
+    types = get_types(properties)
+    return ResponseModel(classname, types, **json_properties)
 
 
 def get_types(properties: dict):

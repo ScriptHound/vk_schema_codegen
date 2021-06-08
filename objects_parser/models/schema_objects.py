@@ -111,13 +111,11 @@ class SchemaEnumInitialized(AbstractSchemaObject):
             ),
             predecessor="enum.IntEnum",
         )
-        counter = 0
-        for i in prepared_dict[classname]["enum"]:
+        for counter, i in enumerate(prepared_dict[classname]["enum"]):
             name = "_".join(
                 prepared_dict[classname]["enumNames"][counter].lower().split()
             )
             self.class_form.add_param(name, i)
-            counter += 1
 
 
 class SchemaUndefined(AbstractSchemaObject):

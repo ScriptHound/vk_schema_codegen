@@ -11,24 +11,24 @@ logging.basicConfig(level=logging.INFO)
 
 
 def parse_file(
-    filepath: str, filepath_to: str, imports: dict, tabulation="    "
+    filepath: str, filepath_to: str, imports: dict, return_type_annotations: dict, tabulation="    "
 ) -> None:
     base_dir = create_results_dir(f"{filepath_to}/methods")
     categories = sort_jsonmethods_schema(filepath)
 
     for category, methods in categories.items():
         with open(f"{base_dir}/{category}.py", "w") as file:
-            text = construct_schema(category, methods, imports).replace(
+            text = construct_schema(category, methods, imports, return_type_annotations[category]).replace(
                 "\t", tabulation
             )
             file.write(text)
 
 
-def construct_schema(category, methods, imports):
+def construct_schema(category, methods, imports, return_type_annotations: dict):
     text = str(Imports(**imports, **get_methods_imports(methods)))
     form = ClassForm(category)
     for method in methods:
-        form.add_method(method["name"], method)
+        form.add_method(method["name"], method, return_type_annotations)
     text += str(form)
     return text
 

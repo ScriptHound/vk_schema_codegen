@@ -9,9 +9,7 @@ def get_responses_titles(json_schema) -> list:
 
 
 def split_responses_names(json_titles: list) -> list:
-    filenames = set()
-    for title in json_titles:
-        filenames.add(title.split("_")[0])
+    filenames = {title.split("_")[0] for title in json_titles}
     return list(filenames)
 
 

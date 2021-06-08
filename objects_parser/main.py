@@ -22,7 +22,7 @@ def write_translated_json(
     with open(f"{filepath_to}/objects.py", "w") as file:
         text = str(Imports(**imports))
 
-        for classname in prepared_dict.keys():
+        for classname in prepared_dict:
             class_form = schema_object_fabric_method(classname, prepared_dict)
             text += str(class_form)
 

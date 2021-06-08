@@ -53,9 +53,10 @@ def get_json_dict(path: str) -> dict:
 def snake_case_to_camel_case(string_list: list) -> dict:
     words_list: list = []
     for string in string_list:
-        camel_case_string = ""
-        for word in string.split("_"):
-            camel_case_string += word[0].upper() + word[1:]
+        camel_case_string = "".join(
+            word[0].upper() + word[1:] for word in string.split("_")
+        )
+
         words_list.append(camel_case_string)
     return dict(zip(string_list, words_list))
 
@@ -67,18 +68,16 @@ def camel_case_to_snake_case(string: str) -> dict:
 
 
 def convert_to_python_type(field):
-    if field == "integer":
-        return "int"
-    elif field == "number":
-        return "int"
-    elif field == "string":
-        return "str"
-    elif field == "boolean":
-        return "bool"
-    elif field == "array":
+    if field.lower() == "array":
         return "list"
-    elif field == "object":
+    elif field.lower() == "boolean":
+        return "bool"
+    elif field.lower() in ["integer", "number"]:
+        return "int"
+    elif field.lower() == "object":
         return "typing.Any"
+    elif field.lower() == "string":
+        return "str"
     else:
         return str(field)
 
@@ -93,9 +92,7 @@ def categorize_methods_as_files(json_dict: dict) -> dict:
         method_name = method_dict["name"].split(".")[0]
         filenames.add(method_name)
 
-    classified_dict = {name: {} for name in filenames}
-
-    return classified_dict
+    return {name: {} for name in filenames}
 
 
 def resolve_property_name(name: str):

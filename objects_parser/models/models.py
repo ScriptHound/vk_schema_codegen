@@ -1,7 +1,10 @@
 import abc
 from typing import List, Union
 
-from utils.strings_util import resolve_property_name, snake_case_to_camel_case
+from utils.strings_util import (
+    resolve_property_name,
+    snake_case_to_camel_case
+)
 
 STANDART_TYPES = ("str", "int", "float")
 
@@ -33,27 +36,24 @@ class Annotation(ObjectModel):
         list_inner_type: Union[str, List[str]] = "default_name",
     ) -> None:
         super().__init__(classname, predecessor=predecessor)
-        if isinstance(list_inner_type, list):
-            if len(list_inner_type) == 1:
-                list_inner_type = list_inner_type[0]
+        if isinstance(list_inner_type, list) and len(list_inner_type) == 1:
+            list_inner_type = list_inner_type[0]
         self.list_inner_type = list_inner_type
         self.required = required
 
     @staticmethod
     def type_string_to_default_type(classname: str) -> str:
         classname_copy = classname.replace('"', "").lower()
-        if classname_copy == "integer":
-            return "int"
-        elif classname_copy == "number":
-            return "int"
-        elif classname_copy == "string":
-            return "str"
+        if classname_copy == "array":
+            return "list"
         elif classname_copy == "boolean":
             return "bool"
-        elif classname_copy == "array":
-            return "list"
+        elif classname_copy in ["integer", "number"]:
+            return "int"
         elif classname_copy == "object":
             return "typing.Any"
+        elif classname_copy == "string":
+            return "str"
         else:
             return classname
 
@@ -69,20 +69,7 @@ class Annotation(ObjectModel):
             camel_case_types = self.__unpack_dict_values(camel_case_types)
             self.classname = f"typing.Union[{camel_case_types}]"
         elif camel_case_types == "Array":
-            if not isinstance(self.list_inner_type, list):
-                self.list_inner_type = self.type_string_to_default_type(
-                    self.list_inner_type
-                )
-                self.classname = (
-                    "typing.List["
-                    + (
-                        f'"{self.list_inner_type}"'
-                        if self.list_inner_type not in STANDART_TYPES
-                        else self.list_inner_type
-                    )
-                    + "]"
-                )
-            else:
+            if isinstance(self.list_inner_type, list):
                 self.list_inner_type = [
                     self.type_string_to_default_type(list_inner_type)
                     for list_inner_type in self.list_inner_type
@@ -96,15 +83,27 @@ class Annotation(ObjectModel):
                     )
                     + "]]"
                 )
+            else:
+                self.list_inner_type = self.type_string_to_default_type(
+                    self.list_inner_type
+                )
+                self.classname = (
+                    "typing.List["
+                    + (
+                        f'"{self.list_inner_type}"'
+                        if self.list_inner_type not in STANDART_TYPES
+                        else self.list_inner_type
+                    )
+                    + "]"
+                )
         else:
             self.classname = '"' + camel_case_types + '"'
 
         self.classname = self.type_string_to_default_type(self.classname)
-        if not self.required:
-            label = f": typing.Optional[{self.classname}]"
+        if self.required:
+            return f": {self.classname}"
         else:
-            label = f": {self.classname}"
-        return label
+            return f": typing.Optional[{self.classname}]"
 
 
 class Description(ObjectModel):
@@ -129,7 +128,7 @@ class ClassForm(ObjectModel):
         self, classname: str, desc: Description = None, predecessor: str = "BaseModel"
     ) -> None:
         super().__init__(classname, predecessor=predecessor)
-        self.description = desc if desc else Description(self.classname)
+        self.description = desc or Description(self.classname)
 
     def add_description_row(self, name, text):
         self.description.add_param(name, text)
