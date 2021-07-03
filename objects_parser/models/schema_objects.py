@@ -30,7 +30,11 @@ class SchemaObject(AbstractSchemaObject):
 
             text = properties[name].get("description")
             self.class_form.add_param(
-                name, None, annotation=type_anno, required=name in required
+                name,
+                None,
+                type=properties[name].get("type"),
+                annotation=type_anno,
+                required=name in required,
             )
             self.class_form.add_description_row(name, text)
 
@@ -51,7 +55,7 @@ class SchemaAllOfObject(AbstractSchemaObject):
 
                     text = properties[name].get("description")
                     self.class_form.add_param(
-                        name, None, annotation=type_anno, required=name in required
+                        name, None, type=properties[name].get("type"), annotation=type_anno, required=name in required
                     )
                     self.class_form.add_description_row(name, text)
             if reference:

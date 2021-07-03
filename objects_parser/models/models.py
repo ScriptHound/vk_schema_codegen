@@ -1,10 +1,7 @@
 import abc
 from typing import List, Union
 
-from utils.strings_util import (
-    resolve_property_name,
-    snake_case_to_camel_case
-)
+from utils.strings_util import resolve_property_name, snake_case_to_camel_case
 
 STANDART_TYPES = ("str", "int", "float")
 
@@ -134,11 +131,16 @@ class ClassForm(ObjectModel):
         self.description.add_param(name, text)
 
     def add_param(
-        self, param_name: str, param_value: str, annotation: str = None, required=False
+        self,
+        param_name: str,
+        param_value: str,
+        type: str = None,
+        annotation: str = None,
+        required=False,
     ) -> None:
         param_name = resolve_property_name(param_name)
         if annotation is not None:
-            if isinstance(annotation, list):
+            if type == "array":
                 param_name += str(
                     Annotation("array", list_inner_type=annotation, required=required)
                 )
