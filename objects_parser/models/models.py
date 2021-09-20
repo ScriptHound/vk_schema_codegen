@@ -45,8 +45,10 @@ class Annotation(ObjectModel):
             return "list"
         elif classname_copy == "boolean":
             return "bool"
-        elif classname_copy in ["integer", "number"]:
+        elif classname_copy == "integer":
             return "int"
+        elif classname_copy == "number":
+            return "float"
         elif classname_copy == "object":
             return "typing.Any"
         elif classname_copy == "string":

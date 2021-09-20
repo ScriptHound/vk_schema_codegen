@@ -89,20 +89,33 @@ def jsonschema_object_factory(classname: str, json_properties: dict):
             properties = json_properties["response"]["items"]["properties"]
             return ResponseModel(classname, get_types(properties), **properties)
         return ""
-    elif schema_type in [
-        "$ref",
-        "integer",
-        "number",
-        "string",
-        "boolean",
-    ] or json_properties["response"].get("patternProperties"):
+    elif (
+        schema_type
+        in [
+            "$ref",
+            "integer",
+            "number",
+            "string",
+            "boolean",
+        ]
+        or json_properties["response"].get("patternProperties")
+    ):
         return ""
-
-    properties = json_properties["response"]["properties"]
+    superclass = "BaseResponse"
+    all_of = json_properties["response"].get("allOf")
+    if all_of:
+        for item in all_of:
+            ref = item.get("$ref")
+            if ref:
+                superclass = get_type_from_reference(ref)
+                continue
+            properties = item["properties"]
+    else:
+        properties = json_properties["response"]["properties"]
     names = {name: None for name in properties.keys()}
     json_properties = {name: None for name in names}
     types = get_types(properties)
-    return ResponseModel(classname, types, **json_properties)
+    return ResponseModel(classname, types, superclass, **json_properties)
 
 
 def get_types(properties: dict):

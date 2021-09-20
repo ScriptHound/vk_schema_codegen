@@ -64,7 +64,7 @@ def snake_case_to_camel_case(string_list: list) -> dict:
 def camel_case_to_snake_case(string: str) -> dict:
     return "".join(
         "_" + symbol.lower() if symbol.isupper() else symbol for symbol in list(string)
-    ).strip('_')
+    ).strip("_")
 
 
 def convert_to_python_type(field):
@@ -72,8 +72,10 @@ def convert_to_python_type(field):
         return "list"
     elif field.lower() == "boolean":
         return "bool"
-    elif field.lower() in ["integer", "number"]:
+    elif field.lower() == "integer":
         return "int"
+    elif field.lower() == "number":
+        return "float"
     elif field.lower() == "object":
         return "typing.Any"
     elif field.lower() == "string":
