@@ -149,22 +149,22 @@ class ClassForm:
             return_type = "int"
         else:
             return_type = return_type_annotations.get(response.split(".")[1], response)
-            for default_type in ("bool", "int", "typing", "str"):
-                if 'typing.List["' in return_type:
-                    list_inner_type = re.match(
-                        r'typing\.List\["(.*)"\]', return_type
-                    ).group(1)
-                    return_type = (
-                        f"""typing.List[{response.split('.')[0]}.{list_inner_type}]"""
-                    )
-                    break
-                elif default_type in return_type:
-                    break
-            else:
-                if "." not in return_type:
-                    return_type = (
-                        f"""{response.split('.')[0]}.{return_type.replace('"', '')}"""
-                    )
+            if 'typing.List["' in return_type:
+                list_inner_type = re.match(
+                    r'typing\.List\["(.*)"\]', return_type
+                ).group(1)
+                return_type = (
+                    f"""typing.List[{response.split('.')[0]}.{list_inner_type}]"""
+                )
+            elif any(
+                default_type == return_type or "typing" in return_type
+                for default_type in ("bool", "int", "str")
+            ):
+                pass
+            elif "." not in return_type:
+                return_type = (
+                    f"""{response.split('.')[0]}.{return_type.replace('"', '')}"""
+                )
         self.constructed_methods.append(
             MethodForm.costruct(
                 name=method_name,
