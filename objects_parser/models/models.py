@@ -56,17 +56,18 @@ class Annotation(ObjectModel):
         else:
             return classname
 
-    def __unpack_dict_values(self, dictionary):
+    def __unpack_dict_values(self, dictionary: dict):
         return ", ".join(
-            self.type_string_to_default_type(v.strip("'"))
-            for _, v in dictionary.items()
+            self.type_string_to_default_type(v.strip("'")) for v in dictionary.values()
         )
 
     def __str__(self):
         camel_case_types = snake_case_to_camel_case(self.classname)
         if isinstance(camel_case_types, dict):
             camel_case_types = self.__unpack_dict_values(camel_case_types)
-            self.classname = f"typing.Union[{camel_case_types}]"
+            self.classname = f"typing.Union[{camel_case_types}]".replace(
+                "Typing", "typing"
+            )
         elif camel_case_types == "Array":
             if isinstance(self.list_inner_type, list):
                 self.list_inner_type = [
@@ -146,6 +147,18 @@ class ClassForm(ObjectModel):
                 param_name += str(
                     Annotation("array", list_inner_type=annotation, required=required)
                 )
+            elif not type and isinstance(annotation, list):
+                annotations = []
+                for item in annotation:
+                    if isinstance(item, list):
+                        annotations.append(
+                            str(
+                                Annotation("array", list_inner_type=item, required=True)
+                            )[2:]
+                        )
+                        continue
+                    annotations.append(str(Annotation(item, required=True))[2:])
+                param_name += str(Annotation(annotations, required=required))
             else:
                 param_name += str(Annotation(annotation, required=required))
 

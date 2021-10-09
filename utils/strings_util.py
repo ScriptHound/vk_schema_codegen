@@ -18,8 +18,10 @@ def get_annotation_type(item: dict):
         else:
             type_anno = item["items"].get("$ref")
             type_anno = [get_type_from_reference(type_anno)]
-    elif item.get("type"):
+    elif item.get("type") and not item.get("$ref"):
         type_anno = item.get("type")
+    elif item.get("oneOf"):
+        type_anno = [get_annotation_type(item) for item in item["oneOf"]]
     else:
         type_anno = item.get("$ref")
         type_anno = get_type_from_reference(type_anno)
@@ -52,12 +54,10 @@ def get_json_dict(path: str) -> dict:
 @output_switch_decorator
 def snake_case_to_camel_case(string_list: list) -> dict:
     words_list: list = []
-    for string in string_list:
-        camel_case_string = "".join(
-            word[0].upper() + word[1:] for word in string.split("_")
+    for item in string_list:
+        words_list.append(
+            "".join(word[0].upper() + word[1:] for word in item.split("_"))
         )
-
-        words_list.append(camel_case_string)
     return dict(zip(string_list, words_list))
 
 

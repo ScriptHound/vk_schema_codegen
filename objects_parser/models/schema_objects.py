@@ -55,7 +55,11 @@ class SchemaAllOfObject(AbstractSchemaObject):
 
                     text = properties[name].get("description")
                     self.class_form.add_param(
-                        name, None, type=properties[name].get("type"), annotation=type_anno, required=name in required
+                        name,
+                        None,
+                        type=properties[name].get("type"),
+                        annotation=type_anno,
+                        required=name in required,
                     )
                     self.class_form.add_description_row(name, text)
             if reference:
@@ -158,7 +162,9 @@ class SchemaArray(AbstractSchemaObject):
         description = self.prepared_dict[self.classname].get("description", None)
         items = self.prepared_dict[self.classname].get("items", {})
         annotation = str(
-            Annotation("array", list_inner_type=get_annotation_type(items))
+            Annotation(
+                "array", list_inner_type=get_annotation_type(items), required=True
+            ),
         )[2:]
         return (
             f"\n\n{self.classname} = {annotation}"
